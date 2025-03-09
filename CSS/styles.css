@@ -79,4 +79,53 @@
 
 .menu-toggle.frosted-menu:hover {
     background: rgba(180, 0, 255, 0.4);
+}/* Side Navigation for Courses - Centered on Screen */
+#mySidenav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: auto;
+}
+
+/* Frosted Glass Buttons with Gradient Purple */
+#mySidenav a {
+    position: relative;
+    left: -80px;
+    transition: 0.3s;
+    padding: 15px 20px;
+    width: fit-content;
+    white-space: nowrap; /* Ensures text stays in one line */
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Hover Effect */
+#mySidenav a:hover {
+    left: 0;
+}
+
+/* Gradient Purple Colors - Dark to Light */
+#course1 {
+    background-color: rgba(90, 0, 150, 0.8);
+}
+
+#course2 {
+    background-color: rgba(120, 0, 180, 0.7);
+}
+
+#course3 {
+    background-color: rgba(150, 0, 200, 0.6);
+}
+
+#course4 {
+    background-color: rgba(180, 0, 220, 0.5);
+}
+
+#course5 {
+    background-color: rgba(210, 0, 240, 0.4);
 }
