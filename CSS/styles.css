@@ -1,0 +1,82 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Fullscreen Overlay Navigation - Frosted Glass Effect */
+.overlay.frosted-overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: rgba(180, 0, 255, 0.2); /* Muted Purple */
+    backdrop-filter: blur(12px); /* Frosted Glass Effect */
+    -webkit-backdrop-filter: blur(12px);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1e6ff; /* Softer White for Hover */
+}
+
+/* Close Button */
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: white;
+}
+
+/* Menu Toggle Button - Frosted Glass Look with Lock Icon */
+.menu-toggle.frosted-menu {
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    background: rgba(180, 0, 255, 0.2); /* Light Muted Purple */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: white;
+    z-index: 2;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Lock Icon */
+.menu-toggle.frosted-menu::before {
+    content: \"\\1F512\"; /* Unicode for lock symbol 🔒 */
+    font-size: 28px;
+}
+
+.menu-toggle.frosted-menu:hover {
+    background: rgba(180, 0, 255, 0.4);
+}
