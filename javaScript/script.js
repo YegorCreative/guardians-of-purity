@@ -1,13 +1,31 @@
-function toggleNav() {
-    var nav = document.getElementById("myNav");
-    var menuIcon = document.querySelector(".menu-toggle");
-
-    if (nav.classList.contains("open")) {
-        nav.classList.remove("open");
-        menuIcon.innerHTML = "&#9776;"; // Show hamburger when closed
-    } else {
-        nav.classList.add("open");
-        nav.style.width = "100%"; // Ensure overlay takes full width
-        menuIcon.innerHTML = "&times;"; // Show close icon when open
-    }
+function showAlert() {
+    alert("Hello! This is a simple alert.");
 }
+let lastScrollTop = 0;
+const navbar = document.querySelector('#navbar');
+
+window.addEventListener("scroll", function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+        navbar.style.top = "-80px"; // Hide menu on scroll down
+    } else {
+        navbar.style.top = "0"; // Show menu on scroll up
+    }
+    lastScrollTop = scrollTop;
+});
+
+/* Open the side navigation */
+function openNav() {
+    let sidenav = document.getElementById("mySidenav");
+    sidenav.classList.add("open");
+    sidenav.style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+  
+  /* Close the side navigation */
+  function closeNav() {
+    let sidenav = document.getElementById("mySidenav");
+    sidenav.classList.remove("open");
+    sidenav.style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+  }
