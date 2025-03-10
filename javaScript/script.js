@@ -1,12 +1,13 @@
 function toggleNav() {
     var nav = document.getElementById("myNav");
-    var menuIcon = document.getElementById("menuIcon");
+    var menuIcon = document.querySelector(".menu-toggle");
 
-    if (nav.style.width === "100%") {
-        nav.style.width = "0%";
-        menuIcon.innerHTML = "&#9776;"; // Hamburger icon
+    if (nav.classList.contains("open")) {
+        nav.classList.remove("open");
+        menuIcon.innerHTML = "&#9776;"; // Show hamburger when closed
     } else {
-        nav.style.width = "100%";
-        menuIcon.innerHTML = "&times;"; // Close (X) icon
+        nav.classList.add("open");
+        nav.style.width = "100%"; // Ensure overlay takes full width
+        menuIcon.innerHTML = "&times;"; // Show close icon when open
     }
 }
