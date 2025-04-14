@@ -1,7 +1,3 @@
-The changes specified are for the `index.html` file, which is not included here. Therefore, no changes will be made to the provided `script.js` file. 
-
-Here is the original content of `script.js`, unchanged:
-
 try {
   // Navbar toggle
   const hamburger = document.getElementById('hamburger-icon');

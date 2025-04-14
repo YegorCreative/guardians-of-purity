@@ -1,3 +1,16 @@
+/* Global box-sizing and rendering enhancements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /* Version: v1.3.7 | Changelog: Centered pillar-btn and matched other buttons */
 body {
     font-family: 'Open Sans', 'Roboto', sans-serif;
@@ -6,7 +19,7 @@ body {
     color: #2f484a; /* Dark text */
 }
 
-  /* Navbar */
+/* Navbar */
 .navbar {
     background-color: #4b6e72; /* Dark neutral */
     display: flex;
