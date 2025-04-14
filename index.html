@@ -1,12 +1,11 @@
-<!-- Version: v1.2.2 | Changelog: Added hero carousel with 12 images, updated logo -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guardians of Purity</title>
-  <!-- Google Fonts: Roboto -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Updated Font Families -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&family=Raleway:wght@400;600&family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <!-- CSS Links -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/styles-responsive.css">
@@ -19,7 +18,7 @@
     <nav class="navbar" id="main-nav" role="navigation">
       <div class="logo">
         <!-- Asset: logo.png -->
-        <img src="img/logo.png" alt="Guardians of Purity Logo" class="logo-img">
+        <img src="./img/logo.png" alt="Guardians of Purity Logo" class="logo-img">
       </div>
       <div class="nav-links" id="nav-links">
         <a href="#home" class="nav-link active">Home</a>
@@ -39,50 +38,16 @@
   </header>
 
   <main role="main">
-    <!-- Hero Section (Carousel) -->
-    <section class="hero" id="hero" role="region" aria-label="Hero carousel" aria-live="polite">
-      <div class="hero-carousel" id="hero-carousel">
-        <div class="hero-slide active" data-index="0">
-          <img src="img/heroe-image1.jpg" alt="Hero image 1" class="hero-img">
-        </div>
-        <div class="hero-slide" data-index="1">
-          <img src="img/heroe-image2.jpg" alt="Hero image 2" class="hero-img">
-        </div>
-        <div class="hero-slide" data-index="2">
-          <img src="img/heroe-image3.jpg" alt="Hero image 3" class="hero-img">
-        </div>
-        <div class="hero-slide" data-index="3">
-          <img src="img/heroe-image4.jpg" alt="Hero image 4" class="hero-img">
-        </div>
-        <div class="hero-slide" data-index="4">
-          <img src="img/heroe-image5.jpg" alt="Hero image 5" class="hero-img">
-        </div>
-        <div class="hero-slide" data-index="5">
-          <img src="img/heroe-image6.jpg" alt="Hero image 6" class="hero-img">
-        </div>
-        <div class="hero-slide" data-index="6">
-          <img src="img/heroe-image7.jpg" alt="Hero image 7" class="hero-img">
-        </div>
-        <div class="hero-slide" data-index="7">
-          <img src="img/heroe-image8.jpg" alt="Hero image 8" class="hero-img">
-        </div>
-        <div class="hero-slide" data-index="8">
-          <img src="img/heroe-image9.jpg" alt="Hero image 9" class="hero-img">
-        </div>
-        <div class="hero-slide" data-index="9">
-          <img src="img/heroe-image10.jpg" alt="Hero image 10" class="hero-img">
-        </div>
-        <div class="hero-slide" data-index="10">
-          <img src="img/heroe-image11.jpg" alt="Hero image 11" class="hero-img">
-        </div>
-        <div class="hero-slide" data-index="11">
-          <img src="img/heroe-image12.jpg" alt="Hero image 12" class="hero-img">
-        </div>
-      </div>
-      <button class="carousel-btn prev" id="hero-prev" aria-label="Previous hero image">←</button>
-      <button class="carousel-btn next" id="hero-next" aria-label="Next hero image">→</button>
+    <!-- Hero Section -->
+   <!-- To this -->
+    <section class="hero" id="hero">
+      <div class="hero-overlay"></div>
       <div class="hero-content">
-        <h1 class="hero-title">Break Free. Live Pure. Walk in Purpose.</h1>
+        <h1 class="hero-title">
+          Break Free.<br>
+          Live Pure.<br>
+          Walk in Purpose.
+        </h1>
         <p class="hero-subtitle">Helping individuals and families overcome pornography and sexual addiction through faith, science, and community support.</p>
         <a href="#resources" class="hero-btn">Get Started</a>
       </div>
@@ -95,29 +60,26 @@
       <a href="#about" class="mission-btn">Learn More</a>
     </section>
 
-    <!-- Three Pillars (Tabs) -->
     <section class="pillars" id="pillars" role="region" aria-label="How We Help">
       <h2 class="section-title">How We Help</h2>
-      <div class="tablist" role="tablist" id="pillar-tabs">
-        <button class="tab active" id="tab-faith" role="tab" aria-controls="panel-faith" aria-selected="true">Faith-Based Guidance</button>
-        <button class="tab" id="tab-science" role="tab" aria-controls="panel-science" aria-selected="false">Science-Backed Knowledge</button>
-        <button class="tab" id="tab-community" role="tab" aria-controls="panel-community" aria-selected="false">Community & Support</button>
-      </div>
-      <div class="tab-content">
-        <div class="tab-panel active" id="panel-faith" role="tabpanel" aria-labelledby="tab-faith">
+      <div class="pillar-grid">
+        <div class="pillar-card">
           <h3 class="pillar-title">Faith-Based Guidance</h3>
-          <p class="pillar-text">Biblical principles for purity and transformation. Scripture-based prayers and devotionals.</p>
+          <p class="pillar-text">Biblical principles for purity and transformation.</p>
+          <p class="pillar-text">Scripture-based prayers and devotionals.</p>
         </div>
-        <div class="tab-panel" id="panel-science" role="tabpanel" aria-labelledby="tab-science">
+        <div class="pillar-card">
           <h3 class="pillar-title">Science-Backed Knowledge</h3>
-          <p class="pillar-text">Understanding addiction and the brain. Practical strategies for breaking free.</p>
+          <p class="pillar-text">Understanding addiction and the brain.</p>
+          <p class="pillar-text">Practical strategies for breaking free.</p>
         </div>
-        <div class="tab-panel" id="panel-community" role="tabpanel" aria-labelledby="tab-community">
+        <div class="pillar-card">
           <h3 class="pillar-title">Community & Support</h3>
-          <p class="pillar-text">Online forums and accountability groups. Live events and coaching sessions.</p>
+          <p class="pillar-text">Online forums and accountability groups.</p>
+          <p class="pillar-text">Live events and coaching sessions.</p>
         </div>
       </div>
-      <a href="#resources" class="pillar-btn">Explore Resources</a>
+      <button class="pillar-btn" onclick="window.location.href='#resources'">Explore Resources</button>
     </section>
 
     <!-- Testimonials -->
@@ -131,8 +93,6 @@
           <p class="testimonial-text">"Through the support of this community, I found strength in God and restored my marriage." – Sarah K.</p>
         </div>
       </div>
-      <button class="carousel-btn prev" id="carousel-prev" aria-label="Previous testimonial">←</button>
-      <button class="carousel-btn next" id="carousel-next" aria-label="Next testimonial">→</button>
       <a href="#testimonials" class="testimonial-btn">Read More Stories</a>
     </section>
 
@@ -141,12 +101,12 @@
       <h2 class="section-title">Featured Resources</h2>
       <div class="resource-grid">
         <div class="resource-card">
-          <img src="img/prayer-guide.jpg" alt="31 Days of Prayer Guide" class="resource-img">
+          <img src="img/heroe-image4.jpg" alt="31 Days of Prayer Guide" class="resource-img">
           <h3 class="resource-title">31 Days of Prayer for Breaking Free</h3>
           <p class="resource-text">Downloadable Guide</p>
         </div>
         <div class="resource-card">
-          <img src="img/science-blog.jpg" alt="Science of Addiction Blog" class="resource-img">
+          <img src="img/heroe-image8.jpg" alt="Science of Addiction Blog" class="resource-img">
           <h3 class="resource-title">The Science of Porn Addiction</h3>
           <p class="resource-text">Blog Article</p>
         </div>
@@ -159,30 +119,30 @@
       <a href="#resources" class="resource-btn">View All Resources</a>
     </section>
 
-    <!-- Blog Highlights -->
-    <section class="blog" id="blog">
-      <h2 class="section-title">Latest Blog Posts</h2>
-      <div class="blog-grid">
-        <div class="blog-card">
-          <img src="img/accountability.jpg" alt="Accountability Blog" class="blog-img">
-          <h3 class="blog-title">Why Accountability is Key</h3>
-          <p class="blog-text">Learn how accountability helps overcome temptation.</p>
-          <a href="#blog" class="blog-link">Read More</a>
+    <!-- Most Important Topics -->
+    <section class="topics" id="topics">
+      <h2 class="section-title">Most Important Topics</h2>
+      <div class="topics-grid">
+        <div class="topics-card">
+          <img src="img/accountability.jpg" alt="Accountability Topic" class="topics-img">
+          <h3 class="topics-title">The Power of Accountability</h3>
+          <p class="topics-text">Discover how accountability can be a cornerstone in overcoming addiction.</p>
+          <a href="#topics" class="topics-link">Learn More</a>
         </div>
-        <div class="blog-card">
-          <img src="img/kids-porn.jpg" alt="Kids and Porn Blog" class="blog-img">
-          <h3 class="blog-title">Talking to Kids About Porn</h3>
-          <p class="blog-text">Tips for parents on tough conversations.</p>
-          <a href="#blog" class="blog-link">Read More</a>
+        <div class="topics-card">
+          <img src="img/kids-porn.jpg" alt="Protecting Kids Topic" class="topics-img">
+          <h3 class="topics-title">Protecting Kids from Porn</h3>
+          <p class="topics-text">Essential guidance for parents to safeguard children in a digital age.</p>
+          <a href="#topics" class="topics-link">Learn More</a>
         </div>
-        <div class="blog-card">
-          <img src="img/fasting.jpg" alt="Fasting Blog" class="blog-img">
-          <h3 class="blog-title">Fasting for Purity</h3>
-          <p class="blog-text">How fasting strengthens your resolve.</p>
-          <a href="#blog" class="blog-link">Read More</a>
+        <div class="topics-card">
+          <img src="img/fasting.jpg" alt="Spiritual Discipline Topic" class="topics-img">
+          <h3 class="topics-title">Spiritual Discipline for Purity</h3>
+          <p class="topics-text">Explore practices like fasting to strengthen your spiritual resolve.</p>
+          <a href="#topics" class="topics-link">Learn More</a>
         </div>
       </div>
-      <a href="#blog" class="blog-btn">Visit the Blog</a>
+      <a href="#topics" class="topics-btn">Explore All Topics</a>
     </section>
 
     <!-- Call to Action -->
