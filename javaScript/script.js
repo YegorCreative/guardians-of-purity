@@ -9,18 +9,12 @@ try {
 
   // Testimonial carousel
   const testimonials = document.querySelectorAll('.testimonial');
-  const nextBtn = document.getElementById('carousel-next');
   let currentIndex = 0;
 
   function showTestimonial(index) {
     testimonials.forEach(t => t.classList.remove('active'));
     testimonials[index].classList.add('active');
   }
-
-  nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex === testimonials.length - 1) ? 0 : currentIndex + 1;
-    showTestimonial(currentIndex);
-  });
 
   // CTA form validation
   const ctaForm = document.getElementById('cta-form');

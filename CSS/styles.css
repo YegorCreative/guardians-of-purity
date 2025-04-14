@@ -56,7 +56,7 @@ body {
 
 .cta-btn {
     background-color: #6fa3a4; /* Accent green */
-    color: #FFFFFF;
+    color: #FFFFFF !important;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
@@ -114,10 +114,12 @@ body {
     margin: 0 0 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     line-height: 1.2; /* Adjusted for <br> tags */
+    color: #FFFFFF;
+    text-transform: uppercase;
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
+    color: #FFFFFF;nt-size: 1.2rem;
     margin: 0 0 30px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
@@ -254,25 +256,6 @@ body {
     font-size: 1.1rem;
     color: #2f484a;
     font-style: italic;
-}
-
-.carousel-btn {
-    background-color: #b0d2da; /* Primary blue */
-    color: #FFFFFF;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.carousel-btn.prev {
-    left: 0;
-}
-
-.carousel-btn:hover {
-    background-color: #3A78C2;
 }
 
 .testimonial-btn {
@@ -443,6 +426,7 @@ body {
     border: none;
     border-radius: 5px;
     width: 250px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .cta-btn {
