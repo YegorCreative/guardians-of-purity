@@ -1,0 +1,158 @@
+/* Smaller screens (below 768px) */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+  .logo-img {
+    height: 30px;
+  }
+  .nav-links {
+    display: none;
+    width: 100%;
+  }
+  .nav-link, .cta-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 20px;
+    margin: 0;
+    color: #4b6e72; /* Updated color */
+  }
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+  .navbar.responsive .nav-links {
+    display: block;
+  }
+  /* Hero */
+  .hero {
+    padding: 60px 20px;
+    min-height: 300px;
+    background-color: #e6f3f5; /* Updated background color */
+  }
+  .hero-title {
+    font-size: 1.8rem;
+    color: #6fa3a4; /* Updated color */
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+    color: #4b6e72; /* Updated color */
+  }
+  .hero-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #b0d2da; /* Updated background color */
+    color: #2f484a; /* Updated color */
+  }
+  /* About Mission */
+  .about-mission {
+    padding: 30px 20px;
+    background-color: #e6f3f5; /* Updated background color */
+  }
+  .section-title {
+    font-size: 1.5rem;
+    color: #6fa3a4; /* Updated color */
+  }
+  .mission-text {
+    font-size: 1rem;
+    color: #4b6e72; /* Updated color */
+  }
+  /* Pillars */
+  .pillar-card {
+    margin-bottom: 20px;
+  }
+  .pillar-btn {
+    background-color: #b0d2da; /* Updated background color */
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+    display: block;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    border: none;
+    cursor: pointer;
+    margin: 20px auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pillar-btn:hover {
+    background-color: #9bc6cc; /* Darker variant of updated color */
+  }
+  /* Testimonials */
+  .carousel-btn {
+    padding: 5px;
+    background-color: #b0d2da; /* Updated background color */
+    color: #2f484a; /* Updated color */
+  }
+  /* Resources */
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+  .resource-img {
+    height: 120px;
+  }
+  /* Topics */
+  .topics-grid {
+    grid-template-columns: 1fr;
+  }
+  .topics-img {
+    height: 120px;
+  }
+  /* CTA */
+  .cta-form {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cta-input {
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background-color: #e6f3f5; /* Updated background color */
+    color: #4b6e72; /* Updated color */
+  }
+}
+
+/* Medium screens (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .resource-grid, .topics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tablist {
+    flex-wrap: wrap;
+  }
+  .tab {
+    flex: 1 1 45%;
+  }
+  .hero {
+    min-height: 350px;
+  }
+}
+
+/* Larger screens (above 1200px) */
+@media (min-width: 1200px) {
+  .hero {
+    min-height: 500px;
+  }
+  .hero-title {
+    font-size: 3.375rem;
+    color: #6fa3a4; /* Updated color */
+  }
+  .hero-subtitle {
+    font-size: 1.5rem;
+    color: #4b6e72; /* Updated color */
+  }
+  .section-title {
+    font-size: 2.5rem;
+    color: #6fa3a4; /* Updated color */
+  }
+}

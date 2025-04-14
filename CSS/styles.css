@@ -1,217 +1,492 @@
+/* Version: v1.3.7 | Changelog: Centered pillar-btn and matched other buttons */
 body {
-    font-family: Arial, sans-serif;
-    /* Consistent typography */
-    text-align: center;
-    /* Center-align text */
-    background-color: white; /* Set to white */
-    /* Light background for readability */
+    font-family: 'Open Sans', 'Roboto', sans-serif;
     margin: 0;
-    /* Remove default margin */
-    padding: 0;
-    /* Remove default padding */
+    background-color: #e6f3f5; /* Light neutral */
+    color: #2f484a; /* Dark text */
+}
+
+  /* Navbar */
+.navbar {
+    background-color: #4b6e72; /* Dark neutral */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    width: 100%;
     box-sizing: border-box;
-    /* Ensure consistent box model */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
- .header-section {
-    background-image: url('../Assets/blue-background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 700px; /* Set header height */
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: rgba(128, 0, 128, 0.35); /* 35% opacity purple */
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Style the navigation menu */
-#navbar {
-    width: 100%;
-    background-color: #555;
-    overflow: auto;
-    display: flex;
-    justify-content: center;
-    /* Align nav items */
-    align-items: center;
-    padding: 10px;
-}
-
-
-/* Add a background color on mouse-over */
-#navbar a:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-    /* More subtle hover effect */
-}
-
-/* Style the current/active link */
-#navbar a.active {
-    background-color: #04AA6D;
-}
-
-
-
-.logo img {
-    max-width: 100%;
-    width: 120px;
-    /* Ensures logo size stays consistent */
-    height: auto;
-    object-fit: contain;
+.logo-img {
+    height: 40px;
     display: block;
 }
 
 .nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-link {
+    color: #FFFFFF; /* White text */
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: #b0d2da; /* Primary blue */
+    border-radius: 5px;
+}
+
+.cta-btn {
+    background-color: #6fa3a4; /* Accent green */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #45B066; /* Darker green */
+}
+
+.hamburger {
+    display: none;
+    padding: 10px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #FFFFFF;
+    margin: 5px auto;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 120px 20px;
+    color: #FFFFFF;
+    min-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    /* Ensure responsiveness */
 }
 
-.nav-links li {
-    padding: 0 10px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 17px;
-    padding: 12px;
-    text-align: center;
-    flex-grow: 1;
-    /* Allow links to distribute evenly */
-}
-
-
-/* The Overlay (background) */
-.overlay {
-    height: 100%;
-    width: 0;
-
-    z-index: 1;
-    left: 0;
+.hero-overlay {
+    position: absolute;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    overflow-x: hidden;
-    transition: 0.5s;
-}
-
-/* Position the content inside the overlay */
-.overlay-content {
-    position: relative;
-    top: 25%;
+    left: 0;
     width: 100%;
-    text-align: center;
-    margin-top: 30px;
-}
-
-/* The navigation links inside the overlay */
-.overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.overlay a:hover,
-.overlay a:focus {
-    color: #f1f1f1;
-}
-
-/* Position the close button (top right corner) */
-.overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
-}
-
-/* Mobile menu button */
-.mobile-menu-btn {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1001;
-    color: white;
-}
-
-
-/* The side navigation menu */
-.sidenav {
     height: 100%;
-    width: 0;
-    position: fixed;
+    background: linear-gradient(rgba(123, 104, 238, 0.4), rgba(74, 144, 226, 0.4)), url('../img/heroe-image8.jpg') center/cover no-repeat;
+}
+
+.hero-content {
+    position: relative;
     z-index: 1;
-    left: 0;
-    top: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding-top: 60px;
-    transition: width 0.5s ease-in-out;
-    visibility: hidden;
-    /* Hide completely when closed */
+    max-width: 800px;
 }
 
-/* Ensure visibility changes when opened */
-.sidenav.open {
-    width: 250px;
-    visibility: visible;
+.hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.375rem;
+    margin: 0 0 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    line-height: 1.2; /* Adjusted for <br> tags */
 }
 
-/* The navigation menu links */
-.sidenav a {
-    padding: 8px 8px 8px 32px;
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin: 0 0 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-btn {
+    font-family: 'Raleway', sans-serif;
+    background-color: #b0d2da; /* Primary blue */
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border-radius: 5px;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
 }
 
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-    color: #f1f1f1;
+.hero-btn:hover {
+    background-color: #3A78C2; /* Darker blue */
 }
 
-/* Position and style the close button */
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+/* About Mission */
+.about-mission {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #FFFFFF; /* White */
 }
 
-/* Style page content - shift right when sidenav opens */
-#main {
-    transition: margin-left .5s;
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #4b6e72; /* Dark neutral */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.mission-text {
+    font-size: 1.1rem;
+    color: #2f484a;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.mission-btn {
+    font-family: 'Raleway', sans-serif;
+    background-color: #b0d2da; /* Primary blue */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.mission-btn:hover {
+    background-color: #3A78C2;
+}
+
+/* Pillars */
+.pillars {
+    padding: 50px 20px;
+    background-color: #e6f3f5; /* Light neutral */
+    text-align: center; /* Center the button */
+}
+
+.pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.pillar-card {
+    background-color: #FFFFFF;
+    padding: 25px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.pillar-card .pillar-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #4b6e72;
+}
+
+.pillar-card .pillar-text {
+    font-size: 1rem;
+    color: #2f484a;
+    margin-bottom: 10px;
+}
+
+.pillar-btn {
+    font-family: 'Raleway', sans-serif;
+    background-color: #b0d2da; /* Primary blue */
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+    display: inline-block;
+    text-align: center;
+    max-width: 200px; /* Match other buttons */
+    margin: 20px auto; /* Center with auto margins */
+}
+
+.pillar-btn:hover {
+    background-color: #3A78C2; /* Darker blue */
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 50px 20px;
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+.testimonial-carousel {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.testimonial {
+    display: none;
     padding: 20px;
+}
+
+.testimonial.active {
+    display: block;
+}
+
+.testimonial-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #2f484a;
+    font-style: italic;
+}
+
+.carousel-btn {
+    background-color: #b0d2da; /* Primary blue */
+    color: #FFFFFF;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-btn.prev {
+    left: 0;
+}
+
+.carousel-btn:hover {
+    background-color: #3A78C2;
+}
+
+.testimonial-btn {
+    font-family: 'Raleway', sans-serif;
+    background-color: #b0d2da; /* Primary blue */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.testimonial-btn:hover {
+    background-color: #3A78C2;
+}
+
+/* Resources */
+.resources {
+    padding: 50px 20px;
+    background-color: #e6f3f5;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.resource-card {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.resource-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.resource-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    color: #4b6e72;
+    margin: 10px;
+}
+
+.resource-text {
+    font-size: 1rem;
+    color: #2f484a;
+    margin: 0 10px 20px;
+}
+
+.resource-btn {
+    font-family: 'Raleway', sans-serif;
+    display: block;
+    background-color: #b0d2da; /* Primary blue */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    max-width: 200px;
+    margin: 20px auto;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.resource-btn:hover {
+    background-color: #3A78C2;
+}
+
+/* Topics */
+.topics {
+    padding: 50px 20px;
+    background-color: #FFFFFF;
+}
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.topics-card {
+    background-color: #e6f3f5;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.topics-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.topics-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    color: #4b6e72;
+    margin: 10px;
+}
+
+.topics-text {
+    font-size: 1rem;
+    color: #2f484a;
+    margin: 0 10px 10px;
+}
+
+.topics-link {
+    display: block;
+    color: #b0d2da; /* Primary blue */
+    text-decoration: none;
+    margin: 0 10px 20px;
+}
+
+.topics-link:hover {
+    text-decoration: underline;
+}
+
+.topics-btn {
+    font-family: 'Raleway', sans-serif;
+    display: block;
+    background-color: #b0d2da; /* Primary blue */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    max-width: 200px;
+    margin: 20px auto;
+    transition: background-color 0.3s;
+}
+
+.topics-btn:hover {
+    background-color: #3A78C2;
+}
+
+/* CTA */
+.cta {
+    background-color: #4b6e72; /* Dark neutral */
+    text-align: center;
+    padding: 50px 20px;
+    color: #FFFFFF;
+}
+
+.cta-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin: 0 0 20px;
+}
+
+.cta-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cta-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+}
+
+.cta-btn {
+    font-family: 'Raleway', sans-serif;
+    background-color: #6fa3a4; /* Accent green */
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #45B066;
+}
+
+/* Footer */
+.footer {
+    background-color: #4b6e72; /* Dark neutral */
+    color: #FFFFFF;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.footer-social {
+    margin-bottom: 20px;
+}
+
+.social-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+.social-link:hover {
+    text-decoration: underline;
+}
+
+.footer-contact {
+    margin-bottom: 10px;
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
 }

@@ -1,48 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guardians of Purity</title>
-    <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="stylesheet" href="CSS/responsive.css">
-    <link rel="icon" type="image/png" href="Assets/GuardiansOfPurityLogo2.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guardians of Purity</title>
+  <!-- Google Fonts: Updated Font Families -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&family=Raleway:wght@400;600&family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- CSS Links -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles-responsive.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
 <body>
-    <nav id="navbar"> 
-        <ul class="nav-links"> 
-            <li><a href="#"><img src="Assets/GuardiansOfPurityLogo2.png" alt="Guardians of Purity Logo" width="120px"></a></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">More</a></li>
-            <li><a href="#">Connect</a></li>
-            <li><a href="#">NEW</a></li>
-        </ul>
+  <!-- Navbar -->
+  <header role="banner">
+    <nav class="navbar" id="main-nav" role="navigation">
+      <div class="logo">
+        <!-- Asset: logo.png -->
+        <img src="./img/logo.png" alt="Guardians of Purity Logo" class="logo-img">
+      </div>
+      <div class="nav-links" id="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#resources" class="nav-link">Resources</a>
+        <a href="#community" class="nav-link">Community</a>
+        <a href="#blog" class="nav-link">Blog</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#resources" class="cta-btn">Start Your Journey</a>
+      </div>
+      <a href="javascript:void(0);" class="hamburger" id="hamburger-icon" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
     </nav>
-    <!-- The side navigation menu -->
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">More</a>
-      <a href="#">Connect</a>
-      <a href="#">NEW</a>
-    </div>
-    
-    <!-- Use any element to open the sidenav -->
-    <span onclick="openNav()" class="mobile-menu-btn">☰ Open</span>
-    
-    <!-- Page content wrapper -->
-    <div id="main">
-    <header>
-        <h1>Guardians of Purity</h1>
-    </header>
-    
-    <main>
-        <p>this is a simple webpage setup.</p>
-        <button onclick="showalert()">click me</button>
-    </main>
+  </header>
 
-    <script src="javascript/script.js"></script>
+  <main role="main">
+    <!-- Hero Section -->
+   <!-- To this -->
+    <section class="hero" id="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Break Free.<br>
+          Live Pure.<br>
+          Walk in Purpose.
+        </h1>
+        <p class="hero-subtitle">Helping individuals and families overcome pornography and sexual addiction through faith, science, and community support.</p>
+        <a href="#resources" class="hero-btn">Get Started</a>
+      </div>
+    </section>
+
+    <!-- About Mission -->
+    <section class="about-mission" id="about-mission">
+      <h2 class="section-title">Our Mission</h2>
+      <p class="mission-text">At Guardians of Purity, we believe that true freedom comes from knowledge, faith, and a strong support system. Our mission is to equip you with the resources to overcome addiction, develop discipline, and walk in purity according to God’s design.</p>
+      <a href="#about" class="mission-btn">Learn More</a>
+    </section>
+
+    <section class="pillars" id="pillars" role="region" aria-label="How We Help">
+      <h2 class="section-title">How We Help</h2>
+      <div class="pillar-grid">
+        <div class="pillar-card">
+          <h3 class="pillar-title">Faith-Based Guidance</h3>
+          <p class="pillar-text">Biblical principles for purity and transformation.</p>
+          <p class="pillar-text">Scripture-based prayers and devotionals.</p>
+        </div>
+        <div class="pillar-card">
+          <h3 class="pillar-title">Science-Backed Knowledge</h3>
+          <p class="pillar-text">Understanding addiction and the brain.</p>
+          <p class="pillar-text">Practical strategies for breaking free.</p>
+        </div>
+        <div class="pillar-card">
+          <h3 class="pillar-title">Community & Support</h3>
+          <p class="pillar-text">Online forums and accountability groups.</p>
+          <p class="pillar-text">Live events and coaching sessions.</p>
+        </div>
+      </div>
+      <a href="#resources" class="pillar-btn">Explore Resources</a>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials" role="region" aria-label="Success Stories" aria-live="polite">
+      <h2 class="section-title">Success Stories</h2>
+      <div class="testimonial-carousel" id="testimonial-carousel">
+        <div class="testimonial active" data-index="0">
+          <p class="testimonial-text">"I was stuck in addiction for years, but Guardians of Purity gave me the tools and faith-based encouragement I needed to break free." – John D.</p>
+        </div>
+        <div class="testimonial" data-index="1">
+          <p class="testimonial-text">"Through the support of this community, I found strength in God and restored my marriage." – Sarah K.</p>
+        </div>
+      </div>
+      <a href="#testimonials" class="testimonial-btn">Read More Stories</a>
+    </section>
+
+    <!-- Featured Resources -->
+    <section class="resources" id="resources">
+      <h2 class="section-title">Featured Resources</h2>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <img src="img/heroe-image4.jpg" alt="31 Days of Prayer Guide" class="resource-img">
+          <h3 class="resource-title">31 Days of Prayer for Breaking Free</h3>
+          <p class="resource-text">Downloadable Guide</p>
+        </div>
+        <div class="resource-card">
+          <img src="img/heroe-image8.jpg" alt="Science of Addiction Blog" class="resource-img">
+          <h3 class="resource-title">The Science of Porn Addiction</h3>
+          <p class="resource-text">Blog Article</p>
+        </div>
+        <div class="resource-card">
+          <img src="img/heroe-image11.jpg" alt="Purity Action Plan Course" class="resource-img">
+          <h3 class="resource-title">Building a Purity Action Plan</h3>
+          <p class="resource-text">Online Course</p>
+        </div>
+      </div>
+      <a href="#resources" class="resource-btn">View All Resources</a>
+    </section>
+
+    <!-- Most Important Topics -->
+    <section class="topics" id="topics">
+      <h2 class="section-title">Most Important Topics</h2>
+      <div class="topics-grid">
+        <div class="topics-card">
+          <img src="img/heroe-image14.jpg" alt="Accountability Topic" class="topics-img">
+          <h3 class="topics-title">The Power of Accountability</h3>
+          <p class="topics-text">Discover how accountability can be a cornerstone in overcoming addiction.</p>
+          <a href="#topics" class="topics-link">Learn More</a>
+        </div>
+        <div class="topics-card">
+            <img src="img/heroe-image15.jpg" alt="Protecting Kids Topic" class="topics-img">
+          <h3 class="topics-title">Protecting Kids from Porn</h3>
+          <p class="topics-text">Essential guidance for parents to safeguard children in a digital age.</p>
+          <a href="#topics" class="topics-link">Learn More</a>
+        </div>
+        <div class="topics-card">
+          <img src="img/heroe-image16.jpg" alt="Spiritual Discipline Topic" class="topics-img">
+          <h3 class="topics-title">Spiritual Discipline for Purity</h3>
+          <p class="topics-text">Explore practices like fasting to strengthen your spiritual resolve.</p>
+          <a href="#topics" class="topics-link">Learn More</a>
+        </div>
+      </div>
+      <a href="#topics" class="topics-btn">Explore All Topics</a>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta" id="cta">
+      <h2 class="cta-title">Join Thousands on the Journey to Purity</h2>
+      <form class="cta-form" id="cta-form">
+        <input type="email" class="cta-input" id="cta-email" placeholder="Enter your email" aria-label="Email address">
+        <button type="submit" class="cta-btn" id="cta-submit">Download Free Guide</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="footer-links">
+      <a href="#about" class="footer-link">About</a>
+      <a href="#resources" class="footer-link">Resources</a>
+      <a href="#blog" class="footer-link">Blog</a>
+      <a href="#contact" class="footer-link">Contact</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://facebook.com" class="social-link">Facebook</a>
+      <a href="https://instagram.com" class="social-link">Instagram</a>
+      <a href="https://youtube.com" class="social-link">YouTube</a>
+    </div>
+    <p class="footer-contact">Email: support@guardiansofpurity.com</p>
+    <p class="footer-copyright">© 2025 Guardians of Purity</p>
+  </footer>
+
+  <!-- JavaScript Link -->
+  <script src="js/script.js"></script>
 </body>
 </html>
