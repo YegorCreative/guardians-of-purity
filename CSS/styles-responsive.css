@@ -1,0 +1,171 @@
+/* Version: v1.2.2 | Changelog: Added responsive hero carousel */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Smaller screens (below 768px) */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo-img {
+    height: 30px;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+  }
+
+  .nav-link, .cta-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 20px;
+    margin: 0;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  .navbar.responsive .nav-links {
+    display: block;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 50px 20px;
+  }
+
+  .hero-carousel {
+    height: 300px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  /* About Mission */
+  .about-mission {
+    padding: 30px 20px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .mission-text {
+    font-size: 1rem;
+  }
+
+  /* Pillars (Tabs) */
+  .tablist {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .tab {
+    width: 100%;
+    text-align: left;
+  }
+
+  .tab-panel {
+    padding: 15px;
+  }
+
+  /* Testimonials */
+  .carousel-btn {
+    padding: 5px;
+  }
+
+  .carousel-btn.prev {
+    left: 0;
+  }
+
+  .carousel-btn.next {
+    right: 0;
+  }
+
+  /* Resources */
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-img {
+    height: 120px;
+  }
+
+  /* Blog */
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-img {
+    height: 120px;
+  }
+
+  /* CTA */
+  .cta-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Medium screens (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .resource-grid, .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tablist {
+    flex-wrap: wrap;
+  }
+
+  .tab {
+    flex: 1 1 45%;
+  }
+
+  .hero-carousel {
+    height: 350px;
+  }
+}
+
+/* Larger screens (above 1200px) */
+@media (min-width: 1200px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-carousel {
+    height: 500px;
+  }
+}
