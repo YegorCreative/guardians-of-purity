@@ -1,39 +1,43 @@
+The changes specified are for the `index.html` file, which is not included here. Therefore, no changes will be made to the provided `script.js` file. 
+
+Here is the original content of `script.js`, unchanged:
+
 try {
-    // Navbar toggle
-    const hamburger = document.getElementById('hamburger-icon');
-    const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => {
-      const isExpanded = navLinks.classList.toggle('responsive');
-      hamburger.setAttribute('aria-expanded', isExpanded);
-    });
-  
-    // Testimonial carousel
-    const testimonials = document.querySelectorAll('.testimonial');
-    const nextBtn = document.getElementById('carousel-next');
-    let currentIndex = 0;
-  
-    function showTestimonial(index) {
-      testimonials.forEach(t => t.classList.remove('active'));
-      testimonials[index].classList.add('active');
-    }
-  
-    nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex === testimonials.length - 1) ? 0 : currentIndex + 1;
-      showTestimonial(currentIndex);
-    });
-  
-    // CTA form validation
-    const ctaForm = document.getElementById('cta-form');
-    const ctaEmail = document.getElementById('cta-email');
-    ctaForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (ctaEmail.value.trim() === '' || !ctaEmail.value.includes('@')) {
-        alert('Please enter a valid email address.');
-      } else {
-        alert('Thank you! Guide download link sent to ' + ctaEmail.value);
-        ctaEmail.value = '';
-      }
-    });
-  } catch (error) {
-    console.error('Error in script:', error);
+  // Navbar toggle
+  const hamburger = document.getElementById('hamburger-icon');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => {
+    const isExpanded = navLinks.classList.toggle('responsive');
+    hamburger.setAttribute('aria-expanded', isExpanded);
+  });
+
+  // Testimonial carousel
+  const testimonials = document.querySelectorAll('.testimonial');
+  const nextBtn = document.getElementById('carousel-next');
+  let currentIndex = 0;
+
+  function showTestimonial(index) {
+    testimonials.forEach(t => t.classList.remove('active'));
+    testimonials[index].classList.add('active');
   }
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex === testimonials.length - 1) ? 0 : currentIndex + 1;
+    showTestimonial(currentIndex);
+  });
+
+  // CTA form validation
+  const ctaForm = document.getElementById('cta-form');
+  const ctaEmail = document.getElementById('cta-email');
+  ctaForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (ctaEmail.value.trim() === '' || !ctaEmail.value.includes('@')) {
+      alert('Please enter a valid email address.');
+    } else {
+      alert('Thank you! Guide download link sent to ' + ctaEmail.value);
+      ctaEmail.value = '';
+    }
+  });
+} catch (error) {
+  console.error('Error in script:', error);
+}

@@ -1,257 +1,250 @@
+/* Version: v1.3.7 | Changelog: Centered pillar-btn and matched other buttons */
 body {
     font-family: 'Open Sans', 'Roboto', sans-serif;
     margin: 0;
-    background-color: #F5F7FA; /* Light neutral */
-    color: #1A1A1A; /* Dark text */
-  }
-  
+    background-color: #e6f3f5; /* Light neutral */
+    color: #2f484a; /* Dark text */
+}
+
   /* Navbar */
-  .navbar {
-    background-color: #2A2F4F; /* Dark neutral */
+.navbar {
+    background-color: #4b6e72; /* Dark neutral */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
     width: 100%;
     box-sizing: border-box;
-  }
-  
-  .logo-img {
+}
+
+.logo-img {
     height: 40px;
     display: block;
-  }
-  
-  .nav-links {
+}
+
+.nav-links {
     display: flex;
     align-items: center;
     gap: 10px;
-  }
-  
-  .nav-link {
+}
+
+.nav-link {
     color: #FFFFFF; /* White text */
     text-decoration: none;
     padding: 10px 15px;
     font-size: 1rem;
     transition: background-color 0.3s;
-  }
-  
-  .nav-link:hover, .nav-link.active {
-    background-color: #4A90E2; /* Primary blue */
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: #b0d2da; /* Primary blue */
     border-radius: 5px;
-  }
-  
-  .cta-btn {
-    background-color: #50C878; /* Accent green */
+}
+
+.cta-btn {
+    background-color: #6fa3a4; /* Accent green */
     color: #FFFFFF;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
     font-size: 1rem;
     transition: background-color 0.3s;
-  }
-  
-  .cta-btn:hover {
+}
+
+.cta-btn:hover {
     background-color: #45B066; /* Darker green */
-  }
-  
-  .hamburger {
+}
+
+.hamburger {
     display: none;
     padding: 10px;
-  }
-  
-  .bar {
+}
+
+.bar {
     display: block;
     width: 25px;
     height: 3px;
     background-color: #FFFFFF;
     margin: 5px auto;
-  }
-  
-  /* Hero */
-  .hero {
+}
+
+/* Hero */
+.hero {
     position: relative;
-     text-align: center;
+    text-align: center;
     padding: 120px 20px;
     color: #FFFFFF;
     min-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .hero-overlay {
+}
+
+.hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(rgba(123, 104, 238, 0.4), rgba(74, 144, 226, 0.4)), url('../img/heroe-image8.jpg') center/cover no-repeat;
-  }
-  
-  .hero-content {
+}
+
+.hero-content {
     position: relative;
     z-index: 1;
     max-width: 800px;
-  }
-  
-  .hero-title {
+}
+
+.hero-title {
+    font-family: 'Montserrat', sans-serif;
     font-size: 3.375rem;
     margin: 0 0 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-  }
-  
-  .hero-subtitle {
+    line-height: 1.2; /* Adjusted for <br> tags */
+}
+
+.hero-subtitle {
     font-size: 1.2rem;
     margin: 0 0 30px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  }
-  
-  .hero-btn {
-    background-color: #4A90E2; /* Primary blue */
+}
+
+.hero-btn {
+    font-family: 'Raleway', sans-serif;
+    background-color: #b0d2da; /* Primary blue */
     color: #FFFFFF;
     padding: 15px 30px;
     border-radius: 5px;
     text-decoration: none;
     font-size: 1.1rem;
     transition: background-color 0.3s;
-  }
-  
-  .hero-btn:hover {
+}
+
+.hero-btn:hover {
     background-color: #3A78C2; /* Darker blue */
-  }
-  
-  /* About Mission */
-  .about-mission {
+}
+
+/* About Mission */
+.about-mission {
     text-align: center;
     padding: 50px 20px;
     background-color: #FFFFFF; /* White */
-  }
-  
-  .section-title {
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
-    color: #2A2F4F; /* Dark neutral */
+    color: #4b6e72; /* Dark neutral */
     margin-bottom: 20px;
     text-align: center;
-  }
-  
-  .mission-text {
+}
+
+.mission-text {
     font-size: 1.1rem;
-    color: #1A1A1A;
+    color: #2f484a;
     max-width: 600px;
     margin: 0 auto 30px;
-  }
-  
-  .mission-btn {
-    background-color: #4A90E2; /* Primary blue */
+}
+
+.mission-btn {
+    font-family: 'Raleway', sans-serif;
+    background-color: #b0d2da; /* Primary blue */
     color: #FFFFFF;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s;
-  }
-  
-  .mission-btn:hover {
+}
+
+.mission-btn:hover {
     background-color: #3A78C2;
-  }
-  
-  /* Pillars (Tabs) */
-  .pillars {
+}
+
+/* Pillars */
+.pillars {
     padding: 50px 20px;
-    background-color: #F5F7FA; /* Light neutral */
-  }
-  
-  .tablist {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .tab {
+    background-color: #e6f3f5; /* Light neutral */
+    text-align: center; /* Center the button */
+}
+
+.pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.pillar-card {
     background-color: #FFFFFF;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    color: #1A1A1A;
-  }
-  
-  .tab:hover, .tab.active {
-    background-color: #7B68EE; /* Secondary purple */
-    color: #FFFFFF;
-  }
-  
-  .tab-content {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .tab-panel {
-    display: none;
-    background-color: #FFFFFF;
-    padding: 20px;
+    padding: 25px 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .tab-panel.active {
-    display: block;
-  }
-  
-  .pillar-title {
-    font-size: 1.5rem;
-    color: #2A2F4F;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.pillar-card .pillar-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
     margin-bottom: 10px;
-  }
-  
-  .pillar-text {
+    color: #4b6e72;
+}
+
+.pillar-card .pillar-text {
     font-size: 1rem;
-    color: #1A1A1A;
-  }
-  
-  .pillar-btn {
-    display: flex;
-    justify-content: center;  /* centers text horizontally */
-    align-items: center;      /* centers text vertically */
-    text-align: center;       /* ensures multi-line text is also centered */
-  }
-  
-  .pillar-btn:hover {
-    background-color: #3A78C2;
-  }
-  
-  /* Testimonials */
-  .testimonials {
+    color: #2f484a;
+    margin-bottom: 10px;
+}
+
+.pillar-btn {
+    font-family: 'Raleway', sans-serif;
+    background-color: #b0d2da; /* Primary blue */
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+    display: inline-block;
+    text-align: center;
+    max-width: 200px; /* Match other buttons */
+    margin: 20px auto; /* Center with auto margins */
+}
+
+.pillar-btn:hover {
+    background-color: #3A78C2; /* Darker blue */
+}
+
+/* Testimonials */
+.testimonials {
     padding: 50px 20px;
     background-color: #FFFFFF;
     text-align: center;
-  }
-  
-  .testimonial-carousel {
+}
+
+.testimonial-carousel {
     max-width: 800px;
     margin: 0 auto;
     position: relative;
-  }
-  
-  .testimonial {
+}
+
+.testimonial {
     display: none;
     padding: 20px;
-  }
-  
-  .testimonial.active {
+}
+
+.testimonial.active {
     display: block;
-  }
-  
-  .testimonial-text {
+}
+
+.testimonial-text {
+    font-family: 'Playfair Display', serif;
     font-size: 1.1rem;
-    color: #1A1A1A;
+    color: #2f484a;
     font-style: italic;
-  }
-  
-  .carousel-btn {
-    background-color: #4A90E2; /* Primary blue */
+}
+
+.carousel-btn {
+    background-color: #b0d2da; /* Primary blue */
     color: #FFFFFF;
     border: none;
     padding: 10px;
@@ -259,14 +252,19 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-  }
-  
-  .carousel-btn:hover {
+}
+
+.carousel-btn.prev {
+    left: 0;
+}
+
+.carousel-btn:hover {
     background-color: #3A78C2;
-  }
-  
-  .testimonial-btn {
-    background-color: #4A90E2; /* Primary blue */
+}
+
+.testimonial-btn {
+    font-family: 'Raleway', sans-serif;
+    background-color: #b0d2da; /* Primary blue */
     color: #FFFFFF;
     padding: 10px 20px;
     border-radius: 5px;
@@ -274,54 +272,56 @@ body {
     margin-top: 20px;
     display: inline-block;
     transition: background-color 0.3s;
-  }
-  
-  .testimonial-btn:hover {
+}
+
+.testimonial-btn:hover {
     background-color: #3A78C2;
-  }
-  
-  /* Resources */
-  .resources {
+}
+
+/* Resources */
+.resources {
     padding: 50px 20px;
-    background-color: #F5F7FA;
-  }
-  
-  .resource-grid {
+    background-color: #e6f3f5;
+}
+
+.resource-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  .resource-card {
+}
+
+.resource-card {
     background-color: #FFFFFF;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .resource-img {
+}
+
+.resource-img {
     width: 100%;
     height: 150px;
     object-fit: cover;
-  }
-  
-  .resource-title {
+}
+
+.resource-title {
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.3rem;
-    color: #2A2F4F;
+    color: #4b6e72;
     margin: 10px;
-  }
-  
-  .resource-text {
+}
+
+.resource-text {
     font-size: 1rem;
-    color: #1A1A1A;
+    color: #2f484a;
     margin: 0 10px 20px;
-  }
-  
-  .resource-btn {
+}
+
+.resource-btn {
+    font-family: 'Raleway', sans-serif;
     display: block;
-    background-color: #4A90E2; /* Primary blue */
+    background-color: #b0d2da; /* Primary blue */
     color: #FFFFFF;
     padding: 10px 20px;
     border-radius: 5px;
@@ -330,64 +330,66 @@ body {
     margin: 20px auto;
     text-align: center;
     transition: background-color 0.3s;
-  }
-  
-  .resource-btn:hover {
+}
+
+.resource-btn:hover {
     background-color: #3A78C2;
-  }
-  
-  /* Topics */
-  .topics {
+}
+
+/* Topics */
+.topics {
     padding: 50px 20px;
     background-color: #FFFFFF;
-  }
-  
-  .topics-grid {
+}
+
+.topics-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  .topics-card {
-    background-color: #F5F7FA;
+}
+
+.topics-card {
+    background-color: #e6f3f5;
     border-radius: 10px;
     overflow: hidden;
-  }
-  
-  .topics-img {
+}
+
+.topics-img {
     width: 100%;
     height: 150px;
     object-fit: cover;
-  }
-  
-  .topics-title {
+}
+
+.topics-title {
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.3rem;
-    color: #2A2F4F;
+    color: #4b6e72;
     margin: 10px;
-  }
-  
-  .topics-text {
+}
+
+.topics-text {
     font-size: 1rem;
-    color: #1A1A1A;
+    color: #2f484a;
     margin: 0 10px 10px;
-  }
-  
-  .topics-link {
+}
+
+.topics-link {
     display: block;
-    color: #4A90E2; /* Primary blue */
+    color: #b0d2da; /* Primary blue */
     text-decoration: none;
     margin: 0 10px 20px;
-  }
-  
-  .topics-link:hover {
+}
+
+.topics-link:hover {
     text-decoration: underline;
-  }
-  
-  .topics-btn {
+}
+
+.topics-btn {
+    font-family: 'Raleway', sans-serif;
     display: block;
-    background-color: #4A90E2; /* Primary blue */
+    background-color: #b0d2da; /* Primary blue */
     color: #FFFFFF;
     padding: 10px 20px;
     border-radius: 5px;
@@ -396,134 +398,95 @@ body {
     max-width: 200px;
     margin: 20px auto;
     transition: background-color 0.3s;
-  }
-  
-  .topics-btn:hover {
+}
+
+.topics-btn:hover {
     background-color: #3A78C2;
-  }
-  
-  /* CTA */
-  .cta {
-    background-color: #2A2F4F; /* Dark neutral */
+}
+
+/* CTA */
+.cta {
+    background-color: #4b6e72; /* Dark neutral */
     text-align: center;
     padding: 50px 20px;
     color: #FFFFFF;
-  }
-  
-  .cta-title {
+}
+
+.cta-title {
+    font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
     margin: 0 0 20px;
-  }
-  
-  .cta-form {
+}
+
+.cta-form {
     display: flex;
     justify-content: center;
     gap: 10px;
-  }
-  
-  .cta-input {
+}
+
+.cta-input {
     padding: 10px;
     font-size: 1rem;
     border: none;
     border-radius: 5px;
     width: 250px;
-  }
-  
-  .cta-btn {
-    background-color: #50C878; /* Accent green */
+}
+
+.cta-btn {
+    font-family: 'Raleway', sans-serif;
+    background-color: #6fa3a4; /* Accent green */
     color: #FFFFFF;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  
-  .cta-btn:hover {
+}
+
+.cta-btn:hover {
     background-color: #45B066;
-  }
-  
-  /* Footer */
-  .footer {
-    background-color: #2A2F4F; /* Dark neutral */
+}
+
+/* Footer */
+.footer {
+    background-color: #4b6e72; /* Dark neutral */
     color: #FFFFFF;
     padding: 30px 20px;
     text-align: center;
-  }
+}
 
-  /* Pillar Grid Layout */
-  .pillar-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-    text-align: center;
-  }
-
-  .pillar-card {
-    background-color: #FFFFFF;
-    padding: 25px 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  }
-
-  .pillar-card .pillar-title {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    color: #2A2F4F;
-  }
-
-  .pillar-card .pillar-text {
-    font-size: 1rem;
-    color: #1A1A1A;
-    margin-bottom: 10px;
-  }
-  
-  .footer-links {
+.footer-links {
     margin-bottom: 20px;
-  }
-  
-  .footer-link {
+}
+
+.footer-link {
     color: #FFFFFF;
     text-decoration: none;
     padding: 0 15px;
-  }
-  
-  .footer-link:hover {
+}
+
+.footer-link:hover {
     text-decoration: underline;
-  }
-  
-  .footer-social {
+}
+
+.footer-social {
     margin-bottom: 20px;
-  }
-  
-  .social-link {
+}
+
+.social-link {
     color: #FFFFFF;
     text-decoration: none;
     padding: 0 15px;
-  }
-  
-  .social-link:hover {
+}
+
+.social-link:hover {
     text-decoration: underline;
-  }
-  
-  .footer-contact {
+}
+
+.footer-contact {
     margin-bottom: 10px;
-  }
-  
-  .footer-copyright {
+}
+
+.footer-copyright {
     font-size: 0.9rem;
-}
-
-/* Font Pairings */
-.hero-title, .section-title, .pillar-title, .resource-title, .topics-title, .cta-title {
-    font-family: 'Montserrat', sans-serif;
-}
-
-.hero-btn, .mission-btn, .pillar-btn, .resource-btn, .topics-btn, .testimonial-btn, .cta-btn {
-    font-family: 'Raleway', sans-serif;
-}
-
-.testimonial-text {
-    font-family: 'Playfair Display', serif;
 }
