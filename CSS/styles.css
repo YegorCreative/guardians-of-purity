@@ -110,7 +110,7 @@ body {
 
 .hero-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 3.375rem;
+    font-size: 6.75rem;
     margin: 0 0 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     line-height: 1.2; /* Adjusted for <br> tags */
