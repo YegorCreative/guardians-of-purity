@@ -10,10 +10,16 @@
     height: 30px;
   }
   .nav-links {
-    display: none;
+    flex-direction: column;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
     width: 100%;
   }
-  .nav-link, .cta-btn {
+  .nav-link,
+  .cta-btn {
     display: block;
     width: 100%;
     text-align: left;
@@ -21,14 +27,20 @@
     margin: 0;
     color: #4b6e72; /* Updated color */
   }
+  .nav-link {
+    color: #fff;
+  }
   .hamburger {
     display: block;
     position: absolute;
     right: 20px;
-    top: 15px;
+    top: 10px;
   }
-  .navbar.responsive .nav-links {
-    display: block;
+  .navbar .nav-links.responsive {
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+    padding-top: 40px;
   }
   /* Hero */
   .hero {
@@ -38,7 +50,7 @@
   }
   .hero-title {
     font-size: 1.8rem;
-    color: #FFFFFF; /* force white text color on small screens */
+    color: #ffffff; /* force white text color on small screens */
   }
   .hero-subtitle {
     font-size: 1rem;
@@ -69,7 +81,7 @@
   }
   .pillar-btn {
     background-color: #b0d2da; /* Updated background color */
-    color: #FFFFFF;
+    color: #ffffff;
     padding: 15px 30px;
     border-radius: 5px;
     text-decoration: none;
@@ -77,7 +89,7 @@
     transition: background-color 0.3s;
     display: block;
     text-align: center;
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
     border: none;
     cursor: pointer;
     margin: 20px auto;
@@ -111,13 +123,14 @@
     box-sizing: border-box;
     background-color: #e6f3f5; /* Updated background color */
     color: #4b6e72; /* Updated color */
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
   }
 }
 
 /* Medium screens (768px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .resource-grid, .topics-grid {
+  .resource-grid,
+  .topics-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .hero {
@@ -132,7 +145,7 @@
   }
   .hero-title {
     font-size: 6.75rem;
-    color: #FFFFFF;
+    color: #ffffff;
   }
   .hero-subtitle {
     font-size: 1.5rem;
