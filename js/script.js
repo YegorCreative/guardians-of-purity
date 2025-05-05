@@ -19,7 +19,7 @@ try {
   // CTA form validation
   const ctaForm = document.getElementById('cta-form');
   const ctaEmail = document.getElementById('cta-email');
-  ctaForm.addEventListener('submit', (e) => {
+  ctaForm?.addEventListener('submit', (e) => {
     e.preventDefault();
     if (ctaEmail.value.trim() === '' || !ctaEmail.value.includes('@')) {
       alert('Please enter a valid email address.');

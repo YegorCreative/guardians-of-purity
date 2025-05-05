@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guardians of Purity</title>
+  <!-- Google Fonts: Updated Font Families -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&family=Raleway:wght@400;600&family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- CSS Links -->
+  <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="stylesheet" href="CSS/styles-responsive.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header role="banner">
+    <nav class="navbar" id="main-nav" role="navigation">
+      <div class="logo">
+        <!-- Asset: logo.png -->
+        <img src="./img/logo.png" alt="Guardians of Purity Logo" class="logo-img">
+      </div>
+      <div class="nav-links" id="nav-links">
+        <a href="#home" class="nav-link active" aria-current="page">Home</a>
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#resources" class="nav-link">Resources</a>
+        <a href="#community" class="nav-link">Community</a>
+        <a href="#blog" class="nav-link">Blog</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#resources" class="cta-btn">Start Your Journey</a>
+      </div>
+      <button class="hamburger" id="hamburger-icon" aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main role="main">
+
+    <div class="parallax">
+        <section class="parallax__header">
+          <div class="parallax__visuals">
+            <div class="parallax__black-line-overflow"></div>
+            <div data-parallax-layers class="parallax__layers">
+              <img src="https://cdn.prod.website-files.com/671752cd4027f01b1b8f1c7f/6717795be09b462b2e8ebf71_osmo-parallax-layer-3.webp" loading="eager" width="800" data-parallax-layer="1" alt="" class="parallax__layer-img">
+              <img src="https://cdn.prod.website-files.com/671752cd4027f01b1b8f1c7f/6717795b4d5ac529e7d3a562_osmo-parallax-layer-2.webp" loading="eager" width="800" data-parallax-layer="2" alt="" class="parallax__layer-img">
+              <div data-parallax-layer="3" class="parallax__layer-title">
+                <h2 class="parallax__title">Guardians of Purity</h2>
+              </div>
+              <img src="https://cdn.prod.website-files.com/671752cd4027f01b1b8f1c7f/6717795bb5aceca85011ad83_osmo-parallax-layer-1.webp" loading="eager" width="800" data-parallax-layer="4" alt="" class="parallax__layer-img">
+            </div>
+            <div class="parallax__fade"></div>
+          </div>
+        </section>
+        
+    </div>
+    <section class="gradient_cards_wrapper">
+        <h1>Lorem Ipsum</h1>
+        <p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <div class="background">
+            <div class="gradient-blob"></div>
+            <div class="gradient-blob"></div>
+            <div class="gradient-blob"></div>
+        </div>
+        <div class="cards-container">
+            <div class="card" data-rotation-factor="2">
+                <div class="card-content">
+                    <h2>Card title</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, qui! Distinctio adipisci odio molestiae quasi.</p>
+                    <div class="card-footer">
+                        <button class="card-button">Info CTA</button>
+                        <div class="card-icon">→</div>
+                    </div>
+                </div>%
+            </div>
+    
+            <div class="card" data-rotation-factor="2">
+                <div class="card-content">
+                    <h2>Card title</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, qui! Distinctio adipisci odio molestiae quasi.</p>
+                    <div class="card-footer">
+                        <button class="card-button">Info CTA</button>
+                        <div class="card-icon">→</div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="card" data-rotation-factor="2">
+                <div class="card-content">
+                    <h2>Card title</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, qui! Distinctio adipisci odio molestiae quasi.</p>
+                    <div class="card-footer">
+                        <button class="card-button">Info CTA</button>
+                        <div class="card-icon">→</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="footer-links">
+      <a href="#about" class="footer-link">About</a>
+      <a href="#resources" class="footer-link">Resources</a>
+      <a href="#blog" class="footer-link">Blog</a>
+      <a href="#contact" class="footer-link">Contact</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://facebook.com" class="social-link">Facebook</a>
+      <a href="https://instagram.com" class="social-link">Instagram</a>
+      <a href="https://youtube.com" class="social-link">YouTube</a>
+    </div>
+    <p class="footer-contact">Email: support@guardiansofpurity.com</p>
+    <p class="footer-copyright">© 2025 Guardians of Purity</p>
+  </footer>
+
+  <!-- JavaScript Link -->
+  <script src="js/script.js"></script>
+  <script src="js/testpackage.js"></script>
+</body>
+</html>
