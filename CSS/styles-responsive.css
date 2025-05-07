@@ -125,6 +125,14 @@
     color: #4b6e72; /* Updated color */
     font-family: "Open Sans", sans-serif;
   }
+
+  /* Start Gradient card css */
+
+  .gradient_cards_wrapper .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* End Gradient card css */
 }
 
 /* Medium screens (768px - 1024px) */
