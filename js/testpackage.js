@@ -1,47 +1,75 @@
 try {
-  // Parallax script
+
+  let lenis;
+  let lenisTicker;
+
   document.addEventListener("DOMContentLoaded", () => {
     // Register GSAP Plugins
     gsap.registerPlugin(ScrollTrigger);
+  
     // Parallax Layers
-    document
-      .querySelectorAll("[data-parallax-layers]")
-      .forEach((triggerElement) => {
-        let tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: triggerElement,
-            start: "0% 0%",
-            end: "100% 0%",
-            scrub: 0,
-          },
-        });
-        const layers = [
-          { layer: "1", yPercent: 70 },
-          { layer: "2", yPercent: 55 },
-          { layer: "3", yPercent: 40 },
-          { layer: "4", yPercent: 10 },
-        ];
-        layers.forEach((layerObj, idx) => {
-          tl.to(
-            triggerElement.querySelectorAll(
-              `[data-parallax-layer="${layerObj.layer}"]`
-            ),
-            {
-              yPercent: layerObj.yPercent,
-              ease: "none",
-            },
-            idx === 0 ? undefined : "<"
-          );
-        });
+    document.querySelectorAll('[data-parallax-layers]').forEach((triggerElement) => {
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: triggerElement,
+          start: "0% 0%",
+          end: "100% 0%",
+          scrub: 0
+        }
       });
+  
+      const layers = [
+        { layer: "1", yPercent: 70 },
+        { layer: "2", yPercent: 55 },
+        { layer: "3", yPercent: 40 },
+        { layer: "4", yPercent: 10 }
+      ];
+  
+      layers.forEach((layerObj, idx) => {
+        tl.to(
+          triggerElement.querySelectorAll(`[data-parallax-layer="${layerObj.layer}"]`),
+          {
+            yPercent: layerObj.yPercent,
+            ease: "none"
+          },
+          idx === 0 ? undefined : "<"
+        );
+      });
+    });
+  
+    // Initialize Lenis if .responsive is NOT present
+    const responsive = document.querySelector('.responsive');
+    if (!responsive || !responsive.classList.contains('responsive')) {
+      lenis = new Lenis();
+      lenis.on('scroll', ScrollTrigger.update);
+  
+      // ✅ store the ticker function reference
+      lenisTicker = (time) => {
+        if (lenis) lenis.raf(time * 1000);
+      };
+  
+      gsap.ticker.add(lenisTicker);
+      gsap.ticker.lagSmoothing(0);
+    }
+  
+    const observer = new MutationObserver(() => {
+      const updatedResponsive = document.querySelector('.responsive');
+      if (updatedResponsive && lenis) {
+        gsap.ticker.remove(lenisTicker);  // ✅ remove using stored reference
+        lenis.destroy();
+        lenis = null;
+        console.log('Lenis stopped due to responsive mode');
+      }
+    });
+  
+    observer.observe(document.body, {
+      attributes: true,
+      childList: true,
+      subtree: true
+    });
   });
-  /* Lenis */
-  const lenis = new Lenis();
-  lenis.on("scroll", ScrollTrigger.update);
-  gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
-  });
-  gsap.ticker.lagSmoothing(0);
+  
+
 
   // Gradient Cards css
 

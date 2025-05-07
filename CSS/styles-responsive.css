@@ -36,11 +36,13 @@
     right: 20px;
     top: 10px;
   }
-  .navbar .nav-links.responsive {
-    max-height: 500px;
+  .navbar.responsive .nav-links {
+    /* max-height: 500px; */
     opacity: 1;
     transform: translateY(0);
     padding-top: 40px;
+    height: 100vh;
+    max-height: none;
   }
   /* Hero */
   .hero {
@@ -125,14 +127,6 @@
     color: #4b6e72; /* Updated color */
     font-family: "Open Sans", sans-serif;
   }
-
-  /* Start Gradient card css */
-
-  .gradient_cards_wrapper .cards-container {
-    grid-template-columns: 1fr;
-  }
-
-  /* End Gradient card css */
 }
 
 /* Medium screens (768px - 1024px) */

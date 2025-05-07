@@ -1,7 +1,7 @@
 try {
   // Navbar toggle
   const hamburger = document.getElementById("hamburger-icon");
-  const navLinks = document.getElementById("nav-links");
+  const navLinks = document.getElementById("main-nav");
   hamburger.addEventListener("click", () => {
     const isExpanded = navLinks.classList.toggle("responsive");
     hamburger.setAttribute("aria-expanded", isExpanded);
