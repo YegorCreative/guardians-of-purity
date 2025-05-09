@@ -419,8 +419,8 @@
   border-radius: 1em;
   box-shadow: 0 0.25em 0.375em hsla(0, 0%, 0%, 0.1);
   position: absolute;
-  top: calc(var(--move-by) * 5);
-  left: calc(var(--move-by) * 4);
+  top: calc(var(--move-by) * 6);
+  left: calc(var(--move-by) * 5);
   width: var(--width);
   height: var(--height);
   transform: translate(-50%, -50%);
@@ -441,8 +441,8 @@
   -webkit-backdrop-filter: blur(var(--blur));
   background-image: linear-gradient(90deg, var(--white200), var(--white50));
   color: transparent;
-  top: calc(var(--move-by) * 1);
-  left: calc(var(--move-by) * 6);
+  top: calc(var(--move-by) * 0);
+  left: calc(var(--move-by) * 5.5);
 }
 
 .overlaps_cards .card--glass::before,
