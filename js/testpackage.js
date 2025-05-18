@@ -88,139 +88,6 @@ try {
 
   // End parallax action
 
-  // Gradient Cards css
-
-  const gradientCards = document.querySelectorAll(
-    ".gradient_cards_wrapper .card"
-  );
-  const isTouchDevice =
-    "ontouchstart" in window || navigator.maxTouchPoints > 0;
-
-  gradientCards.forEach((card) => {
-    const content = card.querySelector(".gradient_cards_wrapper .card-content");
-    const rotationFactor =
-      parseFloat(card.getAttribute("data-rotation-factor")) || 2;
-
-    if (!isTouchDevice) {
-      card.addEventListener("mousemove", (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateY = (rotationFactor * (x - centerX)) / centerX;
-        const rotateX = (-rotationFactor * (y - centerY)) / centerY;
-
-        content.style.transform = `
-              rotateX(${rotateX}deg) 
-              rotateY(${rotateY}deg)
-            `;
-
-        card.style.setProperty("--x", `${(x / rect.width) * 100}%`);
-        card.style.setProperty("--y", `${(y / rect.height) * 100}%`);
-      });
-
-      card.addEventListener("mouseleave", () => {
-        content.style.transform = "rotateX(0) rotateY(0)";
-
-        content.style.transition = "transform 0.5s ease";
-        setTimeout(() => {
-          content.style.transition = "";
-        }, 500);
-      });
-    }
-
-    const randomDelay = Math.random() * 2;
-    card.style.animation = `cardFloat 4s infinite alternate ease-in-out ${randomDelay}s`;
-  });
-
-  const style = document.createElement("style");
-  style.textContent = `
-        @keyframes cardFloat {
-          0% {
-            transform: translateY(0);
-          }
-          100% {
-            transform: translateY(-5px);
-          }
-        }
-        
-        @media (min-width: 768px) {
-          @keyframes cardFloat {
-            0% {
-              transform: translateY(0);
-            }
-            100% {
-              transform: translateY(-8px);
-            }
-          }
-        }
-        
-        @media (min-width: 1024px) {
-          @keyframes cardFloat {
-            0% {
-              transform: translateY(0);
-            }
-            100% {
-              transform: translateY(-10px);
-            }
-          }
-        }
-      `;
-  document.head.appendChild(style);
-
-  const buttons = document.querySelectorAll(
-    ".gradient_cards_wrapper .card-button"
-  );
-  buttons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-      e.stopPropagation();
-
-      const ripple = document.createElement("span");
-      ripple.classList.add("ripple");
-      button.appendChild(ripple);
-
-      const rect = button.getBoundingClientRect();
-      const size = Math.max(rect.width, rect.height) * 2;
-
-      ripple.style.width = ripple.style.height = `${size}px`;
-      ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
-      ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
-
-      ripple.classList.add("active");
-
-      setTimeout(() => {
-        ripple.remove();
-      }, 500);
-    });
-  });
-
-  const rippleStyle = document.createElement("style");
-  rippleStyle.textContent = `
-        .gradient_cards_wrapper .card-button {
-          position: relative;
-          overflow: hidden;
-        }
-        
-        .gradient_cards_wrapper .ripple {
-          position: absolute;
-          background: rgba(255, 255, 255, 0.3);
-          border-radius: 50%;
-          transform: scale(0);
-          animation: ripple 0.5s linear;
-          pointer-events: none;
-        }
-        
-        @keyframes ripple {
-          to {
-            transform: scale(2);
-            opacity: 0;
-          }
-        }
-      `;
-  document.head.appendChild(rippleStyle);
-
   // Start explore tabs
 
   gsap.registerPlugin(CustomEase, Flip);
@@ -376,133 +243,133 @@ try {
 
   // Start our team part
 
-  const teamMembers = [
-    { name: "Emily Kim", role: "Founder" },
-    { name: "Michael Steward", role: "Creative Director" },
-    { name: "Emma Rodriguez", role: "Lead Developer" },
-    { name: "Julia Gimmel", role: "UX Designer" },
-    { name: "Lisa Anderson", role: "Marketing Manager" },
-    { name: "James Wilson", role: "Product Manager" },
-  ];
+  // const teamMembers = [
+  //   { name: "Emily Kim", role: "Founder" },
+  //   { name: "Michael Steward", role: "Creative Director" },
+  //   { name: "Emma Rodriguez", role: "Lead Developer" },
+  //   { name: "Julia Gimmel", role: "UX Designer" },
+  //   { name: "Lisa Anderson", role: "Marketing Manager" },
+  //   { name: "James Wilson", role: "Product Manager" },
+  // ];
 
-  const ourTeampCards = document.querySelectorAll(".our_team_wrapper .card");
-  const dots = document.querySelectorAll(".our_team_wrapper .dot");
-  const memberName = document.querySelector(".our_team_wrapper .member-name");
-  const memberRole = document.querySelector(".our_team_wrapper .member-role");
-  const leftArrow = document.querySelector(".our_team_wrapper .nav-arrow.left");
-  const rightArrow = document.querySelector(
-    ".our_team_wrapper .nav-arrow.right"
-  );
-  let currentIndex = 0;
-  let isAnimating = false;
+  // const ourTeampCards = document.querySelectorAll(".our_team_wrapper .card");
+  // const dots = document.querySelectorAll(".our_team_wrapper .dot");
+  // const memberName = document.querySelector(".our_team_wrapper .member-name");
+  // const memberRole = document.querySelector(".our_team_wrapper .member-role");
+  // const leftArrow = document.querySelector(".our_team_wrapper .nav-arrow.left");
+  // const rightArrow = document.querySelector(
+  //   ".our_team_wrapper .nav-arrow.right"
+  // );
+  // let currentIndex = 0;
+  // let isAnimating = false;
 
-  function updateCarousel(newIndex) {
-    if (isAnimating) return;
-    isAnimating = true;
+  // function updateCarousel(newIndex) {
+  //   if (isAnimating) return;
+  //   isAnimating = true;
 
-    currentIndex = (newIndex + ourTeampCards.length) % ourTeampCards.length;
+  //   currentIndex = (newIndex + ourTeampCards.length) % ourTeampCards.length;
 
-    ourTeampCards.forEach((card, i) => {
-      const offset =
-        (i - currentIndex + ourTeampCards.length) % ourTeampCards.length;
+  //   ourTeampCards.forEach((card, i) => {
+  //     const offset =
+  //       (i - currentIndex + ourTeampCards.length) % ourTeampCards.length;
 
-      card.classList.remove(
-        "center",
-        "left-1",
-        "left-2",
-        "right-1",
-        "right-2",
-        "hidden"
-      );
+  //     card.classList.remove(
+  //       "center",
+  //       "left-1",
+  //       "left-2",
+  //       "right-1",
+  //       "right-2",
+  //       "hidden"
+  //     );
 
-      if (offset === 0) {
-        card.classList.add("center");
-      } else if (offset === 1) {
-        card.classList.add("right-1");
-      } else if (offset === 2) {
-        card.classList.add("right-2");
-      } else if (offset === ourTeampCards.length - 1) {
-        card.classList.add("left-1");
-      } else if (offset === ourTeampCards.length - 2) {
-        card.classList.add("left-2");
-      } else {
-        card.classList.add("hidden");
-      }
-    });
+  //     if (offset === 0) {
+  //       card.classList.add("center");
+  //     } else if (offset === 1) {
+  //       card.classList.add("right-1");
+  //     } else if (offset === 2) {
+  //       card.classList.add("right-2");
+  //     } else if (offset === ourTeampCards.length - 1) {
+  //       card.classList.add("left-1");
+  //     } else if (offset === ourTeampCards.length - 2) {
+  //       card.classList.add("left-2");
+  //     } else {
+  //       card.classList.add("hidden");
+  //     }
+  //   });
 
-    dots.forEach((dot, i) => {
-      dot.classList.toggle("active", i === currentIndex);
-    });
+  //   dots.forEach((dot, i) => {
+  //     dot.classList.toggle("active", i === currentIndex);
+  //   });
 
-    memberName.style.opacity = "0";
-    memberRole.style.opacity = "0";
+  //   memberName.style.opacity = "0";
+  //   memberRole.style.opacity = "0";
 
-    setTimeout(() => {
-      memberName.textContent = teamMembers[currentIndex].name;
-      memberRole.textContent = teamMembers[currentIndex].role;
-      memberName.style.opacity = "1";
-      memberRole.style.opacity = "1";
-    }, 300);
+  //   setTimeout(() => {
+  //     memberName.textContent = teamMembers[currentIndex].name;
+  //     memberRole.textContent = teamMembers[currentIndex].role;
+  //     memberName.style.opacity = "1";
+  //     memberRole.style.opacity = "1";
+  //   }, 300);
 
-    setTimeout(() => {
-      isAnimating = false;
-    }, 800);
-  }
+  //   setTimeout(() => {
+  //     isAnimating = false;
+  //   }, 800);
+  // }
 
-  leftArrow.addEventListener("click", () => {
-    updateCarousel(currentIndex - 1);
-  });
+  // leftArrow.addEventListener("click", () => {
+  //   updateCarousel(currentIndex - 1);
+  // });
 
-  rightArrow.addEventListener("click", () => {
-    updateCarousel(currentIndex + 1);
-  });
+  // rightArrow.addEventListener("click", () => {
+  //   updateCarousel(currentIndex + 1);
+  // });
 
-  dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-      updateCarousel(i);
-    });
-  });
+  // dots.forEach((dot, i) => {
+  //   dot.addEventListener("click", () => {
+  //     updateCarousel(i);
+  //   });
+  // });
 
-  ourTeampCards.forEach((card, i) => {
-    card.addEventListener("click", () => {
-      updateCarousel(i);
-    });
-  });
+  // ourTeampCards.forEach((card, i) => {
+  //   card.addEventListener("click", () => {
+  //     updateCarousel(i);
+  //   });
+  // });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowLeft") {
-      updateCarousel(currentIndex - 1);
-    } else if (e.key === "ArrowRight") {
-      updateCarousel(currentIndex + 1);
-    }
-  });
+  // document.addEventListener("keydown", (e) => {
+  //   if (e.key === "ArrowLeft") {
+  //     updateCarousel(currentIndex - 1);
+  //   } else if (e.key === "ArrowRight") {
+  //     updateCarousel(currentIndex + 1);
+  //   }
+  // });
 
-  let touchStartX = 0;
-  let touchEndX = 0;
+  // let touchStartX = 0;
+  // let touchEndX = 0;
 
-  document.addEventListener("touchstart", (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  });
+  // document.addEventListener("touchstart", (e) => {
+  //   touchStartX = e.changedTouches[0].screenX;
+  // });
 
-  document.addEventListener("touchend", (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  });
+  // document.addEventListener("touchend", (e) => {
+  //   touchEndX = e.changedTouches[0].screenX;
+  //   handleSwipe();
+  // });
 
-  function handleSwipe() {
-    const swipeThreshold = 50;
-    const diff = touchStartX - touchEndX;
+  // function handleSwipe() {
+  //   const swipeThreshold = 50;
+  //   const diff = touchStartX - touchEndX;
 
-    if (Math.abs(diff) > swipeThreshold) {
-      if (diff > 0) {
-        updateCarousel(currentIndex + 1);
-      } else {
-        updateCarousel(currentIndex - 1);
-      }
-    }
-  }
+  //   if (Math.abs(diff) > swipeThreshold) {
+  //     if (diff > 0) {
+  //       updateCarousel(currentIndex + 1);
+  //     } else {
+  //       updateCarousel(currentIndex - 1);
+  //     }
+  //   }
+  // }
 
-  updateCarousel(0);
+  // updateCarousel(0);
 
   // End our team part
 } catch (error) {
