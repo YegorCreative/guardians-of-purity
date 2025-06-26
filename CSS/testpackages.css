@@ -1,3 +1,19 @@
+.separated_block {
+  padding: 7.5px 15px;
+}
+
+.separated_block.first {
+  padding-top: 15px;
+}
+
+.separated_block.last {
+  padding-bottom: 15px;
+}
+
+.separated_block_corner {
+  border-radius: 20px;
+}
+
 /* Start Parallax css */
 
 .parallax__fade {
