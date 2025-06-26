@@ -19,6 +19,22 @@ body {
   color: #2f484a; /* Dark text */
 }
 
+.separated_block {
+  padding: 5px 10px;
+}
+
+.separated_block.first {
+  padding-top: 10px;
+}
+
+.separated_block.last {
+  padding-bottom: 10px;
+}
+
+.separated_block_corner {
+  border-radius: 20px;
+}
+
 /* Navbar */
 .navbar {
   background-color: #4b6e72; /* Dark neutral */
