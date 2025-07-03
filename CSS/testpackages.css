@@ -1384,11 +1384,12 @@
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto 60px;
-  padding: 0 20px;
+  padding: 20px 20px;
 }
 
 .side-by-side .scripture-quote,
 .side-by-side .call-to-commitment {
   flex: 1 1 450px;
   box-sizing: border-box;
+  align-items: center;
 }
