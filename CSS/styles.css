@@ -38,6 +38,8 @@ body {
 /* Navbar */
 .navbar {
   background-color: #4b6e72; /* Dark neutral */
+  backdrop-filter: blur(10px);
+  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,6 +72,7 @@ body {
   background-color: #b0d2da; /* Primary blue */
   border-radius: 5px;
 }
+
 
 .cta-btn {
   background-color: #6fa3a4; /* Accent green */
