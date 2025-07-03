@@ -32,3 +32,6 @@ try {
 } catch (error) {
   console.error("Error in script:", error);
 }
+// Placeholder for future interactivity
+// You can add scroll animations, section trackers, or reminders here
+console.log("31 Days of Prayer - Intro Section Loaded");
