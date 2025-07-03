@@ -1,11 +1,21 @@
 /* Smaller screens (below 768px) */
 @media (max-width: 768px) {
   /* Navbar */
+
+  header {
+    background: #4b6e72;
+  }
+
   .navbar {
     flex-direction: column;
     align-items: flex-start;
     padding: 10px 20px;
   }
+
+  .navbar::after {
+    border-color: #4b6e72;
+  }
+
   .logo-img {
     height: 30px;
   }
