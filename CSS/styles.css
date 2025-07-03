@@ -38,11 +38,11 @@ body {
 /* Navbar */
 
 header {
-  background: linear-gradient(90deg, #3d71f5, #0d4ef2);
+  /* background: linear-gradient(90deg, #3d71f5, #0d4ef2);
   box-shadow: 0 0.25em 0.375em hsla(0, 0%, 0%, 0.1);
   display: flex;
   justify-content: center;
-  padding: 5px;
+  padding: 5px; */
 }
 
 .navbar {
@@ -54,16 +54,17 @@ header {
   padding: 15px 30px;
   width: 100%;
   box-sizing: border-box;
-  background: linear-gradient(
+  background-image: url("../img/navigation.webp");
+  /* background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0.2),
     rgba(255, 255, 255, 0.05)
   );
   position: relative;
-  border-radius: 16px;
+  border-radius: 16px; */
 }
 
-.navbar::after,
+/* .navbar::after,
 .navbar::before {
   border-radius: inherit;
   content: "";
@@ -80,7 +81,7 @@ header {
 .navbar::before {
   border: 1px solid #fff;
   mask-image: linear-gradient(135deg, #fff, rgba(255, 255, 255, 0) 50%);
-}
+} */
 
 .logo-img {
   height: 40px;
