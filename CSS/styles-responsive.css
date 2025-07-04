@@ -1,59 +1,5 @@
 /* Smaller screens (below 768px) */
 @media (max-width: 768px) {
-  /* Navbar */
-
-  header {
-    background: #4b6e72;
-  }
-
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 20px;
-  }
-
-  .navbar::after {
-    border-color: #4b6e72;
-  }
-
-  .logo-img {
-    height: 30px;
-  }
-  .nav-links {
-    flex-direction: column;
-    max-height: 0;
-    opacity: 0;
-    transform: translateY(-10px);
-    overflow: hidden;
-    transition: all 0.2s ease-in-out;
-    width: 100%;
-  }
-  .nav-link,
-  .cta-btn {
-    display: block;
-    width: 100%;
-    text-align: left;
-    padding: 10px 20px;
-    margin: 0;
-    color: #4b6e72; /* Updated color */
-  }
-  .nav-link {
-    color: #fff;
-  }
-  .hamburger {
-    display: block;
-    position: absolute;
-    right: 20px;
-    top: 10px;
-  }
-  .navbar.responsive .nav-links {
-    /* max-height: 500px; */
-    opacity: 1;
-    transform: translateY(0);
-    padding-top: 40px;
-    height: 100vh;
-    max-height: none;
-  }
   /* Hero */
   .hero {
     padding: 60px 20px;
