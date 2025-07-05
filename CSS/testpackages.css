@@ -918,7 +918,7 @@
   font-weight: bold;
   position: absolute;
   background-color: white;
-  padding: 25px 5px 10px;
+  padding: 25px 20px 10px;
 }
 
 .top_left {
@@ -950,12 +950,14 @@
   bottom: 20px;
   right: 20px;
   border-radius: 20px 0 0 0;
+  padding: 10px 20px !important;
 }
 
 .bottom_left {
   bottom: 20px;
   left: 20px;
   border-radius: 0 20px 0 0;
+  padding: 10px 20px !important;
 }
 
 .bottom_right_vertical {
@@ -1084,6 +1086,51 @@
 }
 
 /* End Thirty OneDay Card */
+
+/* Start Text overlay banner background */
+
+.text_overlay_banner_wrapper {
+  display: flex;
+  overflow: hidden;
+  gap: 20px;
+  height: 200px;
+}
+
+.text_overlay_banner_block {
+  position: relative;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 20px;
+}
+
+.text_overlay_banner_block_title {
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  background-color: #fff;
+  padding: 25px 20px 10px;
+}
+
+.text_overlay_banner_block_picture {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.text_overlay_banner_content {
+  width: 50%;
+  background-color: #fff;
+}
+
+.top_right_banner,
+.bottom_right_banner {
+  flex-direction: row-reverse;
+}
+
+/* End Text overlay banner background */
 
 @media (max-width: 768px) {
   /* Start Gradient card css */
