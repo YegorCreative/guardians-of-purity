@@ -283,31 +283,6 @@ try {
   // updateCarousel(0);
 
   // End our team part
-
-  /* Start dynamic text with image */
-
-  const diwt = document.getElementById("diwt");
-  const postionsButtons = document.querySelectorAll(".positions");
-  const positions = [
-    "diwt_top_left",
-    "diwt_top_right",
-    "diwt_bottom_left",
-    "diwt_bottom_right",
-    "diwt_top_left_vertical",
-    "diwt_top_right_vertical",
-    "diwt_bottom_left_vertical",
-    "diwt_bottom_right_vertical",
-  ];
-
-  postionsButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const pos = btn.dataset.position;
-      positions.forEach((p) => diwt.classList.remove(p));
-      diwt.classList.add(pos);
-    });
-  });
-
-  /* End dynamic text with image */
 } catch (error) {
   console.error("Error in script:", error);
 }
