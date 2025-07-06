@@ -987,7 +987,7 @@
 /* Start overlay card */
 
 .overlay_card_separated_block {
-  padding: 5px 25px 25px 10px;
+  padding: 5px 25px 45px 10px;
 }
 
 .overlay_card_wrapper {
@@ -1032,6 +1032,7 @@
 
 .thirty_one_day_card_wrapper_main {
   display: flex;
+  justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }

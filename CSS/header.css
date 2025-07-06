@@ -89,6 +89,7 @@ header {
 .hamburger {
   display: none;
   padding: 10px;
+  z-index: 1;
 }
 
 .bar {
