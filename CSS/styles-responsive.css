@@ -83,6 +83,16 @@
     color: #4b6e72; /* Updated color */
     font-family: "Open Sans", sans-serif;
   }
+
+  /* Parallax÷ */
+
+  .parallax__layer-title {
+    align-items: flex-start;
+  }
+
+  .parallax__title {
+    margin-top: 20%;
+  }
 }
 
 /* Medium screens (768px - 1024px) */

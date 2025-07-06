@@ -35,6 +35,20 @@ body {
   border-radius: 20px;
 }
 
+#scrollToTopButton {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background: linear-gradient(90deg, #3d71f5, #0d4ef2);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+}
+
 /* Hero */
 .hero {
   position: relative;
@@ -550,7 +564,6 @@ intro-section {
   text-transform: none;
   margin-top: 0;
   margin-bottom: 0.1em;
-  margin-right: 0.075em;
   font-size: 11vw;
   font-weight: 800;
   line-height: 1;

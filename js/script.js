@@ -119,6 +119,29 @@ try {
   });
 
   // End index section 1 JS
+
+  // Scroll to top button
+  const scrollBtn = document.getElementById("scrollToTopButton");
+
+  // Show button when scrolled down
+  window.onscroll = function () {
+    if (
+      document.body.scrollTop > 300 ||
+      document.documentElement.scrollTop > 300
+    ) {
+      scrollBtn.style.display = "block";
+    } else {
+      scrollBtn.style.display = "none";
+    }
+  };
+
+  // Scroll to top smoothly
+  scrollBtn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 } catch (error) {
   console.error("Error in script:", error);
 }
