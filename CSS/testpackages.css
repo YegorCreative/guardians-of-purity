@@ -1038,6 +1038,7 @@
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .thirty_one_day_card_wrapper {
@@ -1070,7 +1071,7 @@
 }
 
 .thirty_one_day_card_title {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   margin-top: 10px;
   color: #2f484a;
@@ -1082,11 +1083,25 @@
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 20px;
-  padding: 10px 15px;
+  padding: 15px 15px;
   color: #fff;
   font-weight: bold;
   font-size: 18px;
   background-image: url("../img/heroes4.webp");
+  height: 150px;
+  align-items: center;
+}
+.thirty_one_day_card_title{
+
+}
+.thirty_one_day_card_content2 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  padding: 10px 15px;
+  background-image: url("../img/heroes16.webp");
+  
 }
 
 /* End Thirty OneDay Card */
