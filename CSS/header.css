@@ -103,10 +103,6 @@ header {
 @media (max-width: 768px) {
   /* Navbar */
 
-  header {
-    background: #4b6e72;
-  }
-
   .navbar {
     flex-direction: column;
     align-items: flex-start;
@@ -146,6 +142,8 @@ header {
     position: absolute;
     right: 20px;
     top: 10px;
+    border-radius: 5px;
+    border-style: none;
   }
   .navbar.responsive .nav-links {
     /* max-height: 500px; */

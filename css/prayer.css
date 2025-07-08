@@ -71,3 +71,10 @@
 .purity_challenge_intro_block_text {
   height: 600px;
 }
+
+.intro-paragraph {
+  max-width: 500px;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 0;
+}

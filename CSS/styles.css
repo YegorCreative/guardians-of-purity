@@ -439,13 +439,6 @@ intro-section {
   margin-bottom: 20px;
 }
 
-.intro-paragraph {
-  max-width: 800px;
-  font-size: 1.125rem;
-  line-height: 1.8;
-  margin-bottom: 40px;
-}
-
 .scripture-quote {
   background-color: #ffffff;
   border-left: 6px solid #c88d56;
@@ -599,7 +592,6 @@ intro-section {
     font-size: 2rem;
   }
 
-  .intro-paragraph,
   .scripture-quote,
   .call-to-commitment {
     font-size: 1rem;

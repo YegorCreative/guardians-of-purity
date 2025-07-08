@@ -914,7 +914,7 @@
 }
 
 .purity_challenge_intro_block_title {
-  font-size: 70px;
+  font-size: 50px;
   font-weight: bold;
   position: absolute;
   background-color: white;
@@ -985,7 +985,7 @@
 /* End dynamic text with image */
 
 /* Start overlay card */
-.separated_block{
+.separated_block {
   padding-top: 30px;
 }
 
@@ -1091,8 +1091,7 @@
   height: 150px;
   align-items: center;
 }
-.thirty_one_day_card_title{
-
+.thirty_one_day_card_title {
 }
 .thirty_one_day_card_content2 {
   background-position: center;
@@ -1101,7 +1100,6 @@
   border-radius: 20px;
   padding: 10px 15px;
   background-image: url("../img/heroes16.webp");
-  
 }
 
 /* End Thirty OneDay Card */
