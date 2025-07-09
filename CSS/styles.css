@@ -35,6 +35,11 @@ body {
   border-radius: 20px;
 }
 
+html.lenis-stopped,
+body.lenis-stopped {
+  overflow: auto !important;
+}
+
 #scrollToTopButton {
   position: fixed;
   bottom: 30px;

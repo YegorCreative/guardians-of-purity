@@ -144,6 +144,11 @@ header {
     top: 7px;
     border-radius: 5px;
     border-style: none;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.05)
+    );
   }
   .navbar.responsive .nav-links {
     /* max-height: 500px; */

@@ -72,11 +72,42 @@
   height: 600px;
 }
 
+.purity_challenge_intro_block {
+  height: 500px;
+  align-items: center;
+}
+
+.purity_challenge_intro_block_picture {
+  height: 100%;
+}
+
+.purity_challenge_intro_block_title {
+  left: 0;
+}
+
 .intro-paragraph {
-  max-width: 500px;
+  max-width: 800px;
   font-size: 1rem;
   line-height: 1.8;
   margin-bottom: 0;
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+  font-weight: 500;
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .intro-paragraph {
+    max-width: fit-content;
+    padding: 60px 20px;
+    transform: translate(0%, 23%);
+    left: auto;
+    top: auto;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -89,14 +120,12 @@
   /* Start dynamic text with image */
 
   .purity_challenge_intro_block_title {
-    font-size: 18px;
-    width: 50%;
-    padding: 10px 10px 10px;
+    font-size: 30px;
+    width: fit-content;
   }
 
   .intro-paragraph {
-    max-width: fit-content;
-    font-size: 0.5rem;
+    transform: translate(0%, 10%);
   }
 
   /* End dynamic text with image */
@@ -131,5 +160,9 @@
 
   .centered h2 {
     margin-top: 0;
+  }
+
+  .intro-section img.hero-img {
+    max-height: 200px;
   }
 }

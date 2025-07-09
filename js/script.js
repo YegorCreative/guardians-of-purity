@@ -17,7 +17,7 @@ try {
     testimonials[index].classList.add("active");
   }
 
-  if (window.innerWidth < 768) {
+  if (window.innerWidth < 767) {
     navLinks.classList.add("hideLenis");
   }
 
@@ -136,7 +136,10 @@ try {
       requestAnimationFrame(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        lenis = new Lenis();
+        lenis = new Lenis({
+          smoothTouch: false,
+        });
+
         lenis.on("scroll", ScrollTrigger.update);
 
         lenisTicker = (time) => {
@@ -157,13 +160,32 @@ try {
           }
         };
 
-        addLenisTicker();
+        const enableSmoothScroll = () => {
+          lenis?.start();
+          addLenisTicker();
+
+          // Restore Lenis scroll style
+          document.documentElement.style.overflow = "hidden";
+          document.body.style.overflow = "hidden";
+        };
+
+        const disableSmoothScroll = () => {
+          lenis?.stop();
+          removeLenisTicker();
+
+          // Restore native scroll
+          document.documentElement.style.overflow = "auto";
+          document.body.style.overflow = "auto";
+        };
+
+        enableSmoothScroll();
         gsap.ticker.lagSmoothing(0);
 
+        // Setup parallax
         document
           .querySelectorAll("[data-parallax-layers]")
           .forEach((triggerElement) => {
-            let tl = gsap.timeline({
+            const tl = gsap.timeline({
               scrollTrigger: {
                 trigger: triggerElement,
                 start: "0% 0%",
@@ -202,8 +224,10 @@ try {
             .querySelector("#main-nav")
             ?.classList.contains("hideLenis");
 
-          if (lenis) {
-            isResponsive ? removeLenisTicker() : addLenisTicker();
+          if (isResponsive) {
+            disableSmoothScroll();
+          } else {
+            enableSmoothScroll();
           }
         });
 
