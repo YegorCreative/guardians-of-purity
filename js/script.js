@@ -126,119 +126,117 @@ try {
   let lenisTicker;
   let lenisTickerAdded = false;
 
-  window.addEventListener("load", () => {
-    if ("scrollRestoration" in history) {
-      history.scrollRestoration = "manual";
-    }
-    window.scrollTo(0, 0);
+  const isResponsive = document
+    .querySelector("#main-nav")
+    ?.classList.contains("hideLenis");
 
-    requestAnimationFrame(() => {
+  if (!isResponsive) {
+    window.addEventListener("load", () => {
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+      window.scrollTo(0, 0);
+
       requestAnimationFrame(() => {
-        gsap.registerPlugin(ScrollTrigger);
+        requestAnimationFrame(() => {
+          gsap.registerPlugin(ScrollTrigger);
 
-        lenis = new Lenis({
-          smoothTouch: false,
-        });
-
-        lenis.on("scroll", ScrollTrigger.update);
-
-        lenisTicker = (time) => {
-          if (lenis) lenis.raf(time * 1000);
-        };
-
-        const addLenisTicker = () => {
-          if (!lenisTickerAdded) {
-            gsap.ticker.add(lenisTicker);
-            lenisTickerAdded = true;
-          }
-        };
-
-        const removeLenisTicker = () => {
-          if (lenisTickerAdded) {
-            gsap.ticker.remove(lenisTicker);
-            lenisTickerAdded = false;
-          }
-        };
-
-        const enableSmoothScroll = () => {
-          lenis?.start();
-          addLenisTicker();
-
-          // Restore Lenis scroll style
-          document.documentElement.style.overflow = "hidden";
-          document.body.style.overflow = "hidden";
-        };
-
-        const disableSmoothScroll = () => {
-          lenis?.stop();
-          removeLenisTicker();
-
-          // Restore native scroll
-          document.documentElement.style.overflow = "auto";
-          document.body.style.overflow = "auto";
-        };
-
-        enableSmoothScroll();
-        gsap.ticker.lagSmoothing(0);
-
-        // Setup parallax
-        document
-          .querySelectorAll("[data-parallax-layers]")
-          .forEach((triggerElement) => {
-            const tl = gsap.timeline({
-              scrollTrigger: {
-                trigger: triggerElement,
-                start: "0% 0%",
-                end: "100% 0%",
-                scrub: true,
-              },
-            });
-
-            const layers = [
-              { layer: "1", yPercent: 70 },
-              { layer: "2", yPercent: 55 },
-              { layer: "3", yPercent: 40 },
-              { layer: "4", yPercent: 10 },
-            ];
-
-            layers.forEach((layerObj, idx) => {
-              tl.to(
-                triggerElement.querySelectorAll(
-                  `[data-parallax-layer="${layerObj.layer}"]`
-                ),
-                {
-                  yPercent: layerObj.yPercent,
-                  ease: "none",
-                },
-                idx === 0 ? undefined : "<"
-              );
-            });
+          lenis = new Lenis({
+            smoothTouch: false,
           });
 
-        setTimeout(() => {
-          ScrollTrigger.refresh();
-        }, 100);
+          lenis.on("scroll", ScrollTrigger.update);
 
-        const observer = new MutationObserver(() => {
-          const isResponsive = document
-            .querySelector("#main-nav")
-            ?.classList.contains("hideLenis");
+          lenisTicker = (time) => {
+            if (lenis) lenis.raf(time * 1000);
+          };
 
-          if (isResponsive) {
-            disableSmoothScroll();
-          } else {
+          const addLenisTicker = () => {
+            if (!lenisTickerAdded) {
+              gsap.ticker.add(lenisTicker);
+              lenisTickerAdded = true;
+            }
+          };
+
+          const removeLenisTicker = () => {
+            if (lenisTickerAdded) {
+              gsap.ticker.remove(lenisTicker);
+              lenisTickerAdded = false;
+            }
+          };
+
+          const enableSmoothScroll = () => {
+            lenis?.start();
+            addLenisTicker();
+
+            // Restore Lenis scroll style
+            document.documentElement.style.overflow = "hidden";
+            document.body.style.overflow = "hidden";
+          };
+
+          const disableSmoothScroll = () => {
+            lenis?.stop();
+            removeLenisTicker();
+
+            // Restore native scroll
+            document.documentElement.style.overflow = "auto";
+            document.body.style.overflow = "auto";
+          };
+
+          enableSmoothScroll();
+          gsap.ticker.lagSmoothing(0);
+
+          // Setup parallax
+          document
+            .querySelectorAll("[data-parallax-layers]")
+            .forEach((triggerElement) => {
+              const tl = gsap.timeline({
+                scrollTrigger: {
+                  trigger: triggerElement,
+                  start: "0% 0%",
+                  end: "100% 0%",
+                  scrub: true,
+                },
+              });
+
+              const layers = [
+                { layer: "1", yPercent: 70 },
+                { layer: "2", yPercent: 55 },
+                { layer: "3", yPercent: 40 },
+                { layer: "4", yPercent: 10 },
+              ];
+
+              layers.forEach((layerObj, idx) => {
+                tl.to(
+                  triggerElement.querySelectorAll(
+                    `[data-parallax-layer="${layerObj.layer}"]`
+                  ),
+                  {
+                    yPercent: layerObj.yPercent,
+                    ease: "none",
+                  },
+                  idx === 0 ? undefined : "<"
+                );
+              });
+            });
+
+          setTimeout(() => {
+            ScrollTrigger.refresh();
+          }, 100);
+
+          const observer = new MutationObserver(() => {
             enableSmoothScroll();
-          }
-        });
+          });
 
-        observer.observe(document.body, {
-          attributes: true,
-          childList: true,
-          subtree: true,
+          observer.observe(document.body, {
+            attributes: true,
+            childList: true,
+            subtree: true,
+          });
         });
       });
     });
-  });
+  }
 
   // End index section 1 JS
 
