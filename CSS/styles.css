@@ -47,6 +47,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   display: none;
+  z-index: 100;
 }
 
 /* Hero */
@@ -586,6 +587,169 @@ intro-section {
   left: 0;
 }
 /* End index section 1 css */
+
+/* Start Thirty OneDay Card */
+
+.thirty_one_day_card_wrapper_main {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.thirty_one_day_card_wrapper {
+  width: 360px;
+  background-color: white;
+  padding: 20px;
+}
+
+.thirty_one_day_card_block {
+  position: relative;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+}
+
+.thirty_one_day_card_block_title {
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  background-color: white;
+  padding: 5px 20px 10px;
+}
+
+.thirty_one_day_card_block_picture {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.thirty_one_day_card_title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #2f484a;
+}
+
+.thirty_one_day_card_content {
+  background: linear-gradient(90deg, #3d71f5, #0d4ef2);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  padding: 15px 15px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  background-image: url("../img/heroes4.webp");
+  height: 150px;
+  align-items: center;
+}
+
+.thirty_one_day_card_content2 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  padding: 10px 15px;
+  background-image: url("../img/heroes16.webp");
+}
+
+/* End Thirty OneDay Card */
+
+/* Start dynamic text with image */
+
+.purity_challenge_intro_block {
+  padding: 20px;
+  position: relative;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.purity_challenge_intro_block_title {
+  font-size: 50px;
+  font-weight: bold;
+  position: absolute;
+  background-color: white;
+  padding: 25px 20px 10px;
+}
+
+.top_left {
+  top: 0;
+  border-radius: 0 0 20px 0;
+}
+
+.top_left_vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  top: 20px;
+  border-radius: 20px 0 0 0;
+}
+
+.top_right {
+  top: 0;
+  right: 0;
+  border-radius: 0 0 0px 20px;
+}
+
+.top_right_vertical {
+  writing-mode: vertical-lr;
+  top: 20px;
+  right: 20px;
+  border-radius: 0 0 0 20px;
+}
+
+.bottom_right {
+  bottom: 20px;
+  right: 20px;
+  border-radius: 20px 0 0 0;
+  padding: 10px 20px !important;
+}
+
+.bottom_left {
+  bottom: 20px;
+  left: 20px;
+  border-radius: 0 20px 0 0;
+  padding: 10px 20px !important;
+}
+
+.bottom_right_vertical {
+  writing-mode: vertical-lr;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 20px 0 0 0;
+}
+
+.bottom_left_vertical {
+  writing-mode: vertical-lr;
+  bottom: 20px;
+  left: 20px;
+  border-radius: 0 0 0 20px;
+  transform: rotate(180deg);
+}
+
+.purity_challenge_intro_block_picture {
+  height: 50%;
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* Start Gradient card css */
+
+.gradient_cards_wrapper {
+  padding: 20px;
+  position: relative;
+  background-color: #fff;
+}
+
+/* End Gradient card css */
+
+/* End dynamic text with image */
 
 @media (max-width: 768px) {
   .intro-heading {

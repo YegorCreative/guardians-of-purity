@@ -78,3 +78,58 @@
   line-height: 1.8;
   margin-bottom: 0;
 }
+
+@media screen and (max-width: 767px) {
+  /* Parallax */
+
+  .parallax__header {
+    min-height: 30svh;
+  }
+
+  /* Start dynamic text with image */
+
+  .purity_challenge_intro_block_title {
+    font-size: 18px;
+    width: 50%;
+    padding: 10px 10px 10px;
+  }
+
+  .intro-paragraph {
+    max-width: fit-content;
+    font-size: 0.5rem;
+  }
+
+  /* End dynamic text with image */
+
+  .centered {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .purity_challenge_intro_block_picture {
+    height: 400px;
+  }
+
+  .prayer {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .split {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .centered {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+  }
+
+  .centered .h2 {
+    margin-top: 0;
+  }
+}

@@ -86,12 +86,17 @@
 
   /* Parallax÷ */
 
+  .parallax__header {
+    min-height: 45svh;
+    padding: 20px;
+  }
+
   .parallax__layer-title {
     align-items: flex-start;
   }
 
   .parallax__title {
-    margin-top: 20%;
+    margin-top: 10%;
   }
 }
 
