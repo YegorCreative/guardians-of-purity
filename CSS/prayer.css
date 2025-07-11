@@ -151,6 +151,7 @@
 
   .intro-paragraph {
     line-height: normal;
+    padding: 0 25px;
   }
 
   .prayer {
@@ -176,11 +177,5 @@
 
   .intro-section img.hero-img {
     max-height: 200px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .intro-paragraph {
-    padding: 0 25px;
   }
 }
