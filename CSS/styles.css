@@ -94,6 +94,9 @@ body {
   margin: 0 0 30px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
+.hero-helping {
+  margin-bottom: 35px;
+}
 
 .hero-btn {
   font-family: "Raleway", sans-serif;
@@ -212,10 +215,11 @@ body {
   max-width: 800px;
   margin: 0 auto;
   position: relative;
+  height: auto;
 }
 
 .testimonial {
-  display: none;
+  display: flex;
   padding: 20px;
 }
 
@@ -632,6 +636,7 @@ intro-section {
   font-weight: bold;
   margin-top: 10px;
   color: #2f484a;
+  text-align: left;
 }
 
 .thirty_one_day_card_content {
@@ -647,6 +652,22 @@ intro-section {
   background-image: url("../img/heroes4.webp");
   height: 150px;
   align-items: center;
+}
+/* 31 day content 3 */
+.thirty_one_day_card_content3 {
+  background: linear-gradient(90deg, #3d71f5, #0d4ef2);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  padding: 15px 15px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  background-image: url("../img/heroe-image8.webp");
+  height: 80px;
+  align-items: center;
+  text-align: left;
 }
 
 .thirty_one_day_card_content2 {
