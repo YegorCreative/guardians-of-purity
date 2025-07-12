@@ -950,63 +950,79 @@
 
 /* End overlay card */
 
-/* Start Text overlay banner background */
+/* Start focus on a mission block */
 
-.text_overlay_banner_wrapper {
-  display: flex;
-  overflow: hidden;
-  gap: 20px;
-  height: 200px;
-}
-.text_overlay_banner_wrapper2 {
-  overflow: hidden;
-  display: flex;
-  width: 100%;
-  height: 200px;
-}
-.text_overlay_banner_block {
+.focus_on_mission_wrapper {
   position: relative;
-  background-color: white;
+  background: url("../img/newGP.webp") center/cover no-repeat;
+  padding: 40px;
+}
+
+.focus_on_mission_subtitle {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.focus_on_mission_title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+
+.focus_on_mission_cards {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  padding: 20px;
-}
-.text_overlay_banner_block2 {
+  gap: 24px;
   position: relative;
-  background-color: white;
+  max-width: 70%;
+  margin-left: auto;
+}
+
+.focus_on_mission_card {
   display: flex;
-  width: 100%;
-  padding-bottom: 20px;
-  border-radius: 25px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 20px 30px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
 }
 
-.text_overlay_banner_block_title {
-  font-size: 30px;
-  font-weight: bold;
+.focus_on_mission_card::after {
+  content: "";
   position: absolute;
-  background-color: #fff;
-  padding: 25px 20px 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  border-radius: inherit;
 }
 
-.text_overlay_banner_block_picture {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 20px;
+.focus_on_mission_card h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #2f484a;
 }
 
-.text_overlay_banner_content {
-  width: 50%;
-  background-color: #fff;
+.focus_on_mission_card p {
+  margin: 0;
+  font-size: 14px;
+  color: #2f484a;
+  max-width: 300px;
 }
 
-.top_right_banner,
-.bottom_right_banner {
-  flex-direction: row-reverse;
-}
-
-/* End Text overlay banner background */
+/* End focus on a mission block  */
 
 @media (max-width: 768px) {
   /* Start Gradient card css */
@@ -1132,4 +1148,29 @@
   }
 
   /* End dynamic text with image */
+
+  .focus_on_mission_title,
+  .focus_on_mission_subtitle {
+    color: #2f484a;
+  }
+
+  .focus_on_mission_cards {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .focus_on_mission_wrapper {
+    padding: 20px;
+  }
+
+  .focus_on_mission_card {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 20px;
+  }
+
+  .focus_on_mission_card p {
+    max-width: 100%;
+  }
 }
