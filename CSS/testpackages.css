@@ -962,6 +962,7 @@
   font-size: 16px;
   color: #fff;
   margin-bottom: 10px;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
 }
 
 .focus_on_mission_title {
@@ -970,6 +971,7 @@
   color: #fff;
   margin-bottom: 40px;
   max-width: 500px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .focus_on_mission_cards {
@@ -1439,11 +1441,6 @@
   /* End dynamic text with image */
 
   /* Start focus on a mission block */
-
-  .focus_on_mission_title,
-  .focus_on_mission_subtitle {
-    color: #2f484a;
-  }
 
   .focus_on_mission_cards {
     max-width: 100%;
