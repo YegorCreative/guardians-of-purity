@@ -1,0 +1,108 @@
+.overlaps_cards {
+  display: flex;
+  justify-content: center;
+  background-image: url("../img/blueBlurred.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.overlaps_cards .card {
+  background-image: linear-gradient(90deg, #3d71f5, #0d4ef2);
+  border-radius: 1em;
+  box-shadow: 0 0.25em 0.375em hsla(0, 0%, 0%, 0.1);
+  position: absolute;
+  top: calc(32px * 6);
+  left: calc(32px * 5);
+  width: 337px;
+  height: 205px;
+  transform: translate(-50%, -50%);
+  position: relative;
+}
+
+.overlaps_cards .card--glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.05)
+  );
+  color: transparent;
+  top: calc(32px * 0.5);
+  left: calc(32px * 6);
+}
+
+.overlaps_cards .card--glass::before,
+.overlaps_cards .card--glass::after {
+  border-radius: inherit;
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.overlaps_cards .card--glass::before {
+  border: 1px solid #fff;
+  mask-image: linear-gradient(135deg, #fff, rgba(255, 255, 255, 0) 50%);
+}
+
+.overlaps_cards .card--glass::after {
+  border: 1px solid #0d4ef2;
+  mask-image: linear-gradient(135deg, rgba(255, 255, 255, 0) 50%, #fff);
+}
+
+.overlaps_cards .card__content {
+  background: linear-gradient(
+        rgba(255, 255, 255, 0) 3.125em,
+        #6e95f7 3.375em,
+        #9efaf7 4.5em
+      )
+      0 0 / calc(337px - 32px * 2) 50%,
+    linear-gradient(
+        90deg,
+        #9efaf7 13em,
+        #6e95f7 calc(337px - 32px * 2),
+        rgba(255, 255, 255, 0) 19.1em
+      )
+      0 100% / 100% 50%,
+    linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.5) 4em,
+        rgba(255, 255, 255, 0.2)
+      )
+      0 0 / 100% 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.25em 1.5em;
+  position: relative;
+  height: 100%;
+  z-index: 1;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-repeat: no-repeat;
+}
+
+.overlaps_cards .card__logo,
+.overlaps_cards .card__title {
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1.17;
+}
+
+.overlaps_cards .card__logo {
+  text-align: end;
+  width: 25%;
+}
+
+.overlaps_cards .card__title {
+  width: 75%;
+}
+
+.overlaps_cards .card__url {
+  font-size: 10px;
+  align-self: flex-end;
+  margin-inline-start: auto;
+}
