@@ -597,7 +597,7 @@ intro-section {
 .thirty_one_day_card_wrapper_main {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   flex-wrap: wrap;
   position: relative;
 }
