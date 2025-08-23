@@ -606,6 +606,31 @@ intro-section {
   width: 360px;
   background-color: white;
   padding: 20px;
+  position: relative;
+}
+
+.today::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  height: calc(100% + 8px);
+  width: calc(100% + 8px);
+  background: linear-gradient(
+    60deg,
+    #f79533,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );
+  border-radius: 22px;
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
 }
 
 .thirty_one_day_card_block {
@@ -637,6 +662,13 @@ intro-section {
   margin-top: 10px;
   color: #2f484a;
   text-align: left;
+}
+
+.thirty_one_day_card_title.with_height {
+  min-height: 181px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .thirty_one_day_card_content {
@@ -838,5 +870,17 @@ intro-section {
   .scripture-quote,
   .call-to-commitment {
     font-size: 1rem;
+  }
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
