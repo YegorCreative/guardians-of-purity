@@ -1,0 +1,59 @@
+.text_overlay_banner_block2 {
+  padding-bottom: 0;
+}
+
+.about-mission {
+  padding: 20px;
+}
+
+.masturbation_page_wrapper {
+  max-width: 1000px;
+  margin: 0px auto;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.masturbation_page_wrapper h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  background: linear-gradient(90deg, #3d71f5, #0d4ef2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.masturbation_page_wrapper .highlight {
+  background: #b0d2da;
+  padding: 1rem;
+  border-left: 6px solid #6fa3a4;
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+
+.masturbation_page_wrapper ul {
+  padding-left: 1.5rem;
+}
+
+.masturbation_page_wrapper ul li {
+  margin-bottom: 0.5rem;
+}
+
+.masturbation_page_wrapperblockquote {
+  background: #f7fcfd;
+  border-left: 6px solid #3d71f5;
+  padding: 1rem;
+  font-style: italic;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+.masturbation_page_wrapper strong {
+  color: #0d4ef2;
+}
+
+@media screen and (max-width: 768px) {
+  .about-mission {
+    padding: 0;
+  }
+}

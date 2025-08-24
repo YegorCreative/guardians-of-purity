@@ -46,6 +46,7 @@
               >PRAYER</a
             >
             <a href="#contact" class="nav-link">Contact</a>
+            <a href="masturbation.html" class="nav-link">Masturbation</a>
             <a href="testpackage.html" class="nav-link">Test</a>
             <a href="#resources" class="cta-btn">Start Your Journey</a>
           </div>
@@ -195,7 +196,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
     <script src="js/script.js"></script>
     <script>
-      // Fetch JSON file and render
       fetch("./data/prayer.json")
         .then((response) => response.json())
         .then((data) => {
@@ -213,8 +213,6 @@
           bigWrapper.className = "prayers_wrapper";
 
           const todayDay = new Date().getDate();
-
-          console.log("todayDay", todayDay);
 
           grouped.forEach((group) => {
             const wrapper = document.createElement("div");
