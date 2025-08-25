@@ -72,6 +72,76 @@
   border-radius: 20px;
 }
 
+/* Start focus on a mission block */
+
+.focus_on_mission_wrapper {
+  position: relative;
+  background: url("../img/newGP.webp") center/cover no-repeat;
+  padding: 40px;
+}
+
+.focus_on_mission_title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 40px;
+  max-width: 500px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.focus_on_mission_cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  max-width: 70%;
+  margin-left: auto;
+}
+
+.focus_on_mission_card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 20px 30px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.focus_on_mission_card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  border-radius: inherit;
+}
+
+.focus_on_mission_card h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+.focus_on_mission_card p {
+  margin: 0;
+  font-size: 14px;
+  color: #fff;
+  max-width: 300px;
+}
+
+/* End focus on a mission block  */
+
 @media screen and (max-width: 991px) {
   .intro-paragraph {
     left: 8%;
