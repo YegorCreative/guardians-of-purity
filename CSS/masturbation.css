@@ -206,7 +206,7 @@
 }
 
 .overlay_card_separated_block {
-  padding: 5px 25px 25px 10px;
+  padding: 5px 25px 20px 10px;
 }
 
 .overlay_card_wrapper {
@@ -266,5 +266,17 @@
 
   .intro-paragraph span {
     font-size: 28px;
+  }
+
+  .focus_on_mission_wrapper_row {
+    flex-direction: column;
+  }
+
+  .focus_on_mission_wrapper {
+    width: 100%;
+  }
+
+  .overlay_card_centered {
+    width: 80%;
   }
 }
