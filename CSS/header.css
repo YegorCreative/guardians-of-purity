@@ -46,6 +46,11 @@ header {
   mask-image: linear-gradient(135deg, #fff, rgba(255, 255, 255, 0) 50%);
 }
 
+.logo {
+  cursor: pointer;
+  z-index: 1;
+}
+
 .logo-img {
   height: 40px;
   display: block;

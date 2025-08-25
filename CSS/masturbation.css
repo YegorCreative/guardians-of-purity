@@ -74,10 +74,36 @@
 
 /* Start focus on a mission block */
 
+.focus_on_mission_wrapper_row {
+  display: flex;
+  gap: 10px;
+}
+
 .focus_on_mission_wrapper {
   position: relative;
   background: url("../img/heroes8.webp") center/cover no-repeat;
   padding: 40px;
+  width: 50%;
+}
+
+.focus_on_mission_wrapper.first {
+  background: url("../img/heroes20.webp") center/cover no-repeat;
+}
+
+.focus_on_mission_wrapper.second {
+  background: url("../img/heroes21.webp") center/cover no-repeat;
+}
+
+.focus_on_mission_wrapper.third {
+  background: url("../img/heroes22.webp") center/cover no-repeat;
+}
+
+.focus_on_mission_wrapper.fourth {
+  background: url("../img/heroes23.webp") center/cover no-repeat;
+}
+
+.focus_on_mission_wrapper.fifth {
+  background: url("../img/heroes24.webp") center/cover no-repeat;
 }
 
 .focus_on_mission_title {
@@ -94,7 +120,6 @@
   flex-direction: column;
   gap: 24px;
   position: relative;
-  max-width: 70%;
   margin-left: auto;
 }
 
@@ -108,6 +133,7 @@
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   position: relative;
+  min-height: 150px;
 }
 
 .focus_on_mission_card::after {

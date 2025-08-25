@@ -105,6 +105,17 @@
   text-align: center;
 }
 
+.gradient_cards_wrapper {
+  background: url("../img/heroes24.webp") center/cover no-repeat;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 2px #8b8b8b;
+}
+
+.gradient_cards_wrapper h1 {
+  font-size: 36px;
+}
+
 @media screen and (max-width: 1024px) {
   .intro-paragraph {
     max-width: fit-content;

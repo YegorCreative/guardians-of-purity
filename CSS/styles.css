@@ -21,6 +21,8 @@ body {
 
 .separated_block {
   padding: 5px 10px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .separated_block.first {
