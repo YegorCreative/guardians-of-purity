@@ -247,6 +247,25 @@
 
 /* End overlay card */
 
+.froasted_glass_wrapper {
+  background-image: url("../img/bible.webp");
+  background-size: cover;
+  background-position: center;
+  min-height: 350px;
+  overflow: hidden;
+}
+
+.froasted_glass_effect {
+  background: rgba(47, 72, 74, 0.29);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.7px);
+  -webkit-backdrop-filter: blur(4.7px);
+  border: 1px solid rgba(47, 72, 74, 0.3);
+  padding: 20px;
+  min-height: 350px;
+  color: #fff;
+}
+
 @media screen and (max-width: 991px) {
   .intro-paragraph {
     left: 8%;
