@@ -1,6 +1,6 @@
 /* Navbar */
 
-header {
+.header {
   background: linear-gradient(90deg, #3d71f5, #0d4ef2);
   box-shadow: 0 0.25em 0.375em hsla(0, 0%, 0%, 0.1);
   display: flex;
@@ -69,12 +69,13 @@ header {
   padding: 10px 15px;
   font-size: 1rem;
   transition: background-color 0.3s;
+  border-radius: 20px;
+  transition: all 0.4s ease-in-out;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  background-color: #b0d2da; /* Primary blue */
-  border-radius: 5px;
+  background-color: rgba(176, 210, 218, 0.4); /* Primary blue */
 }
 
 .cta-btn {
@@ -103,6 +104,66 @@ header {
   height: 3px;
   background-color: #ffffff;
   margin: 5px auto;
+}
+
+.subheader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.submenu-button {
+  background: linear-gradient(90deg, #3d71f5, #0d4ef2);
+  box-shadow: 0 0.25em 0.375em hsla(0, 0%, 0%, 0.1);
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: all 0.4s ease-in-out;
+}
+
+.submenu-button:hover {
+  scale: 1.05;
+}
+
+.submenu-button-inner {
+  backdrop-filter: blur(12px);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.05)
+  );
+  position: relative;
+  border-radius: 16px;
+}
+
+.submenu-button-inner::after,
+.submenu-button-inner::before {
+  border-radius: inherit;
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.submenu-button-inner::before {
+  border: 1px solid #fff;
+  mask-image: linear-gradient(135deg, #fff, rgba(255, 255, 255, 0) 50%);
+}
+
+.navbar::after {
+  border: 1px solid #0d4ef2;
+  mask-image: linear-gradient(135deg, rgba(255, 255, 255, 0) 50%, #fff);
 }
 
 @media (max-width: 768px) {
