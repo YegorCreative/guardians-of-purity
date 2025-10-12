@@ -1,8 +1,8 @@
 /* Chapter 1 - Intro Section */
 .chapterOne-section {
   position: relative;
-  background: linear-gradient(rgba(12, 22, 27, 0.5), rgba(12, 22, 27, 0.5)), 
-              url('images/ch1-hero.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(12, 22, 27, 0.5), rgba(12, 22, 27, 0.5)),
+    url("images/ch1-hero.jpg") center/cover no-repeat;
   color: #ffffff;
   padding: 100px 20px;
   text-align: center;
@@ -264,7 +264,7 @@
 .chapterOne-export-button:hover {
   background-color: #406e72;
 }
-/* Chapter 1 - Export Download Section */
+/* Chapter 1 - Export Download Section 1*/
 .chapterOne-export-section {
   background-color: #f4fafa;
   padding: 100px 20px;
