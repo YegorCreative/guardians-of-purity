@@ -263,5 +263,46 @@
 
 .chapterOne-export-button:hover {
   background-color: #406e72;
-  align-items: center;
+}
+/* Chapter 1 - Export Download Section */
+.chapterOne-export-section {
+  background-color: #f4fafa;
+  padding: 100px 20px;
+  text-align: center;
+  border-top: 1px solid #d0e6e6;
+}
+
+.chapterOne-export-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.chapterOne-export-title {
+  font-size: 1.8rem;
+  color: #2f484a;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.chapterOne-export-text {
+  font-size: 1.1rem;
+  color: #475c5f;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.chapterOne-export-button {
+  background-color: #2f484a;
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chapterOne-export-button:hover {
+  background-color: #406e72;
 }
