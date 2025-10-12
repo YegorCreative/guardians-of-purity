@@ -141,3 +141,63 @@ try {
 // Placeholder for future interactivity
 // You can add scroll animations, section trackers, or reminders here
 console.log("31 Days of Prayer - Intro Section Loaded");
+
+
+
+// do this now reflection 
+
+// Save and load journaling text
+document.addEventListener("DOMContentLoaded", () => {
+  const journal = document.getElementById("journal1");
+
+  // Load saved value
+  if (localStorage.getItem("journal1")) {
+    journal.value = localStorage.getItem("journal1");
+  }
+
+  // Save on input
+  journal.addEventListener("input", () => {
+    localStorage.setItem("journal1", journal.value);
+  });
+});
+
+function exportReflection() {
+  const journal1 = localStorage.getItem("journal1") || "";
+  const journal2 = localStorage.getItem("journal2") || "";
+  const journal3 = localStorage.getItem("journal3") || "";
+  const journal4 = localStorage.getItem("journal4") || "";
+  const journal5 = localStorage.getItem("journal5") || "";
+  const journal6 = localStorage.getItem("journal6") || "";
+  const summary = localStorage.getItem("chapterOne-summary") || "";
+
+  const content = 
+`Chapter 1 Reflections – God’s Design for Your Body
+
+1. Carefully Crafted by God:
+${journal1}
+
+2. Made in God's Image:
+${journal2}
+
+3. Your Body Has Purpose:
+${journal3}
+
+4. Stewardship and Self-Care:
+${journal4}
+
+5. Facing Temptation:
+${journal5}
+
+6. Confidence in Christ:
+${journal6}
+
+Final Reflection:
+${summary}
+`;
+
+  const blob = new Blob([content], { type: 'text/plain' });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "Chapter1_Reflections.txt";
+  link.click();
+}

@@ -225,3 +225,43 @@
   font-style: italic;
   white-space: pre-line;
 }
+
+/* Chapter 1 - Journal Box */
+.chapterOne-journal-box {
+  margin-top: 20px;
+  background-color: #ffffff;
+  border: 1px solid #b0d2da;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.chapterOne-journal-box textarea {
+  width: 100%;
+  height: 120px;
+  font-size: 1rem;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  resize: vertical;
+  font-family: inherit;
+  background-color: #f7fcfd;
+  color: #2e3d43;
+}
+
+.chapterOne-export-button {
+  background-color: #2f484a;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.chapterOne-export-button:hover {
+  background-color: #406e72;
+  align-items: center;
+}

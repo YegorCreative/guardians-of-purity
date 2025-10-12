@@ -9,6 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&family=Raleway:wght@400;600&family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <!-- AOS Library CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<!-- AOS Library JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <!-- CSS Links -->
     <link rel="stylesheet" href="CSS/styles.css" />
     <link rel="stylesheet" href="CSS/chapter1Styles.css" />
@@ -103,7 +107,7 @@
 
 <section class="chapterOne-teaching-section">
   <div class="chapterOne-teaching-container">
-    <h2 class="chapterOne-teaching-title">1. You Were Carefully Crafted by God</h2>
+    <h2 class="chapterOne-teaching-title" data-aos="fade-up">1. You Were Carefully Crafted by God</h2>
 
     <p class="chapterOne-teaching-text">
       You are not a mistake. Every system, cell, and strand of DNA reveals God’s genius.
@@ -122,11 +126,15 @@
       “When I look at the human body, I see the glory of God.”<br>— A.W. Tozer
     </div>
 
-    <div class="chapterOne-action-box">
+    <div class="chapterOne-action-box" data-aos="fade-in" data-aos-delay="200">
       <h3>Do This Now</h3>
       <p>Thank God for the way He created you. Write down five things you appreciate about your body and what those things allow you to do.</p>
     </div>
-
+    <div class="chapterOne-journal-box" data-aos="fade-up">
+             <label for="journal1"><strong>Your Journal:</strong> What stood out to you?</label>
+            <textarea id="journal1" placeholder="Type your thoughts here..."></textarea>
+        </div>
+        
     <div class="chapterOne-reflect-box">
       <h3>Questions to Reflect On</h3>
       <ul>
@@ -158,7 +166,7 @@
       <span class="chapterOne-verseRef">— Genesis 1:27</span>
     </blockquote>
 
-    <div class="chapterOne-quote-box">
+    <div class="chapterOne-quote-box" data-aos="fade-in" data-aos-delay="200">
       “You are not your own masterpiece; you are God's.”<br>— Timothy Keller
     </div>
 
@@ -166,6 +174,10 @@
       <h3>Do This Now</h3>
       <p>List three ways you reflect God's image (e.g., empathy, creativity, perseverance). Then write one way you want to grow in reflecting Him more clearly.</p>
     </div>
+     <div class="chapterOne-journal-box" data-aos="fade-up">
+             <label for="journal1"><strong>Your Journal:</strong> What stood out to you?</label>
+            <textarea id="journal1" placeholder="Type your thoughts here..."></textarea>
+        </div>
 
     <div class="chapterOne-reflect-box">
       <h3>Questions to Reflect On</h3>
@@ -240,6 +252,11 @@
       <p>Choose one area of your health to improve this week. Make a small, specific change (e.g., drink more water, walk 20 minutes, sleep earlier).</p>
     </div>
 
+         <div class="chapterOne-journal-box" data-aos="fade-up">
+             <label for="journal1"><strong>Your Journal:</strong> What stood out to you?</label>
+            <textarea id="journal1" placeholder="Type your thoughts here..."></textarea>
+        </div>
+
     <div class="chapterOne-reflect-box">
       <h3>Questions to Reflect On</h3>
       <ul>
@@ -275,7 +292,10 @@
       <h3>Do This Now</h3>
       <p>Think of one recurring temptation. Find and memorize a verse that speaks truth into that struggle.</p>
     </div>
-
+     <div class="chapterOne-journal-box" data-aos="fade-up">
+             <label for="journal1"><strong>Your Journal:</strong> What stood out to you?</label>
+            <textarea id="journal1" placeholder="Type your thoughts here..."></textarea>
+        </div>
     <div class="chapterOne-reflect-box">
       <h3>Questions to Reflect On</h3>
       <ul>
@@ -311,7 +331,10 @@
       <h3>Do This Now</h3>
       <p>Write 3 affirmations rooted in Scripture. Example: “I am God’s workmanship.” “I am set apart.” “I am not alone.”</p>
     </div>
-
+     <div class="chapterOne-journal-box" data-aos="fade-up">
+             <label for="journal1"><strong>Your Journal:</strong> What stood out to you?</label>
+            <textarea id="journal1" placeholder="Type your thoughts here..."></textarea>
+        </div>
     <div class="chapterOne-reflect-box">
       <h3>Questions to Reflect On</h3>
       <ul>
@@ -324,6 +347,7 @@
   </div>
 </section>
 
+<button onclick="exportReflection()" class="chapterOne-export-button">Download My Reflection</button>
 <!--section 4-->
 
 <section class="chapterOne-summary-section">
@@ -385,6 +409,12 @@
     </div>
 
     <!-- JavaScript Link -->
+     <script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+</script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/lenis@1.3.1/dist/lenis.min.js"></script>
