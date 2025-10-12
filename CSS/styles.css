@@ -671,6 +671,7 @@ intro-section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 0;
 }
 
 .thirty_one_day_card_content {

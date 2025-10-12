@@ -1412,7 +1412,27 @@
   backdrop-filter: blur(6px);
 }
 
-.monthly_prayer_guide_text {
+@media (max-width: 768px) {
+  .monthly_prayer_guide_card {
+    flex-direction: column;
+  }
+
+  .monthly_prayer_guide_days {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .thirty_one_day_card_wrapper {
+    display: none;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 10px;
+  }
+}
+
+/* .monthly_prayer_guide_text {
   background: linear-gradient(
     135deg,
     rgba(59, 130, 246, 0.6),
@@ -1439,7 +1459,7 @@
 .monthly_prayer_guide_text p {
   margin: 0 0 10px;
   transition: all 0.3s ease;
-}
+} */
 
 /* End Monthly prayer guide */
 
