@@ -51,6 +51,100 @@
       </nav>
     </div>
 
+    <!-- Pure CSS angled columns layout options -->
+
+    <div class="separated_block angled_columns_wrapper">
+      <article class="angled_columns_item fixf">
+        <section class="angled_columns_text">
+          <span>clip-path</span>
+          <h2>Clipping method 1</h2>
+          <p>
+            Preferable when the horizontal stretch of the angled columns
+            (relative to column width) remains constant and not the angle. This
+            does not require trigonometry nor container queries, but it requires
+            fraction calculations.
+          </p>
+        </section>
+
+        <!-- images directly as img -->
+        <img
+          src="https://images.unsplash.com/photo-1604152550997-c7b040f8beb2?w=800"
+          alt=""
+        />
+        <img
+          src="https://images.unsplash.com/photo-1572978306654-a3835dd40cd4?w=800"
+          alt=""
+        />
+        <img
+          src="https://images.unsplash.com/photo-1634184944338-7a5abb630f9c?w=800"
+          alt=""
+        />
+      </article>
+      <!-- Clipping method 2 (uses figure wrappers) -->
+      <article class="angled_columns_item fixa">
+        <section class="angled_columns_text">
+          <span>clip-path</span>
+          <h2>Clipping method 2</h2>
+          <p>
+            But it can also be used when the angle remains constant. This
+            requires container queries and trigonometry in addition to fraction
+            calculations, as well as nesting img elements in figure wrappers.
+          </p>
+        </section>
+
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1604152550997-c7b040f8beb2?w=800"
+            alt=""
+          />
+        </figure>
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1572978306654-a3835dd40cd4?w=800"
+            alt=""
+          />
+        </figure>
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1634184944338-7a5abb630f9c?w=800"
+            alt=""
+          />
+        </figure>
+      </article>
+      <!-- Clipping method (uses figure wrappers) -->
+      <article class="angled_columns_item fixa">
+        <section class="angled_columns_text">
+          <span>transform</span>
+          <h2>Skewing method</h2>
+          <p>
+            Preferable when the angle remains constant. Requires container
+            queries and trigonometric functions, as well as nesting img elements
+            in figure wrappers, so we can un-skew the actual images after their
+            containers get skewed.
+          </p>
+        </section>
+
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1604152550997-c7b040f8beb2?w=800"
+            alt=""
+          />
+        </figure>
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1572978306654-a3835dd40cd4?w=800"
+            alt=""
+          />
+        </figure>
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1634184944338-7a5abb630f9c?w=800"
+            alt=""
+          />
+        </figure>
+      </article>
+    </div>
+
     <!-- Scroll to bloom -->
 
     <div class="separated_block scroll_to_bloom_card_wrapper">
