@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guardians of Purity</title>
+
+    <!-- Google Fonts: Updated Font Families -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&family=Raleway:wght@400;600&family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="CSS/test1.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+
+    <script>
+      window.console = window.console || function (t) {};
+    </script>
+  </head>
+
+  <body translate="no">
+    <div class="pst_wrapper">
+      <div class="pst_header fluid" style="--count: 7">
+        <section>
+          <h1>
+            <span aria-hidden="true">you can&nbsp;</span>
+            <span class="sr-only">you can ship things.</span>
+          </h1>
+          <ul aria-hidden="true">
+            <li style="--i: 0">design.</li>
+            <li style="--i: 1">prototype.</li>
+            <li style="--i: 2">solve.</li>
+            <li style="--i: 3">build.</li>
+            <li style="--i: 4">develop.</li>
+            <li style="--i: 5">cook.</li>
+            <li style="--i: 6">ship.</li>
+          </ul>
+        </section>
+      </div>
+      <div class="pst_main">
+        <section>
+          <p class="fluid">
+            and i'll show you how.<br />
+            <a href="https://craftofui.com">craftofui.dev</a>.
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <script id="rendered-js" type="module">
+      const config = {
+        animate: true,
+        hue: 0,
+        start: 50,
+        space: 50,
+      };
+
+      const update = () => {
+        document.documentElement.dataset.animate = config.animate;
+        document.documentElement.style.setProperty("--hue", config.hue);
+        document.documentElement.style.setProperty(
+          "--start",
+          `${config.start}vh`
+        );
+        document.documentElement.style.setProperty(
+          "--space",
+          `${config.space}vh`
+        );
+      };
+
+      const sync = (event) => {
+        if (
+          !document.startViewTransition ||
+          event.target.controller.view.labelElement.innerText !== "Theme"
+        )
+          return update();
+        document.startViewTransition(() => update());
+      };
+
+      update();
+    </script>
+  </body>
+</html>
