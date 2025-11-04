@@ -377,3 +377,138 @@ class AccordionSlider {
 document.addEventListener("DOMContentLoaded", () => {
   new AccordionSlider();
 });
+
+// Team carousel
+const teamMembers = [
+  { name: "Luffy", role: "Founder" },
+  { name: "Monkey D. Luffy", role: "Creative Director" },
+  { name: "Luffy chan", role: "Lead Developer" },
+  { name: "Lucy", role: "UX Designer" },
+  { name: "Luffy kun", role: "Marketing Manager" },
+  { name: "Monkey chan", role: "Product Manager" },
+];
+
+const teamCarouselCard = document.querySelectorAll(".team_carousel_card");
+const teamCarouselDots = document.querySelectorAll(".team_carousel_dot");
+const memberName = document.querySelector(".team_carousel_member-name");
+const memberRole = document.querySelector(".team_carousel_member-role");
+const upArrows = document.querySelectorAll(".team_carousel_nav-arrow.up");
+const downArrows = document.querySelectorAll(".team_carousel_nav-arrow.down");
+let currentIndexCarousel = 0;
+let isAnimating = false;
+
+function updateCarousel(newIndex) {
+  if (isAnimating) return;
+  isAnimating = true;
+
+  currentIndexCarousel =
+    (newIndex + teamCarouselCard.length) % teamCarouselCard.length;
+
+  teamCarouselCard.forEach((card, i) => {
+    const offset =
+      (i - currentIndexCarousel + teamCarouselCard.length) %
+      teamCarouselCard.length;
+
+    card.classList.remove(
+      "center",
+      "up-1",
+      "up-2",
+      "down-1",
+      "down-2",
+      "hidden"
+    );
+
+    if (offset === 0) {
+      card.classList.add("center");
+    } else if (offset === 1) {
+      card.classList.add("down-1");
+    } else if (offset === 2) {
+      card.classList.add("down-2");
+    } else if (offset === teamCarouselCard.length - 1) {
+      card.classList.add("up-1");
+    } else if (offset === teamCarouselCard.length - 2) {
+      card.classList.add("up-2");
+    } else {
+      card.classList.add("hidden");
+    }
+  });
+
+  teamCarouselDots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === currentIndexCarousel);
+  });
+
+  memberName.style.opacity = "0";
+  memberRole.style.opacity = "0";
+
+  setTimeout(() => {
+    memberName.textContent = teamMembers[currentIndexCarousel].name;
+    memberRole.textContent = teamMembers[currentIndexCarousel].role;
+    memberName.style.opacity = "1";
+    memberRole.style.opacity = "1";
+  }, 300);
+
+  setTimeout(() => {
+    isAnimating = false;
+  }, 800);
+}
+
+upArrows.forEach((arrow) => {
+  arrow.addEventListener("click", () => {
+    updateCarousel(currentIndexCarousel - 1);
+  });
+});
+
+downArrows.forEach((arrow) => {
+  arrow.addEventListener("click", () => {
+    updateCarousel(currentIndexCarousel + 1);
+  });
+});
+
+teamCarouselDots.forEach((dot, i) => {
+  dot.addEventListener("click", () => {
+    updateCarousel(i);
+  });
+});
+
+teamCarouselCard.forEach((card, i) => {
+  card.addEventListener("click", () => {
+    updateCarousel(i);
+  });
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowUp") {
+    updateCarousel(currentIndexCarousel - 1);
+  } else if (e.key === "ArrowDown") {
+    updateCarousel(currentIndexCarousel + 1);
+  }
+});
+
+let touchStartX = 0;
+let touchEndX = 0;
+let scrollTimeout;
+let isScrolling = false;
+
+document.addEventListener("touchstart", (e) => {
+  touchStartX = e.changedTouches[0].screenY;
+});
+
+document.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].screenY;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const swipeThreshold = 50;
+  const diff = touchStartX - touchEndX;
+
+  if (Math.abs(diff) > swipeThreshold) {
+    if (diff > 0) {
+      updateCarousel(currentIndexCarousel + 1);
+    } else {
+      updateCarousel(currentIndexCarousel - 1);
+    }
+  }
+}
+
+updateCarousel(0);
