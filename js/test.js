@@ -138,187 +138,187 @@ center(0);
 
 // Water Distortion Effect Initialization
 
-const canvasEl = document.querySelector("#waterDistortion");
-const imgInput = document.querySelector("#image-selector-input");
-const devicePixelRatio = Math.min(window.devicePixelRatio, 2);
+// const canvasEl = document.querySelector("#waterDistortion");
+// const imgInput = document.querySelector("#image-selector-input");
+// const devicePixelRatio = Math.min(window.devicePixelRatio, 2);
 
-const params = {
-  blueish: 0.6,
-  scale: 7,
-  illumination: 0.15,
-  surfaceDistortion: 0.07,
-  waterDistortion: 0.03,
-  loadMyImage: () => {
-    imgInput.click();
-  },
-};
+// const params = {
+//   blueish: 0.6,
+//   scale: 7,
+//   illumination: 0.15,
+//   surfaceDistortion: 0.07,
+//   waterDistortion: 0.03,
+//   loadMyImage: () => {
+//     imgInput.click();
+//   },
+// };
 
-imgInput.onchange = () => {
-  const [file] = imgInput.files;
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      loadImage(e.target.result);
-    };
-    reader.readAsDataURL(file);
-  }
-};
+// imgInput.onchange = () => {
+//   const [file] = imgInput.files;
+//   if (file) {
+//     const reader = new FileReader();
+//     reader.onload = (e) => {
+//       loadImage(e.target.result);
+//     };
+//     reader.readAsDataURL(file);
+//   }
+// };
 
-let image, uniforms;
-const gl = initShader();
-updateUniforms();
-loadImage(
-  "https://cdn.shopify.com/s/files/1/0185/5999/1872/files/hero--desktop.webp?v=1759340146"
-);
-createControls();
-render();
-window.addEventListener("resize", resizeCanvas);
+// let image, uniforms;
+// const gl = initShader();
+// updateUniforms();
+// loadImage(
+//   "https://cdn.shopify.com/s/files/1/0185/5999/1872/files/hero--desktop.webp?v=1759340146"
+// );
+// createControls();
+// render();
+// window.addEventListener("resize", resizeCanvas);
 
-function initShader() {
-  const vsSource = document.getElementById("vertShader").innerHTML;
-  const fsSource = document.getElementById("fragShader").innerHTML;
+// function initShader() {
+//   const vsSource = document.getElementById("vertShader").innerHTML;
+//   const fsSource = document.getElementById("fragShader").innerHTML;
 
-  const gl =
-    canvasEl.getContext("webgl") || canvasEl.getContext("experimental-webgl");
+//   const gl =
+//     canvasEl.getContext("webgl") || canvasEl.getContext("experimental-webgl");
 
-  if (!gl) {
-    alert("WebGL is not supported by your browser.");
-  }
+//   if (!gl) {
+//     alert("WebGL is not supported by your browser.");
+//   }
 
-  function createShader(gl, sourceCode, type) {
-    const shader = gl.createShader(type);
-    gl.shaderSource(shader, sourceCode);
-    gl.compileShader(shader);
+//   function createShader(gl, sourceCode, type) {
+//     const shader = gl.createShader(type);
+//     gl.shaderSource(shader, sourceCode);
+//     gl.compileShader(shader);
 
-    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-      console.error(
-        "An error occurred compiling the shaders: " +
-          gl.getShaderInfoLog(shader)
-      );
-      gl.deleteShader(shader);
-      return null;
-    }
+//     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+//       console.error(
+//         "An error occurred compiling the shaders: " +
+//           gl.getShaderInfoLog(shader)
+//       );
+//       gl.deleteShader(shader);
+//       return null;
+//     }
 
-    return shader;
-  }
+//     return shader;
+//   }
 
-  const vertexShader = createShader(gl, vsSource, gl.VERTEX_SHADER);
-  const fragmentShader = createShader(gl, fsSource, gl.FRAGMENT_SHADER);
+//   const vertexShader = createShader(gl, vsSource, gl.VERTEX_SHADER);
+//   const fragmentShader = createShader(gl, fsSource, gl.FRAGMENT_SHADER);
 
-  function createShaderProgram(gl, vertexShader, fragmentShader) {
-    const program = gl.createProgram();
-    gl.attachShader(program, vertexShader);
-    gl.attachShader(program, fragmentShader);
-    gl.linkProgram(program);
+//   function createShaderProgram(gl, vertexShader, fragmentShader) {
+//     const program = gl.createProgram();
+//     gl.attachShader(program, vertexShader);
+//     gl.attachShader(program, fragmentShader);
+//     gl.linkProgram(program);
 
-    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-      console.error(
-        "Unable to initialize the shader program: " +
-          gl.getProgramInfoLog(program)
-      );
-      return null;
-    }
+//     if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+//       console.error(
+//         "Unable to initialize the shader program: " +
+//           gl.getProgramInfoLog(program)
+//       );
+//       return null;
+//     }
 
-    return program;
-  }
+//     return program;
+//   }
 
-  const shaderProgram = createShaderProgram(gl, vertexShader, fragmentShader);
-  uniforms = getUniforms(shaderProgram);
+//   const shaderProgram = createShaderProgram(gl, vertexShader, fragmentShader);
+//   uniforms = getUniforms(shaderProgram);
 
-  function getUniforms(program) {
-    let uniforms = [];
-    let uniformCount = gl.getProgramParameter(program, gl.ACTIVE_UNIFORMS);
-    for (let i = 0; i < uniformCount; i++) {
-      let uniformName = gl.getActiveUniform(program, i).name;
-      uniforms[uniformName] = gl.getUniformLocation(program, uniformName);
-    }
-    return uniforms;
-  }
+//   function getUniforms(program) {
+//     let uniforms = [];
+//     let uniformCount = gl.getProgramParameter(program, gl.ACTIVE_UNIFORMS);
+//     for (let i = 0; i < uniformCount; i++) {
+//       let uniformName = gl.getActiveUniform(program, i).name;
+//       uniforms[uniformName] = gl.getUniformLocation(program, uniformName);
+//     }
+//     return uniforms;
+//   }
 
-  const vertices = new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]);
+//   const vertices = new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]);
 
-  const vertexBuffer = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
-  gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+//   const vertexBuffer = gl.createBuffer();
+//   gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+//   gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
 
-  gl.useProgram(shaderProgram);
+//   gl.useProgram(shaderProgram);
 
-  const positionLocation = gl.getAttribLocation(shaderProgram, "a_position");
-  gl.enableVertexAttribArray(positionLocation);
+//   const positionLocation = gl.getAttribLocation(shaderProgram, "a_position");
+//   gl.enableVertexAttribArray(positionLocation);
 
-  gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
-  gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+//   gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+//   gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
 
-  return gl;
-}
+//   return gl;
+// }
 
-function updateUniforms() {
-  gl.uniform1f(uniforms.u_blueish, params.blueish);
-  gl.uniform1f(uniforms.u_scale, params.scale);
-  gl.uniform1f(uniforms.u_illumination, params.illumination);
-  gl.uniform1f(uniforms.u_surface_distortion, params.surfaceDistortion);
-  gl.uniform1f(uniforms.u_water_distortion, params.waterDistortion);
-}
+// function updateUniforms() {
+//   gl.uniform1f(uniforms.u_blueish, params.blueish);
+//   gl.uniform1f(uniforms.u_scale, params.scale);
+//   gl.uniform1f(uniforms.u_illumination, params.illumination);
+//   gl.uniform1f(uniforms.u_surface_distortion, params.surfaceDistortion);
+//   gl.uniform1f(uniforms.u_water_distortion, params.waterDistortion);
+// }
 
-function loadImage(src) {
-  image = new Image();
-  image.crossOrigin = "anonymous";
-  image.src = src;
-  image.onload = () => {
-    const imageTexture = gl.createTexture();
-    gl.bindTexture(gl.TEXTURE_2D, imageTexture);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
-    gl.uniform1i(uniforms.u_image_texture, 0);
-    resizeCanvas();
-  };
-}
+// function loadImage(src) {
+//   image = new Image();
+//   image.crossOrigin = "anonymous";
+//   image.src = src;
+//   image.onload = () => {
+//     const imageTexture = gl.createTexture();
+//     gl.bindTexture(gl.TEXTURE_2D, imageTexture);
+//     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+//     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+//     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+//     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+//     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+//     gl.uniform1i(uniforms.u_image_texture, 0);
+//     resizeCanvas();
+//   };
+// }
 
-function render() {
-  const currentTime = performance.now();
-  gl.uniform1f(uniforms.u_time, currentTime);
-  gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-  requestAnimationFrame(render);
-}
+// function render() {
+//   const currentTime = performance.now();
+//   gl.uniform1f(uniforms.u_time, currentTime);
+//   gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+//   requestAnimationFrame(render);
+// }
 
-function resizeCanvas() {
-  const imgRatio = image.naturalWidth / image.naturalHeight;
-  canvasEl.width = window.innerWidth * devicePixelRatio;
-  canvasEl.height = window.innerHeight * devicePixelRatio;
-  gl.viewport(0, 0, canvasEl.width, canvasEl.height);
-  gl.uniform1f(uniforms.u_ratio, canvasEl.width / canvasEl.height);
-  gl.uniform1f(uniforms.u_img_ratio, imgRatio);
-}
+// function resizeCanvas() {
+//   const imgRatio = image.naturalWidth / image.naturalHeight;
+//   canvasEl.width = window.innerWidth * devicePixelRatio;
+//   canvasEl.height = window.innerHeight * devicePixelRatio;
+//   gl.viewport(0, 0, canvasEl.width, canvasEl.height);
+//   gl.uniform1f(uniforms.u_ratio, canvasEl.width / canvasEl.height);
+//   gl.uniform1f(uniforms.u_img_ratio, imgRatio);
+// }
 
-function createControls() {
-  if (typeof GUI === "undefined") {
-    console.warn("lil-gui library not loaded");
-    return;
-  }
-  const gui = new lil.GUI();
+// function createControls() {
+//   if (typeof GUI === "undefined") {
+//     console.warn("lil-gui library not loaded");
+//     return;
+//   }
+//   const gui = new lil.GUI();
 
-  gui.close();
+//   gui.close();
 
-  gui.add(params, "loadMyImage").name("load image");
+//   gui.add(params, "loadMyImage").name("load image");
 
-  const paramsFolder = gui.addFolder("shader params");
-  // paramsFolder.close();
+//   const paramsFolder = gui.addFolder("shader params");
+//   // paramsFolder.close();
 
-  paramsFolder.add(params, "blueish", 0, 0.8).onChange(updateUniforms);
-  paramsFolder.add(params, "scale", 5, 12).onChange(updateUniforms);
-  paramsFolder.add(params, "illumination", 0, 1).onChange(updateUniforms);
-  paramsFolder
-    .add(params, "surfaceDistortion", 0, 0.12)
-    .onChange(updateUniforms)
-    .name("surface distortion");
-  paramsFolder
-    .add(params, "waterDistortion", 0, 0.08)
-    .onChange(updateUniforms)
-    .name("water distortion");
-}
+//   paramsFolder.add(params, "blueish", 0, 0.8).onChange(updateUniforms);
+//   paramsFolder.add(params, "scale", 5, 12).onChange(updateUniforms);
+//   paramsFolder.add(params, "illumination", 0, 1).onChange(updateUniforms);
+//   paramsFolder
+//     .add(params, "surfaceDistortion", 0, 0.12)
+//     .onChange(updateUniforms)
+//     .name("surface distortion");
+//   paramsFolder
+//     .add(params, "waterDistortion", 0, 0.08)
+//     .onChange(updateUniforms)
+//     .name("water distortion");
+// }
 
 // Accordion Slider Navigation Buttons
 
@@ -512,3 +512,169 @@ function handleSwipe() {
 }
 
 updateCarousel(0);
+
+// Corner shape list
+
+const sponsors = [
+  {
+    src: "https://scary.land/images/finals/sponsors/Multi%20Co.svg",
+    name: "MultiCo",
+  },
+  {
+    src: "https://scary.land/images/finals/sponsors/ospuze.svg",
+    name: "Ospuze",
+  },
+  {
+    src: "https://scary.land/images/finals/sponsors/vaiiya.svg",
+    name: "Vaiiya",
+  },
+  {
+    src: "https://scary.land/images/finals/sponsors/alfa-acta.svg",
+    name: "Alfa Acta",
+  },
+  {
+    src: "https://scary.land/images/finals/sponsors/engimo.svg",
+    name: "Engimo",
+  },
+  {
+    src: "https://scary.land/images/finals/sponsors/holtow.svg",
+    name: "Holtow",
+  },
+  { src: "https://scary.land/images/finals/sponsors/volpe.svg", name: "Volpe" },
+  {
+    src: "https://scary.land/images/finals/sponsors/iseul-t.svg",
+    name: "Iseul-T",
+  },
+  {
+    src: "https://scary.land/images/finals/sponsors/dissun.svg",
+    name: "Dissun",
+  },
+  {
+    src: "https://scary.land/images/finals/sponsors/trentila.svg",
+    name: "Trentila",
+  },
+  { src: "https://scary.land/images/finals/sponsors/orf.svg", name: "Orf!" },
+  { src: "https://scary.land/images/finals/sponsors/ivada.svg", name: "Ivada" },
+];
+const majors = [
+  { src: "https://scary.land/images/finals/major/cometa.svg", name: "Cometa" },
+  {
+    src: "https://scary.land/images/finals/major/enorino.svg",
+    name: "Eno+rino",
+  },
+  {
+    src: "https://scary.land/images/finals/major/junopaico.svg",
+    name: "Junopaico",
+  },
+  { src: "https://scary.land/images/finals/major/crmp.svg", name: "CRMP" },
+  { src: "https://scary.land/images/finals/major/dxz.svg", name: "DXZ" },
+  {
+    src: "https://scary.land/images/finals/major/fizzy%20tiger.svg",
+    name: "Fizzy Tiger",
+  },
+  {
+    src: "https://scary.land/images/finals/major/plow%20skateboards.svg",
+    name: "Plow Skateboards",
+  },
+  {
+    src: "https://scary.land/images/finals/major/jiangsu%20romagna.svg",
+    name: "Jiangsu Romagna",
+  },
+  { src: "https://scary.land/images/finals/major/ranzio.svg", name: "Ranzio" },
+  {
+    src: "https://scary.land/images/finals/major/shutifura.svg",
+    name: "Shu.ti.fu.ra",
+  },
+  {
+    src: "https://scary.land/images/finals/major/sodracing.svg",
+    name: "Sodracing",
+  },
+  { src: "https://scary.land/images/finals/major/X7AV.svg", name: "X7AV" },
+  {
+    src: "https://scary.land/images/finals/major/xox%20skateboards.svg",
+    name: "XOX Skateboards",
+  },
+  {
+    src: "https://scary.land/images/finals/major/Hydra%20Q.svg",
+    name: "Hydra Q (Redacted)",
+  },
+];
+const minors = [
+  { src: "https://scary.land/images/finals/minor/16WS.svg", name: "16WS" },
+  {
+    src: "https://scary.land/images/finals/minor/argon%20casino.svg",
+    name: "Argon Casino",
+  },
+  {
+    src: "https://scary.land/images/finals/minor/DXZ%20Sunglasses.svg",
+    name: "DXZ Sunglasses",
+  },
+  {
+    src: "https://scary.land/images/finals/minor/big%20splash%20of%20cash.svg",
+    name: "Big Splash of Cash",
+  },
+  { src: "https://scary.land/images/finals/minor/qttro.svg", name: "Qttro" },
+  {
+    src: "https://scary.land/images/finals/minor/coin%20pile%20clinic.svg",
+    name: "Coin Pile Clinic",
+  },
+  {
+    src: "https://scary.land/images/finals/minor/robs%20wrist%20wraps.svg",
+    name: "Rob's Wrist Wraps",
+  },
+  {
+    src: "https://scary.land/images/finals/minor/dough%20wrangler.svg",
+    name: "Dough Wrangler",
+  },
+  { src: "https://scary.land/images/finals/minor/moj.svg", name: "Moj" },
+  {
+    src: "https://scary.land/images/finals/minor/glamora%20art%20deco.svg",
+    name: "Glamora Art Deco",
+  },
+  { src: "https://scary.land/images/finals/minor/vein.svg", name: "VEIN" },
+  {
+    src: "https://scary.land/images/finals/minor/magma%20hot%20drink%20bar.svg",
+    name: "Magma Hot Drinks Bar",
+  },
+  {
+    src: "https://scary.land/images/finals/minor/petronelle%20plaza.svg",
+    name: "Petronelle Plaza",
+  },
+  {
+    src: "https://scary.land/images/finals/minor/dragon%20constellation%20studio.svg",
+    name: "Dragon Constellation Studios",
+  },
+  {
+    src: "https://scary.land/images/finals/minor/rutile%20rolls.svg",
+    name: "Rutile Rolls",
+  },
+  {
+    src: "https://scary.land/images/finals/minor/Tristan.svg",
+    name: "Tristan",
+  },
+  {
+    src: "https://scary.land/images/finals/minor/steamroller.svg",
+    name: "Steamroller",
+  },
+  { src: "https://scary.land/images/finals/minor/YBS.svg", name: "YBS" },
+  { src: "https://scary.land/images/finals/minor/zaraby.svg", name: "Zaraby" },
+];
+
+function renderLogos(list, containerId) {
+  const container = document.getElementById(containerId);
+  list.forEach((item) => {
+    const li = document.createElement("li");
+    li.classList.add("corner_shape_list_item");
+    const img = document.createElement("img");
+    img.src = item.src;
+    img.alt = item.name + " Logo";
+    const dfn = document.createElement("dfn");
+    dfn.textContent = item.name;
+    li.appendChild(img);
+    li.appendChild(dfn);
+    container.appendChild(li);
+  });
+}
+renderLogos(sponsors, "sponsors");
+renderLogos(majors, "majors");
+renderLogos(minors, "minors");

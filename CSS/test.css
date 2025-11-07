@@ -2528,3 +2528,331 @@ h5 {
 }
 
 /* End liquid glass apple */
+
+/* Start Corner shape list */
+
+.corner_shape_list_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background: #000;
+  text-transform: uppercase;
+  color: #bbb;
+  width: 100%;
+}
+
+.corner_shape_list_wrapper article,
+.corner_shape_list_wrapper article section,
+.corner_shape_list_wrapper article section figure {
+  width: 100%;
+}
+
+.corner_shape_list_wrapper :not(head, head *, style, script, svg, svg *),
+.corner_shape_list_wrapper:not(head, head *, style, script, svg, svg *)::before,
+.corner_shape_list_wrapper:not(head, head *, style, script, svg, svg *)::after {
+  all: unset;
+  appearance: none;
+  box-sizing: border-box;
+}
+
+.corner_shape_list_wrapper article section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.corner_shape_list_wrapper article section figure {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: #d2213e url(https://scary.land/images/finals/pattern%20t.png)
+    center / 45px repeat;
+}
+
+.corner_shape_list_wrapper article section figure figcaption {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 20px;
+}
+
+.corner_shape_list_wrapper article section figure figcaption h1 {
+  color: #fff;
+  font-weight: 800;
+  line-height: 100%;
+}
+
+.corner_shape_list_wrapper article section ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  --c: 7px;
+  --p: 0 0, 6px 10.39230485px;
+  background: radial-gradient(
+        circle at 50% 50%,
+        #0000 1.5px,
+        #000 0 var(--c),
+        #0000 var(--c)
+      )
+      0 0 / 12px 20.7846096908px,
+    radial-gradient(
+        circle at 50% 50%,
+        #0000 1.5px,
+        #000 0 var(--c),
+        #0000 var(--c)
+      )
+      0 0 / 12px 20.7846096908px,
+    radial-gradient(circle at 50% 50%, #f00, #f000 60%) 0 0 / 200% 200%,
+    radial-gradient(circle at 50% 50%, #ff0, #ff00 60%) 0 0 / 200% 200%,
+    radial-gradient(circle at 50% 50%, #0f0, #0f00 60%) 0 0 / 200% 200%,
+    radial-gradient(ellipse at 50% 50%, #00f, #00f0 60%) 0 0 / 200%
+      20.7846096908px no-repeat;
+  animation: wee 20s linear infinite;
+}
+
+.corner_shape_list_wrapper .corner_shape_list_item {
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  padding: 30px 30px 70px;
+  border-radius: 10vw;
+  corner-shape: scoop;
+  border-top: 2px solid #666;
+  border-right: 2px solid #666;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  overflow: hidden;
+}
+
+.corner_shape_list_wrapper .corner_shape_list_item {
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  padding: 30px 30px 70px;
+  border-radius: 10vw;
+  border-top: 2px solid #666;
+  border-right: 2px solid #666;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  overflow: hidden;
+}
+
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(odd) {
+  border-right: 0;
+}
+
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(even) {
+  border-left: 2px solid #666;
+}
+
+.corner_shape_list_wrapper .corner_shape_list_item:hover {
+  animation: animate_corner_filter 5s linear infinite;
+  cursor: pointer;
+}
+
+.corner_shape_list_wrapper
+  .corner_shape_list_item:is(
+    :nth-child(8n + 2),
+    :nth-child(8n + 4),
+    :nth-child(8n + 5),
+    :nth-child(8n + 7)
+  ) {
+  background-color: #ffffff99;
+}
+
+.corner_shape_list_wrapper .corner_shape_list_item img {
+  width: 75%;
+  max-height: 150px;
+  height: auto;
+}
+
+.corner_shape_list_wrapper .corner_shape_list_item dfn {
+  position: absolute;
+  inset-block-end: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ccc;
+  font-size: 120%;
+  line-height: 140%;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(1) {
+  background-color: #38081099;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(2) {
+  background-color: #00000099;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(3) {
+  background-color: #44444499;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(4) {
+  background-color: #4d051499;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(5) {
+  background-color: #182d3099;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(6) {
+  background-color: #59270099;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(8) {
+  background-color: #002e4599;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(10) {
+  background-color: #12280c99;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(11) {
+  background-color: #ffcf2d99;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(12) {
+  background-color: #00000099;
+}
+
+.corner_shape_list_wrapper .corner_shape_list_item {
+  border-radius: 3vw;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(1) {
+  background-color: #0f151d99;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(2) {
+  background-color: #5e065999;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(4) {
+  background-color: #01646499;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(5) {
+  background-color: #56001999;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(6) {
+  background-color: #002f1699;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(7) {
+  background-color: #a4841c99;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(8) {
+  background-color: #5c291099;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(9) {
+  background-color: #00094a99;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(10) {
+  background-color: #18634c99;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(11) {
+  background-color: #510b1699;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(12) {
+  background-color: #642f2699;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(13) {
+  background-color: #00000099;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(14) {
+  background-color: #60390a99;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(15) {
+  background-color: #64551a99;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(16) {
+  background-color: #13301499;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(17) {
+  background-color: #15271f99;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(18) {
+  background-color: #49001599;
+}
+.corner_shape_list_wrapper .corner_shape_list_item:nth-child(19) {
+  background-color: #64320399;
+}
+
+@keyframes wee {
+  0% {
+    background-position: var(--p), 800% 400%, 1000% -400%, -1200% -600%,
+      400% 41.5692193817px;
+  }
+  100% {
+    background-position: var(--p), 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+@keyframes animate_corner_filter {
+  0% {
+    filter: invert(0) hue-rotate(0deg);
+  }
+  50% {
+    filter: invert(1) hue-rotate(360deg);
+  }
+  100% {
+    filter: invert(0) hue-rotate(0deg);
+  }
+}
+
+@media (min-width: 1100px) {
+  .corner_shape_list_wrapper article section figure figcaption h1 {
+    font-size: 250%;
+  }
+
+  .corner_shape_list_wrapper .corner_shape_list_item {
+    width: 25%;
+    border-radius: 4vw;
+  }
+
+  .corner_shape_list_wrapper
+    article
+    section
+    ul:not(:first-of-type, :last-of-type)
+    .corner_shape_list_wrapper
+    .corner_shape_list_item:nth-last-child(-n + 2) {
+    width: 50%;
+  }
+
+  .corner_shape_list_wrapper
+    article
+    section
+    ul:last-of-type
+    .corner_shape_list_wrapper
+    .corner_shape_list_item:nth-last-child(-n + 3) {
+    width: calc(100% / 3);
+  }
+}
+
+@media (min-width: 450px) {
+  .corner_shape_list_wrapper .corner_shape_list_item {
+    width: 50%;
+    border-radius: 6vw;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .corner_shape_list_wrapper .corner_shape_list_item {
+    width: calc(100% / 3);
+  }
+}
+
+/* End Corner shape list */
