@@ -9,7 +9,7 @@
 
 .overlaps_cards .card {
   background-image: linear-gradient(90deg, #3d71f5, #0d4ef2);
-  border-radius: 1em;
+  border-radius: 25px;
   box-shadow: 0 0.25em 0.375em hsla(0, 0%, 0%, 0.1);
   position: absolute;
   top: calc(32px * 6);
@@ -35,7 +35,7 @@
 
 .overlaps_cards .card--glass::before,
 .overlaps_cards .card--glass::after {
-  border-radius: inherit;
+  border-radius: 25px;
   content: "";
   display: block;
   position: absolute;

@@ -60,13 +60,13 @@ main form input {
   padding: 0.5rem 0.75rem;
   background: canvas;
   border: 1px solid color-mix(in oklch, canvasText, #0000 75%);
-  border-radius: 6px;
+  border-radius: 25px;
   outline-color: red;
 }
 
 main form button {
   padding-inline: 1.5rem;
-  border-radius: 6px;
+  border-radius: 25px;
   background: canvas;
   border: 1px solid color-mix(in oklch, canvasText, #0000 75%);
   cursor: pointer;
