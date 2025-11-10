@@ -37,6 +37,12 @@ body {
   border-radius: 25px;
 }
 
+/* Ensure outer wrapper with both classes also gets the full radius and clips children */
+.separated_block.separated_block_corner {
+  border-radius: 25px;
+  overflow: hidden; /* clip any child backgrounds or overlays */
+}
+
 #scrollToTopButton {
   position: fixed;
   bottom: 30px;
@@ -882,7 +888,7 @@ intro-section {
 .purity_challenge_intro_block {
   padding: 20px;
   position: relative;
-  background-color: white;
+  background: url("../img/heroes9.webp") center/cover no-repeat;
   display: flex;
   flex-direction: column;
 }

@@ -3,20 +3,57 @@
   padding: 5px 10px;
 }
 
-/* Constrain the intro section to a fixed small height as requested */
+/* Intro section with background image */
 .intro-section {
-  height: 30px;
-  padding: 0; /* remove extra padding to keep true 30px */
-  overflow: hidden; /* ensure child media doesn't exceed */
+  background: url("../img/31days.jpg") center/cover no-repeat;
+  padding: 60px 20px; /* generous padding for text visibility */
+  text-align: center;
+  min-height: 300px; /* ensure adequate height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 25px; /* requested rounded corners */
+  overflow: hidden; /* clip overlay/background to radius */
 }
 
-/* Make the banner image fit within 30px height without layout jumps */
-.intro-section img.hero-img {
-  height: 30px; /* override any max-height from global */
-  width: 100%;
-  object-fit: cover;
-  padding: 0; /* remove internal padding around image */
-  display: block;
+/* Optional: Add overlay for better text readability */
+.intro-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 147, 123, 0.3); /* dark overlay for contrast */
+  z-index: 1;
+  border-radius: inherit; /* match parent radius */
+}
+/* Left split panel background image */
+.split.left {
+  background: url("../img/headshot-smiling-materials-engineer-web.jpeg") center/cover no-repeat;
+  position: relative;
+}
+
+/* Style the verse text */
+.intro-verse {
+  font-size: 1.8rem;
+  font-style: italic;
+  color: #ffffff;
+  margin: 10px 0 5px;
+  font-family: "Playfair Display", serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-weight: 600;
+}
+
+/* Style the reference text */
+.intro-reference {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin: 10px 0 0;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .sideBySide {
@@ -52,6 +89,28 @@
 
 .left {
   left: 0;
+  /* Stack the split panels: left on top, right below */
+  .prayer {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .split {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  /* Make inner content flow normally to avoid overlap */
+  .centered {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+  }
+
+  .centered h2 {
+    margin-top: 0;
+  }
   background-color: #0d4ef2;
 }
 
@@ -68,14 +127,11 @@
   text-align: center;
 }
 
-.centered img {
-  width: 150px;
-  border-radius: 50%;
-}
+
 .left {
   background: linear-gradient(
     135deg,
-    rgba(59, 130, 246, 0.2),
+    rgba(223, 10, 42, 0.2),
     rgba(96, 165, 250, 0.1)
   );
   backdrop-filter: blur(15px);
@@ -95,6 +151,33 @@
 .purity_challenge_intro_block {
   height: 500px;
   align-items: center;
+  background: none; /* remove global background image on this page */
+  background-color: transparent;
+}
+
+/* Remove padding for this block instance on the prayer page */
+.purity_challenge_intro_block.separated_block_corner {
+  padding: 0;
+}
+
+/* Page-specific radius increase to 28px for prayer page wrappers */
+.separated_block.separated_block_corner {
+  border-radius: 25px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.purity_challenge_intro_block.separated_block_corner,
+.intro-section.separated_block_corner,
+.thirty_one_day_card_wrapper.separated_block_corner,
+.thirty_one_day_card_block.separated_block_corner {
+  border-radius: 25px;
+}
+
+/* Title badge custom corners updated to 28px */
+.purity_challenge_intro_block_title.diwt_top_left {
+  border-bottom-right-radius: 25px;
+  border-top-left-radius: 25px;
 }
 
 .purity_challenge_intro_block_picture {
@@ -106,6 +189,12 @@
   padding-left: 40px;
 }
 
+/* Add bottom-right border radius for .diwt_top_left variant */
+.purity_challenge_intro_block_title.diwt_top_left {
+  border-bottom-right-radius: 25px;
+  border-top-left-radius: 25px; /* requested top-left corner */
+}
+
 .intro-paragraph {
   max-width: 800px;
   font-size: 1rem;
@@ -115,8 +204,8 @@
   left: 50%;
   top: 55%;
   transform: translate(-50%, -50%);
-  color: #fff;
-  text-shadow: 1px 1px 2px #8b8b8b;
+  color: #fff; /* per request: white text */
+  text-shadow: 1px 1px 2px #8b8b8b; /* restore subtle shadow for readability */
   font-weight: 500;
   text-align: center;
 }
