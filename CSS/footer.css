@@ -1,6 +1,10 @@
 /* Footer */
 .footer {
-  background-color: #4b6e72; /* Dark neutral */
+  /* Overlay color: #4b6e72 (using rgba(75,110,114,0.75) for 75% opacity) */
+  background: linear-gradient(rgba(75,110,114,0.75), rgba(75,110,114,0.75)),
+    url("../img/heroe-image8.webp") center/cover no-repeat;
+  /* Ensure the overlay and image blend predictably */
+  background-blend-mode: overlay;
   color: #ffffff;
   padding: 30px 20px;
   text-align: center;

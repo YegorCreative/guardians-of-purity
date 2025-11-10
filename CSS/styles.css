@@ -137,7 +137,8 @@ body {
 /* About Mission */
 .about-mission {
   text-align: center;
-  padding: 50px 20px;
+  /* Reduced vertical padding per request (was 50px) */
+  padding: 15px 20px;
   background-color: #ffffff; /* White */
 }
 
@@ -287,7 +288,8 @@ body {
 
 /* Pillars */
 .pillars {
-  padding: 50px 20px;
+  /* Reduced vertical padding (was 50px) */
+  padding: 15px 20px;
   background-color: #e6f3f5; /* Light neutral */
   text-align: center; /* Center the button */
 }
@@ -341,7 +343,8 @@ body {
 
 /* Testimonials */
 .testimonials {
-  padding: 50px 20px;
+  /* Reduced vertical padding (was 50px) */
+  padding: 15px 20px;
   background-color: #ffffff;
   text-align: center;
 }
@@ -398,7 +401,8 @@ body {
 
 /* Resources */
 .resources {
-  padding: 50px 20px;
+  /* Reduced vertical padding (was 50px) */
+  padding: 15px 20px;
   background-color: #e6f3f5;
 }
 
@@ -462,7 +466,8 @@ body {
 
 /* Topics */
 .topics {
-  padding: 50px 20px;
+  /* Reduced vertical padding (was 50px) */
+  padding: 15px 20px;
   background-color: #ffffff;
 }
 
@@ -532,7 +537,8 @@ body {
 .cta {
   background-color: #4b6e72; /* Dark neutral */
   text-align: center;
-  padding: 50px 20px;
+  /* Reduced vertical padding (was 50px) */
+  padding: 15px 20px;
   color: #ffffff;
 }
 

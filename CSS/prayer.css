@@ -3,6 +3,22 @@
   padding: 5px 10px;
 }
 
+/* Constrain the intro section to a fixed small height as requested */
+.intro-section {
+  height: 30px;
+  padding: 0; /* remove extra padding to keep true 30px */
+  overflow: hidden; /* ensure child media doesn't exceed */
+}
+
+/* Make the banner image fit within 30px height without layout jumps */
+.intro-section img.hero-img {
+  height: 30px; /* override any max-height from global */
+  width: 100%;
+  object-fit: cover;
+  padding: 0; /* remove internal padding around image */
+  display: block;
+}
+
 .sideBySide {
   display: flex;
   justify-content: center;
@@ -106,7 +122,7 @@
 }
 
 .gradient_cards_wrapper {
-  background: url("../img/heroes24.webp") center/cover no-repeat;
+  background: url("../img/heroes22.webp") center/cover no-repeat;
   text-align: center;
   color: #fff;
   text-shadow: 1px 1px 2px #8b8b8b;
