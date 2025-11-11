@@ -9,15 +9,9 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&family=Raleway:wght@400;600&family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <!-- AOS Library CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
-      rel="stylesheet"
-    />
-    <!-- AOS Library JS -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <!-- CSS Links -->
-    <link rel="stylesheet" href="CSS/styles.css" />
+  <!-- CSS Links -->
+  <link rel="stylesheet" href="CSS/styles.css" />
+  <link rel="stylesheet" href="CSS/components.css" />
     <link rel="stylesheet" href="CSS/header.css" />
     <link rel="stylesheet" href="CSS/footer.css" />
     <link rel="stylesheet" href="CSS/styles-responsive.css" />
@@ -26,8 +20,9 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
   </head>
   <body>
-    <!-- Navbar -->
-    <a id="scrollToTopButton">&#x2191;</a>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <!-- Navbar -->
+  <a id="scrollToTopButton" aria-label="Scroll to top" title="Scroll to top">&#x2191;</a>
     <div class="separated_block first">
       <header class="header" role="banner">
         <nav class="navbar" id="main-nav" role="navigation">
@@ -37,6 +32,7 @@
               src="./img/logo.png"
               alt="Guardians of Purity Logo"
               class="logo-img"
+              loading="eager"
             />
           </a>
           <div class="nav-links" id="nav-links">
@@ -48,6 +44,7 @@
             >
             <a href="#contact" class="nav-link">Contact</a>
             <a href="prayer.html" class="nav-link">Prayer</a>
+            <button class="motion-toggle" id="motionToggle" aria-pressed="false" aria-label="Toggle reduced motion">Reduce motion</button>
           </div>
           <button
             class="hamburger"
@@ -63,7 +60,7 @@
       </header>
     </div>
     <!-- section 1 -->
-    <section class="chapterOne-section">
+  <section class="chapterOne-section" id="main">
       <div class="chapterOne-overlay">
         <div class="chapterOne-content">
           <h1 class="chapterOne-title">
@@ -131,7 +128,7 @@
 
     <section class="chapterOne-teaching-section">
       <div class="chapterOne-teaching-container">
-        <h2 class="chapterOne-teaching-title" data-aos="fade-up">
+        <h2 class="chapterOne-teaching-title">
           1. You Were Carefully Crafted by God
         </h2>
 
@@ -161,18 +158,14 @@
           Tozer
         </div>
 
-        <div
-          class="chapterOne-action-box"
-          data-aos="fade-in"
-          data-aos-delay="200"
-        >
+        <div class="chapterOne-action-box">
           <h3>Do This Now</h3>
           <p>
             Thank God for the way He created you. Write down five things you
             appreciate about your body and what those things allow you to do.
           </p>
         </div>
-        <div class="chapterOne-journal-box" data-aos="fade-up">
+  <div class="chapterOne-journal-box">
           <label for="journal1"
             ><strong>Your Journal:</strong> What stood out to you?</label
           >
@@ -223,11 +216,7 @@
           <span class="chapterOne-verseRef">— Genesis 1:27</span>
         </blockquote>
 
-        <div
-          class="chapterOne-quote-box"
-          data-aos="fade-in"
-          data-aos-delay="200"
-        >
+        <div class="chapterOne-quote-box">
           “You are not your own masterpiece; you are God's.”<br />— Timothy
           Keller
         </div>
@@ -240,12 +229,12 @@
             more clearly.
           </p>
         </div>
-        <div class="chapterOne-journal-box" data-aos="fade-up">
-          <label for="journal1"
+  <div class="chapterOne-journal-box">
+          <label for="journal2"
             ><strong>Your Journal:</strong> What stood out to you?</label
           >
           <textarea
-            id="journal1"
+            id="journal2"
             placeholder="Type your thoughts here..."
           ></textarea>
         </div>
@@ -357,12 +346,12 @@
           </p>
         </div>
 
-        <div class="chapterOne-journal-box" data-aos="fade-up">
-          <label for="journal1"
+  <div class="chapterOne-journal-box">
+          <label for="journal3"
             ><strong>Your Journal:</strong> What stood out to you?</label
           >
           <textarea
-            id="journal1"
+            id="journal3"
             placeholder="Type your thoughts here..."
           ></textarea>
         </div>
@@ -415,12 +404,12 @@
             speaks truth into that struggle.
           </p>
         </div>
-        <div class="chapterOne-journal-box" data-aos="fade-up">
-          <label for="journal1"
+  <div class="chapterOne-journal-box">
+          <label for="journal4"
             ><strong>Your Journal:</strong> What stood out to you?</label
           >
           <textarea
-            id="journal1"
+            id="journal4"
             placeholder="Type your thoughts here..."
           ></textarea>
         </div>
@@ -474,12 +463,12 @@
             workmanship.” “I am set apart.” “I am not alone.”
           </p>
         </div>
-        <div class="chapterOne-journal-box" data-aos="fade-up">
-          <label for="journal1"
+  <div class="chapterOne-journal-box">
+          <label for="journal5"
             ><strong>Your Journal:</strong> What stood out to you?</label
           >
           <textarea
-            id="journal1"
+            id="journal5"
             placeholder="Type your thoughts here..."
           ></textarea>
         </div>
@@ -497,7 +486,7 @@
     <!--button for downloading reflection-->
     <section class="chapterOne-export-section">
       <div class="chapterOne-export-container">
-        <h2 class="chapterOne-export-title">You've Completed Chapter 1</h2>
+  <h2 class="chapterOne-export-title">You've Completed Chapter 1</h2>
         <p class="chapterOne-export-text">
           Well done. You've taken the time to reflect, respond, and grow. Now
           you can download your personal reflections and keep them as a reminder
@@ -511,7 +500,7 @@
     </section>
     <!--section 4-->
 
-    <section class="chapterOne-summary-section">
+  <section class="chapterOne-summary-section">
       <div class="chapterOne-summary-container">
         <h2 class="chapterOne-summary-title">Chapter Summary</h2>
 
@@ -529,6 +518,10 @@
         <div class="chapterOne-reflection-question">
           <strong>Final Reflection:</strong>
           How will you honor God with your body this week?
+        </div>
+        <div class="chapterOne-journal-box">
+          <label for="journal6"><strong>Your Summary:</strong> What is your biggest takeaway?</label>
+          <textarea id="journal6" placeholder="Summarize your chapter reflections..."></textarea>
         </div>
       </div>
     </section>
@@ -576,18 +569,8 @@
       </footer>
     </div>
 
-    <!-- JavaScript Link -->
-    <script>
-      AOS.init({
-        duration: 1000,
-        once: true,
-      });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/lenis@1.3.1/dist/lenis.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CustomEase.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
-    <script src="js/script.js"></script>
+  <!-- JavaScript -->
+  <script src="js/storage.js"></script>
+  <script src="js/script.js"></script>
   </body>
 </html>

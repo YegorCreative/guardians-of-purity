@@ -34,6 +34,9 @@
 .split.left {
   background: url("../img/headshot-smiling-materials-engineer-web.jpeg") center/cover no-repeat;
   position: relative;
+  min-height: 250px;
+  max-height: 450px; /* constrain left panel height */
+  overflow: hidden;  /* clip background/content within height */
 }
 
 /* Style the verse text */
@@ -65,83 +68,62 @@
 }
 .call-to-commitment {
   width: 50%;
-  background-color: #0d4ef2;
+  background: url("../img/heroes17.webp") center/cover no-repeat;
   border-radius: 25px;
 }
+
+/* Prayer split panel section */
 .prayer {
-  height: 400px;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
   gap: 10px;
+  margin-bottom: 15px;
 }
+
 .split {
-  height: 100%;
-  width: 50%;
-  position: relative;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
   border-radius: 20px;
   color: white;
+  height: 350px;
 }
 
-.left {
-  left: 0;
-  /* Stack the split panels: left on top, right below */
-  .prayer {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .split {
-    width: 100%;
-    padding-top: 0;
-  }
-
-  /* Make inner content flow normally to avoid overlap */
-  .centered {
-    position: relative;
-    left: auto;
-    top: auto;
-    transform: none;
-  }
-
-  .centered h2 {
-    margin-top: 0;
-  }
-  background-color: #0d4ef2;
+.split.left {
+  background: url("../img/headshot-smiling-materials-engineer-web.jpeg") center/cover no-repeat;
+  overflow: hidden;
 }
 
-.right {
-  right: 0;
-  background-color: blue;
-}
-
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-
-.left {
+.split.right {
   background: linear-gradient(
     135deg,
-    rgba(223, 10, 42, 0.2),
-    rgba(96, 165, 250, 0.1)
+    rgba(20, 184, 165, 0.913), /* teal */
+    rgba(59, 131, 246, 0.709)  /* blue */
   );
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  transition: all 0.3s ease;
 }
-.left:hover {
+
+.split.right:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5);
+}
+
+.split.right h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.split.right p {
+  margin: 0;
+  text-align: center;
 }
 
 .purity_challenge_intro_block_text {
@@ -167,6 +149,12 @@
   margin-bottom: 15px;
 }
 
+/* Specific sections with top margin */
+.gradient-section,
+.intro-section-wrapper {
+  margin-top: 15px;
+}
+
 .purity_challenge_intro_block.separated_block_corner,
 .intro-section.separated_block_corner,
 .thirty_one_day_card_wrapper.separated_block_corner,
@@ -174,11 +162,8 @@
   border-radius: 25px;
 }
 
-/* Title badge custom corners updated to 28px */
-.purity_challenge_intro_block_title.diwt_top_left {
-  border-bottom-right-radius: 25px;
-  border-top-left-radius: 25px;
-}
+/* Title badge custom corners */
+/* keep single declaration to avoid duplication */
 
 .purity_challenge_intro_block_picture {
   height: 100%;
@@ -234,7 +219,7 @@
 /* Start Monthly prayer guide */
 .monthly_prayer_guide_wrapper {
   position: relative;
-  background: url(../img/heroes7.webp) center / cover no-repeat;
+  background: url(../img/abstract-background-web-optimized.jpeg) center / cover no-repeat;
   padding: 20px;
 }
 
@@ -288,6 +273,80 @@
   align-items: center;
   gap: 20px;
   width: 100%;
+  justify-content: center; /* center children on desktop */
+}
+
+/* Carousel container for desktop prayer guide */
+.monthly_prayer_guide_carousel {
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+  flex: 0 1 clamp(240px, 28%, 380px);
+  aspect-ratio: 4 / 5;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  border: 2px solid rgba(255,255,255,0.4);
+  background: #1e293b; /* fallback color while first image loads */
+}
+
+.monthly_prayer_guide_carousel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.monthly_prayer_guide_carousel img.active {
+  opacity: 1;
+}
+
+/* Carousel controls */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  z-index: 2;
+}
+
+.carousel-control:hover { background: rgba(0,0,0,0.55); }
+
+.carousel-control.prev { left: 8px; }
+.carousel-control.next { right: 8px; }
+
+/* Dots */
+.carousel-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+
+.carousel-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+}
+
+.carousel-dots button[aria-selected="true"] {
+  background: rgba(255,255,255,0.95);
 }
 
 .monthly_prayer_guide_days {
@@ -332,9 +391,10 @@
   display: none;
 }
 
-.monthly_prayer_guide_wrapper_right_image {
-  width: 50%;
-  margin: 0 auto;
+/* Prayer Amen text styling */
+.prayer-amen {
+  font-size: 25px;
+  margin: 0;
 }
 
 /* End Monthly prayer guide */
@@ -407,10 +467,6 @@
     flex-direction: column;
   }
 
-  .monthly_prayer_guide_wrapper_right_image {
-    display: none;
-  }
-
   /* End Monthly prayer guide */
 }
 
@@ -433,23 +489,15 @@
 
   .prayer {
     flex-direction: column;
-    height: auto;
   }
 
   .split {
     width: 100%;
-    padding-top: 0;
+    min-height: auto;
   }
 
-  .centered {
-    position: relative;
-    left: auto;
-    top: auto;
-    transform: none;
-  }
-
-  .centered h2 {
-    margin-top: 0;
+  .split.left {
+    min-height: 200px;
   }
 
   .intro-section img.hero-img {

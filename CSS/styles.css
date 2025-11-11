@@ -11,6 +11,13 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Respect reduced motion preferences: disable smooth scrolling */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 /* Version: v1.3.7 | Changelog: Centered pillar-btn and matched other buttons */
 body {
   font-family: "Open Sans", "Roboto", sans-serif;
@@ -821,7 +828,7 @@ intro-section {
 }
 
 .thirty_one_day_card_title {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
   /* center horizontally and vertically */
   margin-top: 0;
@@ -834,11 +841,15 @@ intro-section {
 }
 
 .thirty_one_day_card_title.with_height {
-  min-height: 181px;
+  min-height: 140px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
   margin-bottom: 0;
+  text-align: left;
+  font-size: 16px;
 }
 
 .thirty_one_day_card_content {
@@ -853,7 +864,9 @@ intro-section {
   font-size: 18px;
   background-image: url("../img/heroes4.webp");
   height: 150px;
+  display: flex;
   align-items: center;
+  justify-content: center;
 }
 /* 31 day content 3 */
 .thirty_one_day_card_content3 {

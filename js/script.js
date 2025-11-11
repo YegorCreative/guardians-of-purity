@@ -39,9 +39,18 @@ try {
   const isResponsive = document
     .querySelector("#main-nav")
     ?.classList.contains("hideLenis");
+  
+    const prefersReducedMotionQuery = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+    const prefersReducedMotion = prefersReducedMotionQuery.matches;
+    const userReduceMotion = localStorage.getItem("user-reduce-motion") === "true";
+    const effectiveReducedMotion = prefersReducedMotion || userReduceMotion;
 
-  if (!isResponsive) {
-    let lenis;
+  const isAboutPage = /(?:^|\/)about\.html(?:$|\?)/.test(location.pathname);
+  const hasParallax = document.querySelector("[data-parallax-layers]") !== null;
+
+  if (!isResponsive && !effectiveReducedMotion && !isAboutPage && hasParallax) {
     let lenisTicker;
     window.addEventListener("load", () => {
       // Force scroll to top on page load
@@ -128,13 +137,29 @@ try {
     }
   };
 
-  // Scroll to top smoothly
   scrollBtn.addEventListener("click", function () {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: effectiveReducedMotion ? "auto" : "smooth",
     });
   });
+
+  // Motion toggle button (manual override)
+  const motionToggle = document.getElementById("motionToggle");
+  if (motionToggle) {
+    const pressed = userReduceMotion;
+    motionToggle.setAttribute("aria-pressed", pressed ? "true" : "false");
+    motionToggle.textContent = pressed ? "Enable motion" : "Reduce motion";
+    motionToggle.addEventListener("click", () => {
+      const next = !(localStorage.getItem("user-reduce-motion") === "true");
+      if (next) {
+        localStorage.setItem("user-reduce-motion", "true");
+      } else {
+        localStorage.removeItem("user-reduce-motion");
+      }
+      location.reload();
+    });
+  }
 } catch (error) {
   console.error("Error in script:", error);
 }
@@ -146,17 +171,16 @@ console.log("31 Days of Prayer - Intro Section Loaded");
 
 // Save and load journaling text
 document.addEventListener("DOMContentLoaded", () => {
-  const journal = document.getElementById("journal1");
-
-  // Load saved value
-  if (localStorage.getItem("journal1")) {
-    journal.value = localStorage.getItem("journal1");
+  if (window.AppStorage && typeof window.AppStorage.bindTextareas === "function") {
+    window.AppStorage.bindTextareas('textarea[id^="journal"]');
+  } else {
+    document.querySelectorAll('textarea[id^="journal"]').forEach((ta) => {
+      const key = ta.id;
+      const saved = localStorage.getItem(key);
+      if (saved) ta.value = saved;
+      ta.addEventListener("input", () => localStorage.setItem(key, ta.value));
+    });
   }
-
-  // Save on input
-  journal?.addEventListener("input", () => {
-    localStorage.setItem("journal1", journal.value);
-  });
 });
 
 function exportReflection() {

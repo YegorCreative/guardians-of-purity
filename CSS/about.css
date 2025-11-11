@@ -1,0 +1,140 @@
+/* About Page Dedicated Styles */
+
+.about-hero {
+  background: linear-gradient(120deg, #3b82f6 0%, #14b8a6 100%);
+  color: #fff;
+  padding: 60px 0 40px 0;
+  text-align: center;
+}
+.about-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.about-subtitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+/* Section wrappers */
+.our-mission, .our-story, .meet-founder, .get-involved, .scripture-reflection,
+.testimonials, .timeline, .ministry-partnerships, .our-values {
+  background: #fff;
+  color: #2f484a;
+  padding: 48px 0 32px 0;
+  text-align: center;
+}
+
+.our-values { background: #f6f8fa; }
+
+.our-mission h2, .our-story h2, .meet-founder h2, .get-involved h2, .scripture-reflection h2,
+.testimonials h2, .timeline h2, .ministry-partnerships h2, .our-values h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.our-mission p, .our-story p, .meet-founder p, .get-involved p,
+.scripture-reflection p, .reflection-text p, .testimonials p,
+.timeline-list li, .ministry-partnerships p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 18px auto;
+  line-height: 1.7;
+}
+
+/* Mission emphasis */
+.our-mission p:first-of-type {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #2563eb;
+}
+.our-mission .highlight-quote {
+  display: block;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #14b8a6;
+  background: rgba(20,184,166,0.07);
+  border-left: 4px solid #14b8a6;
+  padding: 8px 18px;
+  margin: 18px auto;
+  border-radius: 8px;
+  max-width: 700px;
+}
+
+/* Scripture & Reflection */
+.scripture-quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.6;
+  max-width: 760px;
+  margin: 0 auto 20px auto;
+  color: #2f484a;
+}
+.scripture-ref { display: block; margin-top: 10px; font-weight: 600; color: #3b82f6; }
+.section-divider { width: 80px; height: 4px; background: #14b8a6; border: none; margin: 25px auto; border-radius: 3px; }
+.reflection-text p { font-size: 1.05rem; }
+
+/* Story Verse Embedded */
+.story-verse { font-style: italic; font-size: 1rem; color: #2c3e50; border-left: 4px solid #e74c3c; padding-left: 15px; margin: 25px auto; max-width: 700px; text-align: left; }
+.story-verse span { display: block; margin-top: 6px; font-weight: 600; }
+.story-paragraph.emphasis { font-size:1.15rem; color:#14b8a6; font-style:italic; margin-top:18px; }
+/* Reflection label styling */
+.reflection-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #3b82f6;
+  margin-bottom: 6px;
+}
+
+
+/* Values Grid */
+.values-grid { display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; max-width: 1100px; margin: 0 auto; }
+.value-item { background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(59,130,246,0.08); padding:32px 24px; flex:1 1 220px; min-width:220px; max-width:320px; text-align:left; }
+.value-item h3 { font-size:1.3rem; font-weight:700; color:#3b82f6; margin-bottom:10px; }
+.value-item p { font-size:1rem; color:#2f484a; margin:0; }
+
+/* CTA Button */
+.get-involved .cta-button { display:inline-block; background:linear-gradient(90deg,#3b82f6,#14b8a6); color:#fff; font-weight:600; padding:12px 32px; border-radius:24px; text-decoration:none; font-size:1.1rem; margin-top:12px; box-shadow:0 2px 12px rgba(59,130,246,0.12); transition:background 0.2s; }
+.get-involved .cta-button:hover { background:linear-gradient(90deg,#14b8a6,#3b82f6); }
+
+/* Testimonials */
+.testimonials-grid { display:grid; gap:30px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); max-width:1100px; margin:0 auto; }
+.testimonial-item { background:#fff; border-radius:16px; padding:24px 20px; box-shadow:0 2px 10px rgba(0,0,0,0.06); position:relative; }
+.testimonial-item blockquote { margin:0 0 12px 0; font-size:1rem; line-height:1.6; font-style:italic; color:#2f484a; }
+.testimonial-author { font-size:0.9rem; font-weight:600; color:#3b82f6; margin:0; }
+
+/* Timeline */
+.timeline-list { list-style:none; padding:0; margin:0 auto; max-width:800px; }
+.timeline-list li { position:relative; padding:14px 18px 14px 70px; background:#fff; margin-bottom:16px; border-radius:14px; box-shadow:0 2px 10px rgba(0,0,0,0.05); }
+.timeline-year { position:absolute; left:18px; top:50%; transform:translateY(-50%); background:#3b82f6; color:#fff; font-weight:600; border-radius:8px; padding:8px 14px; font-size:0.9rem; }
+
+/* Partnerships */
+.partnerships-list { list-style:none; padding:0; margin:20px auto 0 auto; max-width:900px; display:grid; gap:20px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.partner-item { display:flex; align-items:center; gap:12px; background:#fff; padding:14px 16px; border-radius:14px; box-shadow:0 2px 10px rgba(0,0,0,0.05); }
+.partner-name { font-weight:600; color:#2f484a; }
+.partner-logo { max-width:56px; max-height:56px; vertical-align:middle; margin-right:0; border-radius:8px; box-shadow:0 2px 8px rgba(59,130,246,0.08); }
+
+/* Container utility */
+.container { width:90%; max-width:1200px; margin:0 auto; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .values-grid { gap:24px; }
+  .about-title { font-size:2.2rem; }
+  .about-subtitle { font-size:1.1rem; }
+  .timeline-list li { padding:14px 16px 14px 60px; }
+  .timeline-year { left:12px; }
+  .testimonial-item { padding:20px 18px; }
+}
+
+@media (max-width: 520px) {
+  .about-title { font-size:1.9rem; }
+  .scripture-quote { font-size:1.05rem; }
+  .our-mission p:first-of-type { font-size:1.15rem; }
+}
