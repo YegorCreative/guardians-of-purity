@@ -831,7 +831,6 @@ intro-section {
   font-size: 18px;
   font-weight: bold;
   /* center horizontally and vertically */
-  margin-top: 0;
   color: #2f484a;
   text-align: center;
   min-height: 45px;
@@ -984,7 +983,6 @@ intro-section {
   height: 200px;
 }
 .text_overlay_banner_wrapper2 {
-  overflow: hidden;
   display: flex;
   width: 100%;
   height: 200px;
