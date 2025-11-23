@@ -1,0 +1,72 @@
+/* Split container: left (text) / right (image placeholder) */
+.split-container,
+.split-container2 {
+  display: flex;
+  gap: 30px;
+  align-items: stretch; /* make children equal height */
+  justify-content: space-between;
+  /* use full width of parent by default; parent (.separated_block) constrains overall max-width */
+  max-width: none;
+  width: 100%;
+  margin: 20px 0 0;
+  padding: 12px 0;
+  flex-wrap: wrap;
+}
+
+.split-left,
+.split-right {
+  /* Use fixed 50% columns while accounting for the gap (30px -> subtract half-gap) */
+  flex: 0 0 calc(50% - 15px);
+  max-width: calc(50% - 15px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.split-right {
+  /* keep content centered horizontally inside the right column */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Grids */
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.resource-grid,
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Desktop: avoid wrapping so the two columns stay on a single row */
+@media (min-width: 801px) {
+  .split-container,
+  .split-container2 {
+    flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 800px) {
+  .split-container,
+  .split-container2 {
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  .split-left,
+  .split-right {
+    flex: 1 1 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+}

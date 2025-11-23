@@ -25,11 +25,11 @@
   }
   .hero-title {
     font-size: 1.8rem;
-    color: #ffffff; /* force white text color on small screens */
+    color: var(--color-white); /* force white text color on small screens */
   }
   .hero-subtitle {
     font-size: 1rem;
-    color: #ffffff; /* Updated color */
+    color: var(--color-white); /* Updated color */
   }
   .hero-btn {
     padding: 10px 20px;
@@ -56,7 +56,7 @@
   }
   .pillar-btn {
     background-color: #b0d2da; /* Updated background color */
-    color: #ffffff;
+    color: var(--color-white);
     padding: 15px 30px;
   border-radius: 25px;
     text-decoration: none;
@@ -135,11 +135,11 @@
   }
   .hero-title {
     font-size: 6.75rem;
-    color: #ffffff;
+    color: var(--color-white);
   }
   .hero-subtitle {
     font-size: 1.5rem;
-    color: #ffffff; /* Updated color */
+    color: var(--color-white); /* Updated color */
   }
   .section-title {
     font-size: 2.5rem;

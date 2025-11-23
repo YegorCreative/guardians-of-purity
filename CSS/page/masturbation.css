@@ -13,7 +13,7 @@
 }
 
 .thirty_one_day_card_content3 {
-  background-image: url("../img/heroes14.webp");
+  background-image: url("../../img/heroes14.webp");
   height: 30px;
 }
 
@@ -24,7 +24,7 @@
 .purity_challenge_intro_block {
   padding: 20px;
   position: relative;
-  background-color: white;
+  background-color: var(--color-white);
   display: flex;
   flex-direction: column;
   height: 500px;
@@ -62,7 +62,7 @@
   left: 40%;
   top: 50%;
   transform: translate(-34%, -50%);
-  color: #fff;
+  color: var(--color-white);
   text-shadow: 1px 1px 2px #000000;
   font-weight: 500;
   text-align: center;
@@ -81,35 +81,35 @@
 
 .focus_on_mission_wrapper {
   position: relative;
-  background: url("../img/heroes8.webp") center/cover no-repeat;
+  background: url("../../img/heroes8.webp") center/cover no-repeat;
   padding: 40px;
   width: 50%;
 }
 
 .focus_on_mission_wrapper.first {
-  background: url("../img/heroes20.webp") center/cover no-repeat;
+  background: url("../../img/heroes20.webp") center/cover no-repeat;
 }
 
 .focus_on_mission_wrapper.second {
-  background: url("../img/heroes21.webp") center/cover no-repeat;
+  background: url("../../img/heroes21.webp") center/cover no-repeat;
 }
 
 .focus_on_mission_wrapper.third {
-  background: url("../img/heroes22.webp") center/cover no-repeat;
+  background: url("../../img/heroes22.webp") center/cover no-repeat;
 }
 
 .focus_on_mission_wrapper.fourth {
-  background: url("../img/heroes23.webp") center/cover no-repeat;
+  background: url("../../img/heroes23.webp") center/cover no-repeat;
 }
 
 .focus_on_mission_wrapper.fifth {
-  background: url("../img/heroes24.webp") center/cover no-repeat;
+  background: url("../../img/heroes24.webp") center/cover no-repeat;
 }
 
 .focus_on_mission_title {
   font-size: 32px;
   font-weight: 600;
-  color: #fff;
+  color: var(--color-white);
   margin-bottom: 40px;
   max-width: 500px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
@@ -155,21 +155,21 @@
   margin: 0;
   font-size: 18px;
   font-weight: 700;
-  color: #fff;
+  color: var(--color-white);
   text-shadow: 1px 1px 2px #000000;
 }
 
 .focus_on_mission_card p {
   margin: 0;
   font-size: 14px;
-  color: #fff;
+  color: var(--color-white);
   max-width: 300px;
 }
 
 /* End focus on a mission block  */
 
 .more_details_info_wrapper {
-  background-color: #e6f3f5;
+  background-color: var(--color-bg-light);
 }
 
 .info_container {
@@ -179,7 +179,7 @@
 .info_header {
   padding: 100px 20px;
   text-align: center;
-  color: white;
+  color: var(--color-white);
   background-color: #222;
   display: flex;
   flex-direction: column;
@@ -200,9 +200,9 @@
 }
 
 .thirty_one_day_card_block .thirty_one_day_card_content3 {
-  background-image: url("../img/heroes3.webp");
+  background-image: url("../../img/heroes3.webp");
   height: 80px;
-  color: #2f484a;
+  color: var(--color-text-dark);
 }
 
 .overlay_card_separated_block {
@@ -212,7 +212,11 @@
 .overlay_card_wrapper {
   width: 100%;
   height: 300px;
-  background: linear-gradient(90deg, #3d71f5, #0d4ef2);
+  background: linear-gradient(
+    90deg,
+    var(--color-gradient-blue-start),
+    var(--color-gradient-blue-end)
+  );
   box-shadow: 0 0.25em 0.375em hsla(0, 0%, 0%, 0.1);
   background-position: center;
   background-repeat: no-repeat;
@@ -241,13 +245,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #fff;
+  color: var(--color-white);
 }
 
 /* End overlay card */
 
 .froasted_glass_wrapper {
-  background-image: url("../img/bible.webp");
+  background-image: url("../../img/bible.webp");
   background-size: cover;
   background-position: center;
   min-height: 350px;
@@ -262,7 +266,7 @@
   border: 1px solid rgba(47, 72, 74, 0.3);
   padding: 20px;
   min-height: 350px;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .froasted_glass_block_wrapper {
@@ -275,14 +279,14 @@
 
 .froasted_glass_block_item {
   width: 360px;
-  background-color: #fff;
+  background-color: var(--color-white);
   padding: 20px;
   position: relative;
 }
 
 .froasted_glass_block {
   position: relative;
-  background-color: #fff;
+  background-color: var(--color-white);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -309,7 +313,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .froasted_glass_block_picture {
@@ -323,13 +327,13 @@
   font-size: 18px;
   font-weight: bold;
   margin-top: 10px;
-  color: #2f484a;
+  color: var(--color-text-dark);
   text-align: left;
   min-height: 147px;
 }
 
 .froasted_glass_block_body {
-  background-image: url("../img/heroes14.webp");
+  background-image: url("../../img/heroes14.webp");
   height: 30px;
   background-position: center;
   background-repeat: no-repeat;

@@ -20,7 +20,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: var(--color-white);
     overflow: hidden;
 }
 
@@ -61,7 +61,7 @@ body {
 
 .logo i {
     font-size: 36px;
-    color: #fff;
+    color: var(--color-white);
     opacity: 0.9;
 }
 
@@ -101,7 +101,7 @@ body {
 .menu a {
     display: flex;
     align-items: center;
-    color: #fff;
+    color: var(--color-white);
     padding: 12px 16px;
     text-decoration: none;
     font-weight: 500;

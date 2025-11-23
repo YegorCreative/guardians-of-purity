@@ -225,7 +225,7 @@ body::before {
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: light-dark(#000, #fff);
+    background: light-dark(#000, var(--color-white));
   }
 }
 

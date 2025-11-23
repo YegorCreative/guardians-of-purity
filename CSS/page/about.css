@@ -63,7 +63,7 @@ section {
   background: linear-gradient(120deg, #3b82f6, #14b8a6, #3b82f6);
   background-size: 200% 200%;
   animation: gradientFlow 15s ease infinite, fadeInUp 0.8s ease-out forwards;
-  color: #fff;
+  color: var(--color-white);
   padding: 60px 20px;
   /* Increased padding */
   margin: 20px auto;
@@ -82,18 +82,22 @@ section {
 }
 
 .about-hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
 .about-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 3.5rem;
   /* Larger title */
   font-weight: 800;
@@ -115,7 +119,6 @@ section {
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
-  text-align: center;
 }
 
 /* Section wrappers */
@@ -128,11 +131,10 @@ section {
 .timeline,
 .ministry-partnerships,
 .our-values {
-  background: #fff;
-  color: #2f484a;
+  background: var(--color-white);
+  color: var(--color-text-dark);
   padding: 80px 0;
   /* More breathing room */
-  text-align: center;
   max-width: 1440px;
   margin: 20px auto;
   border-radius: 25px;
@@ -140,9 +142,8 @@ section {
 
 /* The Movement Section - Narrower Container */
 .the-movement {
-  background: #fff;
-  color: #2f484a;
-  text-align: center;
+  background: var(--color-white);
+  color: var(--color-text-dark);
   margin: 20px auto;
   border-radius: 25px;
 }
@@ -156,25 +157,18 @@ section {
 
 /* Mission split layout */
 .mission-inner {
-  display: flex;
   gap: 48px;
-  align-items: center;
-  justify-content: center;
   max-width: 1100px;
   margin: 0 auto;
 }
 
 .mission-text {
   flex: 1;
-  text-align: left;
   font-size: 16px;
 }
 
 .mission-placeholder {
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .mission-image-wrap {
@@ -187,12 +181,12 @@ section {
   border-radius: 30px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  border: 5px solid #fff;
+  border: 5px solid var(--color-white);
   transition: transform 0.3s ease;
 }
 
 .mission-image-wrap::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 15px;
   left: 15px;
@@ -222,7 +216,7 @@ section {
 }
 
 .testimonials {
-  background: linear-gradient(135deg, #ffffff, #dbeafe, #e9d5ff);
+  background: linear-gradient(135deg, var(--color-white), #dbeafe, #e9d5ff);
 }
 
 .our-mission h2,
@@ -239,7 +233,6 @@ section {
   margin-bottom: 24px;
   color: #1e293b;
   position: relative;
-  display: inline-block;
 }
 
 .our-mission p,
@@ -282,7 +275,7 @@ section {
 /* Scripture & Reflection */
 .scripture-quote {
   font-size: 1.4rem;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-style: italic;
   line-height: 1.6;
   max-width: 800px;
@@ -291,13 +284,13 @@ section {
   border: none;
   position: relative;
   padding: 40px;
-  background: #fff;
+  background: var(--color-white);
   box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
   border-radius: 20px;
 }
 
 .scripture-quote::before {
-  content: '“';
+  content: "“";
   position: absolute;
   top: -10px;
   left: 20px;
@@ -312,7 +305,7 @@ section {
   font-size: 1rem;
   font-weight: 700;
   color: #3b82f6;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -354,7 +347,7 @@ section {
   /* Circular image for reflection */
   box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
   overflow: hidden;
-  border: 8px solid #fff;
+  border: 8px solid var(--color-white);
 }
 
 .reflection-placeholder .reflection-image {
@@ -396,7 +389,7 @@ section {
   border-radius: 30px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  border: 5px solid #fff;
+  border: 5px solid var(--color-white);
   transition: transform 0.3s ease;
 }
 
@@ -405,7 +398,7 @@ section {
 }
 
 .story-image-wrap::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 15px;
   left: 15px;
@@ -511,7 +504,8 @@ section {
 
 .value-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 25px rgba(59, 130, 246, 0.1), 0 10px 10px rgba(59, 130, 246, 0.04);
+  box-shadow: 0 20px 25px rgba(59, 130, 246, 0.1),
+    0 10px 10px rgba(59, 130, 246, 0.04);
   border-color: rgba(59, 130, 246, 0.2);
 }
 
@@ -533,7 +527,7 @@ section {
 .get-involved .cta-button {
   display: inline-block;
   background: linear-gradient(135deg, #3b82f6, #2563eb);
-  color: #fff;
+  color: var(--color-white);
   font-weight: 700;
   padding: 16px 40px;
   border-radius: 50px;
@@ -562,7 +556,7 @@ section {
 }
 
 .testimonial-item {
-  background: #fff;
+  background: var(--color-white);
   border-radius: 20px;
   padding: 32px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -599,7 +593,7 @@ section {
 
 /* Vertical line */
 .timeline-list::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 30px;
   top: 0;
@@ -611,7 +605,7 @@ section {
 .timeline-list li {
   position: relative;
   padding: 20px 24px 20px 80px;
-  background: #fff;
+  background: var(--color-white);
   margin-bottom: 24px;
   border-radius: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
@@ -629,14 +623,14 @@ section {
   width: 60px;
   height: 60px;
   background: #3b82f6;
-  color: #fff;
+  color: var(--color-white);
   font-weight: 700;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.9rem;
-  box-shadow: 0 0 0 4px #fff, 0 0 0 6px #3b82f6;
+  box-shadow: 0 0 0 4px var(--color-white), 0 0 0 6px #3b82f6;
   z-index: 1;
 }
 
@@ -656,7 +650,7 @@ section {
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  background: #fff;
+  background: var(--color-white);
   padding: 24px;
   border-radius: 16px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
@@ -690,7 +684,6 @@ section {
 
 /* Responsive */
 @media (max-width: 900px) {
-
   .mission-inner,
   .reflection-inner {
     flex-direction: column;

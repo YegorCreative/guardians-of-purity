@@ -175,7 +175,7 @@ section > div {
     12% 23%,
     47% 0%
   );
-  mask: url("../img/keypad-single.webp") 50% 50% / 100% 100%;
+  mask: url("../../img/keypad-single.webp") 50% 50% / 100% 100%;
 }
 
 .keypad__single.keypad__single--left {
@@ -233,7 +233,7 @@ section > div {
     7% 17%,
     30% 0
   );
-  mask: url("../img/keypad-double.webp") 50% 50% / 100% 100%;
+  mask: url("../../img/keypad-double.webp") 50% 50% / 100% 100%;
 }
 
 .keypad__double img {

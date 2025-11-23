@@ -1,0 +1,184 @@
+/* Global box-sizing and rendering enhancements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Respect reduced motion preferences: disable smooth scrolling */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--font-main);
+  margin: 0;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
+}
+
+.separated_block {
+  padding: 5px 10px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.separated_block.first {
+  padding-top: 10px;
+}
+
+.separated_block.last {
+  padding-bottom: 10px;
+}
+
+.separated_block_corner {
+  border-radius: 25px;
+}
+
+/* Ensure outer wrapper with both classes also gets the full radius and clips children */
+.separated_block.separated_block_corner {
+  border-radius: 25px;
+  overflow: hidden; /* clip any child backgrounds or overlays */
+}
+
+/* Helper classes for positioning from styles.css */
+.top_left {
+  border-radius: 0 0 20px 0;
+}
+
+.top_left_vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  top: 20px;
+  border-radius: 20px 0 0 0;
+}
+
+.top_right {
+  top: 0;
+  right: 0;
+  border-radius: 0 0 0px 20px;
+}
+
+.top_right_vertical {
+  writing-mode: vertical-lr;
+  top: 20px;
+  right: 20px;
+  border-radius: 0 0 0 20px;
+}
+
+.bottom_right {
+  bottom: 20px;
+  right: 20px;
+  border-radius: 20px 0 0 0;
+  padding: 10px 20px !important;
+}
+
+.bottom_left {
+  bottom: 20px;
+  left: 20px;
+  border-radius: 0 20px 0 0;
+  padding: 10px 20px !important;
+}
+
+.bottom_right_vertical {
+  writing-mode: vertical-lr;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 20px 0 0 0;
+}
+
+.bottom_left_vertical {
+  writing-mode: vertical-lr;
+  bottom: 20px;
+  left: 20px;
+  border-radius: 0 0 0 20px;
+  transform: rotate(180deg);
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Utility Classes */
+
+/* Flexbox */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Text Alignment */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Sizing */
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.margin-center-gap {
+  margin: 20px auto;
+}
+
+.margin-auto {
+  margin: 0 auto;
+}

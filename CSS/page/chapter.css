@@ -2,8 +2,8 @@
 .chapterOne-section {
   position: relative;
   background: linear-gradient(rgba(12, 22, 27, 0.5), rgba(12, 22, 27, 0.5)),
-    url("images/ch1-hero.jpg") center/cover no-repeat;
-  color: #ffffff;
+    url("../../images/ch1-hero.jpg") center/cover no-repeat;
+  color: var(--color-white);
   padding: 100px 20px;
   text-align: center;
   min-height: 80vh;
@@ -86,7 +86,7 @@
 
 /* Chapter 1 - Teaching Sections */
 .chapterOne-teaching-section {
-  background-color: #ffffff;
+  background-color: var(--color-white);
   padding: 80px 20px;
   color: #2d2d2d;
 }
@@ -229,7 +229,7 @@
 /* Chapter 1 - Journal Box */
 .chapterOne-journal-box {
   margin-top: 20px;
-  background-color: #ffffff;
+  background-color: var(--color-white);
   border: 1px solid #b0d2da;
   padding: 15px;
   border-radius: 8px;
@@ -251,7 +251,7 @@
 
 .chapterOne-export-button {
   background-color: #2f484a;
-  color: #ffffff;
+  color: var(--color-white);
   border: none;
   padding: 12px 20px;
   font-size: 1rem;
@@ -293,7 +293,7 @@
 
 .chapterOne-export-button {
   background-color: #2f484a;
-  color: #ffffff;
+  color: var(--color-white);
   border: none;
   padding: 14px 28px;
   font-size: 1rem;

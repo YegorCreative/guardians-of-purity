@@ -5,7 +5,7 @@
     url("../img/heroe-image8.webp") center/cover no-repeat;
   /* Ensure the overlay and image blend predictably */
   background-blend-mode: overlay;
-  color: #ffffff;
+  color: var(--color-white);
   padding: 30px 20px;
   text-align: center;
 }
@@ -15,7 +15,7 @@
 }
 
 .footer-link {
-  color: #ffffff;
+  color: var(--color-white);
   text-decoration: none;
   padding: 0 15px;
 }
@@ -29,7 +29,7 @@
 }
 
 .social-link {
-  color: #ffffff;
+  color: var(--color-white);
   text-decoration: none;
   padding: 0 15px;
 }

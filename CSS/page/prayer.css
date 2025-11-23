@@ -5,7 +5,7 @@
 
 /* Intro section with background image */
 .intro-section {
-  background: url("../img/31days.jpg") center/cover no-repeat;
+  background: url("../../img/31days.jpg") center/cover no-repeat;
   padding: 60px 20px; /* generous padding for text visibility */
   text-align: center;
   min-height: 300px; /* ensure adequate height */
@@ -32,7 +32,7 @@
 }
 /* Left split panel background image */
 .split.left {
-  background: url("../img/headshot-smiling-materials-engineer-web.jpeg")
+  background: url("../../img/headshot-smiling-materials-engineer-web.jpeg")
     center/cover no-repeat;
   position: relative;
   min-height: 250px;
@@ -44,7 +44,7 @@
 .intro-verse {
   font-size: 1.8rem;
   font-style: italic;
-  color: #ffffff;
+  color: var(--color-white);
   margin: 10px 0 5px;
   font-family: "Playfair Display", serif;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -54,7 +54,7 @@
 /* Style the reference text */
 .intro-reference {
   font-size: 1.2rem;
-  color: #ffffff;
+  color: var(--color-white);
   margin: 10px 0 0;
   font-weight: 700;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -69,7 +69,7 @@
 }
 .call-to-commitment {
   width: 50%;
-  background: url("../img/heroes17.webp") center/cover no-repeat;
+  background: url("../../img/heroes17.webp") center/cover no-repeat;
   border-radius: 25px;
 }
 
@@ -90,12 +90,12 @@
   justify-content: center;
   padding: 20px;
   border-radius: 20px;
-  color: white;
+  color: var(--color-white);
   height: 350px;
 }
 
 .split.left {
-  background: url("../img/headshot-smiling-materials-engineer-web.jpeg")
+  background: url("../../img/headshot-smiling-materials-engineer-web.jpeg")
     center/cover no-repeat;
   overflow: hidden;
 }
@@ -192,16 +192,16 @@
   left: 50%;
   top: 55%;
   transform: translate(-50%, -50%);
-  color: #fff; /* per request: white text */
+  color: var(--color-white); /* per request: white text */
   text-shadow: 1px 1px 2px #8b8b8b; /* restore subtle shadow for readability */
   font-weight: 500;
   text-align: center;
 }
 
 .gradient_cards_wrapper {
-  background: url("../img/heroes22.webp") center/cover no-repeat;
+  background: url("../../img/heroes22.webp") center/cover no-repeat;
   text-align: center;
-  color: #fff;
+  color: var(--color-white);
   text-shadow: 1px 1px 2px #8b8b8b;
 }
 
@@ -222,8 +222,8 @@
 /* Start Monthly prayer guide */
 .monthly_prayer_guide_wrapper {
   position: relative;
-  background: url(../img/abstract-background-web-optimized.jpeg) center / cover
-    no-repeat;
+  background: url(../../img/abstract-background-web-optimized.jpeg) center /
+    cover no-repeat;
   padding: 20px;
 }
 
@@ -257,7 +257,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: var(--color-white);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -312,7 +312,7 @@
   top: 50%;
   transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.35);
-  color: #fff;
+  color: var(--color-white);
   border: none;
   width: 36px;
   height: 36px;
@@ -381,7 +381,7 @@
   align-items: center;
   justify-content: center;
   width: 72px;
-  color: #fff;
+  color: var(--color-white);
   transition: all 0.3s ease;
 }
 

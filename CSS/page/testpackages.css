@@ -3,7 +3,7 @@
 .gradient_cards_wrapper {
   padding: 20px;
   position: relative;
-  background-color: #fff;
+  background-color: var(--color-white);
 }
 
 .gradient_cards_wrapper h1 {
@@ -93,7 +93,7 @@
 .overlaps_cards {
   display: flex;
   justify-content: center;
-  background-image: url("../img/blueBlurred.png");
+  background-image: url("../../img/blueBlurred.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -140,13 +140,13 @@
 }
 
 .overlaps_cards .card--glass::before {
-  border: 1px solid #fff;
-  mask-image: linear-gradient(135deg, #fff, rgba(255, 255, 255, 0) 50%);
+  border: 1px solid var(--color-white);
+  mask-image: linear-gradient(135deg, var(--color-white), rgba(255, 255, 255, 0) 50%);
 }
 
 .overlaps_cards .card--glass::after {
   border: 1px solid #0d4ef2;
-  mask-image: linear-gradient(135deg, rgba(255, 255, 255, 0) 50%, #fff);
+  mask-image: linear-gradient(135deg, rgba(255, 255, 255, 0) 50%, var(--color-white));
 }
 
 [dir="rtl"] .overlaps_cards .card--glass {
@@ -159,11 +159,11 @@
 }
 
 [dir="rtl"] .overlaps_cards .card--glass::before {
-  mask-image: linear-gradient(-135deg, #fff, rgba(255, 255, 255, 0) 50%);
+  mask-image: linear-gradient(-135deg, var(--color-white), rgba(255, 255, 255, 0) 50%);
 }
 
 [dir="rtl"] .overlaps_cards .card--glass::after {
-  mask-image: linear-gradient(-135deg, rgba(255, 255, 255, 0) 50%, #fff);
+  mask-image: linear-gradient(-135deg, rgba(255, 255, 255, 0) 50%, var(--color-white));
 }
 
 .overlaps_cards .card__content {
@@ -257,7 +257,7 @@
   display: flex;
   position: relative;
   font-size: 1.1vw;
-  background-color: #fff;
+  background-color: var(--color-white);
 }
 
 .cloneable_wrapper .tab-container {
@@ -377,7 +377,7 @@
 .cloneable_wrapper .filter-button.active {
   background-color: #3a78c2;
   border-radius: 2px;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .cloneable_wrapper .filter-button__p {
@@ -495,7 +495,7 @@
   position: absolute;
   width: 280px;
   height: 380px;
-  background: white;
+  background: var(--color-white);
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
@@ -634,7 +634,7 @@
   top: 50%;
   transform: translateY(-50%);
   background: rgba(8, 42, 123, 0.6);
-  color: white;
+  color: var(--color-white);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -712,7 +712,7 @@
 }
 
 .department_cards_wrapper .card-header svg {
-  color: #fff;
+  color: var(--color-white);
   width: 2.5rem;
   cursor: pointer;
 }
@@ -728,7 +728,7 @@
 }
 
 .department_cards_wrapper .card-body h3 {
-  color: #fff;
+  color: var(--color-white);
   font-size: 1.375rem;
   margin-top: 0.625em;
   margin-bottom: 0.188em;
@@ -770,7 +770,7 @@
 }
 
 .department_cards_wrapper .card-body .progress span:first-of-type {
-  color: #fff;
+  color: var(--color-white);
   text-align: left;
   font-weight: 600;
   width: 100%;
@@ -782,7 +782,7 @@
   margin: 5px 0;
   text-align: right;
   display: block;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .department_cards_wrapper .card-footer {
@@ -826,7 +826,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: var(--color-white);
 }
 
 .department_cards_wrapper .card-footer .btn-add svg {
@@ -856,7 +856,7 @@
   background: url("hero-image.jpg") center/cover no-repeat;
   padding: 100px 20px;
   text-align: center;
-  color: white;
+  color: var(--color-white);
   background-color: #222;
   display: flex;
   flex-direction: column;
@@ -890,7 +890,7 @@
 }
 
 .more_details_info_wrapper .roadmap-card {
-  background: white;
+  background: var(--color-white);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -945,7 +945,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #fff;
+  color: var(--color-white);
 }
 
 /* End overlay card */
@@ -954,13 +954,13 @@
 
 .focus_on_mission_wrapper {
   position: relative;
-  background: url("../img/newGP.webp") center/cover no-repeat;
+  background: url("../../img/newGP.webp") center/cover no-repeat;
   padding: 40px;
 }
 
 .focus_on_mission_subtitle {
   font-size: 16px;
-  color: #fff;
+  color: var(--color-white);
   margin-bottom: 10px;
   text-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
 }
@@ -968,7 +968,7 @@
 .focus_on_mission_title {
   font-size: 32px;
   font-weight: 600;
-  color: #fff;
+  color: var(--color-white);
   margin-bottom: 40px;
   max-width: 500px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
@@ -1014,13 +1014,13 @@
   margin: 0;
   font-size: 18px;
   font-weight: 700;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .focus_on_mission_card p {
   margin: 0;
   font-size: 14px;
-  color: #fff;
+  color: var(--color-white);
   max-width: 300px;
 }
 
@@ -1073,13 +1073,13 @@
   margin: 0 0 10px;
   font-size: 1.2em;
   font-weight: bold;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .shining_block_card p {
   font-size: 0.9em;
   line-height: 1.4;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .shining_block_card.large {
@@ -1117,12 +1117,12 @@
   border: none;
   padding: 10px;
   background: transparent;
-  color: white;
+  color: var(--color-white);
   outline: none;
 }
 
 .shining_block_search-bar input::placeholder {
-  color: #fff;
+  color: var(--color-white);
 }
 
 .shining_block_search-icon {
@@ -1183,7 +1183,7 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--color-white);
 }
 
 .red {
@@ -1199,7 +1199,7 @@
 .window_title {
   flex: 1;
   text-align: center;
-  color: white;
+  color: var(--color-white);
   font-size: 14px;
   font-weight: 500;
 }
@@ -1230,7 +1230,7 @@
 }
 
 .window_nav span {
-  color: #fff;
+  color: var(--color-white);
 }
 
 .window_content {
@@ -1247,7 +1247,7 @@
 .window_content_left h1 {
   font-size: 40px;
   font-weight: 200;
-  color: #fff;
+  color: var(--color-white);
   margin-bottom: 0;
 }
 
@@ -1255,7 +1255,7 @@
   font-size: 48px;
   font-weight: 800;
   margin-bottom: 15px;
-  color: #fff;
+  color: var(--color-white);
   margin-top: 0;
 }
 
@@ -1270,7 +1270,7 @@
   padding: 10px 20px;
   border: none;
   border-radius: 8px;
-  color: white;
+  color: var(--color-white);
   cursor: pointer;
   font-weight: bold;
   box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.5),
@@ -1298,7 +1298,7 @@
   text-align: center;
   font-weight: 600;
   font-size: 18px;
-  color: white;
+  color: var(--color-white);
 }
 
 .window_content_mockup {
@@ -1306,7 +1306,7 @@
   border: none;
   border-radius: 6px;
   padding: 8px 16px;
-  color: white;
+  color: var(--color-white);
   font-size: 13px;
   cursor: pointer;
   box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.5),
@@ -1434,7 +1434,7 @@
 
   .dynamic_image_with_text_title {
     font-size: 30px;
-    background-color: white;
+    background-color: var(--color-white);
     padding: 50px 20px;
   }
 
