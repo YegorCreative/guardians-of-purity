@@ -7,9 +7,6 @@
   padding: 100px 20px;
   text-align: center;
   min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .chapterOne-overlay {

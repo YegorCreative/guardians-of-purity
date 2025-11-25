@@ -53,10 +53,7 @@
 .scroll_base_animation_hero {
   container-type: inline-size;
   min-height: 60vh;
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 1.5rem;
 }
 

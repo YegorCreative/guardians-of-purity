@@ -33,11 +33,8 @@ body::before {
 }
 
 main {
-  display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  align-items: center;
-  justify-content: center;
 }
 
 main h1 {

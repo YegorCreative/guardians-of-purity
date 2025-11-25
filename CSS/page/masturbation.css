@@ -287,11 +287,8 @@
 .froasted_glass_block {
   position: relative;
   background-color: var(--color-white);
-  display: flex;
   flex-direction: column;
-  justify-content: center;
   height: 100px;
-  align-items: center;
 }
 
 .froasted_glass_block_title {
@@ -310,9 +307,6 @@
   border-radius: 20px;
   width: 90%;
   height: 70%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: var(--color-white);
 }
 
