@@ -141,12 +141,20 @@
 
 .overlaps_cards .card--glass::before {
   border: 1px solid var(--color-white);
-  mask-image: linear-gradient(135deg, var(--color-white), rgba(255, 255, 255, 0) 50%);
+  mask-image: linear-gradient(
+    135deg,
+    var(--color-white),
+    rgba(255, 255, 255, 0) 50%
+  );
 }
 
 .overlaps_cards .card--glass::after {
   border: 1px solid #0d4ef2;
-  mask-image: linear-gradient(135deg, rgba(255, 255, 255, 0) 50%, var(--color-white));
+  mask-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0) 50%,
+    var(--color-white)
+  );
 }
 
 [dir="rtl"] .overlaps_cards .card--glass {
@@ -159,11 +167,19 @@
 }
 
 [dir="rtl"] .overlaps_cards .card--glass::before {
-  mask-image: linear-gradient(-135deg, var(--color-white), rgba(255, 255, 255, 0) 50%);
+  mask-image: linear-gradient(
+    -135deg,
+    var(--color-white),
+    rgba(255, 255, 255, 0) 50%
+  );
 }
 
 [dir="rtl"] .overlaps_cards .card--glass::after {
-  mask-image: linear-gradient(-135deg, rgba(255, 255, 255, 0) 50%, var(--color-white));
+  mask-image: linear-gradient(
+    -135deg,
+    rgba(255, 255, 255, 0) 50%,
+    var(--color-white)
+  );
 }
 
 .overlaps_cards .card__content {
@@ -187,7 +203,6 @@
       )
       0 0 / 100% 100%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   padding: 1.25em 1.5em;
@@ -677,7 +692,6 @@
   padding: 40px 20px;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
 .department_cards_wrapper .card {
@@ -1237,7 +1251,6 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  flex-wrap: wrap;
 }
 
 .window_content_left {
@@ -1524,7 +1537,6 @@
   }
 
   .window_nav {
-    flex-wrap: wrap;
   }
 
   .window_top-bar {

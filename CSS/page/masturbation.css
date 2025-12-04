@@ -271,7 +271,6 @@
 
 .froasted_glass_block_wrapper {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   padding-top: 20px;
   gap: 10px;
