@@ -492,6 +492,7 @@
   background-color: var(--color-white);
   padding: 20px;
   position: relative;
+  font-size: 14px;
 }
 
 .today::after {
@@ -527,7 +528,7 @@
 }
 
 .thirty_one_day_card_block_title {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   position: absolute;
   background-color: var(--color-white);
@@ -542,7 +543,7 @@
 }
 
 .thirty_one_day_card_title {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
   color: var(--color-text-dark);
   text-align: center;
@@ -558,7 +559,7 @@
   margin-top: 18px;
   margin-bottom: 0;
   text-align: left;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .thirty_one_day_card_content {
@@ -592,7 +593,7 @@
   padding: 15px 15px;
   color: var(--color-white);
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
   background-image: url("../img/heroe-image8.webp");
   height: 80px;
   align-items: center;
