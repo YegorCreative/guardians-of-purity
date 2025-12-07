@@ -325,6 +325,19 @@
     font-size: 16px;
   }
 
+  .resource-categories {
+    padding: 40px 15px;
+  }
+
+  .thirty_one_day_card_wrapper_main {
+    gap: 15px;
+  }
+
+  .thirty_one_day_card_wrapper {
+    min-width: calc(50% - 8px);
+    max-width: calc(50% - 8px);
+  }
+
   .featured-grid,
   .emergency-grid,
   .download-grid,
