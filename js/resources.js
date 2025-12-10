@@ -1,9 +1,13 @@
 // Modal Functions
 function openModal(modalId) {
+  console.log('Opening modal:', modalId);
   const modal = document.getElementById(modalId);
+  console.log('Modal element:', modal);
+  
   if (modal) {
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+    console.log('Modal active class added:', modalId);
     
     // Initialize specific modal content if needed
     if (modalId === 'progressTracker') {
@@ -11,20 +15,24 @@ function openModal(modalId) {
     } else if (modalId === 'scriptureMemory') {
       initializeScriptureCards();
     }
+  } else {
+    console.error('Modal not found:', modalId);
   }
 }
 
 function closeModal(modalId) {
+  console.log('Closing modal:', modalId);
   const modal = document.getElementById(modalId);
   if (modal) {
     modal.classList.remove('active');
     document.body.style.overflow = 'auto';
+    console.log('Modal active class removed:', modalId);
   }
 }
 
 // Close modal when clicking outside
 window.onclick = function(event) {
-  if (event.target.classList.contains('modal')) {
+  if (event.target.classList && event.target.classList.contains('modal')) {
     event.target.classList.remove('active');
     document.body.style.overflow = 'auto';
   }
@@ -526,3 +534,16 @@ function copyTemplate() {
     }, 2000);
   });
 }
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('Page loaded, initializing modals...');
+  
+  // Add click handlers to download buttons
+  document.querySelectorAll('.download-card').forEach(card => {
+    card.style.cursor = 'pointer';
+  });
+  
+  console.log('Found', document.querySelectorAll('.download-card').length, 'download cards');
+  console.log('Found', document.querySelectorAll('.modal').length, 'modals');
+});
