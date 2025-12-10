@@ -30,6 +30,30 @@ function closeModal(modalId) {
   }
 }
 
+// Tool Card Toggle Function
+function toggleToolCard(header) {
+  const toolCard = header.parentElement;
+  const isActive = toolCard.classList.contains('active');
+  
+  // Toggle active class
+  if (isActive) {
+    toolCard.classList.remove('active');
+  } else {
+    toolCard.classList.add('active');
+    
+    // Initialize specific tool content if needed
+    const toolBody = toolCard.querySelector('.tool-body');
+    if (toolBody.querySelector('#scriptureCards') && !toolBody.dataset.initialized) {
+      initializeScriptureCards();
+      toolBody.dataset.initialized = 'true';
+    }
+    if (toolBody.querySelector('#daysClean') && !toolBody.dataset.initialized) {
+      loadTrackerData();
+      toolBody.dataset.initialized = 'true';
+    }
+  }
+}
+
 // Close modal when clicking outside
 window.onclick = function(event) {
   if (event.target.classList && event.target.classList.contains('modal')) {

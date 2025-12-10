@@ -90,7 +90,7 @@
           <div class="thirty_one_day_card_wrapper_main flex-wrap">
             <div class="thirty_one_day_card_wrapper separated_block_corner">
               <div class="thirty_one_day_card_block separated_block_corner">
-                <span class="thirty_one_day_card_block_title top_left">
+                <span class="category-card-title">
                   Books & Articles
                 </span>
                 <img
@@ -110,7 +110,7 @@
 
             <div class="thirty_one_day_card_wrapper separated_block_corner">
               <div class="thirty_one_day_card_block separated_block_corner">
-                <span class="thirty_one_day_card_block_title top_left">
+                <span class="category-card-title">
                   Videos & Podcasts
                 </span>
                 <img
@@ -130,7 +130,7 @@
 
             <div class="thirty_one_day_card_wrapper separated_block_corner">
               <div class="thirty_one_day_card_block separated_block_corner">
-                <span class="thirty_one_day_card_block_title top_left">
+                <span class="category-card-title">
                   Tools & Apps
                 </span>
                 <img
@@ -150,7 +150,7 @@
 
             <div class="thirty_one_day_card_wrapper separated_block_corner">
               <div class="thirty_one_day_card_block separated_block_corner">
-                <span class="thirty_one_day_card_block_title top_left">
+                <span class="category-card-title">
                   Support Groups
                 </span>
                 <img
@@ -170,7 +170,7 @@
 
             <div class="thirty_one_day_card_wrapper separated_block_corner">
               <div class="thirty_one_day_card_block separated_block_corner">
-                <span class="thirty_one_day_card_block_title top_left">
+                <span class="category-card-title">
                   Professional Help
                 </span>
                 <img
@@ -190,7 +190,7 @@
 
             <div class="thirty_one_day_card_wrapper separated_block_corner">
               <div class="thirty_one_day_card_block separated_block_corner">
-                <span class="thirty_one_day_card_block_title top_left">
+                <span class="category-card-title">
                   Scripture Resources
                 </span>
                 <img
@@ -590,49 +590,571 @@
       <div class="separated_block">
         <section class="downloadable-resources separated_block_corner">
           <h2 class="section-title">Interactive Tools</h2>
-          <div class="download-grid">
-            <div class="download-card separated_block_corner" onclick="openModal('freedomRoadmap')">
-              <div class="download-icon"><i class="fas fa-book"></i></div>
-              <h3 class="download-title">Freedom Roadmap</h3>
-              <p class="download-description">Complete roadmap to breaking free from pornography addiction</p>
-              <span class="download-button">Open Guide</span>
+          
+          <!-- Freedom Roadmap -->
+          <div class="tool-card separated_block_corner">
+            <div class="tool-header" onclick="toggleToolCard(this)">
+              <div class="tool-header-content">
+                <div class="download-icon"><i class="fas fa-book"></i></div>
+                <div class="tool-header-text">
+                  <h3 class="download-title">Freedom Roadmap</h3>
+                  <p class="download-description">Complete roadmap to breaking free from pornography addiction</p>
+                </div>
+              </div>
+              <span class="tool-toggle"><i class="fas fa-chevron-down"></i></span>
             </div>
+            <div class="tool-body">
+              <div class="roadmap-phase">
+                <div class="phase-header" onclick="toggleAccordion(this)">
+                  <span class="phase-icon"><i class="fas fa-brain"></i></span>
+                  <h3>Phase 1: Understanding the Problem</h3>
+                  <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="phase-content">
+                  <p><strong>Brain Science Basics:</strong> Pornography hijacks your brain's reward system, creating powerful neural pathways through dopamine release.</p>
+                  <ul>
+                    <li>Recognize that addiction is both spiritual and neurological</li>
+                    <li>Understand that healing takes time - neural pathways need 90+ days to rewire</li>
+                    <li>Identify your personal triggers (boredom, stress, loneliness, anger)</li>
+                  </ul>
+                  <p class="action-item">✅ <strong>Action:</strong> Write down your top 3 triggers and the times you're most vulnerable.</p>
+                </div>
+              </div>
 
-            <div class="download-card separated_block_corner" onclick="openModal('prayerJournal')">
-              <div class="download-icon"><i class="fas fa-hands-praying"></i></div>
-              <h3 class="download-title">Prayer Journal</h3>
-              <p class="download-description">Interactive guided prayers for your journey</p>
-              <span class="download-button">Open Journal</span>
-            </div>
+              <div class="roadmap-phase">
+                <div class="phase-header" onclick="toggleAccordion(this)">
+                  <span class="phase-icon"><i class="fas fa-anchor"></i></span>
+                  <h3>Phase 2: Building Your Foundation</h3>
+                  <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="phase-content">
+                  <p><strong>Faith & Accountability:</strong> You cannot do this alone. God's grace + human support = sustainable freedom.</p>
+                  <ul>
+                    <li>Establish daily time with God (prayer, Scripture, worship)</li>
+                    <li>Find an accountability partner who will ask hard questions</li>
+                    <li>Install blocking software and create environmental safeguards</li>
+                    <li>Confess to someone you trust - secrecy fuels addiction</li>
+                  </ul>
+                  <p class="action-item">✅ <strong>Action:</strong> Contact someone this week to be your accountability partner.</p>
+                </div>
+              </div>
 
-            <div class="download-card separated_block_corner" onclick="openModal('progressTracker')">
-              <div class="download-icon"><i class="fas fa-chart-line"></i></div>
-              <h3 class="download-title">Progress Tracker</h3>
-              <p class="download-description">Track victories, triggers, and growth milestones</p>
-              <span class="download-button">Open Tracker</span>
-            </div>
+              <div class="roadmap-phase">
+                <div class="phase-header" onclick="toggleAccordion(this)">
+                  <span class="phase-icon"><i class="fas fa-shield"></i></span>
+                  <h3>Phase 3: Daily Strategies</h3>
+                  <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="phase-content">
+                  <p><strong>Practical Tips:</strong> Freedom requires daily choices and battle plans.</p>
+                  <ul>
+                    <li><strong>Morning:</strong> Start with prayer and Scripture memory</li>
+                    <li><strong>Throughout Day:</strong> Bounce your eyes, take thoughts captive (2 Cor 10:5)</li>
+                    <li><strong>When Tempted:</strong> HALT method (Am I Hungry, Angry, Lonely, Tired?)</li>
+                    <li><strong>Evening:</strong> Reflect, journal victories, confess struggles</li>
+                    <li><strong>Replace:</strong> Don't just stop - replace with healthy activities</li>
+                  </ul>
+                  <p class="action-item">✅ <strong>Action:</strong> Create a go-to list of 5 activities when temptation hits.</p>
+                </div>
+              </div>
 
-            <div class="download-card separated_block_corner" onclick="openModal('scriptureMemory')">
-              <div class="download-icon"><i class="fas fa-cross"></i></div>
-              <h3 class="download-title">Scripture Memory System</h3>
-              <p class="download-description">Flashcard-style verses for battling temptation</p>
-              <span class="download-button">Open Cards</span>
-            </div>
-
-            <div class="download-card separated_block_corner" onclick="openModal('accountabilityGuide')">
-              <div class="download-icon"><i class="fas fa-handshake"></i></div>
-              <h3 class="download-title">Accountability Partner Guide</h3>
-              <p class="download-description">Complete guide for accountability relationships</p>
-              <span class="download-button">Open Guide</span>
-            </div>
-
-            <div class="download-card separated_block_corner" onclick="openModal('emergencyPlan')">
-              <div class="download-icon"><i class="fas fa-triangle-exclamation"></i></div>
-              <h3 class="download-title">Emergency Action Plan</h3>
-              <p class="download-description">Step-by-step help for moments of temptation</p>
-              <span class="download-button">Open Plan</span>
+              <div class="roadmap-phase">
+                <div class="phase-header" onclick="toggleAccordion(this)">
+                  <span class="phase-icon"><i class="fas fa-star"></i></span>
+                  <h3>Phase 4: Long-Term Success</h3>
+                  <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="phase-content">
+                  <p><strong>Maintaining Freedom:</strong> Victory isn't a destination - it's a lifestyle.</p>
+                  <ul>
+                    <li>Celebrate milestones (7 days, 30 days, 90 days, 1 year)</li>
+                    <li>Stay humble - pride comes before a fall</li>
+                    <li>Keep accountability relationships active even when doing well</li>
+                    <li>Help others who are struggling - your story gives hope</li>
+                    <li>Identify and heal root wounds (counseling may be needed)</li>
+                  </ul>
+                  <p class="action-item">✅ <strong>Action:</strong> Set calendar reminders for milestone check-ins with your accountability partner.</p>
+                </div>
+              </div>
             </div>
           </div>
+
+          <!-- Prayer Journal -->
+          <div class="tool-card separated_block_corner">
+            <div class="tool-header" onclick="toggleToolCard(this)">
+              <div class="tool-header-content">
+                <div class="download-icon"><i class="fas fa-hands-praying"></i></div>
+                <div class="tool-header-text">
+                  <h3 class="download-title">Prayer Journal</h3>
+                  <p class="download-description">Interactive guided prayers for your journey</p>
+                </div>
+              </div>
+              <span class="tool-toggle"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="tool-body">
+              <div class="prayer-tabs">
+                <button class="prayer-tab active" onclick="showPrayerTab('morning')">Morning</button>
+                <button class="prayer-tab" onclick="showPrayerTab('temptation')">Temptation</button>
+                <button class="prayer-tab" onclick="showPrayerTab('evening')">Evening</button>
+                <button class="prayer-tab" onclick="showPrayerTab('victory')">Victory</button>
+              </div>
+
+              <div id="morning" class="prayer-content active">
+                <h3>Morning Prayer - Strength for Today</h3>
+                <p class="prayer-intro">Start your day asking God for strength and wisdom.</p>
+                <div class="prayer-template">
+                  <p><em>"Lord Jesus, I come to You at the start of this day. I acknowledge that I cannot walk in purity by my own strength..."</em></p>
+                  <textarea class="prayer-input" placeholder="Complete this prayer in your own words... Ask God for strength, wisdom, and awareness of His presence today." rows="6"></textarea>
+                </div>
+                <div class="prayer-prompts">
+                  <p><strong>Pray for:</strong></p>
+                  <ul>
+                    <li>God's power to resist temptation (1 Cor 10:13)</li>
+                    <li>Awareness of triggers and wisdom to avoid them</li>
+                    <li>A heart that desires holiness more than pleasure</li>
+                    <li>Protection over your eyes and mind</li>
+                  </ul>
+                </div>
+                <button class="copy-button" onclick="copyPrayer('morning')">Copy Prayer</button>
+              </div>
+
+              <div id="temptation" class="prayer-content">
+                <h3>Temptation Prayer - Urgent Help</h3>
+                <p class="prayer-intro">Pray this when you feel tempted or are in a moment of weakness.</p>
+                <div class="prayer-template">
+                  <p><em>"God, I am being tempted right now. The desire is strong, but I know it leads to death..."</em></p>
+                  <textarea class="prayer-input" placeholder="Pour out your struggle to God... Be honest about what you're feeling and ask for immediate help." rows="6"></textarea>
+                </div>
+                <div class="quick-prayers">
+                  <p><strong>Quick Prayers:</strong></p>
+                  <div class="quick-prayer-item">"Lord, give me strength RIGHT NOW!"</div>
+                  <div class="quick-prayer-item">"Jesus, I choose You over this lie!"</div>
+                  <div class="quick-prayer-item">"Holy Spirit, fill me with Your power!"</div>
+                  <div class="quick-prayer-item">"Father, this is not worth losing Your presence!"</div>
+                </div>
+                <button class="copy-button" onclick="copyPrayer('temptation')">Copy Prayer</button>
+              </div>
+
+              <div id="evening" class="prayer-content">
+                <h3>Evening Prayer - Reflection & Gratitude</h3>
+                <p class="prayer-intro">End your day reflecting on God's faithfulness.</p>
+                <div class="prayer-template">
+                  <p><em>"Lord, as this day ends, I want to thank You for..."</em></p>
+                  <textarea class="prayer-input" placeholder="Reflect on today... What victories did you experience? Where did you see God's help? What do you need to confess?" rows="6"></textarea>
+                </div>
+                <div class="prayer-prompts">
+                  <p><strong>Reflect on:</strong></p>
+                  <ul>
+                    <li>Moments you resisted temptation - thank God!</li>
+                    <li>Times you fell - confess and receive forgiveness</li>
+                    <li>God's provision throughout the day</li>
+                    <li>Growth you're seeing in your journey</li>
+                  </ul>
+                </div>
+                <button class="copy-button" onclick="copyPrayer('evening')">Copy Prayer</button>
+              </div>
+
+              <div id="victory" class="prayer-content">
+                <h3>Victory Prayer - Celebrating Progress</h3>
+                <p class="prayer-intro">Celebrate milestones and give God the glory.</p>
+                <div class="prayer-template">
+                  <p><em>"Father, I want to celebrate what You've done in my life..."</em></p>
+                  <textarea class="prayer-input" placeholder="Celebrate your victory... Acknowledge that this is God's work in you, not your own strength." rows="6"></textarea>
+                </div>
+                <div class="prayer-prompts">
+                  <p><strong>Celebrate:</strong></p>
+                  <ul>
+                    <li>Days of freedom (7, 30, 90 days, etc.)</li>
+                    <li>Resistance victories that once seemed impossible</li>
+                    <li>Changed desires and renewed mind</li>
+                    <li>God's faithfulness even when you failed</li>
+                  </ul>
+                </div>
+                <button class="copy-button" onclick="copyPrayer('victory')">Copy Prayer</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress Tracker -->
+          <div class="tool-card separated_block_corner">
+            <div class="tool-header" onclick="toggleToolCard(this)">
+              <div class="tool-header-content">
+                <div class="download-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="tool-header-text">
+                  <h3 class="download-title">Progress Tracker</h3>
+                  <p class="download-description">Track victories, triggers, and growth milestones</p>
+                </div>
+              </div>
+              <span class="tool-toggle"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="tool-body">
+              <div class="tracker-section">
+                <h3><i class="fas fa-bullseye"></i> Days Clean Streak</h3>
+                <div class="streak-counter">
+                  <input type="number" id="daysClean" class="streak-input" placeholder="0" min="0">
+                  <label for="daysClean">Days</label>
+                </div>
+                <div class="milestone-badges">
+                  <div class="badge" data-days="7">7 Days</div>
+                  <div class="badge" data-days="30">30 Days</div>
+                  <div class="badge" data-days="90">90 Days</div>
+                  <div class="badge" data-days="365">1 Year</div>
+                </div>
+              </div>
+
+              <div class="tracker-section">
+                <h3><i class="fas fa-triangle-exclamation"></i> Trigger Identification</h3>
+                <p class="section-desc">Check the triggers you've identified in your journey:</p>
+                <div class="trigger-list">
+                  <label class="trigger-item"><input type="checkbox" class="trigger-check" data-trigger="boredom"> Boredom</label>
+                  <label class="trigger-item"><input type="checkbox" class="trigger-check" data-trigger="stress"> Stress</label>
+                  <label class="trigger-item"><input type="checkbox" class="trigger-check" data-trigger="loneliness"> Loneliness</label>
+                  <label class="trigger-item"><input type="checkbox" class="trigger-check" data-trigger="anger"> Anger</label>
+                  <label class="trigger-item"><input type="checkbox" class="trigger-check" data-trigger="tired"> Being Tired</label>
+                  <label class="trigger-item"><input type="checkbox" class="trigger-check" data-trigger="success"> Success/Pride</label>
+                  <label class="trigger-item"><input type="checkbox" class="trigger-check" data-trigger="failure"> Failure/Shame</label>
+                  <label class="trigger-item"><input type="checkbox" class="trigger-check" data-trigger="late-night"> Late Night Hours</label>
+                </div>
+              </div>
+
+              <div class="tracker-section">
+                <h3><i class="fas fa-trophy"></i> Victory Log</h3>
+                <p class="section-desc">Document your wins - big and small!</p>
+                <textarea id="victoryLog" class="victory-textarea" placeholder="Write about a time you resisted temptation, a milestone you hit, or growth you've noticed..."></textarea>
+                <button class="save-button" onclick="saveVictory()">Save Victory</button>
+                <div id="victoryList" class="victory-entries"></div>
+              </div>
+
+              <div class="tracker-section">
+                <h3><i class="fas fa-heart"></i> Encouraging Stats</h3>
+                <div class="stats-grid">
+                  <div class="stat-card">
+                    <div class="stat-number" id="statDays">0</div>
+                    <div class="stat-label">Days of Freedom</div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-number" id="statVictories">0</div>
+                    <div class="stat-label">Victories Logged</div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-number" id="statTriggers">0</div>
+                    <div class="stat-label">Triggers Identified</div>
+                  </div>
+                </div>
+              </div>
+
+              <button class="reset-button" onclick="resetTracker()">Reset All Data</button>
+            </div>
+          </div>
+
+          <!-- Scripture Memory System -->
+          <div class="tool-card separated_block_corner">
+            <div class="tool-header" onclick="toggleToolCard(this)">
+              <div class="tool-header-content">
+                <div class="download-icon"><i class="fas fa-cross"></i></div>
+                <div class="tool-header-text">
+                  <h3 class="download-title">Scripture Memory System</h3>
+                  <p class="download-description">Flashcard-style verses for battling temptation</p>
+                </div>
+              </div>
+              <span class="tool-toggle"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="tool-body">
+              <div class="scripture-filters">
+                <button class="scripture-filter active" onclick="filterScriptures('all')">All</button>
+                <button class="scripture-filter" onclick="filterScriptures('temptation')">Temptation</button>
+                <button class="scripture-filter" onclick="filterScriptures('identity')">Identity</button>
+                <button class="scripture-filter" onclick="filterScriptures('renewal')">Renewal</button>
+                <button class="scripture-filter" onclick="filterScriptures('victory')">Victory</button>
+              </div>
+
+              <button class="random-verse-btn" onclick="randomVerse()"><i class="fas fa-dice"></i> Random Verse</button>
+
+              <div id="scriptureCards" class="scripture-grid">
+                <!-- Cards will be generated by JavaScript -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Accountability Partner Guide -->
+          <div class="tool-card separated_block_corner">
+            <div class="tool-header" onclick="toggleToolCard(this)">
+              <div class="tool-header-content">
+                <div class="download-icon"><i class="fas fa-handshake"></i></div>
+                <div class="tool-header-text">
+                  <h3 class="download-title">Accountability Partner Guide</h3>
+                  <p class="download-description">Complete guide for accountability relationships</p>
+                </div>
+              </div>
+              <span class="tool-toggle"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="tool-body">
+              <div class="guide-tabs">
+                <button class="guide-tab active" onclick="showGuideTab('finding')">Finding a Partner</button>
+                <button class="guide-tab" onclick="showGuideTab('questions')">Weekly Questions</button>
+                <button class="guide-tab" onclick="showGuideTab('redflags')">Red Flags</button>
+                <button class="guide-tab" onclick="showGuideTab('template')">Check-In Template</button>
+              </div>
+
+              <div id="finding" class="guide-content active">
+                <h3>How to Find an Accountability Partner</h3>
+                <div class="guide-section">
+                  <h4><i class="fas fa-check"></i> Look for someone who is:</h4>
+                  <ul>
+                    <li>Mature in their faith and walking in purity themselves</li>
+                    <li>Trustworthy - will keep everything confidential</li>
+                    <li>Willing to ask hard questions and speak truth in love</li>
+                    <li>Available for regular check-ins (weekly minimum)</li>
+                    <li>The same gender as you</li>
+                    <li>Not struggling with the same issue currently</li>
+                  </ul>
+                </div>
+                <div class="guide-section">
+                  <h4><i class="fas fa-search"></i> Where to find them:</h4>
+                  <ul>
+                    <li>Church small group or men's ministry</li>
+                    <li>Christian counselor or pastor</li>
+                    <li>Online accountability groups (Covenant Eyes, Setting Captives Free)</li>
+                    <li>Close friend who demonstrates spiritual maturity</li>
+                  </ul>
+                </div>
+                <div class="guide-section">
+                  <h4>💬 How to ask:</h4>
+                  <p class="example-text"><i class="fas fa-comment"></i> <em>"I'm working on breaking free from pornography and I need someone to walk with me. Would you be willing to be my accountability partner? It would involve weekly check-ins where you ask me honest questions about my purity."</em></p>
+                </div>
+              </div>
+
+              <div id="questions" class="guide-content">
+                <h3>Weekly Accountability Questions</h3>
+                <p class="guide-intro">These are questions your partner should ask you every week:</p>
+                
+                <div class="question-category">
+                  <h4>Direct Questions:</h4>
+                  <ol class="question-list">
+                    <li>Have you viewed pornography since we last talked?</li>
+                    <li>Have you been completely honest with me just now?</li>
+                    <li>Have you been spending daily time in God's Word and prayer?</li>
+                    <li>What temptations have you faced this week?</li>
+                    <li>Have you put yourself in compromising situations?</li>
+                  </ol>
+                </div>
+
+                <div class="question-category">
+                  <h4>Deeper Questions:</h4>
+                  <ol class="question-list">
+                    <li>What emotions have been triggering temptation? (HALT: Hungry, Angry, Lonely, Tired)</li>
+                    <li>Have you been isolating yourself or withdrawing from community?</li>
+                    <li>Are you using your accountability software consistently?</li>
+                    <li>What victories can you celebrate from this week?</li>
+                    <li>How can I pray for you specifically this week?</li>
+                  </ol>
+                </div>
+
+                <button class="copy-button" onclick="copyQuestions()">Copy All Questions</button>
+              </div>
+
+              <div id="redflags" class="guide-content">
+                <h3>Red Flags to Discuss</h3>
+                <p class="guide-intro">Talk about these warning signs with your partner:</p>
+                
+                <div class="redflag-list">
+                  <div class="redflag-item">
+                    <span class="flag-icon"><i class="fas fa-flag"></i></span>
+                    <div>
+                      <h4>Excessive Screen Time</h4>
+                      <p>Spending hours on phone/computer, especially late at night</p>
+                    </div>
+                  </div>
+                  <div class="redflag-item">
+                    <span class="flag-icon"><i class="fas fa-flag"></i></span>
+                    <div>
+                      <h4>Isolation</h4>
+                      <p>Withdrawing from friends, family, church, or accountability</p>
+                    </div>
+                  </div>
+                  <div class="redflag-item">
+                    <span class="flag-icon"><i class="fas fa-flag"></i></span>
+                    <div>
+                      <h4>Defensiveness</h4>
+                      <p>Getting angry or evasive when asked accountability questions</p>
+                    </div>
+                  </div>
+                  <div class="redflag-item">
+                    <span class="flag-icon"><i class="fas fa-flag"></i></span>
+                    <div>
+                      <h4>Spiritual Apathy</h4>
+                      <p>Neglecting prayer, Bible reading, or church attendance</p>
+                    </div>
+                  </div>
+                  <div class="redflag-item">
+                    <span class="flag-icon"><i class="fas fa-flag"></i></span>
+                    <div>
+                      <h4>Rationalization</h4>
+                      <p>Making excuses for behaviors or minimizing the problem</p>
+                    </div>
+                  </div>
+                  <div class="redflag-item">
+                    <span class="flag-icon"><i class="fas fa-flag"></i></span>
+                    <div>
+                      <h4>Technology Secrecy</h4>
+                      <p>Password-protecting everything, clearing browser history frequently</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="template" class="guide-content">
+                <h3>Weekly Check-In Template</h3>
+                <p class="guide-intro">A structured format for your accountability meetings:</p>
+                
+                <div class="template-box">
+                  <h4>📋 Accountability Check-In</h4>
+                  <div class="template-section">
+                    <strong>1. Opening Prayer</strong>
+                    <p class="template-text">Pray for honesty, grace, and God's presence</p>
+                  </div>
+                  <div class="template-section">
+                    <strong>2. Direct Questions (5 min)</strong>
+                    <p class="template-text">Go through the core accountability questions</p>
+                  </div>
+                  <div class="template-section">
+                    <strong>3. Victories & Struggles (10 min)</strong>
+                    <p class="template-text">
+                      • What went well this week?<br>
+                      • What were the hardest moments?<br>
+                      • What patterns are you noticing?
+                    </p>
+                  </div>
+                  <div class="template-section">
+                    <strong>4. Action Steps (5 min)</strong>
+                    <p class="template-text">
+                      • What specific changes will you make this week?<br>
+                      • Are there new safeguards needed?<br>
+                      • What practical help do you need?
+                    </p>
+                  </div>
+                  <div class="template-section">
+                    <strong>5. Prayer Requests (5 min)</strong>
+                    <p class="template-text">Pray specifically for upcoming temptations and situations</p>
+                  </div>
+                  <div class="template-section">
+                    <strong>6. Closing Prayer</strong>
+                    <p class="template-text">Pray for strength and God's power for the week ahead</p>
+                  </div>
+                </div>
+                
+                <button class="copy-button" onclick="copyTemplate()">Copy Template</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Emergency Action Plan -->
+          <div class="tool-card separated_block_corner">
+            <div class="tool-header" onclick="toggleToolCard(this)">
+              <div class="tool-header-content">
+                <div class="download-icon"><i class="fas fa-triangle-exclamation"></i></div>
+                <div class="tool-header-text">
+                  <h3 class="download-title">Emergency Action Plan</h3>
+                  <p class="download-description">Step-by-step help for moments of temptation</p>
+                </div>
+              </div>
+              <span class="tool-toggle"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="tool-body">
+              <p class="emergency-subtitle">Follow these steps RIGHT NOW if you're being tempted:</p>
+              
+              <div class="emergency-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h3>STOP - Pray Immediately</h3>
+                  <div class="emergency-prayers">
+                    <div class="emergency-prayer">"God, I need Your help RIGHT NOW!"</div>
+                    <div class="emergency-prayer">"Jesus, give me strength to resist!"</div>
+                    <div class="emergency-prayer">"Holy Spirit, this is not worth it - help me!"</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="emergency-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h3>MOVE - Change Your Location</h3>
+                  <ul class="emergency-list">
+                    <li>Get up and go to a public place (coffee shop, library, store)</li>
+                    <li>Call or text your accountability partner immediately</li>
+                    <li>If at home alone - leave the house NOW</li>
+                    <li>Put your phone/computer in another room</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="emergency-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h3>SCRIPTURE - Speak Truth Out Loud</h3>
+                  <div class="emergency-verses">
+                    <div class="emergency-verse">
+                      <strong>1 Corinthians 10:13</strong>
+                      <p>"No temptation has overtaken you except what is common to mankind. And God is faithful; he will not let you be tempted beyond what you can bear."</p>
+                    </div>
+                    <div class="emergency-verse">
+                      <strong>James 4:7</strong>
+                      <p>"Submit yourselves to God. Resist the devil, and he will flee from you."</p>
+                    </div>
+                    <div class="emergency-verse">
+                      <strong>Psalm 119:9</strong>
+                      <p>"How can a young person stay on the path of purity? By living according to your word."</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="emergency-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                  <h3>DISTRACT - Do Something Physical</h3>
+                  <div class="activity-grid">
+                    <div class="activity-item"><i class="fas fa-person-running"></i> Go for a run</div>
+                    <div class="activity-item"><i class="fas fa-dumbbell"></i> Do pushups/workout</div>
+                    <div class="activity-item"><i class="fas fa-shower"></i> Take a cold shower</div>
+                    <div class="activity-item"><i class="fas fa-music"></i> Play worship music loud</div>
+                    <div class="activity-item"><i class="fas fa-phone"></i> Call a friend</div>
+                    <div class="activity-item"><i class="fas fa-broom"></i> Clean your space</div>
+                    <div class="activity-item"><i class="fas fa-book"></i> Read a book</div>
+                    <div class="activity-item"><i class="fas fa-gamepad"></i> Play a game (non-sexual)</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="emergency-step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                  <h3>REMEMBER - Why You're Fighting</h3>
+                  <div class="remember-section">
+                    <p><strong>You're fighting for:</strong></p>
+                    <ul class="emergency-list">
+                      <li>Your relationship with God</li>
+                      <li>Your future spouse (or current spouse)</li>
+                      <li>Your testimony and witness</li>
+                      <li>Your self-respect and dignity</li>
+                      <li>Freedom from slavery to sin</li>
+                    </ul>
+                    <p class="reminder-text"><strong>This moment of temptation WILL pass. You CAN resist. God is WITH you!</strong></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="emergency-contacts">
+                <h3>📞 Emergency Contacts</h3>
+                <div class="contact-buttons">
+                  <a href="tel:1-800-273-8255" class="emergency-contact-btn"><i class="fas fa-phone"></i><br>Crisis Hotline<br>1-800-273-8255</a>
+                  <a href="sms:741741" class="emergency-contact-btn"><i class="fas fa-comment"></i><br>Text Support<br>741741</a>
+                  <a href="prayer.html" class="emergency-contact-btn"><i class="fas fa-hands-praying"></i><br>Prayer Request<br>Submit Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </section>
       </div>
 
@@ -678,535 +1200,6 @@
             </div>
           </div>
         </section>
-      </div>
-
-      <!-- Modal Structures -->
-      <!-- Freedom Roadmap Modal -->
-      <div id="freedomRoadmap" class="modal">
-        <div class="modal-content">
-          <span class="modal-close" onclick="closeModal('freedomRoadmap')">&times;</span>
-          <h2 class="modal-title">Freedom Roadmap</h2>
-          <div class="modal-body">
-            <div class="roadmap-phase">
-              <div class="phase-header" onclick="toggleAccordion(this)">
-                <span class="phase-icon"><i class="fas fa-brain"></i></span>
-                <h3>Phase 1: Understanding the Problem</h3>
-                <span class="accordion-arrow">▼</span>
-              </div>
-              <div class="phase-content">
-                <p><strong>Brain Science Basics:</strong> Pornography hijacks your brain's reward system, creating powerful neural pathways through dopamine release.</p>
-                <ul>
-                  <li>Recognize that addiction is both spiritual and neurological</li>
-                  <li>Understand that healing takes time - neural pathways need 90+ days to rewire</li>
-                  <li>Identify your personal triggers (boredom, stress, loneliness, anger)</li>
-                </ul>
-                <p class="action-item">✅ <strong>Action:</strong> Write down your top 3 triggers and the times you're most vulnerable.</p>
-              </div>
-            </div>
-
-            <div class="roadmap-phase">
-              <div class="phase-header" onclick="toggleAccordion(this)">
-                <span class="phase-icon"><i class="fas fa-anchor"></i></span>
-                <h3>Phase 2: Building Your Foundation</h3>
-                <span class="accordion-arrow">▼</span>
-              </div>
-              <div class="phase-content">
-                <p><strong>Faith & Accountability:</strong> You cannot do this alone. God's grace + human support = sustainable freedom.</p>
-                <ul>
-                  <li>Establish daily time with God (prayer, Scripture, worship)</li>
-                  <li>Find an accountability partner who will ask hard questions</li>
-                  <li>Install blocking software and create environmental safeguards</li>
-                  <li>Confess to someone you trust - secrecy fuels addiction</li>
-                </ul>
-                <p class="action-item">✅ <strong>Action:</strong> Contact someone this week to be your accountability partner.</p>
-              </div>
-            </div>
-
-            <div class="roadmap-phase">
-              <div class="phase-header" onclick="toggleAccordion(this)">
-                <span class="phase-icon"><i class="fas fa-shield"></i></span>
-                <h3>Phase 3: Daily Strategies</h3>
-                <span class="accordion-arrow">▼</span>
-              </div>
-              <div class="phase-content">
-                <p><strong>Practical Tips:</strong> Freedom requires daily choices and battle plans.</p>
-                <ul>
-                  <li><strong>Morning:</strong> Start with prayer and Scripture memory</li>
-                  <li><strong>Throughout Day:</strong> Bounce your eyes, take thoughts captive (2 Cor 10:5)</li>
-                  <li><strong>When Tempted:</strong> HALT method (Am I Hungry, Angry, Lonely, Tired?)</li>
-                  <li><strong>Evening:</strong> Reflect, journal victories, confess struggles</li>
-                  <li><strong>Replace:</strong> Don't just stop - replace with healthy activities</li>
-                </ul>
-                <p class="action-item">✅ <strong>Action:</strong> Create a go-to list of 5 activities when temptation hits.</p>
-              </div>
-            </div>
-
-            <div class="roadmap-phase">
-              <div class="phase-header" onclick="toggleAccordion(this)">
-                <span class="phase-icon"><i class="fas fa-star"></i></span>
-                <h3>Phase 4: Long-Term Success</h3>
-                <span class="accordion-arrow">▼</span>
-              </div>
-              <div class="phase-content">
-                <p><strong>Maintaining Freedom:</strong> Victory isn't a destination - it's a lifestyle.</p>
-                <ul>
-                  <li>Celebrate milestones (7 days, 30 days, 90 days, 1 year)</li>
-                  <li>Stay humble - pride comes before a fall</li>
-                  <li>Keep accountability relationships active even when doing well</li>
-                  <li>Help others who are struggling - your story gives hope</li>
-                  <li>Identify and heal root wounds (counseling may be needed)</li>
-                </ul>
-                <p class="action-item">✅ <strong>Action:</strong> Set calendar reminders for milestone check-ins with your accountability partner.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Prayer Journal Modal -->
-      <div id="prayerJournal" class="modal">
-        <div class="modal-content">
-          <span class="modal-close" onclick="closeModal('prayerJournal')">&times;</span>
-          <h2 class="modal-title">Prayer Journal</h2>
-          <div class="modal-body">
-            <div class="prayer-tabs">
-              <button class="prayer-tab active" onclick="showPrayerTab('morning')">Morning</button>
-              <button class="prayer-tab" onclick="showPrayerTab('temptation')">Temptation</button>
-              <button class="prayer-tab" onclick="showPrayerTab('evening')">Evening</button>
-              <button class="prayer-tab" onclick="showPrayerTab('victory')">Victory</button>
-            </div>
-
-            <div id="morning" class="prayer-content active">
-              <h3>Morning Prayer - Strength for Today</h3>
-              <p class="prayer-intro">Start your day asking God for strength and wisdom.</p>
-              <div class="prayer-template">
-                <p><em>"Lord Jesus, I come to You at the start of this day. I acknowledge that I cannot walk in purity by my own strength..."</em></p>
-                <textarea class="prayer-input" placeholder="Complete this prayer in your own words... Ask God for strength, wisdom, and awareness of His presence today." rows="6"></textarea>
-              </div>
-              <div class="prayer-prompts">
-                <p><strong>Pray for:</strong></p>
-                <ul>
-                  <li>God's power to resist temptation (1 Cor 10:13)</li>
-                  <li>Awareness of triggers and wisdom to avoid them</li>
-                  <li>A heart that desires holiness more than pleasure</li>
-                  <li>Protection over your eyes and mind</li>
-                </ul>
-              </div>
-              <button class="copy-button" onclick="copyPrayer('morning')">Copy Prayer</button>
-            </div>
-
-            <div id="temptation" class="prayer-content">
-              <h3>Temptation Prayer - Urgent Help</h3>
-              <p class="prayer-intro">Pray this when you feel tempted or are in a moment of weakness.</p>
-              <div class="prayer-template">
-                <p><em>"God, I am being tempted right now. The desire is strong, but I know it leads to death..."</em></p>
-                <textarea class="prayer-input" placeholder="Pour out your struggle to God... Be honest about what you're feeling and ask for immediate help." rows="6"></textarea>
-              </div>
-              <div class="quick-prayers">
-                <p><strong>Quick Prayers:</strong></p>
-                <div class="quick-prayer-item">"Lord, give me strength RIGHT NOW!"</div>
-                <div class="quick-prayer-item">"Jesus, I choose You over this lie!"</div>
-                <div class="quick-prayer-item">"Holy Spirit, fill me with Your power!"</div>
-                <div class="quick-prayer-item">"Father, this is not worth losing Your presence!"</div>
-              </div>
-              <button class="copy-button" onclick="copyPrayer('temptation')">Copy Prayer</button>
-            </div>
-
-            <div id="evening" class="prayer-content">
-              <h3>Evening Prayer - Reflection & Gratitude</h3>
-              <p class="prayer-intro">End your day reflecting on God's faithfulness.</p>
-              <div class="prayer-template">
-                <p><em>"Lord, as this day ends, I want to thank You for..."</em></p>
-                <textarea class="prayer-input" placeholder="Reflect on today... What victories did you experience? Where did you see God's help? What do you need to confess?" rows="6"></textarea>
-              </div>
-              <div class="prayer-prompts">
-                <p><strong>Reflect on:</strong></p>
-                <ul>
-                  <li>Moments you resisted temptation - thank God!</li>
-                  <li>Times you fell - confess and receive forgiveness</li>
-                  <li>God's provision throughout the day</li>
-                  <li>Growth you're seeing in your journey</li>
-                </ul>
-              </div>
-              <button class="copy-button" onclick="copyPrayer('evening')">Copy Prayer</button>
-            </div>
-
-            <div id="victory" class="prayer-content">
-              <h3>Victory Prayer - Celebrating Progress</h3>
-              <p class="prayer-intro">Celebrate milestones and give God the glory.</p>
-              <div class="prayer-template">
-                <p><em>"Father, I want to celebrate what You've done in my life..."</em></p>
-                <textarea class="prayer-input" placeholder="Celebrate your victory... Acknowledge that this is God's work in you, not your own strength." rows="6"></textarea>
-              </div>
-              <div class="prayer-prompts">
-                <p><strong>Celebrate:</strong></p>
-                <ul>
-                  <li>Days of freedom (7, 30, 90 days, etc.)</li>
-                  <li>Resistance victories that once seemed impossible</li>
-                  <li>Changed desires and renewed mind</li>
-                  <li>God's faithfulness even when you failed</li>
-                </ul>
-              </div>
-              <button class="copy-button" onclick="copyPrayer('victory')">Copy Prayer</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Progress Tracker Modal -->
-      <div id="progressTracker" class="modal">
-        <div class="modal-content">
-          <span class="modal-close" onclick="closeModal('progressTracker')">&times;</span>
-          <h2 class="modal-title">Progress Tracker</h2>
-          <div class="modal-body">
-            <div class="tracker-section">
-              <h3><i class="fas fa-bullseye"></i> Days Clean Streak</h3>
-              <div class="streak-counter">
-                <input type="number" id="daysClean" class="streak-input" placeholder="0" min="0">
-                <label for="daysClean">Days</label>
-              </div>
-              <div class="milestone-badges">
-                <div class="badge" data-days="7">7 Days</div>
-                <div class="badge" data-days="30">30 Days</div>
-                <div class="badge" data-days="90">90 Days</div>
-                <div class="badge" data-days="365">1 Year</div>
-              </div>
-            </div>
-
-            <div class="tracker-section">
-              <h3><i class="fas fa-triangle-exclamation"></i> Trigger Identification</h3>
-              <p class="section-desc">Check the triggers you've identified in your journey:</p>
-              <div class="trigger-list">
-                <label class="trigger-item"><input type="checkbox" class="trigger-check" data-trigger="boredom"> Boredom</label>
-                <label class="trigger-item"><input type="checkbox" class="trigger-check" data-trigger="stress"> Stress</label>
-                <label class="trigger-item"><input type="checkbox" class="trigger-check" data-trigger="loneliness"> Loneliness</label>
-                <label class="trigger-item"><input type="checkbox" class="trigger-check" data-trigger="anger"> Anger</label>
-                <label class="trigger-item"><input type="checkbox" class="trigger-check" data-trigger="tired"> Being Tired</label>
-                <label class="trigger-item"><input type="checkbox" class="trigger-check" data-trigger="success"> Success/Pride</label>
-                <label class="trigger-item"><input type="checkbox" class="trigger-check" data-trigger="failure"> Failure/Shame</label>
-                <label class="trigger-item"><input type="checkbox" class="trigger-check" data-trigger="late-night"> Late Night Hours</label>
-              </div>
-            </div>
-
-            <div class="tracker-section">
-              <h3><i class="fas fa-trophy"></i> Victory Log</h3>
-              <p class="section-desc">Document your wins - big and small!</p>
-              <textarea id="victoryLog" class="victory-textarea" placeholder="Write about a time you resisted temptation, a milestone you hit, or growth you've noticed..."></textarea>
-              <button class="save-button" onclick="saveVictory()">Save Victory</button>
-              <div id="victoryList" class="victory-entries"></div>
-            </div>
-
-            <div class="tracker-section">
-              <h3><i class="fas fa-heart"></i> Encouraging Stats</h3>
-              <div class="stats-grid">
-                <div class="stat-card">
-                  <div class="stat-number" id="statDays">0</div>
-                  <div class="stat-label">Days of Freedom</div>
-                </div>
-                <div class="stat-card">
-                  <div class="stat-number" id="statVictories">0</div>
-                  <div class="stat-label">Victories Logged</div>
-                </div>
-                <div class="stat-card">
-                  <div class="stat-number" id="statTriggers">0</div>
-                  <div class="stat-label">Triggers Identified</div>
-                </div>
-              </div>
-            </div>
-
-            <button class="reset-button" onclick="resetTracker()">Reset All Data</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Scripture Memory Modal -->
-      <div id="scriptureMemory" class="modal">
-        <div class="modal-content">
-          <span class="modal-close" onclick="closeModal('scriptureMemory')">&times;</span>
-          <h2 class="modal-title">Scripture Memory System</h2>
-          <div class="modal-body">
-            <div class="scripture-filters">
-              <button class="scripture-filter active" onclick="filterScriptures('all')">All</button>
-              <button class="scripture-filter" onclick="filterScriptures('temptation')">Temptation</button>
-              <button class="scripture-filter" onclick="filterScriptures('identity')">Identity</button>
-              <button class="scripture-filter" onclick="filterScriptures('renewal')">Renewal</button>
-              <button class="scripture-filter" onclick="filterScriptures('victory')">Victory</button>
-            </div>
-
-            <button class="random-verse-btn" onclick="randomVerse()"><i class="fas fa-dice"></i> Random Verse</button>
-
-            <div id="scriptureCards" class="scripture-grid">
-              <!-- Cards will be generated by JavaScript -->
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Accountability Guide Modal -->
-      <div id="accountabilityGuide" class="modal">
-        <div class="modal-content">
-          <span class="modal-close" onclick="closeModal('accountabilityGuide')">&times;</span>
-          <h2 class="modal-title">Accountability Partner Guide</h2>
-          <div class="modal-body">
-            <div class="guide-tabs">
-              <button class="guide-tab active" onclick="showGuideTab('finding')">Finding a Partner</button>
-              <button class="guide-tab" onclick="showGuideTab('questions')">Weekly Questions</button>
-              <button class="guide-tab" onclick="showGuideTab('redflags')">Red Flags</button>
-              <button class="guide-tab" onclick="showGuideTab('template')">Check-In Template</button>
-            </div>
-
-            <div id="finding" class="guide-content active">
-              <h3>How to Find an Accountability Partner</h3>
-              <div class="guide-section">
-                <h4><i class="fas fa-check"></i> Look for someone who is:</h4>
-                <ul>
-                  <li>Mature in their faith and walking in purity themselves</li>
-                  <li>Trustworthy - will keep everything confidential</li>
-                  <li>Willing to ask hard questions and speak truth in love</li>
-                  <li>Available for regular check-ins (weekly minimum)</li>
-                  <li>The same gender as you</li>
-                  <li>Not struggling with the same issue currently</li>
-                </ul>
-              </div>
-              <div class="guide-section">
-                <h4><i class="fas fa-search"></i> Where to find them:</h4>
-                <ul>
-                  <li>Church small group or men's ministry</li>
-                  <li>Christian counselor or pastor</li>
-                  <li>Online accountability groups (Covenant Eyes, Setting Captives Free)</li>
-                  <li>Close friend who demonstrates spiritual maturity</li>
-                </ul>
-              </div>
-              <div class="guide-section">
-                <h4>💬 How to ask:</h4>
-                <p class="example-text"><i class="fas fa-comment"></i> <em>"I'm working on breaking free from pornography and I need someone to walk with me. Would you be willing to be my accountability partner? It would involve weekly check-ins where you ask me honest questions about my purity."</em></p>
-              </div>
-            </div>
-
-            <div id="questions" class="guide-content">
-              <h3>Weekly Accountability Questions</h3>
-              <p class="guide-intro">These are questions your partner should ask you every week:</p>
-              
-              <div class="question-category">
-                <h4>Direct Questions:</h4>
-                <ol class="question-list">
-                  <li>Have you viewed pornography since we last talked?</li>
-                  <li>Have you been completely honest with me just now?</li>
-                  <li>Have you been spending daily time in God's Word and prayer?</li>
-                  <li>What temptations have you faced this week?</li>
-                  <li>Have you put yourself in compromising situations?</li>
-                </ol>
-              </div>
-
-              <div class="question-category">
-                <h4>Deeper Questions:</h4>
-                <ol class="question-list">
-                  <li>What emotions have been triggering temptation? (HALT: Hungry, Angry, Lonely, Tired)</li>
-                  <li>Have you been isolating yourself or withdrawing from community?</li>
-                  <li>Are you using your accountability software consistently?</li>
-                  <li>What victories can you celebrate from this week?</li>
-                  <li>How can I pray for you specifically this week?</li>
-                </ol>
-              </div>
-
-              <button class="copy-button" onclick="copyQuestions()">Copy All Questions</button>
-            </div>
-
-            <div id="redflags" class="guide-content">
-              <h3>Red Flags to Discuss</h3>
-              <p class="guide-intro">Talk about these warning signs with your partner:</p>
-              
-              <div class="redflag-list">
-                <div class="redflag-item">
-                  <span class="flag-icon"><i class="fas fa-flag"></i></span>
-                  <div>
-                    <h4>Excessive Screen Time</h4>
-                    <p>Spending hours on phone/computer, especially late at night</p>
-                  </div>
-                </div>
-                <div class="redflag-item">
-                  <span class="flag-icon"><i class="fas fa-flag"></i></span>
-                  <div>
-                    <h4>Isolation</h4>
-                    <p>Withdrawing from friends, family, church, or accountability</p>
-                  </div>
-                </div>
-                <div class="redflag-item">
-                  <span class="flag-icon"><i class="fas fa-flag"></i></span>
-                  <div>
-                    <h4>Defensiveness</h4>
-                    <p>Getting angry or evasive when asked accountability questions</p>
-                  </div>
-                </div>
-                <div class="redflag-item">
-                  <span class="flag-icon"><i class="fas fa-flag"></i></span>
-                  <div>
-                    <h4>Spiritual Apathy</h4>
-                    <p>Neglecting prayer, Bible reading, or church attendance</p>
-                  </div>
-                </div>
-                <div class="redflag-item">
-                  <span class="flag-icon"><i class="fas fa-flag"></i></span>
-                  <div>
-                    <h4>Rationalization</h4>
-                    <p>Making excuses for behaviors or minimizing the problem</p>
-                  </div>
-                </div>
-                <div class="redflag-item">
-                  <span class="flag-icon"><i class="fas fa-flag"></i></span>
-                  <div>
-                    <h4>Technology Secrecy</h4>
-                    <p>Password-protecting everything, clearing browser history frequently</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div id="template" class="guide-content">
-              <h3>Weekly Check-In Template</h3>
-              <p class="guide-intro">A structured format for your accountability meetings:</p>
-              
-              <div class="template-box">
-                <h4>📋 Accountability Check-In</h4>
-                <div class="template-section">
-                  <strong>1. Opening Prayer</strong>
-                  <p class="template-text">Pray for honesty, grace, and God's presence</p>
-                </div>
-                <div class="template-section">
-                  <strong>2. Direct Questions (5 min)</strong>
-                  <p class="template-text">Go through the core accountability questions</p>
-                </div>
-                <div class="template-section">
-                  <strong>3. Victories & Struggles (10 min)</strong>
-                  <p class="template-text">
-                    • What went well this week?<br>
-                    • What were the hardest moments?<br>
-                    • What patterns are you noticing?
-                  </p>
-                </div>
-                <div class="template-section">
-                  <strong>4. Action Steps (5 min)</strong>
-                  <p class="template-text">
-                    • What specific changes will you make this week?<br>
-                    • Are there new safeguards needed?<br>
-                    • What practical help do you need?
-                  </p>
-                </div>
-                <div class="template-section">
-                  <strong>5. Prayer Requests (5 min)</strong>
-                  <p class="template-text">Pray specifically for upcoming temptations and situations</p>
-                </div>
-                <div class="template-section">
-                  <strong>6. Closing Prayer</strong>
-                  <p class="template-text">Pray for strength and God's power for the week ahead</p>
-                </div>
-              </div>
-              
-              <button class="copy-button" onclick="copyTemplate()">Copy Template</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Emergency Action Plan Modal -->
-      <div id="emergencyPlan" class="modal">
-        <div class="modal-content emergency-modal">
-          <span class="modal-close" onclick="closeModal('emergencyPlan')">&times;</span>
-          <h2 class="modal-title emergency-modal-title"><i class="fas fa-triangle-exclamation"></i> Emergency Action Plan</h2>
-          <p class="emergency-subtitle">Follow these steps RIGHT NOW if you're being tempted:</p>
-          
-          <div class="modal-body">
-            <div class="emergency-step">
-              <div class="step-number">1</div>
-              <div class="step-content">
-                <h3>STOP - Pray Immediately</h3>
-                <div class="emergency-prayers">
-                  <div class="emergency-prayer">"God, I need Your help RIGHT NOW!"</div>
-                  <div class="emergency-prayer">"Jesus, give me strength to resist!"</div>
-                  <div class="emergency-prayer">"Holy Spirit, this is not worth it - help me!"</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="emergency-step">
-              <div class="step-number">2</div>
-              <div class="step-content">
-                <h3>MOVE - Change Your Location</h3>
-                <ul class="emergency-list">
-                  <li>Get up and go to a public place (coffee shop, library, store)</li>
-                  <li>Call or text your accountability partner immediately</li>
-                  <li>If at home alone - leave the house NOW</li>
-                  <li>Put your phone/computer in another room</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="emergency-step">
-              <div class="step-number">3</div>
-              <div class="step-content">
-                <h3>SCRIPTURE - Speak Truth Out Loud</h3>
-                <div class="emergency-verses">
-                  <div class="emergency-verse">
-                    <strong>1 Corinthians 10:13</strong>
-                    <p>"No temptation has overtaken you except what is common to mankind. And God is faithful; he will not let you be tempted beyond what you can bear."</p>
-                  </div>
-                  <div class="emergency-verse">
-                    <strong>James 4:7</strong>
-                    <p>"Submit yourselves to God. Resist the devil, and he will flee from you."</p>
-                  </div>
-                  <div class="emergency-verse">
-                    <strong>Psalm 119:9</strong>
-                    <p>"How can a young person stay on the path of purity? By living according to your word."</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="emergency-step">
-              <div class="step-number">4</div>
-              <div class="step-content">
-                <h3>DISTRACT - Do Something Physical</h3>
-                <div class="activity-grid">
-                  <div class="activity-item"><i class="fas fa-person-running"></i> Go for a run</div>
-                  <div class="activity-item"><i class="fas fa-dumbbell"></i> Do pushups/workout</div>
-                  <div class="activity-item"><i class="fas fa-shower"></i> Take a cold shower</div>
-                  <div class="activity-item"><i class="fas fa-music"></i> Play worship music loud</div>
-                  <div class="activity-item"><i class="fas fa-phone"></i> Call a friend</div>
-                  <div class="activity-item"><i class="fas fa-broom"></i> Clean your space</div>
-                  <div class="activity-item"><i class="fas fa-book"></i> Read a book</div>
-                  <div class="activity-item"><i class="fas fa-gamepad"></i> Play a game (non-sexual)</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="emergency-step">
-              <div class="step-number">5</div>
-              <div class="step-content">
-                <h3>REMEMBER - Why You're Fighting</h3>
-                <div class="remember-section">
-                  <p><strong>You're fighting for:</strong></p>
-                  <ul class="emergency-list">
-                    <li>Your relationship with God</li>
-                    <li>Your future spouse (or current spouse)</li>
-                    <li>Your testimony and witness</li>
-                    <li>Your self-respect and dignity</li>
-                    <li>Freedom from slavery to sin</li>
-                  </ul>
-                  <p class="reminder-text"><strong>This moment of temptation WILL pass. You CAN resist. God is WITH you!</strong></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="emergency-contacts">
-              <h3>📞 Emergency Contacts</h3>
-              <div class="contact-buttons">
-                <a href="tel:1-800-273-8255" class="emergency-contact-btn"><i class="fas fa-phone"></i><br>Crisis Hotline<br>1-800-273-8255</a>
-                <a href="sms:741741" class="emergency-contact-btn"><i class="fas fa-comment"></i><br>Text Support<br>741741</a>
-                <a href="prayer.html" class="emergency-contact-btn"><i class="fas fa-hands-praying"></i><br>Prayer Request<br>Submit Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
     </main>
