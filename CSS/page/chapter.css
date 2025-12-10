@@ -1,305 +1,640 @@
 /* Chapter 1 - Intro Section */
 .chapterOne-section {
   position: relative;
-  background: linear-gradient(rgba(12, 22, 27, 0.5), rgba(12, 22, 27, 0.5)),
-    url("../../images/ch1-hero.jpg") center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(168, 85, 247, 0.95), rgba(236, 72, 153, 0.9)),
+    url("../../img/heroes20.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--color-white);
-  padding: 100px 20px;
+  padding: 120px 20px;
   text-align: center;
-  min-height: 80vh;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+  border-radius: 25px;
 }
 
 .chapterOne-overlay {
   max-width: 900px;
   margin: 0 auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .chapterOne-title {
-  font-size: 2.8rem;
+  font-size: 3.2rem;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  text-shadow: 2px 4px 8px rgba(0,0,0,0.3);
+  line-height: 1.2;
 }
 
 .chapterOne-verse {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-style: italic;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  color: #f0f8ff;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: #ffffff;
+  text-shadow: 1px 2px 4px rgba(0,0,0,0.2);
 }
 
 .chapterOne-verseRef {
   display: block;
-  margin-top: 10px;
-  font-size: 1rem;
-  font-weight: 400;
-  color: #dce7ea;
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .chapterOne-quote {
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: #cfe9ed;
-  margin-top: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  text-shadow: 1px 2px 4px rgba(0,0,0,0.2);
 }
 
 /* Chapter 1 - Parable Section */
 .chapterOne-parable-section {
-  background-color: #f9f9f9;
-  padding: 80px 20px;
+  background: linear-gradient(135deg, rgba(248, 249, 250, 0.7) 0%, rgba(233, 236, 239, 0.7) 100%);
+  padding: 100px 20px;
   color: #2e3d43;
+  position: relative;
+  margin: 15px;
+  border-radius: 25px;
+}
+
+.chapterOne-parable-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #a855f7, #ec4899);
 }
 
 .chapterOne-parable-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
+  background: rgba(255, 255, 255, 0.14);
+  padding: 60px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 .chapterOne-parable-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   color: #213035;
+  background: linear-gradient(135deg, #3b82f6, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .chapterOne-paragraph {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 20px;
+  font-size: 1.15rem;
+  line-height: 2;
+  margin-bottom: 25px;
+  color: #374151;
 }
 
 .chapterOne-moral-box {
-  background-color: #e6f3f5;
-  border-left: 5px solid #2f484a;
-  padding: 20px;
-  margin-top: 40px;
-  font-size: 1.1rem;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1));
+  border-left: 6px solid #3b82f6;
+  padding: 30px;
+  margin-top: 50px;
+  font-size: 1.2rem;
   font-style: italic;
-  color: #2f484a;
+  color: #1e293b;
   text-align: center;
   border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.15);
 }
 
 /* Chapter 1 - Teaching Sections */
 .chapterOne-teaching-section {
-  background-color: var(--color-white);
+  background: linear-gradient(135deg, rgba(249, 250, 251, 0.7) 0%, rgba(243, 244, 246, 0.7) 100%);
   padding: 80px 20px;
   color: #2d2d2d;
+  margin: 15px;
+  border-radius: 25px;
+}
+
+.chapterOne-teaching-section:nth-child(even) {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(249, 250, 251, 1) 100%);
 }
 
 .chapterOne-teaching-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
+  background: rgba(255, 255, 255, 0.14);
+  padding: 50px;
+  border-radius: 25px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.16);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition: all 0.3s ease;
+}
+
+.chapterOne-teaching-container:hover {
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.15);
+  transform: translateY(-5px);
 }
 
 .chapterOne-teaching-title {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 20px;
-  color: #2f484a;
+  margin-bottom: 25px;
+  color: #1e293b;
+  background: linear-gradient(135deg, #3b82f6, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-bottom: 15px;
+  border-bottom: 3px solid rgba(59, 130, 246, 0.2);
 }
 
 .chapterOne-teaching-text {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 20px;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  margin-bottom: 25px;
+  color: #374151;
 }
 
 .chapterOne-bullets {
-  list-style: disc;
-  margin-left: 20px;
-  margin-bottom: 30px;
+  list-style: none;
+  margin-left: 0;
+  margin-bottom: 35px;
+}
+
+.chapterOne-bullets li {
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #374151;
+}
+
+.chapterOne-bullets li::before {
+  content: '\f00c';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-size: 1rem;
 }
 
 .chapterOne-scripture {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-style: italic;
-  background-color: #f0f9f9;
-  padding: 20px;
-  border-left: 4px solid #2f484a;
-  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 30px;
+  border-left: 5px solid #3b82f6;
+  margin-bottom: 30px;
   border-radius: 25px;
+  color: #1e293b;
+  box-shadow: 0 14px 36px rgba(59, 130, 246, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .chapterOne-verseRef {
   display: block;
-  margin-top: 10px;
-  font-size: 1rem;
-  color: #4c6666;
+  margin-top: 15px;
+  font-size: 1.05rem;
+  color: #64748b;
+  font-weight: 500;
 }
 
 .chapterOne-quote-box {
-  background-color: #f5f5f5;
-  padding: 15px 20px;
-  border-left: 4px solid #b0d2da;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 25px 30px;
+  border-left: 5px solid #a855f7;
   font-style: italic;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   border-radius: 25px;
+  font-size: 1.15rem;
+  color: #1e293b;
+  box-shadow: 0 14px 32px rgba(168, 85, 247, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .chapterOne-action-box,
 .chapterOne-reflect-box {
-  background-color: #e6f3f5;
-  padding: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 30px;
   border-radius: 25px;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.16);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .chapterOne-action-box h3,
 .chapterOne-reflect-box h3 {
-  font-size: 1.2rem;
-  color: #2f484a;
-  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: #1e293b;
+  margin-bottom: 15px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ec4899, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.chapterOne-action-box p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #374151;
 }
 
 .chapterOne-reflect-box ul {
-  padding-left: 20px;
-  list-style: square;
-  margin-top: 10px;
+  padding-left: 0;
+  list-style: none;
+  margin-top: 15px;
+}
+
+.chapterOne-reflect-box ul li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #374151;
+}
+
+.chapterOne-reflect-box ul li::before {
+  content: '\f059';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: #ec4899;
+  font-size: 1rem;
 }
 
 /* Chapter 1 - Summary Section */
 .chapterOne-summary-section {
-  background-color: #f4fafa;
-  padding: 80px 20px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(168, 85, 247, 0.12));
+  padding: 100px 20px;
   color: #2e3d43;
+  margin: 15px;
+  border-radius: 25px;
 }
 
 .chapterOne-summary-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
+  background: rgba(255, 255, 255, 0.14);
+  padding: 60px;
+  border-radius: 25px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 .chapterOne-summary-title {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   text-align: center;
-  color: #2f484a;
+  background: linear-gradient(135deg, #3b82f6, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .chapterOne-summary-list {
-  list-style: disc;
-  padding-left: 20px;
-  font-size: 1.1rem;
-  margin-bottom: 40px;
-  line-height: 1.8;
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.15rem;
+  margin-bottom: 50px;
+  line-height: 1.9;
+}
+
+.chapterOne-summary-list li {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 20px;
+  color: #374151;
+}
+
+.chapterOne-summary-list li::before {
+  content: '\f058';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-size: 1.3rem;
 }
 
 .chapterOne-reflection-question {
-  font-size: 1.2rem;
-  font-weight: 500;
-  background-color: #e6f3f5;
-  padding: 20px;
-  border-left: 5px solid #2f484a;
+  font-size: 1.3rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 30px;
+  border-left: 6px solid #ec4899;
   border-radius: 25px;
   text-align: center;
+  box-shadow: 0 16px 40px rgba(236, 72, 153, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 /* Chapter 1 - Prayer Section */
 .chapterOne-prayer-section {
-  background-color: #e6f3f5;
-  padding: 100px 20px;
-  color: #2f484a;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(168, 85, 247, 0.9));
+  padding: 120px 20px;
+  color: white;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin: 15px;
+  border-radius: 25px;
+}
+
+.chapterOne-prayer-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveBackground 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes moveBackground {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
 }
 
 .chapterOne-prayer-container {
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 60px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 22px 60px rgba(0,0,0,0.25);
+  position: relative;
+  z-index: 1;
 }
 
 .chapterOne-prayer-title {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  text-shadow: 2px 4px 8px rgba(0,0,0,0.2);
 }
 
 .chapterOne-prayer-text {
-  font-size: 1.1rem;
-  line-height: 1.9;
+  font-size: 1.2rem;
+  line-height: 2;
   font-style: italic;
   white-space: pre-line;
+  text-shadow: 1px 2px 4px rgba(0,0,0,0.2);
 }
 
 /* Chapter 1 - Journal Box */
 .chapterOne-journal-box {
-  margin-top: 20px;
-  background-color: var(--color-white);
-  border: 1px solid #b0d2da;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 25px;
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.chapterOne-journal-box label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #1e293b;
+  font-weight: 600;
 }
 
 .chapterOne-journal-box textarea {
   width: 100%;
-  height: 120px;
-  font-size: 1rem;
-  padding: 10px;
-  border: none;
-  border-radius: 25px;
+  height: 140px;
+  font-size: 1.05rem;
+  padding: 15px;
+  border: 2px solid rgba(59, 130, 246, 0.2);
+  border-radius: 15px;
   resize: vertical;
   font-family: inherit;
-  background-color: #f7fcfd;
-  color: #2e3d43;
+  background-color: white;
+  color: #374151;
+  transition: all 0.3s ease;
+}
+
+.chapterOne-journal-box textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .chapterOne-export-button {
-  background-color: #2f484a;
-  color: var(--color-white);
+  background: linear-gradient(135deg, #3b82f6, #a855f7);
+  color: white;
   border: none;
-  padding: 12px 20px;
-  font-size: 1rem;
-  border-radius: 25px;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: background-color 0.3s ease;
-}
-
-.chapterOne-export-button:hover {
-  background-color: #406e72;
-}
-/* Chapter 1 - Export Download Section 1*/
-.chapterOne-export-section {
-  background-color: #f4fafa;
-  padding: 100px 20px;
-  text-align: center;
-  border-top: 1px solid #d0e6e6;
-}
-
-.chapterOne-export-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.chapterOne-export-title {
-  font-size: 1.8rem;
-  color: #2f484a;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.chapterOne-export-text {
+  padding: 16px 32px;
   font-size: 1.1rem;
-  color: #475c5f;
-  margin-bottom: 40px;
-  line-height: 1.6;
-}
-
-.chapterOne-export-button {
-  background-color: #2f484a;
-  color: var(--color-white);
-  border: none;
-  padding: 14px 28px;
-  font-size: 1rem;
   font-weight: 600;
   border-radius: 25px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .chapterOne-export-button:hover {
-  background-color: #406e72;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4);
+}
+
+/* Chapter 1 - Export Download Section */
+.chapterOne-export-section {
+  background: linear-gradient(135deg, rgba(249, 250, 251, 0.78), rgba(243, 244, 246, 0.78));
+  padding: 100px 20px;
+  text-align: center;
+  border-top: 4px solid transparent;
+  border-image: linear-gradient(90deg, #3b82f6, #a855f7, #ec4899) 1;
+  margin: 15px;
+  border-radius: 25px;
+}
+
+.chapterOne-export-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.14);
+  padding: 60px;
+  border-radius: 25px;
+  box-shadow: 0 20px 55px rgba(0,0,0,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.chapterOne-export-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  background: linear-gradient(135deg, #3b82f6, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.chapterOne-export-text {
+  font-size: 1.2rem;
+  color: #374151;
+  margin-bottom: 50px;
+  line-height: 1.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chapterOne-title {
+    font-size: 2.2rem;
+  }
+
+  .chapterOne-verse {
+    font-size: 1.1rem;
+  }
+
+  .chapterOne-quote {
+    font-size: 1.2rem;
+  }
+
+  .chapterOne-parable-container,
+  .chapterOne-teaching-container,
+  .chapterOne-summary-container,
+  .chapterOne-prayer-container,
+  .chapterOne-export-container {
+    padding: 30px;
+  }
+
+  .chapterOne-parable-title,
+  .chapterOne-summary-title,
+  .chapterOne-prayer-title,
+  .chapterOne-export-title {
+    font-size: 2rem;
+  }
+
+  .chapterOne-teaching-title {
+    font-size: 1.6rem;
+  }
+
+  .chapterOne-paragraph,
+  .chapterOne-teaching-text {
+    font-size: 1.05rem;
+  }
+
+  .chapterOne-bullets li,
+  .chapterOne-summary-list li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .chapterOne-section {
+    padding: 80px 15px;
+  }
+
+  .chapterOne-title {
+    font-size: 1.8rem;
+  }
+
+  .chapterOne-verse {
+    font-size: 1rem;
+  }
+
+  .chapterOne-quote {
+    font-size: 1.1rem;
+    padding: 15px;
+  }
+
+  .chapterOne-parable-container,
+  .chapterOne-teaching-container,
+  .chapterOne-summary-container,
+  .chapterOne-prayer-container,
+  .chapterOne-export-container {
+    padding: 20px;
+  }
+
+  .chapterOne-parable-title,
+  .chapterOne-summary-title,
+  .chapterOne-prayer-title,
+  .chapterOne-export-title {
+    font-size: 1.6rem;
+  }
+
+  .chapterOne-teaching-title {
+    font-size: 1.4rem;
+  }
+
+  .chapterOne-action-box h3,
+  .chapterOne-reflect-box h3 {
+    font-size: 1.2rem;
+  }
+
+  .chapterOne-export-button {
+    padding: 14px 24px;
+    font-size: 1rem;
+  }
 }

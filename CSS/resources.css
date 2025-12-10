@@ -71,6 +71,12 @@
   z-index: 2;
 }
 
+.thirty_one_day_card_content3 {
+  text-align: center;
+  padding: 10px;
+  font-size: 13px;
+}
+
 /* Featured Resources */
 .featured-resources {
   background-color: #f8fafc;
