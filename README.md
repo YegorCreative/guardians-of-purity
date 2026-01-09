@@ -35,5 +35,12 @@ For sections that require a touch of elegance, such as quotes or featured conten
 
 Roboto is a neo-grotesque sans-serif typeface developed by Google. Its mechanical skeleton and largely geometric forms make it a great alternative for body text, offering a modern and clean appearance.
 
+## Journey Page Updates
+
+- Removed an unnecessary parallax hero section from the Journey page
+- Clarified the Journey flow and content hierarchy
+- Added decision-based Journey cards to guide next steps
+- Improved accessibility and overall content clarity
+
 #my colors are
 🌧️ Color Palette (Hex Codes): 1. #e6f3f5 – Light aqua mist (background or soft accents) 2. #b0d2da – Muted teal (section backgrounds or buttons) 3. #6fa3a4 – Rainy green-blue (headers or CTA highlights) 4. #4b6e72 – Deep teal gray (text or overlays) 5. #2f484a – Forest shadow (footer, buttons, contrast accents)

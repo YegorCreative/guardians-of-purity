@@ -17,6 +17,25 @@
 }
 /* Smaller screens (below 768px) */
 @media (max-width: 768px) {
+  /* Mobile nav: scoped to existing JS toggle (#main-nav.responsive) */
+  #main-nav {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  #main-nav .nav-links {
+    display: none;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  #main-nav.responsive .nav-links {
+    display: flex;
+    flex-direction: column;
+  }
+  #main-nav .nav-link {
+    min-height: 44px;
+    box-sizing: border-box;
+  }
+
   /* Hero */
   .hero {
     padding: 60px 20px;

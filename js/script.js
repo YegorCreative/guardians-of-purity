@@ -17,10 +17,6 @@ try {
     testimonials[index].classList.add("active");
   }
 
-  if (window.innerWidth < 767) {
-    navLinks.classList.add("hideLenis");
-  }
-
   // CTA form validation
   const ctaForm = document.getElementById("cta-form");
   const ctaEmail = document.getElementById("cta-email");
@@ -36,9 +32,7 @@ try {
 
   // Start index section 1 JS
 
-  const isResponsive = document
-    .querySelector("#main-nav")
-    ?.classList.contains("hideLenis");
+  const isResponsive = window.innerWidth < 767;
   
     const prefersReducedMotionQuery = window.matchMedia(
       "(prefers-reduced-motion: reduce)"

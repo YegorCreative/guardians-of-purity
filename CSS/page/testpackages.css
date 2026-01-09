@@ -915,6 +915,38 @@
   transform: translateY(-5px);
 }
 
+.info_journey .journey-orientation,
+.info_journey .journey-path,
+.info_journey .journey-start,
+.info_journey .journey-anchor {
+  margin-top: 40px;
+}
+
+.info_journey .journey-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.info_journey .journey-options .main_button {
+  min-height: 44px;
+}
+
+.info_journey .journey-next-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.info_journey .journey-next-step {
+  background: var(--color-white);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 /* End more info details part */
 
 /* Start overlay card */
