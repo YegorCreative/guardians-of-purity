@@ -45,8 +45,17 @@ try {
   const hasParallax = document.querySelector("[data-parallax-layers]") !== null;
 
   if (!isResponsive && !effectiveReducedMotion && !isAboutPage && hasParallax) {
+    let lenis;
     let lenisTicker;
     window.addEventListener("load", () => {
+      if (
+        typeof Lenis !== "function" ||
+        typeof gsap === "undefined" ||
+        typeof ScrollTrigger === "undefined"
+      ) {
+        return;
+      }
+
       // Force scroll to top on page load
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "manual";
@@ -55,50 +64,58 @@ try {
       // Wait for layout to settle
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          // Initialize Lenis
-          lenis = new Lenis();
-          lenis.on("scroll", ScrollTrigger.update);
-          lenisTicker = (time) => {
-            if (lenis) lenis.raf(time * 1000);
-          };
-          gsap.ticker.add(lenisTicker);
-          gsap.ticker.lagSmoothing(0);
-          // Register GSAP plugin
-          gsap.registerPlugin(ScrollTrigger);
-          // Setup parallax
-          document
-            .querySelectorAll("[data-parallax-layers]")
-            .forEach((triggerElement) => {
-              let tl = gsap.timeline({
-                scrollTrigger: {
-                  trigger: triggerElement,
-                  start: "0% 0%",
-                  end: "100% 0%",
-                  scrub: true, // smoother
-                },
-              });
-              const layers = [
-                { layer: "1", yPercent: 70 },
-                { layer: "2", yPercent: 55 },
-                { layer: "3", yPercent: 40 },
-                { layer: "4", yPercent: 10 },
-              ];
-              layers.forEach((layerObj, idx) => {
-                tl.to(
-                  triggerElement.querySelectorAll(
-                    `[data-parallax-layer="${layerObj.layer}"]`
-                  ),
-                  {
-                    yPercent: layerObj.yPercent,
-                    ease: "none",
+          try {
+            // Register GSAP plugin
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Initialize Lenis
+            lenis = new Lenis();
+            lenis.on("scroll", ScrollTrigger.update);
+
+            lenisTicker = (time) => {
+              if (lenis) lenis.raf(time * 1000);
+            };
+            gsap.ticker.add(lenisTicker);
+            gsap.ticker.lagSmoothing(0);
+
+            // Setup parallax
+            document
+              .querySelectorAll("[data-parallax-layers]")
+              .forEach((triggerElement) => {
+                let tl = gsap.timeline({
+                  scrollTrigger: {
+                    trigger: triggerElement,
+                    start: "0% 0%",
+                    end: "100% 0%",
+                    scrub: true, // smoother
                   },
-                  idx === 0 ? undefined : "<"
-                );
+                });
+                const layers = [
+                  { layer: "1", yPercent: 70 },
+                  { layer: "2", yPercent: 55 },
+                  { layer: "3", yPercent: 40 },
+                  { layer: "4", yPercent: 10 },
+                ];
+                layers.forEach((layerObj, idx) => {
+                  tl.to(
+                    triggerElement.querySelectorAll(
+                      `[data-parallax-layer="${layerObj.layer}"]`
+                    ),
+                    {
+                      yPercent: layerObj.yPercent,
+                      ease: "none",
+                    },
+                    idx === 0 ? undefined : "<"
+                  );
+                });
               });
-            });
-          setTimeout(() => {
-            ScrollTrigger.refresh();
-          }, 100);
+
+            setTimeout(() => {
+              ScrollTrigger.refresh();
+            }, 100);
+          } catch (e) {
+            console.error("Error initializing parallax:", e);
+          }
         });
       });
       const observer = new MutationObserver(() => {
@@ -178,41 +195,31 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function exportReflection() {
-  const journal1 = localStorage.getItem("journal1") || "";
-  const journal2 = localStorage.getItem("journal2") || "";
-  const journal3 = localStorage.getItem("journal3") || "";
-  const journal4 = localStorage.getItem("journal4") || "";
-  const journal5 = localStorage.getItem("journal5") || "";
-  const journal6 = localStorage.getItem("journal6") || "";
-  const summary = localStorage.getItem("chapterOne-summary") || "";
+  const titleEl = document.querySelector(".chapterOne-title");
+  const chapterTitle = titleEl?.textContent?.trim() || "Chapter Reflections";
 
-  const content = `Chapter 1 Reflections – God’s Design for Your Body
+  const textareas = Array.from(
+    document.querySelectorAll('textarea[id^="journal"]')
+  );
 
-1. Carefully Crafted by God:
-${journal1}
+  const entries = textareas.map((ta) => {
+    const key = ta.id;
+    const value = localStorage.getItem(key) || ta.value || "";
+    return { key, value };
+  });
 
-2. Made in God's Image:
-${journal2}
-
-3. Your Body Has Purpose:
-${journal3}
-
-4. Stewardship and Self-Care:
-${journal4}
-
-5. Facing Temptation:
-${journal5}
-
-6. Confidence in Christ:
-${journal6}
-
-Final Reflection:
-${summary}
-`;
+  let content = `${chapterTitle} — Reflections\n\n`;
+  if (entries.length === 0) {
+    content += "[No journaling entries found on this page.]\n";
+  } else {
+    entries.forEach((e, idx) => {
+      content += `${idx + 1}. ${e.key}:\n${e.value}\n\n`;
+    });
+  }
 
   const blob = new Blob([content], { type: "text/plain" });
   const link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
-  link.download = "Chapter1_Reflections.txt";
+  link.download = `${chapterTitle.replace(/[^a-z0-9]+/gi, "_").replace(/^_+|_+$/g, "") || "chapter"}_Reflections.txt`;
   link.click();
 }
