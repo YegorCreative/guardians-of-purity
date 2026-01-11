@@ -42,5 +42,13 @@ Roboto is a neo-grotesque sans-serif typeface developed by Google. Its mechanica
 - Added decision-based Journey cards to guide next steps
 - Improved accessibility and overall content clarity
 
+## Sanity Check
+
+Run the repo-level HTML sanity checks:
+
+```bash
+npm run sanity
+```
+
 #my colors are
 🌧️ Color Palette (Hex Codes): 1. #e6f3f5 – Light aqua mist (background or soft accents) 2. #b0d2da – Muted teal (section backgrounds or buttons) 3. #6fa3a4 – Rainy green-blue (headers or CTA highlights) 4. #4b6e72 – Deep teal gray (text or overlays) 5. #2f484a – Forest shadow (footer, buttons, contrast accents)

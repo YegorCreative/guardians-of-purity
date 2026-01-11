@@ -1,0 +1,8 @@
+{
+  "name": "guardians-of-purity",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sanity": "node tools/sanity-check.mjs"
+  }
+}
