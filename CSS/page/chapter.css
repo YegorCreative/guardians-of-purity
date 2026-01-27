@@ -790,6 +790,63 @@
   }
 }
 
+/* Chapter Navigation Buttons */
+.chapter-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.chapter-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #334155;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.chapter-nav-btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(168, 85, 247, 0.2));
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: #1e293b;
+}
+
+.chapter-nav-btn:active {
+  transform: translateY(-1px);
+}
+
+.chapter-nav-btn:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .chapter-nav {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .chapter-nav-btn {
+    width: 100%;
+  }
+}
+
 /* ========================================= */
 /*       Chapter Separator Guard             */
 /* ========================================= */
