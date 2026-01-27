@@ -33,13 +33,9 @@ try {
   // Start index section 1 JS
 
   const isResponsive = window.innerWidth < 767;
-  
-    const prefersReducedMotionQuery = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    );
-    const prefersReducedMotion = prefersReducedMotionQuery.matches;
-    const userReduceMotion = localStorage.getItem("user-reduce-motion") === "true";
-    const effectiveReducedMotion = prefersReducedMotion || userReduceMotion;
+
+  // Only respect system preference
+  const effectiveReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const isAboutPage = /(?:^|\/)about\.html(?:$|\?)/.test(location.pathname);
   const hasParallax = document.querySelector("[data-parallax-layers]") !== null;
@@ -154,23 +150,6 @@ try {
       behavior: effectiveReducedMotion ? "auto" : "smooth",
     });
   });
-
-  // Motion toggle button (manual override)
-  const motionToggle = document.getElementById("motionToggle");
-  if (motionToggle) {
-    const pressed = userReduceMotion;
-    motionToggle.setAttribute("aria-pressed", pressed ? "true" : "false");
-    motionToggle.textContent = pressed ? "Enable motion" : "Reduce motion";
-    motionToggle.addEventListener("click", () => {
-      const next = !(localStorage.getItem("user-reduce-motion") === "true");
-      if (next) {
-        localStorage.setItem("user-reduce-motion", "true");
-      } else {
-        localStorage.removeItem("user-reduce-motion");
-      }
-      location.reload();
-    });
-  }
 } catch (error) {
   console.error("Error in script:", error);
 }

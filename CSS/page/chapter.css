@@ -89,15 +89,7 @@
   border-radius: 25px;
 }
 
-.chapterOne-parable-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #3b82f6, #a855f7, #ec4899);
-}
+
 
 .chapterOne-parable-container {
   max-width: 900px;
@@ -514,8 +506,6 @@
   background: linear-gradient(135deg, rgba(249, 250, 251, 0.78), rgba(243, 244, 246, 0.78));
   padding: 100px 20px;
   text-align: center;
-  border-top: 4px solid transparent;
-  border-image: linear-gradient(90deg, #3b82f6, #a855f7, #ec4899) 1;
   margin: 15px;
   border-radius: 25px;
 }
@@ -798,4 +788,35 @@
     flex: 1 1 100%;
     max-width: 100%;
   }
+}
+
+/* ========================================= */
+/*       Chapter Separator Guard             */
+/* ========================================= */
+/* Do not add decorative separators via pseudo-elements or border-image for chapters. Chapters must remain clean. */
+
+.chapterOne-parable-section::before,
+.chapterOne-parable-section::after,
+.chapterOne-export-section::before,
+.chapterOne-export-section::after,
+.chapterOne-teaching-section::before,
+.chapterOne-teaching-section::after,
+.chapterOne-summary-section::before,
+.chapterOne-summary-section::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  border: none !important;
+  height: 0 !important;
+  width: 0 !important;
+}
+
+/* Ensure no border-image separators on sections */
+.chapterOne-parable-section,
+.chapterOne-export-section,
+.chapterOne-teaching-section,
+.chapterOne-summary-section {
+  border-image: none !important;
+  border-top-color: transparent !important;
+  /* Neutralize border-top if it exists for separator */
 }
