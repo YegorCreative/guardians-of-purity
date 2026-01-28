@@ -991,3 +991,61 @@ a[href*="chapter"][href*="next"],
     margin: 5px 0;
   }
 }
+
+/* ========================================= */
+/*       Chapter Progress Indicator          */
+/* ========================================= */
+.chapterProgress {
+  margin-top: 14px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  animation: fadeIn 1s ease 0.5s backwards;
+}
+
+.chapterProgress__text {
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 6px 16px;
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chapterProgress__bar {
+  width: min(calc(100% - 40px), 320px);
+  /* Responsive width */
+  height: 8px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.chapterProgress__fill {
+  height: 100%;
+  width: 0;
+  /* JS will set this */
+  background: linear-gradient(90deg, #3b82f6, #a855f7, #ec4899);
+  border-radius: 999px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .chapterProgress,
+  .chapterProgress__fill {
+    animation: none;
+    transition: none;
+  }
+}

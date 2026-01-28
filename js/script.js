@@ -202,3 +202,47 @@ function exportReflection() {
   link.download = `${chapterTitle.replace(/[^a-z0-9]+/gi, "_").replace(/^_+|_+$/g, "") || "chapter"}_Reflections.txt`;
   link.click();
 }
+
+// Global Chapter Progress Indicator
+document.addEventListener("DOMContentLoaded", () => {
+  try {
+    // 1. Detect if we are on a chapter page
+    const path = window.location.pathname;
+    const filename = path.substring(path.lastIndexOf('/') + 1);
+
+    // Regex to match "chapter" followed by digits, e.g., "chapter1.html" or "chapter42.html"
+    const match = filename.match(/chapter(\d+)\.html/i);
+
+    if (match) {
+      const currentChapter = parseInt(match[1], 10);
+      const totalChapters = 42; // Hardcoded total
+
+      // Calculate percentage
+      const percentage = Math.min(100, Math.max(0, (currentChapter / totalChapters) * 100));
+
+      // 2. Locate the injection point (.chapterOne-content)
+      const container = document.querySelector(".chapterOne-content");
+      const title = document.querySelector(".chapterOne-title"); // Start looking for H1
+
+      if (container && title) {
+        // 3. Create the UI elements
+        const progressWrapper = document.createElement("div");
+        progressWrapper.className = "chapterProgress";
+        progressWrapper.setAttribute("role", "group");
+        progressWrapper.setAttribute("aria-label", `Chapter ${currentChapter} of ${totalChapters}`);
+
+        progressWrapper.innerHTML = `
+          <div class="chapterProgress__text">Chapter ${currentChapter} of ${totalChapters}</div>
+          <div class="chapterProgress__bar" aria-hidden="true">
+            <div class="chapterProgress__fill" style="width: ${percentage}%"></div>
+          </div>
+        `;
+
+        // 4. Inject after the title
+        title.insertAdjacentElement('afterend', progressWrapper);
+      }
+    }
+  } catch (e) {
+    console.warn("Could not inject chapter progress:", e);
+  }
+});
