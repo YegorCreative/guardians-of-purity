@@ -1049,3 +1049,40 @@ a[href*="chapter"][href*="next"],
     transition: none;
   }
 }
+
+/* ========================================= */
+/*       Chapter Meta Row (Reading Time)     */
+/* ========================================= */
+.chapterMeta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  animation: fadeIn 1s ease 0.7s backwards;
+  flex-wrap: wrap;
+}
+
+.chapterMeta__item {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.3px;
+}
+
+.chapterMeta__dot {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chapterMeta {
+    animation: none;
+  }
+}

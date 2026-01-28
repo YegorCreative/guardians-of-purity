@@ -240,6 +240,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // 4. Inject after the title
         title.insertAdjacentElement('afterend', progressWrapper);
+
+        // =========================================
+        //       Step 6: Chapter Meta Row
+        // =========================================
+
+        // 1. Calculate Word Count
+        // Select specific content sections to avoid counting nav/header/footer
+        const contentSections = document.querySelectorAll(
+          ".chapterOne-parable-section, .chapterOne-teaching-section, .chapterOne-summary-section, .chapterOne-prayer-section"
+        );
+
+        let totalText = "";
+        contentSections.forEach(section => {
+          totalText += section.textContent + " ";
+        });
+
+        // Fallback: If no sections found, try main content area but be careful
+        if (contentSections.length === 0) {
+          const mainContent = document.querySelector(".chapterOne-section")?.nextElementSibling;
+          if (mainContent) totalText = mainContent.parentElement.textContent; // Crude fallback
+        }
+
+        const wordCount = totalText.trim().split(/\s+/).length;
+        const readingTime = Math.max(1, Math.ceil(wordCount / 220)); // Min 1 min
+
+        // 2. Check for Last Updated
+        const dateMeta = document.querySelector('meta[name="last-updated"]');
+        const lastUpdated = dateMeta ? dateMeta.content : null;
+
+        // 3. Create Meta Row
+        const metaWrapper = document.createElement("div");
+        metaWrapper.className = "chapterMeta";
+        metaWrapper.setAttribute("aria-label", "Chapter details");
+
+        let metaHTML = `<span class="chapterMeta__item">~${readingTime} min read</span>`;
+
+        if (lastUpdated) {
+          metaHTML += `
+                <span class="chapterMeta__dot" aria-hidden="true">•</span>
+                <span class="chapterMeta__item">Updated: ${lastUpdated}</span>
+            `;
+        }
+
+        metaWrapper.innerHTML = metaHTML;
+
+        // 4. Inject after progress wrapper
+        progressWrapper.insertAdjacentElement('afterend', metaWrapper);
       }
     }
   } catch (e) {
