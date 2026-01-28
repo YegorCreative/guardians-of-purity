@@ -881,3 +881,113 @@
 /*       Chapter Separator Guard             */
 /* ========================================= */
 /* Do not add decorative separators via pseudo-elements or border-image for chapters. Chapters must remain clean. */
+
+/* Override to remove decorative top stripe from Export/Download section */
+/* Override to remove decorative top stripe from Export/Download section */
+.chapterOne-export-section {
+  border-top: 0 !important;
+  border-image: none !important;
+}
+
+/* ========================================= */
+/*       Global Chapter Navigation Buttons   */
+/* ========================================= */
+/* Targets specifically the Previous/Next links in the "Continue the Journey" section */
+/* We target multiple possible structures to cover all chapters:
+   1. The .chapter-nav-btn class (if present)
+   2. Raw links inside the chapter-nav container
+   3. Fallback: Raw links inside teaching containers that point to chapters
+*/
+
+.chapter-nav-btn,
+.chapter-nav a,
+.chapterOne-teaching-container a[href^="chapter"],
+.chapterOne-teaching-container a[href^="resources"],
+.chapterOne-teaching-container a[href$=".html"]:not(.chapterOne-export-button):not([href*="facebook"]):not([href*="instagram"]):not([href*="youtube"]) {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  /* Pill shape */
+  text-decoration: none !important;
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 10px;
+  min-width: 200px;
+
+  /* Modern Gradient Background */
+  background: linear-gradient(135deg, #3b82f6 0%, #a855f7 100%);
+  background-size: 200% 200%;
+  animation: none;
+}
+
+/* Specific styling for Previous button (slightly different gradient if desired, or keep uniform) */
+a[href*="chapter"][href*="prev"],
+.chapter-nav-btn.prev {
+  background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+}
+
+/* Specific styling for Next button */
+a[href*="chapter"][href*="next"],
+.chapter-nav-btn.next {
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+}
+
+/* Hover Effects */
+.chapter-nav-btn:hover,
+.chapter-nav a:hover,
+.chapterOne-teaching-container a[href^="chapter"]:hover,
+.chapterOne-teaching-container a[href$=".html"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+  filter: brightness(1.1);
+}
+
+/* Focus State for Accessibility */
+.chapter-nav-btn:focus-visible,
+.chapter-nav a:focus-visible,
+.chapterOne-teaching-container a[href^="chapter"]:focus-visible {
+  outline: 3px solid #fdfdfd;
+  outline-offset: 2px;
+  transform: translateY(-2px);
+}
+
+/* Container Styling to Center Buttons */
+.chapter-nav,
+.chapterOne-teaching-container:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+/* Separator Handling: Hide any text separators like "|" */
+.chapter-nav span,
+.chapterOne-teaching-container span.separator {
+  display: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+
+  .chapter-nav,
+  .chapterOne-teaching-container:last-child {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .chapter-nav-btn,
+  .chapter-nav a,
+  .chapterOne-teaching-container a[href^="chapter"] {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
