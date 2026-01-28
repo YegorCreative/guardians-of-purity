@@ -793,69 +793,87 @@
 /* Chapter Navigation Buttons */
 .chapter-nav {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  padding: 10px;
 }
 
 .chapter-nav-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 24px;
-  border-radius: 999px;
-  text-decoration: none;
+  padding: 16px 32px;
+  min-height: 50px;
+  /* Accessibility: >44px tap target */
+  border-radius: 9999px;
+  /* Fully rounded pill */
+  text-decoration: none !important;
   font-weight: 700;
-  letter-spacing: 0.3px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: #fff !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.2s ease, filter 0.2s ease;
-  min-width: 200px;
-  font-size: 1.05rem;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15),
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  min-width: 220px;
+  font-size: 1.1rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
 }
 
-/* Specific Gradients for visual distinction */
+/* Specific Gradients */
 .chapter-nav-btn.prev {
-  background: linear-gradient(135deg, #3b82f6, #10b981);
+  background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
 }
 
 .chapter-nav-btn.next {
-  background: linear-gradient(135deg, #a855f7, #ec4899);
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
 }
 
+/* Hover State */
 .chapter-nav-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25),
+    0 8px 12px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
   filter: brightness(1.1);
-  border-color: rgba(255, 255, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.7);
 }
 
+/* Active State */
 .chapter-nav-btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Focus State */
 .chapter-nav-btn:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.4), 0 14px 34px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5), 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
 
+/* Mobile Responsive */
 @media (max-width: 600px) {
   .chapter-nav {
     flex-direction: column;
+    gap: 15px;
     width: 100%;
-    gap: 12px;
   }
 
   .chapter-nav-btn {
     width: 100%;
     min-width: unset;
+    padding: 18px 24px;
+    /* Larger touch area */
   }
 }
 
@@ -863,29 +881,3 @@
 /*       Chapter Separator Guard             */
 /* ========================================= */
 /* Do not add decorative separators via pseudo-elements or border-image for chapters. Chapters must remain clean. */
-
-.chapterOne-parable-section::before,
-.chapterOne-parable-section::after,
-.chapterOne-export-section::before,
-.chapterOne-export-section::after,
-.chapterOne-teaching-section::before,
-.chapterOne-teaching-section::after,
-.chapterOne-summary-section::before,
-.chapterOne-summary-section::after {
-  content: none !important;
-  display: none !important;
-  background: none !important;
-  border: none !important;
-  height: 0 !important;
-  width: 0 !important;
-}
-
-/* Ensure no border-image separators on sections */
-.chapterOne-parable-section,
-.chapterOne-export-section,
-.chapterOne-teaching-section,
-.chapterOne-summary-section {
-  border-image: none !important;
-  border-top-color: transparent !important;
-  /* Neutralize border-top if it exists for separator */
-}
