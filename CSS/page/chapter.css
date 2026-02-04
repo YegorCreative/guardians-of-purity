@@ -1587,6 +1587,85 @@ body.chapterModalOpen {
   }
 }
 
+/* ========================================= */
+/*       Reflection Two-Column Layout        */
+/*       Desktop + Tablet Only               */
+/* ========================================= */
+
+/* Wrapper for journal + reflect boxes - created via CSS sibling targeting */
+/* On Desktop/Tablet: Questions LEFT, Journal RIGHT */
+@media (min-width: 769px) {
+
+  /* Make the teaching container larger to accommodate two columns */
+  .chapterOne-teaching-container {
+    max-width: 1100px;
+  }
+
+  /* Create grid layout when journal-box is followed by reflect-box */
+  .chapterOne-journal-box {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  /* When journal-box and reflect-box are siblings, use CSS Grid on their parent */
+  .chapterOne-teaching-container:has(.chapterOne-journal-box + .chapterOne-reflect-box) .chapterOne-journal-box,
+  .chapterOne-teaching-container:has(.chapterOne-journal-box + .chapterOne-reflect-box) .chapterOne-reflect-box {
+    margin-bottom: 0;
+  }
+
+  /* Create a flex container effect using display contents and wrapper approach */
+  /* Target containers that have both journal and reflect boxes */
+  .chapterOne-teaching-container:has(.chapterOne-journal-box):has(.chapterOne-reflect-box) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  /* Reflection area wrapper - using subgrid approach */
+  .chapterOne-reflection-area {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 30px;
+    align-items: start;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .chapterOne-reflection-area .chapterOne-reflect-box {
+    order: 1;
+    margin: 0;
+  }
+
+  .chapterOne-reflection-area .chapterOne-journal-box {
+    order: 2;
+    margin: 0;
+  }
+
+  /* Ensure both cards have consistent styling in the grid */
+  .chapterOne-reflection-area .chapterOne-reflect-box,
+  .chapterOne-reflection-area .chapterOne-journal-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chapterOne-reflection-area .chapterOne-journal-box textarea {
+    flex: 1;
+    min-height: 180px;
+  }
+}
+
+/* Mobile: Keep stacked single-column layout */
+@media (max-width: 768px) {
+  .chapterOne-reflection-area {
+    display: block;
+  }
+
+  .chapterOne-reflection-area .chapterOne-reflect-box,
+  .chapterOne-reflection-area .chapterOne-journal-box {
+    margin-bottom: 25px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .chapterHero-progressFill {
     animation: none;
