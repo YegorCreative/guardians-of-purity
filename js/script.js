@@ -450,6 +450,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Hide completion message if visible
       if (completionMsg) completionMsg.classList.remove("visible");
+      module.classList.add("is-running");
 
       btn.textContent = "Running…";
       btn.disabled = true;
@@ -466,6 +467,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           btn.textContent = "Restart Timer";
           btn.disabled = false;
+          module.classList.remove("is-running");
 
           if (completionMsg) {
             completionMsg.classList.add("visible");
@@ -478,6 +480,7 @@ document.addEventListener("DOMContentLoaded", () => {
       remainingSeconds = 15 * 60;
       updateDisplay();
       if (completionMsg) completionMsg.classList.remove("visible");
+      module.classList.remove("is-running");
       startTimer();
     }
 
