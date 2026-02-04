@@ -721,6 +721,13 @@
     padding: 14px 24px;
     font-size: 1rem;
   }
+
+  .chapterJumpBtn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
 }
 
 /* Chapter 20 - Prayer Card Layout */
@@ -1185,11 +1192,12 @@ a[href*="chapter"][href*="next"],
 
 /* Trigger Button */
 .chapterJumpBtn {
-  margin-top: 15px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.4);
   color: #fff;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 999px;
   cursor: pointer;
   font-size: 0.85rem;
