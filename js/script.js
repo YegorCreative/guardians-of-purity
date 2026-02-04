@@ -420,3 +420,76 @@ document.addEventListener("DOMContentLoaded", () => {
     console.warn("Could not inject chapter progress:", e);
   }
 });
+
+// 15-Minute Reflection Timer
+document.addEventListener("DOMContentLoaded", () => {
+  const timerModules = document.querySelectorAll(".reflection-timer-module");
+
+  timerModules.forEach((module) => {
+    const display = module.querySelector(".reflection-timer-display");
+    const btn = module.querySelector(".reflection-timer-btn");
+    const completionMsg = module.querySelector(".timer-completion-message");
+
+    if (!display || !btn) return;
+
+    let intervalId = null;
+    let remainingSeconds = 15 * 60; // 15 minutes
+
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = seconds % 60;
+      return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+    }
+
+    function updateDisplay() {
+      display.textContent = formatTime(remainingSeconds);
+    }
+
+    function startTimer() {
+      if (intervalId) return; // Prevent double-start
+
+      // Hide completion message if visible
+      if (completionMsg) completionMsg.classList.remove("visible");
+
+      btn.textContent = "Running…";
+      btn.disabled = true;
+
+      intervalId = setInterval(() => {
+        remainingSeconds--;
+        updateDisplay();
+
+        if (remainingSeconds <= 0) {
+          // Timer finished
+          clearInterval(intervalId);
+          intervalId = null;
+          remainingSeconds = 15 * 60;
+
+          btn.textContent = "Restart Timer";
+          btn.disabled = false;
+
+          if (completionMsg) {
+            completionMsg.classList.add("visible");
+          }
+        }
+      }, 1000);
+    }
+
+    function restartTimer() {
+      remainingSeconds = 15 * 60;
+      updateDisplay();
+      if (completionMsg) completionMsg.classList.remove("visible");
+      startTimer();
+    }
+
+    btn.addEventListener("click", () => {
+      if (btn.textContent === "Restart Timer") {
+        restartTimer();
+      } else {
+        startTimer();
+      }
+    });
+
+    // Initialize display
+    updateDisplay();
+  });
+});
