@@ -153,23 +153,23 @@
   background-clip: text;
 }
 
-/* Parable Two-Column Layout */
-.chapterOne-parable-layout {
-  display: flex;
-  gap: 50px;
-  align-items: flex-start;
+/* Parable Text Flow Layout */
+.chapterOne-parable-body {
+  overflow: hidden;
 }
 
-.chapterOne-parable-content {
-  flex: 1;
-  min-width: 0;
+.chapterOne-parable-body::after {
+  content: '';
+  display: table;
+  clear: both;
 }
 
-/* Parable Image Placeholder */
+/* Parable Image Placeholder - Float Right */
 .chapterOne-parable-image {
-  flex-shrink: 0;
+  float: right;
   width: 280px;
   aspect-ratio: 4 / 5;
+  margin: 0 0 30px 40px;
   border-radius: 16px;
   background: linear-gradient(145deg,
       rgba(250, 250, 252, 0.95) 0%,
@@ -180,7 +180,7 @@
     0 1px 4px rgba(0, 0, 0, 0.04);
   position: relative;
   overflow: hidden;
-  align-self: center;
+  shape-outside: margin-box;
 }
 
 .chapterOne-parable-image::before {
@@ -676,19 +676,11 @@
   }
 
   .chapterOne-parable-image {
-    max-width: 300px;
-    margin-bottom: 35px;
-  }
-
-  .chapterOne-parable-layout {
-    flex-direction: column-reverse;
-    gap: 30px;
-  }
-
-  .chapterOne-parable-image {
-    width: 100%;
-    max-width: 280px;
-    align-self: center;
+    float: none;
+    display: block;
+    width: 260px;
+    max-width: 100%;
+    margin: 0 auto 30px auto;
   }
 
   .chapterOne-teaching-title {
@@ -773,14 +765,10 @@
     margin-bottom: 30px;
   }
 
-  .chapterOne-parable-layout {
-    gap: 25px;
-  }
-
   .chapterOne-parable-image {
     width: 100%;
-    max-width: 100%;
     aspect-ratio: 3 / 4;
+    margin-bottom: 25px;
     border-radius: 12px;
   }
 
