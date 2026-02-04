@@ -45,9 +45,44 @@
 .chapterOne-title {
   font-size: 3.2rem;
   font-weight: 700;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
   line-height: 1.2;
+}
+
+.chapterOne-chapter-indicator {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 30px;
+}
+
+.chapterOne-verse-container {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 25px 30px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.chapterOne-verse-container .chapterOne-verse {
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 0;
+  color: #1e293b;
+  text-shadow: none;
+}
+
+.chapterOne-verse-container .chapterOne-verseRef {
+  display: block;
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #475569;
 }
 
 .chapterOne-verse {
@@ -78,6 +113,7 @@
   backdrop-filter: blur(10px);
   text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 
 /* Chapter 1 - Parable Section */
 .chapterOne-parable-section {
