@@ -127,54 +127,74 @@
   fill: none !important;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 3px;
+  stroke-width: 4px;
+  /* Default width */
   vector-effect: non-scaling-stroke;
-  opacity: 0.6;
-  transform-origin: center;
+  opacity: 0.15;
+  /* Subtle base opacity */
+  mix-blend-mode: multiply;
+  /* Better blending on light bg */
+  stroke-dasharray: none !important;
+  /* STRICTLY NO DASHES */
 }
 
+/* 
+  Physical Flow Animation:
+  Horizontal Translate + Vertical Bobbing (Phase Shift)
+  Creates a "floating on water" feel.
+*/
 .reflection-timer-module.is-running .wave-path {
-  animation: waveFlow 6s ease-in-out infinite alternate;
+  animation: physicalWaveFlow 12s ease-in-out infinite alternate;
 }
 
 .wave-path:nth-child(1) {
-  animation-duration: 7s;
-  animation-delay: 0s;
+  stroke-width: 4px;
+  animation-duration: 14s;
+  opacity: 0.12;
 }
 
 .wave-path:nth-child(2) {
-  animation-duration: 9s;
-  animation-delay: -2s;
-  opacity: 0.4;
+  stroke-width: 5px;
+  animation-duration: 18s;
+  animation-delay: -5s;
+  opacity: 0.18;
 }
 
 .wave-path:nth-child(3) {
+  stroke-width: 3px;
   animation-duration: 11s;
-  animation-delay: -4s;
-  opacity: 0.3;
+  animation-delay: -2s;
+  opacity: 0.14;
 }
 
 .wave-path:nth-child(4) {
-  animation-duration: 13s;
-  animation-delay: -1s;
-  opacity: 0.2;
+  stroke-width: 4px;
+  animation-duration: 16s;
+  animation-delay: -8s;
+  opacity: 0.10;
 }
 
-@keyframes waveFlow {
+.wave-path:nth-child(5) {
+  stroke-width: 3.5px;
+  animation-duration: 13s;
+  animation-delay: -4s;
+  opacity: 0.16;
+}
+
+@keyframes physicalWaveFlow {
   0% {
-    transform: translateX(-2%) translateY(2%);
+    transform: translate(-5%, 2%);
   }
 
   100% {
-    transform: translateX(2%) translateY(-2%);
+    transform: translate(5%, -2%);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .wave-path {
-    animation: none;
-    stroke-dasharray: none;
-    opacity: 0.3;
+    animation: none !important;
+    opacity: 0.15;
   }
 }
 

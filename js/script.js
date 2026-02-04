@@ -435,6 +435,32 @@ document.addEventListener("DOMContentLoaded", () => {
     // Ensure elements exist
     if (!display || !startBtn || !stopBtn || !restartBtn) return;
 
+    // INJECT NEW SVG WAVES (Strict Design Matches Sketch)
+    const waveContainer = module.querySelector(".timer-waves");
+    if (waveContainer) {
+      waveContainer.innerHTML = `
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="timerWaveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#3b82f6" />
+              <stop offset="50%" stop-color="#a855f7" />
+              <stop offset="100%" stop-color="#ec4899" />
+            </linearGradient>
+          </defs>
+          <!-- 
+            Paths follow the diagonal flow: 
+            Start Top-Left (y ~20-30) -> Dip Lower Center (y ~75-85) -> End Top-Right (y ~20-30).
+            This creates the "dip" behind the buttons as requested. 
+          -->
+          <path class="wave-path" d="M -20,25 C 20,25 30,85 50,85 S 80,25 120,25" stroke="url(#timerWaveGrad)" />
+          <path class="wave-path" d="M -20,30 C 25,30 35,90 55,90 S 85,30 120,30" stroke="url(#timerWaveGrad)" />
+          <path class="wave-path" d="M -20,20 C 15,20 25,80 45,80 S 75,20 120,20" stroke="url(#timerWaveGrad)" />
+          <path class="wave-path" d="M -20,35 C 30,35 40,95 60,95 S 90,35 120,35" stroke="url(#timerWaveGrad)" />
+          <path class="wave-path" d="M -20,28 C 22,28 32,88 52,88 S 82,28 120,28" stroke="url(#timerWaveGrad)" />
+        </svg>
+      `;
+    }
+
     let intervalId = null;
     let remainingSeconds = 15 * 60; // 15 minutes
 
