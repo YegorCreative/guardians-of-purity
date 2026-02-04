@@ -61,15 +61,16 @@
 }
 
 .chapterOne-verse-container {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   padding: 25px 30px;
   border-radius: 16px;
-  margin-bottom: 25px;
+  margin: 0 auto 25px auto;
+  max-width: 680px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
 .chapterOne-verse-container .chapterOne-verse {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-style: italic;
   line-height: 1.7;
   margin-bottom: 0;
@@ -103,15 +104,18 @@
 }
 
 .chapterOne-quote {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: #ffffff;
   margin-top: 20px;
-  padding: 20px;
+  padding: 20px 25px;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 15px;
   backdrop-filter: blur(10px);
   text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -581,12 +585,29 @@
     font-size: 2.2rem;
   }
 
+  .chapterOne-chapter-indicator {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+  }
+
+  .chapterOne-verse-container {
+    padding: 20px 24px;
+    max-width: 100%;
+  }
+
+  .chapterOne-verse-container .chapterOne-verse {
+    font-size: 1.1rem;
+  }
+
   .chapterOne-verse {
     font-size: 1.1rem;
   }
 
   .chapterOne-quote {
     font-size: 1.2rem;
+    padding: 18px 20px;
+    max-width: 100%;
   }
 
   .chapterOne-parable-container,
@@ -601,7 +622,8 @@
   .chapterOne-summary-title,
   .chapterOne-prayer-title,
   .chapterOne-export-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 35px;
   }
 
   .chapterOne-teaching-title {
@@ -621,11 +643,38 @@
 
 @media (max-width: 520px) {
   .chapterOne-section {
-    padding: 80px 15px;
+    padding: 60px 15px;
+    min-height: 80vh;
+  }
+
+  .chapterOne-overlay {
+    padding: 30px 20px;
   }
 
   .chapterOne-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+
+  .chapterOne-chapter-indicator {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  .chapterOne-verse-container {
+    padding: 18px 20px;
+    border-radius: 12px;
+  }
+
+  .chapterOne-verse-container .chapterOne-verse {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .chapterOne-verse-container .chapterOne-verseRef {
+    font-size: 0.9rem;
+    margin-top: 10px;
   }
 
   .chapterOne-verse {
@@ -633,8 +682,14 @@
   }
 
   .chapterOne-quote {
-    font-size: 1.1rem;
-    padding: 15px;
+    font-size: 1.05rem;
+    padding: 15px 18px;
+    margin-top: 15px;
+    border-radius: 12px;
+  }
+
+  .chapterOne-parable-section {
+    padding: 60px 15px;
   }
 
   .chapterOne-parable-container,
@@ -642,18 +697,19 @@
   .chapterOne-summary-container,
   .chapterOne-prayer-container,
   .chapterOne-export-container {
-    padding: 20px;
+    padding: 25px 20px;
   }
 
   .chapterOne-parable-title,
   .chapterOne-summary-title,
   .chapterOne-prayer-title,
   .chapterOne-export-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
   }
 
   .chapterOne-teaching-title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .chapterOne-action-box h3,
