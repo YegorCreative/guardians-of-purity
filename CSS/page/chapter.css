@@ -147,12 +147,52 @@
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   color: #213035;
   background: linear-gradient(135deg, #3b82f6, #a855f7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Parable Image Placeholder */
+.chapterOne-parable-image {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 4 / 5;
+  margin: 0 auto 40px auto;
+  border-radius: 16px;
+  background: linear-gradient(145deg,
+      rgba(250, 250, 252, 0.95) 0%,
+      rgba(241, 243, 248, 0.9) 50%,
+      rgba(235, 238, 245, 0.85) 100%);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.06),
+    0 1px 4px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.chapterOne-parable-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(0, 0, 0, 0.02) 100%);
+  pointer-events: none;
+}
+
+.chapterOne-parable-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
 }
 
 .chapterOne-paragraph {
@@ -626,6 +666,11 @@
     margin-bottom: 35px;
   }
 
+  .chapterOne-parable-image {
+    max-width: 300px;
+    margin-bottom: 35px;
+  }
+
   .chapterOne-teaching-title {
     font-size: 1.6rem;
   }
@@ -706,6 +751,13 @@
   .chapterOne-export-title {
     font-size: 1.5rem;
     margin-bottom: 30px;
+  }
+
+  .chapterOne-parable-image {
+    max-width: 100%;
+    aspect-ratio: 3 / 4;
+    margin-bottom: 30px;
+    border-radius: 12px;
   }
 
   .chapterOne-teaching-title {
