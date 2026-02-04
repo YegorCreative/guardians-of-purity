@@ -435,7 +435,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Ensure elements exist
     if (!display || !startBtn || !stopBtn || !restartBtn) return;
 
-    // INJECT NEW SVG WAVES (Strict Design Matches Sketch)
+    // INJECT NEW SVG WAVES (Strict Design Matches Sketch: Override)
     const waveContainer = module.querySelector(".timer-waves");
     if (waveContainer) {
       waveContainer.innerHTML = `
@@ -448,15 +448,17 @@ document.addEventListener("DOMContentLoaded", () => {
             </linearGradient>
           </defs>
           <!-- 
-            Paths follow the diagonal flow: 
-            Start Top-Left (y ~20-30) -> Dip Lower Center (y ~75-85) -> End Top-Right (y ~20-30).
-            This creates the "dip" behind the buttons as requested. 
+            FORCED GEOMETRY: Start Top-Left (y~30) -> Dip Lower-Center (y~85) -> End Top-Right (y~30).
+            Dips behind buttons (lower middle).
           -->
-          <path class="wave-path" d="M -20,25 C 20,25 30,85 50,85 S 80,25 120,25" stroke="url(#timerWaveGrad)" />
-          <path class="wave-path" d="M -20,30 C 25,30 35,90 55,90 S 85,30 120,30" stroke="url(#timerWaveGrad)" />
-          <path class="wave-path" d="M -20,20 C 15,20 25,80 45,80 S 75,20 120,20" stroke="url(#timerWaveGrad)" />
-          <path class="wave-path" d="M -20,35 C 30,35 40,95 60,95 S 90,35 120,35" stroke="url(#timerWaveGrad)" />
-          <path class="wave-path" d="M -20,28 C 22,28 32,88 52,88 S 82,28 120,28" stroke="url(#timerWaveGrad)" />
+          <g class="wave-group">
+            <path class="wave-path" d="M -10,30 C 20,30 35,85 50,85 S 80,30 110,30" stroke="url(#timerWaveGrad)" />
+            <path class="wave-path" d="M -10,35 C 25,35 40,90 55,90 S 85,35 110,35" stroke="url(#timerWaveGrad)" />
+            <path class="wave-path" d="M -10,25 C 15,25 30,80 45,80 S 75,25 110,25" stroke="url(#timerWaveGrad)" />
+            <path class="wave-path" d="M -10,40 C 30,40 45,95 60,95 S 90,40 110,40" stroke="url(#timerWaveGrad)" />
+            <path class="wave-path" d="M -10,32 C 22,32 37,88 52,88 S 82,32 110,32" stroke="url(#timerWaveGrad)" />
+          </g>
+
         </svg>
       `;
     }
