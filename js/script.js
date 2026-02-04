@@ -427,10 +427,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   timerModules.forEach((module) => {
     const display = module.querySelector(".reflection-timer-display");
-    const btn = module.querySelector(".reflection-timer-btn");
+    const startBtn = module.querySelector(".btn-start");
+    const stopBtn = module.querySelector(".btn-stop");
+    const restartBtn = module.querySelector(".btn-restart");
     const completionMsg = module.querySelector(".timer-completion-message");
 
-    if (!display || !btn) return;
+    // Ensure elements exist
+    if (!display || !startBtn || !stopBtn || !restartBtn) return;
 
     let intervalId = null;
     let remainingSeconds = 15 * 60; // 15 minutes
@@ -452,8 +455,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (completionMsg) completionMsg.classList.remove("visible");
       module.classList.add("is-running");
 
-      btn.textContent = "Running…";
-      btn.disabled = true;
+      // UI Updates
+      startBtn.hidden = true;
+      stopBtn.hidden = false;
 
       intervalId = setInterval(() => {
         remainingSeconds--;
@@ -461,14 +465,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (remainingSeconds <= 0) {
           // Timer finished
-          clearInterval(intervalId);
-          intervalId = null;
-          remainingSeconds = 15 * 60;
-
-          btn.textContent = "Restart Timer";
-          btn.disabled = false;
-          module.classList.remove("is-running");
-
+          stopTimer(); // Stops interval, resets UI state
           if (completionMsg) {
             completionMsg.classList.add("visible");
           }
@@ -476,23 +473,35 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 1000);
     }
 
-    function restartTimer() {
+    function stopTimer() {
+      if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
+      module.classList.remove("is-running");
+
+      // UI Updates
+      startBtn.hidden = false;
+      stopBtn.hidden = true;
+      startBtn.textContent = "Start Timer"; // Ensure text is reset if previously 'Resume' (optional, but requirements say fixed labels)
+    }
+
+    function resetTimer() {
+      stopTimer();
       remainingSeconds = 15 * 60;
       updateDisplay();
       if (completionMsg) completionMsg.classList.remove("visible");
-      module.classList.remove("is-running");
-      startTimer();
     }
 
-    btn.addEventListener("click", () => {
-      if (btn.textContent === "Restart Timer") {
-        restartTimer();
-      } else {
-        startTimer();
-      }
-    });
+    startBtn.addEventListener("click", startTimer);
+    stopBtn.addEventListener("click", stopTimer);
+    restartBtn.addEventListener("click", resetTimer);
 
-    // Initialize display
+    // Initialize
     updateDisplay();
+    // Ensure initial state
+    startBtn.hidden = false;
+    stopBtn.hidden = true;
+    restartBtn.hidden = false;
   });
 });
