@@ -1,3 +1,10 @@
+/* TEMPORARY DEBUG - REMOVE AFTER TESTING */
+.chapterOne-teaching-section:first-of-type {
+  background: yellow !important;
+}
+
+/* END TEMPORARY DEBUG */
+
 /* Chapter 1 - Intro Section */
 .chapterOne-section {
   position: relative;
@@ -7,13 +14,13 @@
   background-position: center;
   background-attachment: fixed;
   color: var(--color-white);
-  padding: 120px 20px;
+  padding: 100px 20px;
   text-align: center;
   min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 15px;
+  margin: 0 15px 12px 15px;
   border-radius: 25px;
 }
 
@@ -122,10 +129,10 @@
 /* Chapter 1 - Parable Section */
 .chapterOne-parable-section {
   background: linear-gradient(135deg, rgba(248, 249, 250, 0.7) 0%, rgba(233, 236, 239, 0.7) 100%);
-  padding: 100px 20px;
+  padding: 60px 20px;
   color: #2e3d43;
   position: relative;
-  margin: 15px;
+  margin: 0 15px 12px 15px;
   border-radius: 25px;
 }
 
@@ -227,9 +234,9 @@
 /* Chapter 1 - Teaching Sections */
 .chapterOne-teaching-section {
   background: linear-gradient(135deg, rgba(249, 250, 251, 0.7) 0%, rgba(243, 244, 246, 0.7) 100%);
-  padding: 80px 20px;
+  padding: 50px 20px;
   color: #2d2d2d;
-  margin: 15px;
+  margin: 0 15px 12px 15px;
   border-radius: 25px;
 }
 
@@ -396,9 +403,9 @@
 /* Chapter 1 - Summary Section */
 .chapterOne-summary-section {
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(168, 85, 247, 0.12));
-  padding: 100px 20px;
+  padding: 60px 20px;
   color: #2e3d43;
-  margin: 15px;
+  margin: 0 15px 12px 15px;
   border-radius: 25px;
 }
 
@@ -467,12 +474,12 @@
 /* Chapter 1 - Prayer Section */
 .chapterOne-prayer-section {
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(168, 85, 247, 0.9));
-  padding: 120px 20px;
+  padding: 70px 20px;
   color: white;
   text-align: center;
   position: relative;
   overflow: hidden;
-  margin: 15px;
+  margin: 0 15px 12px 15px;
   border-radius: 25px;
 }
 
@@ -593,9 +600,9 @@
 /* Chapter 1 - Export Download Section */
 .chapterOne-export-section {
   background: linear-gradient(135deg, rgba(249, 250, 251, 0.78), rgba(243, 244, 246, 0.78));
-  padding: 100px 20px;
+  padding: 60px 20px;
   text-align: center;
-  margin: 15px;
+  margin: 0 15px 12px 15px;
   border-radius: 25px;
 }
 
@@ -696,12 +703,37 @@
   .chapterOne-summary-list li {
     font-size: 1rem;
   }
+
+  /* Tablet section spacing normalization */
+  .chapterOne-section,
+  .chapterOne-parable-section,
+  .chapterOne-teaching-section,
+  .chapterOne-summary-section,
+  .chapterOne-prayer-section,
+  .chapterOne-export-section {
+    margin: 0 12px 10px 12px;
+  }
+
+  .chapterOne-parable-section,
+  .chapterOne-summary-section,
+  .chapterOne-export-section {
+    padding: 50px 18px;
+  }
+
+  .chapterOne-teaching-section {
+    padding: 40px 18px;
+  }
+
+  .chapterOne-prayer-section {
+    padding: 55px 18px;
+  }
 }
 
 @media (max-width: 520px) {
   .chapterOne-section {
-    padding: 60px 15px;
+    padding: 50px 12px;
     min-height: 80vh;
+    margin: 0 10px 10px 10px;
   }
 
   .chapterOne-overlay {
@@ -746,7 +778,20 @@
   }
 
   .chapterOne-parable-section {
-    padding: 60px 15px;
+    padding: 40px 12px;
+    margin: 0 10px 10px 10px;
+  }
+
+  .chapterOne-teaching-section {
+    padding: 35px 12px;
+    margin: 0 10px 10px 10px;
+  }
+
+  .chapterOne-summary-section,
+  .chapterOne-prayer-section,
+  .chapterOne-export-section {
+    padding: 40px 12px;
+    margin: 0 10px 10px 10px;
   }
 
   .chapterOne-parable-container,
