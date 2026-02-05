@@ -734,3 +734,111 @@
 .journey-modal-btn.cancel:hover {
   background: #e5e7eb;
 }
+
+/* Custom Calendar Modal Styles */
+.journey-calendar-wrapper {
+  width: 100%;
+  max-width: 360px;
+  /* Optimal reading width */
+  margin: 0 auto 20px auto;
+  user-select: none;
+}
+
+.journey-calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 0 5px;
+}
+
+.journey-calendar-month-label {
+  font-family: var(--font-header);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.journey-calendar-nav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--color-primary-blue);
+  padding: 5px 10px;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.journey-calendar-nav-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.journey-calendar-days-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.journey-calendar-day-name {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.journey-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  /* 7 Days */
+  gap: 8px;
+  /* Spacing between cells */
+  justify-items: center;
+}
+
+.journey-calendar-cell {
+  width: 40px;
+  /* Fixed size for touch targets */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  /* Circle shape */
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--color-text-dark);
+  transition: all 0.2s ease;
+  font-family: var(--font-body);
+}
+
+.journey-calendar-cell:hover:not(.empty):not(.selected) {
+  background-color: rgba(var(--color-primary-rgb), 0.1);
+  color: var(--color-primary-blue);
+}
+
+.journey-calendar-cell.selected {
+  background: linear-gradient(135deg, var(--color-gradient-blue-start), var(--color-gradient-blue-end));
+  color: white;
+  box-shadow: 0 4px 10px rgba(66, 153, 225, 0.3);
+  font-weight: 600;
+}
+
+.journey-calendar-cell.today {
+  border: 1px solid var(--color-primary-blue);
+  font-weight: 600;
+}
+
+.journey-calendar-cell.empty {
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Ensure modal card can accommodate calendar */
+.journey-modal-card.calendar-mode {
+  max-width: 400px;
+  /* Slightly wider for calendar */
+}

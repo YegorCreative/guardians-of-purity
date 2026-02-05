@@ -560,36 +560,128 @@
       document.body.appendChild(overlay);
     }
 
-    // Date Picker Modal (Refactored)
+    // Custom Calendar Modal
     function showDatePicker(parentContainer) {
       if (document.querySelector(".journey-modal-overlay")) return;
 
       const overlay = document.createElement("div");
-      overlay.className = "journey-modal-overlay"; // Reuse overlay for dimming
-      // For Date Picker, maybe we want it inline or centered? 
-      // User asked for "Modal" style in requirements. "Visually match site UI... Rounded container... Overlay page or soft backdrop".
-      // Let's use the same centered modal approach for consistency.
+      overlay.className = "journey-modal-overlay";
 
       const card = document.createElement("div");
-      card.className = "journey-modal-card";
+      card.className = "journey-modal-card calendar-mode";
 
-      const title = document.createElement("label");
+      const title = document.createElement("h3");
       title.textContent = "Select Start Date";
-      title.style.display = "block";
-      title.style.fontWeight = "bold";
-      title.style.marginBottom = "10px";
 
-      const input = document.createElement("input");
-      input.type = "date";
-      input.className = "journey-date-input";
-
-      // Default to today
+      // State
       const today = new Date();
-      const yyyy = today.getFullYear();
-      const mm = String(today.getMonth() + 1).padStart(2, '0');
-      const dd = String(today.getDate()).padStart(2, '0');
-      input.value = `${yyyy}-${mm}-${dd}`;
+      let currentViewDate = new Date(today.getFullYear(), today.getMonth(), 1);
+      let selectedDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
 
+      // Calendar Container
+      const calendarWrapper = document.createElement("div");
+      calendarWrapper.className = "journey-calendar-wrapper";
+
+      // Header (Month + Nav)
+      const header = document.createElement("div");
+      header.className = "journey-calendar-header";
+
+      const prevBtn = document.createElement("button");
+      prevBtn.innerHTML = "&lt;"; // < symbol
+      prevBtn.className = "journey-calendar-nav-btn";
+      prevBtn.onclick = () => {
+        currentViewDate.setMonth(currentViewDate.getMonth() - 1);
+        renderCalendar();
+      };
+
+      const nextBtn = document.createElement("button");
+      nextBtn.innerHTML = "&gt;"; // > symbol
+      nextBtn.className = "journey-calendar-nav-btn";
+      nextBtn.onclick = () => {
+        currentViewDate.setMonth(currentViewDate.getMonth() + 1);
+        renderCalendar();
+      };
+
+      const monthLabel = document.createElement("span");
+      monthLabel.className = "journey-calendar-month-label";
+
+      header.appendChild(prevBtn);
+      header.appendChild(monthLabel);
+      header.appendChild(nextBtn);
+
+      // Days Header (Sun, Mon...)
+      const daysHeader = document.createElement("div");
+      daysHeader.className = "journey-calendar-days-header";
+      const days = ["SU", "MO", "TU", "WE", "TH", "FR", "SA"];
+      days.forEach(d => {
+        const span = document.createElement("span");
+        span.className = "journey-calendar-day-name";
+        span.textContent = d;
+        daysHeader.appendChild(span);
+      });
+
+      // Days Grid
+      const grid = document.createElement("div");
+      grid.className = "journey-calendar-grid";
+
+      calendarWrapper.appendChild(header);
+      calendarWrapper.appendChild(daysHeader);
+      calendarWrapper.appendChild(grid);
+
+      // Render Logic
+      function renderCalendar() {
+        grid.innerHTML = "";
+
+        // Update Label
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        monthLabel.textContent = `${monthNames[currentViewDate.getMonth()]} ${currentViewDate.getFullYear()}`;
+
+        const year = currentViewDate.getFullYear();
+        const month = currentViewDate.getMonth();
+
+        const firstDayOfMonth = new Date(year, month, 1).getDay(); // 0 (Sun) to 6 (Sat)
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        // Empty slots for offset
+        for (let i = 0; i < firstDayOfMonth; i++) {
+          const empty = document.createElement("div");
+          empty.className = "journey-calendar-cell empty";
+          grid.appendChild(empty);
+        }
+
+        // Day Cells
+        for (let d = 1; d <= daysInMonth; d++) {
+          const cell = document.createElement("button");
+          cell.className = "journey-calendar-cell";
+          cell.textContent = d;
+
+          // Check if this cell is the selected date
+          if (selectedDate.getDate() === d &&
+            selectedDate.getMonth() === month &&
+            selectedDate.getFullYear() === year) {
+            cell.classList.add("selected");
+          }
+
+          // Check if Today
+          if (today.getDate() === d &&
+            today.getMonth() === month &&
+            today.getFullYear() === year) {
+            cell.classList.add("today");
+          }
+
+          cell.onclick = () => {
+            selectedDate = new Date(year, month, d);
+            renderCalendar(); // Re-render to update selection style
+          };
+
+          grid.appendChild(cell);
+        }
+      }
+
+      // Initial Render
+      renderCalendar();
+
+      // Modal Actions
       const btnRow = document.createElement("div");
       btnRow.className = "journey-modal-actions";
 
@@ -602,19 +694,17 @@
       startBtn.textContent = "Start";
       startBtn.className = "journey-modal-btn confirm";
       startBtn.onclick = () => {
-        if (input.value) {
-          const parts = input.value.split('-');
-          const localDate = new Date(parts[0], parts[1] - 1, parts[2]);
-          localStorage.setItem("prayerJourneyStartDate", localDate.toISOString());
-          location.reload();
-        }
+        // Use selectedDate state
+        const localDate = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), selectedDate.getDate());
+        localStorage.setItem("prayerJourneyStartDate", localDate.toISOString());
+        location.reload();
       };
 
       btnRow.appendChild(cancelBtn);
       btnRow.appendChild(startBtn);
 
       card.appendChild(title);
-      card.appendChild(input);
+      card.appendChild(calendarWrapper); // Replaces input
       card.appendChild(btnRow);
       overlay.appendChild(card);
 
