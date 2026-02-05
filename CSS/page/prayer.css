@@ -294,12 +294,17 @@
 
 .monthly_prayer_guide_weeks {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  min-width: 120px;
+  flex-direction: row;
+  /* Horizontal layout */
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .monthly_prayer_guide_week_item {
+  flex: 1;
+  /* Equal width */
+  text-align: center;
   font-size: 18px;
   font-weight: 600;
   padding: 12px 10px;
