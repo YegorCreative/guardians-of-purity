@@ -122,11 +122,13 @@
         </p>
       </div>
     </div>
-    <!-- <div id="daysContainer"></div> -->
+
 
     <!-- FOR WEB WEEKLY PRAYER -->
     <div class="separated_block monthly_prayer_guide_wrapper_desktop">
       <div class="monthly_prayer_guide_wrapper separated_block_corner">
+
+
         <div class="monthly_prayer_guide_card">
           <div class="monthly_prayer_guide_weeks">
             <div class="monthly_prayer_guide_week_item flex-center">
@@ -186,6 +188,8 @@
     <!-- FOR MOBILE WEEKLY PRAYER -->
     <div class="separated_block monthly_prayer_guide_wrapper_mobile">
       <div class="monthly_prayer_guide_wrapper separated_block_corner">
+
+
         <div class="monthly_prayer_guide_card">
           <div class="week_block">
             <div class="monthly_prayer_guide_week_item flex-center">
@@ -389,202 +393,410 @@
   <script src="js/script.js"></script>
   <!-- <script src="js/prayerCarousel.js"></script> -->
   <script>
+    // --- PRAYER JOURNEY LOGIC --- //
+    // Unified logic for 28-day prayer journey
+
     let prayerData = [];
+    const desktopContent = document.querySelector(".monthly_prayer_guide_wrapper_desktop");
+    const mobileWeeks = document.querySelectorAll(".week_block");
 
-    async function loadData() {
-      const res = await fetch("./data/weeklyPrayer.json");
-      const jsonData = await res.json();
-      prayerData = jsonData[0];
-      init();
+    // Selectors for Trigger Injection
+    const desktopCard = document.querySelector(".monthly_prayer_guide_wrapper_desktop .monthly_prayer_guide_card");
+    const mobileWrapper = document.querySelector(".monthly_prayer_guide_wrapper_mobile .monthly_prayer_guide_wrapper");
+
+    // Helper: Formatted date string "Mon 5"
+    function getFormattedDate(date) {
+      const options = { month: 'short', day: 'numeric' };
+      return date.toLocaleDateString('en-US', options);
     }
 
-    function init() {
-      // DESKTOP LOGIC
-      const desktopContent = document.querySelector(
-        ".monthly_prayer_guide_wrapper_desktop"
-      );
+    // --- MAIN INIT ---
+    async function init() {
+      // 1. Load Data
+      try {
+        const res = await fetch("./data/weeklyPrayer.json");
+        const jsonData = await res.json();
+        prayerData = jsonData[0];
+      } catch (e) {
+        console.error("Failed to load prayer data", e);
+        return;
+      }
+
+      // 2. Journey State Check
+      const storedStartDate = localStorage.getItem("prayerJourneyStartDate");
+      let journeyState = {
+        started: false,
+        startDate: null,
+        currentDay: 0
+      };
+
+      if (storedStartDate) {
+        const start = new Date(storedStartDate);
+        start.setHours(0, 0, 0, 0);
+        const now = new Date();
+        now.setHours(0, 0, 0, 0);
+
+        const diffTime = now - start;
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+        journeyState.started = true;
+        journeyState.startDate = start;
+        journeyState.currentDay = diffDays + 1;
+      }
+
+      // 3. Render Controls (Start/Restart)
+      renderJourneyControls(journeyState);
+
+      // 4. Initialize Views
+      initDesktopView(journeyState);
+      initMobileView(journeyState);
+    }
+
+    // --- CONTROLS UI ---
+    function renderJourneyControls(state) {
+      const cleanupId = "journey-controls-container";
+      document.querySelectorAll(`#${cleanupId}`).forEach(el => el.remove());
+
+      const container = document.createElement("div");
+      container.id = cleanupId;
+      container.className = "journey-controls-wrapper";
+      // Styles moved to CSS class .journey-controls-wrapper
+
+      // 1. Main Action Button
+      const btn = document.createElement("button");
+      btn.className = "journey-btn"; // Base class
+
+      if (state.started) {
+        btn.textContent = "Restart Prayer Journey";
+        btn.classList.add("secondary"); // Ghost/Secondary style
+        btn.onclick = (e) => {
+          e.preventDefault();
+          showRestartConfirm(container);
+        };
+      } else {
+        btn.textContent = "Start Prayer Journey";
+        btn.classList.add("primary"); // Gradient pill style
+        btn.onclick = (e) => {
+          e.preventDefault();
+          showDatePicker(container);
+        };
+      }
+
+      container.appendChild(btn);
+
+      // 2. Reassurance Text
+      const subText = document.createElement("div");
+      subText.textContent = "You are not praying alone — our team is praying with you.";
+      subText.className = "journey-reassurance-text";
+      container.appendChild(subText);
+
+      // Inject Desktop
       if (desktopContent) {
-        const weekItems = desktopContent.querySelectorAll(
-          ".monthly_prayer_guide_week_item"
-        );
-        const dayItems = desktopContent.querySelectorAll(
-          ".monthly_prayer_guide_day_item"
-        );
-        const titleEl = document.getElementById("prayerTitle");
-        const verseEl = document.getElementById("prayerVerse");
-        const prayerDayEl = document.getElementById("prayerDay");
-        const prayerEl = document.getElementById("prayerText");
-
-        let currentWeek = 0;
-        let currentDay = 0;
-
-        function selectWeek(index) {
-          weekItems.forEach((el, i) =>
-            el.classList.toggle("active", i === index)
-          );
-          currentWeek = index;
-          currentDay = 0;
-          selectDay(0);
+        const target = desktopContent.querySelector(".monthly_prayer_guide_wrapper");
+        if (target) {
+          const card = target.querySelector(".monthly_prayer_guide_card");
+          if (card) target.insertBefore(container, card);
         }
-
-        function selectDay(index) {
-          dayItems.forEach((el, i) =>
-            el.classList.toggle("active", i === index)
-          );
-          currentDay = index;
-          updateContent();
-        }
-
-        function updateContent() {
-          const weekKeys = [
-            "first_week",
-            "second_week",
-            "third_week",
-            "fourth_week",
-          ];
-          const weekKey = weekKeys[currentWeek];
-          const dayData = prayerData?.[weekKey]?.[currentDay];
-          if (!dayData) return;
-
-          prayerDayEl.textContent = `DAY ${currentDay + 1}`;
-          titleEl.textContent = dayData.title;
-          verseEl.textContent = `Verse: ${dayData.verse}`;
-          prayerEl.textContent = `Prayer: ${dayData.prayer}`;
-        }
-
-        weekItems.forEach((el, index) =>
-          el.addEventListener("click", () => selectWeek(index))
-        );
-        dayItems.forEach((el, index) =>
-          el.addEventListener("click", () => selectDay(index))
-        );
-
-        // Default selection: Week 1, Day 1
-        selectWeek(0);
       }
 
-      // MOBILE LOGIC
-      const mobileWeeks = document.querySelectorAll(".week_block");
-      if (mobileWeeks.length > 0) {
-        mobileWeeks.forEach((weekBlock, weekIndex) => {
-          const weekTitle = weekBlock.querySelector(
-            ".monthly_prayer_guide_week_item"
-          );
-          const weeklyContent = weekBlock.querySelector(".weekly_content");
-          const dayItems = weekBlock.querySelectorAll(
-            ".monthly_prayer_guide_day_item"
-          );
-          const prayerDayEl = weekBlock.querySelector(".prayerDay");
-          const prayerTitleEl = weekBlock.querySelector(".prayerTitle");
-          const prayerVerseEl = weekBlock.querySelector(".prayerVerse");
-          const prayerTextEl = weekBlock.querySelector(".prayerText");
+      // Inject Mobile
+      const mobileTarget = document.querySelector(".monthly_prayer_guide_wrapper_mobile .monthly_prayer_guide_wrapper");
+      if (mobileTarget) {
+        const mobileContainer = container.cloneNode(true);
+        const mBtn = mobileContainer.querySelector("button");
+        // Re-bind listeners for cloned button
+        if (state.started) {
+          mBtn.onclick = (e) => { e.preventDefault(); showRestartConfirm(mobileContainer); };
+        } else {
+          mBtn.onclick = (e) => { e.preventDefault(); showDatePicker(mobileContainer); };
+        }
 
-          // Collapse all except Week 1
-          weeklyContent.style.display = weekIndex === 0 ? "block" : "none";
-          if (weekIndex === 0) weekTitle.classList.add("active");
-
-          // Week click: accordion
-          weekTitle.addEventListener("click", () => {
-            mobileWeeks.forEach((otherWeek, otherIndex) => {
-              const otherContent = otherWeek.querySelector(".weekly_content");
-              if (otherIndex !== weekIndex)
-                otherContent.style.display = "none";
-            });
-
-            const isClosed = weeklyContent.style.display === "none";
-            weeklyContent.style.display = isClosed ? "block" : "none";
-
-            // Auto select Day 1
-            if (isClosed && dayItems[0]) dayItems[0].click();
-          });
-
-          // Day click
-          dayItems.forEach((dayItem, dayIndex) => {
-            dayItem.addEventListener("click", () => {
-              dayItems.forEach((d) => d.classList.remove("active"));
-              dayItem.classList.add("active");
-
-              const weekKeys = [
-                "first_week",
-                "second_week",
-                "third_week",
-                "fourth_week",
-              ];
-              const weekKey = weekKeys[weekIndex];
-              const dayData = prayerData?.[weekKey]?.[dayIndex];
-
-              if (!dayData) return;
-
-              prayerDayEl.textContent = `Day ${dayIndex + 1}`;
-              prayerTitleEl.textContent = dayData.title;
-              prayerVerseEl.textContent = dayData.verse;
-              prayerTextEl.textContent = dayData.prayer;
-            });
-          });
-
-          // Default selection: Week 1, Day 1
-          if (weekIndex === 0 && dayItems[0]) dayItems[0].click();
-        });
+        const mCard = mobileTarget.querySelector(".monthly_prayer_guide_card");
+        if (mCard) mobileTarget.insertBefore(mobileContainer, mCard);
       }
     }
 
-    document.addEventListener("DOMContentLoaded", loadData);
-  </script>
-  <!-- <script>
-      fetch("./data/prayer.json")
-        .then((response) => response.json())
-        .then((data) => {
-          function chunkArray(array, size) {
-            const chunks = [];
-            for (let i = 0; i < array.length; i += size) {
-              chunks.push(array.slice(i, i + size));
-            }
-            return chunks;
+    // Custom Restart Modal
+    function showRestartConfirm(parentContainer) {
+      if (document.querySelector(".journey-modal-overlay")) return;
+
+      const overlay = document.createElement("div");
+      overlay.className = "journey-modal-overlay";
+
+      const card = document.createElement("div");
+      card.className = "journey-modal-card";
+
+      const title = document.createElement("h3");
+      title.textContent = "Restart Prayer Journey?";
+
+      const desc = document.createElement("p");
+      desc.textContent = "This will reset your progress.";
+
+      const btnRow = document.createElement("div");
+      btnRow.className = "journey-modal-actions";
+
+      const cancelBtn = document.createElement("button");
+      cancelBtn.textContent = "Cancel";
+      cancelBtn.className = "journey-modal-btn cancel";
+      cancelBtn.onclick = () => overlay.remove();
+
+      const confirmBtn = document.createElement("button");
+      confirmBtn.textContent = "Restart";
+      confirmBtn.className = "journey-modal-btn confirm";
+      confirmBtn.onclick = () => {
+        localStorage.removeItem("prayerJourneyStartDate");
+        location.reload();
+      };
+
+      btnRow.appendChild(cancelBtn);
+      btnRow.appendChild(confirmBtn);
+
+      card.appendChild(title);
+      card.appendChild(desc);
+      card.appendChild(btnRow);
+      overlay.appendChild(card);
+
+      // Append to body to cover everything
+      document.body.appendChild(overlay);
+    }
+
+    // Date Picker Modal (Refactored)
+    function showDatePicker(parentContainer) {
+      if (document.querySelector(".journey-modal-overlay")) return;
+
+      const overlay = document.createElement("div");
+      overlay.className = "journey-modal-overlay"; // Reuse overlay for dimming
+      // For Date Picker, maybe we want it inline or centered? 
+      // User asked for "Modal" style in requirements. "Visually match site UI... Rounded container... Overlay page or soft backdrop".
+      // Let's use the same centered modal approach for consistency.
+
+      const card = document.createElement("div");
+      card.className = "journey-modal-card";
+
+      const title = document.createElement("label");
+      title.textContent = "Select Start Date";
+      title.style.display = "block";
+      title.style.fontWeight = "bold";
+      title.style.marginBottom = "10px";
+
+      const input = document.createElement("input");
+      input.type = "date";
+      input.className = "journey-date-input";
+
+      // Default to today
+      const today = new Date();
+      const yyyy = today.getFullYear();
+      const mm = String(today.getMonth() + 1).padStart(2, '0');
+      const dd = String(today.getDate()).padStart(2, '0');
+      input.value = `${yyyy}-${mm}-${dd}`;
+
+      const btnRow = document.createElement("div");
+      btnRow.className = "journey-modal-actions";
+
+      const cancelBtn = document.createElement("button");
+      cancelBtn.textContent = "Cancel";
+      cancelBtn.className = "journey-modal-btn cancel";
+      cancelBtn.onclick = () => overlay.remove();
+
+      const startBtn = document.createElement("button");
+      startBtn.textContent = "Start";
+      startBtn.className = "journey-modal-btn confirm";
+      startBtn.onclick = () => {
+        if (input.value) {
+          const parts = input.value.split('-');
+          const localDate = new Date(parts[0], parts[1] - 1, parts[2]);
+          localStorage.setItem("prayerJourneyStartDate", localDate.toISOString());
+          location.reload();
+        }
+      };
+
+      btnRow.appendChild(cancelBtn);
+      btnRow.appendChild(startBtn);
+
+      card.appendChild(title);
+      card.appendChild(input);
+      card.appendChild(btnRow);
+      overlay.appendChild(card);
+
+      document.body.appendChild(overlay);
+    }
+
+    // --- DESKTOP LOGIC ---
+    function initDesktopView(state) {
+      if (!desktopContent) return;
+
+      const weekBtns = desktopContent.querySelectorAll(".monthly_prayer_guide_week_item");
+      const dayItems = desktopContent.querySelectorAll(".monthly_prayer_guide_day_item");
+
+      const titleEl = document.getElementById("prayerTitle");
+      const verseEl = document.getElementById("prayerVerse");
+      const prayerDayEl = document.getElementById("prayerDay");
+      const prayerTextEl = document.getElementById("prayerText");
+
+      let activeWeekIdx = 0;
+      let activeDayIdx = 0;
+
+      // Navigation Logic: Determine Initial View
+      if (state.started) {
+        if (state.currentDay >= 1 && state.currentDay <= 28) {
+          activeWeekIdx = Math.floor((state.currentDay - 1) / 7);
+          activeDayIdx = (state.currentDay - 1) % 7;
+        } else if (state.currentDay > 28) {
+          activeWeekIdx = 3;
+          activeDayIdx = 6;
+        }
+      }
+
+      function renderState() {
+        // Update Week Tabs
+        weekBtns.forEach((btn, idx) => {
+          btn.classList.toggle("active", idx === activeWeekIdx);
+          btn.onclick = () => {
+            activeWeekIdx = idx;
+            activeDayIdx = 0;
+            renderState();
+          };
+        });
+
+        // Update Day List
+        dayItems.forEach((btn, dayRelIdx) => {
+          const absoluteDayNum = (activeWeekIdx * 7) + (dayRelIdx + 1);
+
+          // Text: "Day X" or "Day X | Date"
+          let layoutText = `Day ${dayRelIdx + 1}`;
+
+          // Use absolute day number for clarity in a journey context.
+          layoutText = `Day ${absoluteDayNum}`;
+
+          if (state.started && state.startDate) {
+            const dayDate = new Date(state.startDate);
+            dayDate.setDate(state.startDate.getDate() + (absoluteDayNum - 1));
+            layoutText += ` | ${getFormattedDate(dayDate)}`;
+
+            // Today Highlight
+            const today = new Date(); today.setHours(0, 0, 0, 0);
+            const dDate = new Date(dayDate); dDate.setHours(0, 0, 0, 0);
+
+            if (today.getTime() === dDate.getTime()) btn.classList.add("today");
+            else btn.classList.remove("today");
+          } else {
+            btn.classList.remove("today");
           }
+          btn.textContent = layoutText;
 
-          const grouped = chunkArray(data, 3);
+          // Locking
+          btn.classList.remove("locked", "active");
 
-          const bigWrapper = document.getElementById("daysContainer");
-          bigWrapper.className = "prayers_wrapper";
+          if (state.started && absoluteDayNum > state.currentDay) {
+            btn.classList.add("locked");
+            btn.onclick = null;
+          } else {
+            if (dayRelIdx === activeDayIdx) btn.classList.add("active");
+            btn.onclick = () => {
+              activeDayIdx = dayRelIdx;
+              renderState();
+            };
+          }
+        });
 
-          const todayDay = new Date().getDate();
+        // Update Content
+        const wKeys = ["first_week", "second_week", "third_week", "fourth_week"];
+        const key = wKeys[activeWeekIdx];
+        const data = prayerData[key] ? prayerData[key][activeDayIdx] : null;
 
-          grouped.forEach((group) => {
-            const wrapper = document.createElement("div");
-            wrapper.className = "separated_block";
+        if (data) {
+          const absDay = (activeWeekIdx * 7) + (activeDayIdx + 1);
+          prayerDayEl.textContent = `DAY ${absDay}`;
+          titleEl.textContent = data.title;
+          verseEl.innerHTML = `<span style="display:block; font-size: 0.8em; margin-bottom: 5px; text-transform:uppercase; letter-spacing:1px; opacity:0.7;">Scripture</span>${data.verse}`;
+          prayerTextEl.textContent = data.prayer;
+        }
+      }
 
-            const wrapperInner = document.createElement("div");
-            wrapperInner.className = "thirty_one_day_card_wrapper_main";
+      renderState();
+    }
 
-            group.forEach((item) => {
-              const block = document.createElement("div");
-              block.className = `thirty_one_day_card_wrapper separated_block_corner ${
-                todayDay === item.day ? "today" : ""
-              }`;
+    // --- MOBILE LOGIC ---
+    function initMobileView(state) {
+      if (mobileWeeks.length === 0) return;
 
-              block.innerHTML = `
-                <div class="thirty_one_day_card_block separated_block_corner">
-                    <span class="thirty_one_day_card_block_title top_left">DAY ${item.day}</span>
-                    <img class="thirty_one_day_card_block_picture" src="${item.image}" alt="Day ${item.day}" loading="lazy">
-                </div>
-                <h1 class="thirty_one_day_card_title flex-center">${item.title}</h1>
-                <div class="thirty_one_day_card_content flex-center">Verse: ${item.verse}<br/>${item.reference}</div>
-                <h1 class="thirty_one_day_card_title with_height flex-center">
-                  Prayer: ${item.prayer}
-                  <br><span style="font-size: 25px">Amen</span>
-                </h1>
-                <div class="thirty_one_day_card_content2"></div>
-                `;
+      mobileWeeks.forEach((weekBlock, wIdx) => {
+        const toggler = weekBlock.querySelector(".monthly_prayer_guide_week_item");
+        const contentDiv = weekBlock.querySelector(".weekly_content");
+        const mDays = weekBlock.querySelectorAll(".monthly_prayer_guide_day_item");
 
-              wrapperInner.appendChild(block);
-            });
+        const mDayNum = weekBlock.querySelector(".prayerDay");
+        const mTitle = weekBlock.querySelector(".prayerTitle");
+        const mVerse = weekBlock.querySelector(".prayerVerse");
+        const mPrayer = weekBlock.querySelector(".prayerText");
 
-            wrapper.appendChild(wrapperInner);
-            bigWrapper.appendChild(wrapper);
+        // Weeks Accordion
+        toggler.onclick = () => {
+          // Close others
+          mobileWeeks.forEach(wb => {
+            if (wb !== weekBlock) {
+              wb.querySelector(".weekly_content").style.display = "none";
+              wb.querySelector(".monthly_prayer_guide_week_item").classList.remove("active");
+            }
           });
-        })
-        .catch((err) => console.error("Error loading prayers:", err));
-    </script> -->
+          const isHidden = contentDiv.style.display === "none";
+          contentDiv.style.display = isHidden ? "block" : "none";
+          toggler.classList.toggle("active", isHidden);
+        };
+
+        // Days
+        mDays.forEach((btn, dIdx) => {
+          const absDay = (wIdx * 7) + (dIdx + 1);
+
+          let label = `Day ${absDay}`;
+          if (state.started && state.startDate) {
+            const dDate = new Date(state.startDate);
+            dDate.setDate(state.startDate.getDate() + (absDay - 1));
+            label += ` | ${getFormattedDate(dDate)}`;
+
+            const today = new Date(); today.setHours(0, 0, 0, 0);
+            const dDateOnly = new Date(dDate); dDateOnly.setHours(0, 0, 0, 0);
+            if (today.getTime() === dDateOnly.getTime()) btn.classList.add("today");
+            else btn.classList.remove("today");
+          } else {
+            btn.classList.remove("today");
+          }
+          btn.textContent = label;
+
+          if (state.started && absDay > state.currentDay) {
+            btn.classList.add("locked");
+            btn.onclick = null;
+          } else {
+            btn.classList.remove("locked");
+            btn.onclick = () => {
+              mDays.forEach(b => b.classList.remove("active"));
+              btn.classList.add("active");
+
+              const wKeys = ["first_week", "second_week", "third_week", "fourth_week"];
+              const data = prayerData[wKeys[wIdx]][dIdx];
+              if (data) {
+                mDayNum.textContent = `DAY ${absDay}`;
+                mTitle.textContent = data.title;
+                mVerse.textContent = data.verse;
+                mPrayer.textContent = data.prayer;
+              }
+            };
+          }
+        });
+      });
+
+      // Initial: Open active week
+      if (state.started && state.currentDay >= 1 && state.currentDay <= 28) {
+        const activeW = Math.floor((state.currentDay - 1) / 7);
+        mobileWeeks[activeW].querySelector(".monthly_prayer_guide_week_item").click();
+      } else {
+        // Default Week 1
+        mobileWeeks[0].querySelector(".monthly_prayer_guide_week_item").click();
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", init);
+  </script>
 </body>
 
 </html>

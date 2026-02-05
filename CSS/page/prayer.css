@@ -401,16 +401,24 @@
 
 .monthly_prayer_guide_day_item {
   background: #ffffff;
-  padding: 10px;
+  padding: 10px 15px;
   backdrop-filter: none;
   border: 1px solid #d1d5db;
   box-shadow: none;
   border-radius: 20px;
-  width: 72px;
+  width: auto;
+  min-width: 72px;
   color: var(--color-text-dark);
   transition: all 0.3s ease;
   font-weight: 500;
   opacity: 1;
+  white-space: nowrap;
+}
+
+.monthly_prayer_guide_day_item.today {
+  border: 2px solid var(--color-primary-blue);
+  color: var(--color-primary-blue);
+  font-weight: 700;
 }
 
 .monthly_prayer_guide_day_item:hover {
@@ -548,4 +556,181 @@
   .intro-section img.hero-img {
     max-height: 200px;
   }
+}
+
+
+
+/* Locked State for Day Items */
+.monthly_prayer_guide_day_item.locked {
+  opacity: 0.4;
+  pointer-events: none;
+  filter: grayscale(1);
+  cursor: not-allowed;
+}
+
+/* --- Journey Feature UI Polish --- */
+
+.journey-controls-wrapper {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 10;
+  font-family: var(--font-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.journey-btn {
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-family: var(--font-accent);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.journey-btn.primary {
+  background: linear-gradient(90deg, var(--color-gradient-blue-start), var(--color-gradient-blue-end));
+  color: var(--color-white);
+  border: 1px solid transparent;
+}
+
+.journey-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(13, 78, 242, 0.25);
+}
+
+.journey-btn.secondary {
+  background: transparent;
+  color: var(--color-text-dark-neutral);
+  border: 1px solid #d1d5db;
+  box-shadow: none;
+  font-size: 0.9rem;
+  padding: 8px 20px;
+}
+
+.journey-btn.secondary:hover {
+  background: #f3f4f6;
+  color: var(--color-primary-blue-hover);
+  border-color: var(--color-primary-blue-hover);
+}
+
+.journey-reassurance-text {
+  font-size: 0.85rem;
+  color: #6b7280;
+  /* Better contrast than previous light gray */
+  font-style: italic;
+  max-width: 300px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+/* --- Modals --- */
+.journey-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.journey-modal-card {
+  background: var(--color-white);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 320px;
+  font-family: var(--font-main);
+  text-align: center;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.journey-modal-card h3 {
+  margin: 0 0 10px 0;
+  color: var(--color-text-dark);
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+}
+
+.journey-modal-card p {
+  margin: 0 0 20px 0;
+  color: var(--color-text-dark-neutral);
+  font-size: 0.95rem;
+}
+
+.journey-date-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--color-text-dark);
+}
+
+.journey-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.journey-modal-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.journey-modal-btn.confirm {
+  background: var(--color-primary-blue);
+  color: white;
+}
+
+.journey-modal-btn.confirm:hover {
+  background: var(--color-primary-blue-hover);
+}
+
+.journey-modal-btn.cancel {
+  background: #f3f4f6;
+  color: var(--color-text-dark);
+}
+
+.journey-modal-btn.cancel:hover {
+  background: #e5e7eb;
 }
