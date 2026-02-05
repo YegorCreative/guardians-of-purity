@@ -6,13 +6,38 @@
 /* Intro section with background image */
 .intro-section {
   background: url("../../img/31days.jpg") center/cover no-repeat;
-  padding: 60px 20px; /* generous padding for text visibility */
+  padding: 60px 20px;
+  /* generous padding for text visibility */
   text-align: center;
-  min-height: 300px; /* ensure adequate height */
+  min-height: 300px;
+  /* ensure adequate height */
   flex-direction: column;
   position: relative;
-  border-radius: 25px; /* requested rounded corners */
-  overflow: hidden; /* clip overlay/background to radius */
+  border-radius: 25px;
+  /* requested rounded corners */
+  overflow: hidden;
+  /* clip overlay/background to radius */
+}
+
+/* Emotional Contract / Reassurance */
+.emotional-contract {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #4b5563;
+  /* soft grey */
+  margin-top: 5px;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+  font-style: italic;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  margin-top: 0;
+  line-height: 1.5;
 }
 
 /* Optional: Add overlay for better text readability */
@@ -23,18 +48,22 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 147, 123, 0.3); /* dark overlay for contrast */
+  background: rgba(0, 147, 123, 0.3);
+  /* dark overlay for contrast */
   z-index: 1;
-  border-radius: inherit; /* match parent radius */
+  border-radius: inherit;
+  /* match parent radius */
 }
+
 /* Left split panel background image */
 .split.left {
-  background: url("../../img/headshot-smiling-materials-engineer-web.jpeg")
-    center/cover no-repeat;
+  background: url("../../img/headshot-smiling-materials-engineer-web.jpeg") center/cover no-repeat;
   position: relative;
   min-height: 250px;
-  max-height: 450px; /* constrain left panel height */
-  overflow: hidden; /* clip background/content within height */
+  max-height: 450px;
+  /* constrain left panel height */
+  overflow: hidden;
+  /* clip background/content within height */
 }
 
 /* Style the verse text */
@@ -44,7 +73,6 @@
   color: var(--color-white);
   margin: 10px 0 5px;
   font-family: "Playfair Display", serif;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   font-weight: 600;
 }
 
@@ -54,7 +82,16 @@
   color: var(--color-white);
   margin: 10px 0 0;
   font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.thirty_one_day_card_wrapper {
+  width: 100%;
+  max-width: 800px;
+  /* Reclaimed space used for wider text */
+  background-color: var(--color-white);
+  padding: 20px;
+  position: relative;
+  font-size: 14px;
 }
 
 .sideBySide {
@@ -64,6 +101,7 @@
   max-width: 1200px;
   padding: 20px 20px;
 }
+
 .call-to-commitment {
   width: 50%;
   background: url("../../img/heroes17.webp") center/cover no-repeat;
@@ -82,34 +120,31 @@
 .split {
   flex: 1;
   flex-direction: column;
-  padding: 20px;
+  padding: 30px;
   border-radius: 20px;
   color: var(--color-white);
-  height: 350px;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
 }
 
 .split.left {
-  background: url("../../img/headshot-smiling-materials-engineer-web.jpeg")
-    center/cover no-repeat;
+  background: url("../../img/headshot-smiling-materials-engineer-web.jpeg") center/cover no-repeat;
   overflow: hidden;
 }
 
 .split.right {
-  background: linear-gradient(
-    135deg,
-    rgba(20, 184, 165, 0.913),
-    /* teal */ rgba(59, 131, 246, 0.709) /* blue */
-  );
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  background: var(--color-primary-blue);
+  /* Solid flat color */
+  border: none;
+  box-shadow: none;
   transition: all 0.3s ease;
 }
 
 .split.right:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5);
+  transform: none;
+  /* Removed hover movement */
+  box-shadow: none;
 }
 
 .split.right h2 {
@@ -130,7 +165,8 @@
   height: 500px;
   align-items: center;
   overflow: hidden;
-  background: none; /* remove global background image on this page */
+  background: none;
+  /* remove global background image on this page */
   background-color: transparent;
 }
 
@@ -142,14 +178,14 @@
 /* Page-specific radius increase to 28px for prayer page wrappers */
 .separated_block.separated_block_corner {
   border-radius: 25px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /* Specific sections with top margin */
 .gradient-section,
 .intro-section-wrapper {
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .purity_challenge_intro_block.separated_block_corner,
@@ -174,7 +210,8 @@
 /* Add bottom-right border radius for .diwt_top_left variant */
 .purity_challenge_intro_block_title.diwt_top_left {
   border-bottom-right-radius: 25px;
-  border-top-left-radius: 25px; /* requested top-left corner */
+  border-top-left-radius: 25px;
+  /* requested top-left corner */
 }
 
 .intro-paragraph {
@@ -186,17 +223,21 @@
   left: 50%;
   top: 55%;
   transform: translate(-50%, -50%);
-  color: var(--color-white); /* per request: white text */
-  text-shadow: 1px 1px 2px #8b8b8b; /* restore subtle shadow for readability */
+  color: var(--color-white);
+  /* per request: white text */
+  text-shadow: none;
+  /* restore subtle shadow for readability */
   font-weight: 500;
   text-align: center;
 }
 
 .gradient_cards_wrapper {
-  background: url("../../img/heroes22.webp") center/cover no-repeat;
+  background: #f3f4f6;
+  /* Solid light grey background instead of image */
   text-align: center;
-  color: var(--color-white);
-  text-shadow: 1px 1px 2px #8b8b8b;
+  color: var(--color-text-dark);
+  /* Dark text for readability on light bg */
+  text-shadow: none;
 }
 
 .gradient_cards_wrapper h1 {
@@ -216,16 +257,39 @@
 /* Start Monthly prayer guide */
 .monthly_prayer_guide_wrapper {
   position: relative;
-  background: url(../../img/abstract-background-web-optimized.jpeg) center /
-    cover no-repeat;
+  background: #e5e7eb;
+  /* Solid neutral grey */
   padding: 20px;
 }
 
-.monthly_prayer_guide_card {
+.mon.thirty_one_day_card_title.with_height {
+  min-height: auto;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.35rem;
+  /* Increased size */
+  font-family: 'Playfair Display', serif;
+  /* More editorial/prayerful */
+  font-weight: 500;
+  line-height: 1.6;
+  color: #1f2937;
+  /* Darker grey for readability */
+}
+
+.thirty_one_day_card_title.with_height span.label {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .monthly_prayer_guide_weeks {
@@ -236,117 +300,42 @@
 }
 
 .monthly_prayer_guide_week_item {
-  font-size: 20px;
-  font-weight: bold;
-  padding: 10px;
-  background: linear-gradient(
-    135deg,
-    rgba(59, 130, 246, 0.2),
-    rgba(96, 165, 250, 0.1)
-  );
-  backdrop-filter: blur(3px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 10px;
+  background: #ffffff;
+  backdrop-filter: none;
+  border: 1px solid #d1d5db;
+  box-shadow: none;
   border-radius: 20px;
-  color: var(--color-white);
+  color: var(--color-text-dark);
   cursor: pointer;
   transition: all 0.3s ease;
+  opacity: 1;
+  /* Reset opacity */
+}
+
+.monthly_prayer_guide_week_item:hover {
+  opacity: 1;
+  background: #f3f4f6;
+  border-color: #9ca3af;
 }
 
 .monthly_prayer_guide_content {
-  background: linear-gradient(
-    135deg,
-    rgba(59, 130, 246, 0.2),
-    rgba(96, 165, 250, 0.1)
-  );
+  background: #ffffff;
   padding: 10px;
-  backdrop-filter: blur(3px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  backdrop-filter: none;
+  border: 1px solid #e5e7eb;
+  box-shadow: none;
   border-radius: 20px;
   gap: 20px;
   width: 100%;
-  justify-content: center; /* center children on desktop */
+  justify-content: center;
+  /* center children on desktop */
 }
 
 /* Carousel container for desktop prayer guide */
-.monthly_prayer_guide_carousel {
-  position: relative;
-  border-radius: 25px;
-  overflow: hidden;
-  flex: 0 1 clamp(240px, 28%, 380px);
-  aspect-ratio: 4 / 5;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  background: #1e293b; /* fallback color while first image loads */
-}
-
-.monthly_prayer_guide_carousel img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-}
-
-.monthly_prayer_guide_carousel img.active {
-  opacity: 1;
-}
-
-/* Carousel controls */
-.carousel-control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.35);
-  color: var(--color-white);
-  border: none;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  z-index: 2;
-}
-
-.carousel-control:hover {
-  background: rgba(0, 0, 0, 0.55);
-}
-
-.carousel-control.prev {
-  left: 8px;
-}
-.carousel-control.next {
-  right: 8px;
-}
-
-/* Dots */
-.carousel-dots {
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 6px;
-  z-index: 2;
-}
-
-.carousel-dots button {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-}
-
-.carousel-dots button[aria-selected="true"] {
-  background: rgba(255, 255, 255, 0.95);
-}
+/* Carousel styles removed */
 
 .monthly_prayer_guide_days {
   display: flex;
@@ -355,32 +344,83 @@
   cursor: pointer;
 }
 
+/* Thirty One Day Card Content - Placed here correctly */
+.thirty_one_day_card_content {
+  background: #eff6ff;
+  /* Very light blue */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 25px;
+  padding: 15px 20px;
+  color: var(--color-text-dark);
+  /* Dark text */
+  font-weight: 500;
+  font-size: 16px;
+  background-image: none;
+  height: auto;
+  min-height: 120px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.6;
+}
+
+.thirty_one_day_card_content strong,
+.thirty_one_day_card_content span.label {
+  display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.thirty_one_day_card_content3 {
+  background: #eff6ff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 25px;
+  padding: 15px 15px;
+  color: var(--color-text-dark);
+  font-weight: bold;
+  font-size: 14px;
+  background-image: none;
+  height: 80px;
+  align-items: center;
+  text-align: left;
+}
+
 .monthly_prayer_guide_day_item {
-  background: linear-gradient(
-    135deg,
-    rgba(59, 130, 246, 0.2),
-    rgba(96, 165, 250, 0.1)
-  );
+  background: #ffffff;
   padding: 10px;
-  backdrop-filter: blur(3px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  backdrop-filter: none;
+  border: 1px solid #d1d5db;
+  box-shadow: none;
   border-radius: 20px;
   width: 72px;
-  color: var(--color-white);
+  color: var(--color-text-dark);
   transition: all 0.3s ease;
+  font-weight: 500;
+  opacity: 1;
+}
+
+.monthly_prayer_guide_day_item:hover {
+  opacity: 1;
+  background: #f3f4f6;
 }
 
 .monthly_prayer_guide_day_item.active,
 .monthly_prayer_guide_week_item.active {
   font-weight: bold;
-  border: 1px solid rgba(255, 255, 255, 1);
-  background: linear-gradient(
-    135deg,
-    rgba(59, 130, 246, 0.8),
-    rgba(96, 165, 250, 0.8)
-  );
-  backdrop-filter: blur(6px);
+  border: 1px solid var(--color-primary-blue);
+  background: var(--color-primary-blue);
+  color: var(--color-white) !important;
+  backdrop-filter: none;
+  opacity: 1;
 }
 
 .monthly_prayer_guide_wrapper_mobile {
@@ -389,8 +429,13 @@
 
 /* Prayer Amen text styling */
 .prayer-amen {
-  font-size: 25px;
+  font-size: 1.1rem;
   margin: 0;
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+  font-family: 'Playfair Display', serif;
+  opacity: 0.8;
 }
 
 /* End Monthly prayer guide */
