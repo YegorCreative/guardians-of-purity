@@ -309,22 +309,58 @@ document.addEventListener("DOMContentLoaded", () => {
         // 2. Chapter Data (1-42)
         // Hardcoded for reliability as requested
         const chapters = [
-          { n: 1, title: "God’s Design for Your Body", file: "chapter1.html" },
-          { n: 2, title: "The Battle for Purity", file: "chapter2.html" },
-          { n: 3, title: "Identity in Christ", file: "chapter3.html" },
-          // ... generating full 1-42 list dynamically or placeholders where unknown
+          { n: 1, title: "Recognizing the Enemy's Lies", file: "chapter1.html" },
+          { n: 2, title: "Building a Vision for the Future", file: "chapter2.html" },
+          { n: 3, title: "Shame vs. Conviction", file: "chapter3.html" },
+          { n: 4, title: "Resisting Sexual Pressure", file: "chapter4.html" },
+          { n: 5, title: "The Glory of Self-Control", file: "chapter5.html" },
+          { n: 6, title: "How Alcohol Fuels Pornography Addiction", file: "chapter6.html" },
+          { n: 7, title: "The Role of Discipline in Purity", file: "chapter7.html" },
+          { n: 8, title: "The Deception of Pornography", file: "chapter8.html" },
+          { n: 9, title: "Rewiring the Brain", file: "chapter9.html" },
+          { n: 10, title: "God's Design for Your Body", file: "chapter10.html" },
+          { n: 11, title: "The Long-Term Effects of Alcohol and Pornography on the Mind and Spirit", file: "chapter11.html" },
+          { n: 12, title: "Healing Emotional Wounds", file: "chapter12.html" },
+          { n: 13, title: "The Prayers of a Pure Heart", file: "chapter13.html" },
+          { n: 14, title: "Overcoming Guilt and Shame", file: "chapter14.html" },
+          { n: 15, title: "The Power of Accountability", file: "chapter15.html" },
+          { n: 16, title: "Renewing Your Mind", file: "chapter16.html" },
+          { n: 17, title: "Trusting God's Process", file: "chapter17.html" },
+          { n: 18, title: "Guarding Your Eyes", file: "chapter18.html" },
+          { n: 19, title: "Filling Your Mind with Truth", file: "chapter19.html" },
+          { n: 20, title: "Digital Boundaries", file: "chapter20.html" },
+          { n: 21, title: "Recognizing Numbness and Returning to Sensitivity", file: "chapter21.html" },
+          { n: 22, title: "Understanding Temptation", file: "chapter22.html" },
+          { n: 23, title: "The Power of Purity", file: "chapter23.html" },
+          { n: 24, title: "Replacing Lust with Love", file: "chapter24.html" },
+          { n: 25, title: "Building Guardrails Before You Need Them", file: "chapter25.html" },
+          { n: 26, title: "Reclaiming Passion for Holiness", file: "chapter26.html" },
+          { n: 27, title: "Knowing Your Identity in Christ", file: "chapter27.html" },
+          { n: 28, title: "Living by the Spirit", file: "chapter28.html" },
+          { n: 29, title: "Fasting for Spiritual Breakthrough", file: "chapter29.html" },
+          { n: 30, title: "Recovering After Falling", file: "chapter30.html" },
+          { n: 31, title: "The Role of Gratitude in Overcoming Temptation", file: "chapter31.html" },
+          { n: 32, title: "Healing the Inner Child", file: "chapter32.html" },
+          { n: 33, title: "Daily Surrender", file: "chapter33.html" },
+          { n: 34, title: "Freedom Through Surrender", file: "chapter34.html" },
+          { n: 35, title: "God's Patience with You", file: "chapter35.html" },
+          { n: 36, title: "Reigniting Your Love for God", file: "chapter36.html" },
+          { n: 37, title: "Guarding Your Heart in the Digital Age", file: "chapter37.html" },
+          { n: 38, title: "How Pornography Warps Your View of Others", file: "chapter38.html" },
+          { n: 39, title: "Morning and Evening Battles", file: "chapter39.html" },
+          { n: 40, title: "Honoring God with Your Body", file: "chapter40.html" },
+          { n: 41, title: "Dressing for Purity", file: "chapter41.html" },
+          { n: 42, title: "Running to God, Not From Him", file: "chapter42.html" }
         ];
-        // Populate specific titles where known, else generic
-        for (let i = 4; i <= 42; i++) {
-          if (!chapters.find(c => c.n === i)) {
-            chapters.push({ n: i, title: `Chapter ${i}`, file: `chapter${i}.html` });
-          }
-        }
-        // Update known titles from context if available (optional enhancement)
-        chapters[39] = { n: 40, title: "Building a Vision for the Future", file: "chapter40.html" };
-        chapters[37] = { n: 38, title: "Healing the Inner Child", file: "chapter38.html" };
-        // Add more known titles here as needed
-        chapters.sort((a, b) => a.n - b.n);
+
+        // chapters.sort is not strictly needed if the array is already sorted, but good for safety if we ever edit it.
+        // However, the previous code had logic to fill in missing chapters which we are removing.
+        // We will keep the sort just in case, or remove it if I want to be cleaner.
+        // The instruction says "Replace the menu list... Exactly 42 items".
+        // The replacement chunk covers lines 311-327.
+        // Line 327 is `chapters.sort((a, b) => a.n - b.n);` in the original file. 
+        // I'll leave the sort out since the array is already sorted and complete.
+
 
         // 3. Inject Modal HTML
         const modalHTML = `
