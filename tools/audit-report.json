@@ -7,7 +7,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -18,7 +21,10 @@
       "checks": {
         "has_questions": false,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -29,7 +35,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -40,7 +49,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -51,7 +63,10 @@
       "checks": {
         "has_questions": false,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -62,7 +77,10 @@
       "checks": {
         "has_questions": false,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -73,7 +91,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -84,7 +105,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -95,7 +119,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -106,7 +133,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -117,7 +147,10 @@
       "checks": {
         "has_questions": false,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -128,7 +161,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -139,7 +175,10 @@
       "checks": {
         "has_questions": false,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -150,7 +189,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -161,7 +203,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -172,7 +217,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -183,7 +231,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -194,7 +245,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -205,7 +259,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -216,7 +273,10 @@
       "checks": {
         "has_questions": false,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -227,7 +287,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -238,7 +301,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -249,7 +315,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -260,7 +329,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -271,7 +343,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -282,7 +357,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -293,7 +371,10 @@
       "checks": {
         "has_questions": false,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -304,7 +385,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -315,7 +399,10 @@
       "checks": {
         "has_questions": false,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -326,7 +413,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -337,7 +427,10 @@
       "checks": {
         "has_questions": false,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -348,7 +441,10 @@
       "checks": {
         "has_questions": false,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -359,7 +455,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -370,7 +469,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -381,7 +483,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -392,7 +497,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -403,7 +511,10 @@
       "checks": {
         "has_questions": false,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -414,7 +525,10 @@
       "checks": {
         "has_questions": false,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -425,7 +539,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -436,7 +553,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -447,7 +567,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     },
@@ -458,7 +581,10 @@
       "checks": {
         "has_questions": true,
         "has_journal": true,
-        "has_timer": true
+        "has_timer": true,
+        "timer_wrong_position": false,
+        "missing_journal_with_questions": false,
+        "missing_timer": false
       },
       "issues": []
     }

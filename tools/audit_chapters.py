@@ -16,7 +16,9 @@ H1_RE = re.compile(r"<h1[^>]*>(.*?)</h1>", re.IGNORECASE | re.DOTALL)
 TAG_STRIP_RE = re.compile(r"<[^>]+>")
 QUESTION_BLOCK_RE = re.compile(r"Questions to Reflect On", re.IGNORECASE)
 JOURNAL_INPUT_RE = re.compile(r"Your Journal", re.IGNORECASE)
-TIMER_RE = re.compile(r"15-Minute Break", re.IGNORECASE)
+TIMER_RE = re.compile(r"<section[^>]*class=[\"']reflection-timer-module[\"']", re.IGNORECASE)
+POINT_1_RE = re.compile(r"<h2[^>]*>\s*1\..*?<\/h2>", re.IGNORECASE)
+POINT_2_RE = re.compile(r"<h2[^>]*>\s*2\..*?<\/h2>", re.IGNORECASE)
 
 def clean(s: str) -> str:
     s = TAG_STRIP_RE.sub("", s)
@@ -37,7 +39,28 @@ def main() -> int:
 
         has_questions = bool(QUESTION_BLOCK_RE.search(html))
         has_journal = bool(JOURNAL_INPUT_RE.search(html))
-        has_timer = bool(TIMER_RE.search(html))
+        
+        timer_match = TIMER_RE.search(html)
+        has_timer = bool(timer_match)
+        
+        timer_wrong_position = False
+        if has_timer:
+            # Check position relative to Point 1 and Point 2
+            p1_match = POINT_1_RE.search(html)
+            p2_match = POINT_2_RE.search(html)
+            
+            # If valid structure (has points 1 and 2), check generic position
+            if p1_match and p2_match:
+                timer_pos = timer_match.start()
+                p1_pos = p1_match.start()
+                p2_pos = p2_match.start()
+                
+                # Ideally after Point 2. If it is between Point 1 and Point 2, that's "wrong position" (typically)
+                # Strict interpretation: User said "if the timer exists but is placed after Point 1, move it to after Point 2."
+                # This checks if it IS correctly after Point 2: timer_pos > p2_pos
+                # So if timer_pos < p2_pos (and > p1_pos), it's "wrong".
+                if timer_pos > p1_pos and timer_pos < p2_pos:
+                    timer_wrong_position = True
 
         issues = []
         if not title:
@@ -46,6 +69,8 @@ def main() -> int:
             issues.append("Has Questions to Reflect On but missing Your Journal input")
         if not has_timer:
             issues.append("Missing 15-Minute Break module")
+        if timer_wrong_position:
+            issues.append("Timer is in the wrong position (likely after Point 1, should be after Point 2)")
 
         report["chapters"].append({
             "number": n,
@@ -55,6 +80,9 @@ def main() -> int:
                 "has_questions": has_questions,
                 "has_journal": has_journal,
                 "has_timer": has_timer,
+                "timer_wrong_position": timer_wrong_position,
+                "missing_journal_with_questions": (has_questions and not has_journal),
+                "missing_timer": not has_timer
             },
             "issues": issues
         })
@@ -62,7 +90,6 @@ def main() -> int:
     out = ROOT / "tools" / "audit-report.json"
     out.write_text(json.dumps(report, indent=2), encoding="utf-8")
 
-    # Exit non-zero if issues exist (optional). For now, keep it informational:
     total_issues = sum(len(c["issues"]) for c in report["chapters"])
     print(f"Audit complete. Issues found: {total_issues}. Report: {out}")
     return 0
