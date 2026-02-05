@@ -27,4 +27,8 @@
   --font-heading: "Montserrat", sans-serif;
   --font-accent: "Raleway", sans-serif;
   --font-serif: "Playfair Display", serif;
+
+  /* Spacing */
+  --section-spacing-y: 40px;
+  --section-margin-y: 20px;
 }
