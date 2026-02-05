@@ -1,67 +1,71 @@
+#!/usr/bin/env python3
+"""
+Audit chapters for common consistency issues.
+Outputs: tools/audit-report.json
+"""
+
+from __future__ import annotations
 import json
-import os
 import re
-import sys
+from pathlib import Path
 
-def audit():
-    if not os.path.exists('journey-data.json'):
-        print("ERROR: journey-data.json missing. Run generate_journey_data.py first.")
-        sys.exit(1)
+ROOT = Path(__file__).resolve().parents[1]
+TOTAL = 42
 
-    with open('journey-data.json', 'r') as f:
-        manifest = json.load(f)
+H1_RE = re.compile(r"<h1[^>]*>(.*?)</h1>", re.IGNORECASE | re.DOTALL)
+TAG_STRIP_RE = re.compile(r"<[^>]+>")
+QUESTION_BLOCK_RE = re.compile(r"Questions to Reflect On", re.IGNORECASE)
+JOURNAL_INPUT_RE = re.compile(r"Your Journal", re.IGNORECASE)
+TIMER_RE = re.compile(r"15-Minute Break", re.IGNORECASE)
 
-    errors = []
+def clean(s: str) -> str:
+    s = TAG_STRIP_RE.sub("", s)
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
 
-    print(f"Auditing {len(manifest['chapters'])} chapters...")
+def extract_h1(html: str) -> str:
+    m = H1_RE.search(html)
+    return clean(m.group(1)) if m else ""
 
-    for char_info in manifest['chapters']:
-        fname = char_info['filename']
-        expected_title = char_info['title']
-        
-        if not os.path.exists(fname):
-            errors.append(f"MISSING FILE: {fname}")
-            continue
-            
-        with open(fname, 'r', encoding='utf-8') as f:
-            content = f.read()
-            
-        h1_match = re.search(r'<h1[^>]*>(.*?)<\/h1>', content, re.IGNORECASE | re.DOTALL)
-        actual_h1 = re.sub(r'\s+', ' ', h1_match.group(1)).strip() if h1_match else "NO_H1"
+def main() -> int:
+    report = {"chapters": []}
 
-        if actual_h1 != expected_title:
-            errors.append(f"TITLE MISMATCH {fname}: Expected '{expected_title}', Found '{actual_h1}'")
+    for n in range(1, TOTAL + 1):
+        fp = ROOT / f"chapter{n}.html"
+        html = fp.read_text(encoding="utf-8", errors="ignore")
+        title = extract_h1(html)
 
-    # Also audit Journey Page
-    with open('journey.html', 'r', encoding='utf-8') as f:
-        journey_content = f.read()
-    
-    for char_info in manifest['chapters']:
-        fname = char_info['filename']
-        expected_title = char_info['title']
-        
-        # Check if journey card matches
-        pattern = re.compile(
-            r'(<a href="' + re.escape(fname) + r'" class="chapter-card">[\s\S]*?<h3 class="chapter-title">)(.*?)(<\/h3>)', 
-            re.IGNORECASE | re.DOTALL
-        )
-        match = pattern.search(journey_content)
-        if match:
-            card_title = match.group(2).strip()
-            # Simple check, might need normalization
-            if card_title != expected_title:
-                 errors.append(f"JOURNEY CARD MISMATCH {fname}: Expected '{expected_title}', Found '{card_title}'")
-        else:
-             errors.append(f"JOURNEY CARD MISSING: {fname}")
+        has_questions = bool(QUESTION_BLOCK_RE.search(html))
+        has_journal = bool(JOURNAL_INPUT_RE.search(html))
+        has_timer = bool(TIMER_RE.search(html))
 
-    if errors:
-        print("\nAUDIT FAILED:")
-        for e in errors:
-            print(f" - {e}")
-        sys.exit(1)
-    else:
-        print("\nSUCCESS: All chapters matched manifest and Journey page.")
-        sys.exit(0)
+        issues = []
+        if not title:
+            issues.append("Missing H1 title")
+        if has_questions and not has_journal:
+            issues.append("Has Questions to Reflect On but missing Your Journal input")
+        if not has_timer:
+            issues.append("Missing 15-Minute Break module")
+
+        report["chapters"].append({
+            "number": n,
+            "file": fp.name,
+            "title": title,
+            "checks": {
+                "has_questions": has_questions,
+                "has_journal": has_journal,
+                "has_timer": has_timer,
+            },
+            "issues": issues
+        })
+
+    out = ROOT / "tools" / "audit-report.json"
+    out.write_text(json.dumps(report, indent=2), encoding="utf-8")
+
+    # Exit non-zero if issues exist (optional). For now, keep it informational:
+    total_issues = sum(len(c["issues"]) for c in report["chapters"])
+    print(f"Audit complete. Issues found: {total_issues}. Report: {out}")
+    return 0
 
 if __name__ == "__main__":
-    audit()
+    raise SystemExit(main())

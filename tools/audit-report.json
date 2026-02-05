@@ -1,0 +1,466 @@
+{
+  "chapters": [
+    {
+      "number": 1,
+      "file": "chapter1.html",
+      "title": "Recognizing the Enemy's Lies",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 2,
+      "file": "chapter2.html",
+      "title": "Building a Vision for the Future",
+      "checks": {
+        "has_questions": false,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 3,
+      "file": "chapter3.html",
+      "title": "Shame vs. Conviction",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 4,
+      "file": "chapter4.html",
+      "title": "Resisting Sexual Pressure",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 5,
+      "file": "chapter5.html",
+      "title": "The Glory of Self-Control",
+      "checks": {
+        "has_questions": false,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 6,
+      "file": "chapter6.html",
+      "title": "How Alcohol Fuels Pornography Addiction",
+      "checks": {
+        "has_questions": false,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 7,
+      "file": "chapter7.html",
+      "title": "The Role of Discipline in Purity",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 8,
+      "file": "chapter8.html",
+      "title": "The Deception of Pornography",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 9,
+      "file": "chapter9.html",
+      "title": "Rewiring the Brain",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 10,
+      "file": "chapter10.html",
+      "title": "God's Design for Your Body",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 11,
+      "file": "chapter11.html",
+      "title": "The Long-Term Effects of Alcohol and Pornography on the Mind and Spirit",
+      "checks": {
+        "has_questions": false,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 12,
+      "file": "chapter12.html",
+      "title": "Healing Emotional Wounds",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 13,
+      "file": "chapter13.html",
+      "title": "The Prayers of a Pure Heart",
+      "checks": {
+        "has_questions": false,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 14,
+      "file": "chapter14.html",
+      "title": "Overcoming Guilt and Shame",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 15,
+      "file": "chapter15.html",
+      "title": "The Power of Accountability",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 16,
+      "file": "chapter16.html",
+      "title": "Renewing Your Mind",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 17,
+      "file": "chapter17.html",
+      "title": "Trusting God's Process",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 18,
+      "file": "chapter18.html",
+      "title": "Guarding Your Eyes",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 19,
+      "file": "chapter19.html",
+      "title": "Filling Your Mind with Truth",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 20,
+      "file": "chapter20.html",
+      "title": "Digital Boundaries",
+      "checks": {
+        "has_questions": false,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 21,
+      "file": "chapter21.html",
+      "title": "Recognizing Numbness and Returning to Sensitivity",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 22,
+      "file": "chapter22.html",
+      "title": "Understanding Temptation",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 23,
+      "file": "chapter23.html",
+      "title": "The Power of Purity",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 24,
+      "file": "chapter24.html",
+      "title": "Replacing Lust with Love",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 25,
+      "file": "chapter25.html",
+      "title": "Building Guardrails Before You Need Them",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 26,
+      "file": "chapter26.html",
+      "title": "Reclaiming Passion for Holiness",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 27,
+      "file": "chapter27.html",
+      "title": "Knowing Your Identity in Christ",
+      "checks": {
+        "has_questions": false,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 28,
+      "file": "chapter28.html",
+      "title": "Living by the Spirit",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 29,
+      "file": "chapter29.html",
+      "title": "Fasting for Spiritual Breakthrough",
+      "checks": {
+        "has_questions": false,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 30,
+      "file": "chapter30.html",
+      "title": "Recovering After Falling",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 31,
+      "file": "chapter31.html",
+      "title": "The Role of Gratitude in Overcoming Temptation",
+      "checks": {
+        "has_questions": false,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 32,
+      "file": "chapter32.html",
+      "title": "Healing the Inner Child",
+      "checks": {
+        "has_questions": false,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 33,
+      "file": "chapter33.html",
+      "title": "Daily Surrender",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 34,
+      "file": "chapter34.html",
+      "title": "Freedom Through Surrender",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 35,
+      "file": "chapter35.html",
+      "title": "God's Patience with You",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 36,
+      "file": "chapter36.html",
+      "title": "Reigniting Your Love for God",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 37,
+      "file": "chapter37.html",
+      "title": "Guarding Your Heart in the Digital Age",
+      "checks": {
+        "has_questions": false,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 38,
+      "file": "chapter38.html",
+      "title": "How Pornography Warps Your View of Others",
+      "checks": {
+        "has_questions": false,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 39,
+      "file": "chapter39.html",
+      "title": "Morning and Evening Battles",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 40,
+      "file": "chapter40.html",
+      "title": "Honoring God with Your Body",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 41,
+      "file": "chapter41.html",
+      "title": "Dressing for Purity",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    },
+    {
+      "number": 42,
+      "file": "chapter42.html",
+      "title": "Running to God, Not From Him",
+      "checks": {
+        "has_questions": true,
+        "has_journal": true,
+        "has_timer": true
+      },
+      "issues": []
+    }
+  ]
+}
