@@ -1,0 +1,32 @@
+name: Chapter Integrity Check
+
+on:
+  push:
+    paths:
+      - 'chapter*.html'
+      - 'journey.html'
+      - 'journey-data.json'
+      - 'tools/**'
+  pull_request:
+    paths:
+      - 'chapter*.html'
+      - 'journey.html'
+      - 'journey-data.json'
+      - 'tools/**'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run Validation
+        run: |
+          python tools/validate_chapters.py
