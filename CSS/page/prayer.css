@@ -848,3 +848,15 @@
   max-width: 400px;
   /* Slightly wider for calendar */
 }
+
+/* Desktop Prayer Card Width Constraint (650px -> 450px + Center) */
+.monthly_prayer_guide_wrapper_desktop .thirty_one_day_card_wrapper {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+/* Mobile Prayer Card Fluid Width (Remove max-width) */
+.monthly_prayer_guide_wrapper_mobile .thirty_one_day_card_wrapper {
+  max-width: none;
+  width: 100%;
+}
