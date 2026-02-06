@@ -837,6 +837,12 @@
   cursor: default;
 }
 
+/* Increase visual size of Day Label by 1.2x (14px * 1.2 = 16.8px -> 17px) */
+#prayerDay,
+.thirty_one_day_card_block_title.prayerDay {
+  font-size: 17px !important;
+}
+
 /* Ensure modal card can accommodate calendar */
 .journey-modal-card.calendar-mode {
   max-width: 400px;
