@@ -1,0 +1,128 @@
+/* Auth UI Styles */
+.auth-wrapper {
+    margin: 0 auto 2rem auto;
+    max-width: 400px;
+    width: 100%;
+}
+
+.auth-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.auth-status {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #666;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.auth-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.auth-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.auth-btn.secondary {
+    background: #f0f0f0;
+    color: #333;
+    flex: 1;
+}
+
+.auth-btn.secondary:hover {
+    background: #e0e0e0;
+}
+
+.auth-btn.google-btn {
+    width: 100%;
+    background: #4285F4;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.auth-btn.google-btn:hover {
+    background: #357ae8;
+}
+
+.auth-btn.outline {
+    background: transparent;
+    border: 1px solid #ccc;
+    color: #555;
+}
+
+.auth-divider {
+    margin: 15px 0;
+    position: relative;
+    border-top: 1px solid #eee;
+}
+
+.auth-divider span {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 0 10px;
+    color: #999;
+    font-size: 0.8rem;
+}
+
+.auth-error {
+    color: #d32f2f;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    min-height: 1.2em;
+}
+
+/* Visualization of progress */
+.chapter-completed {
+    position: relative;
+    border: 2px solid #10b981 !important;
+    /* Green border */
+}
+
+.completion-mark {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #10b981;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.chapter-current {
+    border: 2px solid #3b82f6 !important;
+    /* Blue border */
+}

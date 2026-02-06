@@ -19,28 +19,7 @@
   /* clip overlay/background to radius */
 }
 
-/* Emotional Contract / Reassurance */
-.emotional-contract {
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #4b5563;
-  /* soft grey */
-  margin-top: 5px;
-  margin-bottom: 25px;
-  letter-spacing: 0.5px;
-  font-style: italic;
-}
-
-.subtitle {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--color-text-dark);
-  margin-top: 0;
-  line-height: 1.5;
-}
-
-/* Optional: Add overlay for better text readability */
+/* Introduction overlay */
 .intro-section::before {
   content: "";
   position: absolute;
@@ -55,163 +34,64 @@
   /* match parent radius */
 }
 
-/* Left split panel background image */
-.split.left {
-  background: url("../../img/headshot-smiling-materials-engineer-web.jpeg") center/cover no-repeat;
-  position: relative;
-  min-height: 250px;
-  max-height: 450px;
-  /* constrain left panel height */
-  overflow: hidden;
-  /* clip background/content within height */
-}
-
-/* Style the verse text */
-.intro-verse {
-  font-size: 1.8rem;
-  font-style: italic;
-  color: var(--color-white);
-  margin: 10px 0 5px;
-  font-family: "Playfair Display", serif;
-  font-weight: 600;
-}
-
-/* Style the reference text */
-.intro-reference {
-  font-size: 1.2rem;
-  color: var(--color-white);
-  margin: 10px 0 0;
-  font-weight: 700;
-}
-
-.thirty_one_day_card_wrapper {
-  width: 100%;
-  max-width: 800px;
-  /* Reclaimed space used for wider text */
-  background-color: var(--color-white);
+/* --- Section 1: "Why 4 weeks of Prayer?" Restoration --- */
+.purity_challenge_intro_block {
   padding: 20px;
   position: relative;
-  font-size: 14px;
-}
-
-.sideBySide {
+  background: url("../img/heroes9.webp") center/cover no-repeat;
   display: flex;
-  justify-content: center;
-  gap: 30px;
-  max-width: 1200px;
-  padding: 20px 20px;
-}
-
-.call-to-commitment {
-  width: 50%;
-  background: url("../../img/heroes17.webp") center/cover no-repeat;
-  border-radius: 25px;
-}
-
-/* Prayer split panel section */
-.prayer {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-.split {
-  flex: 1;
+  min-height: 400px;
+  /* Ensure height */
   flex-direction: column;
-  padding: 30px;
-  border-radius: 20px;
-  color: var(--color-white);
-  min-height: 300px;
-  display: flex;
-  justify-content: center;
-}
-
-.split.left {
-  background: url("../../img/headshot-smiling-materials-engineer-web.jpeg") center/cover no-repeat;
-  overflow: hidden;
-}
-
-.split.right {
-  background: var(--color-primary-blue);
-  /* Solid flat color */
-  border: none;
-  box-shadow: none;
-  transition: all 0.3s ease;
-}
-
-.split.right:hover {
-  transform: none;
-  /* Removed hover movement */
-  box-shadow: none;
-}
-
-.split.right h2 {
-  margin-top: 0;
-  margin-bottom: 15px;
-}
-
-.split.right p {
-  margin: 0;
-  text-align: center;
-}
-
-.purity_challenge_intro_block_text {
-  height: 600px;
-}
-
-.purity_challenge_intro_block {
-  height: 500px;
-  align-items: center;
-  overflow: hidden;
-  background: none;
-  /* remove global background image on this page */
-  background-color: transparent;
-}
-
-/* Remove padding for this block instance on the prayer page */
-.purity_challenge_intro_block.separated_block_corner {
-  padding: 0;
-}
-
-/* Page-specific radius increase to 28px for prayer page wrappers */
-.separated_block.separated_block_corner {
   border-radius: 25px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  /* Restore radius explicitly */
+  overflow: hidden;
+  /* For overlay clipping */
+  margin: 40px auto;
+  /* Ensure separation - strict standalone */
+  max-width: 1440px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Specific sections with top margin */
-.gradient-section,
-.intro-section-wrapper {
-  margin-top: 10px;
+/* Overlay for Section 1 (Strict Requirement) */
+.purity_challenge_intro_block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  /* Dark overlay */
+  z-index: 1;
+  border-radius: inherit;
 }
 
-.purity_challenge_intro_block.separated_block_corner,
-.intro-section.separated_block_corner,
-.thirty_one_day_card_wrapper.separated_block_corner,
-.thirty_one_day_card_block.separated_block_corner {
-  border-radius: 25px;
-}
-
-/* Title badge custom corners */
-/* keep single declaration to avoid duplication */
-
-.purity_challenge_intro_block_picture {
-  height: 100%;
+/* Ensure content is above overlay */
+.purity_challenge_intro_block>* {
+  position: relative;
+  z-index: 2;
 }
 
 .purity_challenge_intro_block_title {
+  position: absolute;
+  top: 0;
   left: 0;
-  padding-left: 40px;
-}
-
-/* Add bottom-right border radius for .diwt_top_left variant */
-.purity_challenge_intro_block_title.diwt_top_left {
+  background-color: var(--color-white);
+  padding: 15px 30px 15px 40px;
+  font-size: 50px;
+  font-weight: bold;
+  z-index: 5;
   border-bottom-right-radius: 25px;
   border-top-left-radius: 25px;
-  /* requested top-left corner */
+}
+
+/* Explicit class handling to ensure no conflict */
+.purity_challenge_intro_block_title.diwt_top_left {
+  top: 0;
+  left: 0;
+  border-bottom-right-radius: 25px;
+  border-top-left-radius: 25px;
 }
 
 .intro-paragraph {
@@ -224,11 +104,76 @@
   top: 55%;
   transform: translate(-50%, -50%);
   color: var(--color-white);
-  /* per request: white text */
-  text-shadow: none;
-  /* restore subtle shadow for readability */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   font-weight: 500;
   text-align: center;
+  z-index: 5;
+  width: 90%;
+}
+
+.purity_challenge_intro_block_picture {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 50%;
+  /* Restore original behavior if applicable */
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+  /* Fallback if overlay isn't enough, but let's stick to simple Z-index stacking if needed */
+  display: block;
+  /* Ensure visibility */
+  z-index: 0;
+  /* Behind text */
+}
+
+/* --- Section 2: "This is not about perfection" Restoration --- */
+.prayer {
+  display: flex !important;
+  flex-direction: row !important;
+  width: 100%;
+  min-height: 400px;
+  margin: 40px auto;
+  border-radius: 25px;
+  overflow: hidden;
+  max-width: 1440px;
+}
+
+/* Split Layout */
+.prayer .split {
+  flex: 1;
+  width: 50%;
+  min-height: 400px;
+}
+
+.prayer .split.left {
+  background: url("../../img/heroes5.webp") center/cover no-repeat;
+  background-color: #f3f4f6;
+  order: 1;
+}
+
+.prayer .split.right {
+  background-color: var(--color-white);
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  order: 2;
+}
+
+.prayer .split.right h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--color-text-dark);
+}
+
+.prayer .split.right p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--color-text-dark-neutral);
 }
 
 .gradient_cards_wrapper {
@@ -258,27 +203,47 @@
 .monthly_prayer_guide_wrapper {
   position: relative;
   background: #e5e7eb;
-  /* Solid neutral grey */
   padding: 20px;
 }
 
-.mon.thirty_one_day_card_title.with_height {
-  min-height: auto;
-  display: flex;
-  flex-direction: column;
+.monthly_prayer_guide_content {
+  background: #ffffff;
+  padding: 10px;
+  backdrop-filter: none;
+  border: 1px solid #e5e7eb;
+  box-shadow: none;
+  border-radius: 20px;
+  gap: 10px;
+  /* Reduced gap from 20px */
+  width: 100%;
   justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-  font-size: 1.35rem;
-  /* Increased size */
-  font-family: 'Playfair Display', serif;
-  /* More editorial/prayerful */
-  font-weight: 500;
-  line-height: 1.6;
-  color: #1f2937;
-  /* Darker grey for readability */
+}
+
+/* Prayer Card UI Fixes */
+.thirty_one_day_card_wrapper {
+  max-width: 450px;
+  margin: 0 auto;
+  border-radius: 25px;
+  overflow: hidden;
+  background: white;
+  padding-bottom: 10px;
+}
+
+.thirty_one_day_card_block_title {
+  font-size: 1.25rem;
+  /* ~1.2x scale from base */
+  padding: 8px 16px;
+  background: white;
+  border-bottom-right-radius: 20px;
+  font-weight: 700;
+}
+
+/* Title Font Scale */
+.thirty_one_day_card_title.flex-center {
+  font-size: 2rem !important;
+  /* ~1.3x scale from usual 1.5rem/24px */
+  margin: 15px 0;
+  line-height: 1.3;
 }
 
 .thirty_one_day_card_title.with_height span.label {
@@ -442,8 +407,9 @@
 
 /* Prayer Amen text styling */
 .prayer-amen {
-  font-size: 1.1rem;
-  margin: 10px 0 0 0;
+  font-size: 1.3rem;
+  margin: 20px 0 10px 0;
+  /* Moved down ~10px extra */
   text-align: center;
   color: #6b7280;
   font-style: italic;
@@ -466,6 +432,8 @@
     font-size: 30px;
     width: fit-content;
     padding: 10px 20px 10px 40px;
+    left: 0;
+    top: 0;
   }
 
   .intro-paragraph {
@@ -540,8 +508,10 @@
     padding: 0 25px;
   }
 
+  /* Mobile Stacking for Section 2 */
   .prayer {
     flex-direction: column;
+    min-height: auto;
   }
 
   .split {
@@ -551,6 +521,14 @@
 
   .split.left {
     min-height: 200px;
+    width: 100%;
+  }
+
+  .split.right {
+    width: 100%;
+    padding: 30px 20px;
+    order: 2;
+    /* Ensure Text below image */
   }
 
   .intro-section img.hero-img {
