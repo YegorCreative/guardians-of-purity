@@ -142,16 +142,28 @@ async function loadReflection(uid, chapterNum) {
 async function saveReflection(uid, chapterNum, fieldId, text) {
     try {
         const refDoc = doc(db, "users", uid, "reflections", `chapter${chapterNum}`);
-        // We store all fields in one doc for the chapter for simplicity
-        // Need to merge
+
+        // 1. Get current state to merge correctly
+        const snap = await getDoc(refDoc);
+        let currentEntries = {};
+        if (snap.exists() && snap.data().entries) {
+            currentEntries = snap.data().entries;
+        }
+
+        // 2. Update local state
+        currentEntries[fieldId] = text;
+
+        // 3. Create concatenated string for strict 'text' field compliance
+        const combinedText = Object.values(currentEntries).join('\n\n');
+
+        // 4. Save
         await setDoc(refDoc, {
             chapterNumber: parseInt(chapterNum),
-            entries: { [fieldId]: text },
+            text: combinedText, // Strict schema compliance
+            entries: currentEntries, // Functional granularity
             updatedAt: serverTimestamp()
         }, { merge: true });
 
-        // Also mark as 'started' / progress?
-        // Let's assume writing a reflection implies engagement.
     } catch (e) {
         console.error("Save reflection error:", e);
     }
