@@ -134,20 +134,28 @@
   width: 100%;
   min-height: 400px;
   margin: 40px auto;
-  border-radius: 25px;
-  overflow: hidden;
+  /* border-radius: 25px; REMOVED to allow split children to have their own borders */
+  /* overflow: hidden; REMOVED */
   max-width: 1440px;
+  background: transparent;
+  /* Ensure gap is transparent */
+  gap: 30px;
+  /* Separation between cards */
 }
 
 /* Split Layout */
 .prayer .split {
   flex: 1;
-  width: 50%;
+  /* width: 50%; REMOVED to allow gap to determine width */
   min-height: 400px;
+  border-radius: 25px;
+  /* Individual corners */
+  overflow: hidden;
+  /* Clip content */
 }
 
 .prayer .split.left {
-  background: url("../../img/heroes5.webp") center/cover no-repeat;
+  background: url("../../img/headshot-smiling-materials-engineer-web.jpeg") center/cover no-repeat;
   background-color: #f3f4f6;
   order: 1;
 }
@@ -207,22 +215,34 @@
 }
 
 .monthly_prayer_guide_content {
+  display: flex;
+  /* Ensure flexbox is active */
   background: #ffffff;
   padding: 10px;
   backdrop-filter: none;
   border: 1px solid #e5e7eb;
   box-shadow: none;
   border-radius: 20px;
-  gap: 10px;
-  /* Reduced gap from 20px */
+  gap: 5px;
+  /* Reduced gap from 10px to 5px */
   width: 100%;
   justify-content: center;
+  /* Center the group: Days + Card */
+  align-items: flex-start;
+  /* Align top */
 }
 
 /* Prayer Card UI Fixes */
 .thirty_one_day_card_wrapper {
-  max-width: 450px;
-  margin: 0 auto;
+  /* width: 100%; REMOVED to prevent forcing full width */
+  width: auto !important;
+  flex: 0 1 auto !important;
+  /* Allow shrinking but do not grow to fill space */
+  max-width: 450px !important;
+  /* constrained */
+  /* margin removed via wildcard above, but explicit reset is good */
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   border-radius: 25px;
   overflow: hidden;
   background: white;
@@ -305,27 +325,24 @@
   border-color: #9ca3af;
 }
 
-.monthly_prayer_guide_content {
-  background: #ffffff;
-  padding: 10px;
-  backdrop-filter: none;
-  border: 1px solid #e5e7eb;
-  box-shadow: none;
-  border-radius: 20px;
-  gap: 20px;
-  width: 100%;
-  justify-content: center;
-  /* center children on desktop */
-}
+/* Duplicate .monthly_prayer_guide_content removed */
 
 /* Carousel container for desktop prayer guide */
 /* Carousel styles removed */
 
+/* Vertical Day Buttons Container */
+/* Vertical Day Buttons Container */
 .monthly_prayer_guide_days {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   gap: 20px;
   cursor: pointer;
+  margin-right: 0 !important;
+  /* Ensure no margin pushing away card */
+  width: auto !important;
+  /* Do not stretch */
+  flex: 0 0 auto !important;
+  /* Do not grow */
 }
 
 /* Thirty One Day Card Content - Placed here correctly */
