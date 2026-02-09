@@ -130,8 +130,8 @@
 
 
     <div class="prayer separated_block">
-      <div class="split left flex-center" aria-hidden="true"></div>
-      <div class="split right flex-center">
+      <!-- Standalone Split Section (Swapped Layout) -->
+      <div class="split right flex-center" style="order: 1;">
         <h2><strong>This is not about perfection, but pursuit.</strong></h2>
         <p>
           You don't need to have it all together. You just need to start. Show
@@ -139,6 +139,7 @@
           and His strength will be made perfect in your weakness.
         </p>
       </div>
+      <div class="split left flex-center" aria-hidden="true" style="order: 2;"></div>
     </div>
 
 
@@ -198,6 +199,8 @@
               <p class="prayer-amen">Amen</p>
               <!-- Carousel removed to reclaim space for text -->
             </div>
+
+
           </div>
         </div>
       </div>
@@ -249,6 +252,8 @@
                 <h1 class="thirty_one_day_card_title with_height prayerText flex-center"></h1>
                 <p style="font-size: 25px; margin: 0">Amen</p>
               </div>
+
+
             </div>
           </div>
 
@@ -381,6 +386,20 @@
       </div>
     </div>
   </main>
+
+  <!-- Standalone: Prayer Requests & Praise Reports Section -->
+  <div class="separated_block">
+    <div class="praise-report-card standalone separated_block_corner">
+      <h3>Prayer Requests & Praise Reports</h3>
+      <p>If you have prayer requests, please submit them here. If you have wins or praise reports, submit them here.
+        Let’s celebrate what God is doing in your life.</p>
+      <form class="praise-form" onsubmit="sendEmail(event, 'standalone')">
+        <input type="text" name="user_name" placeholder="Your Name (Optional)" class="praise-input" />
+        <textarea name="message" required placeholder="Your Message..." class="praise-textarea"></textarea>
+        <button type="submit" class="journey-btn primary praise-submit-btn">Submit</button>
+      </form>
+    </div>
+  </div>
 
   <!-- Footer -->
   <div class="separated_block last">
@@ -904,6 +923,55 @@
     }
 
     document.addEventListener("DOMContentLoaded", init);
+  </script>
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      // TODO: Replace with your actual Public Key from EmailJS dashboard
+      emailjs.init("YOUR_PUBLIC_KEY");
+    })();
+
+    function sendEmail(e, source) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('button');
+      const originalText = btn.innerText;
+
+      // Basic validation
+      const message = form.message.value.trim();
+      if (!message) return;
+
+      btn.innerText = "Sending...";
+      btn.disabled = true;
+
+      // Prepare template params
+      const templateParams = {
+        user_name: form.user_name.value || "Anonymous",
+        message: message,
+        source: source // 'desktop' or 'mobile'
+      };
+
+      // TODO: Replace with your Service ID and Template ID
+      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+        .then(function () {
+          btn.innerText = "Sent!";
+          form.reset();
+          setTimeout(() => {
+            btn.innerText = originalText;
+            btn.disabled = false;
+          }, 3000);
+          alert("Thank you! Your message has been sent.");
+        }, function (error) {
+          console.error('FAILED...', error);
+          btn.innerText = "Failed";
+          setTimeout(() => {
+            btn.innerText = originalText;
+            btn.disabled = false;
+          }, 3000);
+          alert("Failed to send message. Please try again later.");
+        });
+    }
   </script>
 </body>
 

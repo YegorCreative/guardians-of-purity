@@ -1038,3 +1038,105 @@
   background: linear-gradient(135deg, rgba(124, 178, 190, 1), rgba(160, 190, 220, 1));
   color: #fff;
 }
+
+/* --- Praise Report Card Styles --- */
+
+.praise-report-card {
+  background: white;
+  border-radius: 25px;
+  padding: 40px;
+  /* Increased padding for standalone feel */
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: fit-content;
+  text-align: center;
+}
+
+/* Standalone Styling (Overrides previous desktop/mobile splits if present) */
+.praise-report-card.standalone {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  /* Center the card */
+}
+
+/* Clean up old modifiers if they exist, or just leave them harmlessly */
+.praise-report-card.desktop-only,
+.praise-report-card.mobile-only {
+  display: none;
+  /* Force hide old ones just in case */
+}
+
+.praise-report-card h3 {
+  font-family: var(--font-heading);
+  color: var(--color-text-dark);
+  font-size: 1.8rem;
+  /* Larger title */
+  margin: 0;
+  line-height: 1.3;
+}
+
+.praise-report-card p {
+  font-size: 1.1rem;
+  /* Larger text */
+  color: var(--color-text-dark-neutral);
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 480px;
+}
+
+.praise-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.praise-input,
+.praise-textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 15px;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  color: var(--color-text-dark);
+  background: #f9fafb;
+  transition: border-color 0.2s;
+}
+
+.praise-input:focus,
+.praise-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-blue);
+  background: white;
+}
+
+.praise-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.praise-submit-btn {
+  width: 100%;
+  margin-top: 10px;
+  max-width: 200px;
+  align-self: center;
+  /* Center button */
+}
+
+/* Hide/Show logic based on viewport */
+@media (max-width: 1024px) {
+  .praise-report-card.desktop-only {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) {
+  .praise-report-card.mobile-only {
+    display: none;
+  }
+}
