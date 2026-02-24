@@ -410,9 +410,6 @@
   opacity: 1;
 }
 
-.monthly_prayer_guide_wrapper_mobile {
-  display: none;
-}
 
 /* Prayer Amen text styling */
 .prayer-amen {
@@ -490,15 +487,7 @@
     padding: 10px;
   }
 
-  /* Start Monthly prayer guide */
 
-  .monthly_prayer_guide_wrapper_desktop {
-    display: none;
-  }
-
-  .monthly_prayer_guide_wrapper_mobile {
-    display: block;
-  }
 
   .monthly_prayer_guide_days {
     flex-direction: row;
@@ -870,11 +859,7 @@
   max-width: 450px;
 }
 
-/* Mobile Prayer Card Fluid Width (Remove max-width) */
-.monthly_prayer_guide_wrapper_mobile .thirty_one_day_card_wrapper {
-  max-width: none;
-  width: 100%;
-}
+
 
 /* Increase Prayer Title Size by 1.3x (14px * 1.3 = 18.2px) */
 #prayerTitle {
@@ -1139,4 +1124,49 @@
   .praise-report-card.mobile-only {
     display: none;
   }
+}
+
+/* Prayer Unified Layout v2 */
+.monthly_prayer_guide_content.unified {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .monthly_prayer_guide_content.unified {
+    flex-direction: column;
+  }
+
+  .monthly_prayer_guide_days {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Intro Verse Readability Fix v1 */
+
+.intro-section .intro-verse {
+  color: var(--color-white);
+  font-size: 1.2em;
+  /* ~1.2x increase */
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+
+.intro-section .intro-reference {
+  color: var(--color-white);
+  font-size: 1.1em;
+  /* slightly smaller than verse */
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
+}
+
+/* Optional stronger overlay for contrast */
+.intro-section::before {
+  background: rgba(0, 0, 0, 0.45);
+  /* darker overlay for readability */
 }
