@@ -391,12 +391,16 @@
   <div class="separated_block">
     <div class="praise-report-card standalone separated_block_corner">
       <h3>Prayer Requests & Praise Reports</h3>
-      <p>If you have prayer requests, please submit them here. If you have wins or praise reports, submit them here.
-        Let’s celebrate what God is doing in your life.</p>
-      <form class="praise-form" onsubmit="sendEmail(event, 'standalone')">
-        <input type="text" name="user_name" placeholder="Your Name (Optional)" class="praise-input" />
-        <textarea name="message" required placeholder="Your Message..." class="praise-textarea"></textarea>
-        <button type="submit" class="journey-btn primary praise-submit-btn">Submit</button>
+      <p>You don’t have to walk this journey alone.<br>
+        If you’re carrying a burden, facing a struggle, or need prayer, share your request here.<br>
+        If God has answered a prayer, given you a breakthrough, or done something worth celebrating, we want to rejoice
+        with you.<br><br>
+        Every request matters. Every testimony gives glory to God.<br>
+        Let’s stand together in faith and celebrate what God is doing in your life.</p>
+      <form class="praise-form" onsubmit="sendEmail(event)">
+        <input type="text" id="name" placeholder="Your Name (Optional)" class="praise-input" required />
+        <textarea id="message" placeholder="Your Message..." class="praise-textarea" required></textarea>
+        <button type="submit" class="journey-btn primary praise-submit-btn">Submit Request</button>
       </form>
     </div>
   </div>
@@ -925,51 +929,25 @@
     document.addEventListener("DOMContentLoaded", init);
   </script>
   <!-- EmailJS SDK -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script type="text/javascript">
     (function () {
-      // TODO: Replace with your actual Public Key from EmailJS dashboard
-      emailjs.init("YOUR_PUBLIC_KEY");
+      emailjs.init("PASTE_PUBLIC_KEY_HERE");
     })();
 
-    function sendEmail(e, source) {
-      e.preventDefault();
-      const form = e.target;
-      const btn = form.querySelector('button');
-      const originalText = btn.innerText;
+    function sendEmail(event) {
+      event.preventDefault();
 
-      // Basic validation
-      const message = form.message.value.trim();
-      if (!message) return;
-
-      btn.innerText = "Sending...";
-      btn.disabled = true;
-
-      // Prepare template params
-      const templateParams = {
-        user_name: form.user_name.value || "Anonymous",
-        message: message,
-        source: source // 'desktop' or 'mobile'
-      };
-
-      // TODO: Replace with your Service ID and Template ID
-      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-        .then(function () {
-          btn.innerText = "Sent!";
-          form.reset();
-          setTimeout(() => {
-            btn.innerText = originalText;
-            btn.disabled = false;
-          }, 3000);
-          alert("Thank you! Your message has been sent.");
-        }, function (error) {
-          console.error('FAILED...', error);
-          btn.innerText = "Failed";
-          setTimeout(() => {
-            btn.innerText = originalText;
-            btn.disabled = false;
-          }, 3000);
-          alert("Failed to send message. Please try again later.");
+      emailjs.send("PASTE_SERVICE_ID_HERE", "PASTE_TEMPLATE_ID_HERE", {
+        from_name: document.getElementById("name").value,
+        message: document.getElementById("message").value
+      })
+        .then(() => {
+          alert("Message sent.");
+        })
+        .catch(err => {
+          console.error(err);
+          alert("EmailJS failed. Check IDs and template variables.");
         });
     }
   </script>
