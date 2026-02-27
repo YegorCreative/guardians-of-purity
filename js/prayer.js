@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", init);
+// --- PRAYER JOURNEY LOGIC --- //
+// Unified logic for 28-day prayer journey
 
 let prayerData = [];
 
@@ -58,20 +59,19 @@ function renderJourneyControls(state) {
     container.id = cleanupId;
     container.className = "journey-controls-wrapper";
 
-    // 1. Main Action Button
     const btn = document.createElement("button");
-    btn.className = "journey-btn"; // Base class
+    btn.className = "journey-btn";
 
     if (state.started) {
         btn.textContent = "Restart Prayer Journey";
-        btn.classList.add("secondary"); // Ghost/Secondary style
+        btn.classList.add("secondary");
         btn.onclick = (e) => {
             e.preventDefault();
             showRestartConfirm(container);
         };
     } else {
         btn.textContent = "Start Prayer Journey";
-        btn.classList.add("primary"); // Gradient pill style
+        btn.classList.add("primary");
         btn.onclick = (e) => {
             e.preventDefault();
             showDatePicker(container);
@@ -80,17 +80,16 @@ function renderJourneyControls(state) {
 
     container.appendChild(btn);
 
-    // 2. Reassurance Text
     const subText = document.createElement("div");
     subText.textContent = "You are not praying alone — our team is praying with you.";
     subText.className = "journey-reassurance-text";
     container.appendChild(subText);
 
-    // Inject Unified
-    const target = document.querySelector(".monthly_prayer_guide_wrapper .monthly_prayer_guide_wrapper");
-    if (target) {
-        const card = target.querySelector(".monthly_prayer_guide_card");
-        if (card) target.insertBefore(container, card);
+    // Inject into unified wrapper
+    const targetWrapper = document.querySelector(".monthly_prayer_guide_wrapper > .monthly_prayer_guide_wrapper");
+    if (targetWrapper) {
+        const card = targetWrapper.querySelector(".monthly_prayer_guide_card");
+        if (card) targetWrapper.insertBefore(container, card);
     }
 }
 
@@ -134,7 +133,6 @@ function showRestartConfirm(parentContainer) {
     card.appendChild(btnRow);
     overlay.appendChild(card);
 
-    // Append to body to cover everything
     document.body.appendChild(overlay);
 }
 
@@ -151,21 +149,18 @@ function showDatePicker(parentContainer) {
     const title = document.createElement("h3");
     title.textContent = "Select Start Date";
 
-    // State
     const today = new Date();
     let currentViewDate = new Date(today.getFullYear(), today.getMonth(), 1);
     let selectedDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
 
-    // Calendar Container
     const calendarWrapper = document.createElement("div");
     calendarWrapper.className = "journey-calendar-wrapper";
 
-    // Header (Month + Nav)
     const header = document.createElement("div");
     header.className = "journey-calendar-header";
 
     const prevBtn = document.createElement("button");
-    prevBtn.innerHTML = "&lt;"; // < symbol
+    prevBtn.innerHTML = "&lt;";
     prevBtn.className = "journey-calendar-nav-btn";
     prevBtn.onclick = () => {
         currentViewDate.setMonth(currentViewDate.getMonth() - 1);
@@ -173,7 +168,7 @@ function showDatePicker(parentContainer) {
     };
 
     const nextBtn = document.createElement("button");
-    nextBtn.innerHTML = "&gt;"; // > symbol
+    nextBtn.innerHTML = "&gt;";
     nextBtn.className = "journey-calendar-nav-btn";
     nextBtn.onclick = () => {
         currentViewDate.setMonth(currentViewDate.getMonth() + 1);
@@ -187,7 +182,6 @@ function showDatePicker(parentContainer) {
     header.appendChild(monthLabel);
     header.appendChild(nextBtn);
 
-    // Days Header (Sun, Mon...)
     const daysHeader = document.createElement("div");
     daysHeader.className = "journey-calendar-days-header";
     const days = ["SU", "MO", "TU", "WE", "TH", "FR", "SA"];
@@ -198,7 +192,6 @@ function showDatePicker(parentContainer) {
         daysHeader.appendChild(span);
     });
 
-    // Days Grid
     const grid = document.createElement("div");
     grid.className = "journey-calendar-grid";
 
@@ -206,41 +199,35 @@ function showDatePicker(parentContainer) {
     calendarWrapper.appendChild(daysHeader);
     calendarWrapper.appendChild(grid);
 
-    // Render Logic
     function renderCalendar() {
         grid.innerHTML = "";
 
-        // Update Label
         const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         monthLabel.textContent = `${monthNames[currentViewDate.getMonth()]} ${currentViewDate.getFullYear()}`;
 
         const year = currentViewDate.getFullYear();
         const month = currentViewDate.getMonth();
 
-        const firstDayOfMonth = new Date(year, month, 1).getDay(); // 0 (Sun) to 6 (Sat)
+        const firstDayOfMonth = new Date(year, month, 1).getDay();
         const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-        // Empty slots for offset
         for (let i = 0; i < firstDayOfMonth; i++) {
             const empty = document.createElement("div");
             empty.className = "journey-calendar-cell empty";
             grid.appendChild(empty);
         }
 
-        // Day Cells
         for (let d = 1; d <= daysInMonth; d++) {
             const cell = document.createElement("button");
             cell.className = "journey-calendar-cell";
             cell.textContent = d;
 
-            // Check if this cell is the selected date
             if (selectedDate.getDate() === d &&
                 selectedDate.getMonth() === month &&
                 selectedDate.getFullYear() === year) {
                 cell.classList.add("selected");
             }
 
-            // Check if Today
             if (today.getDate() === d &&
                 today.getMonth() === month &&
                 today.getFullYear() === year) {
@@ -249,17 +236,15 @@ function showDatePicker(parentContainer) {
 
             cell.onclick = () => {
                 selectedDate = new Date(year, month, d);
-                renderCalendar(); // Re-render to update selection style
+                renderCalendar();
             };
 
             grid.appendChild(cell);
         }
     }
 
-    // Initial Render
     renderCalendar();
 
-    // Modal Actions
     const btnRow = document.createElement("div");
     btnRow.className = "journey-modal-actions";
 
@@ -272,7 +257,6 @@ function showDatePicker(parentContainer) {
     startBtn.textContent = "Start";
     startBtn.className = "journey-modal-btn confirm";
     startBtn.onclick = () => {
-        // Use selectedDate state
         const localDate = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), selectedDate.getDate());
         window.AppStorage.set("prayerJourneyStartDate", localDate.toISOString());
         location.reload();
@@ -282,7 +266,7 @@ function showDatePicker(parentContainer) {
     btnRow.appendChild(startBtn);
 
     card.appendChild(title);
-    card.appendChild(calendarWrapper); // Replaces input
+    card.appendChild(calendarWrapper);
     card.appendChild(btnRow);
     overlay.appendChild(card);
 
@@ -291,11 +275,11 @@ function showDatePicker(parentContainer) {
 
 // --- UNIFIED VIEW LOGIC ---
 function initUnifiedView(state) {
-    const wrapper = document.querySelector(".monthly_prayer_guide_card.unified");
-    if (!wrapper) return;
+    const unifiedCard = document.querySelector(".monthly_prayer_guide_card.unified");
+    if (!unifiedCard) return;
 
-    const weekBtns = Array.from(wrapper.querySelectorAll(".monthly_prayer_guide_week_item"));
-    const daysContainer = wrapper.querySelector(".monthly_prayer_guide_days");
+    const weekBtns = Array.from(unifiedCard.querySelectorAll(".monthly_prayer_guide_week_item"));
+    const daysContainer = unifiedCard.querySelector(".monthly_prayer_guide_days");
 
     const titleEl = document.getElementById("prayerTitle");
     const verseEl = document.getElementById("prayerVerse");
@@ -304,8 +288,9 @@ function initUnifiedView(state) {
 
     let activeWeekIdx = 0;
     let activeDayIdx = 0;
+    let dayBtns = [];
 
-    // Navigation Logic: Determine Initial View
+    // Determine Initial View
     if (state.started) {
         if (state.currentDay >= 1 && state.currentDay <= 28) {
             activeWeekIdx = Math.floor((state.currentDay - 1) / 7);
@@ -316,58 +301,91 @@ function initUnifiedView(state) {
         }
     }
 
-    // Keyboard Navigation: Week Tabs
+    // KEYBOARD: Week Tabs
     weekBtns.forEach((btn, idx) => {
         btn.addEventListener("click", () => {
             activeWeekIdx = idx;
-            activeDayIdx = 0;
+            activeDayIdx = 0; // reset to first day of that week
             renderState();
-
-            // Focus shift when switching weeks
-            const days = Array.from(daysContainer.querySelectorAll(".monthly_prayer_guide_day_item:not(.locked)"));
-            if (days.length > 0) {
-                days[0].focus();
-            }
         });
 
         btn.addEventListener("keydown", (e) => {
-            let newIdx = idx;
-            if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
-                newIdx = (idx - 1 + weekBtns.length) % weekBtns.length;
-                e.preventDefault();
-                weekBtns[newIdx].focus();
-            } else if (e.key === "ArrowRight" || e.key === "ArrowDown") {
-                newIdx = (idx + 1) % weekBtns.length;
-                e.preventDefault();
-                weekBtns[newIdx].focus();
+            let nextIdx = idx;
+            if (e.key === "ArrowRight") {
+                nextIdx = (idx + 1) % weekBtns.length;
+            } else if (e.key === "ArrowLeft") {
+                nextIdx = (idx - 1 + weekBtns.length) % weekBtns.length;
             } else if (e.key === "Enter" || e.key === " ") {
                 e.preventDefault();
                 btn.click();
+                return;
+            }
+
+            if (nextIdx !== idx) {
+                weekBtns[nextIdx].focus();
+                weekBtns[nextIdx].click();
             }
         });
     });
 
-    function renderState() {
-        // Update Week Tabs
-        weekBtns.forEach((btn, idx) => {
-            const isActive = idx === activeWeekIdx;
-            btn.classList.toggle("active", isActive);
-            btn.setAttribute("aria-selected", isActive ? "true" : "false");
-            btn.setAttribute("tabindex", isActive ? "0" : "-1");
-        });
-
-        // Render Days
+    function initDays() {
         daysContainer.innerHTML = "";
-        const dayItems = [];
-
-        for (let dayRelIdx = 0; dayRelIdx < 7; dayRelIdx++) {
+        dayBtns = [];
+        for (let i = 0; i < 7; i++) {
             const btn = document.createElement("button");
             btn.className = "monthly_prayer_guide_day_item flex-center";
             btn.setAttribute("role", "tab");
+            btn.setAttribute("aria-selected", "false");
+            btn.tabIndex = -1;
 
+            daysContainer.appendChild(btn);
+            dayBtns.push(btn);
+
+            btn.addEventListener("click", () => {
+                if (!btn.classList.contains("locked")) {
+                    activeDayIdx = i;
+                    renderState();
+                }
+            });
+
+            btn.addEventListener("keydown", (e) => {
+                let nextIdx = i;
+                if (e.key === "ArrowDown") {
+                    nextIdx = Math.min(dayBtns.length - 1, i + 1);
+                } else if (e.key === "ArrowUp") {
+                    nextIdx = Math.max(0, i - 1);
+                } else if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    btn.click();
+                    return;
+                }
+
+                if (nextIdx !== i && !dayBtns[nextIdx].classList.contains("locked")) {
+                    e.preventDefault();
+                    dayBtns[nextIdx].focus();
+                    dayBtns[nextIdx].click();
+                }
+            });
+        }
+    }
+
+    initDays();
+
+    function renderState() {
+        // 1. Update Weeks UI & A11y
+        weekBtns.forEach((btn, idx) => {
+            const isActive = (idx === activeWeekIdx);
+            btn.classList.toggle("active", isActive);
+            btn.setAttribute("aria-selected", isActive ? "true" : "false");
+            btn.tabIndex = isActive ? 0 : -1;
+        });
+
+        // 2. Update Days
+        dayBtns.forEach((btn, dayRelIdx) => {
             const absoluteDayNum = (activeWeekIdx * 7) + (dayRelIdx + 1);
             let layoutText = `Day ${absoluteDayNum}`;
 
+            let isLocked = false;
             if (state.started && state.startDate) {
                 const dayDate = new Date(state.startDate);
                 dayDate.setDate(state.startDate.getDate() + (absoluteDayNum - 1));
@@ -377,61 +395,32 @@ function initUnifiedView(state) {
                 const dDate = new Date(dayDate); dDate.setHours(0, 0, 0, 0);
 
                 if (today.getTime() === dDate.getTime()) btn.classList.add("today");
+                else btn.classList.remove("today");
+
+                if (absoluteDayNum > state.currentDay) {
+                    isLocked = true;
+                }
+            } else {
+                btn.classList.remove("today");
             }
 
             btn.textContent = layoutText;
+            btn.classList.remove("locked", "active");
 
-            if (state.started && absoluteDayNum > state.currentDay) {
+            const isActive = (dayRelIdx === activeDayIdx);
+
+            if (isLocked) {
                 btn.classList.add("locked");
-                btn.setAttribute("aria-disabled", "true");
-                btn.setAttribute("tabindex", "-1");
+                btn.setAttribute("aria-selected", "false");
+                btn.tabIndex = -1;
             } else {
-                const isActive = (dayRelIdx === activeDayIdx);
-                if (isActive) btn.classList.add("active");
+                btn.classList.toggle("active", isActive);
                 btn.setAttribute("aria-selected", isActive ? "true" : "false");
-                btn.setAttribute("tabindex", isActive ? "0" : "-1");
-
-                btn.onclick = () => {
-                    activeDayIdx = dayRelIdx;
-                    renderState();
-                };
+                btn.tabIndex = isActive ? 0 : -1;
             }
-
-            daysContainer.appendChild(btn);
-            dayItems.push(btn);
-        }
-
-        // Keyboard Navigation: Day Tabs
-        dayItems.forEach((btn, idx) => {
-            if (btn.classList.contains("locked")) return;
-
-            btn.addEventListener("keydown", (e) => {
-                let nextIdx = idx;
-                if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
-                    nextIdx = idx - 1;
-                } else if (e.key === "ArrowDown" || e.key === "ArrowRight") {
-                    nextIdx = idx + 1;
-                } else if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    btn.click();
-                    return;
-                } else {
-                    return;
-                }
-
-                e.preventDefault();
-
-                while (nextIdx >= 0 && nextIdx < dayItems.length) {
-                    if (!dayItems[nextIdx].classList.contains("locked")) {
-                        dayItems[nextIdx].focus();
-                        break;
-                    }
-                    nextIdx += (e.key === "ArrowDown" || e.key === "ArrowRight" ? 1 : -1);
-                }
-            });
         });
 
-        // Update Content
+        // 3. Update Content Details
         const wKeys = ["first_week", "second_week", "third_week", "fourth_week"];
         const key = wKeys[activeWeekIdx];
         const data = prayerData[key] ? prayerData[key][activeDayIdx] : null;
@@ -447,3 +436,5 @@ function initUnifiedView(state) {
 
     renderState();
 }
+
+document.addEventListener("DOMContentLoaded", init);
