@@ -29,19 +29,27 @@
   }
   #main-nav .tvnav {
     position: fixed;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
     z-index: 9999;
-    background: rgba(10, 10, 12, 0.75);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.18),
+      rgba(220, 235, 255, 0.12)
+    );
+    backdrop-filter: blur(50px) saturate(140%);
+    -webkit-backdrop-filter: blur(50px) saturate(140%);
     border-radius: 22px;
-    padding: 10px 10px;
+    padding: 10px 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 6px;
+    box-shadow:
+      0 20px 45px rgba(0, 0, 0, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.55);
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
@@ -56,9 +64,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px 6px;
+    padding: 8px 4px;
     border-radius: 16px;
     scroll-snap-align: center;
+  }
+  #main-nav .tvnav__item[aria-current="page"] {
+    border-radius: 18px;
+    padding: 6px 10px;
+    box-shadow:
+      0 12px 28px rgba(0, 0, 0, 0.45),
+      0 0 14px rgba(59, 130, 246, 0.4);
   }
   #main-nav .tvnav__icon,
   #main-nav .tvnav__icon svg {
@@ -67,7 +82,7 @@
     color: inherit;
   }
   #main-nav .tvnav__label {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     line-height: 1.1;
     margin-top: 4px;
     white-space: nowrap;
@@ -76,7 +91,7 @@
   }
 
   body {
-    padding-bottom: 100px;
+    padding-bottom: 120px;
   }
 
   /* Hero */
