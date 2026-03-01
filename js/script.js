@@ -1,13 +1,4 @@
 try {
-  // Navbar toggle
-  const hamburger = document.getElementById("hamburger-icon");
-  const navLinks = document.getElementById("main-nav");
-  hamburger.addEventListener("click", () => {
-    const isExpanded = navLinks.classList.toggle("responsive");
-    hamburger.setAttribute("aria-expanded", isExpanded);
-    document.body.style.overflow = isExpanded ? "hidden" : "auto";
-  });
-
   // Testimonial carousel
   const testimonials = document.querySelectorAll(".testimonial");
   let currentIndex = 0;

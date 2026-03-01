@@ -33,27 +33,70 @@
               loading="eager"
             />
           </a>
-          <div class="nav-links" id="nav-links">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="journey.html" class="nav-link">Journey</a>
-            <a href="about.html" class="nav-link">About Us</a>
-            <a href="resources.html" class="nav-link">Resources</a>
-            <a href="contacts.html" class="nav-link active" aria-current="page"
-              >Contact</a
-            >
-            <a href="prayer.html" class="nav-link">Prayer</a>
+          <div class="tvnav" id="primary-nav-menu" aria-label="Primary">
+            <a href="index.html" class="tvnav__item" data-nav="home">
+              <span class="tvnav__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
+                  <path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10.5z" fill="currentColor"/>
+                </svg>
+              </span>
+              <span class="tvnav__label">Home</span>
+            </a>
+
+            <a href="path.html" class="tvnav__item" data-nav="path">
+              <span class="tvnav__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
+                  <path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm3.7 6.3-2.1 6.3-6.3 2.1 2.1-6.3 6.3-2.1z" fill="currentColor"/>
+                </svg>
+              </span>
+              <span class="tvnav__label">The Path</span>
+            </a>
+
+            <a href="journey.html" class="tvnav__item" data-nav="journey">
+              <span class="tvnav__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
+                  <path d="M12 3 2 8l10 5 10-5-10-5zm0 8L2 6v4l10 5 10-5V6l-10 5zm0 6L2 12v4l10 5 10-5v-4l-10 5z" fill="currentColor"/>
+                </svg>
+              </span>
+              <span class="tvnav__label">Journey</span>
+            </a>
+
+            <a href="resources.html" class="tvnav__item" data-nav="resources">
+              <span class="tvnav__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
+                  <path d="M6 3h11a2 2 0 0 1 2 2v15a1 1 0 0 1-1 1H7a3 3 0 0 0-3 3V5a2 2 0 0 1 2-2zm1 4v12h10V7H7z" fill="currentColor"/>
+                </svg>
+              </span>
+              <span class="tvnav__label">Resources</span>
+            </a>
+
+            <a href="prayer.html" class="tvnav__item" data-nav="prayer">
+              <span class="tvnav__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
+                  <path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0 1 12 6.2 5.5 5.5 0 0 1 21.5 12C19 16.4 12 21 12 21z" fill="currentColor"/>
+                </svg>
+              </span>
+              <span class="tvnav__label">Prayer</span>
+            </a>
+
+            <a href="contacts.html" class="tvnav__item" data-nav="contact" aria-current="page">
+              <span class="tvnav__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
+                  <path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2z" fill="currentColor"/>
+                </svg>
+              </span>
+              <span class="tvnav__label">Contact</span>
+            </a>
+
+            <a href="about.html" class="tvnav__item" data-nav="about">
+              <span class="tvnav__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
+                  <path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="currentColor"/>
+                </svg>
+              </span>
+              <span class="tvnav__label">About</span>
+            </a>
           </div>
-          <button
-            type="button"
-            class="hamburger"
-            id="hamburger-icon"
-            aria-label="Toggle menu"
-            aria-expanded="false"
-          >
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </button>
         </nav>
       </header>
     </div>
