@@ -454,9 +454,11 @@
   text-transform: none;
   margin-top: 0;
   margin-bottom: 0.1em;
-  font-size: 11vw;
+  font-size: clamp(7.475rem, 13vw, 13.65rem);
   font-weight: 800;
-  line-height: 1;
+  line-height: 0.95;
+  max-width: 11ch;
+  padding-inline: 0.2em;
   position: relative;
   color: var(--color-white);
 }

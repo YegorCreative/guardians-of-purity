@@ -10,6 +10,11 @@
 
 .navbar {
   position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 14px;
+  padding: 10px 18px;
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(50px) saturate(180%);
   -webkit-backdrop-filter: blur(50px) saturate(180%);
@@ -51,14 +56,15 @@
 .logo {
   cursor: pointer;
   z-index: 2;
-  position: absolute;
-  left: 18px;
-  top: 50%;
-  transform: translateY(-50%);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo-img {
   height: 34px;
+  width: auto;
   display: block;
 }
 
@@ -69,11 +75,12 @@
   flex-wrap: nowrap;
   overflow: visible;
   width: auto;
-  justify-content: center;
+  justify-content: flex-start;
   z-index: 1;
-  margin: 0 auto;
+  margin: 0;
   border-radius: 25px;
-  padding: 4px;
+  padding: 4px 0 4px 4px;
+  min-width: 0;
 }
 
 .tvnav__item {

@@ -19,8 +19,23 @@
 @media (max-width: 768px) {
   /* Mobile nav: scoped to existing JS toggle (#main-nav.responsive) */
   #main-nav {
+    display: block;
     max-width: 100%;
     overflow-x: hidden;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 0;
+  }
+  #main-nav::before {
+    display: none;
+  }
+  #main-nav .logo {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 10px;
   }
   #main-nav .nav-links {
     display: block !important;
@@ -202,6 +217,9 @@
   }
   .hero {
     min-height: 350px;
+  }
+  .parallax__title {
+    font-size: clamp(6.5rem, 10.4vw, 9.75rem);
   }
 }
 
