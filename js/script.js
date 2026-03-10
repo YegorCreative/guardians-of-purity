@@ -345,7 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
           { n: 6, title: "Developing Healthy Habits", file: "chapter6.html" },
           { n: 7, title: "Overcoming Guilt and Shame", file: "chapter7.html" },
           { n: 8, title: "Honoring God with Your Body", file: "chapter8.html" },
-          { n: 9, title: "Rewiring the Brain", file: "chapter9.html" },
+          { n: 9, title: "Practical Steps Toward Purity", file: "chapter9.html" },
           { n: 10, title: "God's Design for Your Body", file: "chapter10.html" },
           { n: 11, title: "The Long-Term Effects of Alcohol and Pornography on the Mind and Spirit", file: "chapter11.html" },
           { n: 12, title: "Healing Emotional Wounds", file: "chapter12.html" },
