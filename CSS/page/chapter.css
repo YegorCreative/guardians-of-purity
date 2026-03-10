@@ -1326,6 +1326,48 @@
     font-size: 1rem;
   }
 
+  .chapterOne-prayer-icons,
+  .chapterOne-transition-icons {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .chapterOne-prayer-icons {
+    margin-top: 18px;
+  }
+
+  .chapterOne-transition-icons {
+    width: 100%;
+    margin: 16px auto 18px;
+  }
+
+  .chapterOne-prayer-icon,
+  .chapterOne-transition-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .chapterOne-prayer-icon i,
+  .chapterOne-transition-icon i {
+    font-size: 1rem;
+  }
+
+  .chapterOne-prayer-icon--sparkle,
+  .chapterOne-transition-icon--sparkle {
+    width: 38px;
+    height: 38px;
+  }
+
+  .chapterOne-prayer-icon--hands,
+  .chapterOne-transition-icon--hands {
+    width: 44px;
+    height: 44px;
+  }
+
+  .chapterOne-transition-line {
+    display: none;
+  }
+
   .chapterJumpBtn {
     margin-top: 20px;
     margin-bottom: 20px;
