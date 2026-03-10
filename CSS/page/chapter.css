@@ -892,7 +892,7 @@
 .chapterOne-prayer-icon--sparkle {
   width: 46px;
   height: 46px;
-  color: #f59e0b;
+  color: #38bdf8;
 }
 
 .chapterOne-prayer-icon--dove {
@@ -922,9 +922,8 @@
 }
 
 .chapterOne-transition-icons {
-  width: min(calc(100% - 20px), 1440px);
-  max-width: 1440px;
-  margin: 8px auto 18px;
+  width: min(100%, 560px);
+  margin: 18px auto 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -957,7 +956,7 @@
 }
 
 .chapterOne-transition-icon--sparkle {
-  color: #f59e0b;
+  color: #38bdf8;
 }
 
 .chapterOne-transition-icon--dove {
