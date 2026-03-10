@@ -542,9 +542,9 @@
 /* Chapter 1 - Teaching Sections */
 .chapterOne-teaching-section {
   background: linear-gradient(135deg,
-    rgba(239, 246, 255, 0.94) 0%,
-    rgba(191, 219, 254, 0.88) 42%,
-    rgba(96, 165, 250, 0.74) 100%);
+    rgba(246, 250, 255, 0.96) 0%,
+    rgba(219, 234, 254, 0.9) 42%,
+    rgba(125, 181, 255, 0.76) 100%);
   padding: 32px 20px;
   color: #2d2d2d;
   margin: 0 auto 18px;
@@ -553,9 +553,9 @@
 
 .chapterOne-teaching-section:nth-child(even) {
   background: linear-gradient(135deg,
-    rgba(239, 246, 255, 0.94) 0%,
-    rgba(191, 219, 254, 0.88) 42%,
-    rgba(96, 165, 250, 0.74) 100%);
+    rgba(246, 250, 255, 0.96) 0%,
+    rgba(219, 234, 254, 0.9) 42%,
+    rgba(125, 181, 255, 0.76) 100%);
 }
 
 .chapterOne-teaching-container {
