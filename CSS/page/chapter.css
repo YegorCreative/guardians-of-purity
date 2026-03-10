@@ -18,7 +18,7 @@
 .reflection-timer-module {
   width: min(calc(100% - 20px), 1440px);
   max-width: 1440px;
-  margin: 0 auto var(--section-margin-y);
+  margin: 0 auto 18px;
 }
 
 .reflection-timer-module h3 {
@@ -34,7 +34,7 @@
 .reflection-timer-module .timer-encouragement {
   font-size: 1.1rem;
   color: #475569;
-  margin-bottom: 25px;
+  margin-bottom: 18px;
   line-height: 1.6;
 }
 
@@ -43,7 +43,7 @@
   font-weight: 700;
   font-family: 'Roboto', monospace;
   color: #1e293b;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   letter-spacing: 2px;
 }
 
@@ -261,13 +261,13 @@
   background-position: center;
   background-attachment: fixed;
   color: var(--color-white);
-  padding: 100px 20px;
+  padding: 78px 20px;
   text-align: center;
   min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto var(--section-margin-y);
+  margin: 0 auto 18px;
   border-radius: 25px;
   overflow: hidden;
   isolation: isolate;
@@ -323,7 +323,7 @@
   z-index: 1;
   max-width: 900px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 32px;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 25px;
@@ -368,7 +368,7 @@
   background: rgba(255, 255, 255, 0.95);
   padding: 25px 30px;
   border-radius: 16px;
-  margin: 0 auto 25px auto;
+  margin: 0 auto 18px auto;
   max-width: 680px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
@@ -411,8 +411,8 @@
   font-size: 1.4rem;
   font-weight: 600;
   color: #ffffff;
-  margin-top: 20px;
-  padding: 20px 25px;
+  margin-top: 14px;
+  padding: 16px 20px;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 15px;
   backdrop-filter: blur(10px);
@@ -425,22 +425,28 @@
 
 /* Chapter 1 - Parable Section */
 .chapterOne-parable-section {
-  background: linear-gradient(135deg, rgba(248, 249, 250, 0.7) 0%, rgba(233, 236, 239, 0.7) 100%);
-  padding: var(--section-spacing-y) 20px;
+  background: linear-gradient(135deg,
+    rgba(219, 234, 254, 0.92) 0%,
+    rgba(147, 197, 253, 0.88) 42%,
+    rgba(59, 130, 246, 0.82) 100%);
+  padding: 36px 20px;
   color: #2e3d43;
   position: relative;
-  margin: 0 auto var(--section-margin-y);
+  margin: 0 auto 18px;
   border-radius: 25px;
 }
 
 .chapterOne-parable-container {
-  max-width: 1100px;
+  max-width: 1180px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.14);
-  padding: 60px;
+  background: linear-gradient(160deg,
+    rgba(239, 246, 255, 0.98) 0%,
+    rgba(219, 234, 254, 0.96) 42%,
+    rgba(191, 219, 254, 0.92) 100%);
+  padding: 46px 48px;
   border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  box-shadow: 0 20px 50px rgba(59, 130, 246, 0.16);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
@@ -449,7 +455,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 28px;
   color: #213035;
   background: linear-gradient(135deg, #3b82f6, #a855f7);
   -webkit-background-clip: text;
@@ -471,9 +477,9 @@
 /* Parable Image Placeholder - Float Right */
 .chapterOne-parable-image {
   float: right;
-  width: 280px;
+  width: 220px;
   aspect-ratio: 4 / 5;
-  margin: 0 0 30px 40px;
+  margin: 4px 0 20px 28px;
   border: 2px solid transparent;
   border-radius: 16px;
   background:
@@ -514,18 +520,18 @@
 }
 
 .chapterOne-paragraph {
-  font-size: 1.15rem;
-  line-height: 2;
-  margin-bottom: 25px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 14px;
   color: #374151;
 }
 
 .chapterOne-moral-box {
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1));
   border-left: 6px solid #3b82f6;
-  padding: 30px;
-  margin-top: 50px;
-  font-size: 1.2rem;
+  padding: 24px;
+  margin-top: 22px;
+  font-size: 1.08rem;
   font-style: italic;
   color: #1e293b;
   text-align: center;
@@ -535,22 +541,28 @@
 
 /* Chapter 1 - Teaching Sections */
 .chapterOne-teaching-section {
-  background: linear-gradient(135deg, rgba(249, 250, 251, 0.7) 0%, rgba(243, 244, 246, 0.7) 100%);
-  padding: var(--section-spacing-y) 20px;
+  background: linear-gradient(135deg,
+    rgba(219, 234, 254, 0.92) 0%,
+    rgba(147, 197, 253, 0.88) 42%,
+    rgba(59, 130, 246, 0.82) 100%);
+  padding: 32px 20px;
   color: #2d2d2d;
-  margin: 0 auto var(--section-margin-y);
+  margin: 0 auto 18px;
   border-radius: 25px;
 }
 
 .chapterOne-teaching-section:nth-child(even) {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(249, 250, 251, 1) 100%);
+  background: linear-gradient(135deg,
+    rgba(219, 234, 254, 0.92) 0%,
+    rgba(147, 197, 253, 0.88) 42%,
+    rgba(59, 130, 246, 0.82) 100%);
 }
 
 .chapterOne-teaching-container {
   max-width: 900px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.14);
-  padding: 50px;
+  padding: 34px;
   border-radius: 25px;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
   border: 1px solid rgba(255, 255, 255, 0.24);
@@ -567,33 +579,33 @@
 .chapterOne-teaching-title {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 25px;
+  margin-bottom: 18px;
   color: #1e293b;
   background: linear-gradient(135deg, #3b82f6, #a855f7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   border-bottom: 3px solid rgba(59, 130, 246, 0.2);
 }
 
 .chapterOne-teaching-text {
   font-size: 1.15rem;
   line-height: 1.9;
-  margin-bottom: 25px;
+  margin-bottom: 18px;
   color: #374151;
 }
 
 .chapterOne-bullets {
   list-style: none;
   margin-left: 0;
-  margin-bottom: 35px;
+  margin-bottom: 22px;
 }
 
 .chapterOne-bullets li {
   position: relative;
   padding-left: 35px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-size: 1.1rem;
   line-height: 1.8;
   color: #374151;
@@ -613,9 +625,9 @@
   font-size: 1.2rem;
   font-style: italic;
   background: rgba(255, 255, 255, 0.12);
-  padding: 30px;
+  padding: 22px;
   border-left: 5px solid #3b82f6;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   border-radius: 25px;
   color: #1e293b;
   box-shadow: 0 14px 36px rgba(59, 130, 246, 0.18);
@@ -634,10 +646,10 @@
 
 .chapterOne-quote-box {
   background: rgba(255, 255, 255, 0.12);
-  padding: 25px 30px;
+  padding: 20px 22px;
   border-left: 5px solid #a855f7;
   font-style: italic;
-  margin-bottom: 35px;
+  margin-bottom: 22px;
   border-radius: 25px;
   font-size: 1.15rem;
   color: #1e293b;
@@ -650,9 +662,9 @@
 .chapterOne-action-box,
 .chapterOne-reflect-box {
   background: rgba(255, 255, 255, 0.12);
-  padding: 30px;
+  padding: 22px;
   border-radius: 25px;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
   backdrop-filter: blur(14px);
@@ -705,9 +717,9 @@
 /* Chapter 1 - Summary Section */
 .chapterOne-summary-section {
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(168, 85, 247, 0.12));
-  padding: var(--section-spacing-y) 20px;
+  padding: 36px 20px;
   color: #2e3d43;
-  margin: 0 auto var(--section-margin-y);
+  margin: 0 auto 18px;
   border-radius: 25px;
 }
 
@@ -715,7 +727,7 @@
   max-width: 900px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.14);
-  padding: 60px;
+  padding: 36px;
   border-radius: 25px;
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -726,7 +738,7 @@
 .chapterOne-summary-title {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   text-align: center;
   background: linear-gradient(135deg, #3b82f6, #a855f7);
   -webkit-background-clip: text;
@@ -738,14 +750,14 @@
   list-style: none;
   padding-left: 0;
   font-size: 1.15rem;
-  margin-bottom: 50px;
-  line-height: 1.9;
+  margin-bottom: 24px;
+  line-height: 1.7;
 }
 
 .chapterOne-summary-list li {
   position: relative;
   padding-left: 40px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   color: #374151;
 }
 
@@ -763,7 +775,7 @@
   font-size: 1.3rem;
   font-weight: 600;
   background: rgba(255, 255, 255, 0.12);
-  padding: 30px;
+  padding: 22px;
   border-left: 6px solid #ec4899;
   border-radius: 25px;
   text-align: center;
@@ -776,12 +788,12 @@
 /* Chapter 1 - Prayer Section */
 .chapterOne-prayer-section {
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(168, 85, 247, 0.9));
-  padding: var(--section-spacing-y) 20px;
+  padding: 36px 20px;
   color: white;
   text-align: center;
   position: relative;
   overflow: hidden;
-  margin: 0 auto var(--section-margin-y);
+  margin: 0 auto 18px;
   border-radius: 25px;
 }
 
@@ -812,7 +824,7 @@
   max-width: 800px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.12);
-  padding: 60px;
+  padding: 38px;
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(20px);
@@ -825,13 +837,13 @@
 .chapterOne-prayer-title {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .chapterOne-prayer-text {
   font-size: 1.2rem;
-  line-height: 2;
+  line-height: 1.75;
   font-style: italic;
   white-space: pre-line;
   text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
@@ -839,12 +851,12 @@
 
 /* Chapter 1 - Journal Box */
 .chapterOne-journal-box {
-  margin-top: 30px;
+  margin-top: 22px;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.24);
-  padding: 25px;
+  padding: 20px;
   border-radius: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -859,7 +871,7 @@
 }
 
 .chapterOne-journal-helper {
-  margin: 0 0 14px;
+  margin: 0 0 10px;
   font-size: 0.92rem;
   line-height: 1.5;
   color: #64748b;
@@ -901,7 +913,7 @@
   font-weight: 600;
   border-radius: 25px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 12px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
   text-transform: uppercase;
@@ -916,9 +928,9 @@
 /* Chapter 1 - Export Download Section */
 .chapterOne-export-section {
   background: linear-gradient(135deg, rgba(249, 250, 251, 0.78), rgba(243, 244, 246, 0.78));
-  padding: 60px 20px;
+  padding: 36px 20px;
   text-align: center;
-  margin: 0 auto 12px;
+  margin: 0 auto 18px;
   border-radius: 25px;
 }
 
@@ -926,7 +938,7 @@
   max-width: 900px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.14);
-  padding: 60px;
+  padding: 36px;
   border-radius: 25px;
   box-shadow: 0 20px 55px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -937,7 +949,7 @@
 .chapterOne-export-title {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 25px;
+  margin-bottom: 18px;
   background: linear-gradient(135deg, #3b82f6, #a855f7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -947,8 +959,8 @@
 .chapterOne-export-text {
   font-size: 1.2rem;
   color: #374151;
-  margin-bottom: 50px;
-  line-height: 1.8;
+  margin-bottom: 24px;
+  line-height: 1.65;
 }
 
 /* Responsive Design */
@@ -1991,10 +2003,10 @@ body.chapterModalOpen {
   .chapterOne-reflection-area {
     display: grid;
     grid-template-columns: 1.1fr 1fr;
-    gap: 30px;
+    gap: 18px;
     align-items: start;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 18px;
   }
 
   .chapterOne-reflection-area .chapterOne-reflect-box {
@@ -2029,7 +2041,7 @@ body.chapterModalOpen {
 
   .chapterOne-reflection-area .chapterOne-reflect-box,
   .chapterOne-reflection-area .chapterOne-journal-box {
-    margin-bottom: 25px;
+    margin-bottom: 16px;
   }
 }
 
