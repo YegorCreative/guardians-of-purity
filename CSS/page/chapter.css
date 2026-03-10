@@ -269,9 +269,58 @@
   justify-content: center;
   margin: 0 auto var(--section-margin-y);
   border-radius: 25px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.chapterOne-section::before,
+.chapterOne-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.chapterOne-section::before {
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.44) 0 3px, rgba(255, 255, 255, 0.08) 4px, transparent 8px),
+    radial-gradient(circle at 27% 58%, rgba(219, 234, 254, 0.4) 0 2px, rgba(255, 255, 255, 0.08) 3px, transparent 7px),
+    radial-gradient(circle at 48% 26%, rgba(255, 255, 255, 0.42) 0 3px, rgba(255, 255, 255, 0.08) 4px, transparent 9px),
+    radial-gradient(circle at 64% 72%, rgba(191, 219, 254, 0.36) 0 2px, rgba(255, 255, 255, 0.08) 3px, transparent 7px),
+    radial-gradient(circle at 81% 32%, rgba(255, 255, 255, 0.42) 0 3px, rgba(255, 255, 255, 0.08) 4px, transparent 9px),
+    radial-gradient(circle at 22% 84%, rgba(255, 255, 255, 0.32) 0 2px, rgba(255, 255, 255, 0.06) 3px, transparent 7px),
+    radial-gradient(circle at 73% 14%, rgba(255, 255, 255, 0.32) 0 2px, rgba(255, 255, 255, 0.06) 3px, transparent 7px),
+    radial-gradient(circle at 8% 52%, rgba(255, 255, 255, 0.34) 0 2px, rgba(255, 255, 255, 0.06) 3px, transparent 7px),
+    radial-gradient(circle at 18% 38%, rgba(219, 234, 254, 0.36) 0 2px, rgba(255, 255, 255, 0.06) 3px, transparent 7px),
+    radial-gradient(circle at 34% 16%, rgba(255, 255, 255, 0.38) 0 2px, rgba(255, 255, 255, 0.06) 3px, transparent 8px),
+    radial-gradient(circle at 39% 74%, rgba(191, 219, 254, 0.34) 0 2px, rgba(255, 255, 255, 0.06) 3px, transparent 7px),
+    radial-gradient(circle at 57% 48%, rgba(255, 255, 255, 0.36) 0 2px, rgba(255, 255, 255, 0.06) 3px, transparent 7px),
+    radial-gradient(circle at 69% 58%, rgba(219, 234, 254, 0.34) 0 2px, rgba(255, 255, 255, 0.06) 3px, transparent 7px),
+    radial-gradient(circle at 77% 86%, rgba(255, 255, 255, 0.34) 0 2px, rgba(255, 255, 255, 0.06) 3px, transparent 7px),
+    radial-gradient(circle at 88% 18%, rgba(191, 219, 254, 0.36) 0 2px, rgba(255, 255, 255, 0.06) 3px, transparent 8px),
+    radial-gradient(circle at 92% 64%, rgba(255, 255, 255, 0.34) 0 2px, rgba(255, 255, 255, 0.06) 3px, transparent 7px);
+  opacity: 0.38;
+  z-index: 0;
+}
+
+.chapterOne-section::after {
+  background-image:
+    radial-gradient(circle at 16% 26%, transparent 0 12px, rgba(255, 255, 255, 0.32) 13px 14px, transparent 15px),
+    radial-gradient(circle at 31% 62%, transparent 0 10px, rgba(255, 255, 255, 0.25) 11px 12px, transparent 13px),
+    radial-gradient(circle at 52% 36%, transparent 0 14px, rgba(219, 234, 254, 0.28) 15px 16px, transparent 17px),
+    radial-gradient(circle at 67% 74%, transparent 0 12px, rgba(255, 255, 255, 0.22) 13px 14px, transparent 15px),
+    radial-gradient(circle at 83% 44%, transparent 0 16px, rgba(255, 255, 255, 0.3) 17px 18px, transparent 19px),
+    radial-gradient(circle at 24% 82%, rgba(255, 255, 255, 0.28) 0 2px, transparent 3px),
+    radial-gradient(circle at 74% 22%, rgba(255, 255, 255, 0.24) 0 2px, transparent 3px),
+    radial-gradient(circle at 60% 58%, rgba(219, 234, 254, 0.26) 0 2px, transparent 3px);
+  opacity: 0.28;
+  z-index: 0;
 }
 
 .chapterOne-overlay {
+  position: relative;
+  z-index: 1;
   max-width: 900px;
   margin: 0 auto;
   padding: 40px;
@@ -295,6 +344,7 @@
     transform: translateY(0);
   }
 }
+
 
 .chapterOne-title {
   font-size: 3.2rem;
