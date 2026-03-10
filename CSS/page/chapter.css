@@ -860,6 +860,157 @@
   text-shadow: none;
 }
 
+.chapterOne-prayer-icons {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+  margin-top: 24px;
+  padding: 8px 0 4px;
+}
+
+.chapterOne-prayer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 14px 32px rgba(76, 29, 149, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.36);
+  color: #6d28d9;
+  animation: prayerIconFloat 3.6s ease-in-out infinite;
+}
+
+.chapterOne-prayer-icon i {
+  font-size: 1.3rem;
+}
+
+.chapterOne-prayer-icon--sparkle {
+  width: 46px;
+  height: 46px;
+  color: #f59e0b;
+}
+
+.chapterOne-prayer-icon--dove {
+  color: #2563eb;
+}
+
+.chapterOne-prayer-icon--hands {
+  width: 54px;
+  height: 54px;
+  color: #8b5cf6;
+}
+
+.chapterOne-prayer-icon:nth-child(2) {
+  animation-delay: 0.18s;
+}
+
+.chapterOne-prayer-icon:nth-child(3) {
+  animation-delay: 0.36s;
+}
+
+.chapterOne-prayer-icon:nth-child(4) {
+  animation-delay: 0.54s;
+}
+
+.chapterOne-prayer-icon:nth-child(5) {
+  animation-delay: 0.72s;
+}
+
+.chapterOne-transition-icons {
+  width: min(calc(100% - 20px), 1440px);
+  max-width: 1440px;
+  margin: 8px auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+}
+
+.chapterOne-transition-line {
+  width: clamp(72px, 12vw, 140px);
+  height: 2px;
+  background: linear-gradient(90deg, rgba(148, 163, 184, 0.05), rgba(124, 58, 237, 0.6), rgba(59, 130, 246, 0.35));
+}
+
+.chapterOne-transition-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.52);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 12px 28px rgba(76, 29, 149, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  color: #6d28d9;
+  animation: prayerIconFloat 3.8s ease-in-out infinite;
+}
+
+.chapterOne-transition-icon i {
+  font-size: 1.15rem;
+}
+
+.chapterOne-transition-icon--sparkle {
+  color: #f59e0b;
+}
+
+.chapterOne-transition-icon--dove {
+  color: #2563eb;
+}
+
+.chapterOne-transition-icon--hands {
+  width: 48px;
+  height: 48px;
+  color: #8b5cf6;
+}
+
+.chapterOne-transition-icon:nth-of-type(3) {
+  animation-delay: 0.15s;
+}
+
+.chapterOne-transition-icon:nth-of-type(4) {
+  animation-delay: 0.3s;
+}
+
+.chapterOne-transition-icon:nth-of-type(5) {
+  animation-delay: 0.45s;
+}
+
+.chapterOne-transition-icon:nth-of-type(6) {
+  animation-delay: 0.6s;
+}
+
+@keyframes prayerIconFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  35% {
+    transform: translateY(-10px) scale(1.05);
+  }
+
+  65% {
+    transform: translateY(-4px) scale(1.02);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chapterOne-prayer-icon {
+    animation: none;
+  }
+
+  .chapterOne-transition-icon {
+    animation: none;
+  }
+}
+
 /* Chapter 1 - Journal Box */
 .chapterOne-journal-box {
   margin-top: 22px;
