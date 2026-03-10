@@ -337,9 +337,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // 2. Chapter Data (1-42)
         // Hardcoded for reliability as requested
         const chapters = [
-          { n: 1, title: "Recognizing the Enemy's Lies", file: "chapter1.html" },
-          { n: 2, title: "Building a Vision for the Future", file: "chapter2.html" },
-          { n: 3, title: "Shame vs. Conviction", file: "chapter3.html" },
+          { n: 1, title: "God's Design for Your Body", file: "chapter1.html" },
+          { n: 2, title: "What Is Masturbation? Understanding the Act and Its Impact", file: "chapter2.html" },
+          { n: 3, title: "Biblical Principles on Purity and Self-Control", file: "chapter3.html" },
           { n: 4, title: "Resisting Sexual Pressure", file: "chapter4.html" },
           { n: 5, title: "The Glory of Self-Control", file: "chapter5.html" },
           { n: 6, title: "How Alcohol Fuels Pornography Addiction", file: "chapter6.html" },
