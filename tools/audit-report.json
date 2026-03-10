@@ -45,7 +45,7 @@
     {
       "number": 4,
       "file": "chapter4.html",
-      "title": "Resisting Sexual Pressure",
+      "title": "Is Masturbation a Sin?",
       "checks": {
         "has_questions": true,
         "has_journal": true,
@@ -59,9 +59,9 @@
     {
       "number": 5,
       "file": "chapter5.html",
-      "title": "The Glory of Self-Control",
+      "title": "How to Handle Temptation",
       "checks": {
-        "has_questions": false,
+        "has_questions": true,
         "has_journal": true,
         "has_timer": true,
         "timer_wrong_position": false,
@@ -73,9 +73,9 @@
     {
       "number": 6,
       "file": "chapter6.html",
-      "title": "How Alcohol Fuels Pornography Addiction",
+      "title": "Developing Healthy Habits",
       "checks": {
-        "has_questions": false,
+        "has_questions": true,
         "has_journal": true,
         "has_timer": true,
         "timer_wrong_position": false,
