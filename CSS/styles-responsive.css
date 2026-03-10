@@ -19,7 +19,9 @@
 @media (max-width: 768px) {
   /* Mobile nav: scoped to existing JS toggle (#main-nav.responsive) */
   #main-nav {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 12px;
     max-width: 100%;
     overflow-x: hidden;
     background: transparent;
@@ -35,7 +37,7 @@
   #main-nav .logo {
     display: flex;
     justify-content: center;
-    margin: 0 auto 10px;
+    margin: 0 auto;
   }
   #main-nav .nav-links {
     display: block !important;
@@ -43,11 +45,11 @@
     box-sizing: border-box;
   }
   #main-nav .tvnav {
-    position: fixed;
-    bottom: 16px;
-    left: 16px;
-    right: 16px;
-    z-index: 9999;
+    position: static;
+    z-index: auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
     background: linear-gradient(
       135deg,
       rgba(255, 255, 255, 0.18),
@@ -56,36 +58,33 @@
     backdrop-filter: blur(50px) saturate(140%);
     -webkit-backdrop-filter: blur(50px) saturate(140%);
     border-radius: 22px;
-    padding: 10px 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 6px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 8px;
     box-shadow:
       0 20px 45px rgba(0, 0, 0, 0.25),
       inset 0 1px 0 rgba(255, 255, 255, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.55);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
+    overflow: hidden;
   }
   #main-nav .tvnav::-webkit-scrollbar {
     display: none;
   }
   #main-nav .tvnav__item {
-    flex: 1 1 auto;
     min-width: 0;
+    min-height: 64px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 8px 4px;
+    padding: 10px 6px;
     border-radius: 16px;
-    scroll-snap-align: center;
   }
   #main-nav .tvnav__item[aria-current="page"] {
     border-radius: 18px;
-    padding: 6px 10px;
+    padding: 10px 6px;
     box-shadow:
       0 12px 28px rgba(0, 0, 0, 0.45),
       0 0 14px rgba(59, 130, 246, 0.4);
@@ -97,16 +96,18 @@
     color: inherit;
   }
   #main-nav .tvnav__label {
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     line-height: 1.1;
     margin-top: 4px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    text-align: center;
+    letter-spacing: 0.04em;
   }
 
   body {
-    padding-bottom: 120px;
+    padding-bottom: 0;
   }
 
   /* Hero */
