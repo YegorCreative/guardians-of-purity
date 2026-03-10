@@ -17,9 +17,9 @@
     {
       "number": 2,
       "file": "chapter2.html",
-      "title": "Building a Vision for the Future",
+      "title": "What Is Masturbation? Understanding the Act and Its Impact",
       "checks": {
-        "has_questions": false,
+        "has_questions": true,
         "has_journal": true,
         "has_timer": true,
         "timer_wrong_position": false,

@@ -24,6 +24,18 @@
   text-decoration: underline;
 }
 
+.footer-link.is-disabled,
+.social-link.is-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+.footer-link.is-disabled:hover,
+.social-link.is-disabled:hover {
+  text-decoration: none;
+}
+
 .footer-social {
   margin-bottom: 20px;
 }

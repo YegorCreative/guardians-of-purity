@@ -148,6 +148,43 @@ try {
 // You can add scroll animations, section trackers, or reminders here
 console.log("31 Days of Prayer - Intro Section Loaded");
 
+document.addEventListener("DOMContentLoaded", () => {
+  const footerLinkConfigs = [
+    {
+      selector: ".footer-link",
+      matcher: (link) => link.textContent?.trim() === "Blog (Coming Soon)",
+      label: "Blog page coming soon",
+    },
+    {
+      selector: ".social-link",
+      matcher: (link) => {
+        const href = link.getAttribute("href") || "";
+        return [
+          "https://facebook.com",
+          "https://instagram.com",
+          "https://youtube.com",
+        ].includes(href);
+      },
+      label: (link) => `${link.textContent?.trim() || "Social"} link coming soon`,
+    },
+  ];
+
+  footerLinkConfigs.forEach(({ selector, matcher, label }) => {
+    document.querySelectorAll(selector).forEach((link) => {
+      if (!matcher(link)) return;
+
+      link.classList.add("is-disabled");
+      link.setAttribute("aria-disabled", "true");
+      link.setAttribute("tabindex", "-1");
+      link.setAttribute(
+        "title",
+        typeof label === "function" ? label(link) : label
+      );
+      link.addEventListener("click", (event) => event.preventDefault());
+    });
+  });
+});
+
 // do this now reflection
 
 // Save and load journaling text
