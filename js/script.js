@@ -343,7 +343,7 @@ document.addEventListener("DOMContentLoaded", () => {
           { n: 4, title: "Is Masturbation a Sin?", file: "chapter4.html" },
           { n: 5, title: "How to Handle Temptation", file: "chapter5.html" },
           { n: 6, title: "Developing Healthy Habits", file: "chapter6.html" },
-          { n: 7, title: "The Role of Discipline in Purity", file: "chapter7.html" },
+          { n: 7, title: "Overcoming Guilt and Shame", file: "chapter7.html" },
           { n: 8, title: "The Deception of Pornography", file: "chapter8.html" },
           { n: 9, title: "Rewiring the Brain", file: "chapter9.html" },
           { n: 10, title: "God's Design for Your Body", file: "chapter10.html" },
