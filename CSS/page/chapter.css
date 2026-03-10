@@ -9,6 +9,18 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.chapterOne-section,
+.chapterOne-parable-section,
+.chapterOne-teaching-section,
+.chapterOne-summary-section,
+.chapterOne-prayer-section,
+.chapterOne-export-section,
+.reflection-timer-module {
+  width: min(calc(100% - 20px), 1440px);
+  max-width: 1440px;
+  margin: 0 auto var(--section-margin-y);
+}
+
 .reflection-timer-module h3 {
   font-size: 1.6rem;
   font-weight: 700;
@@ -192,9 +204,18 @@
 
 /* Responsive Timer Styles */
 @media (max-width: 768px) {
+  .chapterOne-section,
+  .chapterOne-parable-section,
+  .chapterOne-teaching-section,
+  .chapterOne-summary-section,
+  .chapterOne-prayer-section,
+  .chapterOne-export-section,
+  .reflection-timer-module {
+    margin: 0 auto 10px;
+  }
+
   .reflection-timer-module {
     padding: 30px 20px;
-    margin: 0 12px var(--section-margin-y) 12px;
   }
 
   .reflection-timer-module h3 {
@@ -246,7 +267,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 15px var(--section-margin-y) 15px;
+  margin: 0 auto var(--section-margin-y);
   border-radius: 25px;
 }
 
@@ -358,7 +379,7 @@
   padding: var(--section-spacing-y) 20px;
   color: #2e3d43;
   position: relative;
-  margin: 0 15px var(--section-margin-y) 15px;
+  margin: 0 auto var(--section-margin-y);
   border-radius: 25px;
 }
 
@@ -467,7 +488,7 @@
   background: linear-gradient(135deg, rgba(249, 250, 251, 0.7) 0%, rgba(243, 244, 246, 0.7) 100%);
   padding: var(--section-spacing-y) 20px;
   color: #2d2d2d;
-  margin: 0 15px var(--section-margin-y) 15px;
+  margin: 0 auto var(--section-margin-y);
   border-radius: 25px;
 }
 
@@ -636,7 +657,7 @@
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(168, 85, 247, 0.12));
   padding: var(--section-spacing-y) 20px;
   color: #2e3d43;
-  margin: 0 15px var(--section-margin-y) 15px;
+  margin: 0 auto var(--section-margin-y);
   border-radius: 25px;
 }
 
@@ -710,7 +731,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  margin: 0 15px var(--section-margin-y) 15px;
+  margin: 0 auto var(--section-margin-y);
   border-radius: 25px;
 }
 
@@ -847,7 +868,7 @@
   background: linear-gradient(135deg, rgba(249, 250, 251, 0.78), rgba(243, 244, 246, 0.78));
   padding: 60px 20px;
   text-align: center;
-  margin: 0 15px 12px 15px;
+  margin: 0 auto 12px;
   border-radius: 25px;
 }
 
@@ -956,7 +977,7 @@
   .chapterOne-summary-section,
   .chapterOne-prayer-section,
   .chapterOne-export-section {
-    margin: 0 12px 10px 12px;
+    margin: 0 auto 10px;
   }
 
   .chapterOne-parable-section,
@@ -975,10 +996,19 @@
 }
 
 @media (max-width: 520px) {
+  .chapterOne-section,
+  .chapterOne-parable-section,
+  .chapterOne-teaching-section,
+  .chapterOne-summary-section,
+  .chapterOne-prayer-section,
+  .chapterOne-export-section,
+  .reflection-timer-module {
+    margin: 0 auto 10px;
+  }
+
   .chapterOne-section {
     padding: 50px 12px;
     min-height: 80vh;
-    margin: 0 10px 10px 10px;
   }
 
   .chapterOne-overlay {
@@ -1024,19 +1054,16 @@
 
   .chapterOne-parable-section {
     padding: 40px 12px;
-    margin: 0 10px 10px 10px;
   }
 
   .chapterOne-teaching-section {
     padding: 35px 12px;
-    margin: 0 10px 10px 10px;
   }
 
   .chapterOne-summary-section,
   .chapterOne-prayer-section,
   .chapterOne-export-section {
     padding: 40px 12px;
-    margin: 0 10px 10px 10px;
   }
 
   .chapterOne-parable-container,
