@@ -129,7 +129,7 @@
     {
       "number": 10,
       "file": "chapter10.html",
-      "title": "God's Design for Your Body",
+      "title": "Encouragement for the Journey",
       "checks": {
         "has_questions": true,
         "has_journal": true,
@@ -143,9 +143,9 @@
     {
       "number": 11,
       "file": "chapter11.html",
-      "title": "The Long-Term Effects of Alcohol and Pornography on the Mind and Spirit",
+      "title": "The Myth About Losing Hair If You Don't Masturbate",
       "checks": {
-        "has_questions": false,
+        "has_questions": true,
         "has_journal": true,
         "has_timer": true,
         "timer_wrong_position": false,
