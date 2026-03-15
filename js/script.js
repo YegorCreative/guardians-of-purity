@@ -355,7 +355,7 @@ document.addEventListener("DOMContentLoaded", () => {
           { n: 16, title: "The Impact of Pornography on Your Brain and Mental Health", file: "chapter16.html" },
           { n: 17, title: "The Month-by-Month Impact of Porn and Masturbation", file: "chapter17.html" },
           { n: 18, title: "A Hypothetical Wish for Control and Purity", file: "chapter18.html" },
-          { n: 19, title: "Filling Your Mind with Truth", file: "chapter19.html" },
+          { n: 19, title: "15 Simple Things Parents Can Talk About with Their Children Struggling with Masturbation and Pornography", file: "chapter19.html" },
           { n: 20, title: "Digital Boundaries", file: "chapter20.html" },
           { n: 21, title: "Recognizing Numbness and Returning to Sensitivity", file: "chapter21.html" },
           { n: 22, title: "Understanding Temptation", file: "chapter22.html" },
