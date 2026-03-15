@@ -576,6 +576,10 @@
   transform: translateY(-5px);
 }
 
+.chapterOne-teaching-container.chapterOne-teaching-container--stacked {
+  display: block;
+}
+
 .chapterOne-teaching-title {
   font-size: 2rem;
   font-weight: 700;

@@ -313,10 +313,10 @@
     {
       "number": 23,
       "file": "chapter23.html",
-      "title": "Chapter 23: Practical Ways to Stay Strong",
+      "title": "Practical Ways to Stay Strong",
       "checks": {
         "has_questions": false,
-        "has_journal": false,
+        "has_journal": true,
         "has_timer": true,
         "timer_wrong_position": false,
         "missing_journal_with_questions": false,
