@@ -2317,3 +2317,181 @@ body.chapterModalOpen {
     transition: none;
   }
 }
+
+/* ========================================= */
+/*     Chapter 23 Visual Polish (Scoped)     */
+/* ========================================= */
+.chapter23-premium {
+  background:
+    radial-gradient(1200px 600px at 15% -10%, rgba(59, 130, 246, 0.18), transparent 62%),
+    radial-gradient(980px 500px at 95% 0%, rgba(249, 115, 22, 0.08), transparent 60%),
+    linear-gradient(180deg, #eef3fa 0%, #e8f0fb 45%, #e2ecfa 100%);
+}
+
+.chapter23-premium .chapterOne-teaching-section {
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  padding: 36px 22px;
+  margin: 0 auto 20px;
+  background: linear-gradient(145deg,
+      rgba(248, 252, 255, 0.96) 0%,
+      rgba(220, 234, 252, 0.9) 52%,
+      rgba(170, 201, 246, 0.82) 100%);
+}
+
+.chapter23-premium .chapterOne-teaching-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0) 44%);
+  pointer-events: none;
+}
+
+.chapter23-premium .chapterOne-teaching-container {
+  display: block;
+  text-align: left;
+  max-width: 1040px;
+  background: linear-gradient(170deg,
+      rgba(255, 255, 255, 0.62) 0%,
+      rgba(250, 253, 255, 0.44) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 28px;
+  padding: 44px 56px;
+  box-shadow:
+    0 28px 60px rgba(15, 23, 42, 0.11),
+    0 2px 0 rgba(255, 255, 255, 0.35) inset;
+}
+
+.chapter23-premium .chapterOne-teaching-container:hover {
+  box-shadow:
+    0 24px 52px rgba(30, 64, 175, 0.16),
+    0 2px 0 rgba(255, 255, 255, 0.35) inset;
+  transform: translateY(-3px);
+}
+
+.chapter23-premium .chapterOne-teaching-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 1.6rem + 1.25vw, 2.8rem);
+  letter-spacing: 0.01em;
+  margin-bottom: 20px;
+  border-bottom-color: rgba(59, 130, 246, 0.25);
+  text-align: center;
+}
+
+.chapter23-premium .chapterOne-teaching-text,
+.chapter23-premium .chapterOne-bullets li {
+  color: #334155;
+}
+
+.chapter23-premium .chapterOne-teaching-text {
+  max-width: 62ch;
+  margin-left: 0;
+  margin-right: 0;
+  font-size: 1.24rem;
+  line-height: 1.88;
+}
+
+.chapter23-premium .chapterOne-bullets {
+  display: block;
+  gap: 14px;
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.chapter23-premium .chapterOne-bullets li {
+  font-size: 1.13rem;
+  line-height: 1.85;
+  padding-left: 36px;
+}
+
+.chapter23-premium .chapterOne-bullets li::before {
+  color: #2563eb;
+}
+
+.chapter23-premium .chapterOne-reflect-box ol,
+.chapter23-premium .chapterOne-action-box ol {
+  list-style-position: outside;
+  padding-left: 1.6rem;
+  margin: 12px 0 0;
+}
+
+.chapter23-premium .chapterOne-reflect-box ol li,
+.chapter23-premium .chapterOne-action-box ol li {
+  margin-bottom: 0.55rem;
+  line-height: 1.7;
+}
+
+.chapter23-premium .chapterOne-journal-helper {
+  display: none;
+}
+
+.chapter23-premium .chapterOne-journal-status {
+  display: none;
+}
+
+.chapter23-premium .chapterOne-reflection-area .chapterOne-journal-box {
+  margin-top: 0;
+}
+
+.chapter23-premium .chapterOne-reflection-area .chapterOne-reflect-box {
+  margin-top: 0 !important;
+}
+
+.chapter23-premium #section6 .chapterOne-action-box {
+  margin-top: 34px !important;
+}
+
+.chapter23-premium .chapter23-intro .chapterOne-teaching-container {
+  max-width: 980px;
+}
+
+.chapter23-intro-kicker {
+  margin: 0 0 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #1d4ed8;
+  opacity: 0.92;
+}
+
+.chapter23-premium .chapter23-accent-orange {
+  color: #ea580c;
+  font-weight: 700;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.chapter23-premium .chapterOne-parable-container,
+.chapter23-premium .chapterOne-prayer-container,
+.chapter23-premium .chapterOne-summary-container,
+.chapter23-premium .chapterOne-export-container {
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 24px 55px rgba(15, 23, 42, 0.1);
+}
+
+@media (max-width: 768px) {
+  .chapter23-premium .chapterOne-teaching-section {
+    border-radius: 22px;
+    padding: 24px 14px;
+  }
+
+  .chapter23-premium .chapterOne-teaching-container {
+    padding: 26px 20px;
+    border-radius: 22px;
+  }
+
+  .chapter23-premium .chapterOne-teaching-text {
+    font-size: 1.06rem;
+    line-height: 1.74;
+  }
+
+  .chapter23-premium .chapterOne-bullets {
+    width: 100%;
+  }
+}
