@@ -411,9 +411,9 @@
     {
       "number": 30,
       "file": "chapter30.html",
-      "title": "Recovering After Falling",
+      "title": "The Science of Rewiring Your Brain After Porn",
       "checks": {
-        "has_questions": true,
+        "has_questions": false,
         "has_journal": true,
         "has_timer": true,
         "timer_wrong_position": false,
