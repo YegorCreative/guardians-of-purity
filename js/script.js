@@ -351,7 +351,7 @@ document.addEventListener("DOMContentLoaded", () => {
           { n: 12, title: "What to Do When Your Body Is Naturally Erected", file: "chapter12.html" },
           { n: 13, title: "What to Do When You're Touching Your Body Out of Boredom", file: "chapter13.html" },
           { n: 14, title: "How Our Body Naturally Takes Care of Itself", file: "chapter14.html" },
-          { n: 15, title: "The Power of Accountability", file: "chapter15.html" },
+          { n: 15, title: "What Happens with Unused Sperm and How the Body Recycles It", file: "chapter15.html" },
           { n: 16, title: "Renewing Your Mind", file: "chapter16.html" },
           { n: 17, title: "Trusting God's Process", file: "chapter17.html" },
           { n: 18, title: "Guarding Your Eyes", file: "chapter18.html" },
