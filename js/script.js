@@ -348,7 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
           { n: 9, title: "Practical Steps Toward Purity", file: "chapter9.html" },
           { n: 10, title: "God's Design for Your Body", file: "chapter10.html" },
           { n: 11, title: "The Myth About Losing Hair If You Don't Masturbate", file: "chapter11.html" },
-          { n: 12, title: "Healing Emotional Wounds", file: "chapter12.html" },
+          { n: 12, title: "What to Do When Your Body Is Naturally Erected", file: "chapter12.html" },
           { n: 13, title: "The Prayers of a Pure Heart", file: "chapter13.html" },
           { n: 14, title: "Overcoming Guilt and Shame", file: "chapter14.html" },
           { n: 15, title: "The Power of Accountability", file: "chapter15.html" },
