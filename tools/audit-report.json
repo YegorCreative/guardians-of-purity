@@ -171,9 +171,9 @@
     {
       "number": 13,
       "file": "chapter13.html",
-      "title": "The Prayers of a Pure Heart",
+      "title": "What to Do When You're Touching Your Body Out of Boredom",
       "checks": {
-        "has_questions": false,
+        "has_questions": true,
         "has_journal": true,
         "has_timer": true,
         "timer_wrong_position": false,
@@ -185,7 +185,7 @@
     {
       "number": 14,
       "file": "chapter14.html",
-      "title": "Overcoming Guilt and Shame",
+      "title": "How Our Body Naturally Takes Care of Itself",
       "checks": {
         "has_questions": true,
         "has_journal": true,
