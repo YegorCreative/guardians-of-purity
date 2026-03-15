@@ -213,7 +213,7 @@
     {
       "number": 16,
       "file": "chapter16.html",
-      "title": "Renewing Your Mind",
+      "title": "The Impact of Pornography on Your Brain and Mental Health",
       "checks": {
         "has_questions": true,
         "has_journal": true,
@@ -227,9 +227,9 @@
     {
       "number": 17,
       "file": "chapter17.html",
-      "title": "Trusting God's Process",
+      "title": "The Month-by-Month Impact of Porn and Masturbation",
       "checks": {
-        "has_questions": true,
+        "has_questions": false,
         "has_journal": true,
         "has_timer": true,
         "timer_wrong_position": false,
@@ -241,7 +241,7 @@
     {
       "number": 18,
       "file": "chapter18.html",
-      "title": "Guarding Your Eyes",
+      "title": "A Hypothetical Wish for Control and Purity",
       "checks": {
         "has_questions": true,
         "has_journal": true,
