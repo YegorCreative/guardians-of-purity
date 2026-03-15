@@ -269,7 +269,7 @@
     {
       "number": 20,
       "file": "chapter20.html",
-      "title": "31 Days of Prayer for Your Child's Freedom",
+      "title": "4-Week Prayer for Your Freedom",
       "checks": {
         "has_questions": false,
         "has_journal": false,
@@ -285,7 +285,7 @@
     {
       "number": 21,
       "file": "chapter21.html",
-      "title": "Recognizing Numbness and Returning to Sensitivity",
+      "title": "Is Sleeping Naked Safe?",
       "checks": {
         "has_questions": true,
         "has_journal": true,
@@ -299,9 +299,9 @@
     {
       "number": 22,
       "file": "chapter22.html",
-      "title": "Understanding Temptation",
+      "title": "Understanding Triggers: Why the Morning Can Be a Battle",
       "checks": {
-        "has_questions": true,
+        "has_questions": false,
         "has_journal": true,
         "has_timer": true,
         "timer_wrong_position": false,
@@ -313,10 +313,10 @@
     {
       "number": 23,
       "file": "chapter23.html",
-      "title": "The Power of Purity",
+      "title": "Chapter 23: Practical Ways to Stay Strong",
       "checks": {
-        "has_questions": true,
-        "has_journal": true,
+        "has_questions": false,
+        "has_journal": false,
         "has_timer": true,
         "timer_wrong_position": false,
         "missing_journal_with_questions": false,

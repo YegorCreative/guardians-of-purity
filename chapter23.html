@@ -2,592 +2,315 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chapter 23 — The Power of Purity | Guardians of Purity</title>
-  <!-- Google Fonts: Updated Font Families -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&family=Raleway:wght@400;600&family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
-    rel="stylesheet" />
-  <!-- CSS Links -->
-  <link rel="stylesheet" href="CSS/styles.css" />
-  <link rel="stylesheet" href="CSS/header.css" />
-  <link rel="stylesheet" href="CSS/footer.css" />
-  <link rel="stylesheet" href="CSS/styles-responsive.css" />
-  <link rel="stylesheet" href="CSS/page/chapter.css" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 23 | Practical Ways to Stay Strong</title>
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link rel="stylesheet" href="CSS/layout.css" />
+    <link rel="stylesheet" href="CSS/components.css" />
+    <link rel="stylesheet" href="CSS/header.css" />
+    <link rel="stylesheet" href="CSS/footer.css" />
+    <link rel="stylesheet" href="CSS/variables.css" />
+    <link rel="stylesheet" href="CSS/utilities.css" />
+    <link rel="stylesheet" href="CSS/styles-responsive.css" />
+    <script defer src="js/script.js"></script>
+    <script defer src="js/storage.js"></script>
 </head>
 
-<body>
-  <a href="#main" class="skip-link">Skip to content</a>
-
-  <!-- Navbar -->
-  <a id="scrollToTopButton" aria-label="Scroll to top" title="Scroll to top">&#x2191;</a>
-  <div class="separated_block first">
-    <header class="header" role="banner">
-    <nav class="navbar" id="main-nav" role="navigation">
-      <a href="index.html" class="logo">
-        <img
-          src="./img/logo.png"
-          alt="Guardians of Purity Logo"
-          class="logo-img"
-          loading="eager"
-        />
-      </a>
-
-      <div class="tvnav" id="primary-nav-menu" aria-label="Primary">
-        <a href="index.html" class="tvnav__item" data-nav="home">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10.5z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">Home</span>
-        </a>
-
-        <a href="journey.html" class="tvnav__item" data-nav="journey">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M12 3 2 8l10 5 10-5-10-5zm0 8L2 6v4l10 5 10-5V6l-10 5zm0 6L2 12v4l10 5 10-5v-4l-10 5z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">Journey</span>
-        </a>
-
-        <a href="resources.html" class="tvnav__item" data-nav="resources">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M6 3h11a2 2 0 0 1 2 2v15a1 1 0 0 1-1 1H7a3 3 0 0 0-3 3V5a2 2 0 0 1 2-2zm1 4v12h10V7H7z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">Resources</span>
-        </a>
-
-        <a href="prayer.html" class="tvnav__item" data-nav="prayer">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0 1 12 6.2 5.5 5.5 0 0 1 21.5 12C19 16.4 12 21 12 21z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">Prayer</span>
-        </a>
-
-        <a href="contacts.html" class="tvnav__item" data-nav="contact">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">Contact</span>
-        </a>
-
-        <a href="about.html" class="tvnav__item" data-nav="about">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">About</span>
-        </a>
-      </div>
-    </nav>
-  </header>
-  </div>
-
-  <!-- CHAPTER CONTENT START -->
-
-  <!-- Hero -->
-  <section class="chapterOne-section" id="main">
-    <div class="chapterOne-overlay">
-      <div class="chapterOne-content">
-        <h1 class="chapterOne-title">The Power of Purity</h1>
-
-        <div class="chapterOne-verse-container">
-          <p class="chapterOne-verse">“Blessed are the pure in heart, for they will see God.”</p>
-          <span class="chapterOne-verseRef">— Matthew 5:8</span>
+<body class="chapterOne-body chapter23-page">
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">Guardians Of Purity</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">☰</button>
+            <nav class="nav" id="navMenu">
+                <a href="index.html">Home</a>
+                <a href="journey.html">Journey</a>
+                <a href="resources.html">Resources</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
         </div>
+    </header>
 
-        <p class="chapterOne-quote">Purity begins in the heart—self-control grows by the Spirit.</p>
-      </div>
-    </div>
-  </section>
+    <main>
+        <section class="chapterOne-hero chapter23-hero">
+            <p class="chapterOne-eyebrow">Discipline and Daily Victory</p>
+            <h1>Chapter 23: Practical Ways to Stay Strong</h1>
+            <p>
+                Temptation is real, but so is God\'s power in you. This chapter gives practical, simple, and
+                spiritual tools you can use every day to stand strong, grow in purity, and walk in confidence.
+            </p>
+            <div class="chapterOne-hero-image">
+                <img src="img/chapterAssets/chapter23.webp"
+                    alt="A determined young person choosing faith and discipline in daily life" loading="lazy" />
+            </div>
+            <a class="chapterOne-button" href="#chapter23-anchor">Start This Chapter</a>
+        </section>
 
-  <!-- Parable -->
-  <section class="chapterOne-parable-section" id="parable">
-    <div class="chapterOne-parable-container">
-      <h2 class="chapterOne-parable-title">Parable: The Clear Spring</h2>
-      <!-- VISUAL PROMPT: A crystal-clear natural spring emerging from moss-covered rocks in a quiet forest, early morning mist, smooth stones visible beneath the water surface, soft diffused light, muted greens and earth tones, minimal composition, slight film grain, serene restorative mood -->
+        <section class="chapterOne-card chapterOne-verse" id="chapter23-anchor">
+            <h2>Key Verse</h2>
+            <blockquote>
+                "I can do all things through Christ who strengthens me."
+                <cite>Philippians 4:13</cite>
+            </blockquote>
+        </section>
 
-            <div class="chapterOne-parable-body">
-        <div class="chapterOne-parable-image"></div>
-<p class="chapterOne-paragraph">
-        There was a village built beside a spring that fed every home. The water was once so clear that children could
-        see smooth stones at the bottom and fish flickering like silver in the sunlight.
-      </p>
-      <p class="chapterOne-paragraph">
-        Upstream, the spring was protected by a small fence and a simple sign: “Guard the source.” For years, the
-        villagers respected it. They knew that what happened at the spring would shape everything downstream.
-      </p>
-      <p class="chapterOne-paragraph">
-        But one season, people grew careless. A little trash here. A little mud there. “It’s just a small thing,” they
-        said. The spring kept flowing, so no one felt urgency.
-      </p>
-      <p class="chapterOne-paragraph">
-        Slowly the water changed. Not all at once—just enough that the taste became dull and the stones disappeared
-        beneath cloudiness. Families blamed the buckets, the pipes, the weather—anything except what they were allowing
-        near the source.
-      </p>
-      <p class="chapterOne-paragraph">
-        One morning, an old gardener walked upstream with a lantern and a shovel. He didn’t accuse anyone. He simply
-        said, “If you want clean water, you must protect the spring. The river can’t stay pure if the source is treated
-        like a trash bin.”
-      </p>
-      <p class="chapterOne-paragraph">
-        The villagers began clearing what had been thrown in. It was work. It was humbling. But as the spring became
-        clean again, the water downstream began to change. What felt impossible in the homes became possible at the
-        source.
-      </p>
-      </div>
+        <section class="chapterOne-card chapterOne-story">
+            <h2>Final Parable: The Beaver and the River</h2>
+            <p>
+                A beaver lived beside a powerful river. During spring, the water ran gently and beautifully. But when
+                storms came, the river would rise and rush violently.
+            </p>
+            <p>
+                Many animals only reacted after the flood started. They panicked, ran, and were swept away.
+            </p>
+            <p>
+                But the beaver was different. Every calm day, it quietly built its dam. Piece by piece. Branch by
+                branch. No one noticed, and some mocked the beaver for working so hard when the weather looked fine.
+            </p>
+            <p>
+                Then one night, the storm came. The river roared. Everything was tested. But the beaver\'s dam held.
+                While others were carried away, the beaver remained safe.
+            </p>
+            <p>
+                The beaver did not win because it was stronger than the storm. It won because it prepared before the
+                storm.
+            </p>
+            <p>
+                That is purity. You do not wait for temptation to come before deciding what you will do. You build your
+                "dam" now, with daily habits, prayer, and wisdom.
+            </p>
+            <p>
+                Discipline in peaceful days gives you power in difficult days.
+            </p>
+        </section>
 
-      <div class="chapterOne-moral-box">
-        <strong>Moral:</strong><br />
-        A spring stays clear when it is guarded upstream. Purity is protected at the source—what you allow into your
-        mind and heart will flow into your life.
-      </div>
-    </div>
-  </section>
+        <section class="chapterOne-grid two-columns">
+            <article class="chapterOne-card">
+                <h2>1. Know Your Triggers and Avoid Them Early</h2>
+                <p>
+                    One of the strongest ways to fight temptation is to avoid feeding it before it grows.
+                </p>
+                <ul>
+                    <li>If your phone late at night leads to temptation, do not keep it beside your bed.</li>
+                    <li>If certain social media accounts stir lust, unfollow or block them.</li>
+                    <li>If boredom leads to sin, stay occupied with healthy activities.</li>
+                </ul>
+                <p>
+                    Wisdom is not weakness. Avoiding triggers is strength.
+                </p>
+            </article>
 
-  <!-- Intro -->
-  <section class="chapterOne-teaching-section" id="intro">
-    <div class="chapterOne-teaching-container">
-      <h2 class="chapterOne-teaching-title">Introduction: The Call to Purity</h2>
-      <p class="chapterOne-teaching-text">
-        God calls us to live lives of purity and self-control, not to limit our joy but to protect and guide us toward
-        His best for our lives. This chapter explores what it means to pursue purity, how self-control is developed as a
-        fruit of the Spirit, and how these principles can shape our decisions, particularly regarding our bodies and
-        sexuality.
-      </p>
+            <article class="chapterOne-card">
+                <h2>2. Build a Daily Spiritual Routine</h2>
+                <p>
+                    Your spirit must be fed if you want to stay strong.
+                </p>
+                <p>
+                    You do not need long, complicated routines. Start simple:
+                </p>
+                <ul>
+                    <li>Read one Bible verse in the morning.</li>
+                    <li>Say a short prayer before school or work.</li>
+                    <li>Worship for a few minutes each day.</li>
+                    <li>End your day by thanking God.</li>
+                </ul>
+                <p>
+                    Small daily obedience leads to powerful transformation.
+                </p>
+            </article>
 
-      <div class="chapterOne-action-box">
-        <h3>Do This Now</h3>
-        <p>
-          Ask God to highlight one area where you need purity. Write one small step you can take today to align with His
-          will.
-        </p>
-      </div>
+            <article class="chapterOne-card">
+                <h2>3. Move Your Body and Redirect Your Mind</h2>
+                <p>
+                    Temptation often grows when your body is idle and your mind is unguarded.
+                </p>
+                <p>
+                    When urges come, move immediately:
+                </p>
+                <ul>
+                    <li>Take a walk</li>
+                    <li>Do push-ups</li>
+                    <li>Go outside</li>
+                    <li>Drink water</li>
+                    <li>Take deep breaths and pray</li>
+                </ul>
+                <p>
+                    Physical movement can break mental patterns quickly.
+                </p>
+            </article>
 
-      <div class="chapterOne-reflection-area">
-        <div class="chapterOne-reflect-box">
-        <h3>Questions to Reflect On</h3>
-        <ul>
-          <li>Where do you feel strongest spiritually right now?</li>
-          <li>Where do you feel most vulnerable?</li>
-          <li>What does “pure in heart” mean to you?</li>
-          <li>What would progress look like this week?</li>
-        </ul>
-      </div>
-        <div class="chapterOne-journal-box">
-        <label for="chapter3-journal1"><strong>Your Journal:</strong> What stood out to you?</label>
-        <textarea id="chapter3-journal1" placeholder="Type your thoughts here..."></textarea>
-      </div>
-      </div>
-    </div>
-  </section>
+            <article class="chapterOne-card">
+                <h2>4. Speak Truth Out Loud</h2>
+                <p>
+                    The enemy loves silence and lies. Speak God\'s truth with your mouth.
+                </p>
+                <p>
+                    Declare:
+                </p>
+                <ul>
+                    <li>"I belong to Jesus."</li>
+                    <li>"My body is the temple of the Holy Spirit."</li>
+                    <li>"I am not a slave to lust."</li>
+                    <li>"God gives me strength to overcome."</li>
+                </ul>
+                <p>
+                    Your words help align your mind with God\'s reality.
+                </p>
+            </article>
 
+            <article class="chapterOne-card">
+                <h2>5. Have Accountability</h2>
+                <p>
+                    You are not meant to fight alone.
+                </p>
+                <p>
+                    Find one trusted person:
+                </p>
+                <ul>
+                    <li>A parent</li>
+                    <li>A mentor</li>
+                    <li>A youth leader</li>
+                    <li>A mature Christian friend</li>
+                </ul>
+                <p>
+                    Share your struggles honestly. Secrecy strengthens sin. Confession weakens it.
+                </p>
+            </article>
 
-  <!-- Section 1 -->
-  <section class="chapterOne-teaching-section" id="section1">
-    <div class="chapterOne-teaching-container">
-      <h2 class="chapterOne-teaching-title">1. What Is Purity?</h2>
+            <article class="chapterOne-card">
+                <h2>6. Replace, Do Not Just Remove</h2>
+                <p>
+                    Purity is not only about saying "no" to sin; it is about saying "yes" to a better life.
+                </p>
+                <p>
+                    Replace bad habits with good ones:
+                </p>
+                <ul>
+                    <li>Replace late-night scrolling with reading or worship.</li>
+                    <li>Replace fantasy thoughts with Scripture meditation.</li>
+                    <li>Replace isolation with healthy connection and purpose.</li>
+                </ul>
+                <p>
+                    An empty space always gets filled. Fill it with life.
+                </p>
+            </article>
+        </section>
 
-      <p class="chapterOne-teaching-text">
-        Purity is more than just avoiding sin—it’s a condition of the heart that seeks to honor God in every thought,
-        word, and action.
-      </p>
+        <section class="chapterOne-grid two-columns chapterOne-reflection-grid">
+            <article class="chapterOne-card chapterOne-reflection">
+                <h2>Reflection Journal</h2>
+                <ul>
+                    <li>What are my top 3 triggers right now?</li>
+                    <li>What one practical change can I make today?</li>
+                    <li>Who can be my accountability partner?</li>
+                    <li>What daily routine can I begin this week?</li>
+                </ul>
+                <p>
+                    Write your answers and keep them visible as reminders.
+                </p>
+            </article>
 
-      <ul class="chapterOne-bullets">
-        <li>
-          <strong>Purity Is a Heart Condition:</strong> Jesus emphasizes that sin begins in the heart. Lustful thoughts,
-          for instance, are as harmful as physical actions (Matthew 5:28). A pure heart prioritizes God’s desires over
-          selfish ones.
-        </li>
-        <li>
-          <strong>Purity Is a Process:</strong> Purity isn’t about perfection; it’s about consistently seeking God and
-          growing closer to Him. Through repentance and prayer, we can be cleansed of our sins (1 John 1:9).
-        </li>
-      </ul>
+            <article class="chapterOne-card chapterOne-activity">
+                <h2>Do This Now</h2>
+                <ol>
+                    <li>Remove one major trigger from your phone or room today.</li>
+                    <li>Choose one Bible verse to memorize this week.</li>
+                    <li>Set a daily 5-minute prayer reminder.</li>
+                    <li>Tell one trusted person that you want accountability.</li>
+                </ol>
+                <p>
+                    Action creates momentum. Start now.
+                </p>
+            </article>
+        </section>
 
-      <blockquote class="chapterOne-scripture">
-        “Create in me a pure heart, O God, and renew a steadfast spirit within me.”<br />
-        <span class="chapterOne-verseRef">— Psalm 51:10</span>
-      </blockquote>
+        <section class="reflection-timer-module" aria-label="15-minute reflection break">
+            <h3>15-Minute Break</h3>
+            <p class="timer-encouragement">
+                Take this time to pray, reset your focus, and invite God to strengthen your daily discipline.
+            </p>
+            <div class="reflection-timer-display" aria-live="polite" aria-atomic="true">15:00</div>
+            <div class="timer-controls">
+                <button type="button" class="reflection-timer-btn btn-start">Start Timer</button>
+                <button type="button" class="reflection-timer-btn btn-stop" hidden>Stop Timer</button>
+                <button type="button" class="reflection-timer-btn btn-restart">Restart Timer</button>
+            </div>
+            <p class="timer-completion-message" aria-live="polite">Time's up. Come back when you're ready.</p>
+            <div class="timer-waves" aria-hidden="true">
+                <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="timerWaveSketchGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#3b82f6" />
+                            <stop offset="50%" stop-color="#a855f7" />
+                            <stop offset="100%" stop-color="#ec4899" />
+                        </linearGradient>
+                    </defs>
+                    <path class="wave-path" d="M -10,35 C 30,85 70,85 110,35" stroke="url(#timerWaveSketchGrad)" />
+                    <path class="wave-path" d="M -10,45 C 35,95 65,95 110,45" stroke="url(#timerWaveSketchGrad)" />
+                    <path class="wave-path" d="M -10,25 C 25,80 75,80 110,25" stroke="url(#timerWaveSketchGrad)" />
+                    <path class="wave-path" d="M -10,55 C 40,105 60,105 110,55" stroke="url(#timerWaveSketchGrad)" />
+                    <path class="wave-path" d="M -10,40 C 30,90 70,90 110,40" stroke="url(#timerWaveSketchGrad)" />
+                </svg>
+            </div>
+        </section>
 
-      <div class="chapterOne-action-box">
-        <h3>Do This Now</h3>
-        <p>
-          Take a moment to pray and ask God to show you areas in your life where you need greater purity. Write down one
-          step you can take today to align your thoughts and actions with His will.
-        </p>
-      </div>
+        <section class="chapterOne-card chapterOne-prayer">
+            <h2>Prayer</h2>
+            <p>
+                Lord Jesus,
+            </p>
+            <p>
+                Thank You for giving me strength and wisdom to live in purity. Help me to be disciplined in my thoughts,
+                my actions, and my daily habits. Teach me to prepare before temptation comes, just like the beaver
+                built its dam before the storm.
+            </p>
+            <p>
+                Give me courage to remove every trigger, to speak truth, and to walk in accountability. Fill my heart
+                with Your presence so that I desire what is holy more than what is harmful.
+            </p>
+            <p>
+                I believe I can do all things through Christ who strengthens me.
+            </p>
+            <p>
+                In Jesus\' Name,
+                Amen.
+            </p>
+        </section>
 
-      <div class="chapterOne-reflection-area">
-        <div class="chapterOne-reflect-box">
-        <h3>Questions to Reflect On</h3>
-        <ul>
-          <li>How do you define purity in your life?</li>
-          <li>What does it mean for your heart to be pure before God?</li>
-          <li>Are there areas where you struggle with impure thoughts or actions?</li>
-          <li>How can prayer and Scripture help cleanse your heart?</li>
-        </ul>
-      </div>
-        <div class="chapterOne-journal-box">
-        <label for="chapter3-journal2"><strong>Your Journal:</strong> What stood out to you?</label>
-        <textarea id="chapter3-journal2" placeholder="Type your thoughts here..."></textarea>
-      </div>
-      </div>
-    </div>
-  </section>
+        <section class="chapterOne-card chapterOne-summary">
+            <h2>Chapter Summary</h2>
+            <p>
+                Staying strong in purity requires preparation, not panic. Through practical boundaries, daily spiritual
+                habits, accountability, and God\'s strength, you can walk in lasting victory. You are not powerless - you
+                are equipped.
+            </p>
+            <a class="chapterOne-button" href="journey.html">Return to Journey</a>
+            <button class="chapterOne-button button-secondary" type="button" data-export-summary>
+                Export Chapter 23 Summary
+            </button>
+        </section>
 
-  <!-- Section 2 -->
-  <section class="chapterOne-teaching-section" id="section2">
-    <div class="chapterOne-teaching-container">
-      <h2 class="chapterOne-teaching-title">2. Why Self-Control Matters</h2>
+        <nav class="chapterOne-nav" aria-label="Chapter navigation">
+            <a class="chapterOne-button button-secondary" href="chapter22.html">Previous Chapter</a>
+            <a class="chapterOne-button" href="chapter24.html">Next Chapter</a>
+        </nav>
+    </main>
 
-      <p class="chapterOne-teaching-text">
-        Self-control is essential for living a life that honors God. Without it, our desires can lead us away from His
-        purpose for us.
-      </p>
-
-      <ul class="chapterOne-bullets">
-        <li>
-          <strong>A Fruit of the Spirit:</strong> Self-control is one of the fruits of the Spirit, meaning it grows as
-          we walk closely with God (Galatians 5:22-23). It’s not about willpower alone but about relying on God’s
-          strength.
-        </li>
-        <li>
-          <strong>Guarding Against Temptation:</strong> Temptation is part of life, but self-control equips us to say no
-          to sin.
-        </li>
-      </ul>
-
-      <blockquote class="chapterOne-scripture">
-        “No temptation has overtaken you except what is common to mankind. And God is faithful; He will not let you be
-        tempted beyond what you can bear.”<br />
-        <span class="chapterOne-verseRef">— 1 Corinthians 10:13</span>
-      </blockquote>
-
-      <div class="chapterOne-action-box">
-        <h3>Do This Now</h3>
-        <p>
-          Write down a situation where you’ve struggled with self-control. Reflect on how you can prepare for similar
-          situations in the future using prayer, Scripture, or accountability.
-        </p>
-      </div>
-
-      <div class="chapterOne-reflection-area">
-        <div class="chapterOne-reflect-box">
-        <h3>Questions to Reflect On</h3>
-        <ul>
-          <li>How does self-control impact your relationship with God?</li>
-          <li>What areas of your life require greater discipline?</li>
-          <li>How can you rely on God’s strength to resist temptation?</li>
-          <li>Who can help hold you accountable as you grow in self-control?</li>
-        </ul>
-      </div>
-        <div class="chapterOne-journal-box">
-        <label for="chapter3-journal3"><strong>Your Journal:</strong> What stood out to you?</label>
-        <textarea id="chapter3-journal3" placeholder="Type your thoughts here..."></textarea>
-      </div>
-      </div>
-    </div>
-  </section>
-  <!-- 15-Minute Reflection Break -->
-  <section class="reflection-timer-module" aria-label="15-minute reflection break">
-    <h3>15-Minute Break</h3>
-    <p class="timer-encouragement">Take a moment to step away and let what you've reflected on settle in your heart.</p>
-    <div class="reflection-timer-display" aria-live="polite" aria-atomic="true">15:00</div>
-    <div class="timer-controls">
-      <button type="button" class="reflection-timer-btn btn-start">Start Timer</button>
-      <button type="button" class="reflection-timer-btn btn-stop" hidden>Stop Timer</button>
-      <button type="button" class="reflection-timer-btn btn-restart">Restart Timer</button>
-    </div>
-    <p class="timer-completion-message" aria-live="polite">Time's up. Come back when you're ready.</p>
-    <div class="timer-waves" aria-hidden="true">
-  <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="timerWaveSketchGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#3b82f6" />
-        <stop offset="50%" stop-color="#a855f7" />
-        <stop offset="100%" stop-color="#ec4899" />
-      </linearGradient>
-    </defs>
-    <path class="wave-path" d="M -10,35 C 30,85 70,85 110,35" stroke="url(#timerWaveSketchGrad)" />
-    <path class="wave-path" d="M -10,45 C 35,95 65,95 110,45" stroke="url(#timerWaveSketchGrad)" />
-    <path class="wave-path" d="M -10,25 C 25,80 75,80 110,25" stroke="url(#timerWaveSketchGrad)" />
-    <path class="wave-path" d="M -10,55 C 40,105 60,105 110,55" stroke="url(#timerWaveSketchGrad)" />
-    <path class="wave-path" d="M -10,40 C 30,90 70,90 110,40" stroke="url(#timerWaveSketchGrad)" />
-  </svg>
-</div>
-</section>
-
-
-  <!-- Section 3 -->
-  <section class="chapterOne-teaching-section" id="section3">
-    <div class="chapterOne-teaching-container">
-      <h2 class="chapterOne-teaching-title">3. Guarding Your Mind and Heart</h2>
-
-      <p class="chapterOne-teaching-text">
-        Your mind is a battlefield where spiritual growth and purity are won or lost. Guarding your thoughts is critical
-        to maintaining purity.
-      </p>
-
-      <ul class="chapterOne-bullets">
-        <li>
-          <strong>Thoughts Lead to Actions:</strong> “Whatever is true, whatever is noble, whatever is right, whatever
-          is pure… think about such things.” (Philippians 4:8) Purity starts with filling your mind with things that
-          honor God.
-        </li>
-        <li>
-          <strong>Practical Steps:</strong> Limit exposure to media, conversations, or environments that encourage
-          impure thoughts. Replace negative influences with God’s Word, worship, and uplifting relationships.
-        </li>
-      </ul>
-
-      <blockquote class="chapterOne-scripture">
-        “Finally, brothers and sisters, whatever is true, whatever is noble, whatever is right, whatever is pure… think
-        about such things.”<br />
-        <span class="chapterOne-verseRef">— Philippians 4:8</span>
-      </blockquote>
-
-      <div class="chapterOne-quote-box">
-        “You are what you think. Your thoughts shape your life.”<br />— Proverbs 23:7 (paraphrased)
-      </div>
-
-      <div class="chapterOne-action-box">
-        <h3>Do This Now</h3>
-        <p>
-          List three things you frequently allow into your mind (TV shows, music, social media, etc.). Evaluate whether
-          they encourage purity or lead you toward temptation.
-        </p>
-      </div>
-
-      <div class="chapterOne-reflection-area">
-        <div class="chapterOne-reflect-box">
-        <h3>Questions to Reflect On</h3>
-        <ul>
-          <li>What thoughts do you struggle to control?</li>
-          <li>How does guarding your mind impact your ability to stay pure?</li>
-          <li>What habits or influences could you change to protect your heart?</li>
-          <li>How can Scripture help transform your thoughts?</li>
-        </ul>
-      </div>
-        <div class="chapterOne-journal-box">
-        <label for="chapter3-journal4"><strong>Your Journal:</strong> What stood out to you?</label>
-        <textarea id="chapter3-journal4" placeholder="Type your thoughts here..."></textarea>
-      </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 4 -->
-  <section class="chapterOne-teaching-section" id="section4">
-    <div class="chapterOne-teaching-container">
-      <h2 class="chapterOne-teaching-title">4. Practical Strategies for Purity</h2>
-
-      <p class="chapterOne-teaching-text">
-        God provides tools and resources to help us pursue purity in a world full of temptations.
-      </p>
-
-      <ul class="chapterOne-bullets">
-        <li>
-          <strong>Accountability Partners:</strong> Share your struggles with a trusted friend or mentor who can
-          encourage and pray for you. “As iron sharpens iron, so one person sharpens another.” (Proverbs 27:17)
-        </li>
-        <li>
-          <strong>Daily Prayer and Bible Study:</strong> Regular time with God strengthens your resolve to resist
-          temptation. Pray for strength to overcome specific struggles.
-        </li>
-        <li>
-          <strong>Avoiding Triggers:</strong> Identify situations, environments, or habits that lead to temptation and
-          create boundaries. Replace idle time with productive or spiritually enriching activities.
-        </li>
-      </ul>
-
-      <blockquote class="chapterOne-scripture">
-        “As iron sharpens iron, so one person sharpens another.”<br />
-        <span class="chapterOne-verseRef">— Proverbs 27:17</span>
-      </blockquote>
-
-      <div class="chapterOne-action-box">
-        <h3>Do This Now</h3>
-        <p>
-          Choose one practical strategy (e.g., setting boundaries, finding an accountability partner) and commit to
-          implementing it this week.
-        </p>
-      </div>
-
-      <div class="chapterOne-reflection-area">
-        <div class="chapterOne-reflect-box">
-        <h3>Questions to Reflect On</h3>
-        <ul>
-          <li>What triggers temptations in your life?</li>
-          <li>Who can you trust to support you in staying accountable?</li>
-          <li>How can daily prayer and Bible study strengthen your pursuit of purity?</li>
-          <li>What boundaries can you set to avoid tempting situations?</li>
-        </ul>
-      </div>
-        <div class="chapterOne-journal-box">
-        <label for="chapter3-journal5"><strong>Your Journal:</strong> What stood out to you?</label>
-        <textarea id="chapter3-journal5" placeholder="Type your thoughts here..."></textarea>
-      </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 5 -->
-  <section class="chapterOne-teaching-section" id="section5">
-    <div class="chapterOne-teaching-container">
-      <h2 class="chapterOne-teaching-title">5. The Reward of Purity</h2>
-
-      <p class="chapterOne-teaching-text">
-        Living a pure life brings spiritual rewards and a deeper relationship with God.
-      </p>
-
-      <ul class="chapterOne-bullets">
-        <li>
-          <strong>Seeing God:</strong> Purity opens your eyes to God’s presence and guidance (Matthew 5:8).
-        </li>
-        <li>
-          <strong>Peace and Joy:</strong> A pure heart is free from guilt, shame, and the weight of sin, leading to
-          greater peace and joy (Psalm 119:165).
-        </li>
-      </ul>
-
-      <blockquote class="chapterOne-scripture">
-        “Great peace have those who love Your law, and nothing can make them stumble.”<br />
-        <span class="chapterOne-verseRef">— Psalm 119:165</span>
-      </blockquote>
-
-      <div class="chapterOne-action-box">
-        <h3>Do This Now</h3>
-        <p>
-          Write a prayer thanking God for the blessings that come with purity. Reflect on how these blessings can
-          motivate you to stay on the path He has set for you.
-        </p>
-      </div>
-
-      <div class="chapterOne-reflection-area">
-        <div class="chapterOne-reflect-box">
-        <h3>Questions to Reflect On</h3>
-        <ul>
-          <li>How has pursuing purity brought you closer to God?</li>
-          <li>What peace or joy have you experienced through honoring Him with your life?</li>
-          <li>How can the promise of “seeing God” encourage you in moments of struggle?</li>
-          <li>What steps will you take today to pursue these rewards?</li>
-        </ul>
-      </div>
-        <div class="chapterOne-journal-box">
-        <label for="chapter3-journal6"><strong>Your Journal:</strong> What stood out to you?</label>
-        <textarea id="chapter3-journal6" placeholder="Type your thoughts here..."></textarea>
-      </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Prayer -->
-  <section class="chapterOne-prayer-section" id="prayer">
-    <div class="chapterOne-prayer-container">
-      <h2 class="chapterOne-prayer-title">Prayer <i class="fa-solid fa-hands-praying" aria-hidden="true"></i></h2>
-      <p class="chapterOne-prayer-text">
-        Heavenly Father,<br /><br />
-        Thank You for calling me to a life of purity and self-control. I know it is not always easy, but I trust in Your
-        strength to guide me. Help me to guard my heart and mind, and to honor You in my thoughts, words, and actions.
-        Teach me to rely on Your Spirit to resist temptation and grow in holiness. Thank You for the blessings that come
-        from living a pure life and for the peace that comes through Your grace.<br /><br />
-        In Jesus’ name, Amen.
-      </p>
-    </div>
-  </section>
-
-  <!-- Export -->
-  <section class="chapterOne-export-section">
-    <div class="chapterOne-export-container">
-      <h2 class="chapterOne-export-title">You've Completed Chapter 3</h2>
-      <p class="chapterOne-export-text">
-        Well done. You’ve taken time to reflect and build a stronger foundation. Download your reflections to keep what
-        God is teaching you.
-      </p>
-
-      <button onclick="exportReflection()" class="chapterOne-export-button">
-        Download My Reflection
-      </button>
-    </div>
-  </section>
-
-  <!-- Summary -->
-  <section class="chapterOne-summary-section">
-    <div class="chapterOne-summary-container">
-      <h2 class="chapterOne-summary-title">Chapter Summary</h2>
-
-      <ul class="chapterOne-summary-list">
-        <li>Purity is a heart condition, not just behavior management.</li>
-        <li>Self-control grows as a fruit of the Spirit, not willpower alone.</li>
-        <li>Guarding your mind shapes your actions and spiritual strength.</li>
-        <li>Practical strategies create real protection in a tempting world.</li>
-        <li>Pursuing purity leads to peace, joy, and deeper awareness of God.</li>
-      </ul>
-
-      <div class="chapterOne-reflection-question">
-        <strong>Final Reflection:</strong>
-        What is one input you need to remove—and one habit you need to build—to protect purity at the source?
-      </div>
-
-      <div class="chapterOne-journal-box">
-        <label for="chapter3-journal7"><strong>Your Summary:</strong> What is your biggest takeaway?</label>
-        <textarea id="chapter3-journal7" placeholder="Summarize your chapter reflections..."></textarea>
-      </div>
-    </div>
-  </section>
-
-  <!-- Continue -->
-  <section class="chapterOne-teaching-section" id="continue">
-    <div class="chapterOne-teaching-container">
-      <h2 class="chapterOne-teaching-title">Continue the Journey</h2>
-      <p class="chapterOne-teaching-text">Use the links below to navigate chapters.</p>
-      <div class="chapter-nav">
-        <a href="chapter2.html" class="chapter-nav-btn prev">← Previous Chapter</a>
-        <a href="chapter4.html" class="chapter-nav-btn next">Next Chapter →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHAPTER CONTENT END -->
-
-  <!-- Footer -->
-  <div class="separated_block last">
-    <footer class="footer separated_block_corner" id="footer" role="contentinfo">
-      <div class="footer-links">
-        <a href="about.html" class="footer-link">About</a>
-        <a href="resources.html" class="footer-link">Resources</a>
-        <a href="resources.html" class="footer-link">Blog (Coming Soon)</a>
-        <a href="contacts.html" class="footer-link">Contact</a>
-      </div>
-      <div class="footer-social">
-        <a href="https://facebook.com" class="social-link">Facebook</a>
-        <a href="https://instagram.com" class="social-link">Instagram</a>
-        <a href="https://youtube.com" class="social-link">YouTube</a>
-      </div>
-      <p class="footer-contact">Email: support@guardiansofpurity.com</p>
-      <p class="footer-copyright">© 2025 Guardians of Purity</p>
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Guardians of Purity. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="contacts.html">Contact</a>
+                <a href="resources.html">Resources</a>
+            </div>
+        </div>
     </footer>
-  </div>
 
-  <!-- JavaScript -->
-  <script src="js/storage.js"></script>
-  <script src="js/script.js"></script>
+    <button class="back-to-top" aria-label="Back to top">↑</button>
 </body>
 
 </html>
