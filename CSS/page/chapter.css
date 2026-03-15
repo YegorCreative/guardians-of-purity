@@ -2232,6 +2232,37 @@ body.chapterModalOpen {
     height: 100%;
   }
 
+  /* Two-column layout for sections with "Do This Now" + Journal */
+  .chapterOne-teaching-container:has(> .chapterOne-action-box + .chapterOne-journal-box) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 18px;
+    row-gap: 0;
+    align-items: start;
+  }
+
+  .chapterOne-teaching-container:has(> .chapterOne-action-box + .chapterOne-journal-box) > * {
+    grid-column: 1 / -1;
+  }
+
+  .chapterOne-teaching-container:has(> .chapterOne-action-box + .chapterOne-journal-box) > .chapterOne-action-box,
+  .chapterOne-teaching-container:has(> .chapterOne-action-box + .chapterOne-journal-box) > .chapterOne-journal-box {
+    grid-column: span 1;
+    align-self: stretch;
+    margin: 20px 0 !important;
+    height: 100%;
+  }
+
+  .chapterOne-teaching-container:has(> .chapterOne-action-box + .chapterOne-journal-box) > .chapterOne-journal-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chapterOne-teaching-container:has(> .chapterOne-action-box + .chapterOne-journal-box) > .chapterOne-journal-box textarea {
+    flex: 1;
+    min-height: 180px;
+  }
+
   .chapterOne-quote-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2277,12 +2308,12 @@ body.chapterModalOpen {
 
   .chapterOne-reflection-area .chapterOne-reflect-box {
     order: 1;
-    margin: 0;
+    margin: 0 !important;
   }
 
   .chapterOne-reflection-area .chapterOne-journal-box {
     order: 2;
-    margin: 0;
+    margin: 0 !important;
   }
 
   /* Ensure both cards have consistent styling in the grid */
