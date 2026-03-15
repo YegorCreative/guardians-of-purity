@@ -327,9 +327,9 @@
     {
       "number": 24,
       "file": "chapter24.html",
-      "title": "Replacing Lust with Love",
+      "title": "Regrouping After a Fall",
       "checks": {
-        "has_questions": true,
+        "has_questions": false,
         "has_journal": true,
         "has_timer": true,
         "timer_wrong_position": false,
@@ -341,9 +341,9 @@
     {
       "number": 25,
       "file": "chapter25.html",
-      "title": "Building Guardrails Before You Need Them",
+      "title": "Growing in Holiness",
       "checks": {
-        "has_questions": true,
+        "has_questions": false,
         "has_journal": true,
         "has_timer": true,
         "timer_wrong_position": false,
@@ -355,9 +355,9 @@
     {
       "number": 26,
       "file": "chapter26.html",
-      "title": "Reclaiming Passion for Holiness",
+      "title": "When You Feel Numb: Overcoming the Absence of Remorse",
       "checks": {
-        "has_questions": true,
+        "has_questions": false,
         "has_journal": true,
         "has_timer": true,
         "timer_wrong_position": false,
@@ -369,7 +369,7 @@
     {
       "number": 27,
       "file": "chapter27.html",
-      "title": "Knowing Your Identity in Christ",
+      "title": "Restoring Your Conscience",
       "checks": {
         "has_questions": false,
         "has_journal": true,
@@ -383,9 +383,9 @@
     {
       "number": 28,
       "file": "chapter28.html",
-      "title": "Living by the Spirit",
+      "title": "Reigniting Your Passion for Holiness",
       "checks": {
-        "has_questions": true,
+        "has_questions": false,
         "has_journal": true,
         "has_timer": true,
         "timer_wrong_position": false,

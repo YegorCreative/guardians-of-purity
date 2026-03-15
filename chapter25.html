@@ -4,218 +4,145 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chapter 25 — Building Guardrails Before You Need Them | Guardians of Purity</title>
-  <!-- Google Fonts: Updated Font Families -->
+  <title>Chapter 25 - Growing in Holiness | Guardians of Purity</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&family=Raleway:wght@400;600&family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
     rel="stylesheet" />
-  <!-- CSS Links -->
   <link rel="stylesheet" href="CSS/styles.css" />
   <link rel="stylesheet" href="CSS/header.css" />
   <link rel="stylesheet" href="CSS/footer.css" />
   <link rel="stylesheet" href="CSS/styles-responsive.css" />
   <link rel="stylesheet" href="CSS/page/chapter.css" />
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
 
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
-  <!-- Navbar -->
   <a id="scrollToTopButton" aria-label="Scroll to top" title="Scroll to top">&#x2191;</a>
   <div class="separated_block first">
     <header class="header" role="banner">
-    <nav class="navbar" id="main-nav" role="navigation">
-      <a href="index.html" class="logo">
-        <img
-          src="./img/logo.png"
-          alt="Guardians of Purity Logo"
-          class="logo-img"
-          loading="eager"
-        />
-      </a>
-
-      <div class="tvnav" id="primary-nav-menu" aria-label="Primary">
-        <a href="index.html" class="tvnav__item" data-nav="home">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10.5z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">Home</span>
+      <nav class="navbar" id="main-nav" role="navigation">
+        <a href="index.html" class="logo">
+          <img src="./img/logo.png" alt="Guardians of Purity Logo" class="logo-img" loading="eager" />
         </a>
-
-        <a href="journey.html" class="tvnav__item" data-nav="journey">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M12 3 2 8l10 5 10-5-10-5zm0 8L2 6v4l10 5 10-5V6l-10 5zm0 6L2 12v4l10 5 10-5v-4l-10 5z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">Journey</span>
-        </a>
-
-        <a href="resources.html" class="tvnav__item" data-nav="resources">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M6 3h11a2 2 0 0 1 2 2v15a1 1 0 0 1-1 1H7a3 3 0 0 0-3 3V5a2 2 0 0 1 2-2zm1 4v12h10V7H7z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">Resources</span>
-        </a>
-
-        <a href="prayer.html" class="tvnav__item" data-nav="prayer">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0 1 12 6.2 5.5 5.5 0 0 1 21.5 12C19 16.4 12 21 12 21z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">Prayer</span>
-        </a>
-
-        <a href="contacts.html" class="tvnav__item" data-nav="contact">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">Contact</span>
-        </a>
-
-        <a href="about.html" class="tvnav__item" data-nav="about">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">About</span>
-        </a>
-      </div>
-    </nav>
-  </header>
+        <div class="tvnav" id="primary-nav-menu" aria-label="Primary">
+          <a href="index.html" class="tvnav__item" data-nav="home"><span class="tvnav__label">Home</span></a>
+          <a href="journey.html" class="tvnav__item" data-nav="journey"><span class="tvnav__label">Journey</span></a>
+          <a href="resources.html" class="tvnav__item" data-nav="resources"><span class="tvnav__label">Resources</span></a>
+          <a href="prayer.html" class="tvnav__item" data-nav="prayer"><span class="tvnav__label">Prayer</span></a>
+          <a href="contacts.html" class="tvnav__item" data-nav="contact"><span class="tvnav__label">Contact</span></a>
+          <a href="about.html" class="tvnav__item" data-nav="about"><span class="tvnav__label">About</span></a>
+        </div>
+      </nav>
+    </header>
   </div>
 
-  <!-- EDIT ONLY INSIDE CHAPTER CONTENT -->
-  <!-- CHAPTER CONTENT START -->
-
-  <!-- section 1 -->
   <section class="chapterOne-section" id="main">
     <div class="chapterOne-overlay">
       <div class="chapterOne-content">
-        <h1 class="chapterOne-title">Building Guardrails Before You Need Them</h1>
+        <h1 class="chapterOne-title">Growing in Holiness</h1>
         <div class="chapterOne-verse-container">
-          <p class="chapterOne-verse">“Be alert and of sober mind. Your enemy the devil prowls around like a roaring lion looking for
-          someone to devour.”</p>
-          <span class="chapterOne-verseRef">— 1 Peter 5:8</span>
+          <p class="chapterOne-verse">"But just as He who called you is holy, so be holy in all you do; for it is written: 'Be holy, because I am holy.'"</p>
+          <span class="chapterOne-verseRef">(1 Peter 1:15-16)</span>
         </div>
-        <p class="chapterOne-quote">
-          Wisdom is not avoiding the path, but recognizing the danger and building guardrails before a fall
-          ever happens.
-        </p>
+        <p class="chapterOne-quote">Holiness is formed through daily surrender, steady walking, and a willingness to be shaped over time.</p>
       </div>
     </div>
   </section>
 
-  <!-- section 2 parable -->
-  <section class="chapterOne-parable-section">
+  <section class="chapterOne-parable-section" id="parable">
     <div class="chapterOne-parable-container">
-      <h2 class="chapterOne-parable-title">Parable: The Mountain Path and the Rails</h2>
-      <!-- VISUAL PROMPT: A narrow mountain path with wooden guardrails along a steep cliff edge, morning mist below, a traveler walking confidently with the rail beside him, muted cool blues and earth tones, minimal composition, slight film grain, contemplative mood about building wise boundaries before danger arrives -->
-
-            <div class="chapterOne-parable-body">
-        <div class="chapterOne-parable-image"></div>
-<p class="chapterOne-paragraph">
-        There was a traveler who walked a narrow path along the side of a mountain.
-      </p>
-      <p class="chapterOne-paragraph">
-        At first, he trusted his balance and paid little attention to the steep drop beside him. The view was
-        beautiful, but one misstep could have meant disaster. After a close call, he stopped and built a
-        simple railing along the edge of the path—not because he planned to lean on it, but because he knew
-        the danger was real.
-      </p>
-      <p class="chapterOne-paragraph">
-        With the rail in place, he walked with greater confidence and peace. The path did not change, and
-        the drop was still there, but the boundary kept him safe.
-      </p>
+      <h2 class="chapterOne-parable-title">Parable: The Polished Stone</h2>
+      <div class="chapterOne-parable-body">
+        <div class="chapterOne-parable-image">
+          <img src="img/chapterAssets/chapter25.webp" alt="Illustration for the parable The Polished Stone" loading="lazy" />
+        </div>
+        <p class="chapterOne-paragraph">There was a man who carried a rough stone in his pocket.</p>
+        <p class="chapterOne-paragraph">Each day, as he walked, the stone rubbed against his clothes and his skin. At first, its edges were sharp and uncomfortable, and he thought about throwing it away. But he kept it, noticing that with time and movement, the stone began to change. The sharp corners softened. The surface grew smooth.</p>
+        <p class="chapterOne-paragraph">The stone was not polished in a single moment, nor by force, but by steady contact and daily wear. What once felt rough became something refined and beautiful.</p>
+        <p class="chapterOne-paragraph">The man realized that the journey itself had shaped the stone.</p>
       </div>
-
       <div class="chapterOne-moral-box">
         <strong>Moral:</strong><br />
-        Wisdom is not avoiding the path, but recognizing the danger and building guardrails before a fall
-        ever happens.
+        Holiness is not formed in an instant, but through daily surrender, steady walking, and a willingness to be shaped over time.
       </div>
     </div>
   </section>
 
-  <!-- section 3 teaching 1 -->
-  <section class="chapterOne-teaching-section">
+  <section class="chapterOne-teaching-section" id="intro">
     <div class="chapterOne-teaching-container">
-      <h2 class="chapterOne-teaching-title">1. Introduction: Why Understanding Triggers is Crucial</h2>
-
+      <h2 class="chapterOne-teaching-title">Introduction: The Pursuit of Holiness</h2>
       <p class="chapterOne-teaching-text">
-        Triggers are the situations, emotions, or thoughts that lead you into behaviors you want to avoid,
-        such as pornography or masturbation. Recognizing these triggers is the first step in breaking free
-        from destructive habits. Once identified, developing guardrails—practical boundaries to protect
-        yourself—is essential for staying on the path of purity. This chapter will help you understand common
-        triggers, how to identify your own, and how to set up effective safeguards.
+        Holiness is not an unattainable standard; it is a journey of daily growth and transformation. As believers, we
+        are called to reflect God's holiness in every area of our lives, including our thoughts, actions, and habits.
+        This chapter focuses on what it means to grow in holiness, how to cultivate habits that align with God's will,
+        and how to persevere in purity and righteousness.
       </p>
-
-      <div class="chapterOne-journal-box">
-        <label for="journal1"><strong>Your Journal:</strong> What stood out to you?</label>
-        <textarea id="journal1" placeholder="Type your thoughts here..."></textarea>
-      </div>
     </div>
   </section>
 
-
-  <!-- section 3 teaching 2 -->
-  <section class="chapterOne-teaching-section">
+  <section class="chapterOne-teaching-section" id="section1">
     <div class="chapterOne-teaching-container">
-      <h2 class="chapterOne-teaching-title">2. What Are Triggers?</h2>
-      <p class="chapterOne-teaching-text">
-        Triggers activate impulses and patterns that pull you toward temptation.
-      </p>
-
+      <h2 class="chapterOne-teaching-title">1. Understanding Holiness</h2>
       <ul class="chapterOne-bullets">
-        <li><strong>Definition:</strong> A trigger is anything that activates a craving or impulse to engage in a
-          specific behavior.</li>
-        <li><strong>Types of Triggers:</strong>
-          <ul>
-            <li><strong>Emotional Triggers:</strong> Stress, loneliness, boredom, or sadness.</li>
-            <li><strong>Environmental Triggers:</strong> Being alone in private spaces, late nights, or unfiltered
-              internet access.</li>
-            <li><strong>Behavioral Triggers:</strong> Patterns or habits, such as staying up late scrolling social media
-              or visiting certain websites.</li>
-          </ul>
-        </li>
+        <li><strong>What is Holiness?</strong> Holiness means being set apart for God's purposes. It involves living in a way that reflects His character - pure, righteous, and loving.</li>
+        <li><strong>Holiness as a Journey:</strong> Spiritual growth takes time and effort. Holiness is about progress, not perfection.</li>
       </ul>
-
       <blockquote class="chapterOne-scripture">
-        “So, if you think you are standing firm, be careful that you don’t fall!”<br />
-        <span class="chapterOne-verseRef">— 1 Corinthians 10:12</span>
+        "Make every effort to live in peace with everyone and to be holy; without holiness no one will see the Lord."<br />
+        <span class="chapterOne-verseRef">(Hebrews 12:14)</span>
       </blockquote>
-
       <div class="chapterOne-reflection-area">
         <div class="chapterOne-reflect-box">
-        <h3>Questions to Reflect On</h3>
-        <ol>
-          <li>What situations or emotions make you more likely to fall into temptation?</li>
-          <li>Are there specific places or times when you feel most vulnerable?</li>
-          <li>What habits or routines may be contributing to your struggles?</li>
-        </ol>
-      </div>
+          <h3>Reflection Questions</h3>
+          <ol>
+            <li>What does holiness mean to you?</li>
+            <li>How can you reflect God's character in your daily life?</li>
+            <li>Are there areas of your life that need to be set apart for God?</li>
+          </ol>
+        </div>
         <div class="chapterOne-journal-box">
-        <label for="journal2"><strong>Your Journal:</strong> What stood out to you?</label>
-        <textarea id="journal2" placeholder="Type your thoughts here..."></textarea>
-      </div>
+          <label for="chapter25-journal1"><strong>Your Journal:</strong> What stood out to you?</label>
+          <textarea id="chapter25-journal1" placeholder="Type your thoughts here..."></textarea>
+        </div>
       </div>
     </div>
   </section>
-  <!-- 15-Minute Reflection Break -->
+
+  <section class="chapterOne-teaching-section" id="section2">
+    <div class="chapterOne-teaching-container">
+      <h2 class="chapterOne-teaching-title">2. Practical Steps to Grow in Holiness</h2>
+      <ul class="chapterOne-bullets">
+        <li><strong>Daily Surrender:</strong> Start each day by surrendering your thoughts, actions, and desires to God.</li>
+        <li><strong>Meditate on Scripture:</strong> Fill your mind with God's Word to renew your thoughts and guide your actions.</li>
+      </ul>
+      <blockquote class="chapterOne-scripture">
+        "Your word is a lamp to my feet and a light to my path."<br />
+        <span class="chapterOne-verseRef">(Psalm 119:105)</span>
+      </blockquote>
+      <blockquote class="chapterOne-scripture">
+        "Finally, brothers and sisters, whatever is true, whatever is noble, whatever is right, whatever is pure... think about such things."<br />
+        <span class="chapterOne-verseRef">(Philippians 4:8)</span>
+      </blockquote>
+      <ul class="chapterOne-bullets">
+        <li><strong>Cultivate Gratitude:</strong> A thankful heart shifts your focus from what you lack to the blessings God has given you.</li>
+        <li><strong>Avoid Compromises:</strong> Be vigilant about the small choices you make, as they can either draw you closer to or further from holiness.</li>
+      </ul>
+      <div class="chapterOne-action-box">
+        <h3>Do This Now</h3>
+        <p>Write down one habit or activity you need to surrender to God and replace with something that honors Him.</p>
+      </div>
+      <div class="chapterOne-journal-box">
+        <label for="chapter25-journal2"><strong>Your Journal:</strong> What stood out to you?</label>
+        <textarea id="chapter25-journal2" placeholder="Type your thoughts here..."></textarea>
+      </div>
+    </div>
+  </section>
+
   <section class="reflection-timer-module" aria-label="15-minute reflection break">
     <h3>15-Minute Break</h3>
-    <p class="timer-encouragement">Take a moment to step away and let what you've reflected on settle in your heart.</p>
+    <p class="timer-encouragement">Pause and ask God to continue shaping your heart through daily surrender and obedience.</p>
     <div class="reflection-timer-display" aria-live="polite" aria-atomic="true">15:00</div>
     <div class="timer-controls">
       <button type="button" class="reflection-timer-btn btn-start">Start Timer</button>
@@ -224,231 +151,196 @@
     </div>
     <p class="timer-completion-message" aria-live="polite">Time's up. Come back when you're ready.</p>
     <div class="timer-waves" aria-hidden="true">
-  <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="timerWaveSketchGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#3b82f6" />
-        <stop offset="50%" stop-color="#a855f7" />
-        <stop offset="100%" stop-color="#ec4899" />
-      </linearGradient>
-    </defs>
-    <path class="wave-path" d="M -10,35 C 30,85 70,85 110,35" stroke="url(#timerWaveSketchGrad)" />
-    <path class="wave-path" d="M -10,45 C 35,95 65,95 110,45" stroke="url(#timerWaveSketchGrad)" />
-    <path class="wave-path" d="M -10,25 C 25,80 75,80 110,25" stroke="url(#timerWaveSketchGrad)" />
-    <path class="wave-path" d="M -10,55 C 40,105 60,105 110,55" stroke="url(#timerWaveSketchGrad)" />
-    <path class="wave-path" d="M -10,40 C 30,90 70,90 110,40" stroke="url(#timerWaveSketchGrad)" />
-  </svg>
-</div>
-</section>
-
-
-  <!-- section 3 teaching 3 -->
-  <section class="chapterOne-teaching-section">
-    <div class="chapterOne-teaching-container">
-      <h2 class="chapterOne-teaching-title">3. Identifying Your Personal Triggers</h2>
-      <p class="chapterOne-teaching-text">
-        Personal awareness reveals patterns and helps you build targeted guardrails.
-      </p>
-
-      <ul class="chapterOne-bullets">
-        <li><strong>Track Your Patterns:</strong> Keep a journal for one week, noting the times, places, and emotions
-          that precede moments of temptation. Look for recurring themes or situations.</li>
-        <li><strong>Be Honest with Yourself:</strong> Acknowledge triggers without shame or defensiveness.
-          Self-awareness is key to growth.</li>
-        <li><strong>Ask for Feedback:</strong> A trusted accountability partner or mentor can help you identify
-          triggers you may not notice yourself.</li>
-      </ul>
-
-      <div class="chapterOne-action-box">
-        <h3>Do This Now</h3>
-        <p>Write down three triggers you’ve noticed in your life. For each trigger, note how it makes you feel and what
-          typically happens as a result.</p>
-      </div>
-
-      <div class="chapterOne-journal-box">
-        <label for="journal3"><strong>Your Journal:</strong> What stood out to you?</label>
-        <textarea id="journal3" placeholder="Type your thoughts here..."></textarea>
-      </div>
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="timerWaveSketchGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#3b82f6" />
+            <stop offset="50%" stop-color="#a855f7" />
+            <stop offset="100%" stop-color="#ec4899" />
+          </linearGradient>
+        </defs>
+        <path class="wave-path" d="M -10,35 C 30,85 70,85 110,35" stroke="url(#timerWaveSketchGrad)" />
+        <path class="wave-path" d="M -10,45 C 35,95 65,95 110,45" stroke="url(#timerWaveSketchGrad)" />
+        <path class="wave-path" d="M -10,25 C 25,80 75,80 110,25" stroke="url(#timerWaveSketchGrad)" />
+        <path class="wave-path" d="M -10,55 C 40,105 60,105 110,55" stroke="url(#timerWaveSketchGrad)" />
+        <path class="wave-path" d="M -10,40 C 30,90 70,90 110,40" stroke="url(#timerWaveSketchGrad)" />
+      </svg>
     </div>
   </section>
 
-  <!-- section 3 teaching 4 -->
-  <section class="chapterOne-teaching-section">
+  <section class="chapterOne-teaching-section" id="section3">
     <div class="chapterOne-teaching-container">
-      <h2 class="chapterOne-teaching-title">4. Developing Guardrails to Stay Safe</h2>
-      <p class="chapterOne-teaching-text">
-        Guardrails are proactive measures that help you avoid situations where you’re more likely to give in
-        to temptation. They act as physical and mental boundaries to keep you on the right path.
-      </p>
-
+      <h2 class="chapterOne-teaching-title">3. Building Habits That Reflect God's Character</h2>
       <ul class="chapterOne-bullets">
-        <li><strong>Practical Guardrails:</strong>
-          <ul>
-            <li><strong>Time Management:</strong> Set specific times for sleep and wakefulness to avoid idleness
-              during vulnerable hours.</li>
-            <li><strong>Device Restrictions:</strong> Use accountability software like Covenant Eyes or screen time
-              restrictions to block inappropriate content.</li>
-            <li><strong>Physical Environment:</strong> Avoid being alone in spaces that trigger temptation, such as
-              your bedroom or bathroom.</li>
-          </ul>
-        </li>
-        <li><strong>Emotional Guardrails:</strong>
-          <ul>
-            <li><strong>Address Emotional Triggers:</strong> Find healthy outlets for emotions, like talking to a
-              friend, journaling, or exercising.</li>
-            <li><strong>Practice Gratitude:</strong> Shift your focus from what you lack to what you have by listing
-              three things you’re grateful for each day.</li>
-          </ul>
-        </li>
-        <li><strong>Spiritual Guardrails:</strong>
-          <ul>
-            <li><strong>Prayer and Scripture:</strong> Use God’s Word to counter lies and temptation.</li>
-            <li><strong>Scripture:</strong> “I have hidden Your word in my heart that I might not sin against You.” —
-              Psalm 119:11</li>
-            <li><strong>Accountability:</strong> Stay connected to someone who will pray for you and check in
-              regularly.</li>
-          </ul>
-        </li>
+        <li><strong>Consistency in Prayer:</strong> Make prayer a non-negotiable part of your daily routine. Prayer aligns your heart with God's will and strengthens you against temptation.</li>
+        <li><strong>Accountability in Community:</strong> Surround yourself with people who encourage you to grow spiritually.</li>
+        <li><strong>Service to Others:</strong> Reflect God's love by serving others, whether through acts of kindness, volunteering, or sharing your faith.</li>
       </ul>
-
       <div class="chapterOne-reflection-area">
         <div class="chapterOne-reflect-box">
-        <h3>Questions to Reflect On</h3>
-        <ol>
-          <li>What physical guardrails can you implement to protect yourself from temptation?</li>
-          <li>How can you address emotional triggers in a healthy way?</li>
-          <li>Who can you invite into your journey to hold you accountable?</li>
-        </ol>
-      </div>
+          <h3>Reflection Questions</h3>
+          <ol>
+            <li>What habits currently help you grow in holiness?</li>
+            <li>Are there areas of your life where you are compromising?</li>
+            <li>How can you use your time and talents to serve others?</li>
+          </ol>
+        </div>
         <div class="chapterOne-journal-box">
-        <label for="journal4"><strong>Your Journal:</strong> What stood out to you?</label>
-        <textarea id="journal4" placeholder="Type your thoughts here..."></textarea>
-      </div>
+          <label for="chapter25-journal3"><strong>Your Journal:</strong> What stood out to you?</label>
+          <textarea id="chapter25-journal3" placeholder="Type your thoughts here..."></textarea>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- section 3 teaching 5 -->
-  <section class="chapterOne-teaching-section">
+  <section class="chapterOne-teaching-section" id="section4">
     <div class="chapterOne-teaching-container">
-      <h2 class="chapterOne-teaching-title">5. Maintaining and Adjusting Your Guardrails</h2>
-      <p class="chapterOne-teaching-text">
-        Guardrails work best when you review them regularly and adjust as needed.
-      </p>
-
+      <h2 class="chapterOne-teaching-title">4. Overcoming Obstacles to Holiness</h2>
       <ul class="chapterOne-bullets">
-        <li><strong>Evaluate Regularly:</strong> Check in with yourself weekly to see if your guardrails are working
-          or need adjustments.</li>
-        <li><strong>Stay Flexible:</strong> Life circumstances change, and your boundaries may need to evolve over
-          time.</li>
-        <li><strong>Celebrate Progress:</strong> Acknowledge small victories and thank God for helping you stay on
-          track.</li>
+        <li><strong>Dealing with Setbacks:</strong> When you stumble, do not dwell in guilt. Instead, confess, repent, and move forward.</li>
       </ul>
-
       <blockquote class="chapterOne-scripture">
-        “The prudent see danger and take refuge, but the simple keep going and pay the penalty.”<br />
-        <span class="chapterOne-verseRef">— Proverbs 27:12</span>
+        "If we confess our sins, He is faithful and just to forgive us our sins and to purify us from all unrighteousness."<br />
+        <span class="chapterOne-verseRef">(1 John 1:9)</span>
       </blockquote>
-
+      <ul class="chapterOne-bullets">
+        <li><strong>Fighting Temptation:</strong> Identify triggers and use Scripture as your weapon against temptation, just as Jesus did in the wilderness.</li>
+        <li><strong>Staying Encouraged:</strong> Remember that God is patient with you and is more focused on your heart than your performance.</li>
+      </ul>
       <div class="chapterOne-action-box">
         <h3>Do This Now</h3>
-        <p>List three guardrails you can implement today, and commit to reviewing their effectiveness after one week.
-        </p>
+        <p>List two or three obstacles you face in your pursuit of holiness and write one action step for overcoming each.</p>
       </div>
-
       <div class="chapterOne-journal-box">
-        <label for="journal5"><strong>Your Journal:</strong> What stood out to you?</label>
-        <textarea id="journal5" placeholder="Type your thoughts here..."></textarea>
+        <label for="chapter25-journal4"><strong>Your Journal:</strong> What stood out to you?</label>
+        <textarea id="chapter25-journal4" placeholder="Type your thoughts here..."></textarea>
       </div>
     </div>
   </section>
 
-  <!-- section 3 teaching 6 -->
-  <section class="chapterOne-teaching-section">
+  <section class="chapterOne-teaching-section" id="section5">
     <div class="chapterOne-teaching-container">
-      <h2 class="chapterOne-teaching-title">6. Moving Forward with Awareness and Wisdom</h2>
-      <p class="chapterOne-teaching-text">
-        Understanding triggers and building guardrails is wisdom in action and humility in practice. Triggers
-        will exist, but with God’s help you can resist and walk in victory. Key Reminder: Triggers and
-        temptations will always exist, but with God’s help, you can resist and walk in victory.
-      </p>
-
-      <div class="chapterOne-journal-box">
-        <label for="journalFinal"><strong>Your Journal:</strong> What stood out to you?</label>
-        <textarea id="journalFinal" placeholder="Type your thoughts here..."></textarea>
+      <h2 class="chapterOne-teaching-title">5. Persevering in the Pursuit of Holiness</h2>
+      <ul class="chapterOne-bullets">
+        <li><strong>Focus on the Eternal Reward:</strong> Holiness is not just about the here and now; it is about preparing your heart for eternity with God.</li>
+      </ul>
+      <blockquote class="chapterOne-scripture">
+        "Let us run with perseverance the race marked out for us, fixing our eyes on Jesus, the pioneer and perfecter of faith."<br />
+        <span class="chapterOne-verseRef">(Hebrews 12:1-2)</span>
+      </blockquote>
+      <ul class="chapterOne-bullets">
+        <li><strong>Celebrate Small Victories:</strong> Acknowledge progress and thank God for every step forward, no matter how small.</li>
+        <li><strong>Trust the Holy Spirit's Work:</strong> Remember that growth in holiness is not just your effort but the Holy Spirit working in you.</li>
+      </ul>
+      <blockquote class="chapterOne-scripture">
+        "For it is God who works in you to will and to act in order to fulfill His good purpose."<br />
+        <span class="chapterOne-verseRef">(Philippians 2:13)</span>
+      </blockquote>
+      <div class="chapterOne-reflection-area">
+        <div class="chapterOne-reflect-box">
+          <h3>Reflection Questions</h3>
+          <ol>
+            <li>How can focusing on eternity motivate you to pursue holiness?</li>
+            <li>What small victories can you celebrate today?</li>
+            <li>How can you invite the Holy Spirit to guide your growth?</li>
+          </ol>
+        </div>
+        <div class="chapterOne-journal-box">
+          <label for="chapter25-journal5"><strong>Your Journal:</strong> What stood out to you?</label>
+          <textarea id="chapter25-journal5" placeholder="Type your thoughts here..."></textarea>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- button for downloading reflection -->
-  <section class="chapterOne-export-section">
-    <div class="chapterOne-export-container">
-      <h2 class="chapterOne-export-title">You've Completed Chapter 29</h2>
-      <p class="chapterOne-export-text">
-        Well done. Guardrails are wisdom in action. As you stay alert, identify triggers, and build
-        boundaries, God strengthens you to walk with clarity and peace.
-      </p>
+  <section class="chapterOne-teaching-section" id="section6">
+    <div class="chapterOne-teaching-container">
+      <h2 class="chapterOne-teaching-title">6. Living a Life Set Apart</h2>
+      <p class="chapterOne-teaching-text">Growing in holiness is a lifelong journey of aligning your life with God's will. It requires intentionality, perseverance, and reliance on His grace. By choosing holiness each day, you not only reflect God's character but also experience the fullness of life He designed for you.</p>
+      <blockquote class="chapterOne-scripture">
+        "So, whether you eat or drink, or whatever you do, do all to the glory of God."<br />
+        <span class="chapterOne-verseRef">(1 Corinthians 10:31)</span>
+      </blockquote>
 
-      <button onclick="exportReflection()" class="chapterOne-export-button">
-        Download My Reflection
-      </button>
+      <h3 class="chapterOne-teaching-title">Parable: The River Stone and the Patient Tortoise</h3>
+      <p class="chapterOne-teaching-text">Beside a flowing mountain river lived a patient old tortoise.</p>
+      <p class="chapterOne-teaching-text">Every morning he walked slowly along the riverbank. One day he noticed a small rough stone resting in the shallow water. Its edges were jagged, and the rushing current pushed against it constantly.</p>
+      <p class="chapterOne-teaching-text">The young animals of the forest laughed when they saw it.</p>
+      <p class="chapterOne-teaching-text">"That stone will never change," said a fox. "It is too rough."</p>
+      <p class="chapterOne-teaching-text">But the tortoise visited the stone every day.</p>
+      <p class="chapterOne-teaching-text">Week after week the river moved over it. The water rolled it gently against the sand and other stones. Slowly, almost too slowly to notice, the sharp edges began to soften.</p>
+      <p class="chapterOne-teaching-text">One morning the tortoise returned and saw that the once jagged stone had become smooth and shining under the sunlight.</p>
+      <p class="chapterOne-teaching-text">A young rabbit nearby asked, "How did the stone become so beautiful?"</p>
+      <p class="chapterOne-teaching-text">The tortoise smiled.</p>
+      <p class="chapterOne-teaching-text">"The river did not shape it in a single day," he said. "It was shaped by steady movement, patience, and time."</p>
+      <p class="chapterOne-teaching-text">The rabbit looked again at the shining stone and understood.</p>
+      <p class="chapterOne-teaching-text">Great change often happens quietly.</p>
+      <div class="chapterOne-moral-box">
+        <strong>Moral:</strong><br />
+        Holiness is formed slowly through daily surrender, steady steps, and a heart willing to be shaped over time.
+      </div>
     </div>
   </section>
 
-  <!-- chapter summary -->
+  <section class="chapterOne-prayer-section" id="prayer">
+    <div class="chapterOne-prayer-container">
+      <h2 class="chapterOne-prayer-title">Prayer for Chapter 25 <i class="fa-solid fa-hands-praying" aria-hidden="true"></i></h2>
+      <p class="chapterOne-prayer-text">
+        Heavenly Father,<br /><br />
+        Thank You for calling me to live a life of holiness. I know that I cannot do this on my own, but through Your
+        strength and grace, I can grow to reflect Your character. Help me to surrender my thoughts, habits, and desires
+        to You daily. Guide me to build habits that honor You and to persevere even when the journey feels hard. Thank
+        You for Your patience and for working in me to make me more like Jesus. In His name, I pray. Amen.
+      </p>
+    </div>
+  </section>
+
   <section class="chapterOne-summary-section">
     <div class="chapterOne-summary-container">
       <h2 class="chapterOne-summary-title">Chapter Summary</h2>
-
       <ul class="chapterOne-summary-list">
-        <li>Triggers are patterns, places, emotions, or habits that lead toward temptation.</li>
-        <li>Awareness is the first step toward freedom and change.</li>
-        <li>Guardrails are proactive boundaries that protect you before a fall.</li>
-        <li>Emotional health and routines reduce vulnerability.</li>
-        <li>Scripture and accountability strengthen long-term victory.</li>
+        <li>Holiness is a daily journey of being set apart for God's purposes.</li>
+        <li>Steady surrender, Scripture, and accountability build lasting transformation.</li>
+        <li>Obstacles can be overcome through confession, practical boundaries, and perseverance.</li>
+        <li>God patiently shapes your life over time as you keep saying yes to Him.</li>
       </ul>
-
       <div class="chapterOne-reflection-question">
-        <strong>Final Reflection:</strong> What are three guardrails you will commit to this week, and when will you
-        review how they’re working?
+        <strong>Final Reflection:</strong> What one step of holiness will you practice today?
       </div>
       <div class="chapterOne-journal-box">
-        <label for="journal6"><strong>Your Summary:</strong> What is your biggest takeaway?</label>
-        <textarea id="journal6" placeholder="Summarize your chapter reflections..."></textarea>
+        <label for="chapter25-journal6"><strong>Your Summary:</strong> What is your biggest takeaway?</label>
+        <textarea id="chapter25-journal6" placeholder="Summarize your chapter reflections..."></textarea>
       </div>
     </div>
   </section>
 
-  <!-- section 5 prayer section -->
-  <section class="chapterOne-prayer-section">
-    <div class="chapterOne-prayer-container">
-      <h2 class="chapterOne-prayer-title">Prayer <i class="fa-solid fa-hands-praying" aria-hidden="true"></i></h2>
-      <p class="chapterOne-prayer-text">
-        Heavenly Father, Thank You for giving me the ability to recognize the triggers that lead me into
-        temptation. Help me to be wise in setting up guardrails that protect my mind, body, and spirit. When
-        I feel weak, remind me of Your strength and grace. Surround me with people who will encourage and
-        support me in my journey. Thank You for being my refuge and guide as I pursue purity and holiness.
-        In Jesus’ name, I pray. Amen.
-      </p>
+  <section class="chapterOne-export-section">
+    <div class="chapterOne-export-container">
+      <h2 class="chapterOne-export-title">You've Completed Chapter 25</h2>
+      <p class="chapterOne-export-text">You explored what it means to grow in holiness through surrender, discipline, and God's shaping grace.</p>
+      <div class="chapterOne-transition-icons" aria-hidden="true">
+        <span class="chapterOne-transition-line"></span>
+        <span class="chapterOne-transition-icon chapterOne-transition-icon--sparkle"><i class="fa-solid fa-star"></i></span>
+        <span class="chapterOne-transition-icon chapterOne-transition-icon--dove"><i class="fa-solid fa-dove"></i></span>
+        <span class="chapterOne-transition-icon chapterOne-transition-icon--hands"><i class="fa-solid fa-hands-praying"></i></span>
+        <span class="chapterOne-transition-icon chapterOne-transition-icon--sparkle"><i class="fa-solid fa-star"></i></span>
+        <span class="chapterOne-transition-line"></span>
+      </div>
+      <button onclick="exportReflection()" class="chapterOne-export-button">Export Saved Reflections</button>
     </div>
   </section>
 
-  <!-- Next / Previous CTA area -->
   <section class="chapterOne-teaching-section">
     <div class="chapterOne-teaching-container">
       <h2 class="chapterOne-teaching-title">Continue the Journey</h2>
       <p class="chapterOne-teaching-text">Use the links below to continue your journey.</p>
       <div class="chapter-nav">
-        <a href="chapter28.html" class="chapter-nav-btn prev">← Previous Chapter</a>
-        <a href="chapter30.html" class="chapter-nav-btn next">Next Chapter →</a>
+        <a href="chapter24.html" class="chapter-nav-btn prev">&larr; Previous Chapter</a>
+        <a href="chapter26.html" class="chapter-nav-btn next">Next Chapter &rarr;</a>
       </div>
     </div>
   </section>
 
-  <!-- CHAPTER CONTENT END -->
-  <!-- EDIT ONLY INSIDE CHAPTER CONTENT -->
-
-  <!-- Footer -->
   <div class="separated_block last">
     <footer class="footer separated_block_corner" id="footer" role="contentinfo">
       <div class="footer-links">
@@ -467,7 +359,6 @@
     </footer>
   </div>
 
-  <!-- JavaScript -->
   <script src="js/storage.js"></script>
   <script src="js/script.js"></script>
 </body>

@@ -1967,7 +1967,7 @@
   }
 
   .chapter-card {
-    padding: 15px;
+    padding: 16px;
   }
 
   .chapter-number {
@@ -1978,11 +1978,14 @@
   }
 
   .chapter-title {
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1.35;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
   }
 
   .chapter-preview {
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.4;
   }
 

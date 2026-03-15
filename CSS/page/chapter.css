@@ -2318,6 +2318,46 @@ body.chapterModalOpen {
   }
 }
 
+@media (max-width: 768px) {
+  .chapterOne-title,
+  .chapterOne-teaching-title,
+  .chapterOne-parable-title,
+  .chapterOne-summary-title,
+  .chapterOne-prayer-title,
+  .chapterOne-export-title {
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+  }
+
+  .chapterOne-action-box,
+  .chapterOne-reflect-box,
+  .chapterOne-journal-box {
+    padding: 22px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .chapterOne-title {
+    font-size: clamp(1.5rem, 6vw, 1.95rem);
+  }
+
+  .chapterOne-paragraph,
+  .chapterOne-teaching-text,
+  .chapterOne-bullets li,
+  .chapterOne-summary-list li,
+  .chapterOne-reflect-box ol li,
+  .chapterOne-action-box ol li {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .chapterOne-journal-box textarea {
+    min-height: 120px;
+    height: 120px;
+    padding: 12px;
+  }
+}
+
 /* ========================================= */
 /*     Chapter 23 Visual Polish (Scoped)     */
 /* ========================================= */
