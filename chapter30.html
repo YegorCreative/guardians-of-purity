@@ -4,225 +4,143 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chapter 30 — Recovering After Falling | Guardians of Purity</title>
-  <!-- Google Fonts: Updated Font Families -->
+  <title>Chapter 29 - Understanding Triggers and Developing Guardrails | Guardians of Purity</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&family=Raleway:wght@400;600&family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
     rel="stylesheet" />
-  <!-- CSS Links -->
   <link rel="stylesheet" href="CSS/styles.css" />
   <link rel="stylesheet" href="CSS/header.css" />
   <link rel="stylesheet" href="CSS/footer.css" />
   <link rel="stylesheet" href="CSS/styles-responsive.css" />
   <link rel="stylesheet" href="CSS/page/chapter.css" />
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
 
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
-  <!-- Navbar -->
   <a id="scrollToTopButton" aria-label="Scroll to top" title="Scroll to top">&#x2191;</a>
   <div class="separated_block first">
     <header class="header" role="banner">
-    <nav class="navbar" id="main-nav" role="navigation">
-      <a href="index.html" class="logo">
-        <img
-          src="./img/logo.png"
-          alt="Guardians of Purity Logo"
-          class="logo-img"
-          loading="eager"
-        />
-      </a>
-
-      <div class="tvnav" id="primary-nav-menu" aria-label="Primary">
-        <a href="index.html" class="tvnav__item" data-nav="home">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10.5z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">Home</span>
+      <nav class="navbar" id="main-nav" role="navigation">
+        <a href="index.html" class="logo">
+          <img src="./img/logo.png" alt="Guardians of Purity Logo" class="logo-img" loading="eager" />
         </a>
-
-        <a href="journey.html" class="tvnav__item" data-nav="journey">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M12 3 2 8l10 5 10-5-10-5zm0 8L2 6v4l10 5 10-5V6l-10 5zm0 6L2 12v4l10 5 10-5v-4l-10 5z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">Journey</span>
-        </a>
-
-        <a href="resources.html" class="tvnav__item" data-nav="resources">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M6 3h11a2 2 0 0 1 2 2v15a1 1 0 0 1-1 1H7a3 3 0 0 0-3 3V5a2 2 0 0 1 2-2zm1 4v12h10V7H7z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">Resources</span>
-        </a>
-
-        <a href="prayer.html" class="tvnav__item" data-nav="prayer">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0 1 12 6.2 5.5 5.5 0 0 1 21.5 12C19 16.4 12 21 12 21z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">Prayer</span>
-        </a>
-
-        <a href="contacts.html" class="tvnav__item" data-nav="contact">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">Contact</span>
-        </a>
-
-        <a href="about.html" class="tvnav__item" data-nav="about">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">About</span>
-        </a>
-      </div>
-    </nav>
-  </header>
+        <div class="tvnav" id="primary-nav-menu" aria-label="Primary">
+          <a href="index.html" class="tvnav__item" data-nav="home"><span class="tvnav__label">Home</span></a>
+          <a href="journey.html" class="tvnav__item" data-nav="journey"><span class="tvnav__label">Journey</span></a>
+          <a href="resources.html" class="tvnav__item" data-nav="resources"><span class="tvnav__label">Resources</span></a>
+          <a href="prayer.html" class="tvnav__item" data-nav="prayer"><span class="tvnav__label">Prayer</span></a>
+          <a href="contacts.html" class="tvnav__item" data-nav="contact"><span class="tvnav__label">Contact</span></a>
+          <a href="about.html" class="tvnav__item" data-nav="about"><span class="tvnav__label">About</span></a>
+        </div>
+      </nav>
+    </header>
   </div>
 
-  <!-- EDIT ONLY INSIDE CHAPTER CONTENT -->
-  <!-- CHAPTER CONTENT START -->
-
-  <!-- section 1 -->
   <section class="chapterOne-section" id="main">
     <div class="chapterOne-overlay">
       <div class="chapterOne-content">
-        <h1 class="chapterOne-title">Recovering After Falling</h1>
+        <h1 class="chapterOne-title">Understanding Triggers and Developing Guardrails</h1>
         <div class="chapterOne-verse-container">
-          <p class="chapterOne-verse">“The Lord upholds all who fall and lifts up all who are bowed down.”</p>
-          <span class="chapterOne-verseRef">— Psalm 145:14</span>
+          <p class="chapterOne-verse">"Be alert and of sober mind. Your enemy the devil prowls around like a roaring lion looking for someone to devour."</p>
+          <span class="chapterOne-verseRef">(1 Peter 5:8)</span>
         </div>
-        <p class="chapterOne-quote">
-          A setback may shake your direction, but it does not erase your path.
-        </p>
+        <p class="chapterOne-quote">Freedom grows when we recognize danger early and build boundaries before the fall.</p>
       </div>
     </div>
   </section>
 
-  <!-- section 2 parable -->
-  <section class="chapterOne-parable-section">
+  <section class="chapterOne-parable-section" id="parable">
     <div class="chapterOne-parable-container">
-      <h2 class="chapterOne-parable-title">Parable: The Broken Compass</h2>
-      <!-- VISUAL PROMPT: A cracked compass lying on a forest path with shattered glass and spinning needle, morning light filtering through trees, a man's hand reaching to pick it up, muted earth tones and greens, minimal composition, slight film grain, contemplative mood about recalibrating direction after a fall -->
-
-            <div class="chapterOne-parable-body">
-        <div class="chapterOne-parable-image"></div>
-<p class="chapterOne-paragraph">
-        There was a man traveling through a forest with a compass he trusted.
-      </p>
-      <p class="chapterOne-paragraph">
-        One day, after a long and careless moment, he dropped it. The glass cracked, and the needle spun
-        wildly. Frustrated and embarrassed, he sat down, convinced he had ruined the journey. But as the
-        sun rose higher, he noticed the path was still there. The forest had not changed—only his attention
-        had drifted.
-      </p>
-      <p class="chapterOne-paragraph">
-        He steadied the compass, learned its flaws, and began using the landmarks around him as guidance.
-        Step by step, he moved forward again, slower but wiser than before.
-      </p>
-      <p class="chapterOne-paragraph">
-        By nightfall, he realized the fall had not ended the journey—it had taught him how to walk with
-        greater care.
-      </p>
+      <h2 class="chapterOne-parable-title">Parable: The Mountain Goat and the Wooden Rail</h2>
+      <div class="chapterOne-parable-body">
+        <div class="chapterOne-parable-image">
+          <img src="img/chapterAssets/chapter29.webp" alt="Illustration for the parable The Mountain Goat and the Wooden Rail" loading="lazy" />
+        </div>
+        <p class="chapterOne-paragraph">High on a steep mountain lived a young mountain goat who loved to explore the narrow cliff paths.</p>
+        <p class="chapterOne-paragraph">The trails were beautiful, winding along rocky edges where clouds floated below. The goat was strong and sure-footed, and he believed he could walk anywhere without danger.</p>
+        <p class="chapterOne-paragraph">One afternoon, while chasing a butterfly along the path, his hoof slipped on loose gravel. Pebbles tumbled down the cliff, disappearing into the fog below.</p>
+        <p class="chapterOne-paragraph">The young goat froze.</p>
+        <p class="chapterOne-paragraph">An older goat watching from a nearby rock said calmly, "These paths are beautiful, but they are not harmless."</p>
+        <p class="chapterOne-paragraph">The young goat looked down at the edge and felt the wind rushing past the cliff.</p>
+        <p class="chapterOne-paragraph">"What should I do?" he asked.</p>
+        <p class="chapterOne-paragraph">The older goat led him to a place where travelers had placed wooden rails along the most dangerous parts of the trail.</p>
+        <p class="chapterOne-paragraph">"We build rails," the elder said, "not because we plan to fall-but because we understand the mountain."</p>
+        <p class="chapterOne-paragraph">The young goat began helping place wooden posts along the narrow path.</p>
+        <p class="chapterOne-paragraph">Soon the trail was safer. The cliff was still there, the wind still blew, but the rails protected those who walked the path.</p>
+        <p class="chapterOne-paragraph">And the young goat learned something important.</p>
+        <p class="chapterOne-paragraph">Wisdom was not pretending danger did not exist.</p>
+        <p class="chapterOne-paragraph">Wisdom was preparing for it.</p>
       </div>
-
       <div class="chapterOne-moral-box">
         <strong>Moral:</strong><br />
-        A setback may shake your direction, but it does not erase your path. Wisdom is found in standing
-        up, recalibrating, and continuing on.
+        The wise do not wait until they fall. They build guardrails before danger reaches them.
       </div>
     </div>
   </section>
 
-  <!-- section 3 teaching 1 -->
-  <section class="chapterOne-teaching-section">
+  <section class="chapterOne-teaching-section" id="intro">
     <div class="chapterOne-teaching-container">
-      <h2 class="chapterOne-teaching-title">1. Acknowledge the Fall Without Shame</h2>
-
-      <p class="chapterOne-teaching-text">
-        Falling does not mean you are finished. Begin by acknowledging the fall honestly and choosing
-        humility over hiding.
-      </p>
-
-      <ul class="chapterOne-bullets">
-        <li><strong>Take Responsibility:</strong> Recognize the mistake and admit it to yourself and God.</li>
-        <li><strong>Avoid Self-Condemnation:</strong> Guilt can lead to repentance, but shame traps you in despair.</li>
-      </ul>
-
-      <blockquote class="chapterOne-scripture">
-        “Therefore, there is now no condemnation for those who are in Christ Jesus.”<br />
-        <span class="chapterOne-verseRef">— Romans 8:1</span>
-      </blockquote>
-
-      <div class="chapterOne-action-box">
-        <h3>Do This Now</h3>
-        <p>Write a prayer of confession, acknowledging your fall and asking for God’s forgiveness and strength.</p>
-      </div>
-
-      <div class="chapterOne-journal-box">
-        <label for="journal1"><strong>Your Journal:</strong> What stood out to you?</label>
-        <textarea id="journal1" placeholder="Type your thoughts here..."></textarea>
-      </div>
+      <h2 class="chapterOne-teaching-title">Introduction: Why Understanding Triggers Is Crucial</h2>
+      <p class="chapterOne-teaching-text">Triggers are the situations, emotions, or thoughts that lead you into behaviors you want to avoid, such as pornography or masturbation. Recognizing these triggers is the first step in breaking free from destructive habits. Once identified, developing guardrails - practical boundaries to protect yourself - is essential for staying on the path of purity. This chapter will help you understand common triggers, identify your own, and set up effective safeguards.</p>
     </div>
   </section>
 
-
-  <!-- section 3 teaching 2 -->
-  <section class="chapterOne-teaching-section">
+  <section class="chapterOne-teaching-section" id="section1">
     <div class="chapterOne-teaching-container">
-      <h2 class="chapterOne-teaching-title">2. Seek Forgiveness and Grace</h2>
-      <p class="chapterOne-teaching-text">
-        God’s grace meets you at the point of failure and restores your hope. Receive forgiveness and let
-        it reset your heart.
-      </p>
-
+      <h2 class="chapterOne-teaching-title">1. What Are Triggers?</h2>
       <ul class="chapterOne-bullets">
-        <li><strong>Confess to God:</strong> Trust that He is faithful to forgive.</li>
-        <li><strong>Forgive Yourself:</strong> Accept God’s grace and release guilt.</li>
+        <li><strong>Definition:</strong> A trigger is anything that activates a craving or impulse to engage in a specific behavior.</li>
+        <li><strong>Types of Triggers:</strong></li>
+        <li><strong>Emotional Triggers:</strong> Stress, loneliness, boredom, or sadness.</li>
+        <li><strong>Environmental Triggers:</strong> Being alone in private spaces, late nights, or unfiltered internet access.</li>
+        <li><strong>Behavioral Triggers:</strong> Patterns or habits, such as staying up late scrolling social media or visiting certain websites.</li>
       </ul>
-
       <blockquote class="chapterOne-scripture">
-        “If we confess our sins, He is faithful and just to forgive us our sins and to purify us from all
-        unrighteousness.”<br />
-        <span class="chapterOne-verseRef">— 1 John 1:9</span>
+        "So, if you think you are standing firm, be careful that you do not fall!"<br />
+        <span class="chapterOne-verseRef">(1 Corinthians 10:12)</span>
       </blockquote>
-
       <div class="chapterOne-reflection-area">
         <div class="chapterOne-reflect-box">
-        <h3>Questions to Reflect On</h3>
-        <ul>
-          <li>How do you feel after confessing your fall to God?</li>
-          <li>What steps can help you forgive yourself?</li>
-          <li>How does grace restore hope?</li>
-        </ul>
-      </div>
+          <h3>Reflection Questions</h3>
+          <ol>
+            <li>What situations or emotions make you more likely to fall into temptation?</li>
+            <li>Are there specific places or times when you feel most vulnerable?</li>
+            <li>What habits or routines may be contributing to your struggles?</li>
+          </ol>
+        </div>
         <div class="chapterOne-journal-box">
-        <label for="journal2"><strong>Your Journal:</strong> What stood out to you?</label>
-        <textarea id="journal2" placeholder="Type your thoughts here..."></textarea>
-      </div>
+          <label for="chapter29-journal1"><strong>Your Journal:</strong> What stood out to you?</label>
+          <textarea id="chapter29-journal1" placeholder="Type your thoughts here..."></textarea>
+        </div>
       </div>
     </div>
   </section>
-  <!-- 15-Minute Reflection Break -->
+
+  <section class="chapterOne-teaching-section" id="section2">
+    <div class="chapterOne-teaching-container">
+      <h2 class="chapterOne-teaching-title">2. Identifying Your Personal Triggers</h2>
+      <ul class="chapterOne-bullets">
+        <li><strong>Track Your Patterns:</strong> Keep a journal for one week, noting the times, places, and emotions that precede moments of temptation.</li>
+        <li><strong>Look for Recurring Themes:</strong> Pay attention to repeated situations that make you vulnerable.</li>
+        <li><strong>Be Honest with Yourself:</strong> Acknowledge triggers without shame or defensiveness. Self-awareness is key to growth.</li>
+        <li><strong>Ask for Feedback:</strong> A trusted accountability partner or mentor can help you identify triggers you may not notice yourself.</li>
+      </ul>
+      <div class="chapterOne-action-box">
+        <h3>Do This Now</h3>
+        <p>Write down three triggers you have noticed in your life. For each trigger, note how it makes you feel and what typically happens as a result.</p>
+      </div>
+      <div class="chapterOne-journal-box">
+        <label for="chapter29-journal2"><strong>Your Journal:</strong> What stood out to you?</label>
+        <textarea id="chapter29-journal2" placeholder="Type your thoughts here..."></textarea>
+      </div>
+    </div>
+  </section>
+
   <section class="reflection-timer-module" aria-label="15-minute reflection break">
     <h3>15-Minute Break</h3>
-    <p class="timer-encouragement">Take a moment to step away and let what you've reflected on settle in your heart.</p>
+    <p class="timer-encouragement">Take this time to pause, pray, and identify your key triggers before moving forward.</p>
     <div class="reflection-timer-display" aria-live="polite" aria-atomic="true">15:00</div>
     <div class="timer-controls">
       <button type="button" class="reflection-timer-btn btn-start">Start Timer</button>
@@ -231,208 +149,155 @@
     </div>
     <p class="timer-completion-message" aria-live="polite">Time's up. Come back when you're ready.</p>
     <div class="timer-waves" aria-hidden="true">
-  <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="timerWaveSketchGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#3b82f6" />
-        <stop offset="50%" stop-color="#a855f7" />
-        <stop offset="100%" stop-color="#ec4899" />
-      </linearGradient>
-    </defs>
-    <path class="wave-path" d="M -10,35 C 30,85 70,85 110,35" stroke="url(#timerWaveSketchGrad)" />
-    <path class="wave-path" d="M -10,45 C 35,95 65,95 110,45" stroke="url(#timerWaveSketchGrad)" />
-    <path class="wave-path" d="M -10,25 C 25,80 75,80 110,25" stroke="url(#timerWaveSketchGrad)" />
-    <path class="wave-path" d="M -10,55 C 40,105 60,105 110,55" stroke="url(#timerWaveSketchGrad)" />
-    <path class="wave-path" d="M -10,40 C 30,90 70,90 110,40" stroke="url(#timerWaveSketchGrad)" />
-  </svg>
-</div>
-</section>
-
-
-  <!-- section 3 teaching 3 -->
-  <section class="chapterOne-teaching-section">
-    <div class="chapterOne-teaching-container">
-      <h2 class="chapterOne-teaching-title">3. Identify the Cause of the Fall</h2>
-      <p class="chapterOne-teaching-text">
-        Understanding what led to the fall helps you build wisdom and adjust your guardrails.
-      </p>
-
-      <ul class="chapterOne-bullets">
-        <li><strong>Reflect on the Trigger:</strong> Identify what set the fall in motion.</li>
-        <li><strong>Evaluate Weak Spots:</strong> Notice the places where your boundaries were thin.</li>
-        <li><strong>Address Root Causes:</strong> Stress, boredom, and loneliness often drive temptation.</li>
-      </ul>
-
-      <div class="chapterOne-action-box">
-        <h3>Do This Now</h3>
-        <p>Write down triggers or weak spots and identify one practical change.</p>
-      </div>
-
-      <div class="chapterOne-journal-box">
-        <label for="journal3"><strong>Your Journal:</strong> What stood out to you?</label>
-        <textarea id="journal3" placeholder="Type your thoughts here..."></textarea>
-      </div>
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="timerWaveSketchGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#3b82f6" />
+            <stop offset="50%" stop-color="#a855f7" />
+            <stop offset="100%" stop-color="#ec4899" />
+          </linearGradient>
+        </defs>
+        <path class="wave-path" d="M -10,35 C 30,85 70,85 110,35" stroke="url(#timerWaveSketchGrad)" />
+        <path class="wave-path" d="M -10,45 C 35,95 65,95 110,45" stroke="url(#timerWaveSketchGrad)" />
+        <path class="wave-path" d="M -10,25 C 25,80 75,80 110,25" stroke="url(#timerWaveSketchGrad)" />
+        <path class="wave-path" d="M -10,55 C 40,105 60,105 110,55" stroke="url(#timerWaveSketchGrad)" />
+        <path class="wave-path" d="M -10,40 C 30,90 70,90 110,40" stroke="url(#timerWaveSketchGrad)" />
+      </svg>
     </div>
   </section>
 
-  <!-- section 3 teaching 4 -->
-  <section class="chapterOne-teaching-section">
+  <section class="chapterOne-teaching-section" id="section3">
     <div class="chapterOne-teaching-container">
-      <h2 class="chapterOne-teaching-title">4. Rebuild Accountability</h2>
-      <p class="chapterOne-teaching-text">
-        Accountability restores strength after a fall. It turns isolation into support and weakness into
-        growth.
-      </p>
-
+      <h2 class="chapterOne-teaching-title">3. Developing Guardrails to Stay Safe</h2>
+      <p class="chapterOne-teaching-text">Guardrails are proactive measures that help you avoid situations where you are more likely to give in to temptation. They act as physical and mental boundaries to keep you on the right path.</p>
       <ul class="chapterOne-bullets">
-        <li><strong>Be Honest with an Accountability Partner:</strong> Speak truthfully about the fall.</li>
-        <li><strong>Reinforce Boundaries:</strong> Strengthen the guardrails that were weakened.</li>
-        <li><strong>Renew Support Commitments:</strong> Reconnect to the people who help you walk in purity.</li>
+        <li><strong>Practical Guardrails:</strong></li>
+        <li><strong>Time Management:</strong> Set specific times for sleep and wakefulness to avoid idleness during vulnerable hours.</li>
+        <li><strong>Device Restrictions:</strong> Use accountability software like Covenant Eyes or screen time restrictions to block inappropriate content.</li>
+        <li><strong>Physical Environment:</strong> Avoid being alone in spaces that trigger temptation, such as your bedroom or bathroom.</li>
+        <li><strong>Emotional Guardrails:</strong></li>
+        <li><strong>Address Emotional Triggers:</strong> Find healthy outlets for emotions, like talking to a friend, journaling, or exercising.</li>
+        <li><strong>Practice Gratitude:</strong> Shift your focus from what you lack to what you have by listing three things you are grateful for each day.</li>
+        <li><strong>Spiritual Guardrails:</strong></li>
+        <li><strong>Prayer and Scripture:</strong> Use God's Word to counter lies and temptation.</li>
       </ul>
-
+      <blockquote class="chapterOne-scripture">
+        "I have hidden Your word in my heart that I might not sin against You."<br />
+        <span class="chapterOne-verseRef">(Psalm 119:11)</span>
+      </blockquote>
+      <ul class="chapterOne-bullets">
+        <li><strong>Accountability:</strong> Stay connected to someone who will pray for you and check in regularly.</li>
+      </ul>
       <div class="chapterOne-reflection-area">
         <div class="chapterOne-reflect-box">
-        <h3>Questions to Reflect On</h3>
-        <ul>
-          <li>Who can you share this with?</li>
-          <li>What boundaries need strengthening?</li>
-          <li>How can this fall strengthen accountability?</li>
-        </ul>
-      </div>
+          <h3>Reflection Questions</h3>
+          <ol>
+            <li>What physical guardrails can you implement to protect yourself from temptation?</li>
+            <li>How can you address emotional triggers in a healthy way?</li>
+            <li>Who can you invite into your journey to hold you accountable?</li>
+          </ol>
+        </div>
         <div class="chapterOne-journal-box">
-        <label for="journal4"><strong>Your Journal:</strong> What stood out to you?</label>
-        <textarea id="journal4" placeholder="Type your thoughts here..."></textarea>
-      </div>
+          <label for="chapter29-journal3"><strong>Your Journal:</strong> What stood out to you?</label>
+          <textarea id="chapter29-journal3" placeholder="Type your thoughts here..."></textarea>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- section 3 teaching 5 -->
-  <section class="chapterOne-teaching-section">
+  <section class="chapterOne-teaching-section" id="section4">
     <div class="chapterOne-teaching-container">
-      <h2 class="chapterOne-teaching-title">5. Refocus on Your Long-Term Goals</h2>
-      <p class="chapterOne-teaching-text">
-        Regrouping means looking beyond the fall and returning to the bigger purpose God has given you.
-      </p>
-
+      <h2 class="chapterOne-teaching-title">4. Maintaining and Adjusting Your Guardrails</h2>
       <ul class="chapterOne-bullets">
-        <li><strong>Revisit Your Why:</strong> Remember the reasons you chose purity and freedom.</li>
-        <li><strong>Celebrate Progress:</strong> Growth is built over time, not erased by one fall.</li>
-        <li><strong>Look to God for Strength:</strong> Depend on His power to keep pressing forward.</li>
+        <li><strong>Evaluate Regularly:</strong> Check in with yourself weekly to see if your guardrails are working or need adjustments.</li>
+        <li><strong>Stay Flexible:</strong> Life circumstances change, and your boundaries may need to evolve over time.</li>
+        <li><strong>Celebrate Progress:</strong> Acknowledge small victories and thank God for helping you stay on track.</li>
       </ul>
-
       <blockquote class="chapterOne-scripture">
-        “Not that I have already obtained all this… but I press on.”<br />
-        <span class="chapterOne-verseRef">— Philippians 3:12</span>
+        "The prudent see danger and take refuge, but the simple keep going and pay the penalty."<br />
+        <span class="chapterOne-verseRef">(Proverbs 27:12)</span>
       </blockquote>
-
       <div class="chapterOne-action-box">
         <h3>Do This Now</h3>
-        <p>Write your reasons for pursuing purity and freedom.</p>
+        <p>List three guardrails you can implement today, and commit to reviewing their effectiveness after one week.</p>
       </div>
-
       <div class="chapterOne-journal-box">
-        <label for="journal5"><strong>Your Journal:</strong> What stood out to you?</label>
-        <textarea id="journal5" placeholder="Type your thoughts here..."></textarea>
+        <label for="chapter29-journal4"><strong>Your Journal:</strong> What stood out to you?</label>
+        <textarea id="chapter29-journal4" placeholder="Type your thoughts here..."></textarea>
       </div>
     </div>
   </section>
 
-  <!-- section 3 teaching 6 -->
-  <section class="chapterOne-teaching-section">
+  <section class="chapterOne-teaching-section" id="section5">
     <div class="chapterOne-teaching-container">
-      <h2 class="chapterOne-teaching-title">6. Practical Steps to Regroup</h2>
-      <p class="chapterOne-teaching-text">
-        A clear regrouping plan turns setbacks into new momentum. Use these steps to reset and move
-        forward.
-      </p>
-
-      <div class="chapterOne-action-box">
-        <h3>Practical Steps</h3>
-        <ol>
-          <li>Confess and Pray</li>
-          <li>Reassess Boundaries</li>
-          <li>Reengage Support</li>
-          <li>Start Fresh</li>
-          <li>Seek Daily Renewal</li>
-        </ol>
-      </div>
-
+      <h2 class="chapterOne-teaching-title">5. Moving Forward with Awareness and Wisdom</h2>
+      <p class="chapterOne-teaching-text">Understanding triggers and setting up guardrails are acts of wisdom and humility. They show that you recognize your weaknesses and are committed to protecting yourself from falling into sin. While these strategies are practical, true freedom comes from relying on God's strength and grace.</p>
+      <p class="chapterOne-teaching-text"><strong>Key Reminder:</strong> Triggers and temptations will always exist, but with God's help, you can resist and walk in victory.</p>
       <div class="chapterOne-journal-box">
-        <label for="journalFinal"><strong>Your Journal:</strong> What stood out to you?</label>
-        <textarea id="journalFinal" placeholder="Type your thoughts here..."></textarea>
+        <label for="chapter29-journal5"><strong>Your Journal:</strong> What stood out to you?</label>
+        <textarea id="chapter29-journal5" placeholder="Type your thoughts here..."></textarea>
       </div>
     </div>
   </section>
 
-  <!-- button for downloading reflection -->
-  <section class="chapterOne-export-section">
-    <div class="chapterOne-export-container">
-      <h2 class="chapterOne-export-title">You've Completed Chapter 24</h2>
-      <p class="chapterOne-export-text">
-        Well done. Falling did not end your journey. Regrouping, learning, and continuing forward is how
-        growth happens.
+  <section class="chapterOne-prayer-section" id="prayer">
+    <div class="chapterOne-prayer-container">
+      <h2 class="chapterOne-prayer-title">Prayer for Chapter 29 <i class="fa-solid fa-hands-praying" aria-hidden="true"></i></h2>
+      <p class="chapterOne-prayer-text">
+        Heavenly Father,<br /><br />
+        Thank You for giving me the ability to recognize the triggers that lead me into temptation. Help me to be wise
+        in setting up guardrails that protect my mind, body, and spirit. When I feel weak, remind me of Your strength
+        and grace. Surround me with people who will encourage and support me in my journey. Thank You for being my refuge
+        and guide as I pursue purity and holiness. In Jesus' name, I pray. Amen.
       </p>
-
-      <button onclick="exportReflection()" class="chapterOne-export-button">
-        Download My Reflection
-      </button>
     </div>
   </section>
 
-  <!-- chapter summary -->
   <section class="chapterOne-summary-section">
     <div class="chapterOne-summary-container">
       <h2 class="chapterOne-summary-title">Chapter Summary</h2>
-
       <ul class="chapterOne-summary-list">
-        <li>A fall does not define your identity.</li>
-        <li>Grace allows you to stand again.</li>
-        <li>Awareness helps prevent repeated mistakes.</li>
-        <li>Accountability strengthens recovery.</li>
-        <li>Progress matters more than perfection.</li>
+        <li>Triggers are warning signs that reveal where you need wisdom and preparation.</li>
+        <li>Guardrails protect your mind, emotions, and habits before temptation escalates.</li>
+        <li>Consistent prayer, accountability, and adjustment help you stay on the path of purity.</li>
       </ul>
-
       <div class="chapterOne-reflection-question">
-        <strong>Final Reflection:</strong> What is one step you will take today to regroup and move forward in
-        grace?
+        <strong>Final Reflection:</strong> Which guardrail will you build first this week, and who will help you stay accountable?
       </div>
       <div class="chapterOne-journal-box">
-        <label for="journal6"><strong>Your Summary:</strong> What is your biggest takeaway?</label>
-        <textarea id="journal6" placeholder="Summarize your chapter reflections..."></textarea>
+        <label for="chapter29-summary"><strong>Your Summary:</strong> What is your biggest takeaway?</label>
+        <textarea id="chapter29-summary" placeholder="Summarize your chapter reflections..."></textarea>
       </div>
     </div>
   </section>
 
-  <!-- section 5 prayer section -->
-  <section class="chapterOne-prayer-section">
-    <div class="chapterOne-prayer-container">
-      <h2 class="chapterOne-prayer-title">Prayer <i class="fa-solid fa-hands-praying" aria-hidden="true"></i></h2>
-      <p class="chapterOne-prayer-text">
-        Heavenly Father, Thank You for Your endless grace and love. I confess my fall and ask for Your
-        forgiveness and strength to get back up. Help me identify the triggers that led me astray and guide
-        me in making changes that honor You. Surround me with people who encourage me to keep moving
-        forward. Thank You for the hope and freedom I have in You. In Jesus’ name, Amen.
-      </p>
+  <section class="chapterOne-export-section">
+    <div class="chapterOne-export-container">
+      <h2 class="chapterOne-export-title">You've Completed Chapter 29</h2>
+      <p class="chapterOne-export-text">You learned to identify your triggers and build guardrails that support long-term freedom.</p>
+      <div class="chapterOne-transition-icons" aria-hidden="true">
+        <span class="chapterOne-transition-line"></span>
+        <span class="chapterOne-transition-icon chapterOne-transition-icon--sparkle"><i class="fa-solid fa-star"></i></span>
+        <span class="chapterOne-transition-icon chapterOne-transition-icon--dove"><i class="fa-solid fa-dove"></i></span>
+        <span class="chapterOne-transition-icon chapterOne-transition-icon--hands"><i class="fa-solid fa-hands-praying"></i></span>
+        <span class="chapterOne-transition-icon chapterOne-transition-icon--sparkle"><i class="fa-solid fa-star"></i></span>
+        <span class="chapterOne-transition-line"></span>
+      </div>
+      <button onclick="exportReflection()" class="chapterOne-export-button">Export Saved Reflections</button>
     </div>
   </section>
 
-  <!-- Next / Previous CTA area -->
   <section class="chapterOne-teaching-section">
     <div class="chapterOne-teaching-container">
       <h2 class="chapterOne-teaching-title">Continue the Journey</h2>
       <p class="chapterOne-teaching-text">Use the links below to continue your journey.</p>
       <div class="chapter-nav">
-        <a href="chapter23.html" class="chapter-nav-btn prev">← Previous Chapter</a>
-        <a href="chapter25.html" class="chapter-nav-btn next">Next Chapter →</a>
+        <a href="chapter28.html" class="chapter-nav-btn prev">&larr; Previous Chapter</a>
+        <a href="chapter30.html" class="chapter-nav-btn next">Next Chapter &rarr;</a>
       </div>
     </div>
   </section>
 
-  <!-- CHAPTER CONTENT END -->
-  <!-- EDIT ONLY INSIDE CHAPTER CONTENT -->
-
-  <!-- Footer -->
   <div class="separated_block last">
     <footer class="footer separated_block_corner" id="footer" role="contentinfo">
       <div class="footer-links">
@@ -451,7 +316,6 @@
     </footer>
   </div>
 
-  <!-- JavaScript -->
   <script src="js/storage.js"></script>
   <script src="js/script.js"></script>
 </body>

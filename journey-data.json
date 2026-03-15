@@ -5,8 +5,8 @@
   },
   "chapters": [
     {
-      "title": "Understanding Triggers and Developing Guardrails",
-      "meta_title": "Chapter 29 — Understanding Triggers and Developing Guardrails | Guardians of Purity"
+      "chapter_number": 1,
+      "filename": "chapter1.html",
       "title": "God's Design for Your Body",
       "meta_title": "Chapter 1 \u2014 God's Design for Your Body | Guardians of Purity"
     },
@@ -19,14 +19,14 @@
     {
       "chapter_number": 3,
       "filename": "chapter3.html",
-      "title": "Growing in Holiness",
-      "meta_title": "Chapter 25 — Growing in Holiness | Guardians of Purity"
+      "title": "Biblical Principles on Purity and Self-Control",
+      "meta_title": "Chapter 3 \u2014 Biblical Principles on Purity and Self-Control | Guardians of Purity"
     },
     {
       "chapter_number": 4,
       "filename": "chapter4.html",
-      "title": "When You Feel Numb: Overcoming the Absence of Remorse",
-      "meta_title": "Chapter 26 — When You Feel Numb: Overcoming the Absence of Remorse | Guardians of Purity"
+      "title": "Is Masturbation a Sin?",
+      "meta_title": "Chapter 4 \u2014 Is Masturbation a Sin? | Guardians of Purity"
     },
     {
       "chapter_number": 5,
@@ -61,8 +61,8 @@
     {
       "chapter_number": 10,
       "filename": "chapter10.html",
-      "title": "God's Design for Your Body",
-      "meta_title": "Chapter 10 \u2014 God's Design for Your Body | Guardians of Purity"
+      "title": "Encouragement for the Journey",
+      "meta_title": "Chapter 10 \u2014 Encouragement for the Journey | Guardians of Purity"
     },
     {
       "chapter_number": 11,
@@ -110,73 +110,73 @@
       "chapter_number": 18,
       "filename": "chapter18.html",
       "title": "A Hypothetical Wish for Control and Purity",
-      "meta_title": "Chapter 18 \u2014 A Hypothetical Wish for Control and Purity | Guardians of Purity"
+      "meta_title": "Chapter 18 - A Hypothetical Wish for Control and Purity | Guardians of Purity"
     },
     {
       "chapter_number": 19,
       "filename": "chapter19.html",
       "title": "15 Simple Things Parents Can Talk About with Their Children Struggling with Masturbation and Pornography",
-      "meta_title": "Chapter 19 \u2014 15 Simple Things Parents Can Talk About with Their Children Struggling with Masturbation and Pornography | Guardians of Purity"
+      "meta_title": "Chapter 19 - 15 Simple Things Parents Can Talk About with Their Children Struggling with Masturbation and Pornography | Guardians of Purity"
     },
     {
       "chapter_number": 20,
       "filename": "chapter20.html",
       "title": "4-Week Prayer for Your Freedom",
-      "meta_title": "Chapter 20 \u2014 4-Week Prayer for Your Freedom | Guardians of Purity"
+      "meta_title": "Chapter 20 - 4-Week Prayer for Your Freedom | Guardians of Purity"
     },
     {
       "chapter_number": 21,
       "filename": "chapter21.html",
       "title": "Is Sleeping Naked Safe?",
-      "meta_title": "Chapter 21 \u2014 Is Sleeping Naked Safe? | Guardians of Purity"
+      "meta_title": "Chapter 21 - Is Sleeping Naked Safe? | Guardians of Purity"
     },
     {
       "chapter_number": 22,
       "filename": "chapter22.html",
       "title": "Understanding Triggers: Why the Morning Can Be a Battle",
-      "meta_title": "Chapter 22 \u2014 Understanding Triggers: Why the Morning Can Be a Battle | Guardians of Purity"
+      "meta_title": "Chapter 22 - Understanding Triggers: Why the Morning Can Be a Battle | Guardians of Purity"
     },
     {
       "chapter_number": 23,
       "filename": "chapter23.html",
       "title": "Practical Ways to Stay Strong",
-      "meta_title": "Chapter 23 \u2014 Practical Ways to Stay Strong | Guardians of Purity"
+      "meta_title": "Chapter 23 - Practical Ways to Stay Strong | Guardians of Purity"
     },
     {
       "chapter_number": 24,
       "filename": "chapter24.html",
-      "title": "Replacing Lust with Love",
-      "meta_title": "Chapter 24 \u2014 Replacing Lust with Love | Guardians of Purity"
+      "title": "Regrouping After a Fall",
+      "meta_title": "Chapter 24 - Regrouping After a Fall | Guardians of Purity"
     },
     {
       "chapter_number": 25,
       "filename": "chapter25.html",
-      "title": "Building Guardrails Before You Need Them",
-      "meta_title": "Chapter 25 \u2014 Building Guardrails Before You Need Them | Guardians of Purity"
+      "title": "Growing in Holiness",
+      "meta_title": "Chapter 25 - Growing in Holiness | Guardians of Purity"
     },
     {
       "chapter_number": 26,
       "filename": "chapter26.html",
-      "title": "Reclaiming Passion for Holiness",
-      "meta_title": "Chapter 26 \u2014 Reclaiming Passion for Holiness | Guardians of Purity"
+      "title": "When You Feel Numb: Overcoming the Absence of Remorse",
+      "meta_title": "Chapter 26 - When You Feel Numb: Overcoming the Absence of Remorse | Guardians of Purity"
     },
     {
       "chapter_number": 27,
       "filename": "chapter27.html",
-      "title": "Knowing Your Identity in Christ",
-      "meta_title": "Chapter 27 \u2014 Knowing Your Identity in Christ | Guardians of Purity"
+      "title": "Restoring Your Conscience",
+      "meta_title": "Chapter 27 - Restoring Your Conscience | Guardians of Purity"
     },
     {
       "chapter_number": 28,
       "filename": "chapter28.html",
-      "title": "Living by the Spirit",
-      "meta_title": "Chapter 28 \u2014 Living by the Spirit | Guardians of Purity"
+      "title": "Reigniting Your Passion for Holiness",
+      "meta_title": "Chapter 28 - Reigniting Your Passion for Holiness | Guardians of Purity"
     },
     {
       "chapter_number": 29,
       "filename": "chapter29.html",
-      "title": "Fasting for Spiritual Breakthrough",
-      "meta_title": "Chapter 29 \u2014 Fasting for Spiritual Breakthrough | Guardians of Purity"
+      "title": "Understanding Triggers and Developing Guardrails",
+      "meta_title": "Chapter 29 - Understanding Triggers and Developing Guardrails | Guardians of Purity"
     },
     {
       "chapter_number": 30,
