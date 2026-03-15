@@ -1,490 +1,362 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Chapter 20 — Digital Boundaries | Guardians of Purity</title>
-<!-- Google Fonts: Updated Font Families -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Open+Sans:wght@400;600&amp;family=Raleway:wght@400;600&amp;family=Playfair+Display:wght@400;700&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<!-- CSS Links -->
-<link href="CSS/styles.css" rel="stylesheet"/>
-<link href="CSS/header.css" rel="stylesheet"/>
-<link href="CSS/footer.css" rel="stylesheet"/>
-<link href="CSS/styles-responsive.css" rel="stylesheet"/>
-<link href="CSS/page/chapter.css" rel="stylesheet"/>
-<!-- Font Awesome -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<!-- Favicon -->
-<link href="favicon.ico" rel="icon" type="image/x-icon"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 20 - 4-Week Prayer for Your Freedom | Guardians of Purity</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&family=Raleway:wght@400;600&family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="CSS/styles.css" />
+  <link rel="stylesheet" href="CSS/header.css" />
+  <link rel="stylesheet" href="CSS/footer.css" />
+  <link rel="stylesheet" href="CSS/styles-responsive.css" />
+  <link rel="stylesheet" href="CSS/page/chapter.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <style>
+    .prayer-cards-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 1.25rem;
+    }
+
+    .prayer-card {
+      border: 1px solid rgba(21, 101, 192, 0.18);
+      border-radius: 14px;
+      padding: 1rem;
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.95), rgba(240, 247, 255, 0.95));
+      box-shadow: 0 8px 20px rgba(12, 63, 118, 0.08);
+    }
+
+    .prayer-card h3 {
+      margin: 0 0 0.6rem;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1rem;
+      color: #0f4c81;
+    }
+
+    .prayer-card .prayer-card-verse {
+      margin: 0 0 0.6rem;
+      font-style: italic;
+      color: #ffffff;
+      line-height: 1.45;
+      background: #0f3d78;
+      border-radius: 10px;
+      padding: 0.55rem 0.65rem;
+    }
+
+    .prayer-card .prayer-card-prayer {
+      margin: 0;
+      line-height: 1.55;
+      color: #24364a;
+    }
+
+    .amen-highlight {
+      display: inline-block;
+      margin-top: 0.35rem;
+      color: #0f4c81;
+      font-weight: 700;
+    }
+
+    .weekly-focus-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      margin-top: 1.25rem;
+    }
+
+    .weekly-focus-card {
+      border-left: 4px solid #2d7bb8;
+      border-radius: 12px;
+      padding: 1rem;
+      background: #f6fbff;
+      box-shadow: 0 6px 16px rgba(24, 71, 120, 0.08);
+    }
+
+    .weekly-focus-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #0f4c81;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .weekly-focus-card ul {
+      margin: 0.6rem 0 0;
+      padding-left: 1.1rem;
+    }
+
+    @media (max-width: 1024px) {
+      .prayer-cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .prayer-cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<!-- Navbar -->
-<a aria-label="Scroll to top" id="scrollToTopButton" title="Scroll to top">↑</a>
-<div class="separated_block first">
-<header class="header" role="banner">
-    <nav class="navbar" id="main-nav" role="navigation">
-      <a href="index.html" class="logo">
-        <img
-          src="./img/logo.png"
-          alt="Guardians of Purity Logo"
-          class="logo-img"
-          loading="eager"
-        />
-      </a>
-
-      <div class="tvnav" id="primary-nav-menu" aria-label="Primary">
-        <a href="index.html" class="tvnav__item" data-nav="home">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10.5z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">Home</span>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <a id="scrollToTopButton" aria-label="Scroll to top" title="Scroll to top">&#x2191;</a>
+  <div class="separated_block first">
+    <header class="header" role="banner">
+      <nav class="navbar" id="main-nav" role="navigation">
+        <a href="index.html" class="logo">
+          <img src="./img/logo.png" alt="Guardians of Purity Logo" class="logo-img" loading="eager" />
         </a>
+        <div class="tvnav" id="primary-nav-menu" aria-label="Primary">
+          <a href="index.html" class="tvnav__item" data-nav="home"><span class="tvnav__label">Home</span></a>
+          <a href="journey.html" class="tvnav__item" data-nav="journey"><span class="tvnav__label">Journey</span></a>
+          <a href="resources.html" class="tvnav__item" data-nav="resources"><span class="tvnav__label">Resources</span></a>
+          <a href="prayer.html" class="tvnav__item" data-nav="prayer"><span class="tvnav__label">Prayer</span></a>
+          <a href="contacts.html" class="tvnav__item" data-nav="contact"><span class="tvnav__label">Contact</span></a>
+          <a href="about.html" class="tvnav__item" data-nav="about"><span class="tvnav__label">About</span></a>
+        </div>
+      </nav>
+    </header>
+  </div>
 
-        <a href="journey.html" class="tvnav__item" data-nav="journey">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M12 3 2 8l10 5 10-5-10-5zm0 8L2 6v4l10 5 10-5V6l-10 5zm0 6L2 12v4l10 5 10-5v-4l-10 5z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">Journey</span>
-        </a>
-
-        <a href="resources.html" class="tvnav__item" data-nav="resources">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M6 3h11a2 2 0 0 1 2 2v15a1 1 0 0 1-1 1H7a3 3 0 0 0-3 3V5a2 2 0 0 1 2-2zm1 4v12h10V7H7z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">Resources</span>
-        </a>
-
-        <a href="prayer.html" class="tvnav__item" data-nav="prayer">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0 1 12 6.2 5.5 5.5 0 0 1 21.5 12C19 16.4 12 21 12 21z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">Prayer</span>
-        </a>
-
-        <a href="contacts.html" class="tvnav__item" data-nav="contact">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">Contact</span>
-        </a>
-
-        <a href="about.html" class="tvnav__item" data-nav="about">
-          <span class="tvnav__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false" aria-hidden="true">
-              <path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="tvnav__label">About</span>
-        </a>
+  <!-- CHAPTER CONTENT START -->
+  <section class="chapterOne-section" id="main">
+    <div class="chapterOne-overlay">
+      <div class="chapterOne-content">
+        <h1 class="chapterOne-title">4-Week Prayer for Your Freedom</h1>
+        <div class="chapterOne-verse-container">
+          <p class="chapterOne-verse">"The prayer of a righteous person is powerful and effective."</p>
+          <span class="chapterOne-verseRef">(James 5:16b)</span>
+        </div>
+        <p class="chapterOne-quote">Simple daily prayers can open the door for deep healing, freedom, and spiritual renewal.</p>
       </div>
-    </nav>
-  </header>
-</div>
-<!-- EDIT ONLY INSIDE CHAPTER CONTENT -->
-<!-- CHAPTER CONTENT START -->
-<!-- section 1 -->
-<section class="chapterOne-section" id="main">
-<div class="chapterOne-overlay">
-<div class="chapterOne-content">
-<h1 class="chapterOne-title">Digital Boundaries</h1>
-<div class="chapterOne-verse-container">
-<p class="chapterOne-verse">“The mind governed by the flesh is death, but the mind governed by the Spirit is
-            life and peace.”</p>
-<span class="chapterOne-verseRef">— Romans 8:6</span>
-</div>
-<p class="chapterOne-quote">
-          Watching pornography and engaging in habitual masturbation may seem harmless at first, but over time it can
-          significantly alter your mental, emotional, physical, and spiritual health.
-        </p>
-</div>
-</div>
-</section>
-<!-- section 2 parable -->
-<section class="chapterOne-parable-section" id="parable">
-<div class="chapterOne-parable-container">
-<h2 class="chapterOne-parable-title">Parable: The Slow Leak</h2>
-<!-- VISUAL PROMPT: A worn water flask with a tiny pinhole near its base, held up against sunlight with a thin stream of water leaking out, dust motes in the air, muted earth tones, minimal composition, slight film grain, contemplative mood about gradual damage and the need for intentional repair -->
-<div class="chapterOne-parable-body">
-<div class="chapterOne-parable-image"></div>
-<p class="chapterOne-paragraph">
-          A man bought a strong water flask for a long hike. It looked perfect—no cracks, no dents. But every time he
-          arrived at his next stop, the bottle was lighter than it should’ve been.
-        </p>
-<p class="chapterOne-paragraph">
-          He blamed the heat. He blamed the distance. He blamed his pace.
-        </p>
-<p class="chapterOne-paragraph">
-          Finally, he held the flask up to the sun. There it was: a tiny pinhole near the bottom—small enough to ignore,
-          but steady enough to drain him mile by mile.
-        </p>
-<p class="chapterOne-paragraph">
-          He patched it once, quickly, then kept walking… and the leak returned. So he stopped, cleaned the surface,
-          sealed it properly, and changed how he carried it so the hole wouldn’t reopen under pressure.
-        </p>
-<p class="chapterOne-paragraph">
-          On the next hike, the same terrain didn’t destroy him—because the slow leak was gone.
-        </p>
-</div>
-<div class="chapterOne-moral-box">
-<strong>Moral:</strong><br/>
-        What drains you slowly can destroy you quietly. Healing starts when you stop excusing the leak and start sealing
-        it with truth and discipline.
+    </div>
+  </section>
+
+  <section class="chapterOne-teaching-section" id="intro">
+    <div class="chapterOne-teaching-container">
+      <h2 class="chapterOne-teaching-title">Introduction: The Power of Prayer</h2>
+      <p class="chapterOne-teaching-text">
+        Prayer has a powerful impact on your life. If you are struggling with pornography or masturbation, praying intentionally and consistently can invite God's power to break strongholds and bring healing. This 4-week prayer guide gives Scripture, prayer points, and specific areas to bring before God each day.
+      </p>
+    </div>
+  </section>
+
+  <section class="chapterOne-teaching-section" id="weekly-focus">
+    <div class="chapterOne-teaching-container">
+      <h2 class="chapterOne-teaching-title">Weekly Focus Areas</h2>
+      <div class="weekly-focus-grid">
+        <article class="weekly-focus-card">
+          <h3>Week 1: Overcoming Temptation</h3>
+          <p><strong>Verse:</strong> "No temptation has overtaken you except what is common to mankind..." (1 Corinthians 10:13)</p>
+          <ul>
+            <li>Strengthen me to resist temptation.</li>
+            <li>Help me flee from situations that lead to sin.</li>
+            <li>Remind me of the way out You provide in every situation.</li>
+          </ul>
+        </article>
+        <article class="weekly-focus-card">
+          <h3>Week 2: Identity in Christ</h3>
+          <p><strong>Verse:</strong> "If anyone is in Christ, the new creation has come..." (2 Corinthians 5:17)</p>
+          <ul>
+            <li>Remind me of my identity as Your beloved child.</li>
+            <li>Help me see myself as new in Christ.</li>
+            <li>Replace my inadequacy with confidence in You.</li>
+          </ul>
+        </article>
+        <article class="weekly-focus-card">
+          <h3>Week 3: Building Godly Habits</h3>
+          <p><strong>Verse:</strong> "The fruit of the Spirit is love... and self-control." (Galatians 5:22-23)</p>
+          <ul>
+            <li>Help me develop habits that honor You.</li>
+            <li>Strengthen my self-control and discipline.</li>
+            <li>Guide me toward meaningful, godly activities.</li>
+          </ul>
+        </article>
+        <article class="weekly-focus-card">
+          <h3>Week 4: Restoring Joy and Peace</h3>
+          <p><strong>Verse:</strong> "The joy of the Lord is your strength." (Nehemiah 8:10)</p>
+          <ul>
+            <li>Restore my joy in You.</li>
+            <li>Replace my anxiety with peace and hope.</li>
+            <li>Let Your presence bring me comfort and strength.</li>
+          </ul>
+        </article>
       </div>
-</div>
-</section>
-<!-- Introduction -->
-<section class="chapterOne-teaching-section" id="intro">
-<div class="chapterOne-teaching-container">
-<h2 class="chapterOne-teaching-title">Introduction: A Slow Decline</h2>
-<p class="chapterOne-teaching-text">
-        Watching pornography and engaging in habitual masturbation may seem harmless at first, but over time, it can
-        significantly alter your mental, emotional, physical, and spiritual health. This chapter breaks down the changes
-        that occur month by month when these behaviors are left unchecked, providing insight into their harmful effects
-        and motivating you to break free before they take root.
-      </p>
-<div class="chapterOne-journal-box">
-<label for="chapter17-journal1"><strong>Your Journal:</strong> What stood out to you?</label>
-<textarea id="chapter17-journal1" placeholder="Type your thoughts here..."></textarea>
-</div>
-</div>
-</section>
-<!-- Section 1 -->
-<section class="chapterOne-teaching-section" id="section1">
-<div class="chapterOne-teaching-container">
-<h2 class="chapterOne-teaching-title">Month 1: The Initial Trap</h2>
-<p class="chapterOne-teaching-text"><strong>Mental Impact:</strong></p>
-<ul class="chapterOne-bullets">
-<li>Increased curiosity and arousal create a dopamine rush, making the behavior feel rewarding.</li>
-<li>Early signs of mental dependence, such as seeking comfort in porn during stress or boredom.</li>
-</ul>
-<p class="chapterOne-teaching-text"><strong>Physical Impact:</strong></p>
-<ul class="chapterOne-bullets">
-<li>Heightened sensitivity to triggers, leading to more frequent urges.</li>
-<li>Fatigue from excessive masturbation.</li>
-</ul>
-<p class="chapterOne-teaching-text"><strong>Examples:</strong> A student finds themselves sneaking in quick porn
-        sessions between study breaks, feeling a rush of excitement but later struggling to focus on assignments.</p>
-<div class="chapterOne-reflection-area">
-<div class="chapterOne-reflect-box">
-<h3>Reflection Questions</h3>
-<ul>
-<li>Have you noticed your curiosity growing into dependence?</li>
-<li>How does this behavior impact your ability to focus or stay productive?</li>
-<li>How do you feel emotionally after engaging in these behaviors?</li>
-</ul>
-</div>
-<div class="chapterOne-journal-box">
-<label for="chapter17-journal2"><strong>Your Journal:</strong> What stood out to you?</label>
-<textarea id="chapter17-journal2" placeholder="Type your thoughts here..."></textarea>
-</div>
-</div>
-</div>
-</section>
-<!-- Section 2 -->
-<section class="chapterOne-teaching-section" id="section2">
-<div class="chapterOne-teaching-container">
-<h2 class="chapterOne-teaching-title">Month 2: Growing Dependence</h2>
-<p class="chapterOne-teaching-text"><strong>Mental Impact:</strong></p>
-<ul class="chapterOne-bullets">
-<li>Increased cravings and difficulty resisting temptation.</li>
-<li>Early signs of emotional withdrawal or irritability when access to porn is limited.</li>
-</ul>
-<p class="chapterOne-teaching-text"><strong>Physical Impact:</strong></p>
-<ul class="chapterOne-bullets">
-<li>Disrupted sleep patterns due to late-night viewing.</li>
-<li>Less energy and motivation for physical activities.</li>
-</ul>
-<p class="chapterOne-teaching-text"><strong>Examples:</strong> A young professional notices they’re staying up
-        late to watch porn, struggling to wake up on time for work, and feeling more tired throughout the day.</p>
-<div class="chapterOne-reflection-area">
-<div class="chapterOne-reflect-box">
-<h3>Reflection Questions</h3>
-<ul>
-<li>Are you finding it harder to resist triggers?</li>
-<li>How has your sleep or energy been affected?</li>
-<li>How does this growing dependence make you feel about yourself?</li>
-</ul>
-</div>
-<div class="chapterOne-journal-box">
-<label for="chapter17-journal3"><strong>Your Journal:</strong> What stood out to you?</label>
-<textarea id="chapter17-journal3" placeholder="Type your thoughts here..."></textarea>
-</div>
-</div>
-</div>
-</section>
-<!-- 15-Minute Reflection Break -->
-<section aria-label="15-minute reflection break" class="reflection-timer-module">
-<h3>15-Minute Break</h3>
-<p class="timer-encouragement">Take a moment to step away and let what you've reflected on settle in your heart.</p>
-<div aria-atomic="true" aria-live="polite" class="reflection-timer-display">15:00</div>
-<div class="timer-controls">
-<button class="reflection-timer-btn btn-start" type="button">Start Timer</button>
-<button class="reflection-timer-btn btn-stop" hidden="" type="button">Stop Timer</button>
-<button class="reflection-timer-btn btn-restart" type="button">Restart Timer</button>
-</div>
-<p aria-live="polite" class="timer-completion-message">Time's up. Come back when you're ready.</p>
-<div aria-hidden="true" class="timer-waves">
-<svg aria-hidden="true" preserveaspectratio="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<lineargradient id="timerWaveSketchGrad" x1="0%" x2="100%" y1="0%" y2="0%">
-<stop offset="0%" stop-color="#3b82f6"></stop>
-<stop offset="50%" stop-color="#a855f7"></stop>
-<stop offset="100%" stop-color="#ec4899"></stop>
-</lineargradient>
-</defs>
-<path class="wave-path" d="M -10,35 C 30,85 70,85 110,35" stroke="url(#timerWaveSketchGrad)"></path>
-<path class="wave-path" d="M -10,45 C 35,95 65,95 110,45" stroke="url(#timerWaveSketchGrad)"></path>
-<path class="wave-path" d="M -10,25 C 25,80 75,80 110,25" stroke="url(#timerWaveSketchGrad)"></path>
-<path class="wave-path" d="M -10,55 C 40,105 60,105 110,55" stroke="url(#timerWaveSketchGrad)"></path>
-<path class="wave-path" d="M -10,40 C 30,90 70,90 110,40" stroke="url(#timerWaveSketchGrad)"></path>
-</svg>
-</div>
-</section>
-<!-- Section 3 -->
-<section class="chapterOne-teaching-section" id="section3">
-<div class="chapterOne-teaching-container">
-<h2 class="chapterOne-teaching-title">Month 3: Escalation</h2>
-<p class="chapterOne-teaching-text"><strong>Mental Impact:</strong></p>
-<ul class="chapterOne-bullets">
-<li>Desire for more explicit or extreme content to achieve the same dopamine rush.</li>
-<li>Decline in mental sharpness, creativity, and motivation.</li>
-</ul>
-<p class="chapterOne-teaching-text"><strong>Physical Impact:</strong></p>
-<ul class="chapterOne-bullets">
-<li>Decreased physical stamina and potential for erectile dysfunction (ED) in intimate situations.</li>
-<li>Noticeable fatigue and lack of focus during the day.</li>
-</ul>
-<p class="chapterOne-teaching-text"><strong>Examples:</strong> A college student finds themselves skipping
-        workouts and study groups, preferring to stay alone and watch porn instead.</p>
-<div class="chapterOne-reflection-area">
-<div class="chapterOne-reflect-box">
-<h3>Reflection Questions</h3>
-<ul>
-<li>Have you noticed a need for more extreme content?</li>
-<li>How has this behavior affected your social or academic life?</li>
-<li>What changes have you seen in your energy and focus?</li>
-</ul>
-</div>
-<div class="chapterOne-journal-box">
-<label for="chapter17-journal4"><strong>Your Journal:</strong> What stood out to you?</label>
-<textarea id="chapter17-journal4" placeholder="Type your thoughts here..."></textarea>
-</div>
-</div>
-</div>
-</section>
-<!-- Section 4 -->
-<section class="chapterOne-teaching-section" id="section4">
-<div class="chapterOne-teaching-container">
-<h2 class="chapterOne-teaching-title">Month 4: Social Withdrawal</h2>
-<p class="chapterOne-teaching-text"><strong>Mental Impact:</strong></p>
-<ul class="chapterOne-bullets">
-<li>Feelings of shame and guilt grow stronger, creating a cycle of emotional lows and escapism.</li>
-<li>Avoidance of social situations to hide the behavior.</li>
-</ul>
-<p class="chapterOne-teaching-text"><strong>Physical Impact:</strong></p>
-<ul class="chapterOne-bullets">
-<li>Loss of interest in real-life relationships or intimacy.</li>
-<li>Increased physical lethargy.</li>
-</ul>
-<p class="chapterOne-teaching-text"><strong>Examples:</strong> A young man avoids friends and family gatherings,
-        feeling ashamed about his growing reliance on pornography.</p>
-<div class="chapterOne-reflection-area">
-<div class="chapterOne-reflect-box">
-<h3>Reflection Questions</h3>
-<ul>
-<li>How has shame affected your willingness to connect with others?</li>
-<li>Are you avoiding people to hide your behavior?</li>
-<li>What steps can you take to break this cycle of isolation?</li>
-</ul>
-</div>
-<div class="chapterOne-journal-box">
-<label for="chapter17-journal5"><strong>Your Journal:</strong> What stood out to you?</label>
-<textarea id="chapter17-journal5" placeholder="Type your thoughts here..."></textarea>
-</div>
-</div>
-</div>
-</section>
-<!-- Section 5 -->
-<section class="chapterOne-teaching-section" id="section5">
-<div class="chapterOne-teaching-container">
-<h2 class="chapterOne-teaching-title">Month 5: Mental Fog</h2>
-<p class="chapterOne-teaching-text"><strong>Mental Impact:</strong></p>
-<ul class="chapterOne-bullets">
-<li>Difficulty concentrating for extended periods.</li>
-<li>Increased susceptibility to anxiety or depression.</li>
-</ul>
-<p class="chapterOne-teaching-text"><strong>Physical Impact:</strong></p>
-<ul class="chapterOne-bullets">
-<li>Physical exhaustion and frequent mood swings.</li>
-<li>Poorer immune system response due to stress and poor habits.</li>
-</ul>
-<p class="chapterOne-teaching-text"><strong>Examples:</strong> An employee makes repeated mistakes at work,
-        realizing they can’t focus as well as they used to.</p>
-<div class="chapterOne-reflection-area">
-<div class="chapterOne-reflect-box">
-<h3>Reflection Questions</h3>
-<ul>
-<li>Have you noticed changes in your ability to concentrate?</li>
-<li>How has this behavior affected your emotional state?</li>
-<li>What can you do to begin addressing these challenges?</li>
-</ul>
-</div>
-<div class="chapterOne-journal-box">
-<label for="chapter17-journal6"><strong>Your Journal:</strong> What stood out to you?</label>
-<textarea id="chapter17-journal6" placeholder="Type your thoughts here..."></textarea>
-</div>
-</div>
-</div>
-</section>
-<!-- Section 6 -->
-<section class="chapterOne-teaching-section" id="section6">
-<div class="chapterOne-teaching-container">
-<h2 class="chapterOne-teaching-title">Month 6: Deep Dependency</h2>
-<p class="chapterOne-teaching-text"><strong>Mental Impact:</strong></p>
-<ul class="chapterOne-bullets">
-<li>Porn becomes a primary coping mechanism for stress, boredom, or loneliness.</li>
-<li>Struggles with self-esteem and a distorted view of intimacy.</li>
-</ul>
-<p class="chapterOne-teaching-text"><strong>Physical Impact:</strong></p>
-<ul class="chapterOne-bullets">
-<li>Increased risk of developing chronic fatigue or ED.</li>
-<li>Noticeable decline in physical fitness and overall energy levels.</li>
-</ul>
-<p class="chapterOne-teaching-text"><strong>Examples:</strong> A man realizes he now turns to porn at the
-        slightest sign of stress or boredom, losing interest in hobbies he once enjoyed.</p>
-<div class="chapterOne-reflection-area"><div class="chapterOne-reflect-box">
-<h3>Reflection Questions</h3>
-<ul>
-<li>How has porn become a coping mechanism in your life?</li>
-<li>Are you losing interest in real-life relationships or activities?</li>
-<li>How can you begin breaking free from this cycle?</li>
-</ul>
-</div><div class="chapterOne-journal-box"><label for="journal_fix_17_1"><strong>Your Journal:</strong> What stood out to you?</label><textarea id="journal_fix_17_1" placeholder="Type your thoughts here..."></textarea></div></div>
-<h2 class="chapterOne-teaching-title">Months 7-12: Entrapment</h2>
-<p class="chapterOne-teaching-text">The effects compound, making the behavior harder to quit without serious
-        intervention.</p>
-<p class="chapterOne-teaching-text"><strong>Mental Impact:</strong></p>
-<ul class="chapterOne-bullets">
-<li>Severe difficulty imagining life without porn.</li>
-<li>Escalating feelings of hopelessness or being “trapped.”</li>
-</ul>
-<p class="chapterOne-teaching-text"><strong>Physical Impact:</strong></p>
-<ul class="chapterOne-bullets">
-<li>Continued decline in energy, physical health, and interest in real-world intimacy.</li>
-<li>Increased likelihood of physical issues like ED or low libido.</li>
-</ul>
-<p class="chapterOne-teaching-text"><strong>Examples:</strong> An individual feels hopeless and resigned to their
-        behavior, convinced they can’t quit even though they feel miserable.</p>
-<div class="chapterOne-reflection-area"><div class="chapterOne-reflect-box">
-<h3>Reflection Questions</h3>
-<ul>
-<li>How does feeling trapped affect your hope for the future?</li>
-<li>What consequences have you experienced in your physical and emotional health?</li>
-<li>What steps can you take to seek help and accountability?</li>
-</ul>
-</div><div class="chapterOne-journal-box"><label for="journal_fix_17_2"><strong>Your Journal:</strong> What stood out to you?</label><textarea id="journal_fix_17_2" placeholder="Type your thoughts here..."></textarea></div></div>
-<h2 class="chapterOne-teaching-title">Breaking the Cycle</h2>
-<p class="chapterOne-teaching-text">
-        Though the damage caused by prolonged pornography and masturbation can feel overwhelming, healing and
-        restoration are always possible. God offers grace, forgiveness, and the strength to overcome.
-      </p>
-<ul class="chapterOne-bullets">
-<li><strong>Seek Help Immediately:</strong></li>
-<li>Find a mentor, pastor, or counselor to guide you toward recovery.</li>
-<li><strong>Rely on God’s Strength:</strong></li>
-<li>Pray for God’s help in breaking the cycle and healing your mind and body.</li>
-</ul>
-<div class="chapterOne-journal-box">
-<label for="chapter17-journal7"><strong>Your Journal:</strong> What stood out to you?</label>
-<textarea id="chapter17-journal7" placeholder="Type your thoughts here..."></textarea>
-</div>
-</div>
-</section>
-<!-- Prayer for Chapter 17 -->
-<section class="chapterOne-prayer-section" id="prayer">
-<div class="chapterOne-prayer-container">
-<h2 class="chapterOne-prayer-title">Prayer <i class="fa-solid fa-hands-praying" aria-hidden="true"></i></h2>
-<p class="chapterOne-prayer-text">
-        Heavenly Father,<br/>
-        Thank You for Your grace and forgiveness, even when I feel trapped in harmful habits. I ask for Your strength to
-        break free and for wisdom to make choices that honor You. Help me to seek the support I need and to trust You
-        with my healing process. Thank You for Your love and for the hope You provide, even in my struggles. In Jesus’
-        name, I pray. Amen.
-      </p>
-</div>
-</section>
-<!--button for downloading reflection-->
-<section class="chapterOne-export-section">
-<div class="chapterOne-export-container">
-<h2 class="chapterOne-export-title">You've Completed Chapter 17</h2>
-<p class="chapterOne-export-text">
-        You’ve completed Chapter 17. Awareness is not condemnation — it is the beginning of freedom. Take time to
-        reflect honestly and commit your journey to God.
-      </p>
-<button class="chapterOne-export-button" onclick="exportReflection()">Download My Reflection</button>
-</div>
-</section>
-<section class="chapterOne-summary-section">
-<div class="chapterOne-summary-container">
-<h2 class="chapterOne-summary-title">Chapter Summary</h2>
-<ul class="chapterOne-summary-list">
-<li>Increased curiosity and arousal create a dopamine rush</li>
-<li>Early signs of emotional withdrawal or irritability</li>
-<li>Decline in mental sharpness, creativity, and motivation</li>
-<li>Feelings of shame and guilt grow stronger</li>
-<li>Healing and restoration are always possible</li>
-</ul>
-<div class="chapterOne-reflection-question">
-<strong>Final Reflection:</strong>
-        What warning signs do I see in my life, and what step will I take now before the damage deepens?
+    </div>
+  </section>
+
+  <section class="chapterOne-teaching-section" id="week-1">
+    <div class="chapterOne-teaching-container">
+      <h2 class="chapterOne-teaching-title">Week 1 Prayer Cards (Days 1-7)</h2>
+      <div class="prayer-cards-grid">
+        <article class="prayer-card">
+          <h3>Day 1: Pray for God's Presence</h3>
+          <p class="prayer-card-verse">"The Lord is near to all who call on Him, to all who call on Him in truth." (Psalm 145:18)</p>
+          <p class="prayer-card-prayer">Lord, draw near to me. Let me feel Your presence and know You are with me in every moment, even in my struggles.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p>
+        </article>
+        <article class="prayer-card">
+          <h3>Day 2: Pray for Conviction and Repentance</h3>
+          <p class="prayer-card-verse">"If we confess our sins, He is faithful and just to forgive us our sins and to purify us from all unrighteousness." (1 John 1:9)</p>
+          <p class="prayer-card-prayer">Father, bring gentle conviction to my heart, not to shame me, but to lead me to repentance, forgiveness, and restoration.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p>
+        </article>
+        <article class="prayer-card">
+          <h3>Day 3: Pray for a Renewed Mind</h3>
+          <p class="prayer-card-verse">"Do not conform to the pattern of this world, but be transformed by the renewing of your mind." (Romans 12:2)</p>
+          <p class="prayer-card-prayer">Lord, renew my mind with Your Word. Replace thoughts of temptation with truth, purity, and peace.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p>
+        </article>
+        <article class="prayer-card">
+          <h3>Day 4: Pray for Freedom from Strongholds</h3>
+          <p class="prayer-card-verse">"The weapons we fight with are not the weapons of the world. They have divine power to demolish strongholds." (2 Corinthians 10:4)</p>
+          <p class="prayer-card-prayer">Father, break every stronghold of pornography or masturbation in my life. Set me free by Your power.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p>
+        </article>
+        <article class="prayer-card">
+          <h3>Day 5: Pray for Purity</h3>
+          <p class="prayer-card-verse">"Blessed are the pure in heart, for they will see God." (Matthew 5:8)</p>
+          <p class="prayer-card-prayer">Lord, create in me a pure heart. Align my thoughts, desires, and actions with Your will.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p>
+        </article>
+        <article class="prayer-card">
+          <h3>Day 6: Pray for Accountability</h3>
+          <p class="prayer-card-verse">"Two are better than one, because they have a good return for their labor." (Ecclesiastes 4:9)</p>
+          <p class="prayer-card-prayer">Lord, provide me with trusted, godly mentors and friends who will encourage and guide me.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p>
+        </article>
+        <article class="prayer-card">
+          <h3>Day 7: Pray for Self-Control</h3>
+          <p class="prayer-card-verse">"For the Spirit God gave us does not make us timid, but gives us power, love, and self-discipline." (2 Timothy 1:7)</p>
+          <p class="prayer-card-prayer">Father, grow self-control in me. Give me strength to resist temptation and choose what honors You.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p>
+        </article>
       </div>
-</div>
-</section>
-<!-- Next / Previous CTA area -->
-<section class="chapterOne-teaching-section" id="continue">
-<div class="chapterOne-teaching-container">
-<h2 class="chapterOne-teaching-title">Continue the Journey</h2>
-<p class="chapterOne-teaching-text">Use the links below to navigate chapters.</p>
-<div class="chapter-nav">
-<a class="chapter-nav-btn prev" href="chapter16.html">← Previous Chapter</a>
-<a class="chapter-nav-btn next" href="chapter18.html">Next Chapter →</a>
-</div>
-</div>
-</section>
-<!-- CHAPTER CONTENT END -->
-<!-- EDIT ONLY INSIDE CHAPTER CONTENT -->
-<!-- Footer -->
-<div class="separated_block last">
-<footer class="footer separated_block_corner" id="footer" role="contentinfo">
-<div class="footer-links">
-<a class="footer-link" href="about.html">About</a>
-<a class="footer-link" href="resources.html">Resources</a>
-<a class="footer-link" href="resources.html">Blog (Coming Soon)</a>
-<a class="footer-link" href="contacts.html">Contact</a>
-</div>
-<div class="footer-social">
-<a class="social-link" href="https://facebook.com">Facebook</a>
-<a class="social-link" href="https://instagram.com">Instagram</a>
-<a class="social-link" href="https://youtube.com">YouTube</a>
-</div>
-<p class="footer-contact">Email: support@guardiansofpurity.com</p>
-<p class="footer-copyright">© 2025 Guardians of Purity</p>
-</footer>
-</div>
-<!-- JavaScript -->
-<script src="js/storage.js"></script>
-<script src="js/script.js"></script>
+    </div>
+  </section>
+
+  <section class="chapterOne-teaching-section" id="week-2">
+    <div class="chapterOne-teaching-container">
+      <h2 class="chapterOne-teaching-title">Week 2 Prayer Cards (Days 8-14)</h2>
+      <div class="prayer-cards-grid">
+        <article class="prayer-card"><h3>Day 8: Pray for Healing from Shame</h3><p class="prayer-card-verse">"Those who look to Him are radiant; their faces are never covered with shame." (Psalm 34:5)</p><p class="prayer-card-prayer">Lord, heal me from shame and guilt. Remind me of Your grace, forgiveness, and steadfast love.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+        <article class="prayer-card"><h3>Day 9: Pray for Gratitude</h3><p class="prayer-card-verse">"Give thanks in all circumstances; for this is God's will for you in Christ Jesus." (1 Thessalonians 5:18)</p><p class="prayer-card-prayer">Father, fill my heart with gratitude. Let thankfulness replace discontentment and despair.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+        <article class="prayer-card"><h3>Day 10: Pray for Protection from Temptation</h3><p class="prayer-card-verse">"And lead us not into temptation, but deliver us from the evil one." (Matthew 6:13)</p><p class="prayer-card-prayer">Lord, protect my eyes, mind, and heart. Keep me from situations and triggers that lead to temptation.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+        <article class="prayer-card"><h3>Day 11: Pray for Strength to Resist</h3><p class="prayer-card-verse">"Submit yourselves, then, to God. Resist the devil, and he will flee from you." (James 4:7)</p><p class="prayer-card-prayer">Father, give me strength to resist the enemy and rely on Your power in moments of temptation.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+        <article class="prayer-card"><h3>Day 12: Pray for Identity in Christ</h3><p class="prayer-card-verse">"If anyone is in Christ, the new creation has come." (2 Corinthians 5:17)</p><p class="prayer-card-prayer">Lord, remind me I am a new creation. Free me from the weight of my past.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+        <article class="prayer-card"><h3>Day 13: Pray for Joy in the Lord</h3><p class="prayer-card-verse">"The joy of the Lord is your strength." (Nehemiah 8:10)</p><p class="prayer-card-prayer">Father, restore joy to my heart and let my strength come from You.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+        <article class="prayer-card"><h3>Day 14: Pray for Desire for God's Word</h3><p class="prayer-card-verse">"Your word is a lamp to my feet and a light to my path." (Psalm 119:105)</p><p class="prayer-card-prayer">Lord, give me a hunger for Scripture and guide me through Your truth.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapterOne-teaching-section" id="week-3">
+    <div class="chapterOne-teaching-container">
+      <h2 class="chapterOne-teaching-title">Week 3 Prayer Cards (Days 15-21)</h2>
+      <div class="prayer-cards-grid">
+        <article class="prayer-card"><h3>Day 15: Pray for Perseverance</h3><p class="prayer-card-verse">"Let us not become weary in doing good..." (Galatians 6:9)</p><p class="prayer-card-prayer">Father, help me persevere when the journey feels hard and progress feels slow.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+        <article class="prayer-card"><h3>Day 16: Pray for Wisdom in Choices</h3><p class="prayer-card-verse">"If any of you lacks wisdom..." (James 1:5)</p><p class="prayer-card-prayer">Lord, give me wisdom to avoid situations that lead to temptation and choose what honors You.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+        <article class="prayer-card"><h3>Day 17: Pray for Emotional Healing</h3><p class="prayer-card-verse">"He heals the brokenhearted and binds up their wounds." (Psalm 147:3)</p><p class="prayer-card-prayer">Father, heal my emotional wounds and replace brokenness with peace.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+        <article class="prayer-card"><h3>Day 18: Pray for Boldness to Ask for Help</h3><p class="prayer-card-verse">"Encourage one another and build each other up." (1 Thessalonians 5:11)</p><p class="prayer-card-prayer">Lord, give me courage to seek help and surround me with wise support.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+        <article class="prayer-card"><h3>Day 19: Pray for Contentment</h3><p class="prayer-card-verse">"Godliness with contentment is great gain." (1 Timothy 6:6)</p><p class="prayer-card-prayer">Father, teach me to find contentment in You instead of temporary pleasure.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+        <article class="prayer-card"><h3>Day 20: Pray for a Spirit of Forgiveness</h3><p class="prayer-card-verse">"Forgiving each other, just as in Christ God forgave you." (Ephesians 4:32)</p><p class="prayer-card-prayer">Lord, help me forgive myself and rest in Your complete forgiveness.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+        <article class="prayer-card"><h3>Day 21: Pray for a Heart of Service</h3><p class="prayer-card-verse">"Use whatever gift you have received to serve others." (1 Peter 4:10)</p><p class="prayer-card-prayer">Father, give me purpose and joy in serving others for Your glory.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapterOne-teaching-section" id="week-4">
+    <div class="chapterOne-teaching-container">
+      <h2 class="chapterOne-teaching-title">Week 4 Prayer Cards (Days 22-28)</h2>
+      <div class="prayer-cards-grid">
+        <article class="prayer-card"><h3>Day 22: Pray for Healthy Relationships</h3><p class="prayer-card-verse">"Bad company corrupts good character." (1 Corinthians 15:33)</p><p class="prayer-card-prayer">Lord, guide me toward relationships that strengthen faith and protect purity.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+        <article class="prayer-card"><h3>Day 23: Pray for Renewed Hope</h3><p class="prayer-card-verse">"May the God of hope fill you with all joy and peace..." (Romans 15:13)</p><p class="prayer-card-prayer">Father, fill me with hope, joy, and peace as I trust in You.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+        <article class="prayer-card"><h3>Day 24: Pray for Confidence to Overcome</h3><p class="prayer-card-verse">"I can do all this through Him who gives me strength." (Philippians 4:13)</p><p class="prayer-card-prayer">Lord, give me confidence in Your strength to overcome each challenge.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+        <article class="prayer-card"><h3>Day 25: Pray for Patience in the Process</h3><p class="prayer-card-verse">"We wait for it patiently." (Romans 8:25)</p><p class="prayer-card-prayer">Father, teach me patience and trust while You work deeply over time.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+        <article class="prayer-card"><h3>Day 26: Pray for Protection from the Enemy</h3><p class="prayer-card-verse">"Put on the full armor of God..." (Ephesians 6:11)</p><p class="prayer-card-prayer">Lord, protect me from spiritual attack and help me stand firm in truth.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+        <article class="prayer-card"><h3>Day 27: Pray for Joy in Obedience</h3><p class="prayer-card-verse">"If you love me, keep my commands." (John 14:15)</p><p class="prayer-card-prayer">Father, let me find joy in obeying You and walking in Your ways.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+        <article class="prayer-card"><h3>Day 28: Pray for Peace in Their Mind</h3><p class="prayer-card-verse">"You will keep in perfect peace those whose minds are steadfast..." (Isaiah 26:3)</p><p class="prayer-card-prayer">Lord, calm my mind and fill me with peace as I trust You.<br /><br />In Jesus' Name,<br /><span class="amen-highlight">AMEN.</span></p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapterOne-prayer-section" id="prayer">
+    <div class="chapterOne-prayer-container">
+      <h2 class="chapterOne-prayer-title">Final Prayer for the 4-Week Journey <i class="fa-solid fa-hands-praying" aria-hidden="true"></i></h2>
+      <p class="chapterOne-prayer-text">
+        Heavenly Father,<br /><br />
+        Thank You for hearing my prayers over these 4 weeks. I trust You to keep working in my heart, bringing freedom, healing, and transformation. Help me walk in the fullness of life You have for me, free from strongholds. Thank You for Your faithfulness, grace, and love that never fail.<br /><br />
+        In Jesus' Name,<br />
+        <span class="amen-highlight">Amen.</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="chapterOne-summary-section">
+    <div class="chapterOne-summary-container">
+      <h2 class="chapterOne-summary-title">Chapter Summary</h2>
+      <ul class="chapterOne-summary-list">
+        <li>Consistent daily prayer invites God's power into your struggle.</li>
+        <li>Scripture-focused prayers renew the mind and strengthen spiritual identity.</li>
+        <li>Weekly themes help you pray with clarity and depth.</li>
+        <li>Faithful intercession builds hope, healing, and freedom over time.</li>
+      </ul>
+      <div class="chapterOne-reflection-question">
+        <strong>Final Reflection:</strong> Which prayer card will you begin praying today?
+      </div>
+      <div class="chapterOne-journal-box">
+        <label for="chapter20-journal1"><strong>Your Summary:</strong> What is your biggest takeaway?</label>
+        <textarea id="chapter20-journal1" placeholder="Summarize your chapter reflections..."></textarea>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapterOne-export-section">
+    <div class="chapterOne-export-container">
+      <h2 class="chapterOne-export-title">You've Completed Chapter 20</h2>
+      <p class="chapterOne-export-text">You now have a full 4-week set of focused prayer prompts to intercede for your freedom. Save your reflections and keep praying with faith.</p>
+      <div class="chapterOne-transition-icons" aria-hidden="true">
+        <span class="chapterOne-transition-line"></span>
+        <span class="chapterOne-transition-icon chapterOne-transition-icon--sparkle"><i class="fa-solid fa-star"></i></span>
+        <span class="chapterOne-transition-icon chapterOne-transition-icon--dove"><i class="fa-solid fa-dove"></i></span>
+        <span class="chapterOne-transition-icon chapterOne-transition-icon--hands"><i class="fa-solid fa-hands-praying"></i></span>
+        <span class="chapterOne-transition-icon chapterOne-transition-icon--sparkle"><i class="fa-solid fa-star"></i></span>
+        <span class="chapterOne-transition-line"></span>
+      </div>
+      <button onclick="exportReflection()" class="chapterOne-export-button">Export Saved Reflections</button>
+    </div>
+  </section>
+
+  <section class="chapterOne-teaching-section">
+    <div class="chapterOne-teaching-container">
+      <h2 class="chapterOne-teaching-title">Continue the Journey</h2>
+      <p class="chapterOne-teaching-text">Use the links below to continue your journey.</p>
+      <div class="chapter-nav">
+        <a href="chapter19.html" class="chapter-nav-btn prev">&larr; Previous Chapter</a>
+        <a href="chapter21.html" class="chapter-nav-btn next">Next Chapter &rarr;</a>
+      </div>
+    </div>
+  </section>
+  <!-- CHAPTER CONTENT END -->
+
+  <div class="separated_block last">
+    <footer class="footer separated_block_corner" id="footer" role="contentinfo">
+      <div class="footer-links">
+        <a href="about.html" class="footer-link">About</a>
+        <a href="resources.html" class="footer-link">Resources</a>
+        <a href="resources.html" class="footer-link">Blog (Coming Soon)</a>
+        <a href="contacts.html" class="footer-link">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://facebook.com" class="social-link">Facebook</a>
+        <a href="https://instagram.com" class="social-link">Instagram</a>
+        <a href="https://youtube.com" class="social-link">YouTube</a>
+      </div>
+      <p class="footer-contact">Email: support@guardiansofpurity.com</p>
+      <p class="footer-copyright">© 2025 Guardians of Purity</p>
+    </footer>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/script.js"></script>
 </body>
+
 </html>

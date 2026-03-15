@@ -269,16 +269,18 @@
     {
       "number": 20,
       "file": "chapter20.html",
-      "title": "Digital Boundaries",
+      "title": "31 Days of Prayer for Your Child's Freedom",
       "checks": {
         "has_questions": false,
-        "has_journal": true,
-        "has_timer": true,
+        "has_journal": false,
+        "has_timer": false,
         "timer_wrong_position": false,
         "missing_journal_with_questions": false,
-        "missing_timer": false
+        "missing_timer": true
       },
-      "issues": []
+      "issues": [
+        "Missing 15-Minute Break module"
+      ]
     },
     {
       "number": 21,
