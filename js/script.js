@@ -365,7 +365,7 @@ document.addEventListener("DOMContentLoaded", () => {
           { n: 26, title: "When You Feel Numb: Overcoming the Absence of Remorse", file: "chapter26.html" },
           { n: 27, title: "Restoring Your Conscience", file: "chapter27.html" },
           { n: 28, title: "Living by the Spirit", file: "chapter28.html" },
-          { n: 29, title: "Fasting for Spiritual Breakthrough", file: "chapter29.html" },
+          { n: 29, title: "Understanding Triggers and Developing Guardrails", file: "chapter29.html" },
           { n: 30, title: "Recovering After Falling", file: "chapter30.html" },
           { n: 31, title: "The Role of Gratitude in Overcoming Temptation", file: "chapter31.html" },
           { n: 32, title: "Healing the Inner Child", file: "chapter32.html" },
