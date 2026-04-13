@@ -1,11 +1,11 @@
 [
   {
     "journey_position": 1,
-    "journey_title": "Honoring God with Your Body",
+    "journey_title": "God's Design for Your Body",
     "linked_filename": "chapter1.html",
     "actual_h1": "God's Design for Your Body",
     "actual_title_tag": "Chapter 1 \u2014 God's Design for Your Body | Guardians of Purity",
-    "status": "TITLE MISMATCH"
+    "status": "MATCH"
   },
   {
     "journey_position": 2,
@@ -49,19 +49,19 @@
   },
   {
     "journey_position": 7,
-    "journey_title": "The Role of Discipline in Purity",
+    "journey_title": "Overcoming Guilt and Shame",
     "linked_filename": "chapter7.html",
     "actual_h1": "Overcoming Guilt and Shame",
     "actual_title_tag": "Chapter 7 \u2014 Overcoming Guilt and Shame | Guardians of Purity",
-    "status": "TITLE MISMATCH"
+    "status": "MATCH"
   },
   {
     "journey_position": 8,
-    "journey_title": "The Deception of Pornography",
+    "journey_title": "Honoring God with Your Body",
     "linked_filename": "chapter8.html",
     "actual_h1": "Honoring God with Your Body",
     "actual_title_tag": "Chapter 8 \u2014 Honoring God with Your Body | Guardians of Purity",
-    "status": "TITLE MISMATCH"
+    "status": "MATCH"
   },
   {
     "journey_position": 9,
@@ -73,11 +73,11 @@
   },
   {
     "journey_position": 10,
-    "journey_title": "God's Design for Your Body",
+    "journey_title": "Encouragement for the Journey",
     "linked_filename": "chapter10.html",
     "actual_h1": "Encouragement for the Journey",
     "actual_title_tag": "Chapter 10 \u2014 Encouragement for the Journey | Guardians of Purity",
-    "status": "TITLE MISMATCH"
+    "status": "MATCH"
   },
   {
     "journey_position": 11,
@@ -217,11 +217,11 @@
   },
   {
     "journey_position": 28,
-    "journey_title": "Living by the Spirit",
+    "journey_title": "Reigniting Your Passion for Holiness",
     "linked_filename": "chapter28.html",
     "actual_h1": "Reigniting Your Passion for Holiness",
     "actual_title_tag": "Chapter 28 - Reigniting Your Passion for Holiness | Guardians of Purity",
-    "status": "TITLE MISMATCH"
+    "status": "MATCH"
   },
   {
     "journey_position": 29,
