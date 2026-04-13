@@ -374,7 +374,7 @@ document.addEventListener("DOMContentLoaded", () => {
           { n: 35, title: "The Role of Fasting in Breaking Addictions", file: "chapter35.html" },
           { n: 36, title: "Holiness in the Digital Age", file: "chapter36.html" },
           { n: 37, title: "Finding Your Identity in Christ", file: "chapter37.html" },
-          { n: 38, title: "How Pornography Warps Your View of Others", file: "chapter38.html" },
+          { n: 38, title: "Healing the Inner Child", file: "chapter38.html" },
           { n: 39, title: "Morning and Evening Battles", file: "chapter39.html" },
           { n: 40, title: "Honoring God with Your Body", file: "chapter40.html" },
           { n: 41, title: "Dressing for Purity", file: "chapter41.html" },
