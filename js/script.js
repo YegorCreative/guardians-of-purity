@@ -364,7 +364,7 @@ document.addEventListener("DOMContentLoaded", () => {
           { n: 25, title: "Growing in Holiness", file: "chapter25.html" },
           { n: 26, title: "When You Feel Numb: Overcoming the Absence of Remorse", file: "chapter26.html" },
           { n: 27, title: "Restoring Your Conscience", file: "chapter27.html" },
-          { n: 28, title: "Living by the Spirit", file: "chapter28.html" },
+          { n: 28, title: "Reigniting Your Passion for Holiness", file: "chapter28.html" },
           { n: 29, title: "Understanding Triggers and Developing Guardrails", file: "chapter29.html" },
           { n: 30, title: "The Science of Rewiring Your Brain After Porn", file: "chapter30.html" },
           { n: 31, title: "How to Build a Support System That Lasts", file: "chapter31.html" },
