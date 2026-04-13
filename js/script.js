@@ -378,7 +378,7 @@ document.addEventListener("DOMContentLoaded", () => {
           { n: 39, title: "The Role of Gratitude in Overcoming Temptation", file: "chapter39.html" },
           { n: 40, title: "Building a Vision for the Future", file: "chapter40.html" },
           { n: 41, title: "How Alcohol Fuels Pornography Addiction", file: "chapter41.html" },
-          { n: 42, title: "Running to God, Not From Him", file: "chapter42.html" }
+          { n: 42, title: "The Long-Term Effects of Alcohol and Pornography on the Mind and Spirit", file: "chapter42.html" }
         ];
 
         // chapters.sort is not strictly needed if the array is already sorted, but good for safety if we ever edit it.
