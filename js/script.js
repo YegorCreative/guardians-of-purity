@@ -368,7 +368,7 @@ document.addEventListener("DOMContentLoaded", () => {
           { n: 29, title: "Understanding Triggers and Developing Guardrails", file: "chapter29.html" },
           { n: 30, title: "The Science of Rewiring Your Brain After Porn", file: "chapter30.html" },
           { n: 31, title: "How to Build a Support System That Lasts", file: "chapter31.html" },
-          { n: 32, title: "Healing the Inner Child", file: "chapter32.html" },
+          { n: 32, title: "Overcoming Shame and Guilt Through Grace", file: "chapter32.html" },
           { n: 33, title: "Daily Surrender", file: "chapter33.html" },
           { n: 34, title: "Freedom Through Surrender", file: "chapter34.html" },
           { n: 35, title: "God's Patience with You", file: "chapter35.html" },
