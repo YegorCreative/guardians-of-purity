@@ -375,7 +375,7 @@ document.addEventListener("DOMContentLoaded", () => {
           { n: 36, title: "Holiness in the Digital Age", file: "chapter36.html" },
           { n: 37, title: "Finding Your Identity in Christ", file: "chapter37.html" },
           { n: 38, title: "Healing the Inner Child", file: "chapter38.html" },
-          { n: 39, title: "Morning and Evening Battles", file: "chapter39.html" },
+          { n: 39, title: "The Role of Gratitude in Overcoming Temptation", file: "chapter39.html" },
           { n: 40, title: "Honoring God with Your Body", file: "chapter40.html" },
           { n: 41, title: "Dressing for Purity", file: "chapter41.html" },
           { n: 42, title: "Running to God, Not From Him", file: "chapter42.html" }
