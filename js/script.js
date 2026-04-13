@@ -369,7 +369,7 @@ document.addEventListener("DOMContentLoaded", () => {
           { n: 30, title: "The Science of Rewiring Your Brain After Porn", file: "chapter30.html" },
           { n: 31, title: "How to Build a Support System That Lasts", file: "chapter31.html" },
           { n: 32, title: "Overcoming Shame and Guilt Through Grace", file: "chapter32.html" },
-          { n: 33, title: "Daily Surrender", file: "chapter33.html" },
+          { n: 33, title: "Creating a Life of Discipline", file: "chapter33.html" },
           { n: 34, title: "Freedom Through Surrender", file: "chapter34.html" },
           { n: 35, title: "God's Patience with You", file: "chapter35.html" },
           { n: 36, title: "Reigniting Your Love for God", file: "chapter36.html" },
