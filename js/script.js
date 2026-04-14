@@ -603,7 +603,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/* PREMIUM UPGRADE START — Scroll Reveal Observer */
+/* PREMIUM MOTION AND ATMOSPHERE UPGRADE START — Scroll Reveal Observer */
 (function () {
   "use strict";
 
@@ -649,7 +649,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       },
-      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.06, rootMargin: "0px 0px -30px 0px" }
     );
 
     elements.forEach(function (el) {
@@ -663,4 +663,4 @@ document.addEventListener("DOMContentLoaded", () => {
     init();
   }
 })();
-/* PREMIUM UPGRADE END */
+/* PREMIUM MOTION AND ATMOSPHERE UPGRADE END */
