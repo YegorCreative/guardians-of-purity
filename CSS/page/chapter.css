@@ -2964,4 +2964,48 @@ body.chapterModalOpen {
 
 /* ========================================= */
 /* CHAPTER SYSTEM CONSISTENCY UPGRADE END    */
+
+/* ========================================= */
+/* PREMIUM MOTION AND ATMOSPHERE UPGRADE START */
+/* ========================================= */
+
+/* Chapter hero overlay: Use premium easing for entrance */
+.chapterOne-overlay {
+  animation: fadeInUp 0.8s var(--ease-premium, cubic-bezier(0.25, 0.8, 0.25, 1)) both;
+}
+
+/* Chapter nav buttons: Premium hover transition */
+.chapter-nav-btn {
+  transition: transform var(--transition-hover, 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)),
+              box-shadow var(--transition-hover, 0.3s cubic-bezier(0.25, 0.8, 0.25, 1));
+}
+
+/* Reflection timer button: Premium transition */
+.reflection-timer-btn {
+  transition: transform var(--transition-hover, 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)),
+              box-shadow var(--transition-hover, 0.3s cubic-bezier(0.25, 0.8, 0.25, 1));
+}
+
+/* Reduced motion: Disable chapter hero fadeInUp */
+@media (prefers-reduced-motion: reduce) {
+  .chapterOne-overlay {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+
+  .chapter-nav-btn,
+  .reflection-timer-btn {
+    transition: none !important;
+  }
+
+  .chapter-nav-btn:hover,
+  .reflection-timer-btn:hover {
+    transform: none !important;
+  }
+}
+
+/* ========================================= */
+/* PREMIUM MOTION AND ATMOSPHERE UPGRADE END */
+/* ========================================= */
 /* ========================================= */
