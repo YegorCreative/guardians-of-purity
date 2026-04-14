@@ -1264,3 +1264,215 @@ body {
 
 /* HOMEPAGE JOURNEY UPGRADE END */
 }
+
+/* ========================================= */
+/* CROSS PAGE PREMIUM CONSISTENCY UPGRADE START */
+/* ========================================= */
+
+/* ─────────────────────────────────────────── */
+/*  1. Shared Component Foundations            */
+/*  Normalize radius, shadow, transition       */
+/*  tokens across all page components          */
+/* ─────────────────────────────────────────── */
+
+/* Cards: Unified radius & shadow baseline */
+.pillar-card,
+.resource-card,
+.topics-card,
+.start-card,
+.overlay_card_base {
+  border-radius: var(--radius-xl);
+}
+
+/* Panels & containers: Unified radius */
+.scripture-quote,
+.call-to-commitment,
+.image-placeholder {
+  border-radius: var(--radius-xl);
+}
+
+/* All interactive cards: Unified transition timing */
+.pillar-card,
+.resource-card,
+.topics-card,
+.start-card,
+.main_button,
+.hero-btn,
+.pillar-btn,
+.cta-btn,
+.submenu-button,
+#scrollToTopButton {
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+/* ─────────────────────────────────────────── */
+/*  2. Button & Link Hierarchy                 */
+/*  Consistent interaction across all buttons  */
+/* ─────────────────────────────────────────── */
+
+/* Primary action buttons: Unified feel */
+.main_button,
+.hero-btn,
+.pillar-btn {
+  font-family: var(--font-accent);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+}
+
+.main_button:active,
+.hero-btn:active,
+.pillar-btn:active {
+  transform: translateY(0);
+}
+
+/* Focus-visible: Consistent ring for all buttons */
+.main_button:focus-visible,
+.hero-btn:focus-visible,
+.pillar-btn:focus-visible,
+.cta-btn:focus-visible,
+.submenu-button:focus-visible,
+.start-card:focus-visible,
+#scrollToTopButton:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.4);
+  outline-offset: 3px;
+}
+
+/* Text links: Consistent underline-on-hover */
+.topics-link,
+.footer-link,
+.social-link {
+  text-decoration: none;
+  transition: opacity var(--transition-base), color var(--transition-base);
+}
+
+.topics-link:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+/* ─────────────────────────────────────────── */
+/*  3. Section Container System                */
+/*  Consistent max-width, padding, spacing     */
+/* ─────────────────────────────────────────── */
+
+/* All major content sections: Consistent vertical rhythm */
+.about-mission,
+.pillars,
+.testimonials,
+.resources,
+.topics,
+.cta,
+.intro-section {
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+/* ─────────────────────────────────────────── */
+/*  4. Card Hover Consistency                  */
+/*  Subtle, uniform lift across all cards      */
+/* ─────────────────────────────────────────── */
+
+/* Normalize hover lift to -4px across all card families */
+.pillar-card:hover,
+.topics-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.resource-card:hover {
+  transform: translateY(-4px) scale(1.005);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ─────────────────────────────────────────── */
+/*  5. Page Hero Rhythm                        */
+/*  Consistent spacing from hero into content  */
+/* ─────────────────────────────────────────── */
+
+/* Standard page heroes: Minimum breathing room */
+.hero,
+.resources-hero,
+.about-hero {
+  margin-bottom: 0;
+}
+
+/* Consistent hero title max-width */
+.resources-hero-content,
+.hero-content {
+  max-width: var(--content-wide);
+}
+
+.resources-hero-title {
+  letter-spacing: -0.01em;
+  line-height: var(--leading-tight);
+}
+
+.resources-hero-subtitle {
+  line-height: var(--leading-relaxed);
+  max-width: var(--content-narrow);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─────────────────────────────────────────── */
+/*  6. Scripture / Quote Block Consistency      */
+/*  Same treatment wherever verses appear      */
+/* ─────────────────────────────────────────── */
+
+.scripture-quote {
+  border-left-width: 5px;
+  line-height: var(--leading-relaxed);
+  padding: var(--space-md) var(--space-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.call-to-commitment {
+  box-shadow: var(--shadow-md);
+}
+
+/* ─────────────────────────────────────────── */
+/*  7. Section Title Consistency               */
+/*  Uniform heading treatment across pages     */
+/* ─────────────────────────────────────────── */
+
+.section-title {
+  font-weight: 700;
+  line-height: var(--leading-tight);
+}
+
+/* ─────────────────────────────────────────── */
+/*  8. Accessibility: Reduced Motion           */
+/* ─────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .pillar-card,
+  .resource-card,
+  .topics-card,
+  .start-card,
+  .main_button,
+  .hero-btn,
+  .pillar-btn,
+  .cta-btn,
+  .submenu-button,
+  #scrollToTopButton,
+  .call-to-commitment,
+  .scripture-quote {
+    transition: none;
+  }
+
+  .pillar-card:hover,
+  .resource-card:hover,
+  .topics-card:hover,
+  .start-card:hover,
+  .main_button:hover,
+  .call-to-commitment:hover,
+  #scrollToTopButton:hover {
+    transform: none;
+  }
+}
+
+/* ========================================= */
+/* CROSS PAGE PREMIUM CONSISTENCY UPGRADE END */
+/* ========================================= */

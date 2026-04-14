@@ -96,7 +96,9 @@
   padding: 6px 10px;
   border-radius: 14px;
   opacity: 0.85;
-  transition: all 0.25s ease;
+  /* CROSS PAGE PREMIUM CONSISTENCY UPGRADE START */
+  transition: opacity var(--transition-base), transform var(--transition-base);
+  /* CROSS PAGE PREMIUM CONSISTENCY UPGRADE END */
   color: rgba(20, 40, 80, 0.85);
   position: relative;
 }

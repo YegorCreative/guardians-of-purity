@@ -72,6 +72,7 @@
 .footer-link:hover,
 .social-link:hover {
   opacity: 0.85;
+  text-decoration: none;
 }
 
 .footer-links {
@@ -88,3 +89,46 @@
   gap: 4px;
 }
 /* PREMIUM UPGRADE END */
+
+/* CROSS PAGE PREMIUM CONSISTENCY UPGRADE START */
+
+.footer {
+  padding: var(--space-lg) var(--space-md);
+}
+
+.footer-links {
+  margin-bottom: var(--space-md);
+  gap: var(--space-xs);
+}
+
+.footer-social {
+  margin-bottom: var(--space-md);
+  gap: var(--space-xs);
+}
+
+.footer-link,
+.social-link {
+  padding: 6px 14px;
+  font-size: var(--text-sm);
+  letter-spacing: 0.02em;
+}
+
+.footer-link:focus-visible,
+.social-link:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.footer-contact {
+  margin-bottom: var(--space-sm);
+  font-size: var(--text-sm);
+  opacity: 0.9;
+}
+
+.footer-copyright {
+  font-size: var(--text-xs);
+  opacity: 0.75;
+  letter-spacing: 0.03em;
+}
+
+/* CROSS PAGE PREMIUM CONSISTENCY UPGRADE END */

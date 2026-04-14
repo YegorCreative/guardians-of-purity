@@ -385,3 +385,88 @@
 }
 
 /* PREMIUM UPGRADE END */
+
+/* CROSS PAGE PREMIUM CONSISTENCY UPGRADE START */
+
+/* ─── Cross-Page Mobile Consistency ─── */
+@media (max-width: 768px) {
+  /* Consistent side padding for all pages */
+  .about-mission,
+  .pillars,
+  .testimonials,
+  .resources,
+  .topics,
+  .cta,
+  .intro-section,
+  .resource-categories {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+
+  /* Page heroes: Consistent mobile padding */
+  .hero,
+  .resources-hero,
+  .about-hero {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+
+  /* Cards: Uniform mobile treatment */
+  .pillar-card,
+  .resource-card,
+  .topics-card {
+    border-radius: var(--radius-lg);
+  }
+
+  /* Scripture/call blocks: Comfortable mobile padding */
+  .scripture-quote,
+  .call-to-commitment {
+    padding: var(--space-sm);
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* All hover lifts reduced on touch */
+  .pillar-card:hover,
+  .resource-card:hover,
+  .topics-card:hover,
+  .start-card:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Footer: Mobile comfort */
+  .footer {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .footer-link,
+  .social-link {
+    padding: 8px 12px;
+    display: inline-block;
+  }
+}
+
+/* ─── Cross-Page Small Phone ─── */
+@media (max-width: 400px) {
+  .resources-hero {
+    padding: 50px var(--space-sm);
+    min-height: 280px;
+  }
+
+  .resources-hero-title {
+    font-size: 1.75rem;
+  }
+
+  .resources-hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* ─── Cross-Page Tablet Cleanup ─── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .resources-hero {
+    padding: 60px var(--space-md);
+  }
+}
+
+/* CROSS PAGE PREMIUM CONSISTENCY UPGRADE END */
