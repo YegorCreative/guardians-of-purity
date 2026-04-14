@@ -2015,3 +2015,303 @@
 }
 
 /* PREMIUM UPGRADE END */
+
+/* ========================================= */
+/* CONTENT PRESENTATION UPGRADE START        */
+/* ========================================= */
+
+/* ─────────────────────────────────────────── */
+/*  1. Featured Resources — Premium Cards      */
+/* ─────────────────────────────────────────── */
+
+.featured-resources {
+  padding: 64px 20px;
+}
+
+.featured-card {
+  border-radius: var(--radius-xl, 25px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.featured-content {
+  padding: 28px 28px 30px;
+}
+
+.featured-title {
+  font-size: 1.25rem;
+  line-height: 1.35;
+  margin-bottom: 14px;
+  letter-spacing: -0.005em;
+}
+
+.featured-description {
+  line-height: 1.7;
+  margin-bottom: 22px;
+  font-size: 0.95rem;
+}
+
+.featured-link {
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* ─────────────────────────────────────────── */
+/*  2. Emergency Support — Emphatic Callouts   */
+/* ─────────────────────────────────────────── */
+
+.emergency-support {
+  padding: 64px 20px;
+}
+
+.emergency-card {
+  padding: 34px 28px;
+}
+
+.emergency-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.emergency-card p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+/* ─────────────────────────────────────────── */
+/*  3. Downloadable Resources — Tool Cards     */
+/* ─────────────────────────────────────────── */
+
+.downloadable-resources {
+  padding: 64px 20px;
+}
+
+.tool-card {
+  border-radius: var(--radius-xl, 25px);
+}
+
+.tool-header {
+  padding: 28px 32px;
+}
+
+.tool-header-content {
+  gap: 16px;
+}
+
+.tool-card.active .tool-body {
+  padding: 28px 32px 32px;
+}
+
+/* Download cards: Better emphasis */
+.download-card {
+  border-radius: var(--radius-xl, 25px);
+  padding: 34px 28px;
+}
+
+.download-description {
+  line-height: 1.65;
+  margin-bottom: 22px;
+}
+
+/* ─────────────────────────────────────────── */
+/*  4. Recommended Reading — Clear Hierarchy   */
+/* ─────────────────────────────────────────── */
+
+.recommended-reading {
+  padding: 64px 20px;
+}
+
+.reading-item {
+  padding: 28px;
+}
+
+.reading-title {
+  font-size: 1.08rem;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.reading-excerpt {
+  line-height: 1.65;
+}
+
+/* ─────────────────────────────────────────── */
+/*  5. Chapter Card Grid — Readable Previews   */
+/* ─────────────────────────────────────────── */
+
+.chapters-section {
+  padding: 64px 20px;
+}
+
+.chapters-intro {
+  margin-bottom: 44px;
+  line-height: 1.7;
+}
+
+.chapter-card {
+  padding: 28px;
+}
+
+.chapter-title {
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+.chapter-preview {
+  line-height: 1.6;
+  font-size: 0.88rem;
+}
+
+/* Section dividers: Clearer part breaks */
+.chapter-section-divider {
+  padding: 34px 32px;
+  margin: 52px 0 42px;
+}
+
+.chapter-section-title {
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.chapter-section-subtitle {
+  line-height: 1.6;
+}
+
+/* ─────────────────────────────────────────── */
+/*  6. Action Items & Prayer Prompts           */
+/* ─────────────────────────────────────────── */
+
+.action-item {
+  padding: 18px 20px;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.prayer-prompts {
+  padding: 24px;
+}
+
+.prayer-prompts p {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.prayer-prompts li {
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+/* ─────────────────────────────────────────── */
+/*  7. Modals — Content Panel Readability      */
+/* ─────────────────────────────────────────── */
+
+.modal-body {
+  padding: 32px 40px 40px;
+}
+
+.modal-body p {
+  line-height: 1.7;
+}
+
+.modal-body li {
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+/* Phase content: Better prose */
+.phase-content p {
+  line-height: 1.7;
+}
+
+.phase-content li {
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+/* ─────────────────────────────────────────── */
+/*  8. Mobile Content Readability              */
+/* ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .featured-resources,
+  .emergency-support,
+  .downloadable-resources,
+  .recommended-reading,
+  .chapters-section {
+    padding: 44px 16px;
+  }
+
+  .featured-content {
+    padding: 22px 22px 24px;
+  }
+
+  .emergency-card {
+    padding: 26px 22px;
+  }
+
+  .tool-header {
+    padding: 22px 24px;
+  }
+
+  .download-card {
+    padding: 26px 22px;
+  }
+
+  .reading-item {
+    padding: 22px;
+  }
+
+  .chapter-card {
+    padding: 22px;
+  }
+
+  .chapter-section-divider {
+    padding: 26px 22px;
+    margin: 38px 0 28px;
+  }
+
+  .modal-body {
+    padding: 22px 24px 28px;
+  }
+}
+
+@media (max-width: 520px) {
+  .featured-resources,
+  .emergency-support,
+  .downloadable-resources,
+  .recommended-reading,
+  .chapters-section {
+    padding: 34px 12px;
+  }
+
+  .featured-content {
+    padding: 18px 18px 20px;
+  }
+
+  .emergency-card {
+    padding: 22px 18px;
+  }
+
+  .download-card {
+    padding: 22px 18px;
+  }
+
+  .reading-item {
+    padding: 18px;
+  }
+
+  .chapter-card {
+    padding: 18px;
+  }
+
+  .chapter-section-divider {
+    padding: 18px 16px;
+    margin: 32px 0 22px;
+  }
+}
+
+/* ========================================= */
+/* CONTENT PRESENTATION UPGRADE END          */
+/* ========================================= */
