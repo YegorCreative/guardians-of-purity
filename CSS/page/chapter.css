@@ -3562,4 +3562,174 @@ body.chapterModalOpen {
 /* ========================================= */
 /* WAYFINDING AND DISCOVERY UPGRADE END      */
 /* ========================================= */
+
+/* ========================================= */
+/* TRUST AND AUTHORITY UPGRADE START         */
+/* ========================================= */
+
+/* ─────────────────────────────────────────── */
+/*  1. Prayer Block — Reverent, Caring Feel    */
+/* ─────────────────────────────────────────── */
+
+.chapterOne-prayer-container {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chapterOne-prayer-title {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.chapterOne-prayer-text {
+  line-height: 1.85;
+  font-size: 1.05rem;
+}
+
+/* ─────────────────────────────────────────── */
+/*  2. Summary Section — Established Clarity   */
+/* ─────────────────────────────────────────── */
+
+.chapterOne-summary-container {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chapterOne-summary-title {
+  font-weight: 700;
+  letter-spacing: -0.005em;
+}
+
+.chapterOne-summary-list {
+  line-height: 1.75;
+}
+
+/* ─────────────────────────────────────────── */
+/*  3. Teaching Section — Grounded Authority   */
+/* ─────────────────────────────────────────── */
+
+.chapterOne-teaching-title {
+  font-weight: 700;
+  letter-spacing: -0.005em;
+}
+
+.chapterOne-teaching-text {
+  line-height: 1.78;
+}
+
+/* ─────────────────────────────────────────── */
+/*  4. Reflection Areas — Safe Space Feel      */
+/* ─────────────────────────────────────────── */
+
+.chapterOne-reflect-box {
+  border: var(--trust-border);
+}
+
+.chapterOne-journal-box textarea {
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* ─────────────────────────────────────────── */
+/*  5. Scripture Blocks — Settled Reverence    */
+/* ─────────────────────────────────────────── */
+
+.chapterOne-scripture {
+  border-left-color: var(--color-scripture-border);
+}
+
+.chapterOne-quote-box {
+  border-left-color: rgba(200, 141, 86, 0.3);
+}
+
+/* ─────────────────────────────────────────── */
+/*  6. Export Section — Trustworthy Action      */
+/* ─────────────────────────────────────────── */
+
+.chapterOne-export-title {
+  font-weight: 700;
+  letter-spacing: -0.005em;
+}
+
+.chapterOne-export-text {
+  line-height: 1.72;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chapterOne-export-button {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+/* ─────────────────────────────────────────── */
+/*  7. Parable — Intentional Storytelling      */
+/* ─────────────────────────────────────────── */
+
+.chapterOne-parable-title {
+  font-weight: 700;
+  letter-spacing: -0.005em;
+}
+
+.chapterOne-paragraph {
+  line-height: 1.78;
+}
+
+.chapterOne-moral-box {
+  box-shadow: var(--trust-shadow-grounded);
+  border: var(--trust-border);
+}
+
+/* ─────────────────────────────────────────── */
+/*  8. Chapter Hero — Calm Confidence          */
+/* ─────────────────────────────────────────── */
+
+.chapterOne-title {
+  letter-spacing: -0.01em;
+}
+
+.chapterOne-verse {
+  line-height: 1.75;
+  font-size: 1.08rem;
+}
+
+.chapterOne-quote {
+  line-height: 1.72;
+}
+
+/* ─────────────────────────────────────────── */
+/*  9. Mobile Trust Preservation               */
+/* ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .chapterOne-prayer-text {
+    font-size: 1rem;
+  }
+
+  .chapterOne-verse {
+    font-size: 1rem;
+  }
+
+  .chapterOne-export-text {
+    max-width: 100%;
+  }
+}
+
+/* ─────────────────────────────────────────── */
+/*  10. Reduced Motion                         */
+/* ─────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .chapterOne-moral-box,
+  .chapterOne-reflect-box {
+    transition: none;
+  }
+}
+
+/* ========================================= */
+/* TRUST AND AUTHORITY UPGRADE END           */
+/* ========================================= */
 /* ========================================= */

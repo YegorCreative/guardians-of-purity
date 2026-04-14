@@ -2104,4 +2104,178 @@ body {
 /* ========================================= */
 /* WAYFINDING AND DISCOVERY UPGRADE END      */
 /* ========================================= */
+
+/* ========================================= */
+/* TRUST AND AUTHORITY UPGRADE START         */
+/* ========================================= */
+
+/* ─────────────────────────────────────────── */
+/*  1. Hero — Calm Authority, Not Hype         */
+/* ─────────────────────────────────────────── */
+
+.hero--premium .hero-content {
+  max-width: var(--content-wide);
+}
+
+.hero-subtitle {
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.hero-helping {
+  line-height: 1.75;
+  font-size: 1.02rem;
+  max-width: 640px;
+}
+
+/* ─────────────────────────────────────────── */
+/*  2. Mission Section — Established Feel      */
+/* ─────────────────────────────────────────── */
+
+.about-mission {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+.mission-text {
+  font-size: 1.02rem;
+  line-height: 1.78;
+  max-width: 620px;
+}
+
+/* ─────────────────────────────────────────── */
+/*  3. Testimonial Section — Credible Stories  */
+/* ─────────────────────────────────────────── */
+
+.testimonials {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+.testimonial-carousel {
+  max-width: 720px;
+}
+
+.testimonial-text {
+  font-size: 1.05rem;
+  line-height: 1.82;
+  letter-spacing: 0.005em;
+}
+
+/* ─────────────────────────────────────────── */
+/*  4. Start-Here — Intentional Entry Path     */
+/* ─────────────────────────────────────────── */
+
+.start-here {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+.start-card {
+  border: var(--trust-border);
+}
+
+.start-card__text {
+  line-height: 1.6;
+  font-size: 0.92rem;
+}
+
+/* ─────────────────────────────────────────── */
+/*  5. Scripture & Commitment — Settled Trust   */
+/* ─────────────────────────────────────────── */
+
+.scripture-quote {
+  border-left-color: var(--color-scripture-border);
+  background-color: var(--trust-bg-warm);
+  box-shadow: var(--trust-shadow-grounded);
+}
+
+.call-to-commitment {
+  box-shadow: var(--trust-shadow-elevated);
+}
+
+/* ─────────────────────────────────────────── */
+/*  6. Pillar Cards — Confident Foundation     */
+/* ─────────────────────────────────────────── */
+
+.pillars {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+.pillar-card .pillar-text {
+  font-size: 0.95rem;
+}
+
+/* ─────────────────────────────────────────── */
+/*  7. CTA Buttons — Calm & Grounded           */
+/*     Reduce generic-website feel             */
+/* ─────────────────────────────────────────── */
+
+.main_button {
+  letter-spacing: 0.03em;
+  font-weight: 600;
+}
+
+.cta {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.cta-title {
+  letter-spacing: -0.01em;
+}
+
+/* ─────────────────────────────────────────── */
+/*  8. Mobile Trust Polish                     */
+/* ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .hero-helping {
+    font-size: 0.96rem;
+    max-width: 100%;
+  }
+
+  .mission-text {
+    font-size: 0.96rem;
+    max-width: 100%;
+  }
+
+  .testimonial-text {
+    font-size: 0.98rem;
+  }
+
+  .start-here {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-helping {
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .mission-text {
+    font-size: 0.92rem;
+  }
+}
+
+/* ─────────────────────────────────────────── */
+/*  9. Reduced Motion                          */
+/* ─────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .scripture-quote,
+  .call-to-commitment,
+  .start-card {
+    transition: none;
+  }
+}
+
+/* ========================================= */
+/* TRUST AND AUTHORITY UPGRADE END           */
+/* ========================================= */
 /* =========================================  */

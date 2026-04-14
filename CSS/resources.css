@@ -2420,3 +2420,170 @@
 /* ========================================= */
 /* WAYFINDING AND DISCOVERY UPGRADE END      */
 /* ========================================= */
+
+/* ========================================= */
+/* TRUST AND AUTHORITY UPGRADE START         */
+/* ========================================= */
+
+/* ─────────────────────────────────────────── */
+/*  1. Emergency Section — Steady Authority    */
+/*     Serious but calm, not alarmist          */
+/* ─────────────────────────────────────────── */
+
+.emergency-support {
+  background: linear-gradient(
+    135deg,
+    rgba(45, 90, 142, 0.92),
+    rgba(59, 130, 246, 0.88),
+    rgba(45, 90, 142, 0.92)
+  );
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  padding: 68px 28px;
+}
+
+.emergency-title {
+  font-size: 1.6rem;
+  letter-spacing: -0.005em;
+  font-weight: 700;
+}
+
+.emergency-grid {
+  margin-top: 44px;
+  gap: 22px;
+}
+
+.emergency-card {
+  padding: 36px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.emergency-icon {
+  font-size: 36px;
+  margin-bottom: 18px;
+  opacity: 0.9;
+}
+
+.emergency-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-bottom: 8px;
+}
+
+.emergency-card p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  opacity: 0.82;
+  margin-bottom: 24px;
+}
+
+.emergency-button {
+  padding: 14px 28px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-pill);
+}
+
+/* ─────────────────────────────────────────── */
+/*  2. Resources Hero — Trusted Authority      */
+/* ─────────────────────────────────────────── */
+
+.resources-hero {
+  padding-top: 68px;
+  padding-bottom: 60px;
+}
+
+.resources-hero-title {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.resources-hero-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─────────────────────────────────────────── */
+/*  3. Featured Cards — Grounded Confidence    */
+/* ─────────────────────────────────────────── */
+
+.featured-card {
+  box-shadow: var(--trust-shadow-grounded);
+  border: var(--trust-border);
+}
+
+.featured-title {
+  font-weight: 700;
+}
+
+.featured-link {
+  letter-spacing: 0.02em;
+}
+
+/* ─────────────────────────────────────────── */
+/*  4. Interactive Tools — Steady Presentation */
+/* ─────────────────────────────────────────── */
+
+.tool-card {
+  border: var(--trust-border);
+  box-shadow: var(--trust-shadow-grounded);
+}
+
+.download-card {
+  border: var(--trust-border);
+  box-shadow: var(--trust-shadow-grounded);
+}
+
+/* ─────────────────────────────────────────── */
+/*  5. Mobile Trust — Emergency Still Clear    */
+/* ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .emergency-support {
+    padding: 48px 20px;
+  }
+
+  .emergency-title {
+    font-size: 1.4rem;
+  }
+
+  .emergency-card {
+    padding: 28px 22px;
+  }
+
+  .emergency-icon {
+    font-size: 30px;
+  }
+
+  .resources-hero {
+    padding-top: 52px;
+    padding-bottom: 44px;
+  }
+
+  .resources-hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .emergency-support {
+    padding: 38px 14px;
+  }
+
+  .emergency-card {
+    padding: 24px 18px;
+  }
+
+  .emergency-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* ========================================= */
+/* TRUST AND AUTHORITY UPGRADE END           */
+/* ========================================= */

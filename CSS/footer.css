@@ -132,3 +132,61 @@
 }
 
 /* CROSS PAGE PREMIUM CONSISTENCY UPGRADE END */
+
+/* ========================================= */
+/* TRUST AND AUTHORITY UPGRADE START         */
+/* ========================================= */
+
+/* ─────────────────────────────────────────── */
+/*  1. Footer Foundation — Grounded Authority  */
+/* ─────────────────────────────────────────── */
+
+.footer {
+  padding: 48px var(--space-md) 32px;
+}
+
+.footer-links {
+  gap: 6px 16px;
+  margin-bottom: 20px;
+}
+
+.footer-link,
+.social-link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+/* ─────────────────────────────────────────── */
+/*  2. Copyright & Contact — Quieter Anchor    */
+/* ─────────────────────────────────────────── */
+
+.footer-contact {
+  font-size: 0.82rem;
+  opacity: 0.85;
+  margin-bottom: 12px;
+}
+
+.footer-copyright {
+  font-size: 0.72rem;
+  opacity: 0.6;
+  letter-spacing: 0.04em;
+}
+
+/* ─────────────────────────────────────────── */
+/*  3. Mobile Footer — Steady Presence         */
+/* ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 36px 16px 28px;
+  }
+
+  .footer-links {
+    gap: 4px 12px;
+  }
+}
+
+/* ========================================= */
+/* TRUST AND AUTHORITY UPGRADE END           */
+/* ========================================= */

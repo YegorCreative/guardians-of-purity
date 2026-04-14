@@ -95,4 +95,13 @@
   --content-wide: 1200px;
 
   /* PREMIUM UPGRADE END */
+
+  /* TRUST AND AUTHORITY UPGRADE START */
+  --trust-border: 1px solid rgba(0, 0, 0, 0.06);
+  --trust-bg-warm: rgba(200, 141, 86, 0.04);
+  --trust-bg-calm: rgba(59, 130, 246, 0.03);
+  --trust-accent-steady: #2d5a8e;
+  --trust-shadow-grounded: 0 2px 8px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
+  --trust-shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.06), 0 12px 40px rgba(0, 0, 0, 0.08);
+  /* TRUST AND AUTHORITY UPGRADE END */
 }

@@ -1274,4 +1274,103 @@
 
 /* ========================================= */
 /* CONTENT PRESENTATION UPGRADE END          */
+
+/* ========================================= */
+/* TRUST AND AUTHORITY UPGRADE START         */
+/* ========================================= */
+
+/* ─────────────────────────────────────────── */
+/*  1. Emotional Contract — Trust Anchor       */
+/*     The single safety statement on the page */
+/* ─────────────────────────────────────────── */
+
+.emotional-contract {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  opacity: 0.92;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px 20px;
+}
+
+/* ─────────────────────────────────────────── */
+/*  2. Purity Challenge Block — Grounded       */
+/* ─────────────────────────────────────────── */
+
+.purity_challenge_intro_block {
+  box-shadow: var(--trust-shadow-elevated);
+}
+
+/* ─────────────────────────────────────────── */
+/*  3. Split Section — Caring Authority        */
+/* ─────────────────────────────────────────── */
+
+.prayer .split.right h2 {
+  font-weight: 700;
+  letter-spacing: -0.005em;
+}
+
+.prayer .split.right p {
+  font-size: 1.1rem;
+  line-height: 1.78;
+}
+
+/* ─────────────────────────────────────────── */
+/*  4. 31-Day Card — Steady Daily Guidance     */
+/* ─────────────────────────────────────────── */
+
+.thirty_one_day_card_wrapper {
+  box-shadow: var(--trust-shadow-grounded);
+}
+
+.thirty_one_day_card_title.with_height {
+  font-weight: 400;
+}
+
+/* ─────────────────────────────────────────── */
+/*  5. Prayer Guide Week Tabs — Calm Clarity   */
+/* ─────────────────────────────────────────── */
+
+.monthly_prayer_guide_week_item {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* ─────────────────────────────────────────── */
+/*  6. Praise Report — Trustworthy Submission  */
+/* ─────────────────────────────────────────── */
+
+.praise-report-card {
+  box-shadow: var(--trust-shadow-grounded);
+}
+
+/* ─────────────────────────────────────────── */
+/*  7. Mobile Trust Preservation               */
+/* ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .emotional-contract {
+    font-size: 0.9rem;
+    padding: 14px 16px;
+    max-width: 100%;
+  }
+
+  .prayer .split.right p {
+    font-size: 1.02rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .emotional-contract {
+    font-size: 0.86rem;
+    padding: 12px 14px;
+  }
+}
+
+/* ========================================= */
+/* TRUST AND AUTHORITY UPGRADE END           */
+/* ========================================= */
 /* ========================================= */
