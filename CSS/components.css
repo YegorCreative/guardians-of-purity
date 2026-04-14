@@ -982,4 +982,285 @@
 }
 
 /* PREMIUM UPGRADE END */
+
+/* HOMEPAGE JOURNEY UPGRADE START */
+
+/* ═══════════════════════════════════════════ */
+/*  STEP 1 — Hero Premium                     */
+/* ═══════════════════════════════════════════ */
+.hero--premium .hero-overlay {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.48) 0%,
+      rgba(0, 0, 0, 0.15) 40%,
+      rgba(0, 0, 0, 0.42) 100%
+    ),
+    url("../img/backgroun-1.jpg") center/cover no-repeat;
+}
+
+.hero--premium .split-left {
+  max-width: 700px;
+}
+
+.hero--premium .hero-subtitle {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.35;
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.01em;
+}
+
+.hero--premium .hero-helping {
+  margin-bottom: var(--space-lg);
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+.hero--premium .main_button {
+  padding: 16px 36px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.2);
+}
+
+/* ═══════════════════════════════════════════ */
+/*  STEP 2 — Start Here Section               */
+/* ═══════════════════════════════════════════ */
+.start-here {
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  background: linear-gradient(180deg, #f8fbff 0%, var(--color-bg-light) 100%);
+}
+
+.start-here__title {
+  margin-bottom: var(--space-xs);
+}
+
+.start-here__subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-dark-neutral);
+  margin-bottom: var(--space-lg);
+  max-width: var(--content-narrow);
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.65;
+}
+
+.start-here__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  max-width: var(--content-wide);
+  margin: 0 auto;
+}
+
+.start-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-text-dark);
+  background: var(--color-white);
+  padding: var(--space-lg) var(--space-md);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-slow);
+  position: relative;
+}
+
+.start-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(59, 130, 246, 0.15);
+}
+
+.start-card__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #a855f7);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  flex-shrink: 0;
+}
+
+.start-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-xs);
+  line-height: 1.35;
+}
+
+.start-card__text {
+  font-size: 0.95rem;
+  color: var(--color-text-dark-neutral);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════ */
+/*  STEP 4 — Visual Journey Step Indicators   */
+/* ═══════════════════════════════════════════ */
+body {
+  counter-reset: hp-journey;
+}
+
+.hp-journey-step {
+  counter-increment: hp-journey;
+  position: relative;
+}
+
+.hp-journey-step > section {
+  position: relative;
+}
+
+.hp-journey-step > section::before {
+  content: "0" counter(hp-journey);
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(59, 130, 246, 0.3);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Hide counter on CTA (dark bg doesn't need it) */
+.cta.separated_block_corner::before {
+  display: none;
+}
+
+/* ═══════════════════════════════════════════ */
+/*  STEP 3 & 6 — Section Flow & Framing      */
+/* ═══════════════════════════════════════════ */
+.hp-journey-step {
+  padding: var(--space-xs) 10px;
+}
+
+.hp-journey-step > .about-mission,
+.hp-journey-step > .pillars,
+.hp-journey-step > .testimonials,
+.hp-journey-step > .resources,
+.hp-journey-step > .topics,
+.hp-journey-step > .cta {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  border-radius: var(--radius-xl);
+}
+
+/* ═══════════════════════════════════════════ */
+/*  STEP 5 — CTA Consistency                  */
+/* ═══════════════════════════════════════════ */
+.hero--premium .main_button,
+.start-card,
+.pillars .main_button,
+.resources .main_button,
+.topics .main_button,
+.cta .main_button,
+.testimonials .main_button {
+  border-radius: var(--radius-md);
+  transition: all var(--transition-slow);
+}
+
+.pillars .main_button,
+.resources .main_button,
+.topics .main_button,
+.testimonials .main_button {
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.pillars .main_button:hover,
+.resources .main_button:hover,
+.topics .main_button:hover,
+.testimonials .main_button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ═══════════════════════════════════════════ */
+/*  STEP 7 — Mobile Responsive                */
+/* ═══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .start-here__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .start-here {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .start-here__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .start-card {
+    padding: var(--space-md);
+  }
+
+  .hero--premium .split-left {
+    max-width: 100%;
+  }
+
+  .hero--premium .hero-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .hero--premium .hero-helping {
+    font-size: 1rem;
+  }
+
+  /* Journey step indicators — smaller on mobile */
+  .hp-journey-step > section::before {
+    font-size: 0.65rem;
+    top: var(--space-sm);
+    left: var(--space-sm);
+  }
+
+  /* Section breathing on mobile */
+  .hp-journey-step > .about-mission,
+  .hp-journey-step > .pillars,
+  .hp-journey-step > .testimonials,
+  .hp-journey-step > .resources,
+  .hp-journey-step > .topics,
+  .hp-journey-step > .cta {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+  }
+}
+
+@media (max-width: 400px) {
+  .start-card__number {
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+  }
+
+  .start-card__title {
+    font-size: 1.05rem;
+  }
+}
+
+/* HOMEPAGE JOURNEY UPGRADE END */
 }
