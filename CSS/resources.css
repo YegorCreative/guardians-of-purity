@@ -1995,4 +1995,23 @@
   }
 }
 
+/* PREMIUM UPGRADE START — Chapter Card & Journey Polish */
 
+.chapter-card {
+  box-shadow: var(--shadow-sm);
+}
+
+.chapter-card:hover {
+  box-shadow: 0 12px 36px rgba(59, 130, 246, 0.22);
+}
+
+.chapter-card:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.4);
+  outline-offset: 2px;
+}
+
+.chapter-preview {
+  line-height: 1.55;
+}
+
+/* PREMIUM UPGRADE END */

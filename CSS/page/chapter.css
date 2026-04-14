@@ -524,6 +524,10 @@
   line-height: 1.6;
   margin-bottom: 14px;
   color: #374151;
+  /* PREMIUM UPGRADE START */
+  line-height: 1.75;
+  margin-bottom: 18px;
+  /* PREMIUM UPGRADE END */
 }
 
 .chapterOne-moral-box {
@@ -598,6 +602,9 @@
   line-height: 1.9;
   margin-bottom: 18px;
   color: #374151;
+  /* PREMIUM UPGRADE START */
+  max-width: 68ch;
+  /* PREMIUM UPGRADE END */
 }
 
 .chapterOne-bullets {
@@ -609,7 +616,7 @@
 .chapterOne-bullets li {
   position: relative;
   padding-left: 35px;
-  margin-bottom: 10px;
+  margin-bottom: 14px; /* PREMIUM UPGRADE: increased from 10px */
   font-size: 1.1rem;
   line-height: 1.8;
   color: #374151;
@@ -770,7 +777,7 @@
 .chapterOne-summary-list li {
   position: relative;
   padding-left: 40px;
-  margin-bottom: 12px;
+  margin-bottom: 16px; /* PREMIUM UPGRADE: increased from 12px */
   color: #374151;
 }
 
@@ -864,7 +871,7 @@
   font-style: italic;
   white-space: pre-line;
   color: #334155;
-  max-width: 34ch;
+  max-width: 42ch; /* PREMIUM UPGRADE: widened from 34ch for readability */
   margin: 0 auto;
   text-shadow: none;
 }

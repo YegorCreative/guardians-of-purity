@@ -597,3 +597,65 @@ document.addEventListener("DOMContentLoaded", () => {
     restartBtn.hidden = false;
   });
 });
+
+/* PREMIUM UPGRADE START — Scroll Reveal Observer */
+(function () {
+  "use strict";
+
+  // Respect reduced motion preference
+  var prefersReducedMotion =
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReducedMotion) return;
+
+  // Selectors for elements to reveal on scroll
+  var revealSelectors = [
+    ".pillar-card",
+    ".resource-card",
+    ".topics-card",
+    ".scripture-quote",
+    ".call-to-commitment",
+    ".testimonial-carousel",
+    ".chapterOne-teaching-container",
+    ".chapterOne-parable-container",
+    ".chapterOne-summary-container",
+    ".chapterOne-prayer-container",
+    ".chapterOne-export-container",
+    ".chapterOne-moral-box",
+    ".chapter-card"
+  ];
+
+  function init() {
+    if (!("IntersectionObserver" in window)) return;
+
+    var elements = document.querySelectorAll(revealSelectors.join(","));
+    if (!elements.length) return;
+
+    elements.forEach(function (el) {
+      el.classList.add("premium-reveal");
+    });
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    elements.forEach(function (el) {
+      observer.observe(el);
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+/* PREMIUM UPGRADE END */

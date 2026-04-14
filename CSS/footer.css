@@ -57,3 +57,34 @@
 .footer-copyright {
   font-size: 0.9rem;
 }
+
+/* PREMIUM UPGRADE START — Footer Polish */
+.footer {
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.footer-link,
+.social-link {
+  transition: opacity var(--transition-base);
+  border-radius: var(--radius-sm);
+}
+
+.footer-link:hover,
+.social-link:hover {
+  opacity: 0.85;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+}
+
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+}
+/* PREMIUM UPGRADE END */
