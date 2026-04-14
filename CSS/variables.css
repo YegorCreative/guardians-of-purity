@@ -71,6 +71,17 @@
   --transition-base: 0.25s ease;
   --transition-slow: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 
+  /* PREMIUM MOTION AND ATMOSPHERE UPGRADE START */
+  --ease-premium: cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-hover: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-reveal: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-press: 0.12s ease;
+  --hover-lift-sm: -2px;
+  --hover-lift-md: -4px;
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.1);
+  --shadow-active: 0 2px 6px rgba(0, 0, 0, 0.08);
+  /* PREMIUM MOTION AND ATMOSPHERE UPGRADE END */
+
   /* Premium Radii */
   --radius-sm: 8px;
   --radius-md: 12px;

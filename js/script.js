@@ -120,27 +120,32 @@ try {
 
   // End index section 1 JS
 
-  // Scroll to top button
+  /* PREMIUM MOTION AND ATMOSPHERE UPGRADE START */
+  // Scroll to top button — smooth fade via CSS class toggle
   const scrollBtn = document.getElementById("scrollToTopButton");
 
-  // Show button when scrolled down
-  window.onscroll = function () {
-    if (
-      document.body.scrollTop > 300 ||
-      document.documentElement.scrollTop > 300
-    ) {
-      scrollBtn.style.display = "block";
-    } else {
-      scrollBtn.style.display = "none";
-    }
-  };
+  // Show button when scrolled down (use class toggle for CSS opacity transition)
+  if (scrollBtn) {
+    scrollBtn.style.display = "block"; // keep always in DOM for CSS transition
+    window.onscroll = function () {
+      if (
+        document.body.scrollTop > 300 ||
+        document.documentElement.scrollTop > 300
+      ) {
+        scrollBtn.classList.add("is-visible");
+      } else {
+        scrollBtn.classList.remove("is-visible");
+      }
+    };
 
-  scrollBtn.addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: effectiveReducedMotion ? "auto" : "smooth",
+    scrollBtn.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: effectiveReducedMotion ? "auto" : "smooth",
+      });
     });
-  });
+  }
+  /* PREMIUM MOTION AND ATMOSPHERE UPGRADE END */
 } catch (error) {
   console.error("Error in script:", error);
 }

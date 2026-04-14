@@ -1475,4 +1475,395 @@ body {
 
 /* ========================================= */
 /* CROSS PAGE PREMIUM CONSISTENCY UPGRADE END */
+
+/* ========================================= */
+/* PREMIUM MOTION AND ATMOSPHERE UPGRADE START */
+/* ========================================= */
+
+/* ─────────────────────────────────────────── */
+/*  1. Unified Hover/Press/Focus Consistency   */
+/* ─────────────────────────────────────────── */
+
+/* All interactive cards: Unified transition using premium easing */
+.pillar-card,
+.resource-card,
+.topics-card,
+.start-card {
+  transition: transform var(--transition-hover), box-shadow var(--transition-hover), border-color var(--transition-hover);
+}
+
+/* Normalize all card hovers to consistent lift */
+.pillar-card:hover,
+.topics-card:hover {
+  transform: translateY(var(--hover-lift-md));
+  box-shadow: var(--shadow-hover);
+}
+
+.resource-card:hover {
+  transform: translateY(var(--hover-lift-md));
+  box-shadow: var(--shadow-hover);
+  scale: none;
+}
+
+.start-card:hover {
+  transform: translateY(var(--hover-lift-md));
+  box-shadow: var(--shadow-hover);
+}
+
+/* Active/pressed states for ALL interactive cards */
+.pillar-card:active,
+.resource-card:active,
+.topics-card:active,
+.start-card:active {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-active);
+  transition-duration: var(--transition-press);
+}
+
+/* Buttons: Unified premium transition */
+.main_button,
+.hero-btn,
+.pillar-btn,
+.cta-btn,
+.submenu-button,
+.chapter-nav-btn,
+.chapterJumpBtn,
+.reflection-timer-btn {
+  transition: transform var(--transition-hover), box-shadow var(--transition-hover), background-color var(--transition-hover), opacity var(--transition-hover);
+}
+
+/* Buttons: Consistent hover lift */
+.main_button:hover,
+.hero-btn:hover,
+.pillar-btn:hover {
+  transform: translateY(var(--hover-lift-sm));
+  box-shadow: var(--shadow-hover);
+}
+
+/* Buttons: Tactile press state */
+.main_button:active,
+.hero-btn:active,
+.pillar-btn:active,
+.cta-btn:active,
+.chapter-nav-btn:active,
+.chapterJumpBtn:active,
+.reflection-timer-btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-active);
+  transition-duration: var(--transition-press);
+}
+
+/* Chapter nav: Consistent hover */
+.chapter-nav-btn:hover {
+  transform: translateY(var(--hover-lift-sm));
+}
+
+/* Submenu button: Replace scale with translateY for consistency */
+.submenu-button:hover {
+  scale: none;
+  transform: translateY(var(--hover-lift-sm));
+  box-shadow: var(--shadow-hover);
+}
+
+.submenu-button:active {
+  transform: translateY(0);
+  transition-duration: var(--transition-press);
+}
+
+/* Scroll-to-top: Consistent hover lift */
+#scrollToTopButton {
+  transition: transform var(--transition-hover), box-shadow var(--transition-hover), opacity 0.3s ease;
+}
+
+#scrollToTopButton:hover {
+  transform: translateY(var(--hover-lift-sm));
+  box-shadow: var(--shadow-hover);
+}
+
+#scrollToTopButton:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-active);
+  transition-duration: var(--transition-press);
+}
+
+/* Scroll-to-top: Smooth fade in/out instead of display toggle */
+#scrollToTopButton {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#scrollToTopButton.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Focus-visible: Unified ring for ALL interactive elements */
+.pillar-card:focus-visible,
+.resource-card:focus-visible,
+.topics-card:focus-visible,
+.chapter-nav-btn:focus-visible,
+.chapterJumpBtn:focus-visible,
+.reflection-timer-btn:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.4);
+  outline-offset: 3px;
+}
+
+/* ─────────────────────────────────────────── */
+/*  2. Scroll Reveal Refinement                */
+/* ─────────────────────────────────────────── */
+
+/* Reduce travel distance for subtlety; use premium easing */
+.premium-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity var(--transition-reveal), transform var(--transition-reveal);
+}
+
+.premium-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Modest stagger for sibling reveals (CSS-only) */
+.premium-reveal:nth-child(2) { transition-delay: 0.06s; }
+.premium-reveal:nth-child(3) { transition-delay: 0.12s; }
+.premium-reveal:nth-child(4) { transition-delay: 0.18s; }
+.premium-reveal:nth-child(5) { transition-delay: 0.24s; }
+.premium-reveal:nth-child(6) { transition-delay: 0.3s; }
+
+/* ─────────────────────────────────────────── */
+/*  3. Hero Atmosphere Polish                  */
+/* ─────────────────────────────────────────── */
+
+/* Subtle entrance for hero content on all pages */
+.hero-content {
+  animation: premiumHeroEntrance 0.8s var(--ease-premium) both;
+}
+
+@keyframes premiumHeroEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smoother hero overlay transition between gradient stops */
+.hero-overlay {
+  transition: opacity 0.5s ease;
+}
+
+/* ─────────────────────────────────────────── */
+/*  4. Footer & Nav Micro-Interaction Polish   */
+/* ─────────────────────────────────────────── */
+
+/* Footer links: Subtle lift on hover */
+.footer-link,
+.social-link {
+  transition: opacity var(--transition-hover), transform var(--transition-hover);
+}
+
+.footer-link:hover,
+.social-link:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.footer-link:active,
+.social-link:active {
+  transform: translateY(0);
+  transition-duration: var(--transition-press);
+}
+
+/* Nav items: Smoother easing */
+.tvnav__item {
+  transition: opacity var(--transition-hover), transform var(--transition-hover);
+}
+
+/* Nav current item: Refined shadow */
+.tvnav__item[aria-current="page"] {
+  transition: box-shadow var(--transition-hover);
+}
+
+/* ─────────────────────────────────────────── */
+/*  5. Scripture & Panel Hover Refinement      */
+/* ─────────────────────────────────────────── */
+
+.scripture-quote {
+  transition: box-shadow var(--transition-hover), transform var(--transition-hover);
+}
+
+.scripture-quote:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.call-to-commitment {
+  transition: box-shadow var(--transition-hover), transform var(--transition-hover);
+}
+
+.call-to-commitment:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* CTA input: Smoother focus transition */
+.cta-input {
+  transition: border-color var(--transition-hover), box-shadow var(--transition-hover);
+}
+
+/* ─────────────────────────────────────────── */
+/*  6. Reduced Motion Excellence               */
+/* ─────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  /* Disable all transforms and animations added by this upgrade */
+  .pillar-card,
+  .resource-card,
+  .topics-card,
+  .start-card,
+  .main_button,
+  .hero-btn,
+  .pillar-btn,
+  .cta-btn,
+  .submenu-button,
+  .chapter-nav-btn,
+  .chapterJumpBtn,
+  .reflection-timer-btn,
+  #scrollToTopButton,
+  .call-to-commitment,
+  .scripture-quote,
+  .footer-link,
+  .social-link,
+  .tvnav__item {
+    transition: none !important;
+  }
+
+  .pillar-card:hover,
+  .resource-card:hover,
+  .topics-card:hover,
+  .start-card:hover,
+  .main_button:hover,
+  .hero-btn:hover,
+  .pillar-btn:hover,
+  .chapter-nav-btn:hover,
+  .submenu-button:hover,
+  #scrollToTopButton:hover,
+  .call-to-commitment:hover,
+  .scripture-quote:hover,
+  .footer-link:hover,
+  .social-link:hover {
+    transform: none !important;
+  }
+
+  .pillar-card:active,
+  .resource-card:active,
+  .topics-card:active,
+  .start-card:active,
+  .main_button:active,
+  .hero-btn:active,
+  .pillar-btn:active,
+  .cta-btn:active,
+  .chapter-nav-btn:active,
+  .submenu-button:active,
+  .chapterJumpBtn:active,
+  .reflection-timer-btn:active,
+  #scrollToTopButton:active,
+  .footer-link:active,
+  .social-link:active {
+    transform: none !important;
+  }
+
+  /* Hero entrance: Disable animation */
+  .hero-content {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Reveal: Instant visibility */
+  .premium-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    transition-delay: 0s !important;
+  }
+
+  /* Scroll-to-top: Instant show/hide */
+  #scrollToTopButton {
+    transition: none !important;
+  }
+}
+
+/* ─────────────────────────────────────────── */
+/*  7. Mobile/Touch Interaction Polish         */
+/* ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  /* Reduce hover lift intensity on touch devices */
+  .pillar-card:hover,
+  .resource-card:hover,
+  .topics-card:hover,
+  .start-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .main_button:hover,
+  .hero-btn:hover,
+  .pillar-btn:hover,
+  .chapter-nav-btn:hover,
+  .submenu-button:hover {
+    transform: translateY(-1px);
+  }
+
+  /* Disable stagger delays on mobile for snappier feel */
+  .premium-reveal:nth-child(n) {
+    transition-delay: 0s;
+  }
+
+  /* Hero entrance: Faster on mobile */
+  .hero-content {
+    animation-duration: 0.5s;
+  }
+
+  /* Scroll-to-top: Smaller lift */
+  #scrollToTopButton:hover {
+    transform: translateY(-1px);
+  }
+
+  /* Reduce scripture/panel hover on mobile */
+  .scripture-quote:hover,
+  .call-to-commitment:hover {
+    transform: none;
+  }
+}
+
+/* Touch device: Prevent sticky hover states */
+@media (hover: none) {
+  .pillar-card:hover,
+  .resource-card:hover,
+  .topics-card:hover,
+  .start-card:hover,
+  .main_button:hover,
+  .hero-btn:hover,
+  .pillar-btn:hover,
+  .chapter-nav-btn:hover,
+  .submenu-button:hover,
+  #scrollToTopButton:hover,
+  .scripture-quote:hover,
+  .call-to-commitment:hover,
+  .footer-link:hover,
+  .social-link:hover {
+    transform: none;
+    box-shadow: inherit;
+  }
+}
+
+/* ========================================= */
+/* PREMIUM MOTION AND ATMOSPHERE UPGRADE END */
+/* ========================================= */
 /* ========================================= */
