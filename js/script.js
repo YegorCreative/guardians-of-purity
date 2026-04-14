@@ -149,6 +149,45 @@ try {
 } catch (error) {
   console.error("Error in script:", error);
 }
+
+/* WAYFINDING AND DISCOVERY UPGRADE START */
+// Current-page detection: Set aria-current="page" on the matching nav item
+(function () {
+  "use strict";
+  var path = window.location.pathname;
+  var filename = path.substring(path.lastIndexOf("/") + 1).toLowerCase() || "index.html";
+
+  // Map filenames to data-nav values
+  var navMap = {
+    "index.html": "home",
+    "journey.html": "journey",
+    "resources.html": "resources",
+    "prayer.html": "prayer",
+    "contacts.html": "contact",
+    "about.html": "about"
+  };
+
+  // Chapter pages map to "journey" since they're part of the reading journey
+  var navKey = navMap[filename];
+  if (!navKey && /^chapter\d+\.html$/i.test(filename)) {
+    navKey = "journey";
+  }
+  // Masturbation and success-stories are resource-adjacent
+  if (filename === "masturbation.html" || filename === "success-stories.html") {
+    navKey = "resources";
+  }
+
+  if (navKey) {
+    var items = document.querySelectorAll('.tvnav__item[data-nav]');
+    items.forEach(function (item) {
+      if (item.getAttribute("data-nav") === navKey) {
+        item.setAttribute("aria-current", "page");
+      }
+    });
+  }
+})();
+/* WAYFINDING AND DISCOVERY UPGRADE END */
+
 // Placeholder for future interactivity
 // You can add scroll animations, section trackers, or reminders here
 console.log("31 Days of Prayer - Intro Section Loaded");

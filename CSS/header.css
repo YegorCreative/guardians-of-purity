@@ -233,3 +233,88 @@
   );
 }
 
+/* ========================================= */
+/* WAYFINDING AND DISCOVERY UPGRADE START    */
+/* ========================================= */
+
+/* ─────────────────────────────────────────── */
+/*  1. Active Nav State — Premium Distinction  */
+/* ─────────────────────────────────────────── */
+
+/* Refine the existing aria-current style for clarity */
+.tvnav__item[aria-current="page"] {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border-radius: 999px;
+  padding: 6px 16px;
+  box-shadow:
+    0 6px 20px rgba(59, 130, 246, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  opacity: 1;
+  pointer-events: auto;
+  cursor: default;
+}
+
+.tvnav__item[aria-current="page"] .tvnav__icon,
+.tvnav__item[aria-current="page"] .tvnav__label {
+  color: #ffffff;
+  opacity: 1;
+}
+
+/* Prevent hover lift on active item — it's already "here" */
+.tvnav__item[aria-current="page"]:hover {
+  transform: none;
+  opacity: 1;
+}
+
+/* Non-active items: slightly more muted to increase contrast with active */
+.tvnav__item:not([aria-current="page"]) {
+  opacity: 0.72;
+}
+
+.tvnav__item:not([aria-current="page"]):hover {
+  opacity: 1;
+}
+
+/* ─────────────────────────────────────────── */
+/*  2. Mobile Active Nav — Grid-Friendly       */
+/* ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  #main-nav .tvnav__item[aria-current="page"] {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border-radius: 18px;
+    padding: 10px 6px;
+    box-shadow:
+      0 8px 22px rgba(59, 130, 246, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  #main-nav .tvnav__item[aria-current="page"] .tvnav__icon,
+  #main-nav .tvnav__item[aria-current="page"] .tvnav__label {
+    color: #ffffff;
+    opacity: 1;
+  }
+
+  #main-nav .tvnav__item:not([aria-current="page"]) {
+    opacity: 0.65;
+  }
+
+  #main-nav .tvnav__item:not([aria-current="page"]):hover {
+    opacity: 1;
+  }
+}
+
+/* ─────────────────────────────────────────── */
+/*  3. Reduced Motion for Nav                  */
+/* ─────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .tvnav__item[aria-current="page"] {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+  }
+}
+
+/* ========================================= */
+/* WAYFINDING AND DISCOVERY UPGRADE END      */
+/* ========================================= */
+

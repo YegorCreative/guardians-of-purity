@@ -2315,3 +2315,108 @@
 /* ========================================= */
 /* CONTENT PRESENTATION UPGRADE END          */
 /* ========================================= */
+
+/* ========================================= */
+/* WAYFINDING AND DISCOVERY UPGRADE START    */
+/* ========================================= */
+
+/* ─────────────────────────────────────────── */
+/*  1. Resources Hero — Page Purpose Clarity   */
+/* ─────────────────────────────────────────── */
+
+.resources-hero {
+  padding-bottom: 56px;
+}
+
+.resources-hero-title {
+  margin-bottom: 16px;
+}
+
+.resources-hero-subtitle {
+  margin-bottom: 8px;
+}
+
+/* ─────────────────────────────────────────── */
+/*  2. Section Titles — Stronger Wayfinding    */
+/* ─────────────────────────────────────────── */
+
+.chapters-section .section-title,
+.featured-resources .section-title,
+.emergency-support .section-title,
+.downloadable-resources .section-title,
+.recommended-reading .section-title {
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+/* ─────────────────────────────────────────── */
+/*  3. Journey Chapter Grid — Part Dividers    */
+/*     Clearer section breaks for orientation  */
+/* ─────────────────────────────────────────── */
+
+.chapter-section-divider {
+  position: relative;
+}
+
+.chapter-section-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(135deg, #3b82f6, #a855f7);
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+.chapter-section-title {
+  padding-top: 14px;
+}
+
+/* ─────────────────────────────────────────── */
+/*  4. Chapter Cards — Active/Current Hint     */
+/* ─────────────────────────────────────────── */
+
+.chapter-card[aria-current="true"] {
+  border: 2px solid rgba(59, 130, 246, 0.35);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.12);
+}
+
+.chapter-card[aria-current="true"] .chapter-number {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+}
+
+/* ─────────────────────────────────────────── */
+/*  5. Featured Card — First-Card Emphasis     */
+/* ─────────────────────────────────────────── */
+
+.featured-card:first-child {
+  border: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+/* ─────────────────────────────────────────── */
+/*  6. Mobile Wayfinding                       */
+/* ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .resources-hero {
+    padding-bottom: 40px;
+  }
+
+  .chapter-section-divider::before {
+    width: 36px;
+  }
+}
+
+@media (max-width: 520px) {
+  .chapter-section-divider::before {
+    width: 28px;
+  }
+}
+
+/* ========================================= */
+/* WAYFINDING AND DISCOVERY UPGRADE END      */
+/* ========================================= */

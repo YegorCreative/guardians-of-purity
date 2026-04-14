@@ -2030,4 +2030,78 @@ body {
 
 /* ========================================= */
 /* CONTENT PRESENTATION UPGRADE END          */
+
+/* ========================================= */
+/* WAYFINDING AND DISCOVERY UPGRADE START    */
+/* ========================================= */
+
+/* ─────────────────────────────────────────── */
+/*  1. Start-Here Section — Primary Entry Path */
+/*     Make the first step feel intentional     */
+/* ─────────────────────────────────────────── */
+
+.start-here {
+  padding-top: 52px;
+  padding-bottom: 52px;
+}
+
+.start-here__title {
+  margin-bottom: 10px;
+}
+
+.start-here__subtitle {
+  margin-bottom: 36px;
+  opacity: 0.75;
+  font-size: 1.05rem;
+}
+
+/* Primary start card (card #1) gets slightly more emphasis */
+.start-card:first-child {
+  border: 2px solid rgba(59, 130, 246, 0.25);
+}
+
+/* ─────────────────────────────────────────── */
+/*  2. Hero CTA Grouping — Clearer Primary     */
+/* ─────────────────────────────────────────── */
+
+.hero-helping {
+  margin-bottom: 28px;
+}
+
+/* ─────────────────────────────────────────── */
+/*  3. Section Transitions — Page Flow         */
+/*     Smooth transition from hero into body   */
+/* ─────────────────────────────────────────── */
+
+.intro-section {
+  padding-bottom: 52px;
+}
+
+/* ─────────────────────────────────────────── */
+/*  4. Footer Wayfinding — Subtle Orientation  */
+/* ─────────────────────────────────────────── */
+
+.footer-links {
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+/* ─────────────────────────────────────────── */
+/*  5. Mobile Wayfinding                       */
+/* ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .start-here {
+    padding-top: 38px;
+    padding-bottom: 38px;
+  }
+
+  .start-here__subtitle {
+    margin-bottom: 28px;
+  }
+}
+
+/* ========================================= */
+/* WAYFINDING AND DISCOVERY UPGRADE END      */
+/* ========================================= */
 /* =========================================  */

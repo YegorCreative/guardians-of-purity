@@ -3429,4 +3429,137 @@ body.chapterModalOpen {
 /* ========================================= */
 /* CONTENT PRESENTATION UPGRADE END          */
 /* ========================================= */
+
+/* ========================================= */
+/* WAYFINDING AND DISCOVERY UPGRADE START    */
+/* ========================================= */
+
+/* ─────────────────────────────────────────── */
+/*  1. "Continue the Journey" Section —        */
+/*     Clear visual break from reading content */
+/* ─────────────────────────────────────────── */
+
+/* The chapter nav teaching section: Distinct wayfinding zone */
+#continue .chapterOne-teaching-container {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 48px;
+  margin-top: 20px;
+}
+
+#continue .chapterOne-teaching-title {
+  font-size: 1.5rem;
+  letter-spacing: 0.01em;
+  margin-bottom: 8px;
+}
+
+#continue .chapterOne-teaching-text {
+  opacity: 0.7;
+  font-size: 0.92rem;
+  margin-bottom: 32px;
+}
+
+/* ─────────────────────────────────────────── */
+/*  2. Chapter Nav Buttons — Priority Clarity  */
+/* ─────────────────────────────────────────── */
+
+/* Next button: Primary action — bolder */
+.chapter-nav-btn.next {
+  font-size: 1.12rem;
+  padding: 18px 36px;
+  min-width: 240px;
+}
+
+/* Previous button: Secondary — slightly softer */
+.chapter-nav-btn.prev {
+  font-size: 1.02rem;
+  padding: 14px 28px;
+  opacity: 0.88;
+}
+
+.chapter-nav-btn.prev:hover {
+  opacity: 1;
+}
+
+/* ─────────────────────────────────────────── */
+/*  3. Progress Indicator — Better Orientation */
+/* ─────────────────────────────────────────── */
+
+.chapterProgress {
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+
+.chapterProgress__text {
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.chapterProgress__bar {
+  margin-top: 8px;
+  height: 4px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* ─────────────────────────────────────────── */
+/*  4. Jump-to-Chapter Button — Discoverability*/
+/* ─────────────────────────────────────────── */
+
+.chapterJumpBtn {
+  margin-top: 14px;
+  font-size: 0.88rem;
+  letter-spacing: 0.03em;
+}
+
+/* ─────────────────────────────────────────── */
+/*  5. Export Section — De-emphasis vs Nav      */
+/*     Keep it clear but secondary to "Next"   */
+/* ─────────────────────────────────────────── */
+
+.chapterOne-export-section {
+  padding-bottom: 16px;
+}
+
+.chapterOne-export-container {
+  padding-bottom: 24px;
+}
+
+/* ─────────────────────────────────────────── */
+/*  6. Mobile Chapter Wayfinding               */
+/* ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  #continue .chapterOne-teaching-container {
+    padding-top: 36px;
+  }
+
+  #continue .chapterOne-teaching-title {
+    font-size: 1.3rem;
+  }
+
+  .chapter-nav-btn.next {
+    font-size: 1.05rem;
+    padding: 16px 28px;
+    min-width: unset;
+    width: 100%;
+  }
+
+  .chapter-nav-btn.prev {
+    font-size: 0.98rem;
+    padding: 14px 24px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  #continue .chapterOne-teaching-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* ========================================= */
+/* WAYFINDING AND DISCOVERY UPGRADE END      */
+/* ========================================= */
 /* ========================================= */
