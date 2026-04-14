@@ -1170,3 +1170,108 @@
   background: rgba(0, 0, 0, 0.45);
   /* darker overlay for readability */
 }
+
+/* ========================================= */
+/* CONTENT PRESENTATION UPGRADE START        */
+/* ========================================= */
+
+/* ─────────────────────────────────────────── */
+/*  1. Intro Verse — Premium Emphasis          */
+/* ─────────────────────────────────────────── */
+
+.intro-section .intro-verse {
+  line-height: 1.7;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro-section .intro-reference {
+  margin-top: 10px;
+  letter-spacing: 0.03em;
+}
+
+/* ─────────────────────────────────────────── */
+/*  2. Purity Challenge Block — Readability    */
+/* ─────────────────────────────────────────── */
+
+.intro-paragraph {
+  line-height: 1.85;
+  font-size: 1.2rem;
+}
+
+/* ─────────────────────────────────────────── */
+/*  3. Split Section — Prose Polish            */
+/* ─────────────────────────────────────────── */
+
+.prayer .split.right {
+  padding: 56px 52px;
+}
+
+.prayer .split.right h2 {
+  margin-bottom: 22px;
+  line-height: 1.25;
+}
+
+.prayer .split.right p {
+  line-height: 1.75;
+  max-width: 540px;
+}
+
+/* ─────────────────────────────────────────── */
+/*  4. 31-Day Card — Content Readability       */
+/* ─────────────────────────────────────────── */
+
+.thirty_one_day_card_content {
+  padding: 18px 22px;
+  line-height: 1.7;
+}
+
+.thirty_one_day_card_title.with_height {
+  line-height: 1.65 !important;
+}
+
+/* ─────────────────────────────────────────── */
+/*  5. Prayer Amen — Gentle Close              */
+/* ─────────────────────────────────────────── */
+
+.prayer-amen {
+  letter-spacing: 0.04em;
+  margin-top: 18px;
+}
+
+/* ─────────────────────────────────────────── */
+/*  6. Mobile Content Readability              */
+/* ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .prayer .split.right {
+    padding: 36px 28px;
+  }
+
+  .prayer .split.right h2 {
+    font-size: 2rem;
+  }
+
+  .intro-paragraph {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .prayer .split.right {
+    padding: 28px 20px;
+  }
+
+  .prayer .split.right h2 {
+    font-size: 1.7rem;
+  }
+
+  .intro-paragraph {
+    font-size: 1.05rem;
+  }
+}
+
+/* ========================================= */
+/* CONTENT PRESENTATION UPGRADE END          */
+/* ========================================= */
