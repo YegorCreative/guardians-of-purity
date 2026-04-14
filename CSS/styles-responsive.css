@@ -254,3 +254,134 @@
     flex: 0 0 23%;
   }
 }
+
+/* PREMIUM UPGRADE START — Mobile-First Fixes */
+
+/* ─── Small Screens: Readability & Spacing ─── */
+@media (max-width: 768px) {
+  /* Ensure text doesn't require zoom */
+  body {
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  /* Better section breathing on mobile */
+  .hero,
+  .about-mission,
+  .pillars,
+  .testimonials,
+  .resources,
+  .topics,
+  .cta,
+  .intro-section {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+  }
+
+  /* Section titles: comfortable size */
+  .section-title {
+    margin-bottom: var(--space-md);
+  }
+
+  /* Prose readability */
+  .mission-text,
+  .pillar-card .pillar-text,
+  .resource-text,
+  .topics-text {
+    line-height: 1.7;
+  }
+
+  /* Buttons: large tap targets */
+  .main_button {
+    padding: 14px 24px;
+    font-size: 1rem;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Cards: breathing room */
+  .pillar-card {
+    padding: 24px 20px;
+  }
+
+  /* Fix any horizontal overflow */
+  .separated_block {
+    overflow-x: hidden;
+  }
+
+  /* Testimonial carousel comfort */
+  .testimonial-carousel {
+    padding: var(--space-md);
+  }
+
+  /* Footer spacing */
+  .footer {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .footer-link,
+  .social-link {
+    padding: 8px 12px;
+    display: inline-block;
+  }
+}
+
+/* ─── Very Small Screens (< 400px) ─── */
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .pillar-card {
+    padding: 20px 16px;
+  }
+
+  .cta-form {
+    padding: 0 8px;
+  }
+
+  .cta-input {
+    font-size: 0.95rem;
+  }
+}
+
+/* ─── Tablet Cleanup (769px – 1024px) ─── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero,
+  .about-mission,
+  .pillars,
+  .testimonials,
+  .resources,
+  .topics {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+}
+
+/* ─── Large Screen Polish ─── */
+@media (min-width: 1200px) {
+  .hero,
+  .about-mission,
+  .pillars,
+  .testimonials,
+  .resources,
+  .topics,
+  .cta,
+  .intro-section {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+  }
+
+  .section-title {
+    margin-bottom: var(--space-xl);
+  }
+}
+
+/* PREMIUM UPGRADE END */

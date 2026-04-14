@@ -843,3 +843,143 @@
     flex-direction: column;
   }
 }
+
+/* PREMIUM UPGRADE START — Card, Button & Section Polish */
+
+/* ─── Buttons: Premium Feel ─── */
+.main_button {
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all var(--transition-slow);
+  box-shadow: var(--shadow-sm);
+}
+
+.main_button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.main_button:active {
+  transform: translateY(0);
+}
+
+/* ─── Pillar Cards: Enhanced ─── */
+.pillar-card {
+  transition: all var(--transition-slow);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-sm);
+}
+
+.pillar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(59, 130, 246, 0.12);
+}
+
+/* ─── Resource Cards: Depth ─── */
+.resource-card {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all var(--transition-slow);
+}
+
+.resource-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: var(--shadow-xl);
+}
+
+/* ─── Topics Cards ─── */
+.topics-card {
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-slow);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.topics-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ─── Testimonial Section ─── */
+.testimonial-carousel {
+  padding: var(--space-lg) var(--space-md);
+}
+
+.testimonial-text {
+  line-height: var(--leading-relaxed);
+}
+
+/* ─── Scripture Quote Enhancement ─── */
+.scripture-quote {
+  border-radius: var(--radius-md);
+  transition: box-shadow var(--transition-base);
+}
+
+.scripture-quote:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ─── CTA Section ─── */
+.cta-title {
+  letter-spacing: -0.01em;
+}
+
+.cta-input {
+  transition: all var(--transition-base);
+  border: 2px solid transparent;
+}
+
+.cta-input:focus {
+  outline: none;
+  border-color: var(--color-primary-blue-hover);
+  box-shadow: 0 0 0 3px rgba(58, 120, 194, 0.15);
+}
+
+/* ─── Intro Section Enhancement ─── */
+.intro-heading {
+  letter-spacing: -0.02em;
+}
+
+.call-to-commitment {
+  transition: all var(--transition-slow);
+}
+
+.call-to-commitment:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ─── Image Placeholder Polish ─── */
+.image-placeholder {
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+}
+
+/* ─── Section Visual Separation ─── */
+.about-mission,
+.pillars,
+.testimonials,
+.resources,
+.topics {
+  border-radius: var(--radius-xl);
+}
+
+/* ─── Scroll to Top Button ─── */
+#scrollToTopButton {
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-lg);
+}
+
+#scrollToTopButton:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* PREMIUM UPGRADE END */
+}

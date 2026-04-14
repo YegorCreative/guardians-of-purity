@@ -182,3 +182,37 @@ body {
 .margin-auto {
   margin: 0 auto;
 }
+
+/* PREMIUM UPGRADE START — Smooth Transitions & Utility Enhancements */
+
+/* ─── Global Smooth Transitions ─── */
+a,
+button,
+input,
+textarea,
+select {
+  transition: all var(--transition-base);
+}
+
+/* ─── Focus Visible for Accessibility ─── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.4);
+  outline-offset: 2px;
+}
+
+/* ─── Selection Color ─── */
+::selection {
+  background: rgba(59, 130, 246, 0.2);
+  color: inherit;
+}
+
+/* ─── Image Rendering ─── */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* PREMIUM UPGRADE END */

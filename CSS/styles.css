@@ -12,3 +12,152 @@
 @import "utilities.css";
 @import "layout.css";
 @import "components.css";
+
+/* PREMIUM UPGRADE START — Global Typography & Spacing */
+
+/* ─── Typography Hierarchy ─── */
+body {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  letter-spacing: 0.01em;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+}
+
+h2 {
+  font-size: clamp(var(--text-2xl), 3.5vw, var(--text-3xl));
+}
+
+h3 {
+  font-size: clamp(var(--text-xl), 2.5vw, var(--text-2xl));
+}
+
+p {
+  line-height: var(--leading-relaxed);
+}
+
+/* ─── Section Breathing Room ─── */
+.hero,
+.about-mission,
+.pillars,
+.testimonials,
+.resources,
+.topics,
+.cta,
+.intro-section {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+/* ─── Content Container Centering ─── */
+.about-mission,
+.pillars,
+.testimonials,
+.resources,
+.topics,
+.cta {
+  max-width: var(--content-max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─── Readability: Constrain Prose Width ─── */
+.mission-text,
+.testimonial-text,
+.resource-text,
+.pillar-card .pillar-text,
+.topics-text,
+.hero-subtitle {
+  max-width: var(--content-narrow);
+}
+
+/* ─── Hero Dark Gradient Overlay Enhancement ─── */
+.hero-overlay {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.42) 0%,
+      rgba(0, 0, 0, 0.18) 50%,
+      rgba(0, 0, 0, 0.35) 100%
+    ),
+    url("../img/backgroun-1.jpg") center/cover no-repeat;
+}
+
+/* ─── Hero Vertical Centering & Spacing ─── */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  max-width: var(--content-wide);
+  margin: 0 auto;
+}
+
+.hero-title {
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  margin-bottom: var(--space-lg);
+  line-height: var(--leading-relaxed);
+}
+
+/* ─── Section Title Spacing ─── */
+.section-title {
+  margin-bottom: var(--space-lg);
+  letter-spacing: -0.01em;
+}
+
+/* ─── Paragraph Spacing ─── */
+.mission-text,
+.pillar-card .pillar-text,
+.resource-text,
+.topics-text {
+  margin-bottom: var(--space-md);
+  line-height: var(--leading-relaxed);
+}
+
+/* ─── Scroll-Reveal Animation (CSS-only) ─── */
+@keyframes premiumFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.premium-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.premium-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .premium-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* PREMIUM UPGRADE END */
