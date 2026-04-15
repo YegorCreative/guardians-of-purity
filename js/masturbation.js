@@ -49,16 +49,16 @@
     });
   });
 
-  /* ---------- Info Panel ---------- */
-  var infoPanel = document.querySelector(".info-panel");
-  if (infoPanel) {
-    gsap.set(infoPanel, { opacity: 0, y: 20 });
+  /* ---------- Info Panel (Frosted Glass) ---------- */
+  var infoGlass = document.querySelector(".info-panel-glass");
+  if (infoGlass) {
+    gsap.set(infoGlass, { opacity: 0, y: 18 });
     ScrollTrigger.create({
-      trigger: infoPanel,
+      trigger: ".info-panel-wrapper",
       start: "top 85%",
       once: true,
       onEnter: function () {
-        gsap.to(infoPanel, { opacity: 1, y: 0, duration: 0.6, ease: ease });
+        gsap.to(infoGlass, { opacity: 1, y: 0, duration: 0.6, ease: ease });
       }
     });
   }
