@@ -16,13 +16,6 @@
   box-shadow: var(--trust-shadow-elevated);
 }
 
-/* Overlay for Section 1 (Strict Requirement) */
-/* Overlay Removed for Clean Design */
-.purity_challenge_intro_block::before {
-  display: none;
-}
-
-/* Ensure content is above overlay */
 .purity_challenge_intro_block>* {
   position: relative;
   z-index: 2;
@@ -89,7 +82,7 @@
 .prayer .split.left {
   background: url("../../img/headshot-smiling-materials-engineer-web.jpeg") center/cover no-repeat;
   background-color: #f3f4f6;
-  order: 1;
+  order: 2;
 }
 
 .prayer .split.right {
@@ -100,7 +93,7 @@
   justify-content: center;
   align-items: flex-start;
   text-align: left;
-  order: 2;
+  order: 1;
 }
 
 .prayer .split.right h2 {
@@ -203,18 +196,6 @@
   justify-content: center;
   line-height: 1.75;
 }
-
-.thirty_one_day_card_content strong,
-.thirty_one_day_card_content span.label {
-  display: block;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  opacity: 0.8;
-  margin-bottom: 5px;
-  font-weight: 600;
-}
-
 
 .monthly_prayer_guide_day_item {
   background: #ffffff;
@@ -452,19 +433,6 @@
   margin: 0 0 20px 0;
   color: var(--color-text-dark-neutral);
   font-size: 0.95rem;
-}
-
-.journey-date-input {
-  width: 100%;
-  padding: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 14px;
-  font-family: var(--font-main);
-  font-size: 18px;
-  margin: 10px 0 14px;
-  text-align: center;
-  color: var(--color-text-dark);
-  outline: none;
 }
 
 .journey-modal-actions {
