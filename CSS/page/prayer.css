@@ -218,6 +218,10 @@
     min-height: 30svh;
   }
 
+  .parallax__title {
+    font-size: clamp(3.2rem, 11vw, 6.5rem);
+  }
+
   /* Start dynamic text with image */
 
   .purity_challenge_intro_block_title {
