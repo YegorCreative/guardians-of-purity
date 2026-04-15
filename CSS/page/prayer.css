@@ -6,10 +6,9 @@
 /* Intro section with background image */
 .intro-section {
   background: url("../../img/31days.jpg") center/cover no-repeat;
-  padding: 60px 20px;
-  /* generous padding for text visibility */
+  padding: 48px 20px;
   text-align: center;
-  min-height: 300px;
+  min-height: 200px;
   /* ensure adequate height */
   flex-direction: column;
   position: relative;
@@ -47,10 +46,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 400px;
+  min-height: auto;
   border-radius: 25px;
   overflow: hidden;
-  margin: 40px auto;
+  margin: 20px auto;
   max-width: 1440px;
   box-shadow: var(--trust-shadow-elevated);
 }
@@ -88,8 +87,7 @@
   max-width: 800px;
   font-size: 1.2rem;
   line-height: 1.9;
-  margin: 80px auto 40px auto;
-  /* Top margin clears the badge */
+  margin: 60px auto 30px auto;
   position: relative;
   color: var(--color-white);
   text-shadow: none;
@@ -109,8 +107,8 @@
   display: flex !important;
   flex-direction: row !important;
   width: 100%;
-  min-height: 400px;
-  margin: 40px auto;
+  min-height: 300px;
+  margin: 20px auto;
   /* border-radius: 25px; REMOVED to allow split children to have their own borders */
   /* overflow: hidden; REMOVED */
   max-width: 1440px;
@@ -123,8 +121,7 @@
 /* Split Layout */
 .prayer .split {
   flex: 1;
-  /* width: 50%; REMOVED to allow gap to determine width */
-  min-height: 400px;
+  min-height: 300px;
   border-radius: 25px;
   /* Individual corners */
   overflow: hidden;
@@ -182,10 +179,7 @@
 @media screen and (max-width: 1024px) {
   .intro-paragraph {
     max-width: fit-content;
-    padding: 60px 20px;
-    transform: translate(0%, 23%);
-    left: auto;
-    top: auto;
+    padding: 0 20px;
   }
 }
 
@@ -1006,12 +1000,12 @@
   background: linear-gradient(180deg, #0b1120 0%, #162036 50%, #1a2744 100%);
   color: var(--color-white);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
-  min-height: 90vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 80px 32px;
+  padding: 64px 32px;
   overflow: hidden;
 }
 
@@ -1092,8 +1086,8 @@
 /* --- Mobile: Prayer Hero --- */
 @media (max-width: 768px) {
   .gradient-section .gradient_cards_wrapper {
-    min-height: 70vh;
-    padding: 60px 20px;
+    min-height: 50vh;
+    padding: 48px 20px;
   }
 
   .gradient-section .gradient_cards_wrapper h1 {
@@ -1108,8 +1102,8 @@
 
 @media (max-width: 400px) {
   .gradient-section .gradient_cards_wrapper {
-    min-height: 60vh;
-    padding: 48px 16px;
+    min-height: 45vh;
+    padding: 40px 16px;
   }
 }
 
@@ -1194,8 +1188,8 @@
 }
 
 .intro-section-wrapper .intro-section {
-  padding-top: 72px;
-  padding-bottom: 72px;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 
 /* "Why 4 weeks" block — section breathing */
@@ -1254,8 +1248,8 @@ main > .prayer.separated_block {
 
 @media (max-width: 768px) {
   .intro-section-wrapper .intro-section {
-    padding-top: 52px;
-    padding-bottom: 52px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   /* .purity_challenge_intro_block — padding consolidated into base 768px block */
@@ -1273,18 +1267,18 @@ main > .prayer.separated_block {
 
 @media (max-width: 520px) {
   .intro-section-wrapper .intro-section {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    min-height: 220px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    min-height: 180px;
   }
 
   .purity_challenge_intro_block {
     padding: 24px 16px;
-    min-height: 300px;
+    min-height: auto;
   }
 
   .intro-paragraph {
-    margin-top: 52px;
+    margin-top: 44px;
     font-size: 1rem;
   }
 
@@ -1647,18 +1641,9 @@ main > .prayer.separated_block {
   border-radius: 18px;
 }
 
-/* Connecting track behind tabs */
+/* Connecting track — hidden for cleaner look */
 .monthly_prayer_guide_weeks::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: calc(12.5% + 6px);
-  right: calc(12.5% + 6px);
-  height: 2px;
-  background: #d1d5db;
-  transform: translateY(-50%);
-  z-index: 0;
-  border-radius: 1px;
+  display: none;
 }
 
 /* === Week Tab — Two-Line Layout with Theme === */
@@ -1722,16 +1707,9 @@ main > .prayer.separated_block {
   outline-offset: 2px;
 }
 
-/* === Step Indicator Dot (before week number) === */
+/* === Step Indicator Dot — hidden for cleaner look === */
 .monthly_prayer_guide_week_item::before {
-  content: "";
-  display: block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #d1d5db;
-  margin-bottom: 3px;
-  transition: all 0.25s ease;
+  display: none;
 }
 
 .monthly_prayer_guide_week_item.active::before {
@@ -1967,7 +1945,7 @@ main > .prayer.separated_block {
 
 .prayer-closing-cta {
   text-align: center;
-  padding: 72px 32px 64px;
+  padding: 56px 32px 48px;
   background: linear-gradient(180deg, #f8fafb 0%, #eef2f7 100%);
   border-radius: 25px;
 }
