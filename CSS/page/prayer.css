@@ -219,7 +219,9 @@
   }
 
   .parallax__title {
-    font-size: clamp(3.2rem, 11vw, 6.5rem);
+    font-size: clamp(2.4rem, 8vw, 5rem) !important;
+    max-width: 100%;
+    padding-inline: 0.3em;
   }
 
   /* Start dynamic text with image */
@@ -895,12 +897,13 @@
 @media (max-width: 768px) {
   .gradient-section .gradient_cards_wrapper {
     min-height: auto;
-    padding: 48px 20px;
+    padding: 40px 20px;
   }
 
   .gradient-section .gradient_cards_wrapper h1 {
     max-width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    font-size: clamp(1.5rem, 5vw, 2rem);
   }
 
   .gradient-section .subtitle {
@@ -908,15 +911,24 @@
   }
 
   .gradient-section .hero-verse-block {
-    margin-top: 32px;
-    padding-top: 24px;
+    margin-top: 24px;
+    padding-top: 20px;
   }
 }
 
 @media (max-width: 520px) {
   .gradient-section .gradient_cards_wrapper {
     min-height: auto;
-    padding: 40px 16px;
+    padding: 32px 16px;
+  }
+
+  .gradient-section .gradient_cards_wrapper h1 {
+    font-size: clamp(1.35rem, 5vw, 1.7rem);
+  }
+
+  .gradient-section .hero-verse-block {
+    margin-top: 20px;
+    padding-top: 16px;
   }
 }
 
