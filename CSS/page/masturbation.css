@@ -90,12 +90,13 @@
 
 .mast-section-title {
   font-family: var(--font-heading);
-  font-size: clamp(var(--text-2xl), 3.5vw, var(--text-3xl));
+  font-size: clamp(var(--text-2xl), 3vw, var(--text-3xl));
   font-weight: 700;
   color: var(--color-text-dark);
   text-align: center;
-  margin-bottom: var(--space-sm);
-  letter-spacing: -0.02em;
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.025em;
+  line-height: var(--leading-tight);
 }
 
 .mast-section-intro {
@@ -104,8 +105,20 @@
   line-height: var(--leading-relaxed);
   color: var(--color-text-dark-neutral);
   text-align: center;
-  max-width: 680px;
+  max-width: 620px;
   margin: 0 auto var(--space-lg);
+  letter-spacing: 0.005em;
+}
+
+/* Editorial variant — lighter, more breathing room */
+.mast-section--editorial {
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-xl);
+}
+
+.mast-section--editorial .mast-section-title {
+  font-size: clamp(var(--text-xl), 2.5vw, var(--text-2xl));
+  margin-bottom: var(--space-lg);
 }
 
 /* ---------- Info Panel (Quick Answer — Frosted Glass) ---------- */
@@ -150,13 +163,7 @@
   color: var(--color-white);
   width: 85%;
   max-width: 700px;
-}
-
-.info-panel-centered {
-  text-align: center;
-  color: var(--color-white);
   padding: 36px 32px;
-  max-width: 700px;
 }
 
 .info-panel-centered h2 {
@@ -205,14 +212,11 @@
 /* ---------- Reason Card ---------- */
 .reason-card {
   position: relative;
-  background: linear-gradient(168deg, #ffffff 0%, #f8fafc 100%);
-  border-radius: 24px;
-  padding: 26px 24px 24px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.03),
-    0 4px 16px rgba(0, 0, 0, 0.04),
-    0 12px 40px rgba(0, 0, 0, 0.03);
+  background: linear-gradient(168deg, #ffffff 0%, #f9fafb 100%);
+  border-radius: 20px;
+  padding: 28px 26px 26px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: var(--trust-shadow-grounded);
   overflow: hidden;
   transition:
     transform var(--transition-slow),
@@ -224,27 +228,24 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 22px;
-  right: 22px;
-  height: 3px;
-  border-radius: 0 0 3px 3px;
+  left: 24px;
+  right: 24px;
+  height: 2px;
+  border-radius: 0 0 2px 2px;
   background: linear-gradient(90deg, #3d71f5, #5b93ff);
-  opacity: 0.45;
+  opacity: 0.3;
   transition: opacity var(--transition-slow);
 }
 
 @media (hover: hover) {
   .reason-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(61, 113, 245, 0.12);
-    box-shadow:
-      0 2px 4px rgba(0, 0, 0, 0.03),
-      0 8px 24px rgba(61, 113, 245, 0.08),
-      0 20px 48px rgba(0, 0, 0, 0.06);
+    transform: translateY(-3px);
+    border-color: rgba(61, 113, 245, 0.08);
+    box-shadow: var(--trust-shadow-elevated);
   }
 
   .reason-card:hover::before {
-    opacity: 1;
+    opacity: 0.7;
   }
 }
 
@@ -342,11 +343,10 @@
 .scripture-col li {
   font-family: var(--font-main);
   font-size: var(--text-base);
-  line-height: 1.72;
+  line-height: 1.75;
   color: var(--color-text-dark-neutral);
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  padding-left: 20px;
+  padding: 12px 0 12px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
   position: relative;
 }
 
@@ -384,13 +384,11 @@
 
 .myth-card {
   position: relative;
-  background: linear-gradient(168deg, #ffffff 0%, #f8fafc 100%);
-  border-radius: 24px;
-  padding: 28px 26px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.03),
-    0 4px 16px rgba(0, 0, 0, 0.04);
+  background: linear-gradient(168deg, #ffffff 0%, #f9fafb 100%);
+  border-radius: 18px;
+  padding: 30px 28px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
 }
 
@@ -400,9 +398,9 @@
   font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
-  padding: 5px 14px;
-  border-radius: 100px;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
   margin-bottom: 10px;
 }
 
@@ -445,9 +443,9 @@
 .highlight-section p {
   font-family: var(--font-main);
   font-size: var(--text-base);
-  line-height: 1.78;
+  line-height: 1.82;
   color: var(--color-text-dark-neutral);
-  margin: 0 0 14px;
+  margin: 0 0 18px;
 }
 
 .highlight-section p:last-child {
@@ -463,14 +461,14 @@
   position: relative;
   font-weight: 600;
   color: var(--color-text-dark);
-  line-height: 1.65;
-  background: linear-gradient(135deg, rgba(61, 113, 245, 0.04) 0%, rgba(59, 130, 246, 0.02) 100%);
-  border-left: 3px solid #3d71f5;
+  line-height: 1.7;
+  background: linear-gradient(135deg, rgba(61, 113, 245, 0.03) 0%, rgba(59, 130, 246, 0.01) 100%);
+  border-left: 3px solid rgba(61, 113, 245, 0.5);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  padding: 16px 20px;
-  margin: var(--space-md) 0;
+  padding: 20px 24px;
+  margin: var(--space-lg) 0;
   font-family: var(--font-main);
-  font-size: var(--text-base);
+  font-size: var(--text-lg);
 }
 
 /* ---------- Frosted Glass Conclusion (preserved from original design) ---------- */
@@ -515,13 +513,7 @@
   color: var(--color-white);
   width: 85%;
   max-width: 700px;
-}
-
-.mast-conclusion-centered {
-  text-align: center;
-  color: var(--color-white);
   padding: 36px 32px;
-  max-width: 700px;
 }
 
 .mast-conclusion-centered h2 {
@@ -556,13 +548,13 @@
   position: relative;
   font-family: var(--font-main);
   font-size: var(--text-base);
-  line-height: 1.72;
+  line-height: 1.75;
   color: var(--color-text-dark-neutral);
-  padding: 14px 16px 14px 48px;
-  margin-bottom: 10px;
-  background: linear-gradient(168deg, #ffffff 0%, #f8fafc 100%);
+  padding: 16px 18px 16px 50px;
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.6);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
   transition: border-color var(--transition-base);
 }
 
@@ -606,9 +598,9 @@
 .onan-block p {
   font-family: var(--font-main);
   font-size: var(--text-base);
-  line-height: 1.78;
+  line-height: 1.82;
   color: var(--color-text-dark-neutral);
-  margin: 0 0 14px;
+  margin: 0 0 18px;
 }
 
 .onan-block p:last-child {
@@ -786,12 +778,16 @@
 
   .reason-card {
     padding: 22px 20px 20px;
-    border-radius: 22px;
+    border-radius: 18px;
   }
 
   .myth-card {
     padding: 22px 20px;
-    border-radius: 22px;
+    border-radius: 16px;
+  }
+
+  .mast-section--editorial {
+    padding: var(--space-xl) var(--space-sm);
   }
 
   .scripture-block {
