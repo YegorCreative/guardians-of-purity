@@ -1149,4 +1149,137 @@
 /* ========================================= */
 /* TRUST AND AUTHORITY UPGRADE END           */
 /* ========================================= */
+
+/* ========================================= */
+/* PRAYER HERO PREMIUM UPGRADE START         */
+/* ========================================= */
+
+/* --- Gradient Section: Calm immersive hero continuation --- */
+.gradient-section {
+  position: relative;
+}
+
+.gradient-section .gradient_cards_wrapper {
+  position: relative;
+  background: linear-gradient(180deg, #0b1120 0%, #162036 50%, #1a2744 100%);
+  color: var(--color-white);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 32px;
+  overflow: hidden;
+}
+
+/* Soft radial glow — sacred atmosphere */
+.gradient-section .gradient_cards_wrapper::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(59, 130, 246, 0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gradient-section .gradient_cards_wrapper > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Typography: h1 title --- */
+.gradient-section .gradient_cards_wrapper h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  max-width: 780px;
+  margin: 0 auto 24px;
+  color: var(--color-white);
+  /* Animation */
+  opacity: 0;
+  transform: translateY(24px);
+  animation: prayerHeroFadeIn 0.9s ease-out 0.2s forwards;
+}
+
+/* --- Typography: subtitle --- */
+.gradient-section .subtitle {
+  font-family: var(--font-body, 'Open Sans', sans-serif);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.75;
+  max-width: 680px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.82);
+  /* Animation */
+  opacity: 0;
+  transform: translateY(24px);
+  animation: prayerHeroFadeIn 0.9s ease-out 0.5s forwards;
+}
+
+/* --- Emotional contract: calm refinement --- */
+.gradient-section .emotional-contract {
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: none;
+  /* Animation */
+  opacity: 0;
+  transform: translateY(16px);
+  animation: prayerHeroFadeIn 0.8s ease-out 0.35s forwards;
+}
+
+/* --- Fade-in keyframe --- */
+@keyframes prayerHeroFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Mobile: Prayer Hero --- */
+@media (max-width: 768px) {
+  .gradient-section .gradient_cards_wrapper {
+    min-height: 70vh;
+    padding: 60px 20px;
+  }
+
+  .gradient-section .gradient_cards_wrapper h1 {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .gradient-section .subtitle {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .gradient-section .gradient_cards_wrapper {
+    min-height: 60vh;
+    padding: 48px 16px;
+  }
+}
+
+/* --- Reduced motion: respect user preference --- */
+@media (prefers-reduced-motion: reduce) {
+  .gradient-section .gradient_cards_wrapper h1,
+  .gradient-section .subtitle,
+  .gradient-section .emotional-contract {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ========================================= */
+/* PRAYER HERO PREMIUM UPGRADE END           */
 /* ========================================= */
