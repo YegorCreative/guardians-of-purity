@@ -569,6 +569,19 @@
   max-width: 400px;
 }
 
+/* Calendar: prevent grid overflow on narrow phones */
+@media (max-width: 390px) {
+  .journey-calendar-grid {
+    gap: 4px;
+  }
+
+  .journey-calendar-cell {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}
+
 /* --- Praise Report Card Styles --- */
 
 .praise-report-card {
