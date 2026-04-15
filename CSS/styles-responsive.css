@@ -459,3 +459,11 @@
 }
 
 /* CROSS PAGE PREMIUM CONSISTENCY UPGRADE END */
+
+/* FINAL QA AND SHIP READY UPGRADE START */
+@media (max-width: 768px) {
+  .cta-title {
+    font-size: 1.5rem;
+  }
+}
+/* FINAL QA AND SHIP READY UPGRADE END */

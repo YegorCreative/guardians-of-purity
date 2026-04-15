@@ -138,6 +138,18 @@ try {
         behavior: effectiveReducedMotion ? "auto" : "smooth",
       });
     });
+
+    // FINAL QA AND SHIP READY UPGRADE START — keyboard support for scroll-to-top
+    scrollBtn.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: effectiveReducedMotion ? "auto" : "smooth",
+        });
+      }
+    });
+    // FINAL QA AND SHIP READY UPGRADE END
   }
   /* PREMIUM MOTION AND ATMOSPHERE UPGRADE END */
 } catch (error) {

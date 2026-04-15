@@ -1760,4 +1760,53 @@ body {
 
 /* ========================================= */
 /* TRUST AND AUTHORITY UPGRADE END           */
+
+/* ========================================= */
+/* FINAL QA AND SHIP READY UPGRADE START     */
+/* ========================================= */
+
+/* Scroll-to-top: missing hover state */
+#scrollToTopButton:hover {
+  transform: translateY(var(--hover-lift-sm));
+  box-shadow: var(--shadow-hover);
+}
+
+/* CTA input: focus-visible ring (only had :focus) */
+.cta-input:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.4);
+  outline-offset: 2px;
+}
+
+/* Topics link: missing focus-visible */
+.topics-link:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.4);
+  outline-offset: 2px;
+}
+
+/* Footer/social links: missing focus-visible */
+.footer-link:focus-visible,
+.social-link:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.4);
+  outline-offset: 2px;
+}
+
+/* Overflow-wrap safety for long titles */
+.hero-title,
+.section-title,
+.cta-title,
+.intro-heading,
+.start-here__title {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Thirty-one-day card: prevent overflow on narrow phones */
+.thirty_one_day_card_wrapper {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* ========================================= */
+/* FINAL QA AND SHIP READY UPGRADE END       */
+/* ========================================= */
 /* ========================================= */
