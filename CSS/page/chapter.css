@@ -18,7 +18,7 @@
 .reflection-timer-module {
   width: min(calc(100% - 20px), 1440px);
   max-width: 1440px;
-  margin: 0 auto 18px;
+  margin: 0 auto 30px; /* PRODUCTION HARDENING — merged from CONSISTENCY (was 18px) */
 }
 
 .reflection-timer-module h3 {
@@ -453,7 +453,7 @@
   padding: 52px 54px; /* PRODUCTION HARDENING — merged from CONTENT (was 46px 48px) */
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.48);
-  box-shadow: 0 20px 50px rgba(59, 130, 246, 0.16); /* PRODUCTION HARDENING — CONSISTENCY shadow overridden by this base — keeping base */
+  box-shadow: 0 16px 42px rgba(59, 130, 246, 0.11); /* PRODUCTION HARDENING — merged from CONSISTENCY */
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
@@ -620,7 +620,7 @@
 .chapterOne-bullets {
   list-style: none;
   margin-left: 0;
-  margin-bottom: 22px;
+  margin-bottom: 26px; /* PRODUCTION HARDENING — merged from CONSISTENCY (was 22px) */
 }
 
 .chapterOne-bullets li {
@@ -649,7 +649,7 @@
   padding: 28px 32px; /* PRODUCTION HARDENING — merged from CONTENT (was 22px) */
   border-left: 6px solid #3b82f6; /* PRODUCTION HARDENING — merged width from CONTENT (was 5px) */
   border-left-color: var(--color-scripture-border); /* PRODUCTION HARDENING — merged from TRUST */
-  margin: 0 0 20px;
+  margin: 0 0 24px; /* PRODUCTION HARDENING — merged from CONSISTENCY (was 20px) */
   border-radius: 25px;
   color: #1e293b;
   box-shadow: 0 14px 36px rgba(59, 130, 246, 0.18);
@@ -676,7 +676,7 @@
   border-left: 6px solid #a855f7; /* PRODUCTION HARDENING — merged width from CONTENT (was 5px) */
   border-left-color: rgba(200, 141, 86, 0.3); /* PRODUCTION HARDENING — merged from TRUST */
   font-style: italic;
-  margin-bottom: 22px;
+  margin-bottom: 24px; /* PRODUCTION HARDENING — merged from CONSISTENCY (was 22px) */
   border-radius: 25px;
   font-size: 1.12rem; /* PRODUCTION HARDENING — merged from CONTENT (was 1.15rem) */
   color: #1e293b;
@@ -764,7 +764,7 @@
   background: rgba(255, 255, 255, 0.14);
   padding: 44px 42px; /* PRODUCTION HARDENING — merged from CONTENT (was 36px) */
   border-radius: 25px;
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.11); /* PRODUCTION HARDENING — merged from CONSISTENCY */
   border: 1px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -1052,12 +1052,12 @@
 
 /* Chapter 1 - Journal Box */
 .chapterOne-journal-box {
-  margin-top: 22px;
+  margin-top: 24px; /* PRODUCTION HARDENING — merged from CONSISTENCY (was 22px) */
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.24);
   padding: 20px;
   border-radius: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 22px; /* PRODUCTION HARDENING — merged from CONSISTENCY (was 20px) */
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -1162,7 +1162,7 @@
 .chapterOne-export-text {
   font-size: 1.2rem;
   color: #374151;
-  margin-bottom: 24px;
+  margin-bottom: 28px; /* PRODUCTION HARDENING — merged from CONSISTENCY (was 24px) */
   line-height: 1.72; /* PRODUCTION HARDENING — merged from TRUST (was 1.65) */
   max-width: 600px; /* PRODUCTION HARDENING — merged from TRUST */
   margin-left: auto; /* PRODUCTION HARDENING — merged from TRUST */
@@ -2604,139 +2604,17 @@ body.chapterModalOpen {
 }
 
 /* ========================================= */
-/* CHAPTER SYSTEM CONSISTENCY UPGRADE START  */
+/* CHAPTER SYSTEM CONSISTENCY UPGRADE        */
+/* PRODUCTION HARDENING — Dead overrides removed; base merged above */
 /* ========================================= */
 
-/* ----------------------------------------- */
-/*  0. Gold Standard Shell Hook              */
-/*  .chapter-shell on body = gold standard   */
-/*  Currently all styling uses shared         */
-/*  chapterOne-* selectors for all chapters  */
-/* ----------------------------------------- */
 .chapter-shell {
   scroll-behavior: smooth;
 }
 
-/* ----------------------------------------- */
-/*  1. Section Rhythm & Visual Flow          */
-/*  Calm, even cadence between all sections  */
-/* ----------------------------------------- */
-.chapterOne-section,
-.chapterOne-parable-section,
-.chapterOne-teaching-section,
-.chapterOne-summary-section,
-.chapterOne-prayer-section,
-.chapterOne-export-section,
-.reflection-timer-module {
-  margin-bottom: 30px;
-}
-
-/* ----------------------------------------- */
-/*  2. Hero / Header Consistency             */
-/*  Controlled width, refined typography     */
-/* ----------------------------------------- */
-.chapterOne-title {
-  max-width: 780px;
-  margin-left: auto;
-  margin-right: auto;
-  letter-spacing: -0.01em;
-  text-wrap: balance;
-}
-
-.chapterOne-verse-container {
-  transition: box-shadow var(--transition-base);
-}
-
-.chapterOne-quote {
-  line-height: 1.65;
-  letter-spacing: 0.005em;
-}
-
-.chapterOne-overlay {
-  padding: 42px 38px;
-}
-
-/* ----------------------------------------- */
-/*  3. Prose System (65–75ch, 1.75–1.9 lh)  */
-/*  Stable reading column for all content    */
-/* ----------------------------------------- */
-.chapterOne-paragraph {
-  max-width: 68ch;
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-
-.chapterOne-teaching-text {
-  line-height: 1.88;
-  letter-spacing: 0.005em;
-  margin-bottom: 22px;
-}
-
-.chapterOne-teaching-title {
-  margin-bottom: 22px;
-  padding-bottom: 12px;
-}
-
-/* ----------------------------------------- */
-/*  4. Parable Block Consistency             */
-/*  Premium parable treatment                */
-/* ----------------------------------------- */
-.chapterOne-parable-container {
-  padding: 48px 50px;
-  box-shadow: 0 16px 42px rgba(59, 130, 246, 0.11);
-}
-
-.chapterOne-parable-title {
-  margin-bottom: 30px;
-}
-
-.chapterOne-moral-box {
-  padding: 28px 32px;
-  margin-top: 28px;
-  line-height: 1.75;
-}
-
-/* ----------------------------------------- */
-/*  5. Scripture / Verse Block Consistency    */
-/*  Unified emphasis for all verse blocks    */
-/* ----------------------------------------- */
-.chapterOne-scripture {
-  padding: 26px 30px;
-  line-height: 1.85;
-  margin-bottom: 24px;
-}
-
-.chapterOne-quote-box {
-  padding: 24px 28px;
-  line-height: 1.8;
-  margin-bottom: 24px;
-}
-
-.chapterOne-reflection-question {
-  padding: 24px 28px;
-  line-height: 1.65;
-}
-
-/* ----------------------------------------- */
-/*  6. Lists & Bullets Consistency           */
-/*  Even spacing across all list types       */
-/* ----------------------------------------- */
-.chapterOne-bullets {
-  margin-bottom: 26px;
-}
-
-.chapterOne-bullets li {
-  margin-bottom: 16px;
-  line-height: 1.78;
-}
-
-.chapterOne-summary-list {
-  margin-bottom: 28px;
-}
-
-.chapterOne-summary-list li {
-  margin-bottom: 18px;
-  line-height: 1.78;
+/* Reflection / Action block unique rules */
+.chapterOne-reflection-area {
+  margin-top: 24px;
 }
 
 .chapterOne-reflect-box ol,
@@ -2750,70 +2628,7 @@ body.chapterModalOpen {
   line-height: 1.75;
 }
 
-/* ----------------------------------------- */
-/*  7. Reflection / Action Block Consistency */
-/*  Shared treatment for interactive zones   */
-/* ----------------------------------------- */
-.chapterOne-reflection-area {
-  margin-top: 24px;
-}
-
-.chapterOne-journal-box {
-  margin-top: 24px;
-  margin-bottom: 22px;
-}
-
-.chapterOne-journal-box textarea {
-  transition: border-color var(--transition-base), box-shadow var(--transition-base);
-}
-
-/* ----------------------------------------- */
-/*  8. Summary Block Consistency             */
-/*  Calm, editorial summary zone             */
-/* ----------------------------------------- */
-.chapterOne-summary-container {
-  padding: 40px 38px;
-  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.11);
-}
-
-.chapterOne-summary-title {
-  margin-bottom: 28px;
-}
-
-/* ----------------------------------------- */
-/*  9. Prayer Block Consistency              */
-/*  Devotional, peaceful prayer zone         */
-/* ----------------------------------------- */
-.chapterOne-prayer-container {
-  padding: 44px 48px;
-}
-
-.chapterOne-prayer-text {
-  max-width: 52ch;
-  line-height: 2;
-}
-
-.chapterOne-prayer-title {
-  margin-bottom: 30px;
-}
-
-/* ----------------------------------------- */
-/*  10. Export / Completion Block             */
-/* ----------------------------------------- */
-.chapterOne-export-container {
-  padding: 38px 36px;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
-}
-
-.chapterOne-export-text {
-  line-height: 1.7;
-  margin-bottom: 28px;
-}
-
-/* ----------------------------------------- */
-/*  11. Premium Surface Polish               */
-/*  Softer shadows, refined hover states     */
-/* ----------------------------------------- */
+/* Premium surface polish — transitions & hover refinements */
 .chapterOne-teaching-container {
   transition: transform var(--transition-slow), box-shadow var(--transition-slow);
 }
@@ -2830,19 +2645,7 @@ body.chapterModalOpen {
   transition: box-shadow var(--transition-slow);
 }
 
-/* ----------------------------------------- */
-/*  12. CTA & Navigation Consistency         */
-/*  Smooth transitions, restrained lift      */
-/* ----------------------------------------- */
-.chapterOne-export-button {
-  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
-  letter-spacing: 0.6px;
-}
-
-.chapterOne-export-button:hover {
-  transform: translateY(-2px);
-}
-
+/* Chapter navigation */
 .chapter-nav {
   margin-top: 44px;
   margin-bottom: 34px;
@@ -2857,9 +2660,7 @@ body.chapterModalOpen {
   transform: translateY(-3px);
 }
 
-/* ----------------------------------------- */
-/*  13. Accessibility: Reduced Motion        */
-/* ----------------------------------------- */
+/* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   .chapterOne-teaching-container,
   .chapterOne-export-button,
@@ -2884,9 +2685,7 @@ body.chapterModalOpen {
   }
 }
 
-/* ----------------------------------------- */
-/*  14. Responsive: Tablet (≤768px)          */
-/* ----------------------------------------- */
+/* Responsive: Tablet */
 @media (max-width: 768px) {
   .chapterOne-section,
   .chapterOne-parable-section,
@@ -2931,9 +2730,7 @@ body.chapterModalOpen {
   }
 }
 
-/* ----------------------------------------- */
-/*  15. Responsive: Small Mobile (≤520px)    */
-/* ----------------------------------------- */
+/* Responsive: Small Mobile */
 @media (max-width: 520px) {
   .chapterOne-section,
   .chapterOne-parable-section,
@@ -2995,13 +2792,9 @@ body.chapterModalOpen {
 /* CHAPTER SYSTEM CONSISTENCY UPGRADE END    */
 
 /* ========================================= */
-/* PREMIUM MOTION AND ATMOSPHERE UPGRADE START */
+/* PREMIUM MOTION — PRODUCTION HARDENING     */
+/* Base overlay animation merged above       */
 /* ========================================= */
-
-/* Chapter hero overlay: Use premium easing for entrance */
-.chapterOne-overlay {
-  animation: fadeInUp 0.8s var(--ease-premium, cubic-bezier(0.25, 0.8, 0.25, 1)) both;
-}
 
 /* Chapter nav buttons: Premium hover transition */
 .chapter-nav-btn {
@@ -3009,13 +2802,11 @@ body.chapterModalOpen {
               box-shadow var(--transition-hover, 0.3s cubic-bezier(0.25, 0.8, 0.25, 1));
 }
 
-/* Reflection timer button: Premium transition */
 .reflection-timer-btn {
   transition: transform var(--transition-hover, 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)),
               box-shadow var(--transition-hover, 0.3s cubic-bezier(0.25, 0.8, 0.25, 1));
 }
 
-/* Reduced motion: Disable chapter hero fadeInUp */
 @media (prefers-reduced-motion: reduce) {
   .chapterOne-overlay {
     animation: none !important;
@@ -3034,37 +2825,27 @@ body.chapterModalOpen {
   }
 }
 
-/* ========================================= */
-/* PREMIUM MOTION AND ATMOSPHERE UPGRADE END */
-/* ========================================= */
+/* PREMIUM MOTION END */
 
 /* ========================================= */
-/* CONTENT PRESENTATION UPGRADE START        */
+/* CONTENT PRESENTATION UPGRADE              */
+/* PRODUCTION HARDENING — Dead overrides removed; base merged above */
 /* ========================================= */
 
-/* ─────────────────────────────────────────── */
-/*  1. Parable Presentation — Premium         */
-/*  Contemplative, elevated, editorial feel    */
-/* ─────────────────────────────────────────── */
-
-/* Parable section: Stronger breathing room */
+/* Section spacing (unique section-level padding) */
 .chapterOne-parable-section {
   padding: 48px 20px;
 }
 
-/* Parable container: Generous internal space, refined rhythm */
-.chapterOne-parable-container {
-  padding: 52px 54px;
+.chapterOne-prayer-section {
+  padding: 52px 20px;
 }
 
-/* Parable title: Better separation from body */
-.chapterOne-parable-title {
-  margin-bottom: 34px;
-  letter-spacing: -0.005em;
-  line-height: 1.15;
+.chapterOne-summary-section {
+  padding: 48px 20px;
 }
 
-/* Parable paragraphs: Comfortable reading column */
+/* Parable paragraph scoped override */
 .chapterOne-parable-body .chapterOne-paragraph {
   max-width: 62ch;
   line-height: 1.85;
@@ -3072,16 +2853,7 @@ body.chapterModalOpen {
   letter-spacing: 0.005em;
 }
 
-/* Moral box: Elevated emphasis as section conclusion */
-.chapterOne-moral-box {
-  margin-top: 32px;
-  padding: 30px 34px;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  border-left-width: 7px;
-  position: relative;
-}
-
+/* Moral box label */
 .chapterOne-moral-box strong {
   display: block;
   font-size: 0.8rem;
@@ -3095,21 +2867,7 @@ body.chapterModalOpen {
   background: none;
 }
 
-/* ─────────────────────────────────────────── */
-/*  2. Scripture / Verse Block — Sacred,       */
-/*  Readable, Quietly Distinct                 */
-/* ─────────────────────────────────────────── */
-
-/* In-section scripture blocks: Stronger framing */
-.chapterOne-scripture {
-  padding: 28px 32px;
-  line-height: 1.9;
-  font-size: 1.18rem;
-  border-left-width: 6px;
-  position: relative;
-}
-
-/* Verse reference: Better separation */
+/* Verse reference styling */
 .chapterOne-scripture .chapterOne-verseRef {
   margin-top: 16px;
   font-size: 0.92rem;
@@ -3118,11 +2876,6 @@ body.chapterModalOpen {
   text-transform: uppercase;
   color: #64748b;
   font-style: normal;
-}
-
-/* Hero verse container: Subtle refined feel */
-.chapterOne-verse-container {
-  padding: 28px 34px;
 }
 
 .chapterOne-verse-container .chapterOne-verse {
@@ -3138,48 +2891,12 @@ body.chapterModalOpen {
   text-transform: uppercase;
 }
 
-/* Quote boxes: Distinct from scripture via accent border */
-.chapterOne-quote-box {
-  padding: 26px 30px;
-  line-height: 1.85;
-  font-size: 1.12rem;
-  border-left-width: 6px;
-}
-
-/* ─────────────────────────────────────────── */
-/*  3. Prayer Zone — Immersive, Devotional     */
-/* ─────────────────────────────────────────── */
-
-/* Prayer section: Stronger breathing room */
-.chapterOne-prayer-section {
-  padding: 52px 20px;
-}
-
-/* Prayer container: More generous internal space */
-.chapterOne-prayer-container {
-  padding: 48px 50px;
-}
-
-/* Prayer title: Better separation from text */
+/* Prayer title line-height (unique) */
 .chapterOne-prayer-title {
-  margin-bottom: 32px;
   line-height: 1.15;
 }
 
-/* Prayer text: Comfortable devotional reading width */
-.chapterOne-prayer-text {
-  max-width: 56ch;
-  line-height: 2.05;
-  letter-spacing: 0.005em;
-  font-size: 1.14rem;
-}
-
-/* ─────────────────────────────────────────── */
-/*  4. Reflection / Action / Journal Zones     */
-/*  Calm pause in the reading experience       */
-/* ─────────────────────────────────────────── */
-
-/* Reflect box: Better internal hierarchy */
+/* Reflect & action boxes */
 .chapterOne-reflect-box h3 {
   margin-bottom: 18px;
   font-size: 1.3rem;
@@ -3192,7 +2909,6 @@ body.chapterModalOpen {
   font-size: 1.02rem;
 }
 
-/* Action box: Better spacing */
 .chapterOne-action-box h3 {
   margin-bottom: 16px;
   font-size: 1.3rem;
@@ -3204,96 +2920,24 @@ body.chapterModalOpen {
   max-width: 62ch;
 }
 
-/* Journal box: Calmer appearance */
 .chapterOne-journal-box label {
   margin-bottom: 10px;
   font-size: 1.05rem;
 }
 
-.chapterOne-journal-box textarea {
-  line-height: 1.7;
-}
-
-/* Reflection question: Stronger emphasis */
-.chapterOne-reflection-question {
-  font-size: 1.25rem;
-  line-height: 1.7;
-  padding: 26px 30px;
-  border-left-width: 7px;
-}
-
-/* ─────────────────────────────────────────── */
-/*  5. Summary / Takeaway — Scannable,         */
-/*  Distilled, Premium Ending Point            */
-/* ─────────────────────────────────────────── */
-
-/* Summary section: More breathing room */
-.chapterOne-summary-section {
-  padding: 48px 20px;
-}
-
-/* Summary container: Wider internal space */
-.chapterOne-summary-container {
-  padding: 44px 42px;
-}
-
-/* Summary title: Stronger anchor */
-.chapterOne-summary-title {
-  margin-bottom: 32px;
-  letter-spacing: -0.005em;
-}
-
-/* Summary list: Better scan rhythm */
-.chapterOne-summary-list {
-  margin-bottom: 32px;
-}
-
-.chapterOne-summary-list li {
-  margin-bottom: 20px;
-  line-height: 1.8;
-  font-size: 1.12rem;
-  padding-left: 42px;
-}
-
+/* Summary list icon */
 .chapterOne-summary-list li::before {
   font-size: 1.25rem;
   top: 1px;
 }
 
-/* ─────────────────────────────────────────── */
-/*  6. Teaching Sections — Consistent Prose    */
-/* ─────────────────────────────────────────── */
-
-/* Teaching title: More room below border */
-.chapterOne-teaching-title {
-  margin-bottom: 24px;
-  padding-bottom: 14px;
-  line-height: 1.25;
-}
-
-/* Teaching text: Comfortable reading */
-.chapterOne-teaching-text {
-  max-width: 68ch;
-  line-height: 1.9;
-  margin-bottom: 24px;
-}
-
-/* Bullets: Better scan rhythm */
-.chapterOne-bullets li {
-  margin-bottom: 18px;
-  line-height: 1.8;
-}
-
+/* Bullets strong color */
 .chapterOne-bullets li strong {
   color: #1e293b;
 }
 
-/* ─────────────────────────────────────────── */
-/*  7. Mobile Content Readability              */
-/* ─────────────────────────────────────────── */
-
+/* Mobile Content Readability */
 @media (max-width: 768px) {
-  /* Parable: Comfortable mobile padding */
   .chapterOne-parable-section {
     padding: 36px 16px;
   }
@@ -3312,7 +2956,6 @@ body.chapterModalOpen {
     font-size: 1.02rem;
   }
 
-  /* Scripture: Readable on narrow screens */
   .chapterOne-scripture {
     padding: 22px 24px;
     font-size: 1.1rem;
@@ -3324,7 +2967,6 @@ body.chapterModalOpen {
     font-size: 1.05rem;
   }
 
-  /* Prayer: Mobile breathing room */
   .chapterOne-prayer-section {
     padding: 40px 16px;
   }
@@ -3339,7 +2981,6 @@ body.chapterModalOpen {
     line-height: 1.9;
   }
 
-  /* Summary: Mobile-friendly list */
   .chapterOne-summary-section {
     padding: 36px 16px;
   }
@@ -3354,7 +2995,6 @@ body.chapterModalOpen {
     padding-left: 38px;
   }
 
-  /* Reflection: Not cramped */
   .chapterOne-reflect-box h3,
   .chapterOne-action-box h3 {
     font-size: 1.2rem;
@@ -3366,7 +3006,6 @@ body.chapterModalOpen {
     padding: 22px 24px;
   }
 
-  /* Teaching: Readable prose */
   .chapterOne-teaching-title {
     margin-bottom: 20px;
     padding-bottom: 12px;
@@ -3380,7 +3019,6 @@ body.chapterModalOpen {
 }
 
 @media (max-width: 520px) {
-  /* Parable: Small screen comfort */
   .chapterOne-parable-container {
     padding: 24px 18px;
   }
@@ -3400,7 +3038,6 @@ body.chapterModalOpen {
     margin-bottom: 6px;
   }
 
-  /* Scripture: Compact but clear */
   .chapterOne-scripture {
     padding: 20px 18px;
     font-size: 1.02rem;
@@ -3413,7 +3050,6 @@ body.chapterModalOpen {
     border-left-width: 5px;
   }
 
-  /* Prayer: Comfortable small screen */
   .chapterOne-prayer-container {
     padding: 28px 20px;
   }
@@ -3423,7 +3059,6 @@ body.chapterModalOpen {
     line-height: 1.85;
   }
 
-  /* Summary: Scannable */
   .chapterOne-summary-container {
     padding: 24px 18px;
   }
@@ -3434,17 +3069,12 @@ body.chapterModalOpen {
     padding-left: 36px;
   }
 
-  /* Reflection question */
   .chapterOne-reflection-question {
     font-size: 1.08rem;
     padding: 18px 18px;
     border-left-width: 5px;
   }
 }
-
-/* ─────────────────────────────────────────── */
-/*  8. Reduced Motion Compatibility            */
-/* ─────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
   .chapterOne-moral-box,
@@ -3593,146 +3223,16 @@ body.chapterModalOpen {
 /* ========================================= */
 
 /* ========================================= */
-/* TRUST AND AUTHORITY UPGRADE START         */
+/* TRUST AND AUTHORITY UPGRADE               */
+/* PRODUCTION HARDENING — Dead overrides removed; base merged above */
 /* ========================================= */
 
-/* ─────────────────────────────────────────── */
-/*  1. Prayer Block — Reverent, Caring Feel    */
-/* ─────────────────────────────────────────── */
-
-.chapterOne-prayer-container {
-  max-width: 680px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.chapterOne-prayer-title {
-  font-weight: 700;
-  letter-spacing: 0.01em;
-}
-
-.chapterOne-prayer-text {
-  line-height: 1.85;
-  font-size: 1.05rem;
-}
-
-/* ─────────────────────────────────────────── */
-/*  2. Summary Section — Established Clarity   */
-/* ─────────────────────────────────────────── */
-
-.chapterOne-summary-container {
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.chapterOne-summary-title {
-  font-weight: 700;
-  letter-spacing: -0.005em;
-}
-
-.chapterOne-summary-list {
-  line-height: 1.75;
-}
-
-/* ─────────────────────────────────────────── */
-/*  3. Teaching Section — Grounded Authority   */
-/* ─────────────────────────────────────────── */
-
-.chapterOne-teaching-title {
-  font-weight: 700;
-  letter-spacing: -0.005em;
-}
-
-.chapterOne-teaching-text {
-  line-height: 1.78;
-}
-
-/* ─────────────────────────────────────────── */
-/*  4. Reflection Areas — Safe Space Feel      */
-/* ─────────────────────────────────────────── */
-
+/* Reflect box trust border (unique) */
 .chapterOne-reflect-box {
   border: var(--trust-border);
 }
 
-.chapterOne-journal-box textarea {
-  line-height: 1.7;
-  font-size: 0.95rem;
-}
-
-/* ─────────────────────────────────────────── */
-/*  5. Scripture Blocks — Settled Reverence    */
-/* ─────────────────────────────────────────── */
-
-.chapterOne-scripture {
-  border-left-color: var(--color-scripture-border);
-}
-
-.chapterOne-quote-box {
-  border-left-color: rgba(200, 141, 86, 0.3);
-}
-
-/* ─────────────────────────────────────────── */
-/*  6. Export Section — Trustworthy Action      */
-/* ─────────────────────────────────────────── */
-
-.chapterOne-export-title {
-  font-weight: 700;
-  letter-spacing: -0.005em;
-}
-
-.chapterOne-export-text {
-  line-height: 1.72;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.chapterOne-export-button {
-  font-weight: 700;
-  letter-spacing: 0.03em;
-}
-
-/* ─────────────────────────────────────────── */
-/*  7. Parable — Intentional Storytelling      */
-/* ─────────────────────────────────────────── */
-
-.chapterOne-parable-title {
-  font-weight: 700;
-  letter-spacing: -0.005em;
-}
-
-.chapterOne-paragraph {
-  line-height: 1.78;
-}
-
-.chapterOne-moral-box {
-  box-shadow: var(--trust-shadow-grounded);
-  border: var(--trust-border);
-}
-
-/* ─────────────────────────────────────────── */
-/*  8. Chapter Hero — Calm Confidence          */
-/* ─────────────────────────────────────────── */
-
-.chapterOne-title {
-  letter-spacing: -0.01em;
-}
-
-.chapterOne-verse {
-  line-height: 1.75;
-  font-size: 1.08rem;
-}
-
-.chapterOne-quote {
-  line-height: 1.72;
-}
-
-/* ─────────────────────────────────────────── */
-/*  9. Mobile Trust Preservation               */
-/* ─────────────────────────────────────────── */
-
+/* Mobile Trust Preservation */
 @media (max-width: 768px) {
   .chapterOne-prayer-text {
     font-size: 1rem;
@@ -3746,10 +3246,6 @@ body.chapterModalOpen {
     max-width: 100%;
   }
 }
-
-/* ─────────────────────────────────────────── */
-/*  10. Reduced Motion                         */
-/* ─────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
   .chapterOne-moral-box,
