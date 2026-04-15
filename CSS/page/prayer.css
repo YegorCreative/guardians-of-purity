@@ -268,17 +268,23 @@
 
   /* Split section stacking on tablet/mobile */
   .prayer {
-    flex-direction: column;
+    flex-direction: column !important;
     min-height: auto;
     gap: 16px;
   }
 
   .prayer .split {
     min-height: auto;
+    width: 100%;
   }
 
   .prayer .split.left {
-    min-height: 200px;
+    min-height: 220px;
+    order: 1;
+  }
+
+  .prayer .split.right {
+    order: 2;
   }
 }
 
