@@ -846,7 +846,7 @@
   z-index: 2;
 }
 
-.gradient-section .gradient_cards_wrapper > * {
+.gradient-section .gradient_cards_wrapper > *:not(.hero-border-blue) {
   position: relative;
   z-index: 1;
 }
