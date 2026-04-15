@@ -55,18 +55,14 @@
 
 /* --- Section 2: "This is not about perfection" Restoration --- */
 .prayer {
-  display: flex !important;
-  flex-direction: row !important;
+  display: flex;
+  flex-direction: row;
   width: 100%;
   min-height: 300px;
   margin: 20px auto;
-  /* border-radius: 25px; REMOVED to allow split children to have their own borders */
-  /* overflow: hidden; REMOVED */
   max-width: 1440px;
   background: transparent;
-  /* Ensure gap is transparent */
   gap: 30px;
-  /* Separation between cards */
 }
 
 /* Split Layout */
@@ -266,8 +262,20 @@
     margin-bottom: 10px;
   }
 
+  /* Split section stacking on tablet/mobile */
+  .prayer {
+    flex-direction: column;
+    min-height: auto;
+    gap: 16px;
+  }
 
-  /* End Monthly prayer guide */
+  .prayer .split {
+    min-height: auto;
+  }
+
+  .prayer .split.left {
+    min-height: 200px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -280,28 +288,6 @@
   .purity_challenge_intro_block_title {
     font-size: 18px;
     padding: 10px 15px;
-  }
-
-  /* Mobile Stacking for Section 2 */
-  .prayer {
-    flex-direction: column;
-    min-height: auto;
-  }
-
-  .split {
-    width: 100%;
-    min-height: auto;
-  }
-
-  .split.left {
-    min-height: 200px;
-    width: 100%;
-  }
-
-  .split.right {
-    width: 100%;
-    padding: 30px 20px;
-    order: 2;
   }
 }
 
@@ -885,7 +871,7 @@
 /* --- Mobile: Prayer Hero --- */
 @media (max-width: 768px) {
   .gradient-section .gradient_cards_wrapper {
-    min-height: 50vh;
+    min-height: auto;
     padding: 48px 20px;
   }
 
@@ -904,9 +890,9 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 520px) {
   .gradient-section .gradient_cards_wrapper {
-    min-height: 45vh;
+    min-height: auto;
     padding: 40px 16px;
   }
 }
@@ -1022,7 +1008,7 @@ main > .prayer.separated_block {
   }
 
   .intro-paragraph {
-    margin-top: 44px;
+    margin-top: 58px;
     font-size: 1rem;
   }
 
@@ -1038,11 +1024,6 @@ main > .prayer.separated_block {
 @media (max-width: 400px) {
   .monthly_prayer_guide_wrapper {
     padding: 18px 8px;
-  }
-
-  .monthly_prayer_guide_week_item {
-    font-size: 0.9rem;
-    padding: 12px 8px;
   }
 }
 
@@ -1259,6 +1240,17 @@ main > .prayer.separated_block {
 
   .prayer-amen {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .monthly_prayer_guide_day_item {
+    font-size: 0.75rem;
+    padding: 7px 8px;
+  }
+
+  .thirty_one_day_card_content {
+    min-height: auto;
   }
 }
 
