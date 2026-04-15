@@ -1,12 +1,14 @@
 /* Resources Page Styles */
 
-/* Hero Section */
+/* Hero Section — PRODUCTION HARDENING: merged from Wayfinding + Trust */
 .resources-hero {
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(20, 184, 166, 0.95)),
     url('../img/heroes20.webp');
   background-size: cover;
   background-position: center;
   padding: 80px 20px;
+  padding-top: 68px;
+  padding-bottom: 60px;
   text-align: center;
   color: var(--color-white);
   min-height: 400px;
@@ -22,15 +24,20 @@
 
 .resources-hero-title {
   font-size: 48px;
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
   line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
 .resources-hero-subtitle {
-  font-size: 20px;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.65;
   opacity: 0.95;
+  margin-bottom: 8px;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Resource Categories Section */
@@ -95,6 +102,9 @@
   background-color: var(--color-white);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: var(--radius-xl, 25px);
+  border: var(--trust-border);
+  box-shadow: var(--trust-shadow-grounded);
 }
 
 .featured-card:hover {
@@ -124,10 +134,12 @@
 }
 
 .featured-title {
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: var(--color-text-dark);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  line-height: 1.35;
+  letter-spacing: -0.005em;
 }
 
 .featured-description {
@@ -139,11 +151,12 @@
 
 .featured-link {
   display: inline-block;
-  color: #3b82f6;
-  font-weight: 600;
-  font-size: 15px;
+  color: var(--color-blue-500);
+  font-weight: 700;
+  font-size: 0.92rem;
   text-decoration: none;
   transition: color 0.2s ease;
+  letter-spacing: 0.02em;
 }
 
 .featured-link:hover {
@@ -151,13 +164,13 @@
   text-decoration: underline;
 }
 
-/* Emergency Support Section */
+/* Emergency Support Section — PRODUCTION HARDENING: merged from Content + Trust */
 .emergency-support {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.85), rgba(168, 85, 247, 0.85), rgba(236, 72, 153, 0.85));
+  background: linear-gradient(135deg, rgba(45, 90, 142, 0.92), rgba(59, 130, 246, 0.88), rgba(45, 90, 142, 0.92));
   backdrop-filter: blur(10px);
-  padding: 60px 20px;
+  padding: 68px 28px;
   color: var(--color-white);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.15);
 }
 
 .emergency-title {
@@ -173,13 +186,13 @@
 }
 
 .emergency-card {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  padding: 30px;
+  padding: 36px 28px;
   border-radius: 25px;
   text-align: center;
   transition: transform 0.3s ease, background-color 0.3s ease;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .emergency-card:hover {
@@ -193,16 +206,19 @@
 }
 
 .emergency-card h3 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
   color: var(--color-white);
+  line-height: 1.35;
+  letter-spacing: 0.01em;
 }
 
 .emergency-card p {
-  font-size: 14px;
-  margin-bottom: 20px;
-  opacity: 0.9;
+  font-size: 0.88rem;
+  margin-bottom: 24px;
+  opacity: 0.82;
+  line-height: 1.6;
 }
 
 .emergency-button {
@@ -233,9 +249,11 @@
 .tool-card {
   background-color: var(--color-white);
   margin-bottom: 25px;
-  border: 2px solid #e2e8f0;
+  border: var(--trust-border);
   overflow: hidden;
   transition: all 0.3s ease;
+  border-radius: var(--radius-xl, 25px);
+  box-shadow: var(--trust-shadow-grounded);
 }
 
 .tool-card:hover {
@@ -300,11 +318,13 @@
 
 .download-card {
   background-color: var(--color-white);
-  padding: 30px;
+  padding: 34px 28px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 2px solid #e2e8f0;
+  border: var(--trust-border);
   cursor: pointer;
+  border-radius: var(--radius-xl, 25px);
+  box-shadow: var(--trust-shadow-grounded);
 }
 
 .download-card:hover {
@@ -526,21 +546,7 @@
     padding: 10px 20px;
   }
 }
-  }
-
-  .resources-hero-subtitle {
-    font-size: 15px;
-  }
-
-  .featured-title {
-    font-size: 20px;
-  }
-
-  .emergency-icon,
-  .download-icon {
-    font-size: 40px;
-  }
-}
+/* PRODUCTION HARDENING — removed orphan block (stray brace + dead rules outside media query) */
 
 /* Modal Styles */
 .modal {
@@ -1751,7 +1757,7 @@
   background: linear-gradient(135deg, #ffffff, #f8fafc);
   border: 2px solid #e2e8f0;
   border-radius: 25px;
-  padding: 25px;
+  padding: 28px; /* PRODUCTION HARDENING — merged from CONTENT (was 25px) */
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -1759,6 +1765,7 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-sm); /* PRODUCTION HARDENING — merged from PREMIUM */
 }
 
 .chapter-card::before {
@@ -1811,9 +1818,9 @@
 }
 
 .chapter-preview {
-  font-size: 13px;
+  font-size: 0.88rem; /* PRODUCTION HARDENING — merged from CONTENT (was 13px) */
   color: #64748b;
-  line-height: 1.5;
+  line-height: 1.6; /* PRODUCTION HARDENING — merged from CONTENT (was 1.5) */
   position: relative;
   z-index: 1;
   margin: 0;
@@ -1856,8 +1863,8 @@
 /* Chapter Section Dividers */
 .chapter-section-divider {
   grid-column: 1 / -1;
-  margin: 50px 0 40px;
-  padding: 30px;
+  margin: 52px 0 42px; /* PRODUCTION HARDENING — merged from CONTENT (was 50px 0 40px) */
+  padding: 34px 32px; /* PRODUCTION HARDENING — merged from CONTENT (was 30px) */
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1));
   border-radius: 25px;
   border: 2px solid rgba(59, 130, 246, 0.3);
@@ -1880,13 +1887,15 @@
 .chapter-section-title {
   font-size: 28px;
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 10px; /* PRODUCTION HARDENING — merged from CONTENT (was 8px) */
   margin-top: 8px;
   background: linear-gradient(135deg, #3b82f6, #a855f7, #ec4899);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   letter-spacing: 0.5px;
+  line-height: 1.3; /* PRODUCTION HARDENING — merged from CONTENT */
+  padding-top: 14px; /* PRODUCTION HARDENING — merged from WAYFINDING */
 }
 
 .chapter-section-subtitle {
@@ -1995,11 +2004,7 @@
   }
 }
 
-/* PREMIUM UPGRADE START — Chapter Card & Journey Polish */
-
-.chapter-card {
-  box-shadow: var(--shadow-sm);
-}
+/* PREMIUM UPGRADE — PRODUCTION HARDENING: base box-shadow & line-height merged; keeping unique states */
 
 .chapter-card:hover {
   box-shadow: 0 12px 36px rgba(59, 130, 246, 0.22);
@@ -2010,38 +2015,24 @@
   outline-offset: 2px;
 }
 
-.chapter-preview {
-  line-height: 1.55;
-}
-
 /* PREMIUM UPGRADE END */
 
 /* ========================================= */
 /* CONTENT PRESENTATION UPGRADE START        */
 /* ========================================= */
 
+/* PRODUCTION HARDENING — Dead overrides removed; base declarations merged above */
+
 /* ─────────────────────────────────────────── */
-/*  1. Featured Resources — Premium Cards      */
+/*  1. Featured Resources — Unique spacing     */
 /* ─────────────────────────────────────────── */
 
 .featured-resources {
   padding: 64px 20px;
 }
 
-.featured-card {
-  border-radius: var(--radius-xl, 25px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
 .featured-content {
   padding: 28px 28px 30px;
-}
-
-.featured-title {
-  font-size: 1.25rem;
-  line-height: 1.35;
-  margin-bottom: 14px;
-  letter-spacing: -0.005em;
 }
 
 .featured-description {
@@ -2050,46 +2041,12 @@
   font-size: 0.95rem;
 }
 
-.featured-link {
-  font-size: 0.92rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-
 /* ─────────────────────────────────────────── */
-/*  2. Emergency Support — Emphatic Callouts   */
-/* ─────────────────────────────────────────── */
-
-.emergency-support {
-  padding: 64px 20px;
-}
-
-.emergency-card {
-  padding: 34px 28px;
-}
-
-.emergency-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 12px;
-  line-height: 1.35;
-}
-
-.emergency-card p {
-  font-size: 0.92rem;
-  line-height: 1.7;
-  margin-bottom: 22px;
-}
-
-/* ─────────────────────────────────────────── */
-/*  3. Downloadable Resources — Tool Cards     */
+/*  2. Downloadable Resources — Tool Cards     */
 /* ─────────────────────────────────────────── */
 
 .downloadable-resources {
   padding: 64px 20px;
-}
-
-.tool-card {
-  border-radius: var(--radius-xl, 25px);
 }
 
 .tool-header {
@@ -2104,19 +2061,13 @@
   padding: 28px 32px 32px;
 }
 
-/* Download cards: Better emphasis */
-.download-card {
-  border-radius: var(--radius-xl, 25px);
-  padding: 34px 28px;
-}
-
 .download-description {
   line-height: 1.65;
   margin-bottom: 22px;
 }
 
 /* ─────────────────────────────────────────── */
-/*  4. Recommended Reading — Clear Hierarchy   */
+/*  3. Recommended Reading — Clear Hierarchy   */
 /* ─────────────────────────────────────────── */
 
 .recommended-reading {
@@ -2138,7 +2089,7 @@
 }
 
 /* ─────────────────────────────────────────── */
-/*  5. Chapter Card Grid — Readable Previews   */
+/*  4. Chapter Card Grid — Unique rules only   */
 /* ─────────────────────────────────────────── */
 
 .chapters-section {
@@ -2150,29 +2101,9 @@
   line-height: 1.7;
 }
 
-.chapter-card {
-  padding: 28px;
-}
-
 .chapter-title {
   line-height: 1.35;
   margin-bottom: 12px;
-}
-
-.chapter-preview {
-  line-height: 1.6;
-  font-size: 0.88rem;
-}
-
-/* Section dividers: Clearer part breaks */
-.chapter-section-divider {
-  padding: 34px 32px;
-  margin: 52px 0 42px;
-}
-
-.chapter-section-title {
-  margin-bottom: 10px;
-  line-height: 1.3;
 }
 
 .chapter-section-subtitle {
@@ -2317,29 +2248,15 @@
 /* ========================================= */
 
 /* ========================================= */
-/* WAYFINDING AND DISCOVERY UPGRADE START    */
+/* WAYFINDING AND DISCOVERY UPGRADE          */
+/* PRODUCTION HARDENING — Dead overrides removed */
 /* ========================================= */
-
-/* ─────────────────────────────────────────── */
-/*  1. Resources Hero — Page Purpose Clarity   */
-/* ─────────────────────────────────────────── */
-
-.resources-hero {
-  padding-bottom: 56px;
-}
-
-.resources-hero-title {
-  margin-bottom: 16px;
-}
 
 .resources-hero-subtitle {
   margin-bottom: 8px;
 }
 
-/* ─────────────────────────────────────────── */
-/*  2. Section Titles — Stronger Wayfinding    */
-/* ─────────────────────────────────────────── */
-
+/* Section Titles — Stronger Wayfinding */
 .chapters-section .section-title,
 .featured-resources .section-title,
 .emergency-support .section-title,
@@ -2349,15 +2266,7 @@
   line-height: 1.25;
 }
 
-/* ─────────────────────────────────────────── */
-/*  3. Journey Chapter Grid — Part Dividers    */
-/*     Clearer section breaks for orientation  */
-/* ─────────────────────────────────────────── */
-
-.chapter-section-divider {
-  position: relative;
-}
-
+/* Journey Chapter Grid — Decorative divider bar */
 .chapter-section-divider::before {
   content: "";
   position: absolute;
@@ -2371,14 +2280,7 @@
   opacity: 0.6;
 }
 
-.chapter-section-title {
-  padding-top: 14px;
-}
-
-/* ─────────────────────────────────────────── */
-/*  4. Chapter Cards — Active/Current Hint     */
-/* ─────────────────────────────────────────── */
-
+/* Chapter Cards — Active/Current Hint */
 .chapter-card[aria-current="true"] {
   border: 2px solid rgba(59, 130, 246, 0.35);
   box-shadow: 0 4px 16px rgba(59, 130, 246, 0.12);
@@ -2389,18 +2291,12 @@
   color: #fff;
 }
 
-/* ─────────────────────────────────────────── */
-/*  5. Featured Card — First-Card Emphasis     */
-/* ─────────────────────────────────────────── */
-
+/* Featured Card — First-Card Emphasis */
 .featured-card:first-child {
   border: 1px solid rgba(59, 130, 246, 0.15);
 }
 
-/* ─────────────────────────────────────────── */
-/*  6. Mobile Wayfinding                       */
-/* ─────────────────────────────────────────── */
-
+/* Mobile Wayfinding */
 @media (max-width: 768px) {
   .resources-hero {
     padding-bottom: 40px;
@@ -2422,25 +2318,11 @@
 /* ========================================= */
 
 /* ========================================= */
-/* TRUST AND AUTHORITY UPGRADE START         */
+/* TRUST AND AUTHORITY UPGRADE               */
+/* PRODUCTION HARDENING — Dead overrides removed */
 /* ========================================= */
 
-/* ─────────────────────────────────────────── */
-/*  1. Emergency Section — Steady Authority    */
-/*     Serious but calm, not alarmist          */
-/* ─────────────────────────────────────────── */
-
-.emergency-support {
-  background: linear-gradient(
-    135deg,
-    rgba(45, 90, 142, 0.92),
-    rgba(59, 130, 246, 0.88),
-    rgba(45, 90, 142, 0.92)
-  );
-  border: 2px solid rgba(255, 255, 255, 0.15);
-  padding: 68px 28px;
-}
-
+/* Emergency — Unique rules only (base merged above) */
 .emergency-title {
   font-size: 1.6rem;
   letter-spacing: -0.005em;
@@ -2452,30 +2334,10 @@
   gap: 22px;
 }
 
-.emergency-card {
-  padding: 36px 28px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
 .emergency-icon {
   font-size: 36px;
   margin-bottom: 18px;
   opacity: 0.9;
-}
-
-.emergency-card h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  margin-bottom: 8px;
-}
-
-.emergency-card p {
-  font-size: 0.88rem;
-  line-height: 1.6;
-  opacity: 0.82;
-  margin-bottom: 24px;
 }
 
 .emergency-button {
@@ -2486,63 +2348,7 @@
   border-radius: var(--radius-pill);
 }
 
-/* ─────────────────────────────────────────── */
-/*  2. Resources Hero — Trusted Authority      */
-/* ─────────────────────────────────────────── */
-
-.resources-hero {
-  padding-top: 68px;
-  padding-bottom: 60px;
-}
-
-.resources-hero-title {
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
-.resources-hero-subtitle {
-  font-size: 1.1rem;
-  line-height: 1.65;
-  max-width: 680px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ─────────────────────────────────────────── */
-/*  3. Featured Cards — Grounded Confidence    */
-/* ─────────────────────────────────────────── */
-
-.featured-card {
-  box-shadow: var(--trust-shadow-grounded);
-  border: var(--trust-border);
-}
-
-.featured-title {
-  font-weight: 700;
-}
-
-.featured-link {
-  letter-spacing: 0.02em;
-}
-
-/* ─────────────────────────────────────────── */
-/*  4. Interactive Tools — Steady Presentation */
-/* ─────────────────────────────────────────── */
-
-.tool-card {
-  border: var(--trust-border);
-  box-shadow: var(--trust-shadow-grounded);
-}
-
-.download-card {
-  border: var(--trust-border);
-  box-shadow: var(--trust-shadow-grounded);
-}
-
-/* ─────────────────────────────────────────── */
-/*  5. Mobile Trust — Emergency Still Clear    */
-/* ─────────────────────────────────────────── */
-
+/* Mobile Trust */
 @media (max-width: 768px) {
   .emergency-support {
     padding: 48px 20px;

@@ -1,13 +1,16 @@
-/* Buttons */
+/* Buttons — PRODUCTION HARDENING: merged from Premium + Trust */
 .main_button {
   font-family: var(--font-accent);
   background-color: var(--color-primary-blue);
   color: var(--color-white);
-  padding: 10px 20px;
-  border-radius: 25px;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
   text-decoration: none;
-  font-size: 0.95rem;
-  transition: background-color 0.3s;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: all var(--transition-slow);
+  box-shadow: var(--shadow-sm);
   border-style: none;
   text-align: center;
   cursor: pointer;
@@ -16,9 +19,12 @@
 
 .main_button:hover {
   background-color: var(--color-primary-blue-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 /* Scroll To Top Button */
+/* PRODUCTION HARDENING: merged from Premium + Motion */
 #scrollToTopButton {
   position: fixed;
   bottom: 30px;
@@ -30,10 +36,14 @@
       var(--color-gradient-blue-end));
   color: var(--color-white);
   border: none;
-  border-radius: 25px;
+  border-radius: var(--radius-md);
   cursor: pointer;
   display: none;
   z-index: 100;
+  transition: transform var(--transition-hover), box-shadow var(--transition-hover), opacity 0.3s ease;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Hero Section */
@@ -81,10 +91,16 @@
   font-size: 1.2rem;
   margin: 0 0 30px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: -0.005em;
 }
 
 .hero-helping {
-  margin-bottom: 35px;
+  margin-bottom: 28px;
+  line-height: 1.75;
+  font-size: 1.02rem;
+  max-width: 640px;
 }
 
 .split-image {
@@ -103,19 +119,22 @@
   width: 100%;
   background: var(--color-placeholder-bg);
   border: 2px dashed var(--color-placeholder-border);
-  border-radius: 25px;
+  border-radius: var(--radius-lg);
   color: var(--color-placeholder-text);
   font-size: 1rem;
   padding: 20px;
   text-align: center;
   height: 100%;
   min-height: 220px;
+  transition: all var(--transition-base);
 }
 
 /* About Mission */
 .about-mission {
   text-align: center;
   padding: 15px 20px;
+  padding-top: 56px;
+  padding-bottom: 56px;
   background-color: var(--color-white);
 }
 
@@ -125,54 +144,66 @@
   color: var(--color-text-dark-neutral);
   margin-bottom: 20px;
   text-align: center;
+  font-weight: 700;
+  line-height: var(--leading-tight);
 }
 
 .mission-text {
-  font-size: 1.1rem;
+  font-size: 1.02rem;
   color: var(--color-text-dark);
-  max-width: 600px;
+  max-width: 620px;
   margin: 0 0 30px;
+  line-height: 1.78;
 }
 
 /* Pillars */
 .pillars {
   padding: 15px 20px;
+  padding-top: 56px;
+  padding-bottom: 56px;
   background-color: var(--color-bg-light);
   text-align: center;
 }
 
 .pillar-card {
   background-color: var(--color-white);
-  padding: 25px 20px;
+  padding: 28px 24px;
   border-radius: 25px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-slow);
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .pillar-card .pillar-title {
   font-family: var(--font-heading);
   font-size: 1.4rem;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   color: var(--color-text-dark-neutral);
+  line-height: 1.3;
 }
 
 .pillar-card .pillar-text {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--color-text-dark);
-  margin-bottom: 10px;
+  margin-bottom: 14px;
+  line-height: 1.65;
 }
 
 /* Testimonials */
 .testimonials {
   padding: 15px 20px;
+  padding-top: 56px;
+  padding-bottom: 56px;
   background-color: var(--color-white);
   text-align: center;
 }
 
 .testimonial-carousel {
-  max-width: 800px;
+  max-width: 720px;
   margin: 0 auto;
   position: relative;
   height: auto;
+  padding: var(--space-lg) var(--space-md);
 }
 
 .testimonial {
@@ -186,9 +217,11 @@
 
 .testimonial-text {
   font-family: var(--font-serif);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--color-text-dark);
   font-style: italic;
+  line-height: 1.82;
+  letter-spacing: 0.005em;
 }
 
 .testimonial-btn {
@@ -213,15 +246,18 @@
 
 .resource-card {
   background-color: var(--color-white);
-  border-radius: 25px;
+  border-radius: var(--radius-xl);
   overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
   text-decoration: none;
-  transition: all 0.3s;
+  transition: all var(--transition-slow);
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .resource-card:hover {
-  scale: 1.02;
+  scale: none;
+  transform: translateY(var(--hover-lift-md));
+  box-shadow: var(--shadow-hover);
 }
 
 .resource-img {
@@ -234,13 +270,15 @@
   font-family: var(--font-heading);
   font-size: 1.3rem;
   color: var(--color-text-dark-neutral);
-  margin: 10px;
+  margin: 14px 14px 8px;
+  line-height: 1.35;
 }
 
 .resource-text {
   font-size: 1rem;
   color: var(--color-text-dark);
-  margin: 0 10px 20px;
+  margin: 0 14px 22px;
+  line-height: 1.65;
 }
 
 /* Topics */
@@ -251,8 +289,11 @@
 
 .topics-card {
   background-color: var(--color-bg-light);
-  border-radius: 25px;
+  border-radius: var(--radius-xl);
   overflow: hidden;
+  transition: all var(--transition-slow);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .topics-img {
@@ -265,31 +306,38 @@
   font-family: var(--font-heading);
   font-size: 1.3rem;
   color: var(--color-text-dark-neutral);
-  margin: 10px;
+  margin: 14px 14px 8px;
+  line-height: 1.35;
 }
 
 .topics-text {
   font-size: 1rem;
   color: var(--color-text-dark);
-  margin: 0 10px 10px;
+  margin: 0 14px 12px;
+  line-height: 1.65;
 }
 
 .topics-link {
   display: block;
   color: var(--color-primary-blue);
   text-decoration: none;
-  margin: 0 10px 20px;
+  margin: 0 14px 22px;
+  font-weight: 600;
+  font-size: 0.92rem;
 }
 
 .topics-link:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  opacity: 0.8;
 }
 
 /* CTA */
 .cta {
   background-color: var(--color-text-dark-neutral);
   text-align: center;
-  padding: 15px 20px;
+  padding: 40px 20px;
+  padding-top: 48px;
+  padding-bottom: 48px;
   color: var(--color-white);
 }
 
@@ -297,6 +345,9 @@
   font-family: var(--font-heading);
   font-size: 2rem;
   margin: 0 0 20px;
+  margin-bottom: 22px;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
 }
 
 .cta-form {
@@ -312,10 +363,11 @@
 .cta-input {
   padding: 10px;
   font-size: 1rem;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 25px;
   width: 250px;
   font-family: "Open Sans", sans-serif;
+  transition: border-color var(--transition-hover), box-shadow var(--transition-hover);
 }
 
 /* Intro Section */
@@ -340,42 +392,53 @@
 .intro-heading {
   font-family: var(--font-serif);
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 
 .scripture-quote {
-  background-color: var(--color-white);
-  border-left: 6px solid var(--color-scripture-border);
-  padding: 20px;
+  background-color: var(--trust-bg-warm);
+  border-left: 5px solid var(--color-scripture-border);
+  padding: 28px 28px 28px 32px;
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: var(--color-scripture-text);
   max-width: 700px;
   margin: 0 auto 40px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--trust-shadow-grounded);
+  border-radius: var(--radius-xl);
+  transition: box-shadow var(--transition-hover), transform var(--transition-hover);
+  line-height: 1.85;
 }
 
 .scripture-quote span {
   display: block;
-  margin-top: 10px;
+  margin-top: 14px;
   font-weight: bold;
   font-style: normal;
+  font-size: 0.88rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .call-to-commitment {
   background-color: var(--color-commitment-bg);
   color: var(--color-white);
-  padding: 30px 20px;
+  padding: 36px 30px;
   max-width: 800px;
   border-radius: 25px;
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  transition: box-shadow var(--transition-hover), transform var(--transition-hover);
+  box-shadow: var(--trust-shadow-elevated);
 }
 
 .call-to-commitment strong {
   display: block;
-  font-size: 1.4rem;
-  margin-bottom: 12px;
+  font-size: 1.35rem;
+  margin-bottom: 14px;
+  line-height: 1.3;
 }
 
 /* Parallax */
@@ -844,33 +907,10 @@
   }
 }
 
-/* PREMIUM UPGRADE START — Card, Button & Section Polish */
-
-/* ─── Buttons: Premium Feel ─── */
-.main_button {
-  padding: 14px 28px;
-  border-radius: var(--radius-md);
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  transition: all var(--transition-slow);
-  box-shadow: var(--shadow-sm);
-}
-
-.main_button:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
+/* PREMIUM UPGRADE — PRODUCTION HARDENING: Dead duplicates removed, unique rules retained */
 
 .main_button:active {
   transform: translateY(0);
-}
-
-/* ─── Pillar Cards: Enhanced ─── */
-.pillar-card {
-  transition: all var(--transition-slow);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  box-shadow: var(--shadow-sm);
 }
 
 .pillar-card:hover {
@@ -879,106 +919,18 @@
   border-color: rgba(59, 130, 246, 0.12);
 }
 
-/* ─── Resource Cards: Depth ─── */
-.resource-card {
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  transition: all var(--transition-slow);
-}
-
-.resource-card:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: var(--shadow-xl);
-}
-
-/* ─── Topics Cards ─── */
-.topics-card {
-  border-radius: var(--radius-lg);
-  transition: all var(--transition-slow);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(0, 0, 0, 0.03);
-}
-
-.topics-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-
-/* ─── Testimonial Section ─── */
-.testimonial-carousel {
-  padding: var(--space-lg) var(--space-md);
-}
-
-.testimonial-text {
-  line-height: var(--leading-relaxed);
-}
-
-/* ─── Scripture Quote Enhancement ─── */
-.scripture-quote {
-  border-radius: var(--radius-md);
-  transition: box-shadow var(--transition-base);
-}
-
-.scripture-quote:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* ─── CTA Section ─── */
-.cta-title {
-  letter-spacing: -0.01em;
-}
-
-.cta-input {
-  transition: all var(--transition-base);
-  border: 2px solid transparent;
-}
-
 .cta-input:focus {
   outline: none;
   border-color: var(--color-primary-blue-hover);
   box-shadow: 0 0 0 3px rgba(58, 120, 194, 0.15);
 }
 
-/* ─── Intro Section Enhancement ─── */
-.intro-heading {
-  letter-spacing: -0.02em;
-}
-
-.call-to-commitment {
-  transition: all var(--transition-slow);
-}
-
-.call-to-commitment:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-/* ─── Image Placeholder Polish ─── */
-.image-placeholder {
-  border-radius: var(--radius-lg);
-  transition: all var(--transition-base);
-}
-
-/* ─── Section Visual Separation ─── */
 .about-mission,
 .pillars,
 .testimonials,
 .resources,
 .topics {
   border-radius: var(--radius-xl);
-}
-
-/* ─── Scroll to Top Button ─── */
-#scrollToTopButton {
-  border-radius: var(--radius-md);
-  transition: all var(--transition-base);
-  box-shadow: var(--shadow-lg);
-}
-
-#scrollToTopButton:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-xl);
 }
 
 /* PREMIUM UPGRADE END */
@@ -1263,19 +1215,12 @@ body {
 }
 
 /* HOMEPAGE JOURNEY UPGRADE END */
-}
 
 /* ========================================= */
-/* CROSS PAGE PREMIUM CONSISTENCY UPGRADE START */
+/* CROSS PAGE PREMIUM CONSISTENCY — PRODUCTION HARDENING: Dead duplicates removed */
 /* ========================================= */
 
-/* ─────────────────────────────────────────── */
-/*  1. Shared Component Foundations            */
-/*  Normalize radius, shadow, transition       */
-/*  tokens across all page components          */
-/* ─────────────────────────────────────────── */
-
-/* Cards: Unified radius & shadow baseline */
+/* Cards: Unified radius */
 .pillar-card,
 .resource-card,
 .topics-card,
@@ -1284,31 +1229,11 @@ body {
   border-radius: var(--radius-xl);
 }
 
-/* Panels & containers: Unified radius */
 .scripture-quote,
 .call-to-commitment,
 .image-placeholder {
   border-radius: var(--radius-xl);
 }
-
-/* All interactive cards: Unified transition timing */
-.pillar-card,
-.resource-card,
-.topics-card,
-.start-card,
-.main_button,
-.hero-btn,
-.pillar-btn,
-.cta-btn,
-.submenu-button,
-#scrollToTopButton {
-  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
-}
-
-/* ─────────────────────────────────────────── */
-/*  2. Button & Link Hierarchy                 */
-/*  Consistent interaction across all buttons  */
-/* ─────────────────────────────────────────── */
 
 /* Primary action buttons: Unified feel */
 .main_button,
@@ -1339,25 +1264,7 @@ body {
   outline-offset: 3px;
 }
 
-/* Text links: Consistent underline-on-hover */
-.topics-link,
-.footer-link,
-.social-link {
-  text-decoration: none;
-  transition: opacity var(--transition-base), color var(--transition-base);
-}
-
-.topics-link:hover {
-  text-decoration: none;
-  opacity: 0.8;
-}
-
-/* ─────────────────────────────────────────── */
-/*  3. Section Container System                */
-/*  Consistent max-width, padding, spacing     */
-/* ─────────────────────────────────────────── */
-
-/* All major content sections: Consistent vertical rhythm */
+/* All major content sections: Consistent horizontal padding */
 .about-mission,
 .pillars,
 .testimonials,
@@ -1369,28 +1276,6 @@ body {
   padding-right: var(--space-md);
 }
 
-/* ─────────────────────────────────────────── */
-/*  4. Card Hover Consistency                  */
-/*  Subtle, uniform lift across all cards      */
-/* ─────────────────────────────────────────── */
-
-/* Normalize hover lift to -4px across all card families */
-.pillar-card:hover,
-.topics-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-
-.resource-card:hover {
-  transform: translateY(-4px) scale(1.005);
-  box-shadow: var(--shadow-lg);
-}
-
-/* ─────────────────────────────────────────── */
-/*  5. Page Hero Rhythm                        */
-/*  Consistent spacing from hero into content  */
-/* ─────────────────────────────────────────── */
-
 /* Standard page heroes: Minimum breathing room */
 .hero,
 .resources-hero,
@@ -1398,7 +1283,6 @@ body {
   margin-bottom: 0;
 }
 
-/* Consistent hero title max-width */
 .resources-hero-content,
 .hero-content {
   max-width: var(--content-wide);
@@ -1416,75 +1300,13 @@ body {
   margin-right: auto;
 }
 
-/* ─────────────────────────────────────────── */
-/*  6. Scripture / Quote Block Consistency      */
-/*  Same treatment wherever verses appear      */
-/* ─────────────────────────────────────────── */
-
-.scripture-quote {
-  border-left-width: 5px;
-  line-height: var(--leading-relaxed);
-  padding: var(--space-md) var(--space-md);
-  box-shadow: var(--shadow-sm);
-}
-
-.call-to-commitment {
-  box-shadow: var(--shadow-md);
-}
-
-/* ─────────────────────────────────────────── */
-/*  7. Section Title Consistency               */
-/*  Uniform heading treatment across pages     */
-/* ─────────────────────────────────────────── */
-
-.section-title {
-  font-weight: 700;
-  line-height: var(--leading-tight);
-}
-
-/* ─────────────────────────────────────────── */
-/*  8. Accessibility: Reduced Motion           */
-/* ─────────────────────────────────────────── */
-
-@media (prefers-reduced-motion: reduce) {
-  .pillar-card,
-  .resource-card,
-  .topics-card,
-  .start-card,
-  .main_button,
-  .hero-btn,
-  .pillar-btn,
-  .cta-btn,
-  .submenu-button,
-  #scrollToTopButton,
-  .call-to-commitment,
-  .scripture-quote {
-    transition: none;
-  }
-
-  .pillar-card:hover,
-  .resource-card:hover,
-  .topics-card:hover,
-  .start-card:hover,
-  .main_button:hover,
-  .call-to-commitment:hover,
-  #scrollToTopButton:hover {
-    transform: none;
-  }
-}
+/* CROSS PAGE PREMIUM CONSISTENCY UPGRADE END */ */
 
 /* ========================================= */
-/* CROSS PAGE PREMIUM CONSISTENCY UPGRADE END */
-
-/* ========================================= */
-/* PREMIUM MOTION AND ATMOSPHERE UPGRADE START */
+/* PREMIUM MOTION AND ATMOSPHERE — PRODUCTION HARDENING: Dead duplicates removed */
 /* ========================================= */
 
-/* ─────────────────────────────────────────── */
-/*  1. Unified Hover/Press/Focus Consistency   */
-/* ─────────────────────────────────────────── */
-
-/* All interactive cards: Unified transition using premium easing */
+/* Interactive cards: Premium transition + hover */
 .pillar-card,
 .resource-card,
 .topics-card,
@@ -1492,17 +1314,10 @@ body {
   transition: transform var(--transition-hover), box-shadow var(--transition-hover), border-color var(--transition-hover);
 }
 
-/* Normalize all card hovers to consistent lift */
 .pillar-card:hover,
 .topics-card:hover {
   transform: translateY(var(--hover-lift-md));
   box-shadow: var(--shadow-hover);
-}
-
-.resource-card:hover {
-  transform: translateY(var(--hover-lift-md));
-  box-shadow: var(--shadow-hover);
-  scale: none;
 }
 
 .start-card:hover {
@@ -1510,7 +1325,7 @@ body {
   box-shadow: var(--shadow-hover);
 }
 
-/* Active/pressed states for ALL interactive cards */
+/* Active/pressed states */
 .pillar-card:active,
 .resource-card:active,
 .topics-card:active,
@@ -1532,7 +1347,6 @@ body {
   transition: transform var(--transition-hover), box-shadow var(--transition-hover), background-color var(--transition-hover), opacity var(--transition-hover);
 }
 
-/* Buttons: Consistent hover lift */
 .main_button:hover,
 .hero-btn:hover,
 .pillar-btn:hover {
@@ -1553,12 +1367,10 @@ body {
   transition-duration: var(--transition-press);
 }
 
-/* Chapter nav: Consistent hover */
 .chapter-nav-btn:hover {
   transform: translateY(var(--hover-lift-sm));
 }
 
-/* Submenu button: Replace scale with translateY for consistency */
 .submenu-button:hover {
   scale: none;
   transform: translateY(var(--hover-lift-sm));
@@ -1570,26 +1382,10 @@ body {
   transition-duration: var(--transition-press);
 }
 
-/* Scroll-to-top: Consistent hover lift */
-#scrollToTopButton {
-  transition: transform var(--transition-hover), box-shadow var(--transition-hover), opacity 0.3s ease;
-}
-
-#scrollToTopButton:hover {
-  transform: translateY(var(--hover-lift-sm));
-  box-shadow: var(--shadow-hover);
-}
-
 #scrollToTopButton:active {
   transform: translateY(0);
   box-shadow: var(--shadow-active);
   transition-duration: var(--transition-press);
-}
-
-/* Scroll-to-top: Smooth fade in/out instead of display toggle */
-#scrollToTopButton {
-  opacity: 0;
-  pointer-events: none;
 }
 
 #scrollToTopButton.is-visible {
@@ -1597,7 +1393,7 @@ body {
   pointer-events: auto;
 }
 
-/* Focus-visible: Unified ring for ALL interactive elements */
+/* Focus-visible */
 .pillar-card:focus-visible,
 .resource-card:focus-visible,
 .topics-card:focus-visible,
@@ -1608,11 +1404,7 @@ body {
   outline-offset: 3px;
 }
 
-/* ─────────────────────────────────────────── */
-/*  2. Scroll Reveal Refinement                */
-/* ─────────────────────────────────────────── */
-
-/* Reduce travel distance for subtlety; use premium easing */
+/* Scroll Reveal */
 .premium-reveal {
   opacity: 0;
   transform: translateY(16px);
@@ -1624,18 +1416,13 @@ body {
   transform: translateY(0);
 }
 
-/* Modest stagger for sibling reveals (CSS-only) */
 .premium-reveal:nth-child(2) { transition-delay: 0.06s; }
 .premium-reveal:nth-child(3) { transition-delay: 0.12s; }
 .premium-reveal:nth-child(4) { transition-delay: 0.18s; }
 .premium-reveal:nth-child(5) { transition-delay: 0.24s; }
 .premium-reveal:nth-child(6) { transition-delay: 0.3s; }
 
-/* ─────────────────────────────────────────── */
-/*  3. Hero Atmosphere Polish                  */
-/* ─────────────────────────────────────────── */
-
-/* Subtle entrance for hero content on all pages */
+/* Hero Atmosphere */
 .hero-content {
   animation: premiumHeroEntrance 0.8s var(--ease-premium) both;
 }
@@ -1651,16 +1438,11 @@ body {
   }
 }
 
-/* Smoother hero overlay transition between gradient stops */
 .hero-overlay {
   transition: opacity 0.5s ease;
 }
 
-/* ─────────────────────────────────────────── */
-/*  4. Footer & Nav Micro-Interaction Polish   */
-/* ─────────────────────────────────────────── */
-
-/* Footer links: Subtle lift on hover */
+/* Footer & Nav Micro-Interaction */
 .footer-link,
 .social-link {
   transition: opacity var(--transition-hover), transform var(--transition-hover);
@@ -1678,22 +1460,12 @@ body {
   transition-duration: var(--transition-press);
 }
 
-/* Nav items: Smoother easing */
 .tvnav__item {
   transition: opacity var(--transition-hover), transform var(--transition-hover);
 }
 
-/* Nav current item: Refined shadow */
 .tvnav__item[aria-current="page"] {
   transition: box-shadow var(--transition-hover);
-}
-
-/* ─────────────────────────────────────────── */
-/*  5. Scripture & Panel Hover Refinement      */
-/* ─────────────────────────────────────────── */
-
-.scripture-quote {
-  transition: box-shadow var(--transition-hover), transform var(--transition-hover);
 }
 
 .scripture-quote:hover {
@@ -1701,26 +1473,13 @@ body {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
-.call-to-commitment {
-  transition: box-shadow var(--transition-hover), transform var(--transition-hover);
-}
-
 .call-to-commitment:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
-/* CTA input: Smoother focus transition */
-.cta-input {
-  transition: border-color var(--transition-hover), box-shadow var(--transition-hover);
-}
-
-/* ─────────────────────────────────────────── */
-/*  6. Reduced Motion Excellence               */
-/* ─────────────────────────────────────────── */
-
+/* Consolidated Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-  /* Disable all transforms and animations added by this upgrade */
   .pillar-card,
   .resource-card,
   .topics-card,
@@ -1777,14 +1536,12 @@ body {
     transform: none !important;
   }
 
-  /* Hero entrance: Disable animation */
   .hero-content {
     animation: none !important;
     opacity: 1;
     transform: none;
   }
 
-  /* Reveal: Instant visibility */
   .premium-reveal {
     opacity: 1 !important;
     transform: none !important;
@@ -1792,18 +1549,13 @@ body {
     transition-delay: 0s !important;
   }
 
-  /* Scroll-to-top: Instant show/hide */
   #scrollToTopButton {
     transition: none !important;
   }
 }
 
-/* ─────────────────────────────────────────── */
-/*  7. Mobile/Touch Interaction Polish         */
-/* ─────────────────────────────────────────── */
-
+/* Mobile/Touch Interaction */
 @media (max-width: 768px) {
-  /* Reduce hover lift intensity on touch devices */
   .pillar-card:hover,
   .resource-card:hover,
   .topics-card:hover,
@@ -1820,29 +1572,24 @@ body {
     transform: translateY(-1px);
   }
 
-  /* Disable stagger delays on mobile for snappier feel */
   .premium-reveal:nth-child(n) {
     transition-delay: 0s;
   }
 
-  /* Hero entrance: Faster on mobile */
   .hero-content {
     animation-duration: 0.5s;
   }
 
-  /* Scroll-to-top: Smaller lift */
   #scrollToTopButton:hover {
     transform: translateY(-1px);
   }
 
-  /* Reduce scripture/panel hover on mobile */
   .scripture-quote:hover,
   .call-to-commitment:hover {
     transform: none;
   }
 }
 
-/* Touch device: Prevent sticky hover states */
 @media (hover: none) {
   .pillar-card:hover,
   .resource-card:hover,
@@ -1863,131 +1610,13 @@ body {
   }
 }
 
-/* ========================================= */
 /* PREMIUM MOTION AND ATMOSPHERE UPGRADE END */
-/* ========================================= */
 
 /* ========================================= */
-/* CONTENT PRESENTATION UPGRADE START        */
+/* CONTENT PRESENTATION — PRODUCTION HARDENING: Selectors merged into base */
 /* ========================================= */
 
-/* ─────────────────────────────────────────── */
-/*  1. Scripture Quote — Premium Typography    */
-/* ─────────────────────────────────────────── */
-
-.scripture-quote {
-  padding: 28px 28px 28px 32px;
-  font-size: 1.15rem;
-  line-height: 1.85;
-  border-left-width: 5px;
-}
-
-.scripture-quote span {
-  margin-top: 14px;
-  font-size: 0.88rem;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-/* ─────────────────────────────────────────── */
-/*  2. Call to Commitment — Clear Emphasis     */
-/* ─────────────────────────────────────────── */
-
-.call-to-commitment {
-  padding: 36px 30px;
-  font-size: 1.1rem;
-  line-height: 1.7;
-}
-
-.call-to-commitment strong {
-  font-size: 1.35rem;
-  margin-bottom: 14px;
-  line-height: 1.3;
-}
-
-/* ─────────────────────────────────────────── */
-/*  3. Pillar Cards — Better Internal Rhythm   */
-/* ─────────────────────────────────────────── */
-
-.pillar-card {
-  padding: 28px 24px;
-}
-
-.pillar-card .pillar-title {
-  margin-bottom: 12px;
-  line-height: 1.3;
-}
-
-.pillar-card .pillar-text {
-  line-height: 1.65;
-  margin-bottom: 14px;
-}
-
-/* ─────────────────────────────────────────── */
-/*  4. Resource & Topic Cards — Readability    */
-/* ─────────────────────────────────────────── */
-
-.resource-title {
-  margin: 14px 14px 8px;
-  line-height: 1.35;
-}
-
-.resource-text {
-  margin: 0 14px 22px;
-  line-height: 1.65;
-}
-
-.topics-title {
-  margin: 14px 14px 8px;
-  line-height: 1.35;
-}
-
-.topics-text {
-  line-height: 1.65;
-  margin: 0 14px 12px;
-}
-
-.topics-link {
-  margin: 0 14px 22px;
-  font-weight: 600;
-  font-size: 0.92rem;
-}
-
-/* ─────────────────────────────────────────── */
-/*  5. Testimonial — Prose Polish              */
-/* ─────────────────────────────────────────── */
-
-.testimonial-text {
-  line-height: 1.8;
-  font-size: 1.1rem;
-}
-
-/* ─────────────────────────────────────────── */
-/*  6. CTA — Better Headline Spacing           */
-/* ─────────────────────────────────────────── */
-
-.cta {
-  padding: 40px 20px;
-}
-
-.cta-title {
-  margin-bottom: 22px;
-  line-height: 1.25;
-}
-
-/* ─────────────────────────────────────────── */
-/*  7. Intro Section — Premium Reading Rhythm  */
-/* ─────────────────────────────────────────── */
-
-.intro-heading {
-  margin-bottom: 24px;
-  line-height: 1.25;
-}
-
-/* ─────────────────────────────────────────── */
-/*  8. Mobile Content Readability              */
-/* ─────────────────────────────────────────── */
-
+/* Mobile Content Readability */
 @media (max-width: 768px) {
   .scripture-quote {
     padding: 22px 22px 22px 26px;
@@ -2028,67 +1657,19 @@ body {
   }
 }
 
-/* ========================================= */
-/* CONTENT PRESENTATION UPGRADE END          */
+/* CONTENT PRESENTATION UPGRADE END */
 
 /* ========================================= */
-/* WAYFINDING AND DISCOVERY UPGRADE START    */
+/* WAYFINDING — PRODUCTION HARDENING: Dead duplicates removed */
 /* ========================================= */
 
-/* ─────────────────────────────────────────── */
-/*  1. Start-Here Section — Primary Entry Path */
-/*     Make the first step feel intentional     */
-/* ─────────────────────────────────────────── */
-
-.start-here {
-  padding-top: 52px;
-  padding-bottom: 52px;
-}
-
-.start-here__title {
-  margin-bottom: 10px;
-}
-
-.start-here__subtitle {
-  margin-bottom: 36px;
-  opacity: 0.75;
-  font-size: 1.05rem;
-}
-
-/* Primary start card (card #1) gets slightly more emphasis */
 .start-card:first-child {
   border: 2px solid rgba(59, 130, 246, 0.25);
 }
 
-/* ─────────────────────────────────────────── */
-/*  2. Hero CTA Grouping — Clearer Primary     */
-/* ─────────────────────────────────────────── */
-
-.hero-helping {
-  margin-bottom: 28px;
-}
-
-/* ─────────────────────────────────────────── */
-/*  3. Section Transitions — Page Flow         */
-/*     Smooth transition from hero into body   */
-/* ─────────────────────────────────────────── */
-
 .intro-section {
   padding-bottom: 52px;
 }
-
-/* ─────────────────────────────────────────── */
-/*  4. Footer Wayfinding — Subtle Orientation  */
-/* ─────────────────────────────────────────── */
-
-.footer-links {
-  gap: 8px;
-  margin-bottom: 16px;
-}
-
-/* ─────────────────────────────────────────── */
-/*  5. Mobile Wayfinding                       */
-/* ─────────────────────────────────────────── */
 
 @media (max-width: 768px) {
   .start-here {
@@ -2101,75 +1682,38 @@ body {
   }
 }
 
-/* ========================================= */
-/* WAYFINDING AND DISCOVERY UPGRADE END      */
-/* ========================================= */
+/* WAYFINDING AND DISCOVERY UPGRADE END */
 
 /* ========================================= */
-/* TRUST AND AUTHORITY UPGRADE START         */
+/* TRUST AND AUTHORITY — PRODUCTION HARDENING: Selectors merged into base */
 /* ========================================= */
-
-/* ─────────────────────────────────────────── */
-/*  1. Hero — Calm Authority, Not Hype         */
-/* ─────────────────────────────────────────── */
 
 .hero--premium .hero-content {
   max-width: var(--content-wide);
 }
 
-.hero-subtitle {
-  line-height: 1.5;
-  font-weight: 600;
-  letter-spacing: -0.005em;
-}
-
-.hero-helping {
-  line-height: 1.75;
-  font-size: 1.02rem;
-  max-width: 640px;
-}
-
-/* ─────────────────────────────────────────── */
-/*  2. Mission Section — Established Feel      */
-/* ─────────────────────────────────────────── */
-
-.about-mission {
-  padding-top: 56px;
-  padding-bottom: 56px;
-}
-
-.mission-text {
-  font-size: 1.02rem;
-  line-height: 1.78;
-  max-width: 620px;
-}
-
-/* ─────────────────────────────────────────── */
-/*  3. Testimonial Section — Credible Stories  */
-/* ─────────────────────────────────────────── */
-
-.testimonials {
-  padding-top: 56px;
-  padding-bottom: 56px;
-}
-
-.testimonial-carousel {
-  max-width: 720px;
-}
-
-.testimonial-text {
-  font-size: 1.05rem;
-  line-height: 1.82;
-  letter-spacing: 0.005em;
-}
-
-/* ─────────────────────────────────────────── */
-/*  4. Start-Here — Intentional Entry Path     */
-/* ─────────────────────────────────────────── */
-
+/* Start-here: Merged into base, keep border-trust for start-card */
 .start-here {
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
   padding-top: 56px;
   padding-bottom: 56px;
+  background: linear-gradient(180deg, #f8fbff 0%, var(--color-bg-light) 100%);
+}
+
+.start-here__title {
+  margin-bottom: 10px;
+}
+
+.start-here__subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-dark-neutral);
+  margin-bottom: 36px;
+  max-width: var(--content-narrow);
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.65;
+  opacity: 0.75;
 }
 
 .start-card {
@@ -2177,60 +1721,11 @@ body {
 }
 
 .start-card__text {
-  line-height: 1.6;
   font-size: 0.92rem;
+  line-height: 1.6;
 }
 
-/* ─────────────────────────────────────────── */
-/*  5. Scripture & Commitment — Settled Trust   */
-/* ─────────────────────────────────────────── */
-
-.scripture-quote {
-  border-left-color: var(--color-scripture-border);
-  background-color: var(--trust-bg-warm);
-  box-shadow: var(--trust-shadow-grounded);
-}
-
-.call-to-commitment {
-  box-shadow: var(--trust-shadow-elevated);
-}
-
-/* ─────────────────────────────────────────── */
-/*  6. Pillar Cards — Confident Foundation     */
-/* ─────────────────────────────────────────── */
-
-.pillars {
-  padding-top: 56px;
-  padding-bottom: 56px;
-}
-
-.pillar-card .pillar-text {
-  font-size: 0.95rem;
-}
-
-/* ─────────────────────────────────────────── */
-/*  7. CTA Buttons — Calm & Grounded           */
-/*     Reduce generic-website feel             */
-/* ─────────────────────────────────────────── */
-
-.main_button {
-  letter-spacing: 0.03em;
-  font-weight: 600;
-}
-
-.cta {
-  padding-top: 48px;
-  padding-bottom: 48px;
-}
-
-.cta-title {
-  letter-spacing: -0.01em;
-}
-
-/* ─────────────────────────────────────────── */
-/*  8. Mobile Trust Polish                     */
-/* ─────────────────────────────────────────── */
-
+/* Mobile Trust Polish */
 @media (max-width: 768px) {
   .hero-helping {
     font-size: 0.96rem;
@@ -2263,19 +1758,6 @@ body {
   }
 }
 
-/* ─────────────────────────────────────────── */
-/*  9. Reduced Motion                          */
-/* ─────────────────────────────────────────── */
-
-@media (prefers-reduced-motion: reduce) {
-  .scripture-quote,
-  .call-to-commitment,
-  .start-card {
-    transition: none;
-  }
-}
-
 /* ========================================= */
 /* TRUST AND AUTHORITY UPGRADE END           */
 /* ========================================= */
-/* =========================================  */

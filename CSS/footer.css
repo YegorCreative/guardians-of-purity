@@ -1,27 +1,45 @@
-/* Footer */
+/* Footer — PRODUCTION HARDENING: consolidated from 4 upgrade layers */
+
 .footer {
-  /* Overlay color: #4b6e72 (using rgba(75,110,114,0.75) for 75% opacity) */
   background: linear-gradient(rgba(75,110,114,0.75), rgba(75,110,114,0.75)),
     url("../img/heroe-image8.webp") center/cover no-repeat;
-  /* Ensure the overlay and image blend predictably */
   background-blend-mode: overlay;
   color: var(--color-white);
-  padding: 30px 20px;
+  padding: 48px var(--space-md) 32px;
   text-align: center;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
 }
 
 .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 16px;
   margin-bottom: 20px;
 }
 
-.footer-link {
+.footer-link,
+.social-link {
   color: var(--color-white);
   text-decoration: none;
-  padding: 0 15px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: opacity var(--transition-base);
+  border-radius: var(--radius-sm);
 }
 
-.footer-link:hover {
-  text-decoration: underline;
+.footer-link:hover,
+.social-link:hover {
+  opacity: 0.85;
+  text-decoration: none;
+}
+
+.footer-link:focus-visible,
+.social-link:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
 }
 
 .footer-link.is-disabled,
@@ -37,129 +55,12 @@
 }
 
 .footer-social {
-  margin-bottom: 20px;
-}
-
-.social-link {
-  color: var(--color-white);
-  text-decoration: none;
-  padding: 0 15px;
-}
-
-.social-link:hover {
-  text-decoration: underline;
-}
-
-.footer-contact {
-  margin-bottom: 10px;
-}
-
-.footer-copyright {
-  font-size: 0.9rem;
-}
-
-/* PREMIUM UPGRADE START — Footer Polish */
-.footer {
-  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-}
-
-.footer-link,
-.social-link {
-  transition: opacity var(--transition-base);
-  border-radius: var(--radius-sm);
-}
-
-.footer-link:hover,
-.social-link:hover {
-  opacity: 0.85;
-  text-decoration: none;
-}
-
-.footer-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 4px;
-}
-
-.footer-social {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 4px;
-}
-/* PREMIUM UPGRADE END */
-
-/* CROSS PAGE PREMIUM CONSISTENCY UPGRADE START */
-
-.footer {
-  padding: var(--space-lg) var(--space-md);
-}
-
-.footer-links {
-  margin-bottom: var(--space-md);
   gap: var(--space-xs);
-}
-
-.footer-social {
   margin-bottom: var(--space-md);
-  gap: var(--space-xs);
 }
-
-.footer-link,
-.social-link {
-  padding: 6px 14px;
-  font-size: var(--text-sm);
-  letter-spacing: 0.02em;
-}
-
-.footer-link:focus-visible,
-.social-link:focus-visible {
-  outline: 2px solid rgba(255, 255, 255, 0.5);
-  outline-offset: 2px;
-}
-
-.footer-contact {
-  margin-bottom: var(--space-sm);
-  font-size: var(--text-sm);
-  opacity: 0.9;
-}
-
-.footer-copyright {
-  font-size: var(--text-xs);
-  opacity: 0.75;
-  letter-spacing: 0.03em;
-}
-
-/* CROSS PAGE PREMIUM CONSISTENCY UPGRADE END */
-
-/* ========================================= */
-/* TRUST AND AUTHORITY UPGRADE START         */
-/* ========================================= */
-
-/* ─────────────────────────────────────────── */
-/*  1. Footer Foundation — Grounded Authority  */
-/* ─────────────────────────────────────────── */
-
-.footer {
-  padding: 48px var(--space-md) 32px;
-}
-
-.footer-links {
-  gap: 6px 16px;
-  margin-bottom: 20px;
-}
-
-.footer-link,
-.social-link {
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-}
-
-/* ─────────────────────────────────────────── */
-/*  2. Copyright & Contact — Quieter Anchor    */
-/* ─────────────────────────────────────────── */
 
 .footer-contact {
   font-size: 0.82rem;
@@ -173,10 +74,6 @@
   letter-spacing: 0.04em;
 }
 
-/* ─────────────────────────────────────────── */
-/*  3. Mobile Footer — Steady Presence         */
-/* ─────────────────────────────────────────── */
-
 @media (max-width: 768px) {
   .footer {
     padding: 36px 16px 28px;
@@ -186,7 +83,3 @@
     gap: 4px 12px;
   }
 }
-
-/* ========================================= */
-/* TRUST AND AUTHORITY UPGRADE END           */
-/* ========================================= */

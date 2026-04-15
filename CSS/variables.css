@@ -104,4 +104,16 @@
   --trust-shadow-grounded: 0 2px 8px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
   --trust-shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.06), 0 12px 40px rgba(0, 0, 0, 0.08);
   /* TRUST AND AUTHORITY UPGRADE END */
+
+  /* PRODUCTION HARDENING UPGRADE START — Canonical Color & Gradient Tokens */
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  --color-purple-500: #a855f7;
+  --color-pink-500: #ec4899;
+  --color-slate-800: #1e293b;
+  --color-gray-700: #374151;
+  --color-slate-500: #475569;
+  --color-slate-400: #64748b;
+  --gradient-brand: linear-gradient(135deg, #3b82f6, #a855f7);
+  /* PRODUCTION HARDENING UPGRADE END */
 }

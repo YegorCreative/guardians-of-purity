@@ -125,12 +125,17 @@
   line-height: 1.1;
 }
 
+/* PRODUCTION HARDENING: merged Wayfinding active-nav values into canonical block */
 .tvnav__item[aria-current="page"] {
-  background: #3b82f6;
+  background: linear-gradient(135deg, var(--color-blue-500), var(--color-blue-600));
   border-radius: 999px;
   padding: 6px 16px;
   box-shadow:
-    0 10px 30px rgba(59, 130, 246, 0.5);
+    0 6px 20px rgba(59, 130, 246, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  opacity: 1;
+  pointer-events: auto;
+  cursor: default;
 }
 
 .tvnav__item[aria-current="page"] .tvnav__icon,
@@ -235,30 +240,9 @@
 
 /* ========================================= */
 /* WAYFINDING AND DISCOVERY UPGRADE START    */
+/* (PRODUCTION HARDENING: active-nav merged  */
+/*  into canonical block above)              */
 /* ========================================= */
-
-/* ─────────────────────────────────────────── */
-/*  1. Active Nav State — Premium Distinction  */
-/* ─────────────────────────────────────────── */
-
-/* Refine the existing aria-current style for clarity */
-.tvnav__item[aria-current="page"] {
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
-  border-radius: 999px;
-  padding: 6px 16px;
-  box-shadow:
-    0 6px 20px rgba(59, 130, 246, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  opacity: 1;
-  pointer-events: auto;
-  cursor: default;
-}
-
-.tvnav__item[aria-current="page"] .tvnav__icon,
-.tvnav__item[aria-current="page"] .tvnav__label {
-  color: #ffffff;
-  opacity: 1;
-}
 
 /* Prevent hover lift on active item — it's already "here" */
 .tvnav__item[aria-current="page"]:hover {
