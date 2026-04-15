@@ -1858,4 +1858,184 @@ main > .prayer.separated_block {
 /* ========================================= */
 /* SCRIPTURE PRESENTATION UPGRADE END        */
 /* ========================================= */
+
+/* ========================================= */
+/* WEEK STRUCTURE + PROGRESSION UPGRADE START*/
+/* ========================================= */
+
+/* === Weeks Container — Connected Step Track === */
+.monthly_prayer_guide_weeks {
+  position: relative;
+  gap: 0;
+  padding: 6px;
+  background: #f1f3f7;
+  border-radius: 18px;
+}
+
+/* Connecting track behind tabs */
+.monthly_prayer_guide_weeks::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(12.5% + 6px);
+  right: calc(12.5% + 6px);
+  height: 2px;
+  background: #d1d5db;
+  transform: translateY(-50%);
+  z-index: 0;
+  border-radius: 1px;
+}
+
+/* === Week Tab — Two-Line Layout with Theme === */
+.monthly_prayer_guide_week_item {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 12px 8px;
+  border-radius: 14px;
+  border: 1.5px solid transparent;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #6b7280;
+  transition: all 0.25s ease;
+}
+
+/* Theme subtitle */
+.week-theme {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin-top: 1px;
+}
+
+/* === Hover State === */
+.monthly_prayer_guide_week_item:hover {
+  background: rgba(255, 255, 255, 1);
+  color: #374151;
+  border-color: #d1d5db;
+}
+
+.monthly_prayer_guide_week_item:hover .week-theme {
+  opacity: 0.7;
+}
+
+/* === Active Week State === */
+.monthly_prayer_guide_week_item.active {
+  background: var(--color-primary-blue);
+  color: var(--color-white) !important;
+  border-color: var(--color-primary-blue);
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.25);
+  border-radius: 14px;
+}
+
+.monthly_prayer_guide_week_item.active .week-theme {
+  opacity: 0.75;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* === Focus Visible === */
+.monthly_prayer_guide_week_item:focus-visible {
+  outline: 2px solid var(--color-primary-blue);
+  outline-offset: 2px;
+}
+
+/* === Step Indicator Dot (before week number) === */
+.monthly_prayer_guide_week_item::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d1d5db;
+  margin-bottom: 3px;
+  transition: all 0.25s ease;
+}
+
+.monthly_prayer_guide_week_item.active::before {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+  width: 8px;
+  height: 8px;
+}
+
+.monthly_prayer_guide_week_item:hover::before {
+  background: #9ca3af;
+}
+
+/* === Mobile Week Tabs === */
+@media (max-width: 768px) {
+  .monthly_prayer_guide_weeks {
+    gap: 0;
+    padding: 4px;
+    border-radius: 14px;
+  }
+
+  .monthly_prayer_guide_weeks::before {
+    left: calc(12.5% + 4px);
+    right: calc(12.5% + 4px);
+  }
+
+  .monthly_prayer_guide_week_item {
+    font-size: 0.75rem;
+    padding: 8px 8px 6px;
+    border-radius: 12px;
+  }
+
+  .week-theme {
+    font-size: 0.56rem;
+    letter-spacing: 0.08em;
+  }
+
+  .monthly_prayer_guide_week_item::before {
+    width: 5px;
+    height: 5px;
+  }
+
+  .monthly_prayer_guide_week_item.active::before {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+@media (max-width: 520px) {
+  .monthly_prayer_guide_week_item {
+    font-size: 0.7rem;
+    padding: 7px 6px 5px;
+  }
+
+  .week-theme {
+    font-size: 0.52rem;
+  }
+
+  .monthly_prayer_guide_week_item::before {
+    width: 4px;
+    height: 4px;
+    margin-bottom: 2px;
+  }
+
+  .monthly_prayer_guide_week_item.active::before {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+/* === Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+  .monthly_prayer_guide_week_item,
+  .monthly_prayer_guide_week_item::before {
+    transition: none;
+  }
+}
+
+/* ========================================= */
+/* WEEK STRUCTURE + PROGRESSION UPGRADE END  */
+/* ========================================= */
 /* ========================================= */
