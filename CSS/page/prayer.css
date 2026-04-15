@@ -944,6 +944,14 @@
     padding: 40px 20px;
   }
 
+  .gradient-section .hero-border-blue {
+    inset: 10px;
+  }
+
+  .gradient-section .gradient_cards_wrapper::before {
+    inset: 10px;
+  }
+
   .gradient-section .gradient_cards_wrapper h1 {
     max-width: 100%;
     margin-bottom: 16px;
