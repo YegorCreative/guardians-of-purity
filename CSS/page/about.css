@@ -731,8 +731,8 @@ section {
 
 /* Founder Photo Placeholder */
 .founder-photo-placeholder {
-  width: 200px;
-  height: 200px;
+  width: 280px;
+  height: 280px;
   margin: 30px auto;
   border-radius: 50%;
   background: linear-gradient(135deg, #e0f2fe, #f3e8ff);
