@@ -429,8 +429,8 @@ function initUnifiedView(state) {
             const absDay = (activeWeekIdx * 7) + (activeDayIdx + 1);
             prayerDayEl.textContent = `DAY ${absDay}`;
             titleEl.textContent = data.title;
-            verseEl.innerHTML = `<span style="display:block; font-size: 0.8em; margin-bottom: 5px; text-transform:uppercase; letter-spacing:1px; opacity:0.7;">Scripture</span>${data.verse}`;
-            prayerTextEl.textContent = data.prayer;
+            verseEl.innerHTML = `<span class="verse-label">Scripture</span>${data.verse}`;
+            prayerTextEl.innerHTML = `<span class="prayer-body-label">Prayer</span>${data.prayer}`;
         }
     }
 
