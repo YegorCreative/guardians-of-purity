@@ -1,12 +1,6 @@
 try {
   // Testimonial carousel
   const testimonials = document.querySelectorAll(".testimonial");
-  let currentIndex = 0;
-
-  function showTestimonial(index) {
-    testimonials.forEach((t) => t.classList.remove("active"));
-    testimonials[index].classList.add("active");
-  }
 
   // CTA form validation
   const ctaForm = document.getElementById("cta-form");
@@ -127,7 +121,7 @@ try {
   // Show button when scrolled down (use class toggle for CSS opacity transition)
   if (scrollBtn) {
     scrollBtn.style.display = "block"; // keep always in DOM for CSS transition
-    window.onscroll = function () {
+    window.addEventListener("scroll", function () {
       if (
         document.body.scrollTop > 300 ||
         document.documentElement.scrollTop > 300
@@ -136,7 +130,7 @@ try {
       } else {
         scrollBtn.classList.remove("is-visible");
       }
-    };
+    }, { passive: true });
 
     scrollBtn.addEventListener("click", function () {
       window.scrollTo({
@@ -187,10 +181,6 @@ try {
   }
 })();
 /* WAYFINDING AND DISCOVERY UPGRADE END */
-
-// Placeholder for future interactivity
-// You can add scroll animations, section trackers, or reminders here
-console.log("31 Days of Prayer - Intro Section Loaded");
 
 document.addEventListener("DOMContentLoaded", () => {
   const footerLinkConfigs = [
@@ -457,7 +447,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const modal = document.getElementById("chapterJumpModal");
         const listContainer = document.getElementById("chapterJumpList");
         const searchInput = document.getElementById("chapterJumpSearch");
-        let allItems = []; // Store button elements for filtering
 
         // Build List
         function buildList(filter = "") {

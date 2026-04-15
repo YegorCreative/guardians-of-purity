@@ -433,17 +433,6 @@
   .start-card:hover {
     transform: translateY(-2px);
   }
-
-  /* Footer: Mobile comfort */
-  .footer {
-    padding: var(--space-lg) var(--space-sm);
-  }
-
-  .footer-link,
-  .social-link {
-    padding: 8px 12px;
-    display: inline-block;
-  }
 }
 
 /* ─── Cross-Page Small Phone ─── */

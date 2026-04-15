@@ -27,8 +27,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 147, 123, 0.3);
-  /* dark overlay for contrast */
+  background: rgba(0, 0, 0, 0.45);
+  /* PRODUCTION HARDENING — merged from Readability Fix */
   z-index: 1;
   border-radius: inherit;
   /* match parent radius */
@@ -49,7 +49,7 @@
   overflow: hidden;
   margin: 40px auto;
   max-width: 1440px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--trust-shadow-elevated);
 }
 
 /* Overlay for Section 1 (Strict Requirement) */
@@ -88,8 +88,8 @@
 .intro-paragraph {
   flex: 1;
   max-width: 800px;
-  font-size: 1.25rem;
-  line-height: 1.8;
+  font-size: 1.2rem;
+  line-height: 1.85;
   margin: 80px auto 40px auto;
   /* Top margin clears the badge */
   position: relative;
@@ -140,7 +140,7 @@
 
 .prayer .split.right {
   background-color: var(--color-white);
-  padding: 60px;
+  padding: 56px 52px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -152,13 +152,17 @@
 .prayer .split.right h2 {
   font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.005em;
   color: var(--color-text-dark);
 }
 
 .prayer .split.right p {
-  font-size: 1.15rem;
-  line-height: 1.7;
+  font-size: 1.1rem;
+  line-height: 1.78;
+  max-width: 540px;
   color: var(--color-text-dark-neutral);
 }
 
@@ -225,6 +229,7 @@
   overflow: hidden;
   background: white;
   padding-bottom: 10px;
+  box-shadow: var(--trust-shadow-grounded);
 }
 
 .thirty_one_day_card_block_title {
@@ -249,7 +254,7 @@
   font-family: 'Open Sans', sans-serif;
   font-size: 1.125rem !important;
   /* 18px */
-  line-height: 1.6 !important;
+  line-height: 1.65 !important;
   font-weight: 400;
   color: var(--color-text-dark);
   text-transform: none;
@@ -284,6 +289,7 @@
   text-align: center;
   font-size: 18px;
   font-weight: 600;
+  letter-spacing: 0.01em;
   padding: 12px 10px;
   background: #ffffff;
   backdrop-filter: none;
@@ -303,12 +309,6 @@
   border-color: #9ca3af;
 }
 
-/* Duplicate .monthly_prayer_guide_content removed */
-
-/* Carousel container for desktop prayer guide */
-/* Carousel styles removed */
-
-/* Vertical Day Buttons Container */
 /* Vertical Day Buttons Container */
 .monthly_prayer_guide_days {
   display: flex !important;
@@ -331,7 +331,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 25px;
-  padding: 15px 20px;
+  padding: 18px 22px;
   color: var(--color-text-dark);
   /* Dark text */
   font-weight: 500;
@@ -343,7 +343,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .thirty_one_day_card_content strong,
@@ -414,12 +414,12 @@
 /* Prayer Amen text styling */
 .prayer-amen {
   font-size: 1.3rem;
-  margin: 20px 0 10px 0;
-  /* Moved down ~10px extra */
+  margin: 18px 0 10px 0;
   text-align: center;
   color: #6b7280;
   font-style: italic;
   font-family: 'Playfair Display', serif;
+  letter-spacing: 0.04em;
   opacity: 0.8;
 }
 
@@ -473,11 +473,6 @@
     /* Image on top */
     align-self: center;
     /* Center image */
-  }
-
-  .intro-paragraph {
-    transform: none;
-    /* Reset unused transform */
   }
 
   /* End dynamic text with image */
@@ -584,27 +579,31 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 12px;
 }
 
 .journey-btn {
-  padding: 12px 30px;
-  border-radius: 50px;
-  font-family: var(--font-accent);
-  font-weight: 600;
-  font-size: 1rem;
+  appearance: none;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
   cursor: pointer;
   transition: all 0.3s ease;
   border: none;
   text-decoration: none;
   display: inline-block;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
 }
 
 .journey-btn.primary {
-  background: linear-gradient(90deg, var(--color-gradient-blue-start), var(--color-gradient-blue-end));
-  color: var(--color-white);
+  background: linear-gradient(135deg, rgba(124, 178, 190, 1), rgba(160, 190, 220, 1));
+  color: #fff;
   border: 1px solid transparent;
 }
 
@@ -614,10 +613,9 @@
 }
 
 .journey-btn.secondary {
-  background: transparent;
-  color: var(--color-text-dark-neutral);
-  border: 1px solid #d1d5db;
-  box-shadow: none;
+  background: rgba(255, 255, 255, 0.75);
+  color: #2f3a3a;
+  border: 1px solid rgba(0, 0, 0, 0.10);
   font-size: 0.9rem;
   padding: 8px 20px;
 }
@@ -629,39 +627,38 @@
 }
 
 .journey-reassurance-text {
-  font-size: 0.85rem;
+  font-size: 14px;
   color: #6b7280;
-  /* Better contrast than previous light gray */
   font-style: italic;
   max-width: 300px;
   margin: 0 auto;
+  margin-top: 2px;
   line-height: 1.4;
+  opacity: 0.75;
+  text-align: center;
 }
 
 /* --- Modals --- */
 .journey-modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.4);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  z-index: 2000;
+  z-index: 9999;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 18px;
 }
 
 .journey-modal-card {
-  background: var(--color-white);
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  width: 100%;
-  max-width: 320px;
+  width: min(520px, 100%);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  padding: 18px;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
   font-family: var(--font-main);
   text-align: center;
   animation: fadeIn 0.2s ease-out;
@@ -694,37 +691,38 @@
 
 .journey-date-input {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #d1d5db;
-  border-radius: 10px;
+  padding: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 14px;
   font-family: var(--font-main);
-  font-size: 1rem;
-  margin-bottom: 20px;
+  font-size: 18px;
+  margin: 10px 0 14px;
   text-align: center;
   color: var(--color-text-dark);
+  outline: none;
 }
 
 .journey-modal-actions {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   justify-content: center;
 }
 
 .journey-modal-btn {
-  flex: 1;
-  padding: 10px;
-  border-radius: 25px;
-  font-weight: 600;
-  cursor: pointer;
   border: none;
+  cursor: pointer;
+  border-radius: 14px;
+  padding: 12px 18px;
+  font-weight: 700;
   font-family: var(--font-main);
-  font-size: 0.9rem;
+  font-size: 16px;
+  min-width: 120px;
   transition: all 0.2s;
 }
 
 .journey-modal-btn.confirm {
-  background: var(--color-primary-blue);
-  color: white;
+  background: linear-gradient(135deg, rgba(124, 178, 190, 1), rgba(160, 190, 220, 1));
+  color: #fff;
 }
 
 .journey-modal-btn.confirm:hover {
@@ -732,8 +730,8 @@
 }
 
 .journey-modal-btn.cancel {
-  background: #f3f4f6;
-  color: var(--color-text-dark);
+  background: rgba(0, 0, 0, 0.06);
+  color: #2f3a3a;
 }
 
 .journey-modal-btn.cancel:hover {
@@ -917,112 +915,7 @@
   font-size: 1.3em;
 }
 
-.prayer-amen {
-  margin-top: 10px;
-}
-
-/* --- STEP E: Controls & Modal Styling --- */
-/* Controls wrapper */
-.journey-controls-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 18px 12px;
-}
-
-/* Real button styling */
-.journey-btn {
-  appearance: none;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  font-weight: 700;
-  border-radius: 999px;
-  padding: 14px 26px;
-  font-size: 16px;
-  line-height: 1;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
-}
-
-.journey-btn.primary {
-  background: linear-gradient(135deg, rgba(124, 178, 190, 1), rgba(160, 190, 220, 1));
-  color: #fff;
-}
-
-.journey-btn.secondary {
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(0, 0, 0, 0.10);
-  color: #2f3a3a;
-}
-
-.journey-reassurance-text {
-  font-size: 14px;
-  opacity: 0.75;
-  text-align: center;
-  margin-top: 2px;
-}
-
-/* Modal overlay/card */
-.journey-modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 18px;
-  z-index: 9999;
-}
-
-.journey-modal-card {
-  width: min(520px, 100%);
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(10px);
-  border-radius: 18px;
-  padding: 18px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-  text-align: center;
-}
-
-/* Date input bigger (native calendar popup size can’t be forced, but input can be) */
-.journey-date-input {
-  width: 100%;
-  font-size: 18px;
-  padding: 14px 14px;
-  border-radius: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  outline: none;
-  margin: 10px 0 14px;
-}
-
-/* Modal buttons */
-.journey-modal-actions {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-}
-
-.journey-modal-btn {
-  border: none;
-  cursor: pointer;
-  border-radius: 14px;
-  padding: 12px 18px;
-  font-weight: 700;
-  font-size: 16px;
-  min-width: 120px;
-}
-
-.journey-modal-btn.cancel {
-  background: rgba(0, 0, 0, 0.06);
-  color: #2f3a3a;
-}
-
-.journey-modal-btn.confirm {
-  background: linear-gradient(135deg, rgba(124, 178, 190, 1), rgba(160, 190, 220, 1));
-  color: #fff;
-}
+/* PRODUCTION HARDENING — STEP E dead overrides removed (merged into base) */
 
 /* --- Praise Report Card Styles --- */
 
@@ -1031,7 +924,7 @@
   border-radius: 25px;
   padding: 40px;
   /* Increased padding for standalone feel */
-  box-shadow: none;
+  box-shadow: var(--trust-shadow-grounded);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -1165,20 +1058,12 @@
   z-index: 2;
 }
 
-/* Optional stronger overlay for contrast */
-.intro-section::before {
-  background: rgba(0, 0, 0, 0.45);
-  /* darker overlay for readability */
-}
-
 /* ========================================= */
-/* CONTENT PRESENTATION UPGRADE START        */
+/* CONTENT PRESENTATION UPGRADE              */
+/* PRODUCTION HARDENING — Dead overrides removed; base merged above */
 /* ========================================= */
 
-/* ─────────────────────────────────────────── */
-/*  1. Intro Verse — Premium Emphasis          */
-/* ─────────────────────────────────────────── */
-
+/* Intro Verse extensions (unique) */
 .intro-section .intro-verse {
   line-height: 1.7;
   max-width: 680px;
@@ -1191,59 +1076,7 @@
   letter-spacing: 0.03em;
 }
 
-/* ─────────────────────────────────────────── */
-/*  2. Purity Challenge Block — Readability    */
-/* ─────────────────────────────────────────── */
-
-.intro-paragraph {
-  line-height: 1.85;
-  font-size: 1.2rem;
-}
-
-/* ─────────────────────────────────────────── */
-/*  3. Split Section — Prose Polish            */
-/* ─────────────────────────────────────────── */
-
-.prayer .split.right {
-  padding: 56px 52px;
-}
-
-.prayer .split.right h2 {
-  margin-bottom: 22px;
-  line-height: 1.25;
-}
-
-.prayer .split.right p {
-  line-height: 1.75;
-  max-width: 540px;
-}
-
-/* ─────────────────────────────────────────── */
-/*  4. 31-Day Card — Content Readability       */
-/* ─────────────────────────────────────────── */
-
-.thirty_one_day_card_content {
-  padding: 18px 22px;
-  line-height: 1.7;
-}
-
-.thirty_one_day_card_title.with_height {
-  line-height: 1.65 !important;
-}
-
-/* ─────────────────────────────────────────── */
-/*  5. Prayer Amen — Gentle Close              */
-/* ─────────────────────────────────────────── */
-
-.prayer-amen {
-  letter-spacing: 0.04em;
-  margin-top: 18px;
-}
-
-/* ─────────────────────────────────────────── */
-/*  6. Mobile Content Readability              */
-/* ─────────────────────────────────────────── */
-
+/* Mobile Content Readability */
 @media (max-width: 768px) {
   .prayer .split.right {
     padding: 36px 28px;
@@ -1276,14 +1109,11 @@
 /* CONTENT PRESENTATION UPGRADE END          */
 
 /* ========================================= */
-/* TRUST AND AUTHORITY UPGRADE START         */
+/* TRUST AND AUTHORITY UPGRADE               */
+/* PRODUCTION HARDENING — Dead overrides removed; base merged above */
 /* ========================================= */
 
-/* ─────────────────────────────────────────── */
-/*  1. Emotional Contract — Trust Anchor       */
-/*     The single safety statement on the page */
-/* ─────────────────────────────────────────── */
-
+/* Emotional Contract — Trust Anchor (unique) */
 .emotional-contract {
   font-size: 0.95rem;
   line-height: 1.7;
@@ -1296,61 +1126,7 @@
   padding: 16px 20px;
 }
 
-/* ─────────────────────────────────────────── */
-/*  2. Purity Challenge Block — Grounded       */
-/* ─────────────────────────────────────────── */
-
-.purity_challenge_intro_block {
-  box-shadow: var(--trust-shadow-elevated);
-}
-
-/* ─────────────────────────────────────────── */
-/*  3. Split Section — Caring Authority        */
-/* ─────────────────────────────────────────── */
-
-.prayer .split.right h2 {
-  font-weight: 700;
-  letter-spacing: -0.005em;
-}
-
-.prayer .split.right p {
-  font-size: 1.1rem;
-  line-height: 1.78;
-}
-
-/* ─────────────────────────────────────────── */
-/*  4. 31-Day Card — Steady Daily Guidance     */
-/* ─────────────────────────────────────────── */
-
-.thirty_one_day_card_wrapper {
-  box-shadow: var(--trust-shadow-grounded);
-}
-
-.thirty_one_day_card_title.with_height {
-  font-weight: 400;
-}
-
-/* ─────────────────────────────────────────── */
-/*  5. Prayer Guide Week Tabs — Calm Clarity   */
-/* ─────────────────────────────────────────── */
-
-.monthly_prayer_guide_week_item {
-  font-weight: 600;
-  letter-spacing: 0.01em;
-}
-
-/* ─────────────────────────────────────────── */
-/*  6. Praise Report — Trustworthy Submission  */
-/* ─────────────────────────────────────────── */
-
-.praise-report-card {
-  box-shadow: var(--trust-shadow-grounded);
-}
-
-/* ─────────────────────────────────────────── */
-/*  7. Mobile Trust Preservation               */
-/* ─────────────────────────────────────────── */
-
+/* Mobile Trust Preservation */
 @media (max-width: 768px) {
   .emotional-contract {
     font-size: 0.9rem;
