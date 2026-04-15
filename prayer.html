@@ -125,15 +125,12 @@
           Commit the next 4 weeks to prayer, reflection, and victory in
           Christ.
         </h2>
-      </section>
-    </div>
-
-    <div class="separated_block intro-section-wrapper">
-      <section class="intro-section separated_block_corner flex-center">
-        <p class="intro-verse">
-          "So if the Son sets you free, you will be free indeed."
-        </p>
-        <p class="intro-reference">— John 8:36</p>
+        <div class="hero-verse-block">
+          <p class="intro-verse">
+            "So if the Son sets you free, you will be free indeed."
+          </p>
+          <p class="intro-reference">— John 8:36</p>
+        </div>
       </section>
     </div>
 
@@ -156,8 +153,6 @@
           walk this path perfectly, but every prayer is a step closer to who
           God has called you to be: pure, whole, and free.
         </p>
-        <img class="purity_challenge_intro_block_picture" src="img/heroes4.webp" alt="Prayer journey illustration"
-          loading="lazy">
       </section>
     </div>
 
@@ -194,9 +189,9 @@
                 <img class="thirty_one_day_card_block_picture" src="img/heroes17.webp" alt="Selected day image"
                   loading="lazy" />
               </div>
-              <h1 class="thirty_one_day_card_title flex-center" id="prayerTitle"></h1>
+              <h2 class="thirty_one_day_card_title flex-center" id="prayerTitle"></h2>
               <div class="thirty_one_day_card_content flex-center" id="prayerVerse"></div>
-              <h1 class="thirty_one_day_card_title with_height flex-center" id="prayerText"></h1>
+              <div class="thirty_one_day_card_title with_height flex-center" id="prayerText"></div>
               <p class="prayer-amen">Amen</p>
             </div>
           </div>
@@ -216,7 +211,7 @@
         Every request matters. Every testimony gives glory to God.<br>
         Let’s stand together in faith and celebrate what God is doing in your life.</p>
       <form class="praise-form" onsubmit="sendEmail(event)">
-        <input type="text" id="name" placeholder="Your Name (Optional)" class="praise-input" required />
+        <input type="text" id="name" placeholder="Your Name (Optional)" class="praise-input" />
         <textarea id="message" placeholder="Your Message..." class="praise-textarea" required></textarea>
         <button type="submit" class="journey-btn primary praise-submit-btn">Submit Request</button>
       </form>
