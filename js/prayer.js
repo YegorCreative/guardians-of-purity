@@ -431,6 +431,14 @@ function initUnifiedView(state) {
             titleEl.textContent = data.title;
             verseEl.innerHTML = `<span class="verse-label">Scripture</span>${data.verse}`;
             prayerTextEl.innerHTML = `<span class="prayer-body-label">Prayer</span>${data.prayer}`;
+
+            // Micro-interaction: replay content fade
+            const cardWrap = unifiedCard.querySelector(".thirty_one_day_card_wrapper");
+            if (cardWrap) {
+                cardWrap.classList.remove("content-enter");
+                void cardWrap.offsetWidth; // force reflow
+                cardWrap.classList.add("content-enter");
+            }
         }
     }
 

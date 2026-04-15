@@ -2038,4 +2038,205 @@ main > .prayer.separated_block {
 /* ========================================= */
 /* WEEK STRUCTURE + PROGRESSION UPGRADE END  */
 /* ========================================= */
+
+/* ========================================= */
+/* MICRO-INTERACTION POLISH START            */
+/* ========================================= */
+
+/* === Transition Normalization ===
+   Unified timing: 0.22s cubic-bezier for calm, premium feel.
+   Applied to all interactive prayer-guide elements. */
+
+.monthly_prayer_guide_week_item,
+.monthly_prayer_guide_day_item,
+.journey-btn,
+.journey-modal-btn,
+.praise-input,
+.praise-textarea,
+.praise-submit-btn {
+  transition: all 0.22s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* === Week Button — Hover Lift + Press === */
+.monthly_prayer_guide_week_item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.monthly_prayer_guide_week_item:active {
+  transform: translateY(0.5px) scale(0.98);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.monthly_prayer_guide_week_item.active:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.22);
+}
+
+.monthly_prayer_guide_week_item.active:active {
+  transform: translateY(0.5px) scale(0.98);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.18);
+}
+
+/* === Day Button — Hover Lift + Press === */
+.monthly_prayer_guide_day_item:hover:not(.locked) {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.monthly_prayer_guide_day_item:active:not(.locked) {
+  transform: translateY(0.5px) scale(0.98);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.monthly_prayer_guide_day_item.active:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.18);
+}
+
+.monthly_prayer_guide_day_item.active:active {
+  transform: translateY(0.5px) scale(0.98);
+}
+
+/* === Day Button — Focus Visible === */
+.monthly_prayer_guide_day_item:focus-visible {
+  outline: 2px solid var(--color-primary-blue);
+  outline-offset: 2px;
+}
+
+/* === Prayer Card — Content Fade on Day/Week Switch ===
+   The JS swaps textContent/innerHTML instantly.
+   We add a CSS animation the card can replay. */
+
+@keyframes prayerContentFade {
+  from {
+    opacity: 0.4;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Applied via JS-toggled class — see below for JS hook note */
+.thirty_one_day_card_wrapper.content-enter {
+  animation: prayerContentFade 0.32s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* === Prayer Card Wrapper — Soft Resting Shadow Refinement === */
+.thirty_one_day_card_wrapper {
+  transition: box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* === Verse Block — Subtle Hover Warmth === */
+#prayerVerse {
+  transition: border-left-color 0.3s ease, background 0.3s ease;
+}
+
+#prayerVerse:hover {
+  border-left-color: rgba(59, 130, 246, 0.38);
+  background: linear-gradient(135deg, rgba(236, 242, 255, 0.85) 0%, rgba(245, 247, 252, 0.65) 100%);
+}
+
+/* === Amen — Gentle Entrance === */
+@keyframes amenFade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 0.55;
+    transform: translateY(0);
+  }
+}
+
+.prayer-amen {
+  animation: amenFade 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s both;
+}
+
+/* === CTA / Journey Buttons — Active Press State === */
+.journey-btn.primary:active {
+  transform: translateY(0px) scale(0.97);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.journey-btn.secondary:active {
+  transform: scale(0.97);
+  background: #e9eaec;
+}
+
+/* === Journey Buttons — Focus Visible === */
+.journey-btn:focus-visible {
+  outline: 2px solid var(--color-primary-blue);
+  outline-offset: 3px;
+}
+
+.journey-modal-btn:focus-visible {
+  outline: 2px solid var(--color-primary-blue);
+  outline-offset: 2px;
+}
+
+/* === Form Inputs — Focus Glow === */
+.praise-input:focus,
+.praise-textarea:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* === Praise Submit Button — Focus + Press === */
+.praise-submit-btn:focus-visible {
+  outline: 2px solid var(--color-primary-blue);
+  outline-offset: 3px;
+}
+
+.praise-submit-btn:active {
+  transform: translateY(0px) scale(0.97);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* === Praise Submit — Gentle Hover Lift === */
+.praise-submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(13, 78, 242, 0.18);
+}
+
+/* === Reduced Motion — Disable All Micro-Interactions === */
+@media (prefers-reduced-motion: reduce) {
+  .monthly_prayer_guide_week_item,
+  .monthly_prayer_guide_day_item,
+  .journey-btn,
+  .journey-modal-btn,
+  .praise-input,
+  .praise-textarea,
+  .praise-submit-btn,
+  .thirty_one_day_card_wrapper,
+  #prayerVerse {
+    transition: none !important;
+  }
+
+  .monthly_prayer_guide_week_item:hover,
+  .monthly_prayer_guide_week_item:active,
+  .monthly_prayer_guide_day_item:hover,
+  .monthly_prayer_guide_day_item:active,
+  .journey-btn:hover,
+  .journey-btn:active,
+  .praise-submit-btn:hover,
+  .praise-submit-btn:active {
+    transform: none !important;
+  }
+
+  .thirty_one_day_card_wrapper.content-enter {
+    animation: none !important;
+    opacity: 1;
+  }
+
+  .prayer-amen {
+    animation: none !important;
+    opacity: 0.55;
+  }
+}
+
+/* ========================================= */
+/* MICRO-INTERACTION POLISH END              */
+/* ========================================= */
 /* ========================================= */
