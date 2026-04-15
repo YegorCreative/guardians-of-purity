@@ -94,8 +94,7 @@
 .reflection-timer-module {
   position: relative;
   overflow: hidden;
-  /* Contain waves */
-  /* Ensure existing styles are maintained */
+  margin-bottom: 30px; /* PRODUCTION HARDENING — merged from CONSISTENCY */
 }
 
 .timer-waves {
@@ -323,14 +322,14 @@
   z-index: 1;
   max-width: 900px;
   margin: 0 auto;
-  padding: 32px;
+  padding: 42px 38px; /* PRODUCTION HARDENING — merged from CONSISTENCY (was 32px) */
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 25px;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-  animation: fadeInUp 1s ease;
+  animation: fadeInUp 0.8s var(--ease-premium, cubic-bezier(0.25, 0.8, 0.25, 1)) both; /* PRODUCTION HARDENING — merged from MOTION */
 }
 
 @keyframes fadeInUp {
@@ -352,6 +351,11 @@
   margin-bottom: 10px;
   text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
   line-height: 1.2;
+  max-width: 780px; /* PRODUCTION HARDENING — merged from CONSISTENCY */
+  margin-left: auto; /* PRODUCTION HARDENING — merged from CONSISTENCY */
+  margin-right: auto; /* PRODUCTION HARDENING — merged from CONSISTENCY */
+  letter-spacing: -0.01em; /* PRODUCTION HARDENING — merged from CONSISTENCY/TRUST */
+  text-wrap: balance; /* PRODUCTION HARDENING — merged from CONSISTENCY */
 }
 
 .chapterOne-chapter-indicator {
@@ -366,11 +370,12 @@
 
 .chapterOne-verse-container {
   background: rgba(255, 255, 255, 0.95);
-  padding: 25px 30px;
+  padding: 28px 34px; /* PRODUCTION HARDENING — merged from CONTENT (was 25px 30px) */
   border-radius: 16px;
   margin: 0 auto 18px auto;
   max-width: 680px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  transition: box-shadow var(--transition-base); /* PRODUCTION HARDENING — merged from CONSISTENCY */
 }
 
 .chapterOne-verse-container .chapterOne-verse {
@@ -391,9 +396,9 @@
 }
 
 .chapterOne-verse {
-  font-size: 1.3rem;
+  font-size: 1.08rem; /* PRODUCTION HARDENING — merged from TRUST (was 1.3rem) */
   font-style: italic;
-  line-height: 1.8;
+  line-height: 1.75; /* PRODUCTION HARDENING — merged from TRUST */
   margin-bottom: 25px;
   color: #ffffff;
   text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
@@ -418,6 +423,8 @@
   backdrop-filter: blur(10px);
   text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
   max-width: 680px;
+  line-height: 1.72; /* PRODUCTION HARDENING — merged from TRUST (was implied) */
+  letter-spacing: 0.005em; /* PRODUCTION HARDENING — merged from CONSISTENCY */
   margin-left: auto;
   margin-right: auto;
 }
@@ -443,10 +450,10 @@
     rgba(239, 246, 255, 0.98) 0%,
     rgba(219, 234, 254, 0.96) 42%,
     rgba(191, 219, 254, 0.92) 100%);
-  padding: 46px 48px;
+  padding: 52px 54px; /* PRODUCTION HARDENING — merged from CONTENT (was 46px 48px) */
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.48);
-  box-shadow: 0 20px 50px rgba(59, 130, 246, 0.16);
+  box-shadow: 0 20px 50px rgba(59, 130, 246, 0.16); /* PRODUCTION HARDENING — CONSISTENCY shadow overridden by this base — keeping base */
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
@@ -455,12 +462,14 @@
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 28px;
+  margin-bottom: 34px; /* PRODUCTION HARDENING — merged from CONTENT (was 28px) */
   color: #213035;
   background: linear-gradient(135deg, #3b82f6, #a855f7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  letter-spacing: -0.005em; /* PRODUCTION HARDENING — merged from CONTENT/TRUST */
+  line-height: 1.15; /* PRODUCTION HARDENING — merged from CONTENT */
 }
 
 /* Parable Text Flow Layout */
@@ -521,26 +530,26 @@
 
 .chapterOne-paragraph {
   font-size: 1.05rem;
-  line-height: 1.6;
-  margin-bottom: 14px;
   color: #374151;
-  /* PREMIUM UPGRADE START */
-  line-height: 1.75;
-  margin-bottom: 18px;
-  /* PREMIUM UPGRADE END */
+  max-width: 68ch; /* PRODUCTION HARDENING — merged from CONSISTENCY/CONTENT */
+  line-height: 1.78; /* PRODUCTION HARDENING — merged from TRUST (was 1.75/1.8/1.9) */
+  margin-bottom: 20px; /* PRODUCTION HARDENING — merged from CONSISTENCY (was 18px) */
 }
 
 .chapterOne-moral-box {
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1));
-  border-left: 6px solid #3b82f6;
-  padding: 24px;
-  margin-top: 22px;
-  font-size: 1.08rem;
+  border-left: 7px solid #3b82f6; /* PRODUCTION HARDENING — merged width from CONTENT (was 6px) */
+  padding: 30px 34px; /* PRODUCTION HARDENING — merged from CONTENT (was 24px) */
+  margin-top: 32px; /* PRODUCTION HARDENING — merged from CONTENT (was 22px) */
+  font-size: 1.1rem; /* PRODUCTION HARDENING — merged from CONTENT (was 1.08rem) */
   font-style: italic;
   color: #1e293b;
   text-align: center;
   border-radius: 25px;
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.15);
+  box-shadow: var(--trust-shadow-grounded); /* PRODUCTION HARDENING — merged from TRUST */
+  border: var(--trust-border); /* PRODUCTION HARDENING — merged from TRUST */
+  line-height: 1.8; /* PRODUCTION HARDENING — merged from CONTENT */
+  position: relative; /* PRODUCTION HARDENING — merged from CONTENT */
 }
 
 /* Chapter 1 - Teaching Sections */
@@ -587,24 +596,25 @@
 .chapterOne-teaching-title {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 18px;
+  margin-bottom: 24px; /* PRODUCTION HARDENING — merged from CONTENT (was 18px) */
   color: #1e293b;
   background: linear-gradient(135deg, #3b82f6, #a855f7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  padding-bottom: 10px;
+  padding-bottom: 14px; /* PRODUCTION HARDENING — merged from CONTENT (was 10px) */
   border-bottom: 3px solid rgba(59, 130, 246, 0.2);
+  line-height: 1.25; /* PRODUCTION HARDENING — merged from CONTENT */
+  letter-spacing: -0.005em; /* PRODUCTION HARDENING — merged from TRUST */
 }
 
 .chapterOne-teaching-text {
   font-size: 1.15rem;
-  line-height: 1.9;
-  margin-bottom: 18px;
   color: #374151;
-  /* PREMIUM UPGRADE START */
   max-width: 68ch;
-  /* PREMIUM UPGRADE END */
+  line-height: 1.78; /* PRODUCTION HARDENING — merged from TRUST (was 1.9) */
+  margin-bottom: 24px; /* PRODUCTION HARDENING — merged from CONTENT (was 18px) */
+  letter-spacing: 0.005em; /* PRODUCTION HARDENING — merged from CONSISTENCY */
 }
 
 .chapterOne-bullets {
@@ -616,9 +626,9 @@
 .chapterOne-bullets li {
   position: relative;
   padding-left: 35px;
-  margin-bottom: 14px; /* PREMIUM UPGRADE: increased from 10px */
+  margin-bottom: 18px; /* PRODUCTION HARDENING — merged from CONTENT (was 14px) */
   font-size: 1.1rem;
-  line-height: 1.8;
+  line-height: 1.8; /* PRODUCTION HARDENING — merged from CONTENT */
   color: #374151;
 }
 
@@ -633,11 +643,12 @@
 }
 
 .chapterOne-scripture {
-  font-size: 1.2rem;
+  font-size: 1.18rem; /* PRODUCTION HARDENING — merged from CONTENT (was 1.2rem) */
   font-style: italic;
   background: rgba(255, 255, 255, 0.12);
-  padding: 22px;
-  border-left: 5px solid #3b82f6;
+  padding: 28px 32px; /* PRODUCTION HARDENING — merged from CONTENT (was 22px) */
+  border-left: 6px solid #3b82f6; /* PRODUCTION HARDENING — merged width from CONTENT (was 5px) */
+  border-left-color: var(--color-scripture-border); /* PRODUCTION HARDENING — merged from TRUST */
   margin: 0 0 20px;
   border-radius: 25px;
   color: #1e293b;
@@ -647,6 +658,8 @@
   -webkit-backdrop-filter: blur(14px);
   width: 100%;
   box-sizing: border-box;
+  line-height: 1.9; /* PRODUCTION HARDENING — merged from CONTENT */
+  position: relative; /* PRODUCTION HARDENING — merged from CONTENT */
 }
 
 .chapterOne-verseRef {
@@ -659,12 +672,13 @@
 
 .chapterOne-quote-box {
   background: rgba(255, 255, 255, 0.12);
-  padding: 20px 22px;
-  border-left: 5px solid #a855f7;
+  padding: 26px 30px; /* PRODUCTION HARDENING — merged from CONTENT (was 20px 22px) */
+  border-left: 6px solid #a855f7; /* PRODUCTION HARDENING — merged width from CONTENT (was 5px) */
+  border-left-color: rgba(200, 141, 86, 0.3); /* PRODUCTION HARDENING — merged from TRUST */
   font-style: italic;
   margin-bottom: 22px;
   border-radius: 25px;
-  font-size: 1.15rem;
+  font-size: 1.12rem; /* PRODUCTION HARDENING — merged from CONTENT (was 1.15rem) */
   color: #1e293b;
   box-shadow: 0 14px 32px rgba(168, 85, 247, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.24);
@@ -673,6 +687,7 @@
   display: block;
   width: 100%;
   box-sizing: border-box;
+  line-height: 1.85; /* PRODUCTION HARDENING — merged from CONTENT */
 }
 
 .chapterOne-action-box,
@@ -744,41 +759,46 @@
 }
 
 .chapterOne-summary-container {
-  max-width: 900px;
+  max-width: 720px; /* PRODUCTION HARDENING — merged from TRUST (was 900px) */
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.14);
-  padding: 36px;
+  padding: 44px 42px; /* PRODUCTION HARDENING — merged from CONTENT (was 36px) */
   border-radius: 25px;
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
+  margin-left: auto; /* PRODUCTION HARDENING — merged from TRUST */
+  margin-right: auto; /* PRODUCTION HARDENING — merged from TRUST */
 }
 
 .chapterOne-summary-title {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 24px;
+  margin-bottom: 32px; /* PRODUCTION HARDENING — merged from CONTENT (was 24px) */
   text-align: center;
   background: linear-gradient(135deg, #3b82f6, #a855f7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  letter-spacing: -0.005em; /* PRODUCTION HARDENING — merged from TRUST */
 }
 
 .chapterOne-summary-list {
   list-style: none;
   padding-left: 0;
   font-size: 1.15rem;
-  margin-bottom: 24px;
-  line-height: 1.7;
+  margin-bottom: 32px; /* PRODUCTION HARDENING — merged from CONTENT (was 24px) */
+  line-height: 1.75; /* PRODUCTION HARDENING — merged from TRUST */
 }
 
 .chapterOne-summary-list li {
   position: relative;
-  padding-left: 40px;
-  margin-bottom: 16px; /* PREMIUM UPGRADE: increased from 12px */
+  padding-left: 42px; /* PRODUCTION HARDENING — merged from CONTENT (was 40px) */
+  margin-bottom: 20px; /* PRODUCTION HARDENING — merged from CONTENT (was 16px) */
   color: #374151;
+  line-height: 1.8; /* PRODUCTION HARDENING — merged from CONTENT */
+  font-size: 1.12rem; /* PRODUCTION HARDENING — merged from CONTENT */
 }
 
 .chapterOne-summary-list li::before {
@@ -792,17 +812,18 @@
 }
 
 .chapterOne-reflection-question {
-  font-size: 1.3rem;
+  font-size: 1.25rem; /* PRODUCTION HARDENING — merged from CONTENT (was 1.3rem) */
   font-weight: 600;
   background: rgba(255, 255, 255, 0.12);
-  padding: 22px;
-  border-left: 6px solid #ec4899;
+  padding: 26px 30px; /* PRODUCTION HARDENING — merged from CONTENT (was 22px) */
+  border-left: 7px solid #ec4899; /* PRODUCTION HARDENING — merged width from CONTENT (was 6px) */
   border-radius: 25px;
   text-align: center;
   box-shadow: 0 16px 40px rgba(236, 72, 153, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.22);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
+  line-height: 1.7; /* PRODUCTION HARDENING — merged from CONTENT */
 }
 
 /* Chapter 1 - Prayer Section */
@@ -833,10 +854,10 @@
 }
 
 .chapterOne-prayer-container {
-  max-width: 780px;
+  max-width: 680px; /* PRODUCTION HARDENING — merged from TRUST (was 780px) */
   margin: 0 auto;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.38) 0%, rgba(255, 255, 255, 0.26) 100%);
-  padding: 42px 46px;
+  padding: 48px 50px; /* PRODUCTION HARDENING — merged from CONTENT (was 42px 46px) */
   border-radius: 32px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(14px);
@@ -844,6 +865,8 @@
   box-shadow: 0 22px 52px rgba(76, 29, 149, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.34);
   position: relative;
   z-index: 1;
+  margin-left: auto; /* PRODUCTION HARDENING — merged from TRUST */
+  margin-right: auto; /* PRODUCTION HARDENING — merged from TRUST */
 }
 
 .chapterOne-prayer-title {
@@ -852,7 +875,7 @@
   font-weight: 700;
   line-height: 1.12;
   letter-spacing: 0.01em;
-  margin-bottom: 28px;
+  margin-bottom: 32px; /* PRODUCTION HARDENING — merged from CONTENT (was 28px) */
   color: #312e81;
   text-shadow: none;
 }
@@ -866,14 +889,15 @@
 
 .chapterOne-prayer-text {
   font-family: 'Open Sans', sans-serif;
-  font-size: 1.16rem;
-  line-height: 1.95;
+  font-size: 1.05rem; /* PRODUCTION HARDENING — merged from TRUST (was 1.16rem) */
+  line-height: 1.85; /* PRODUCTION HARDENING — merged from TRUST (was 1.95) */
   font-style: italic;
   white-space: pre-line;
   color: #334155;
-  max-width: 42ch; /* PREMIUM UPGRADE: widened from 34ch for readability */
+  max-width: 56ch; /* PRODUCTION HARDENING — merged from CONTENT (was 42ch) */
   margin: 0 auto;
   text-shadow: none;
+  letter-spacing: 0.005em; /* PRODUCTION HARDENING — merged from CONTENT */
 }
 
 .chapterOne-prayer-icons {
@@ -1057,7 +1081,7 @@
 .chapterOne-journal-box textarea {
   width: 100%;
   height: 140px;
-  font-size: 1.05rem;
+  font-size: 0.95rem; /* PRODUCTION HARDENING — merged from TRUST (was 1.05rem) */
   padding: 15px;
   border: 2px solid rgba(59, 130, 246, 0.2);
   border-radius: 15px;
@@ -1065,7 +1089,8 @@
   font-family: inherit;
   background-color: white;
   color: #374151;
-  transition: all 0.3s ease;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base); /* PRODUCTION HARDENING — merged from CONSISTENCY */
+  line-height: 1.7; /* PRODUCTION HARDENING — merged from CONTENT/TRUST */
 }
 
 .chapterOne-journal-box textarea:focus {
@@ -1087,14 +1112,14 @@
   border: none;
   padding: 16px 32px;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700; /* PRODUCTION HARDENING — merged from TRUST (was 600) */
   border-radius: 25px;
   cursor: pointer;
   margin-top: 12px;
-  transition: all 0.3s ease;
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow); /* PRODUCTION HARDENING — merged from CONSISTENCY */
   box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.03em; /* PRODUCTION HARDENING — merged from TRUST (was 0.5px) */
 }
 
 .chapterOne-export-button:hover {
@@ -1115,9 +1140,9 @@
   max-width: 900px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.14);
-  padding: 36px;
+  padding: 38px 36px; /* PRODUCTION HARDENING — merged from CONSISTENCY (was 36px) */
   border-radius: 25px;
-  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12); /* PRODUCTION HARDENING — merged from CONSISTENCY */
   border: 1px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -1131,13 +1156,17 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  letter-spacing: -0.005em; /* PRODUCTION HARDENING — merged from TRUST */
 }
 
 .chapterOne-export-text {
   font-size: 1.2rem;
   color: #374151;
   margin-bottom: 24px;
-  line-height: 1.65;
+  line-height: 1.72; /* PRODUCTION HARDENING — merged from TRUST (was 1.65) */
+  max-width: 600px; /* PRODUCTION HARDENING — merged from TRUST */
+  margin-left: auto; /* PRODUCTION HARDENING — merged from TRUST */
+  margin-right: auto; /* PRODUCTION HARDENING — merged from TRUST */
 }
 
 /* Responsive Design */
