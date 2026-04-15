@@ -19,7 +19,7 @@
   /* clip overlay/background to radius */
 }
 
-/* Introduction overlay */
+/* Introduction overlay — gradient from SCRIPTURE PRESENTATION UPGRADE */
 .intro-section::before {
   content: "";
   position: absolute;
@@ -27,11 +27,14 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.45);
-  /* PRODUCTION HARDENING — merged from Readability Fix */
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.38) 0%,
+    rgba(0, 0, 0, 0.52) 50%,
+    rgba(0, 0, 0, 0.42) 100%
+  );
   z-index: 1;
   border-radius: inherit;
-  /* match parent radius */
 }
 
 /* --- Section 1: "Why 4 weeks of Prayer?" Restoration --- */
@@ -70,17 +73,12 @@
   left: 0;
   background-color: var(--color-white);
   padding: 15px 30px 15px 40px;
-  font-size: 50px;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 4vw, 2.8rem);
   font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
   z-index: 5;
-  border-bottom-right-radius: 25px;
-  border-top-left-radius: 25px;
-}
-
-/* Explicit class handling to ensure no conflict */
-.purity_challenge_intro_block_title.diwt_top_left {
-  top: 0;
-  left: 0;
   border-bottom-right-radius: 25px;
   border-top-left-radius: 25px;
 }
@@ -89,16 +87,17 @@
   flex: 1;
   max-width: 800px;
   font-size: 1.2rem;
-  line-height: 1.85;
+  line-height: 1.9;
   margin: 80px auto 40px auto;
   /* Top margin clears the badge */
   position: relative;
   color: var(--color-white);
   text-shadow: none;
-  font-weight: 500;
+  font-weight: 400;
   text-align: center;
   z-index: 5;
   padding: 0 20px;
+  letter-spacing: 0.005em;
 }
 
 .purity_challenge_intro_block_picture {
@@ -151,19 +150,20 @@
 
 .prayer .split.right h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
   margin-bottom: 22px;
-  line-height: 1.25;
+  line-height: 1.3;
   font-weight: 700;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.01em;
   color: var(--color-text-dark);
 }
 
 .prayer .split.right p {
   font-size: 1.1rem;
-  line-height: 1.78;
+  line-height: 1.82;
   max-width: 540px;
   color: var(--color-text-dark-neutral);
+  letter-spacing: 0.005em;
 }
 
 .gradient_cards_wrapper {
@@ -189,65 +189,32 @@
   }
 }
 
-/* Start Monthly prayer guide */
+/* monthly_prayer_guide_wrapper — padding/radius in TYPOGRAPHY UPGRADE */
 .monthly_prayer_guide_wrapper {
   position: relative;
   background: #e5e7eb;
-  padding: 20px;
 }
 
+/* content base — .unified variant + CARD PREMIUM override visual props */
 .monthly_prayer_guide_content {
   display: flex;
-  /* Ensure flexbox is active */
-  background: #ffffff;
-  padding: 10px;
-  backdrop-filter: none;
-  border: 1px solid #e5e7eb;
-  box-shadow: none;
-  border-radius: 20px;
-  gap: 5px;
-  /* Reduced gap from 10px to 5px */
   width: 100%;
   justify-content: center;
-  /* Center the group: Days + Card */
   align-items: flex-start;
-  /* Align top */
 }
 
-/* Prayer Card UI Fixes */
+/* card_wrapper base — visual props in CARD PREMIUM UPGRADE */
 .thirty_one_day_card_wrapper {
-  /* width: 100%; REMOVED to prevent forcing full width */
   width: auto !important;
   flex: 0 1 auto !important;
-  /* Allow shrinking but do not grow to fill space */
   max-width: 450px !important;
-  /* constrained */
-  /* margin removed via wildcard above, but explicit reset is good */
   margin-left: 0 !important;
   margin-right: 0 !important;
-  border-radius: 25px;
-  overflow: hidden;
-  background: white;
-  padding-bottom: 10px;
-  box-shadow: var(--trust-shadow-grounded);
 }
 
-.thirty_one_day_card_block_title {
-  font-size: 1.25rem;
-  /* ~1.2x scale from base */
-  padding: 8px 16px;
-  background: white;
-  border-bottom-right-radius: 20px;
-  font-weight: 700;
-}
+/* thirty_one_day_card_block_title — see CARD PREMIUM UPGRADE */
 
-/* Title Font Scale */
-.thirty_one_day_card_title.flex-center {
-  font-size: 2rem !important;
-  /* ~1.3x scale from usual 1.5rem/24px */
-  margin: 15px 0;
-  line-height: 1.3;
-}
+/* thirty_one_day_card_title.flex-center — see CARD PREMIUM UPGRADE #prayerTitle */
 
 /* Body Text (Prayer) - Specific Fix */
 .thirty_one_day_card_title.with_height {
@@ -274,40 +241,23 @@
   font-weight: 600;
 }
 
+/* weeks base — visual props in WEEK STRUCTURE UPGRADE */
 .monthly_prayer_guide_weeks {
   display: flex;
   flex-direction: row;
-  /* Horizontal layout */
-  gap: 10px;
   width: 100%;
   margin-bottom: 20px;
 }
 
+/* week_item base — visual props in WEEK STRUCTURE + TYPOGRAPHY UPGRADES */
 .monthly_prayer_guide_week_item {
   flex: 1;
-  /* Equal width */
   text-align: center;
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  padding: 12px 10px;
-  background: #ffffff;
-  backdrop-filter: none;
-  border: 1px solid #d1d5db;
-  box-shadow: none;
-  border-radius: 20px;
-  color: var(--color-text-dark);
   cursor: pointer;
-  transition: all 0.3s ease;
   opacity: 1;
-  /* Reset opacity */
 }
 
-.monthly_prayer_guide_week_item:hover {
-  opacity: 1;
-  background: #f3f4f6;
-  border-color: #9ca3af;
-}
+/* week_item:hover — see WEEK STRUCTURE UPGRADE */
 
 /* Vertical Day Buttons Container */
 .monthly_prayer_guide_days {
@@ -323,27 +273,21 @@
   /* Do not grow */
 }
 
-/* Thirty One Day Card Content - Placed here correctly */
+/* Thirty One Day Card Content */
 .thirty_one_day_card_content {
   background: #eff6ff;
-  /* Very light blue */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   border-radius: 25px;
   padding: 18px 22px;
   color: var(--color-text-dark);
-  /* Dark text */
   font-weight: 500;
-  font-size: 16px;
-  background-image: none;
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
   height: auto;
   min-height: 120px;
   margin-bottom: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .thirty_one_day_card_content strong,
@@ -357,33 +301,14 @@
   font-weight: 600;
 }
 
-.thirty_one_day_card_content3 {
-  background: #eff6ff;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 25px;
-  padding: 15px 15px;
-  color: var(--color-text-dark);
-  font-weight: bold;
-  font-size: 14px;
-  background-image: none;
-  height: 80px;
-  align-items: center;
-  text-align: left;
-}
 
+
+/* day_item base — visual props in CARD PREMIUM UPGRADE */
 .monthly_prayer_guide_day_item {
   background: #ffffff;
-  padding: 10px 15px;
-  backdrop-filter: none;
-  border: 1px solid #d1d5db;
-  box-shadow: none;
-  border-radius: 20px;
   width: auto;
   min-width: 72px;
   color: var(--color-text-dark);
-  transition: all 0.3s ease;
   font-weight: 500;
   opacity: 1;
   white-space: nowrap;
@@ -395,33 +320,13 @@
   font-weight: 700;
 }
 
-.monthly_prayer_guide_day_item:hover {
-  opacity: 1;
-  background: #f3f4f6;
-}
+/* day_item:hover — see CARD PREMIUM UPGRADE */
 
-.monthly_prayer_guide_day_item.active,
-.monthly_prayer_guide_week_item.active {
-  font-weight: bold;
-  border: 1px solid var(--color-primary-blue);
-  background: var(--color-primary-blue);
-  color: var(--color-white) !important;
-  backdrop-filter: none;
-  opacity: 1;
-}
+/* day_item.active — see CARD PREMIUM UPGRADE */
+/* week_item.active — see WEEK STRUCTURE UPGRADE */
 
 
-/* Prayer Amen text styling */
-.prayer-amen {
-  font-size: 1.3rem;
-  margin: 18px 0 10px 0;
-  text-align: center;
-  color: #6b7280;
-  font-style: italic;
-  font-family: 'Playfair Display', serif;
-  letter-spacing: 0.04em;
-  opacity: 0.8;
-}
+/* prayer-amen — see CARD PREMIUM + MICRO-INTERACTION UPGRADE */
 
 /* End Monthly prayer guide */
 
@@ -445,7 +350,7 @@
   /* Tablet/Mobile Stacking (Max 768px) */
   .purity_challenge_intro_block {
     flex-direction: column;
-    padding: 30px 20px;
+    padding: 32px 20px;
     height: auto;
     min-height: auto;
     align-items: flex-start;
@@ -455,12 +360,14 @@
   .intro-paragraph {
     max-width: 100%;
     width: 100%;
-    margin: 30px 0 0 0;
-    /* Space between image and text */
-    padding: 0;
+    margin: 64px 0 0 0;
+    /* Top margin refined in Typography upgrade */
+    padding: 0 8px;
     text-align: left;
     order: 2;
     /* Text below image */
+    font-size: 1.08rem;
+    line-height: 1.82;
   }
 
   .purity_challenge_intro_block_picture {
@@ -477,43 +384,19 @@
 
   /* End dynamic text with image */
 
-  .centered {
-    width: 100%;
-    padding: 10px;
-  }
+
 
 
 
   .monthly_prayer_guide_days {
     flex-direction: row;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
     justify-content: center;
     margin-bottom: 10px;
   }
 
-  .week_block {
-    overflow: hidden;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-    width: 100%;
-  }
 
-  .weekly_content {
-    display: none;
-    padding: 10px 0;
-  }
-
-  .weekly_content .thirty_one_day_card_wrapper {
-    margin: 0 auto;
-  }
-
-  .week_block.active .weekly_content {
-    display: block;
-  }
-
-  .monthly_prayer_guide_card {
-    flex-direction: column;
-  }
 
   /* End Monthly prayer guide */
 }
@@ -840,9 +723,8 @@
   cursor: default;
 }
 
-/* Increase visual size of Day Label by 1.2x (14px * 1.2 = 16.8px -> 17px) */
-#prayerDay,
-.thirty_one_day_card_block_title.prayerDay {
+/* Day Label visual size — see CARD PREMIUM for block_title */
+#prayerDay {
   font-size: 17px !important;
 }
 
@@ -905,17 +787,6 @@
   }
 }
 
-/* --- STEP C: UI Tweaks --- */
-.thirty_one_day_card_block_title {
-  font-size: 1.2em;
-  /* 1.2x */
-}
-
-.thirty_one_day_card_title {
-  font-size: 1.3em;
-}
-
-/* PRODUCTION HARDENING — STEP E dead overrides removed (merged into base) */
 
 /* --- Praise Report Card Styles --- */
 
@@ -932,37 +803,29 @@
   text-align: center;
 }
 
-/* Standalone Styling (Overrides previous desktop/mobile splits if present) */
+/* Standalone Styling */
 .praise-report-card.standalone {
   width: 100%;
-  max-width: 600px;
+  max-width: 680px;
   margin: 0 auto;
-  /* Center the card */
 }
 
-/* Clean up old modifiers if they exist, or just leave them harmlessly */
-.praise-report-card.desktop-only,
-.praise-report-card.mobile-only {
-  display: none;
-  /* Force hide old ones just in case */
-}
+
 
 .praise-report-card h3 {
   font-family: var(--font-heading);
   color: var(--color-text-dark);
-  font-size: 1.8rem;
-  /* Larger title */
-  margin: 0;
-  line-height: 1.3;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: 0 0 8px;
+  line-height: 1.25;
 }
 
 .praise-report-card p {
   font-size: 1.1rem;
-  /* Larger text */
   color: var(--color-text-dark-neutral);
-  line-height: 1.6;
+  line-height: 1.72;
   margin: 0 auto;
-  max-width: 480px;
+  max-width: 560px;
 }
 
 .praise-form {
@@ -1006,18 +869,7 @@
   /* Center button */
 }
 
-/* Hide/Show logic based on viewport */
-@media (max-width: 1024px) {
-  .praise-report-card.desktop-only {
-    display: none;
-  }
-}
 
-@media (min-width: 1025px) {
-  .praise-report-card.mobile-only {
-    display: none;
-  }
-}
 
 /* Prayer Unified Layout v2 */
 .monthly_prayer_guide_content.unified {
@@ -1029,51 +881,48 @@
 @media (max-width: 768px) {
   .monthly_prayer_guide_content.unified {
     flex-direction: column;
+    padding: 12px;
+    gap: 12px;
   }
 
-  .monthly_prayer_guide_days {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+  /* .monthly_prayer_guide_days — consolidated into base 768px block */
 }
 
-/* Intro Verse Readability Fix v1 */
-
-.intro-section .intro-verse {
-  color: var(--color-white);
-  font-size: 1.2em;
-  /* ~1.2x increase */
-  font-weight: 600;
-  position: relative;
-  z-index: 2;
-}
-
-.intro-section .intro-reference {
-  color: var(--color-white);
-  font-size: 1.1em;
-  /* slightly smaller than verse */
-  opacity: 0.9;
-  position: relative;
-  z-index: 2;
-}
+/* Intro verse/reference — see SCRIPTURE PRESENTATION + TYPOGRAPHY UPGRADES */
 
 /* ========================================= */
 /* CONTENT PRESENTATION UPGRADE              */
 /* PRODUCTION HARDENING — Dead overrides removed; base merged above */
 /* ========================================= */
 
-/* Intro Verse extensions (unique) */
+/* Intro Verse — consolidated from TYPOGRAPHY + SCRIPTURE upgrades */
 .intro-section .intro-verse {
-  line-height: 1.7;
-  max-width: 680px;
+  font-weight: 400;
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  line-height: 1.85;
+  max-width: 620px;
+  letter-spacing: 0.005em;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  z-index: 2;
+  color: var(--color-white);
+  font-family: var(--font-serif, 'Playfair Display', serif);
 }
 
+/* Intro Reference — consolidated from TYPOGRAPHY + SCRIPTURE upgrades */
 .intro-section .intro-reference {
-  margin-top: 10px;
-  letter-spacing: 0.03em;
+  margin-top: 18px;
+  font-size: clamp(0.72rem, 1.2vw, 0.82rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  font-family: var(--font-heading, 'Montserrat', sans-serif);
+  font-style: normal;
+  position: relative;
+  z-index: 2;
+  color: var(--color-white);
 }
 
 /* Mobile Content Readability */
@@ -1085,10 +934,6 @@
   .prayer .split.right h2 {
     font-size: 2rem;
   }
-
-  .intro-paragraph {
-    font-size: 1.1rem;
-  }
 }
 
 @media (max-width: 520px) {
@@ -1098,10 +943,6 @@
 
   .prayer .split.right h2 {
     font-size: 1.7rem;
-  }
-
-  .intro-paragraph {
-    font-size: 1.05rem;
   }
 }
 
@@ -1157,6 +998,7 @@
 /* --- Gradient Section: Calm immersive hero continuation --- */
 .gradient-section {
   position: relative;
+  margin-top: -5px; /* seamless from parallax */
 }
 
 .gradient-section .gradient_cards_wrapper {
@@ -1231,6 +1073,8 @@
 .gradient-section .emotional-contract {
   color: rgba(255, 255, 255, 0.6);
   text-shadow: none;
+  margin-top: 8px;
+  margin-bottom: 16px;
   /* Animation */
   opacity: 0;
   transform: translateY(16px);
@@ -1269,14 +1113,63 @@
   }
 }
 
-/* --- Reduced motion: respect user preference --- */
+/* --- Reduced motion: respect user preference (consolidated) --- */
 @media (prefers-reduced-motion: reduce) {
+  /* Hero animations */
   .gradient-section .gradient_cards_wrapper h1,
   .gradient-section .subtitle,
   .gradient-section .emotional-contract {
     animation: none !important;
     opacity: 1;
     transform: none;
+  }
+
+  /* Section transitions */
+  .intro-section-wrapper .intro-section,
+  .purity_challenge_intro_block,
+  .prayer .split,
+  .praise-report-card,
+  .intro-section::before {
+    transition: none;
+  }
+
+  /* Interactive element transitions */
+  .monthly_prayer_guide_week_item,
+  .monthly_prayer_guide_week_item::before,
+  .monthly_prayer_guide_day_item,
+  .journey-btn,
+  .journey-modal-btn,
+  .praise-input,
+  .praise-textarea,
+  .praise-submit-btn,
+  .thirty_one_day_card_wrapper,
+  #prayerVerse,
+  .closing-btn {
+    transition: none !important;
+  }
+
+  /* Hover/active transforms */
+  .monthly_prayer_guide_week_item:hover,
+  .monthly_prayer_guide_week_item:active,
+  .monthly_prayer_guide_day_item:hover,
+  .monthly_prayer_guide_day_item:active,
+  .journey-btn:hover,
+  .journey-btn:active,
+  .praise-submit-btn:hover,
+  .praise-submit-btn:active {
+    transform: none !important;
+  }
+
+  /* Card enter animation */
+  .thirty_one_day_card_wrapper.content-enter {
+    animation: none !important;
+    opacity: 1;
+  }
+
+  /* Amen animation */
+  .prayer-amen {
+    animation: none !important;
+    opacity: 0.55;
   }
 }
 
@@ -1292,10 +1185,7 @@
    All prayer-page separated_blocks get generous top margin
    except the first (parallax) and header/footer. */
 
-/* Gradient hero continuation — no gap from parallax (seamless) */
-.gradient-section {
-  margin-top: -5px; /* neutralize separated_block padding gap */
-}
+/* gradient-section margin — consolidated into HERO UPGRADE block */
 
 /* Intro verse section — generous breathing room after dark hero */
 .intro-section-wrapper {
@@ -1328,92 +1218,37 @@ main > .prayer.separated_block {
   border-radius: 25px;
 }
 
-/* Praise/report card — section breathing */
-.praise-report-card.standalone {
-  max-width: 680px;
-}
+/* praise-report-card.standalone — consolidated into base block above */
 
 /* === Heading Hierarchy ===
    Normalize heading sizes for consistent visual rhythm. */
 
 /* Gradient h1 is handled by hero upgrade: clamp(1.8rem, 4.5vw, 3rem) — no change needed */
 
-/* "Why 4 weeks" badge title — scale refinement */
-.purity_challenge_intro_block_title {
-  font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 4vw, 2.8rem);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-}
+/* purity_challenge_intro_block_title — consolidated into base block */
 
-/* Split section h2 — dial back from 2.5rem to calmer heading */
-.prayer .split.right h2 {
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-}
+/* split.right h2 — consolidated into base block */
 
-/* Praise report h3 — slight bump for section authority */
-.praise-report-card h3 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  line-height: 1.25;
-  margin-bottom: 8px;
-}
+/* praise-report h3 — consolidated into base block */
 
-/* Monthly prayer guide — week tab headings */
-.monthly_prayer_guide_week_item {
-  font-size: 1rem;
-  padding: 14px 12px;
-}
+/* week_item typography — consolidated into WEEK STRUCTURE UPGRADE */
 
 /* === Text Readability ===
    Ensure comfortable reading widths, line-heights, and spacing. */
 
-/* Intro paragraph — refine line-height and weight */
-.intro-paragraph {
-  line-height: 1.9;
-  font-weight: 400;
-  letter-spacing: 0.005em;
-}
+/* intro-paragraph — consolidated into base block */
 
-/* Intro verse — generous line-height */
-.intro-section .intro-verse {
-  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
-  line-height: 1.8;
-  font-family: var(--font-serif, 'Playfair Display', serif);
-}
+/* intro-verse — consolidated into CONTENT PRESENTATION block */
 
-.intro-section .intro-reference {
-  font-size: clamp(0.85rem, 1.5vw, 1rem);
-  margin-top: 14px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-weight: 600;
-}
+/* intro-reference — consolidated into CONTENT PRESENTATION block */
 
-/* Split section body text */
-.prayer .split.right p {
-  line-height: 1.82;
-  letter-spacing: 0.005em;
-}
+/* split.right p — consolidated into base block */
 
-/* Praise report body text — wider reading column */
-.praise-report-card p {
-  max-width: 560px;
-  line-height: 1.72;
-}
+/* praise-report-card p \u2014 consolidated into base block */
 
-/* Prayer card body text — calmer weight */
-.thirty_one_day_card_content {
-  line-height: 1.75;
-  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
-}
+/* thirty_one_day_card_content — consolidated into base block */
 
-/* Emotional contract — already styled in hero upgrade, just ensure spacing */
-.gradient-section .emotional-contract {
-  margin-top: 8px;
-  margin-bottom: 16px;
-}
+/* emotional-contract spacing — consolidated into HERO UPGRADE block */
 
 /* === Mobile Typography Refinements === */
 
@@ -1423,16 +1258,9 @@ main > .prayer.separated_block {
     padding-bottom: 52px;
   }
 
-  .purity_challenge_intro_block {
-    padding: 32px 20px;
-  }
+  /* .purity_challenge_intro_block — padding consolidated into base 768px block */
 
-  .intro-paragraph {
-    margin-top: 64px;
-    font-size: 1.08rem;
-    line-height: 1.82;
-    padding: 0 8px;
-  }
+  /* .intro-paragraph — consolidated into base 768px block */
 
   .monthly_prayer_guide_wrapper {
     padding: 24px 12px;
@@ -1480,15 +1308,7 @@ main > .prayer.separated_block {
   }
 }
 
-/* === Reduced Motion === */
-@media (prefers-reduced-motion: reduce) {
-  .intro-section-wrapper .intro-section,
-  .purity_challenge_intro_block,
-  .prayer .split,
-  .praise-report-card {
-    transition: none;
-  }
-}
+/* Reduced motion — consolidated into HERO UPGRADE block */
 
 /* ========================================= */
 /* PRAYER TYPOGRAPHY AND SPACING UPGRADE END */
@@ -1570,17 +1390,17 @@ main > .prayer.separated_block {
   color: var(--color-text-dark);
 }
 
-/* Verse "Scripture" label */
+/* Verse "Scripture" label — consolidated from Card Premium + Scripture upgrades */
 .verse-label {
   display: block;
   font-family: var(--font-heading, 'Montserrat', sans-serif);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-style: normal;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: rgba(59, 130, 246, 0.6);
-  margin-bottom: 8px;
+  letter-spacing: 0.16em;
+  color: rgba(59, 130, 246, 0.45);
+  margin-bottom: 10px;
 }
 
 /* === Prayer Body === */
@@ -1608,12 +1428,28 @@ main > .prayer.separated_block {
   margin-bottom: 10px;
 }
 
-/* === Amen — Quiet close === */
+/* === Amen — Quiet close + entrance === */
+@keyframes amenFade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 0.55;
+    transform: translateY(0);
+  }
+}
+
 .prayer-amen {
   font-size: 1.1rem;
   margin: 20px 0 6px;
-  opacity: 0.55;
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+  font-family: 'Playfair Display', serif;
   letter-spacing: 0.06em;
+  opacity: 0.55;
+  animation: amenFade 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s both;
 }
 
 /* === Day Buttons — Polish === */
@@ -1635,24 +1471,11 @@ main > .prayer.separated_block {
   box-shadow: 0 2px 10px rgba(59, 130, 246, 0.15);
 }
 
-/* === Week Tabs — Polish === */
-.monthly_prayer_guide_week_item {
-  border-radius: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  transition: all 0.25s ease;
-}
-
-.monthly_prayer_guide_week_item.active {
-  border-radius: 14px;
-  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.15);
-}
+/* week_item polish — moved to WEEK STRUCTURE UPGRADE */
 
 /* === Mobile Prayer Card === */
 @media (max-width: 768px) {
-  .monthly_prayer_guide_content.unified {
-    padding: 12px;
-    gap: 12px;
-  }
+  /* .monthly_prayer_guide_content.unified — consolidated into unified layout block above */
 
   .thirty_one_day_card_wrapper {
     padding: 0 16px 24px;
@@ -1673,9 +1496,7 @@ main > .prayer.separated_block {
     line-height: 1.78 !important;
   }
 
-  .monthly_prayer_guide_days {
-    gap: 8px;
-  }
+  /* .monthly_prayer_guide_days gap — consolidated into base 768px block */
 
   .monthly_prayer_guide_day_item {
     font-size: 0.8rem;
@@ -1708,13 +1529,7 @@ main > .prayer.separated_block {
   }
 }
 
-/* === Reduced Motion === */
-@media (prefers-reduced-motion: reduce) {
-  .monthly_prayer_guide_day_item,
-  .monthly_prayer_guide_week_item {
-    transition: none;
-  }
-}
+/* Reduced motion — consolidated into HERO UPGRADE block */
 
 /* ========================================= */
 /* PRAYER CARD PREMIUM UPGRADE END           */
@@ -1748,26 +1563,9 @@ main > .prayer.separated_block {
   margin-bottom: 8px;
 }
 
-/* Verse text refinement */
-.intro-section .intro-verse {
-  font-weight: 400;
-  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
-  line-height: 1.85;
-  max-width: 620px;
-  letter-spacing: 0.005em;
-}
+/* intro-verse — consolidated into CONTENT PRESENTATION block */
 
-/* Reference — clear secondary hierarchy */
-.intro-section .intro-reference {
-  margin-top: 18px;
-  font-size: clamp(0.72rem, 1.2vw, 0.82rem);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  opacity: 0.55;
-  font-family: var(--font-heading, 'Montserrat', sans-serif);
-  font-style: normal;
-}
+/* intro-reference — consolidated into CONTENT PRESENTATION block */
 
 /* Subtle divider between quote and reference */
 .intro-section .intro-reference::before {
@@ -1780,37 +1578,19 @@ main > .prayer.separated_block {
   border-radius: 1px;
 }
 
-/* Overlay — slightly deeper for text weight support */
-.intro-section::before {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.38) 0%,
-    rgba(0, 0, 0, 0.52) 50%,
-    rgba(0, 0, 0, 0.42) 100%
-  );
-}
+/* intro-section::before overlay — consolidated into base block above */
 
 /* === Prayer Card Verse — Harmony Polish === */
 
-/* Soften the left border to match intro's quieter presence */
+/* Verse reference text — harmonized weight */
 #prayerVerse {
   border-left-color: rgba(59, 130, 246, 0.22);
   background: linear-gradient(135deg, rgba(240, 245, 255, 0.7) 0%, rgba(248, 249, 252, 0.5) 100%);
-}
-
-/* Verse reference text (inline in data — style the em-dash pattern) */
-#prayerVerse {
   font-weight: 400;
   letter-spacing: 0.005em;
 }
 
-/* Verse label — harmonize with intro reference language */
-.verse-label {
-  font-size: 0.68rem;
-  letter-spacing: 0.16em;
-  color: rgba(59, 130, 246, 0.45);
-  margin-bottom: 10px;
-}
+/* verse-label — consolidated into CARD PREMIUM block above */
 
 /* === Mobile Scripture === */
 @media (max-width: 768px) {
@@ -1848,12 +1628,7 @@ main > .prayer.separated_block {
   }
 }
 
-/* === Reduced Motion === */
-@media (prefers-reduced-motion: reduce) {
-  .intro-section::before {
-    transition: none;
-  }
-}
+/* Reduced motion — consolidated into HERO UPGRADE block */
 
 /* ========================================= */
 /* SCRIPTURE PRESENTATION UPGRADE END        */
@@ -2027,13 +1802,7 @@ main > .prayer.separated_block {
   }
 }
 
-/* === Reduced Motion === */
-@media (prefers-reduced-motion: reduce) {
-  .monthly_prayer_guide_week_item,
-  .monthly_prayer_guide_week_item::before {
-    transition: none;
-  }
-}
+/* Reduced motion — consolidated into HERO UPGRADE block */
 
 /* ========================================= */
 /* WEEK STRUCTURE + PROGRESSION UPGRADE END  */
@@ -2139,21 +1908,7 @@ main > .prayer.separated_block {
   background: linear-gradient(135deg, rgba(236, 242, 255, 0.85) 0%, rgba(245, 247, 252, 0.65) 100%);
 }
 
-/* === Amen — Gentle Entrance === */
-@keyframes amenFade {
-  from {
-    opacity: 0;
-    transform: translateY(4px);
-  }
-  to {
-    opacity: 0.55;
-    transform: translateY(0);
-  }
-}
-
-.prayer-amen {
-  animation: amenFade 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s both;
-}
+/* prayer-amen — consolidated into CARD PREMIUM block */
 
 /* === CTA / Journey Buttons — Active Press State === */
 .journey-btn.primary:active {
@@ -2200,41 +1955,7 @@ main > .prayer.separated_block {
   box-shadow: 0 6px 18px rgba(13, 78, 242, 0.18);
 }
 
-/* === Reduced Motion — Disable All Micro-Interactions === */
-@media (prefers-reduced-motion: reduce) {
-  .monthly_prayer_guide_week_item,
-  .monthly_prayer_guide_day_item,
-  .journey-btn,
-  .journey-modal-btn,
-  .praise-input,
-  .praise-textarea,
-  .praise-submit-btn,
-  .thirty_one_day_card_wrapper,
-  #prayerVerse {
-    transition: none !important;
-  }
-
-  .monthly_prayer_guide_week_item:hover,
-  .monthly_prayer_guide_week_item:active,
-  .monthly_prayer_guide_day_item:hover,
-  .monthly_prayer_guide_day_item:active,
-  .journey-btn:hover,
-  .journey-btn:active,
-  .praise-submit-btn:hover,
-  .praise-submit-btn:active {
-    transform: none !important;
-  }
-
-  .thirty_one_day_card_wrapper.content-enter {
-    animation: none !important;
-    opacity: 1;
-  }
-
-  .prayer-amen {
-    animation: none !important;
-    opacity: 0.55;
-  }
-}
+/* Reduced motion — consolidated into HERO UPGRADE block */
 
 /* ========================================= */
 /* MICRO-INTERACTION POLISH END              */
@@ -2363,14 +2084,8 @@ main > .prayer.separated_block {
   }
 }
 
-/* === Reduced Motion === */
-@media (prefers-reduced-motion: reduce) {
-  .closing-btn {
-    transition: none !important;
-  }
-}
+/* Reduced motion — consolidated into HERO UPGRADE block */
 
 /* ========================================= */
 /* CLOSING CTA SECTION END                   */
-/* ========================================= */
 /* ========================================= */
