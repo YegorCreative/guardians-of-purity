@@ -1719,4 +1719,143 @@ main > .prayer.separated_block {
 /* ========================================= */
 /* PRAYER CARD PREMIUM UPGRADE END           */
 /* ========================================= */
+
+/* ========================================= */
+/* SCRIPTURE PRESENTATION UPGRADE START      */
+/* ========================================= */
+
+/* === Intro Verse Section — Elevated Sacred Moment === */
+
+/* Gentle inner container spacing */
+.intro-section-wrapper .intro-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+/* Decorative opening quotation mark */
+.intro-section .intro-verse::before {
+  content: "\201C"; /* left double quotation mark */
+  display: block;
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.25);
+  margin-bottom: 8px;
+}
+
+/* Verse text refinement */
+.intro-section .intro-verse {
+  font-weight: 400;
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  line-height: 1.85;
+  max-width: 620px;
+  letter-spacing: 0.005em;
+}
+
+/* Reference — clear secondary hierarchy */
+.intro-section .intro-reference {
+  margin-top: 18px;
+  font-size: clamp(0.72rem, 1.2vw, 0.82rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  font-family: var(--font-heading, 'Montserrat', sans-serif);
+  font-style: normal;
+}
+
+/* Subtle divider between quote and reference */
+.intro-section .intro-reference::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0 auto 14px;
+  border-radius: 1px;
+}
+
+/* Overlay — slightly deeper for text weight support */
+.intro-section::before {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.38) 0%,
+    rgba(0, 0, 0, 0.52) 50%,
+    rgba(0, 0, 0, 0.42) 100%
+  );
+}
+
+/* === Prayer Card Verse — Harmony Polish === */
+
+/* Soften the left border to match intro's quieter presence */
+#prayerVerse {
+  border-left-color: rgba(59, 130, 246, 0.22);
+  background: linear-gradient(135deg, rgba(240, 245, 255, 0.7) 0%, rgba(248, 249, 252, 0.5) 100%);
+}
+
+/* Verse reference text (inline in data — style the em-dash pattern) */
+#prayerVerse {
+  font-weight: 400;
+  letter-spacing: 0.005em;
+}
+
+/* Verse label — harmonize with intro reference language */
+.verse-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: rgba(59, 130, 246, 0.45);
+  margin-bottom: 10px;
+}
+
+/* === Mobile Scripture === */
+@media (max-width: 768px) {
+  .intro-section .intro-verse {
+    max-width: 100%;
+    font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+    line-height: 1.8;
+  }
+
+  .intro-section .intro-verse::before {
+    font-size: 2.5rem;
+    margin-bottom: 6px;
+  }
+
+  .intro-section .intro-reference::before {
+    width: 24px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 520px) {
+  .intro-section .intro-verse {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .intro-section .intro-verse::before {
+    font-size: 2rem;
+    margin-bottom: 4px;
+  }
+
+  .intro-section .intro-reference {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+  }
+}
+
+/* === Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+  .intro-section::before {
+    transition: none;
+  }
+}
+
+/* ========================================= */
+/* SCRIPTURE PRESENTATION UPGRADE END        */
+/* ========================================= */
 /* ========================================= */
