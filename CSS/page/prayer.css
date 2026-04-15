@@ -827,6 +827,25 @@
   z-index: 2;
 }
 
+/* Internal blue gradient border (innermost) */
+.gradient-section .hero-border-blue {
+  position: absolute;
+  inset: 35px;
+  border-radius: inherit;
+  padding: 5px;
+  background: linear-gradient(180deg, #1e3a5f 0%, #2563eb 50%, #38bdf8 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
 .gradient-section .gradient_cards_wrapper > * {
   position: relative;
   z-index: 1;
