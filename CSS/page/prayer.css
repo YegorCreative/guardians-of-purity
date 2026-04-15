@@ -1282,4 +1282,215 @@
 
 /* ========================================= */
 /* PRAYER HERO PREMIUM UPGRADE END           */
+
+/* ========================================= */
+/* PRAYER TYPOGRAPHY AND SPACING UPGRADE START */
+/* ========================================= */
+
+/* === Section Vertical Rhythm ===
+   Create consistent breathing room between major sections.
+   All prayer-page separated_blocks get generous top margin
+   except the first (parallax) and header/footer. */
+
+/* Gradient hero continuation — no gap from parallax (seamless) */
+.gradient-section {
+  margin-top: -5px; /* neutralize separated_block padding gap */
+}
+
+/* Intro verse section — generous breathing room after dark hero */
+.intro-section-wrapper {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.intro-section-wrapper .intro-section {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+/* "Why 4 weeks" block — section breathing */
+.purity_challenge_intro_block {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Standalone split card — proper gap from blue block above */
+main > .prayer.separated_block {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Monthly prayer guide — section breathing */
+.monthly_prayer_guide_wrapper {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 32px 20px;
+  border-radius: 25px;
+}
+
+/* Praise/report card — section breathing */
+.praise-report-card.standalone {
+  max-width: 680px;
+}
+
+/* === Heading Hierarchy ===
+   Normalize heading sizes for consistent visual rhythm. */
+
+/* Gradient h1 is handled by hero upgrade: clamp(1.8rem, 4.5vw, 3rem) — no change needed */
+
+/* "Why 4 weeks" badge title — scale refinement */
+.purity_challenge_intro_block_title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 4vw, 2.8rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+/* Split section h2 — dial back from 2.5rem to calmer heading */
+.prayer .split.right h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+/* Praise report h3 — slight bump for section authority */
+.praise-report-card h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+/* Monthly prayer guide — week tab headings */
+.monthly_prayer_guide_week_item {
+  font-size: 1rem;
+  padding: 14px 12px;
+}
+
+/* === Text Readability ===
+   Ensure comfortable reading widths, line-heights, and spacing. */
+
+/* Intro paragraph — refine line-height and weight */
+.intro-paragraph {
+  line-height: 1.9;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+}
+
+/* Intro verse — generous line-height */
+.intro-section .intro-verse {
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  line-height: 1.8;
+  font-family: var(--font-serif, 'Playfair Display', serif);
+}
+
+.intro-section .intro-reference {
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  margin-top: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Split section body text */
+.prayer .split.right p {
+  line-height: 1.82;
+  letter-spacing: 0.005em;
+}
+
+/* Praise report body text — wider reading column */
+.praise-report-card p {
+  max-width: 560px;
+  line-height: 1.72;
+}
+
+/* Prayer card body text — calmer weight */
+.thirty_one_day_card_content {
+  line-height: 1.75;
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+}
+
+/* Emotional contract — already styled in hero upgrade, just ensure spacing */
+.gradient-section .emotional-contract {
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+/* === Mobile Typography Refinements === */
+
+@media (max-width: 768px) {
+  .intro-section-wrapper .intro-section {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+
+  .purity_challenge_intro_block {
+    padding: 32px 20px;
+  }
+
+  .intro-paragraph {
+    margin-top: 64px;
+    font-size: 1.08rem;
+    line-height: 1.82;
+    padding: 0 8px;
+  }
+
+  .monthly_prayer_guide_wrapper {
+    padding: 24px 12px;
+  }
+
+  .praise-report-card {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  .intro-section-wrapper .intro-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    min-height: 220px;
+  }
+
+  .purity_challenge_intro_block {
+    padding: 24px 16px;
+    min-height: 300px;
+  }
+
+  .intro-paragraph {
+    margin-top: 52px;
+    font-size: 1rem;
+  }
+
+  .praise-report-card {
+    padding: 28px 18px;
+  }
+
+  .praise-report-card p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .monthly_prayer_guide_wrapper {
+    padding: 18px 8px;
+  }
+
+  .monthly_prayer_guide_week_item {
+    font-size: 0.9rem;
+    padding: 12px 8px;
+  }
+}
+
+/* === Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+  .intro-section-wrapper .intro-section,
+  .purity_challenge_intro_block,
+  .prayer .split,
+  .praise-report-card {
+    transition: none;
+  }
+}
+
+/* ========================================= */
+/* PRAYER TYPOGRAPHY AND SPACING UPGRADE END */
+/* ========================================= */
 /* ========================================= */
