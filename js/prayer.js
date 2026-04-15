@@ -86,7 +86,7 @@ function renderJourneyControls(state) {
     container.appendChild(subText);
 
     // Inject into unified wrapper
-    const targetWrapper = document.querySelector(".monthly_prayer_guide_wrapper > .monthly_prayer_guide_wrapper");
+    const targetWrapper = document.querySelector(".monthly_prayer_guide_wrapper");
     if (targetWrapper) {
         const card = targetWrapper.querySelector(".monthly_prayer_guide_card");
         if (card) targetWrapper.insertBefore(container, card);

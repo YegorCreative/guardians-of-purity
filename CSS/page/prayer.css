@@ -130,6 +130,7 @@
 .monthly_prayer_guide_wrapper {
   position: relative;
   background: #e5e7eb;
+  overflow: hidden;
 }
 
 /* content base — .unified variant + CARD PREMIUM override visual props */
@@ -772,7 +773,9 @@
 
 .gradient-section .gradient_cards_wrapper {
   position: relative;
-  background: linear-gradient(180deg, #0b1120 0%, #162036 50%, #1a2744 100%);
+  background:
+    radial-gradient(ellipse at center, rgba(59, 130, 246, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at center, #1e2d4a 0%, #131d33 45%, #0b1120 100%);
   color: var(--color-white);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
   min-height: 60vh;
@@ -784,22 +787,44 @@
   overflow: hidden;
 }
 
-/* Soft radial glow — sacred atmosphere */
+/* Internal green gradient border (outer) */
+.gradient-section .gradient_cards_wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 5px;
+  background: linear-gradient(180deg, #0a2e14 0%, #15803d 50%, #22c55e 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Internal orange gradient border (inner) */
 .gradient-section .gradient_cards_wrapper::before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 120%;
-  height: 120%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(
-    ellipse at center,
-    rgba(59, 130, 246, 0.08) 0%,
-    transparent 70%
-  );
+  inset: 15px;
+  border-radius: inherit;
+  padding: 5px;
+  background: linear-gradient(180deg, #4a1e00 0%, #b45309 50%, #f97316 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
   pointer-events: none;
-  z-index: 0;
+  z-index: 2;
 }
 
 .gradient-section .gradient_cards_wrapper > * {
@@ -1317,12 +1342,12 @@ main > .prayer.separated_block {
   gap: 2px;
   padding: 10px 12px 8px;
   border-radius: 14px;
-  border: 1.5px solid transparent;
-  background: rgba(255, 255, 255, 0.8);
+  border: 1.5px solid #d1d5db;
+  background: rgba(255, 255, 255, 0.95);
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.02em;
-  color: #6b7280;
+  color: #4b5563;
   transition: all 0.25s ease;
 }
 
@@ -1333,7 +1358,7 @@ main > .prayer.separated_block {
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  opacity: 0.55;
+  opacity: 0.65;
   margin-top: 1px;
 }
 
@@ -1341,7 +1366,8 @@ main > .prayer.separated_block {
 .monthly_prayer_guide_week_item:hover {
   background: rgba(255, 255, 255, 1);
   color: #374151;
-  border-color: #d1d5db;
+  border-color: #9ca3af;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
 .monthly_prayer_guide_week_item:hover .week-theme {
@@ -1371,7 +1397,7 @@ main > .prayer.separated_block {
 /* === Mobile Week Tabs === */
 @media (max-width: 768px) {
   .monthly_prayer_guide_weeks {
-    gap: 0;
+    gap: 4px;
     padding: 4px;
     border-radius: 14px;
   }
