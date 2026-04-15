@@ -2,6 +2,7 @@
 
 /* ---------- Hero ---------- */
 .stories-hero {
+  position: relative;
   text-align: center;
   padding: var(--space-3xl) var(--space-md) var(--space-2xl);
   background:
@@ -9,6 +10,70 @@
     linear-gradient(165deg, #090f1f 0%, #111b3a 40%, #1a1240 100%);
   color: var(--color-white);
   overflow: hidden;
+}
+
+/* Ring — outer (deep purple → violet) */
+.stories-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 4px;
+  background: linear-gradient(180deg, #1a0a3e 0%, #6d28d9 50%, #a78bfa 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Ring — middle (deep blue → blue) */
+.stories-hero::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: inherit;
+  padding: 4px;
+  background: linear-gradient(180deg, #0c1a3d 0%, #2563eb 50%, #60a5fa 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Ring — inner (deep teal → cyan) */
+.stories-hero .stories-ring-inner {
+  position: absolute;
+  inset: 28px;
+  border-radius: inherit;
+  padding: 4px;
+  background: linear-gradient(180deg, #0c2d3e 0%, #0891b2 50%, #22d3ee 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.stories-hero-content {
+  position: relative;
+  z-index: 1;
 }
 
 .stories-hero-title {
@@ -289,6 +354,7 @@
 
 /* ---------- CTA ---------- */
 .stories-cta {
+  position: relative;
   text-align: center;
   padding: var(--space-2xl) var(--space-md);
   background:
@@ -296,6 +362,70 @@
     linear-gradient(165deg, #090f1f 0%, #111b3a 40%, #1a1240 100%);
   color: var(--color-white);
   overflow: hidden;
+}
+
+/* CTA Ring — outer (deep purple → violet) */
+.stories-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 4px;
+  background: linear-gradient(180deg, #1a0a3e 0%, #6d28d9 50%, #a78bfa 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* CTA Ring — middle (deep blue → blue) */
+.stories-cta::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: inherit;
+  padding: 4px;
+  background: linear-gradient(180deg, #0c1a3d 0%, #2563eb 50%, #60a5fa 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* CTA Ring — inner (deep teal → cyan) */
+.stories-cta .stories-ring-inner {
+  position: absolute;
+  inset: 28px;
+  border-radius: inherit;
+  padding: 4px;
+  background: linear-gradient(180deg, #0c2d3e 0%, #0891b2 50%, #22d3ee 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.stories-cta > *:not(.stories-ring-inner) {
+  position: relative;
+  z-index: 1;
 }
 
 .stories-cta-title {
@@ -362,6 +492,17 @@
     padding: var(--space-2xl) var(--space-sm) var(--space-xl);
   }
 
+  /* Tighten rings on small screens so they don't eat into content */
+  .stories-hero::before,
+  .stories-cta::before {
+    inset: 8px;
+  }
+
+  .stories-hero .stories-ring-inner,
+  .stories-cta .stories-ring-inner {
+    inset: 18px;
+  }
+
   .stories-section {
     padding: var(--space-lg) var(--space-sm);
   }
@@ -378,8 +519,18 @@
     margin-top: -4px;
   }
 
+  .story-highlight {
+    padding: 12px 14px 12px 14px !important;
+  }
+
   .stories-cta {
     padding: var(--space-xl) var(--space-sm);
+  }
+
+  .stories-cta .main_button {
+    padding: 14px 28px;
+    font-size: var(--text-base);
+    max-width: 220px;
   }
 }
 
