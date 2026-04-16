@@ -85,7 +85,7 @@
 
 /* ---------- Section Base ---------- */
 .mast-section {
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-2xl) var(--space-md) var(--space-xl);
 }
 
 .mast-section-title {
@@ -94,7 +94,7 @@
   font-weight: 700;
   color: var(--color-text-dark);
   text-align: center;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
   letter-spacing: -0.025em;
   line-height: var(--leading-tight);
 }
@@ -105,20 +105,24 @@
   line-height: var(--leading-relaxed);
   color: var(--color-text-dark-neutral);
   text-align: center;
-  max-width: 620px;
-  margin: 0 auto var(--space-lg);
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
   letter-spacing: 0.005em;
 }
 
-/* Editorial variant — lighter, more breathing room */
+/* Editorial variant — longer-form reading, calmer surface */
 .mast-section--editorial {
-  padding-top: var(--space-2xl);
+  padding-top: var(--space-xl);
   padding-bottom: var(--space-xl);
 }
 
 .mast-section--editorial .mast-section-title {
-  font-size: clamp(var(--text-xl), 2.5vw, var(--text-2xl));
-  margin-bottom: var(--space-lg);
+  font-size: clamp(var(--text-xl), 2.4vw, var(--text-2xl));
+  margin-bottom: var(--space-md);
+  text-align: left;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ---------- Info Panel (Quick Answer — Frosted Glass) ---------- */
@@ -168,18 +172,19 @@
 
 .info-panel-centered h2 {
   font-family: var(--font-heading);
-  font-size: clamp(var(--text-xl), 2.5vw, var(--text-2xl));
+  font-size: clamp(var(--text-xl), 2.8vw, var(--text-3xl));
   font-weight: 700;
-  margin-bottom: var(--space-sm);
-  letter-spacing: -0.02em;
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.03em;
+  line-height: var(--leading-tight);
 }
 
 .info-panel-centered p {
   font-family: var(--font-main);
   font-size: var(--text-base);
-  line-height: 1.72;
-  opacity: 0.92;
-  margin: 0 0 8px;
+  line-height: 1.78;
+  opacity: 0.9;
+  margin: 0 0 12px;
 }
 
 .info-panel-centered p:last-child {
@@ -250,24 +255,24 @@
 }
 
 .reason-card-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(61, 113, 245, 0.08), rgba(61, 113, 245, 0.04));
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(61, 113, 245, 0.07), rgba(61, 113, 245, 0.03));
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   font-size: 1.2rem;
   flex-shrink: 0;
 }
 
 .reason-card-title {
   font-family: var(--font-heading);
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   font-weight: 700;
   color: var(--color-text-dark);
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   line-height: var(--leading-snug);
   letter-spacing: -0.01em;
 }
@@ -275,7 +280,7 @@
 .reason-card p {
   font-family: var(--font-main);
   font-size: var(--text-sm);
-  line-height: 1.7;
+  line-height: 1.72;
   color: var(--color-text-dark-neutral);
   margin: 0;
 }
@@ -284,11 +289,11 @@
 .scripture-block {
   position: relative;
   max-width: 700px;
-  margin: var(--space-md) auto;
-  padding: 24px 26px 24px 28px;
+  margin: var(--space-lg) auto;
+  padding: 26px 28px 26px 30px;
   border-left: 3px solid var(--color-scripture-border);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  background: linear-gradient(135deg, rgba(200, 141, 86, 0.04) 0%, rgba(200, 141, 86, 0.02) 100%);
+  background: linear-gradient(135deg, rgba(200, 141, 86, 0.04) 0%, rgba(200, 141, 86, 0.01) 100%);
 }
 
 .scripture-block p {
@@ -316,7 +321,7 @@
   grid-template-columns: 1fr;
   gap: var(--space-md);
   max-width: 900px;
-  margin: 0 auto var(--space-md);
+  margin: 0 auto var(--space-lg);
 }
 
 @media (min-width: 640px) {
@@ -327,11 +332,15 @@
 
 .scripture-col-title {
   font-family: var(--font-heading);
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   font-weight: 700;
   color: var(--color-text-dark);
   margin-bottom: var(--space-sm);
   letter-spacing: -0.01em;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: var(--text-sm);
+  opacity: 0.85;
 }
 
 .scripture-col ul {
@@ -342,10 +351,10 @@
 
 .scripture-col li {
   font-family: var(--font-main);
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   line-height: 1.75;
   color: var(--color-text-dark-neutral);
-  padding: 12px 0 12px 20px;
+  padding: 10px 0 10px 18px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
   position: relative;
 }
@@ -356,11 +365,11 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: var(--color-scripture-border);
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 .scripture-col li:last-child {
@@ -415,37 +424,38 @@
 }
 
 .myth-text {
-  font-family: var(--font-heading);
-  font-size: var(--text-lg);
-  font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: var(--text-base);
+  font-weight: 400;
+  font-style: italic;
   color: var(--color-text-dark);
-  line-height: var(--leading-snug);
+  line-height: var(--leading-normal);
   margin: 0 0 16px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
 .myth-card .truth-text {
   font-family: var(--font-main);
-  font-size: var(--text-base);
-  line-height: 1.72;
+  font-size: var(--text-sm);
+  line-height: 1.75;
   color: var(--color-text-dark-neutral);
   margin: 0;
-  padding-top: 16px;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 14px;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 /* ---------- Highlight Section ---------- */
 .highlight-section {
-  max-width: 760px;
+  max-width: 660px;
   margin: 0 auto;
 }
 
 .highlight-section p {
   font-family: var(--font-main);
   font-size: var(--text-base);
-  line-height: 1.82;
+  line-height: 1.85;
   color: var(--color-text-dark-neutral);
-  margin: 0 0 18px;
+  margin: 0 0 20px;
 }
 
 .highlight-section p:last-child {
@@ -461,14 +471,15 @@
   position: relative;
   font-weight: 600;
   color: var(--color-text-dark);
-  line-height: 1.7;
-  background: linear-gradient(135deg, rgba(61, 113, 245, 0.03) 0%, rgba(59, 130, 246, 0.01) 100%);
-  border-left: 3px solid rgba(61, 113, 245, 0.5);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  padding: 20px 24px;
+  line-height: 1.65;
+  background: transparent;
+  border-left: 3px solid rgba(61, 113, 245, 0.35);
+  border-radius: 0;
+  padding: 4px 0 4px 24px;
   margin: var(--space-lg) 0;
-  font-family: var(--font-main);
+  font-family: var(--font-serif);
   font-size: var(--text-lg);
+  font-style: italic;
 }
 
 /* ---------- Frosted Glass Conclusion (preserved from original design) ---------- */
@@ -591,8 +602,10 @@
 
 /* ---------- Onan Story Block ---------- */
 .onan-block {
-  max-width: 760px;
-  margin: 0 auto;
+  max-width: 700px;
+  margin: var(--space-lg) auto 0;
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .onan-block p {
@@ -765,7 +778,7 @@
   }
 
   .mast-section {
-    padding: var(--space-lg) var(--space-sm);
+    padding: var(--space-xl) var(--space-sm) var(--space-lg);
   }
 
   .info-panel-block {
@@ -773,21 +786,25 @@
   }
 
   .info-panel-centered {
-    width: 80%;
+    width: 90%;
   }
 
   .reason-card {
     padding: 22px 20px 20px;
-    border-radius: 18px;
+    border-radius: 16px;
   }
 
   .myth-card {
     padding: 22px 20px;
-    border-radius: 16px;
+    border-radius: 14px;
   }
 
   .mast-section--editorial {
-    padding: var(--space-xl) var(--space-sm);
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .mast-section--editorial .mast-section-title {
+    text-align: center;
   }
 
   .scripture-block {
