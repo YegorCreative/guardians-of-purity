@@ -1,8 +1,9 @@
 /* ===== Masturbation Page — Scroll Animations (GSAP + ScrollTrigger) ===== */
 /*
- * Intentionally minimal motion.
- * This page should feel safe, honest, mature, emotionally strong.
- * No scale, no blur, no parallax — just quiet fade-and-rise.
+ * Final animation polish.
+ * Calm, cinematic, editorial motion. No bounce, no playfulness.
+ * Fade-and-rise with subtle scale on cards, slight blur lift on hero.
+ * Every animation fires once, respects prefers-reduced-motion.
  */
 (function () {
   "use strict";
@@ -12,33 +13,66 @@
 
   if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
 
-  var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (prefersReduced) return;
-
   gsap.registerPlugin(ScrollTrigger);
 
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   var ease = "power2.out";
+  var softEase = "power1.out";
 
-  /* ---------- Hero ---------- */
-  var heroTitle = document.querySelector(".mast-hero-title");
-  var heroSub = document.querySelector(".mast-hero-subtitle");
+  function q(sel)  { return document.querySelector(sel); }
+  function qa(sel) { return document.querySelectorAll(sel); }
 
-  if (heroTitle && heroSub) {
-    gsap.set([heroTitle, heroSub], { opacity: 0, y: 18 });
-
-    gsap.to(heroTitle, {
-      opacity: 1, y: 0,
-      duration: 0.8, ease: ease, delay: 0.1
-    });
-    gsap.to(heroSub, {
-      opacity: 0.7, y: 0,
-      duration: 0.8, ease: ease, delay: 0.28
-    });
+  /* Helper — scroll-triggered once animation */
+  function onReveal(trigger, targets, vars, stOpts) {
+    if (!trigger || !targets || !targets.length) return;
+    gsap.set(targets, vars.from);
+    ScrollTrigger.create(Object.assign({
+      trigger: trigger,
+      start: "top 86%",
+      once: true,
+      onEnter: function () {
+        gsap.to(targets, Object.assign({}, vars.to, {
+          duration: vars.duration || 0.6,
+          ease: vars.ease || ease,
+          stagger: vars.stagger || 0
+        }));
+      }
+    }, stOpts || {}));
   }
 
-  /* ---------- Section Titles ---------- */
-  document.querySelectorAll(".mast-section-title").forEach(function (el) {
-    gsap.set(el, { opacity: 0, y: 16 });
+  /* ───────── Hero ───────── */
+  var heroTitle = q(".mast-hero-title");
+  var heroSub   = q(".mast-hero-subtitle");
+
+  if (heroTitle) {
+    if (reduced) {
+      /* reduced-motion: instant reveal, no transforms */
+      gsap.set(heroTitle, { opacity: 1 });
+      if (heroSub) gsap.set(heroSub, { opacity: 0.7 });
+    } else {
+      gsap.set(heroTitle, { opacity: 0, y: 24, filter: "blur(4px)" });
+      gsap.to(heroTitle, {
+        opacity: 1, y: 0, filter: "blur(0px)",
+        duration: 0.9, ease: ease, delay: 0.12
+      });
+
+      if (heroSub) {
+        gsap.set(heroSub, { opacity: 0, y: 18 });
+        gsap.to(heroSub, {
+          opacity: 0.7, y: 0,
+          duration: 0.8, ease: ease, delay: 0.32
+        });
+      }
+    }
+  }
+
+  /* Skip all scroll animations if reduced motion */
+  if (reduced) return;
+
+  /* ───────── Section Titles + Intros ───────── */
+  qa(".mast-section-title").forEach(function (el) {
+    gsap.set(el, { opacity: 0, y: 20 });
     ScrollTrigger.create({
       trigger: el,
       start: "top 88%",
@@ -49,160 +83,156 @@
     });
   });
 
-  /* ---------- Info Panel (Frosted Glass) ---------- */
-  var infoGlass = document.querySelector(".info-panel-glass");
-  if (infoGlass) {
-    gsap.set(infoGlass, { opacity: 0, y: 18 });
-    ScrollTrigger.create({
-      trigger: ".info-panel-wrapper",
-      start: "top 85%",
-      once: true,
-      onEnter: function () {
-        gsap.to(infoGlass, { opacity: 1, y: 0, duration: 0.6, ease: ease });
-      }
-    });
-  }
-
-  /* ---------- Reason Cards ---------- */
-  var cardGrid = document.querySelector(".card-grid");
-  if (cardGrid) {
-    var cards = cardGrid.querySelectorAll(".reason-card");
-    if (cards.length) {
-      gsap.set(cards, { opacity: 0, y: 20 });
-      ScrollTrigger.create({
-        trigger: cardGrid,
-        start: "top 85%",
-        once: true,
-        onEnter: function () {
-          gsap.to(cards, {
-            opacity: 1, y: 0,
-            duration: 0.55, ease: ease,
-            stagger: 0.08
-          });
-        }
-      });
-    }
-  }
-
-  /* ---------- Scripture Blocks ---------- */
-  document.querySelectorAll(".scripture-block").forEach(function (el) {
+  qa(".mast-section-intro").forEach(function (el) {
     gsap.set(el, { opacity: 0, y: 14 });
     ScrollTrigger.create({
       trigger: el,
-      start: "top 88%",
+      start: "top 90%",
       once: true,
       onEnter: function () {
-        gsap.to(el, { opacity: 1, y: 0, duration: 0.55, ease: ease });
+        gsap.to(el, { opacity: 1, y: 0, duration: 0.55, ease: softEase, delay: 0.08 });
       }
     });
   });
 
-  /* ---------- Scripture Compare Columns ---------- */
-  document.querySelectorAll(".scripture-compare").forEach(function (el) {
+  /* ───────── Quick Answer Panel ───────── */
+  var infoGlass = q(".info-panel-glass");
+  if (infoGlass) {
+    onReveal(q(".info-panel-wrapper"), [infoGlass], {
+      from: { opacity: 0, y: 22 },
+      to:   { opacity: 1, y: 0 },
+      duration: 0.7,
+      ease: ease
+    }, { start: "top 84%" });
+  }
+
+  /* ───────── Reason Cards ───────── */
+  var cardGrid = q(".card-grid");
+  if (cardGrid) {
+    var cards = cardGrid.querySelectorAll(".reason-card");
+    if (cards.length) {
+      onReveal(cardGrid, cards, {
+        from:     { opacity: 0, y: 24, scale: 0.985 },
+        to:       { opacity: 1, y: 0, scale: 1 },
+        duration: 0.6,
+        stagger:  0.09,
+        ease:     ease
+      }, { start: "top 84%" });
+    }
+  }
+
+  /* ───────── Scripture Blocks ───────── */
+  qa(".scripture-block").forEach(function (el) {
+    onReveal(el, [el], {
+      from:     { opacity: 0, y: 14 },
+      to:       { opacity: 1, y: 0 },
+      duration: 0.55
+    }, { start: "top 88%" });
+  });
+
+  /* ───────── Scripture Compare Columns ───────── */
+  qa(".scripture-compare").forEach(function (el) {
     var cols = el.querySelectorAll(".scripture-col");
     if (!cols.length) return;
-    gsap.set(cols, { opacity: 0, y: 16 });
-    ScrollTrigger.create({
-      trigger: el,
-      start: "top 85%",
-      once: true,
-      onEnter: function () {
-        gsap.to(cols, {
-          opacity: 1, y: 0,
-          duration: 0.5, ease: ease,
-          stagger: 0.1
-        });
-      }
+    onReveal(el, cols, {
+      from:     { opacity: 0, y: 16 },
+      to:       { opacity: 1, y: 0 },
+      duration: 0.5,
+      stagger:  0.12
     });
   });
 
-  /* ---------- Myth Cards ---------- */
-  var mythGrid = document.querySelector(".myth-grid");
+  /* ───────── Myth Cards ───────── */
+  var mythGrid = q(".myth-grid");
   if (mythGrid) {
     var myths = mythGrid.querySelectorAll(".myth-card");
     if (myths.length) {
-      gsap.set(myths, { opacity: 0, y: 20 });
-      ScrollTrigger.create({
-        trigger: mythGrid,
-        start: "top 85%",
-        once: true,
-        onEnter: function () {
-          gsap.to(myths, {
-            opacity: 1, y: 0,
-            duration: 0.55, ease: ease,
-            stagger: 0.08
-          });
-        }
+      onReveal(mythGrid, myths, {
+        from:     { opacity: 0, y: 20, scale: 0.988 },
+        to:       { opacity: 1, y: 0, scale: 1 },
+        duration: 0.65,
+        stagger:  0.11,
+        ease:     softEase
       });
     }
   }
 
-  /* ---------- Highlight Sections ---------- */
-  document.querySelectorAll(".highlight-section").forEach(function (el) {
-    gsap.set(el, { opacity: 0, y: 16 });
-    ScrollTrigger.create({
-      trigger: el,
-      start: "top 85%",
-      once: true,
-      onEnter: function () {
-        gsap.to(el, { opacity: 1, y: 0, duration: 0.6, ease: ease });
-      }
+  /* ───────── Highlight Sections ───────── */
+  qa(".highlight-section").forEach(function (el) {
+    onReveal(el, [el], {
+      from:     { opacity: 0, y: 16 },
+      to:       { opacity: 1, y: 0 },
+      duration: 0.6
     });
   });
 
-  /* ---------- Frosted Glass Conclusion ---------- */
-  var conclusionGlass = document.querySelector(".mast-conclusion-glass");
-  if (conclusionGlass) {
-    gsap.set(conclusionGlass, { opacity: 0, y: 18 });
-    ScrollTrigger.create({
-      trigger: ".mast-conclusion-wrapper",
-      start: "top 85%",
-      once: true,
-      onEnter: function () {
-        gsap.to(conclusionGlass, { opacity: 1, y: 0, duration: 0.6, ease: ease });
-      }
+  /* ───────── Highlight Callouts ───────── */
+  qa(".highlight-callout").forEach(function (el) {
+    onReveal(el, [el], {
+      from:     { opacity: 0, y: 12 },
+      to:       { opacity: 1, y: 0 },
+      duration: 0.55,
+      ease:     softEase
+    }, { start: "top 88%" });
+  });
+
+  /* ───────── Onan Block ───────── */
+  var onan = q(".onan-block");
+  if (onan) {
+    onReveal(onan, [onan], {
+      from:     { opacity: 0, y: 14 },
+      to:       { opacity: 1, y: 0 },
+      duration: 0.6
     });
   }
 
-  /* ---------- Checklist ---------- */
-  var checklist = document.querySelector(".checklist");
+  /* ───────── Frosted Glass Conclusion ───────── */
+  var conclusionGlass = q(".mast-conclusion-glass");
+  if (conclusionGlass) {
+    onReveal(q(".mast-conclusion-wrapper"), [conclusionGlass], {
+      from:     { opacity: 0, y: 22 },
+      to:       { opacity: 1, y: 0 },
+      duration: 0.7,
+      ease:     ease
+    }, { start: "top 84%" });
+  }
+
+  /* ───────── Checklist ───────── */
+  var checklist = q(".checklist");
   if (checklist) {
     var items = checklist.querySelectorAll("li");
     if (items.length) {
-      gsap.set(items, { opacity: 0, y: 14 });
-      ScrollTrigger.create({
-        trigger: checklist,
-        start: "top 85%",
-        once: true,
-        onEnter: function () {
-          gsap.to(items, {
-            opacity: 1, y: 0,
-            duration: 0.45, ease: ease,
-            stagger: 0.06
-          });
-        }
+      onReveal(checklist, items, {
+        from:     { opacity: 0, y: 12 },
+        to:       { opacity: 1, y: 0 },
+        duration: 0.4,
+        stagger:  0.055,
+        ease:     softEase
       });
     }
   }
 
-  /* ---------- CTA ---------- */
-  var ctaTitle = document.querySelector(".mast-cta-title");
-  var ctaSub = document.querySelector(".mast-cta-subtitle");
-  var ctaBtn = document.querySelector(".mast-cta .main_button");
+  /* ───────── CTA ───────── */
+  var ctaSection = q(".mast-cta");
+  var ctaTitle   = q(".mast-cta-title");
+  var ctaSub     = q(".mast-cta-subtitle");
+  var ctaBtn     = q(".mast-cta .main_button");
 
-  if (ctaTitle) {
-    gsap.set([ctaTitle, ctaSub, ctaBtn].filter(Boolean), { opacity: 0, y: 16 });
+  if (ctaSection && ctaTitle) {
+    var ctaEls = [ctaTitle, ctaSub, ctaBtn].filter(Boolean);
+    gsap.set(ctaEls, { opacity: 0, y: 18 });
 
     ScrollTrigger.create({
-      trigger: ".mast-cta",
+      trigger: ctaSection,
       start: "top 82%",
       once: true,
       onEnter: function () {
         var tl = gsap.timeline({ defaults: { ease: ease } });
-        if (ctaTitle) tl.to(ctaTitle, { opacity: 1, y: 0, duration: 0.5 });
-        if (ctaSub)   tl.to(ctaSub,   { opacity: 0.65, y: 0, duration: 0.45 }, "-=0.3");
-        if (ctaBtn)   tl.to(ctaBtn,   { opacity: 1, y: 0, duration: 0.45 }, "-=0.25");
+        tl.to(ctaTitle, { opacity: 1, y: 0, duration: 0.55 });
+        if (ctaSub) tl.to(ctaSub, { opacity: 0.65, y: 0, duration: 0.5 }, "-=0.32");
+        if (ctaBtn) tl.to(ctaBtn, { opacity: 1, y: 0, duration: 0.5 }, "-=0.28");
       }
     });
   }
+
 })();
