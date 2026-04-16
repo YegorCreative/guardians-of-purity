@@ -273,24 +273,95 @@
   margin: 0;
 }
 
+/* ---------- Scripture Section — Editorial Variant ---------- */
+.mast-section--scripture {
+  background: linear-gradient(180deg, #f5f3f0 0%, #f0eeeb 100%);
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+}
+
+.mast-section--scripture .mast-section-title {
+  font-size: clamp(var(--text-2xl), 3vw, var(--text-3xl));
+  letter-spacing: -0.03em;
+}
+
+.mast-section--scripture .mast-section-intro {
+  opacity: 0.65;
+  margin-bottom: var(--space-lg);
+}
+
+/* ---------- Scripture Core Centerpiece ---------- */
+.scripture-core {
+  max-width: 660px;
+  margin: 0 auto var(--space-2xl);
+  padding: var(--space-xl) 0;
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  position: relative;
+}
+
+.scripture-core::before,
+.scripture-core::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--color-text-dark);
+  opacity: 0.15;
+  margin: 0 auto;
+}
+
+.scripture-core::before {
+  margin-bottom: var(--space-lg);
+}
+
+.scripture-core::after {
+  margin-top: var(--space-lg);
+}
+
+.scripture-core-text {
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-lg), 2.2vw, var(--text-2xl));
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--color-text-dark);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
 /* ---------- Scripture Block ---------- */
 .scripture-block {
   position: relative;
-  max-width: 700px;
-  margin: var(--space-lg) auto;
-  padding: 26px 28px 26px 30px;
-  border-left: 3px solid var(--color-scripture-border);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  background: linear-gradient(135deg, rgba(200, 141, 86, 0.04) 0%, rgba(200, 141, 86, 0.01) 100%);
+  max-width: 640px;
+  margin: var(--space-xl) auto;
+  padding: 0 0 0 28px;
+  border-left: 2px solid var(--color-scripture-border);
+  border-radius: 0;
+  background: transparent;
 }
 
 .scripture-block p {
   font-family: var(--font-serif);
   font-size: var(--text-base);
   font-style: italic;
-  line-height: 1.75;
+  line-height: 1.78;
   color: var(--color-scripture-text);
   margin: 0 0 6px;
+}
+
+/* Featured (first) quote — larger */
+.scripture-block--featured {
+  margin-top: 0;
+  margin-bottom: var(--space-2xl);
+}
+
+.scripture-block--featured p {
+  font-size: clamp(var(--text-base), 1.5vw, var(--text-lg));
+  line-height: 1.72;
 }
 
 .scripture-block cite {
@@ -300,35 +371,68 @@
   font-style: normal;
   font-weight: 600;
   color: var(--color-scripture-border);
-  margin-top: 10px;
+  margin-top: 12px;
+  opacity: 0.85;
+}
+
+/* ---------- Scripture Compare Wrapper ---------- */
+.scripture-compare-wrapper {
+  max-width: 820px;
+  margin: var(--space-xl) auto;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 /* ---------- Two-column Scripture Compare ---------- */
 .scripture-compare {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-md);
-  max-width: 900px;
-  margin: 0 auto var(--space-lg);
+  gap: var(--space-xl);
+  margin: 0;
 }
 
 @media (min-width: 640px) {
   .scripture-compare {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 0;
+  }
+
+  /* Vertical separator between columns */
+  .scripture-compare-wrapper .scripture-compare::before {
+    content: "";
+    grid-column: 2;
+    grid-row: 1;
+    background: rgba(0, 0, 0, 0.08);
+    align-self: stretch;
+    width: 1px;
+  }
+}
+
+.scripture-col {
+  padding: 0;
+}
+
+@media (min-width: 640px) {
+  .scripture-col:first-child {
+    padding-right: var(--space-xl);
+  }
+  .scripture-col:last-child {
+    padding-left: var(--space-xl);
   }
 }
 
 .scripture-col-title {
   font-family: var(--font-heading);
-  font-size: var(--text-base);
+  font-size: 0.7rem;
   font-weight: 700;
   color: var(--color-text-dark);
-  margin-bottom: var(--space-sm);
-  letter-spacing: -0.01em;
+  margin-bottom: 14px;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  font-size: var(--text-sm);
-  opacity: 0.85;
+  letter-spacing: 0.08em;
+  opacity: 0.55;
 }
 
 .scripture-col ul {
@@ -340,9 +444,9 @@
 .scripture-col li {
   font-family: var(--font-main);
   font-size: var(--text-sm);
-  line-height: 1.75;
+  line-height: 1.78;
   color: var(--color-text-dark-neutral);
-  padding: 10px 0 10px 18px;
+  padding: 12px 0 12px 16px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
   position: relative;
 }
@@ -351,17 +455,17 @@
   content: "";
   position: absolute;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 5px;
-  height: 5px;
+  top: 22px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
-  background: var(--color-scripture-border);
-  opacity: 0.4;
+  background: var(--color-text-dark);
+  opacity: 0.18;
 }
 
 .scripture-col li:last-child {
   border-bottom: none;
+  padding-bottom: 0;
 }
 
 /* ---------- Myth Card ---------- */
@@ -577,18 +681,25 @@
 
 /* ---------- Onan Story Block ---------- */
 .onan-block {
-  max-width: 700px;
-  margin: var(--space-lg) auto 0;
-  padding-top: var(--space-lg);
+  max-width: 600px;
+  margin: var(--space-xl) auto 0;
+  padding-top: var(--space-xl);
   border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.onan-block > .scripture-col-title {
+  opacity: 0.5;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
 }
 
 .onan-block p {
   font-family: var(--font-main);
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   line-height: 1.82;
   color: var(--color-text-dark-neutral);
-  margin: 0 0 18px;
+  margin: 0 0 16px;
 }
 
 .onan-block p:last-child {
@@ -835,7 +946,16 @@
   }
 
   .scripture-block {
-    padding: 20px 18px 20px 22px;
+    padding: 0 0 0 20px;
+  }
+
+  .scripture-core {
+    padding: var(--space-lg) 0;
+    margin-bottom: var(--space-xl);
+  }
+
+  .mast-section--scripture {
+    padding: var(--space-xl) var(--space-sm) var(--space-xl);
   }
 
   .highlight-callout {
