@@ -166,29 +166,31 @@
   text-align: center;
   color: var(--color-white);
   width: 85%;
-  max-width: 700px;
-  padding: 36px 32px;
+  max-width: 680px;
+  padding: 40px 36px;
 }
 
 .info-panel-centered h2 {
   font-family: var(--font-heading);
   font-size: clamp(var(--text-xl), 2.8vw, var(--text-3xl));
   font-weight: 700;
-  margin-bottom: var(--space-md);
+  margin-bottom: 20px;
   letter-spacing: -0.03em;
   line-height: var(--leading-tight);
 }
 
 .info-panel-centered p {
   font-family: var(--font-main);
-  font-size: var(--text-base);
-  line-height: 1.78;
-  opacity: 0.9;
-  margin: 0 0 12px;
+  font-size: var(--text-sm);
+  line-height: 1.82;
+  opacity: 0.88;
+  margin: 0 0 14px;
 }
 
 .info-panel-centered p:last-child {
   margin-bottom: 0;
+  opacity: 0.75;
+  font-size: 0.82rem;
 }
 
 /* ---------- Card Grid ---------- */
@@ -219,52 +221,38 @@
   position: relative;
   background: linear-gradient(168deg, #ffffff 0%, #f9fafb 100%);
   border-radius: 20px;
-  padding: 28px 26px 26px;
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  padding: 32px 28px 28px;
+  border: 1px solid rgba(0, 0, 0, 0.035);
   box-shadow: var(--trust-shadow-grounded);
   overflow: hidden;
   transition:
-    transform var(--transition-slow),
     box-shadow var(--transition-slow),
     border-color var(--transition-slow);
 }
 
-.reason-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 24px;
-  right: 24px;
-  height: 2px;
-  border-radius: 0 0 2px 2px;
-  background: linear-gradient(90deg, #3d71f5, #5b93ff);
-  opacity: 0.3;
-  transition: opacity var(--transition-slow);
-}
-
 @media (hover: hover) {
   .reason-card:hover {
-    transform: translateY(-3px);
-    border-color: rgba(61, 113, 245, 0.08);
+    border-color: rgba(61, 113, 245, 0.06);
     box-shadow: var(--trust-shadow-elevated);
-  }
-
-  .reason-card:hover::before {
-    opacity: 0.7;
   }
 }
 
 .reason-card-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, rgba(61, 113, 245, 0.07), rgba(61, 113, 245, 0.03));
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 14px;
-  font-size: 1.2rem;
+  margin-bottom: 18px;
+  font-size: 1.1rem;
   flex-shrink: 0;
+  color: rgba(61, 113, 245, 0.45);
+}
+
+.reason-card-icon svg {
+  stroke: rgba(61, 113, 245, 0.40);
 }
 
 .reason-card-title {
@@ -272,7 +260,7 @@
   font-size: var(--text-base);
   font-weight: 700;
   color: var(--color-text-dark);
-  margin: 0 0 6px;
+  margin: 0 0 10px;
   line-height: var(--leading-snug);
   letter-spacing: -0.01em;
 }
@@ -280,7 +268,7 @@
 .reason-card p {
   font-family: var(--font-main);
   font-size: var(--text-sm);
-  line-height: 1.72;
+  line-height: 1.75;
   color: var(--color-text-dark-neutral);
   margin: 0;
 }
@@ -381,46 +369,47 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-md);
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 @media (min-width: 640px) {
   .myth-grid {
-    gap: 28px;
+    gap: 24px;
   }
 }
 
 .myth-card {
   position: relative;
-  background: linear-gradient(168deg, #ffffff 0%, #f9fafb 100%);
-  border-radius: 18px;
-  padding: 30px 28px;
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  box-shadow: var(--shadow-sm);
+  background: linear-gradient(168deg, #ffffff 0%, #fafbfc 100%);
+  border-radius: 16px;
+  padding: 32px 30px;
+  border: 1px solid rgba(0, 0, 0, 0.035);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
   overflow: hidden;
 }
 
 .myth-label {
   display: inline-block;
   font-family: var(--font-accent);
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 0.65rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 4px 12px;
-  border-radius: var(--radius-sm);
-  margin-bottom: 10px;
+  letter-spacing: 0.1em;
+  padding: 0;
+  margin-bottom: 8px;
+  background: none;
+  border-radius: 0;
 }
 
 .myth-label--myth {
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.04));
   color: #b91c1c;
+  opacity: 0.7;
 }
 
 .myth-label--truth {
-  background: linear-gradient(135deg, rgba(22, 163, 74, 0.08), rgba(22, 163, 74, 0.04));
   color: #166534;
+  opacity: 0.7;
 }
 
 .myth-text {
@@ -429,8 +418,8 @@
   font-weight: 400;
   font-style: italic;
   color: var(--color-text-dark);
-  line-height: var(--leading-normal);
-  margin: 0 0 16px;
+  line-height: 1.7;
+  margin: 0 0 20px;
   letter-spacing: 0;
 }
 
@@ -440,8 +429,8 @@
   line-height: 1.75;
   color: var(--color-text-dark-neutral);
   margin: 0;
-  padding-top: 14px;
-  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  padding-top: 18px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* ---------- Highlight Section ---------- */
@@ -469,17 +458,18 @@
 
 .highlight-callout {
   position: relative;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-text-dark);
-  line-height: 1.65;
+  line-height: 1.6;
   background: transparent;
-  border-left: 3px solid rgba(61, 113, 245, 0.35);
+  border-left: 2px solid rgba(61, 113, 245, 0.25);
   border-radius: 0;
-  padding: 4px 0 4px 24px;
-  margin: var(--space-lg) 0;
+  padding: 6px 0 6px 28px;
+  margin: var(--space-xl) 0;
   font-family: var(--font-serif);
-  font-size: var(--text-lg);
+  font-size: clamp(var(--text-base), 1.8vw, var(--text-lg));
   font-style: italic;
+  letter-spacing: 0.005em;
 }
 
 /* ---------- Frosted Glass Conclusion (preserved from original design) ---------- */
@@ -531,16 +521,16 @@
   font-family: var(--font-heading);
   font-size: clamp(var(--text-xl), 2.5vw, var(--text-2xl));
   font-weight: 700;
-  margin-bottom: var(--space-sm);
+  margin-bottom: 16px;
   letter-spacing: -0.02em;
 }
 
 .mast-conclusion-centered p {
   font-family: var(--font-main);
-  font-size: var(--text-base);
-  line-height: 1.72;
-  opacity: 0.92;
-  margin: 0 0 8px;
+  font-size: var(--text-sm);
+  line-height: 1.78;
+  opacity: 0.88;
+  margin: 0 0 12px;
 }
 
 .mast-conclusion-centered p:last-child {
@@ -549,7 +539,7 @@
 
 /* ---------- Checklist ---------- */
 .checklist {
-  max-width: 700px;
+  max-width: 660px;
   margin: 0 auto;
   list-style: none;
   padding: 0;
@@ -558,46 +548,31 @@
 .checklist li {
   position: relative;
   font-family: var(--font-main);
-  font-size: var(--text-base);
-  line-height: 1.75;
+  font-size: var(--text-sm);
+  line-height: 1.78;
   color: var(--color-text-dark-neutral);
-  padding: 16px 18px 16px 50px;
-  margin-bottom: 8px;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(0, 0, 0, 0.03);
-  transition: border-color var(--transition-base);
+  padding: 18px 24px 18px 24px;
+  margin-bottom: 0;
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.checklist li::before {
-  content: "";
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  border-radius: 6px;
-  border: 2px solid rgba(22, 163, 74, 0.3);
-  background: rgba(22, 163, 74, 0.04);
+.checklist li:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.checklist li::after {
-  content: "";
-  position: absolute;
-  left: 22px;
-  top: 50%;
-  transform: translateY(-50%) rotate(45deg);
-  width: 5px;
-  height: 9px;
-  border-right: 2px solid #16a34a;
-  border-bottom: 2px solid #16a34a;
-  opacity: 0.6;
+.checklist li:last-child {
+  border-bottom: none;
 }
 
 .checklist-label {
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-sm);
   color: var(--color-text-dark);
+  letter-spacing: -0.01em;
 }
 
 /* ---------- Onan Story Block ---------- */
@@ -749,15 +724,9 @@
 /* ---------- Reduced Motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   .reason-card,
-  .reason-card::before,
   .myth-card,
-  .checklist li,
   .mast-cta .main_button {
     transition: none !important;
-  }
-
-  .reason-card:hover {
-    transform: none !important;
   }
 }
 
@@ -790,12 +759,12 @@
   }
 
   .reason-card {
-    padding: 22px 20px 20px;
+    padding: 26px 22px 24px;
     border-radius: 16px;
   }
 
   .myth-card {
-    padding: 22px 20px;
+    padding: 26px 22px;
     border-radius: 14px;
   }
 
@@ -812,11 +781,11 @@
   }
 
   .highlight-callout {
-    padding: 14px 16px;
+    padding: 4px 0 4px 20px;
   }
 
   .checklist li {
-    padding: 12px 14px 12px 44px;
+    padding: 16px 16px 16px 16px;
   }
 
   .mast-conclusion-block {
