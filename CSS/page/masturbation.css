@@ -710,6 +710,64 @@
   opacity: 0.8;
 }
 
+/* ---------- Editorial Enrichment — Pull Quote ---------- */
+.pull-quote {
+  position: relative;
+  max-width: 580px;
+  margin: var(--space-xl) auto;
+  padding: var(--space-lg) 0;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-base), 1.6vw, var(--text-lg));
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--color-text-dark);
+  letter-spacing: 0.005em;
+}
+
+.pull-quote::before,
+.pull-quote::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--color-text-dark);
+  opacity: 0.12;
+  margin: 0 auto;
+}
+
+.pull-quote::before {
+  margin-bottom: var(--space-md);
+}
+
+.pull-quote::after {
+  margin-top: var(--space-md);
+}
+
+/* ---------- Editorial Enrichment — Text Divider ---------- */
+.text-divider {
+  border: none;
+  max-width: 50px;
+  height: 1px;
+  background: var(--color-text-dark);
+  opacity: 0.10;
+  margin: var(--space-xl) auto;
+}
+
+/* ---------- Editorial Enrichment — Section Note ---------- */
+.section-note {
+  font-family: var(--font-accent);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--color-text-dark-neutral);
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto var(--space-lg);
+  opacity: 0.7;
+  letter-spacing: 0.01em;
+}
+
 /* ---------- GSAP initial states ---------- */
 .mast-hero-title,
 .mast-hero-subtitle,
