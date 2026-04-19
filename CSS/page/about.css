@@ -589,9 +589,10 @@ section {
 
 .timeline-list li {
   position: relative;
-  padding: 20px 24px 20px 80px;
-  background: var(--color-white);
+  padding: 20px 24px;
+  margin-left: 80px;
   margin-bottom: 24px;
+  background: var(--color-white);
   border-radius: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
   transition: transform 0.2s ease;
@@ -603,7 +604,7 @@ section {
 
 .timeline-year {
   position: absolute;
-  left: 0;
+  left: -80px;
   top: 24px;
   width: 60px;
   height: 60px;
@@ -709,12 +710,13 @@ section {
     width: 40px;
     height: 40px;
     font-size: 0.75rem;
-    left: 0;
+    left: -50px;
     top: 20px;
   }
 
   .timeline-list li {
-    padding-left: 50px;
+    margin-left: 50px;
+    padding-left: 16px;
   }
 
   .scripture-quote {
