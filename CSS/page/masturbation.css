@@ -3116,3 +3116,243 @@
     height: 20px;
   }
 }
+
+/* ============================================================ */
+/* MOBILE PASS — FINAL POLISH (≤639px + ≤430px + ≤360px)        */
+/* ============================================================ */
+
+/* ---------- Conclusion: drop fixed 300px height to prevent text clipping ---------- */
+@media (max-width: 639px) {
+  .mast-conclusion-wrapper,
+  .mast-conclusion-glass {
+    height: auto;
+    min-height: 240px;
+  }
+
+  .mast-conclusion-glass {
+    padding: 36px 20px;
+  }
+
+  /* Switch from absolute centering (which fights auto-height) to flow */
+  .mast-conclusion-centered {
+    position: static;
+    transform: none;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .mast-conclusion-centered h2 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+
+  .mast-conclusion-centered p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+}
+
+/* ---------- CTA: liquid-glass primary + ghost secondary tuning ---------- */
+@media (max-width: 639px) {
+  .mast-cta .main_button {
+    /* Override the older terse 220px cap so the new pill design breathes */
+    padding: 16px 36px;
+    font-size: 1rem;
+    max-width: 280px;
+  }
+
+  .mast-cta-links {
+    gap: 12px;
+  }
+
+  .mast-cta-divider {
+    max-width: 200px;
+  }
+
+  .mast-cta-secondary {
+    padding: 11px 20px;
+    font-size: 0.88rem;
+    gap: 9px;
+  }
+
+  .mast-cta-secondary__icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 430px) {
+  .mast-cta .main_button {
+    padding: 15px 30px;
+    max-width: 260px;
+  }
+
+  .mast-cta-secondary {
+    padding: 10px 18px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ---------- Real Issue: tighten roots grid gap on tiny screens ---------- */
+@media (max-width: 430px) {
+  .real-issue__roots {
+    gap: 14px;
+  }
+
+  .root-card {
+    padding: 22px 20px 20px;
+  }
+
+  .real-issue__statement p {
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+
+  .real-issue__reframe {
+    padding: 20px 20px 20px 22px;
+  }
+}
+
+/* ---------- Shame Truth: vs chip already hidden <720px; tighten cards ---------- */
+@media (max-width: 430px) {
+  .shame-card {
+    padding: 22px 20px 20px;
+  }
+
+  .shame-card__quote {
+    font-size: 1.02rem;
+  }
+
+  .shame-truth__compass {
+    padding: 18px 16px;
+  }
+
+  .compass-row {
+    grid-template-columns: minmax(86px, max-content) auto 1fr;
+    gap: 8px;
+    padding: 10px 0;
+  }
+
+  .compass-tag {
+    font-size: 0.7rem;
+    padding: 5px 9px;
+  }
+
+  .compass-result {
+    font-size: 0.92rem;
+  }
+
+  .shame-truth__jesus {
+    padding: 26px 20px 22px;
+  }
+
+  .shame-truth__jesus blockquote p {
+    font-size: 1.08rem;
+  }
+}
+
+/* ---------- Myths: prevent index numeral colliding with tag ---------- */
+@media (max-width: 559px) {
+  .myth-item {
+    padding-top: 38px; /* room for the numeral above the rows */
+  }
+
+  .myth-item__index {
+    top: 14px;
+    right: 18px;
+    font-size: 1.6rem;
+  }
+
+  .myth-item__row {
+    padding: 12px 0;
+  }
+
+  .myth-item__row--myth .myth-item__text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .myth-item {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+/* ---------- Steps: featured card + cite chip on small screens ---------- */
+@media (max-width: 430px) {
+  .step-card {
+    padding: 22px 20px 20px;
+    gap: 12px;
+  }
+
+  .step-card__title {
+    font-size: 1rem;
+  }
+
+  .step-card__desc {
+    font-size: 0.92rem;
+  }
+
+  .step-card--featured .step-card__title {
+    font-size: 1.1rem;
+  }
+}
+
+/* ---------- Scripture centerpiece: ultra-small viewports ---------- */
+@media (max-width: 430px) {
+  .scripture-core {
+    padding: 38px 20px 32px;
+    border-radius: 18px;
+  }
+
+  .scripture-core::before {
+    font-size: 5.5rem;
+    top: -12px;
+    left: 10px;
+  }
+
+  .scripture-core-text {
+    font-size: 1.1rem;
+    line-height: 1.55;
+  }
+
+  .scripture-core__rule {
+    margin-top: 22px;
+  }
+}
+
+/* ---------- Section header eyebrows: never overflow on tiny widths ---------- */
+@media (max-width: 360px) {
+  .real-issue__eyebrow,
+  .shame-truth__eyebrow,
+  .myths-eyebrow,
+  .steps-eyebrow,
+  .scripture-core__eyebrow {
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    padding: 5px 10px;
+  }
+}
+
+/* ---------- Reduce backdrop blur on very small/low-power devices ---------- */
+@media (max-width: 430px) {
+  .mast-cta .main_button,
+  .mast-cta-secondary,
+  .info-panel-glass,
+  .scripture-core__eyebrow {
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+  }
+}
+
+/* ---------- Prevent horizontal overflow from any decorative element ---------- */
+.mast-section,
+.scripture-core,
+.real-issue__statement,
+.shame-truth__jesus,
+.step-card,
+.myth-item {
+  max-width: 100%;
+}
