@@ -121,14 +121,21 @@ try {
   // Show button when scrolled down (use class toggle for CSS opacity transition)
   if (scrollBtn) {
     scrollBtn.style.display = "block"; // keep always in DOM for CSS transition
+    let scrollTicking = false;
     window.addEventListener("scroll", function () {
-      if (
-        document.body.scrollTop > 300 ||
-        document.documentElement.scrollTop > 300
-      ) {
-        scrollBtn.classList.add("is-visible");
-      } else {
-        scrollBtn.classList.remove("is-visible");
+      if (!scrollTicking) {
+        requestAnimationFrame(function () {
+          if (
+            document.body.scrollTop > 300 ||
+            document.documentElement.scrollTop > 300
+          ) {
+            scrollBtn.classList.add("is-visible");
+          } else {
+            scrollBtn.classList.remove("is-visible");
+          }
+          scrollTicking = false;
+        });
+        scrollTicking = true;
       }
     }, { passive: true });
 

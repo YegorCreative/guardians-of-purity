@@ -323,9 +323,11 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 42px 38px; /* PRODUCTION HARDENING — merged from CONSISTENCY (was 32px) */
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 25px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
   animation: fadeInUp 0.8s var(--ease-premium, cubic-bezier(0.25, 0.8, 0.25, 1)) both; /* PRODUCTION HARDENING — merged from MOTION */
 }
@@ -418,6 +420,7 @@
   padding: 16px 20px;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 15px;
+  backdrop-filter: blur(10px);
   text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
   max-width: 680px;
   line-height: 1.72; /* PRODUCTION HARDENING — merged from TRUST (was implied) */
@@ -451,6 +454,8 @@
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.48);
   box-shadow: 0 16px 42px rgba(59, 130, 246, 0.11); /* PRODUCTION HARDENING — merged from CONSISTENCY */
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 .chapterOne-parable-title {
@@ -569,11 +574,13 @@
 .chapterOne-teaching-container {
   max-width: 900px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.14);
   padding: 34px;
   border-radius: 25px;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
   border: 1px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   transition: all 0.3s ease;
 }
 
@@ -647,6 +654,8 @@
   color: #1e293b;
   box-shadow: 0 14px 36px rgba(59, 130, 246, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   width: 100%;
   box-sizing: border-box;
   line-height: 1.9; /* PRODUCTION HARDENING — merged from CONTENT */
@@ -673,6 +682,8 @@
   color: #1e293b;
   box-shadow: 0 14px 32px rgba(168, 85, 247, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   display: block;
   width: 100%;
   box-sizing: border-box;
@@ -681,13 +692,15 @@
 
 .chapterOne-action-box,
 .chapterOne-reflect-box {
-  background: rgba(255, 255, 255, 0.82) !important;
+  background: rgba(255, 255, 255, 0.12) !important;
   padding: 28px !important;
   border-radius: 25px !important;
   margin-top: 20px !important;
   margin-bottom: 20px !important;
   border: 1px solid rgba(255, 255, 255, 0.25) !important;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
   box-sizing: border-box !important;
   width: 100% !important;
   max-width: 100% !important;
@@ -748,11 +761,13 @@
 .chapterOne-summary-container {
   max-width: 720px; /* PRODUCTION HARDENING — merged from TRUST (was 900px) */
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.14);
   padding: 44px 42px; /* PRODUCTION HARDENING — merged from CONTENT (was 36px) */
   border-radius: 25px;
   box-shadow: 0 14px 38px rgba(0, 0, 0, 0.11); /* PRODUCTION HARDENING — merged from CONSISTENCY */
   border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   margin-left: auto; /* PRODUCTION HARDENING — merged from TRUST */
   margin-right: auto; /* PRODUCTION HARDENING — merged from TRUST */
 }
@@ -799,13 +814,15 @@
 .chapterOne-reflection-question {
   font-size: 1.25rem; /* PRODUCTION HARDENING — merged from CONTENT (was 1.3rem) */
   font-weight: 600;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.12);
   padding: 26px 30px; /* PRODUCTION HARDENING — merged from CONTENT (was 22px) */
   border-left: 7px solid #ec4899; /* PRODUCTION HARDENING — merged width from CONTENT (was 6px) */
   border-radius: 25px;
   text-align: center;
   box-shadow: 0 16px 40px rgba(236, 72, 153, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   line-height: 1.7; /* PRODUCTION HARDENING — merged from CONTENT */
 }
 
@@ -839,10 +856,12 @@
 .chapterOne-prayer-container {
   max-width: 680px; /* PRODUCTION HARDENING — merged from TRUST (was 780px) */
   margin: 0 auto;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.26) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.38) 0%, rgba(255, 255, 255, 0.26) 100%);
   padding: 48px 50px; /* PRODUCTION HARDENING — merged from CONTENT (was 42px 46px) */
   border-radius: 32px;
   border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 22px 52px rgba(76, 29, 149, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.34);
   position: relative;
   z-index: 1;
@@ -1034,12 +1053,14 @@
 /* Chapter 1 - Journal Box */
 .chapterOne-journal-box {
   margin-top: 24px; /* PRODUCTION HARDENING — merged from CONSISTENCY (was 22px) */
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.24);
   padding: 20px;
   border-radius: 20px;
   margin-bottom: 22px; /* PRODUCTION HARDENING — merged from CONSISTENCY (was 20px) */
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .chapterOne-journal-box label {
@@ -1118,11 +1139,13 @@
 .chapterOne-export-container {
   max-width: 900px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.14);
   padding: 38px 36px; /* PRODUCTION HARDENING — merged from CONSISTENCY (was 36px) */
   border-radius: 25px;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12); /* PRODUCTION HARDENING — merged from CONSISTENCY */
   border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 .chapterOne-export-title {
@@ -1436,6 +1459,8 @@
   /* Darker background for better contrast with white text */
   background: linear-gradient(145deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);
   border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   display: flex;
   flex-direction: column;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -1607,6 +1632,8 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   min-width: 220px;
   font-size: 1.1rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   position: relative;
   overflow: hidden;
   text-transform: uppercase;
@@ -1795,6 +1822,8 @@ a[href*="chapter"][href*="next"],
   border: 1px solid rgba(255, 255, 255, 0.22);
   padding: 6px 16px;
   border-radius: 999px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: #fff;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -1851,6 +1880,8 @@ a[href*="chapter"][href*="next"],
   background: rgba(255, 255, 255, 0.1);
   padding: 4px 12px;
   border-radius: 12px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   letter-spacing: 0.3px;
 }
@@ -1883,6 +1914,8 @@ a[href*="chapter"][href*="next"],
   font-size: 0.85rem;
   font-weight: 600;
   transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   animation: fadeIn 1s ease 0.9s backwards;
 }
 
@@ -1920,7 +1953,9 @@ body.chapterModalOpen {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(15, 23, 42, 0.82);
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   animation: fadeIn 0.3s ease;
 }
 
@@ -2121,6 +2156,8 @@ body.chapterModalOpen {
   border-radius: 999px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
@@ -2185,6 +2222,7 @@ body.chapterModalOpen {
   font-weight: 500;
   color: #fff;
   text-align: center;
+  backdrop-filter: blur(8px);
   max-width: 600px;
   margin: 0 auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
