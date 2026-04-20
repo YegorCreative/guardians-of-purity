@@ -2417,3 +2417,201 @@
     padding: 22px 20px;
   }
 }
+
+/* ============================================================ */
+/* MYTHS VS TRUTH — EDITORIAL REDESIGN                          */
+/* ============================================================ */
+.mast-section--myths {
+  background: linear-gradient(180deg, #ffffff 0%, #f4f7fc 100%);
+}
+
+/* ---------- Header ---------- */
+.myths-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--space-xl);
+}
+
+.myths-eyebrow {
+  display: inline-block;
+  font-family: var(--font-accent, var(--font-heading));
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #1e3a8a;
+  padding: 6px 14px;
+  border: 1px solid rgba(30, 58, 138, 0.2);
+  border-radius: 999px;
+  background: rgba(30, 58, 138, 0.04);
+  margin-bottom: 14px;
+}
+
+/* ---------- Myths list ---------- */
+.myths-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 920px;
+  display: grid;
+  gap: 22px;
+  counter-reset: myths;
+}
+
+.myth-item {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(28, 35, 50, 0.08);
+  border-radius: 18px;
+  padding: 30px 32px 28px;
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.04),
+    0 12px 32px rgba(15, 23, 42, 0.06);
+  transition:
+    transform 0.32s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.32s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.32s ease;
+  overflow: hidden;
+}
+
+.myth-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #3d71f5 0%, #0d4ef2 100%);
+  opacity: 0.85;
+}
+
+@media (hover: hover) {
+  .myth-item:hover {
+    transform: translateY(-3px);
+    border-color: rgba(13, 78, 242, 0.18);
+    box-shadow:
+      0 4px 10px rgba(15, 23, 42, 0.05),
+      0 22px 48px rgba(13, 78, 242, 0.10);
+  }
+}
+
+/* Index numeral */
+.myth-item__index {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: rgba(13, 78, 242, 0.08);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Row layout (tag + text) */
+.myth-item__row {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 14px 0;
+}
+
+.myth-item__row--myth {
+  border-bottom: 1px dashed rgba(28, 35, 50, 0.12);
+  padding-top: 6px;
+}
+
+.myth-item__row--truth {
+  padding-bottom: 4px;
+}
+
+@media (max-width: 559px) {
+  .myth-item__row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+/* Tag */
+.myth-item__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 6px;
+  width: fit-content;
+  margin-top: 4px;
+}
+
+.myth-item__tag--myth {
+  color: #64748b;
+  background: rgba(100, 116, 139, 0.1);
+  border: 1px solid rgba(100, 116, 139, 0.18);
+}
+
+.myth-item__tag--truth {
+  color: #ffffff;
+  background: linear-gradient(135deg, #1e3a8a 0%, #0d4ef2 100%);
+  border: 1px solid transparent;
+  box-shadow: 0 2px 6px rgba(13, 78, 242, 0.18);
+}
+
+/* Text */
+.myth-item__text {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.72;
+}
+
+.myth-item__row--myth .myth-item__text {
+  font-family: var(--font-serif, Georgia, serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #475569;
+}
+
+.myth-item__row--truth .myth-item__text {
+  font-family: var(--font-main);
+  color: var(--color-text-dark);
+}
+
+.myth-item__quote {
+  font-style: italic;
+  color: #1e3a8a;
+  font-weight: 500;
+  quotes: "\201C" "\201D";
+}
+
+.myth-item__cite {
+  font-style: normal;
+  font-family: var(--font-accent, var(--font-heading));
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1e3a8a;
+  margin-left: 4px;
+  opacity: 0.85;
+}
+
+/* ---------- Mobile tightening ---------- */
+@media (max-width: 639px) {
+  .myth-item {
+    padding: 24px 22px 22px;
+    border-radius: 14px;
+  }
+
+  .myth-item__index {
+    font-size: 2rem;
+    top: 14px;
+    right: 18px;
+  }
+}
