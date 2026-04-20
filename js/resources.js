@@ -54,6 +54,28 @@ function toggleToolCard(header) {
   }
 }
 
+// Open a specific tool card by id (called from index nav)
+function openTool(toolId) {
+  const toolCard = document.getElementById(toolId);
+  if (!toolCard) return;
+
+  // Mark active in index
+  document.querySelectorAll('.tool-index-card').forEach((btn) => {
+    btn.classList.toggle('is-active', btn.getAttribute('data-tool') === toolId);
+  });
+
+  // Open the card if it isn't already
+  if (!toolCard.classList.contains('active')) {
+    const header = toolCard.querySelector('.tool-header');
+    if (header) toggleToolCard(header);
+  }
+
+  // Smooth scroll into view with a small offset for fixed headers
+  const headerOffset = 90;
+  const top = toolCard.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+  window.scrollTo({ top, behavior: 'smooth' });
+}
+
 // Close modal when clicking outside
 window.onclick = function(event) {
   if (event.target.classList && event.target.classList.contains('modal')) {

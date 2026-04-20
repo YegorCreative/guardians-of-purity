@@ -348,11 +348,84 @@
 
       <!-- Interactive Resources -->
       <div class="separated_block">
-        <section class="downloadable-resources separated_block_corner">
-          <h2 class="section-title">Interactive Tools</h2>
-          
+        <section class="downloadable-resources tools-redux separated_block_corner" id="interactive-tools">
+          <div class="tools-redux-header">
+            <span class="tools-redux-eyebrow">Tap a card to begin</span>
+            <h2 class="section-title">Interactive Tools</h2>
+            <p class="tools-redux-lede">Six guided tools designed to support your journey — from understanding the science, to daily prayer, scripture memory, accountability, and an emergency action plan.</p>
+          </div>
+
+          <!-- Tool index — quick navigation -->
+          <nav class="tool-index" aria-label="Interactive tools">
+            <button type="button" class="tool-index-card" data-tool="tool-roadmap" onclick="openTool('tool-roadmap')">
+              <span class="tool-index-icon"><i class="fa-solid fa-book" aria-hidden="true"></i></span>
+              <span class="tool-index-text">
+                <span class="tool-index-title">Freedom Roadmap</span>
+                <span class="tool-index-sub">4-phase path</span>
+              </span>
+              <span class="tool-index-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+
+            <button type="button" class="tool-index-card" data-tool="tool-prayer" onclick="openTool('tool-prayer')">
+              <span class="tool-index-icon"><i class="fa-solid fa-hands-praying" aria-hidden="true"></i></span>
+              <span class="tool-index-text">
+                <span class="tool-index-title">Prayer Journal</span>
+                <span class="tool-index-sub">Guided prayers</span>
+              </span>
+              <span class="tool-index-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+
+            <button type="button" class="tool-index-card" data-tool="tool-tracker" onclick="openTool('tool-tracker')">
+              <span class="tool-index-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></span>
+              <span class="tool-index-text">
+                <span class="tool-index-title">Progress Tracker</span>
+                <span class="tool-index-sub">Streak &amp; victories</span>
+              </span>
+              <span class="tool-index-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+
+            <button type="button" class="tool-index-card" data-tool="tool-scripture" onclick="openTool('tool-scripture')">
+              <span class="tool-index-icon"><i class="fa-solid fa-cross" aria-hidden="true"></i></span>
+              <span class="tool-index-text">
+                <span class="tool-index-title">Scripture Memory</span>
+                <span class="tool-index-sub">Verse flashcards</span>
+              </span>
+              <span class="tool-index-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+
+            <button type="button" class="tool-index-card" data-tool="tool-accountability" onclick="openTool('tool-accountability')">
+              <span class="tool-index-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></span>
+              <span class="tool-index-text">
+                <span class="tool-index-title">Accountability Guide</span>
+                <span class="tool-index-sub">Find a partner</span>
+              </span>
+              <span class="tool-index-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+
+            <button type="button" class="tool-index-card" data-tool="tool-emergency" onclick="openTool('tool-emergency')">
+              <span class="tool-index-icon"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></span>
+              <span class="tool-index-text">
+                <span class="tool-index-title">Emergency Plan</span>
+                <span class="tool-index-sub">In-the-moment</span>
+              </span>
+              <span class="tool-index-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+          </nav>
+
           <!-- Freedom Roadmap -->
-          <div class="tool-card separated_block_corner">
+          <div class="tool-card separated_block_corner" id="tool-roadmap">
             <div class="tool-header" onclick="toggleToolCard(this)">
               <div class="tool-header-content">
                 <div class="download-icon"><i class="fas fa-book"></i></div>
@@ -440,7 +513,7 @@
           </div>
 
           <!-- Prayer Journal -->
-          <div class="tool-card separated_block_corner">
+          <div class="tool-card separated_block_corner" id="tool-prayer">
             <div class="tool-header" onclick="toggleToolCard(this)">
               <div class="tool-header-content">
                 <div class="download-icon"><i class="fas fa-hands-praying"></i></div>
@@ -536,7 +609,7 @@
           </div>
 
           <!-- Progress Tracker -->
-          <div class="tool-card separated_block_corner">
+          <div class="tool-card separated_block_corner" id="tool-tracker">
             <div class="tool-header" onclick="toggleToolCard(this)">
               <div class="tool-header-content">
                 <div class="download-icon"><i class="fas fa-chart-line"></i></div>
@@ -608,7 +681,7 @@
           </div>
 
           <!-- Scripture Memory System -->
-          <div class="tool-card separated_block_corner">
+          <div class="tool-card separated_block_corner" id="tool-scripture">
             <div class="tool-header" onclick="toggleToolCard(this)">
               <div class="tool-header-content">
                 <div class="download-icon"><i class="fas fa-cross"></i></div>
@@ -637,7 +710,7 @@
           </div>
 
           <!-- Accountability Partner Guide -->
-          <div class="tool-card separated_block_corner">
+          <div class="tool-card separated_block_corner" id="tool-accountability">
             <div class="tool-header" onclick="toggleToolCard(this)">
               <div class="tool-header-content">
                 <div class="download-icon"><i class="fas fa-handshake"></i></div>
@@ -809,7 +882,7 @@
           </div>
 
           <!-- Emergency Action Plan -->
-          <div class="tool-card separated_block_corner">
+          <div class="tool-card separated_block_corner" id="tool-emergency">
             <div class="tool-header" onclick="toggleToolCard(this)">
               <div class="tool-header-content">
                 <div class="download-icon"><i class="fas fa-triangle-exclamation"></i></div>

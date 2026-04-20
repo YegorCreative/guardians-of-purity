@@ -3050,3 +3050,867 @@
     font-size: 0.85rem !important;
   }
 }
+
+/* ============================================================ */
+/* INTERACTIVE TOOLS — LIQUID GLASS REDUX                      */
+/* Scoped under .tools-redux so it doesn't leak elsewhere      */
+/* ============================================================ */
+
+.tools-redux {
+  position: relative;
+  overflow: hidden;
+  padding: 64px 28px !important;
+  border-radius: 28px !important;
+  background:
+    radial-gradient(ellipse 70% 55% at 12% 0%, rgba(147, 197, 253, 0.20) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 100% 100%, rgba(99, 102, 241, 0.22) 0%, transparent 55%),
+    linear-gradient(135deg, #0f1f55 0%, #1e3a8a 45%, #1e40af 100%) !important;
+  color: #ffffff;
+}
+
+.tools-redux::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 22% 28%, rgba(255, 255, 255, 0.06) 0%, transparent 28%),
+    radial-gradient(circle at 78% 72%, rgba(255, 255, 255, 0.05) 0%, transparent 32%);
+  pointer-events: none;
+}
+
+.tools-redux > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Header block */
+.tools-redux-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 36px;
+}
+
+.tools-redux-eyebrow {
+  display: inline-block;
+  padding: 6px 14px;
+  font-family: var(--font-accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #cfe0ff;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 100px;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  margin-bottom: 14px;
+}
+
+.tools-redux .section-title {
+  color: #ffffff !important;
+  font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+  letter-spacing: -0.01em;
+  margin: 0 0 12px !important;
+  text-shadow: 0 1px 2px rgba(8, 20, 60, 0.35);
+}
+
+.tools-redux-lede {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* === INDEX GRID — 6 quick-jump cards === */
+.tool-index {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 1080px;
+  margin: 0 auto 44px;
+}
+
+.tool-index-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  text-align: left;
+  font-family: var(--font-primary);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0.07) 50%,
+    rgba(255, 255, 255, 0.13) 100%
+  );
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 16px;
+  color: #ffffff;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.35) inset,
+    0 8px 22px rgba(8, 20, 60, 0.22);
+  transition:
+    transform 0.32s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.32s ease,
+    border-color 0.32s ease,
+    background 0.32s ease;
+}
+
+.tool-index-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.7),
+    transparent
+  );
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .tool-index-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.42);
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.22) 0%,
+      rgba(255, 255, 255, 0.10) 50%,
+      rgba(255, 255, 255, 0.18) 100%
+    );
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.45) inset,
+      0 14px 32px rgba(8, 20, 60, 0.32);
+  }
+
+  .tool-index-card:hover .tool-index-arrow {
+    transform: translateY(2px);
+  }
+}
+
+.tool-index-card.is-active {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.26) 0%,
+    rgba(255, 255, 255, 0.14) 50%,
+    rgba(255, 255, 255, 0.22) 100%
+  );
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.5) inset,
+    0 0 0 2px rgba(255, 255, 255, 0.12),
+    0 14px 32px rgba(8, 20, 60, 0.34);
+}
+
+.tool-index-card:focus-visible {
+  outline: 2px solid #93bbff;
+  outline-offset: 3px;
+}
+
+.tool-index-icon {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0b1f4d 0%, #14306e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-size: 18px !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.45) inset,
+    0 4px 12px rgba(8, 20, 60, 0.35);
+}
+
+.tool-index-icon i,
+.tool-index-icon .fas,
+.tool-index-icon .fa-solid {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 18px !important;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.4));
+}
+
+.tool-index-text {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.tool-index-title {
+  font-weight: 700;
+  font-size: 0.96rem;
+  line-height: 1.25;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(8, 20, 60, 0.3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tool-index-sub {
+  font-size: 0.76rem;
+  color: rgba(207, 224, 255, 0.85);
+  margin-top: 2px;
+  letter-spacing: 0.01em;
+}
+
+.tool-index-arrow {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* === TOOL CARDS — frosted glass on dark === */
+.tools-redux .tool-card {
+  position: relative;
+  margin: 0 auto 18px !important;
+  max-width: 1080px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(255, 255, 255, 0.12) 100%
+  ) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  border-radius: 20px !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.32) inset,
+    0 10px 26px rgba(8, 20, 60, 0.26),
+    0 22px 50px rgba(8, 20, 60, 0.22) !important;
+  overflow: hidden;
+  scroll-margin-top: 90px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tools-redux .tool-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.7),
+    transparent
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.tools-redux .tool-card.active {
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.45) inset,
+    0 0 0 2px rgba(255, 255, 255, 0.12),
+    0 18px 40px rgba(8, 20, 60, 0.36) !important;
+}
+
+/* Tool header */
+.tools-redux .tool-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 26px !important;
+  cursor: pointer;
+  background: transparent !important;
+  border: none !important;
+  transition: background 0.3s ease;
+}
+
+@media (hover: hover) {
+  .tools-redux .tool-header:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+  }
+}
+
+.tools-redux .tool-header-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.tools-redux .download-icon {
+  flex: 0 0 auto;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 52px !important;
+  height: 52px !important;
+  margin: 0 !important;
+  border-radius: 14px !important;
+  background: linear-gradient(135deg, #0b1f4d 0%, #14306e 100%) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.7) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 22px !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.5) inset,
+    0 6px 16px rgba(8, 20, 60, 0.4) !important;
+}
+
+.tools-redux .download-icon i,
+.tools-redux .download-icon .fas,
+.tools-redux .download-icon .fa-solid {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 22px !important;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+}
+
+.tools-redux .tool-header-text {
+  min-width: 0;
+}
+
+.tools-redux .download-title {
+  color: #ffffff !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  margin: 0 0 4px !important;
+  letter-spacing: -0.005em;
+  text-shadow: 0 1px 2px rgba(8, 20, 60, 0.3);
+}
+
+.tools-redux .download-description {
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: 0.88rem !important;
+  margin: 0 !important;
+  line-height: 1.5;
+}
+
+.tools-redux .tool-toggle {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 0.85rem !important;
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.3s ease;
+}
+
+.tools-redux .tool-toggle i {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+}
+
+.tools-redux .tool-card.active .tool-toggle {
+  transform: rotate(180deg);
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* Tool body container */
+.tools-redux .tool-body {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 26px;
+  transition: max-height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), padding 0.4s ease;
+  background: rgba(255, 255, 255, 0.04);
+  border-top: 1px solid transparent;
+  color: #ffffff;
+}
+
+.tools-redux .tool-card.active .tool-body {
+  max-height: 6000px;
+  padding: 22px 26px 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+/* === Inner content polish (universal — works for all 6 tools) === */
+.tools-redux .tool-body h3,
+.tools-redux .tool-body h4 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(8, 20, 60, 0.25);
+}
+
+.tools-redux .tool-body p,
+.tools-redux .tool-body li,
+.tools-redux .tool-body label,
+.tools-redux .tool-body .section-desc,
+.tools-redux .tool-body .prayer-intro,
+.tools-redux .tool-body .guide-intro,
+.tools-redux .tool-body .stat-label {
+  color: rgba(255, 255, 255, 0.86) !important;
+}
+
+.tools-redux .tool-body strong { color: #ffffff !important; }
+
+.tools-redux .tool-body em,
+.tools-redux .tool-body .example-text,
+.tools-redux .tool-body .template-text {
+  color: rgba(207, 224, 255, 0.92) !important;
+}
+
+.tools-redux .tool-body a { color: #93bbff; }
+.tools-redux .tool-body a:hover { color: #ffffff; }
+
+/* Phase / accordion blocks (Freedom Roadmap) */
+.tools-redux .roadmap-phase {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.tools-redux .phase-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.tools-redux .phase-header:hover { background: rgba(255, 255, 255, 0.05); }
+
+.tools-redux .phase-header h3 {
+  flex: 1 1 auto;
+  margin: 0 !important;
+  font-size: 1rem !important;
+  color: #ffffff !important;
+}
+
+.tools-redux .phase-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0b1f4d, #14306e) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 14px !important;
+  flex: 0 0 auto;
+}
+
+.tools-redux .phase-icon i,
+.tools-redux .phase-icon .fas {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 14px !important;
+}
+
+.tools-redux .accordion-arrow {
+  color: rgba(255, 255, 255, 0.7);
+  transition: transform 0.35s ease;
+}
+
+.tools-redux .roadmap-phase.active .accordion-arrow,
+.tools-redux .phase-header.active .accordion-arrow {
+  transform: rotate(180deg);
+}
+
+.tools-redux .phase-content {
+  padding: 0 18px 16px;
+}
+
+.tools-redux .action-item {
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: rgba(96, 165, 250, 0.18);
+  border: 1px solid rgba(147, 197, 253, 0.35);
+  border-radius: 10px;
+  color: #ffffff !important;
+}
+
+/* Tabs (Prayer Journal, Guide) */
+.tools-redux .prayer-tabs,
+.tools-redux .guide-tabs,
+.tools-redux .scripture-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 6px;
+  background: rgba(0, 0, 0, 0.20);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+}
+
+.tools-redux .prayer-tab,
+.tools-redux .guide-tab,
+.tools-redux .scripture-filter {
+  flex: 1 1 auto;
+  padding: 9px 14px !important;
+  font-family: var(--font-accent);
+  font-weight: 600 !important;
+  font-size: 0.84rem !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 10px !important;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.tools-redux .prayer-tab:hover,
+.tools-redux .guide-tab:hover,
+.tools-redux .scripture-filter:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+
+.tools-redux .prayer-tab.active,
+.tools-redux .guide-tab.active,
+.tools-redux .scripture-filter.active {
+  background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.92)) !important;
+  color: #1e3a8a !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 4px 12px rgba(8, 20, 60, 0.25);
+}
+
+/* Inputs / textareas */
+.tools-redux .prayer-input,
+.tools-redux .victory-textarea,
+.tools-redux .streak-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.tools-redux .prayer-input::placeholder,
+.tools-redux .victory-textarea::placeholder,
+.tools-redux .streak-input::placeholder {
+  color: rgba(207, 224, 255, 0.55);
+}
+
+.tools-redux .prayer-input:focus,
+.tools-redux .victory-textarea:focus,
+.tools-redux .streak-input:focus {
+  border-color: rgba(147, 197, 253, 0.7);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.tools-redux .streak-input { max-width: 140px; text-align: center; font-size: 1.4rem; font-weight: 700; }
+
+/* Generic action buttons inside tool body */
+.tools-redux .copy-button,
+.tools-redux .save-button,
+.tools-redux .reset-button,
+.tools-redux .random-verse-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px !important;
+  margin-top: 14px !important;
+  font-family: var(--font-accent);
+  font-weight: 700 !important;
+  font-size: 0.86rem !important;
+  color: #1e3a8a !important;
+  -webkit-text-fill-color: #1e3a8a !important;
+  background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.9)) !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  border: 1px solid rgba(255, 255, 255, 0.85) !important;
+  border-radius: 100px !important;
+  cursor: pointer;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 6px 16px rgba(8, 20, 60, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tools-redux .copy-button:hover,
+.tools-redux .save-button:hover,
+.tools-redux .reset-button:hover,
+.tools-redux .random-verse-btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 10px 22px rgba(8, 20, 60, 0.32);
+}
+
+.tools-redux .reset-button {
+  background: linear-gradient(135deg, rgba(248, 113, 113, 0.95), rgba(220, 38, 38, 0.92)) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.tools-redux .random-verse-btn i {
+  color: #1e3a8a !important;
+  -webkit-text-fill-color: #1e3a8a !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+}
+
+/* Quick prayer chips */
+.tools-redux .quick-prayer-item {
+  padding: 10px 14px;
+  margin: 6px 0;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  color: #ffffff;
+  font-style: italic;
+}
+
+/* Tracker — milestone badges & stats */
+.tools-redux .milestone-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tools-redux .badge {
+  padding: 8px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+
+.tools-redux .badge.earned {
+  color: #1e3a8a;
+  background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.9));
+  border-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 12px rgba(8, 20, 60, 0.28);
+}
+
+.tools-redux .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.tools-redux .stat-card {
+  padding: 16px 12px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.tools-redux .stat-number {
+  font-family: var(--font-accent);
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  text-shadow: 0 1px 2px rgba(8, 20, 60, 0.3);
+}
+
+.tools-redux .stat-label {
+  margin-top: 6px;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(207, 224, 255, 0.85);
+}
+
+.tools-redux .tracker-section {
+  padding: 18px;
+  margin-bottom: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+}
+
+.tools-redux .tracker-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px !important;
+  font-size: 1rem !important;
+}
+
+.tools-redux .tracker-section h3 i {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 16px !important;
+}
+
+.tools-redux .trigger-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.tools-redux .trigger-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+  color: #ffffff;
+}
+
+.tools-redux .trigger-item:hover { background: rgba(255, 255, 255, 0.10); }
+
+.tools-redux .victory-entries {
+  margin-top: 12px;
+}
+
+.tools-redux .victory-entries .victory-entry {
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-left: 3px solid rgba(147, 197, 253, 0.7);
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+/* Scripture cards */
+.tools-redux .scripture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.tools-redux .scripture-card {
+  padding: 18px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 255, 255, 0.06)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #ffffff;
+}
+
+.tools-redux .scripture-card h4 { color: #ffffff !important; margin: 0 0 8px; }
+.tools-redux .scripture-card .verse-ref { color: rgba(207, 224, 255, 0.85); font-weight: 700; }
+
+/* Guide sub-sections */
+.tools-redux .guide-section,
+.tools-redux .question-category,
+.tools-redux .template-section {
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+}
+
+.tools-redux .guide-section h4 i,
+.tools-redux .question-list,
+.tools-redux .template-section strong {
+  color: #ffffff !important;
+}
+
+.tools-redux .guide-section h4 i,
+.tools-redux .question-category h4 i,
+.tools-redux .example-text i {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .tool-index {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 639px) {
+  .tools-redux {
+    padding: 48px 16px !important;
+    border-radius: 22px !important;
+  }
+
+  .tool-index {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+
+  .tool-index-card { padding: 14px 16px; }
+  .tool-index-icon { width: 40px; height: 40px; }
+
+  .tools-redux .tool-header { padding: 18px 18px !important; }
+  .tools-redux .download-icon { width: 46px !important; height: 46px !important; font-size: 19px !important; }
+  .tools-redux .download-icon i { font-size: 19px !important; }
+  .tools-redux .download-title { font-size: 1.02rem !important; }
+  .tools-redux .download-description { font-size: 0.82rem !important; }
+  .tools-redux .tool-card.active .tool-body { padding: 18px 18px 22px; }
+
+  .tools-redux .stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .tools-redux .trigger-list { grid-template-columns: 1fr; }
+  .tools-redux .stat-number { font-size: 1.6rem; }
+}
