@@ -1810,3 +1810,610 @@
   }
 }
 
+/* ============================================================ */
+/* THE REAL ISSUE — EDITORIAL REDESIGN                          */
+/* ============================================================ */
+.mast-section--real-issue {
+  background: linear-gradient(180deg, #ffffff 0%, #f4f7fc 100%);
+}
+
+.real-issue {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* ---------- Lede ---------- */
+.real-issue__lede {
+  max-width: 720px;
+  margin: 0 auto var(--space-xl);
+  text-align: center;
+}
+
+.real-issue__eyebrow {
+  display: inline-block;
+  font-family: var(--font-accent, var(--font-heading));
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1e3a8a;
+  padding: 6px 14px;
+  border: 1px solid rgba(30, 58, 138, 0.2);
+  border-radius: 999px;
+  background: rgba(30, 58, 138, 0.04);
+  margin-bottom: 18px;
+}
+
+.real-issue__opening {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  line-height: 1.7;
+  color: var(--color-text-dark-neutral);
+  margin: 0;
+}
+
+.real-issue__opening strong {
+  color: var(--color-text-dark);
+  font-weight: 700;
+}
+
+/* ---------- Featured statement ---------- */
+.real-issue__statement {
+  position: relative;
+  max-width: 780px;
+  margin: var(--space-xl) auto;
+  padding: 36px 40px;
+  background: linear-gradient(135deg, #1e3a8a 0%, #0d4ef2 100%);
+  border-radius: 18px;
+  box-shadow:
+    0 4px 12px rgba(13, 78, 242, 0.15),
+    0 18px 44px rgba(13, 78, 242, 0.18);
+  overflow: hidden;
+}
+
+.real-issue__statement::before {
+  content: "\201C";
+  position: absolute;
+  top: -22px;
+  left: 22px;
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 8rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+}
+
+.real-issue__statement p {
+  position: relative;
+  margin: 0;
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  line-height: 1.55;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: -0.005em;
+}
+
+.real-issue__statement em {
+  font-style: italic;
+  font-weight: 700;
+  color: #b0d2da;
+}
+
+/* ---------- Three diagnostic cards ---------- */
+.real-issue__roots {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin: var(--space-xl) 0;
+}
+
+@media (min-width: 720px) {
+  .real-issue__roots {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+}
+
+.root-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(28, 35, 50, 0.08);
+  border-radius: 16px;
+  padding: 28px 26px 26px;
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.04),
+    0 10px 28px rgba(15, 23, 42, 0.06);
+  transition:
+    transform 0.32s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.32s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.32s ease;
+}
+
+.root-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 3px;
+  background: linear-gradient(90deg, #3d71f5 0%, #0d4ef2 100%);
+  border-radius: 0 0 3px 3px;
+  opacity: 0.85;
+}
+
+@media (hover: hover) {
+  .root-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(13, 78, 242, 0.18);
+    box-shadow:
+      0 4px 10px rgba(15, 23, 42, 0.05),
+      0 22px 48px rgba(13, 78, 242, 0.12);
+  }
+}
+
+.root-card__num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: #0d4ef2;
+  opacity: 0.65;
+  margin-bottom: 10px;
+}
+
+.root-card__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.15rem, 1.6vw, 1.3rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-text-dark);
+  margin: 0 0 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(28, 35, 50, 0.08);
+}
+
+.root-card__desc {
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-text-dark-neutral);
+  margin: 0;
+}
+
+/* ---------- Reframing pull-quote ---------- */
+.real-issue__reframe {
+  max-width: 780px;
+  margin: var(--space-xl) auto 0;
+  padding: 28px 32px 28px 36px;
+  background: #ffffff;
+  border-left: 4px solid #1e3a8a;
+  border-radius: 0 14px 14px 0;
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.04),
+    0 10px 28px rgba(15, 23, 42, 0.06);
+}
+
+.real-issue__reframe-label {
+  display: block;
+  font-family: var(--font-accent, var(--font-heading));
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1e3a8a;
+  margin-bottom: 12px;
+  opacity: 0.85;
+}
+
+.real-issue__reframe-text {
+  margin: 0;
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(1.02rem, 1.5vw, 1.2rem);
+  line-height: 1.7;
+  color: var(--color-text-dark);
+}
+
+.real-issue__reframe-text .muted-q {
+  color: var(--color-text-dark-neutral);
+  opacity: 0.65;
+  text-decoration: line-through;
+  text-decoration-color: rgba(30, 58, 138, 0.35);
+  text-decoration-thickness: 1px;
+}
+
+.real-issue__reframe-text strong {
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+/* ---------- Mobile tightening ---------- */
+@media (max-width: 639px) {
+  .real-issue__statement {
+    padding: 28px 24px;
+    border-radius: 14px;
+  }
+
+  .real-issue__statement::before {
+    font-size: 6rem;
+    top: -16px;
+    left: 14px;
+  }
+
+  .root-card {
+    padding: 24px 22px 22px;
+    border-radius: 14px;
+  }
+
+  .real-issue__reframe {
+    padding: 22px 22px 22px 24px;
+  }
+}
+
+
+/* ============================================================ */
+/* WHAT SHAME GETS WRONG — EDITORIAL REDESIGN                   */
+/* ============================================================ */
+.shame-truth {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* ---------- Header ---------- */
+.shame-truth__header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.shame-truth__eyebrow {
+  display: inline-block;
+  font-family: var(--font-accent, var(--font-heading));
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #1e3a8a;
+  padding: 6px 14px;
+  border: 1px solid rgba(30, 58, 138, 0.2);
+  border-radius: 999px;
+  background: rgba(30, 58, 138, 0.04);
+  margin-bottom: 14px;
+}
+
+.shame-truth__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--color-text-dark);
+  margin: 0;
+}
+
+/* ---------- Lie vs Truth split ---------- */
+.shame-truth__split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: var(--space-xl) 0;
+}
+
+@media (min-width: 720px) {
+  .shame-truth__split {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+    position: relative;
+  }
+
+  /* "vs" divider chip */
+  .shame-truth__split::after {
+    content: "vs";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-text-dark-neutral);
+    background: #ffffff;
+    border: 1px solid rgba(28, 35, 50, 0.1);
+    border-radius: 999px;
+    padding: 6px 12px;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+    z-index: 2;
+    pointer-events: none;
+  }
+}
+
+.shame-card {
+  position: relative;
+  padding: 30px 28px 26px;
+  border-radius: 16px;
+  border: 1px solid rgba(28, 35, 50, 0.08);
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.04),
+    0 10px 28px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.shame-card--lie {
+  background: linear-gradient(168deg, #fafbfc 0%, #f1f3f7 100%);
+  border-color: rgba(28, 35, 50, 0.12);
+}
+
+.shame-card--lie::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #94a3b8 0%, #64748b 100%);
+  border-radius: 16px 16px 0 0;
+  opacity: 0.7;
+}
+
+.shame-card--truth {
+  background: linear-gradient(168deg, #ffffff 0%, #eef3fd 100%);
+  border-color: rgba(13, 78, 242, 0.18);
+}
+
+.shame-card--truth::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3d71f5 0%, #0d4ef2 100%);
+  border-radius: 16px 16px 0 0;
+}
+
+.shame-card__label {
+  font-family: var(--font-accent, var(--font-heading));
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.shame-card--lie .shame-card__label { color: #64748b; }
+.shame-card--truth .shame-card__label { color: #1e3a8a; }
+
+.shame-card__quote {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  line-height: 1.5;
+  margin: 0;
+  color: var(--color-text-dark);
+}
+
+.shame-card--lie .shame-card__quote {
+  color: #475569;
+  text-decoration: line-through;
+  text-decoration-color: rgba(100, 116, 139, 0.45);
+  text-decoration-thickness: 1px;
+}
+
+.shame-card__quote em {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.shame-card--truth .shame-card__quote em { color: #0d4ef2; }
+
+.shame-card__source {
+  margin: 0;
+  font-family: var(--font-main);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--color-text-dark-neutral);
+  opacity: 0.72;
+}
+
+/* ---------- Compass (direction comparison) ---------- */
+.shame-truth__compass {
+  max-width: 720px;
+  margin: var(--space-xl) auto;
+  padding: 26px 30px;
+  background: #ffffff;
+  border: 1px solid rgba(28, 35, 50, 0.08);
+  border-radius: 16px;
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.04),
+    0 10px 26px rgba(15, 23, 42, 0.05);
+}
+
+.compass-row {
+  display: grid;
+  grid-template-columns: minmax(110px, max-content) auto 1fr;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(28, 35, 50, 0.06);
+}
+
+.compass-row:last-of-type { border-bottom: none; }
+
+.compass-tag {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.compass-tag--neg {
+  color: #64748b;
+  background: rgba(100, 116, 139, 0.1);
+}
+
+.compass-tag--pos {
+  color: #ffffff;
+  background: linear-gradient(135deg, #1e3a8a 0%, #0d4ef2 100%);
+}
+
+.compass-arrow {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.compass-arrow--neg { color: #94a3b8; }
+.compass-arrow--pos { color: #0d4ef2; }
+
+.compass-result {
+  font-family: var(--font-main);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--color-text-dark-neutral);
+}
+
+.compass-result strong { color: var(--color-text-dark); font-weight: 700; }
+
+.compass-note {
+  margin: 16px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(28, 35, 50, 0.06);
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 0.95rem;
+  font-style: italic;
+  text-align: center;
+  color: var(--color-text-dark-neutral);
+}
+
+/* ---------- Jesus pull-quote ---------- */
+.shame-truth__jesus {
+  position: relative;
+  max-width: 760px;
+  margin: var(--space-xl) auto;
+  padding: 40px 44px 32px;
+  background: linear-gradient(135deg, #1e3a8a 0%, #0d4ef2 100%);
+  border-radius: 18px;
+  box-shadow:
+    0 4px 12px rgba(13, 78, 242, 0.15),
+    0 18px 44px rgba(13, 78, 242, 0.18);
+  overflow: hidden;
+}
+
+.shame-truth__jesus::before {
+  content: "\201C";
+  position: absolute;
+  top: -16px;
+  left: 24px;
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 7rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.14);
+  pointer-events: none;
+}
+
+.shame-truth__jesus blockquote { margin: 0; }
+
+.shame-truth__jesus blockquote p {
+  position: relative;
+  margin: 0;
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  line-height: 1.55;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: -0.005em;
+}
+
+.shame-truth__jesus figcaption {
+  position: relative;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.shame-truth__jesus cite {
+  font-family: var(--font-accent, var(--font-heading));
+  font-style: normal;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #b0d2da;
+}
+
+.shame-truth__jesus-note {
+  font-family: var(--font-main);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.82);
+  font-style: italic;
+}
+
+/* ---------- Closing principle ---------- */
+.shame-truth__principle {
+  max-width: 780px;
+  margin: var(--space-xl) auto 0;
+  padding: 26px 30px;
+  text-align: center;
+  background: #ffffff;
+  border-top: 3px solid #1e3a8a;
+  border-radius: 0 0 14px 14px;
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(1rem, 1.5vw, 1.18rem);
+  line-height: 1.75;
+  color: var(--color-text-dark);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.shame-truth__principle .word-fear,
+.shame-truth__principle .word-shame {
+  color: #64748b;
+  font-style: italic;
+  text-decoration: line-through;
+  text-decoration-color: rgba(100, 116, 139, 0.4);
+  text-decoration-thickness: 1px;
+}
+
+.shame-truth__principle .word-truth,
+.shame-truth__principle .word-grace {
+  color: #0d4ef2;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ---------- Mobile tightening ---------- */
+@media (max-width: 639px) {
+  .shame-card {
+    padding: 24px 22px;
+    border-radius: 14px;
+  }
+
+  .shame-truth__compass {
+    padding: 20px 20px;
+    border-radius: 14px;
+  }
+
+  .compass-row {
+    grid-template-columns: minmax(96px, max-content) auto 1fr;
+    gap: 10px;
+  }
+
+  .shame-truth__jesus {
+    padding: 30px 24px 26px;
+    border-radius: 14px;
+  }
+
+  .shame-truth__jesus::before {
+    font-size: 5.5rem;
+    top: -12px;
+    left: 14px;
+  }
+
+  .shame-truth__principle {
+    padding: 22px 20px;
+  }
+}
