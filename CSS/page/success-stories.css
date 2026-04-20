@@ -56,10 +56,10 @@
 
 .stories-parallax-foreground {
   z-index: 3;
-  width: 41%;
+  width: 58%;
   height: auto;
-  top: 22%;
-  left: 29.5%;
+  top: 18%;
+  left: 21%;
 }
 
 /* ---------- Hero ---------- */
@@ -584,9 +584,9 @@
   }
 
   .stories-parallax-foreground {
-    width: 66%;
-    top: 35%;
-    left: 17%;
+    width: 84%;
+    top: 30%;
+    left: 8%;
   }
 
   .stories-hero-panel {
@@ -642,5 +642,168 @@
 @media (min-width: 640px) and (max-width: 1059px) {
   .stories-section {
     padding: var(--space-xl) var(--space-sm);
+  }
+}
+
+/* ============================================================ */
+/* MOBILE PASS — small-phone polish (≤430px + ≤360px)          */
+/* ============================================================ */
+
+@media (max-width: 430px) {
+  /* Parallax hero — keep title legible and image well-framed */
+  .stories-parallax .parallax__header {
+    min-height: 64svh;
+    padding: 18px 14px;
+  }
+
+  .stories-parallax-layer-title {
+    padding: 5.6rem 0.75rem 0;
+  }
+
+  .stories-parallax-title {
+    font-size: clamp(2.3rem, 11vw, 3.4rem);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.55);
+  }
+
+  .stories-parallax-foreground {
+    width: 92%;
+    top: 33%;
+    left: 4%;
+  }
+
+  /* Cinematic ring sections — tighten ring insets so content has more room */
+  .stories-hero::before,
+  .stories-cta::before {
+    inset: 6px;
+  }
+
+  .stories-hero .stories-ring-inner,
+  .stories-cta .stories-ring-inner {
+    inset: 14px;
+  }
+
+  .stories-hero {
+    padding: var(--space-xl) var(--space-sm) var(--space-lg);
+  }
+
+  .stories-hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  /* Section titles */
+  .stories-section-title {
+    font-size: clamp(1.5rem, 6.4vw, 1.85rem);
+  }
+
+  /* Story cards */
+  .story-card {
+    padding: 20px 18px 18px;
+    border-radius: 20px;
+  }
+
+  .story-card::before {
+    left: 18px;
+    right: 18px;
+  }
+
+  .story-card-header {
+    gap: 11px;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+  }
+
+  .story-avatar {
+    width: 44px;
+    height: 44px;
+    font-size: 1.02rem;
+  }
+
+  .story-name {
+    font-size: 1.02rem;
+  }
+
+  .story-age {
+    font-size: 0.82rem;
+  }
+
+  .story-badge {
+    font-size: 0.62rem;
+    padding: 4px 11px;
+    letter-spacing: 0.06em;
+  }
+
+  .story-body p {
+    font-size: 0.95rem;
+    line-height: 1.66;
+  }
+
+  .story-highlight {
+    padding: 11px 12px 11px 13px !important;
+    margin-top: 14px !important;
+    font-size: 0.95rem;
+  }
+
+  .story-wins {
+    gap: 6px;
+    margin: 12px 0;
+  }
+
+  .story-wins li {
+    font-size: 0.78rem;
+    padding: 4px 11px;
+  }
+
+  /* CTA */
+  .stories-cta {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .stories-cta-title {
+    font-size: clamp(1.45rem, 6.4vw, 1.85rem);
+  }
+
+  .stories-cta-subtitle {
+    font-size: 1rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .stories-cta .main_button {
+    padding: 13px 26px;
+    font-size: 0.95rem;
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 360px) {
+  .stories-parallax-title {
+    font-size: 2rem;
+  }
+
+  .stories-parallax-title .bigger {
+    font-size: 1.1em;
+  }
+
+  .stories-parallax-foreground {
+    width: 100%;
+    left: 0;
+    top: 36%;
+  }
+
+  .story-card {
+    padding: 18px 16px 16px;
+  }
+
+  .story-card-header {
+    gap: 9px;
+  }
+
+  .story-name {
+    font-size: 0.98rem;
+  }
+
+  .story-badge {
+    font-size: 0.6rem;
+    padding: 4px 9px;
   }
 }
