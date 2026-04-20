@@ -757,6 +757,9 @@
 
 .prayer-content {
   display: none;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .prayer-content.active {
@@ -835,6 +838,8 @@
   flex-direction: column;
   gap: 12px;
   margin-top: 20px;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .quick-prayers p {
@@ -853,6 +858,8 @@
   text-align: center;
   cursor: pointer;
   transition: transform 0.2s ease;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .quick-prayer-item:hover {
