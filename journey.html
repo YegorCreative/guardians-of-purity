@@ -23,20 +23,47 @@
   <style>
     .journey-hero {
       text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-      min-height: 60vh;
+      padding: 3rem 2rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      margin-top: -5px; /* seamless from parallax */
     }
 
-    .journey-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      color: var(--text-primary);
-      margin-bottom: 1.5rem;
+    .parallax__title {
+      font-size: clamp(4rem, 9vw, 9rem);
+      max-width: 16ch;
+      text-shadow:
+        0 2px 20px rgba(0, 0, 0, 0.5),
+        0 4px 40px rgba(0, 0, 0, 0.3);
+      -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.6);
+      paint-order: stroke fill;
+    }
+
+    .parallax__title .bigger {
+      font-size: 1.6em;
+      display: inline-block;
+      line-height: 1.05;
+      margin-top: 0;
+    }
+
+    .parallax__title .bigger.here {
+      margin-top: 10px;
+    }
+
+    .parallax__layer-title {
+      align-items: flex-start;
+      padding-top: 18vh;
+    }
+
+    @media (max-width: 768px) {
+      .parallax__layer-title {
+        padding-top: 22vh;
+      }
+      .parallax__title {
+        font-size: clamp(2.5rem, 10vw, 4.5rem);
+      }
     }
 
     .journey-description {
@@ -167,9 +194,30 @@
   </div>
 
   <main id="main" role="main">
-    <div class="separated_block">
+    <section class="separated_block">
+      <div class="parallax separated_block_corner">
+        <section class="parallax__header flex-center">
+          <div class="parallax__visuals">
+            <div class="parallax__black-line-overflow"></div>
+            <div data-parallax-layers class="parallax__layers">
+              <img src="img/para1.png" loading="eager" width="800" data-parallax-layer="1" alt=""
+                class="parallax__layer-img" />
+              <img src="img/para2.png" loading="eager" width="800" data-parallax-layer="2" alt=""
+                class="parallax__layer-img" style="z-index: 2; opacity: 0.85; mix-blend-mode: lighten;" />
+              <div data-parallax-layer="3" class="parallax__layer-title flex-center">
+                <h2 class="parallax__title">YOUR JOURNEY<br><span class="bigger">BEGINS</span><br><span class="bigger here">HERE</span></h2>
+              </div>
+              <img src="img/para3.png" loading="eager" width="800" data-parallax-layer="4" alt=""
+                class="parallax__layer-img" style="z-index: 3; top: 4%;" />
+            </div>
+            <div class="parallax__fade"></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <div class="separated_block gradient-section">
       <section class="journey-hero separated_block_corner">
-        <h1 class="journey-title">Your Journey Begins Here</h1>
         <p class="journey-description">
           Welcome to the starting point of your transformation. This 42-chapter journey is designed to equip you
           with biblical truth, psychological insights, and practical tools to overcome addiction and walk in
@@ -498,6 +546,9 @@
   </div>
 
   <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.3.1/dist/lenis.min.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/script.js"></script>
 </body>
