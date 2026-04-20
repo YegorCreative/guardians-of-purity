@@ -3507,10 +3507,11 @@
   gap: 12px;
   padding: 14px 18px;
   cursor: pointer;
+  background: transparent !important;
   transition: background 0.25s ease;
 }
 
-.tools-redux .phase-header:hover { background: rgba(255, 255, 255, 0.05); }
+.tools-redux .phase-header:hover { background: rgba(255, 255, 255, 0.06) !important; }
 
 .tools-redux .phase-header h3 {
   flex: 1 1 auto;
@@ -3913,4 +3914,750 @@
   .tools-redux .stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
   .tools-redux .trigger-list { grid-template-columns: 1fr; }
   .tools-redux .stat-number { font-size: 1.6rem; }
+}
+
+/* Hardened overrides — beat older light-mode rules inside .tools-redux */
+.tools-redux .phase-header h3,
+.tools-redux .phase-content p,
+.tools-redux .phase-content li,
+.tools-redux .phase-content strong,
+.tools-redux .phase-header,
+.tools-redux .phase-content {
+  color: #ffffff !important;
+}
+
+.tools-redux .phase-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 18px;
+  background: transparent;
+  transition: max-height 0.45s cubic-bezier(0.25, 0.8, 0.25, 1), padding 0.35s ease;
+}
+
+.tools-redux .phase-content.active {
+  max-height: 1200px;
+  padding: 16px 18px 18px !important;
+}
+
+.tools-redux .phase-content p,
+.tools-redux .phase-content li {
+  color: rgba(255, 255, 255, 0.86) !important;
+}
+
+.tools-redux .accordion-arrow {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.tools-redux .action-item {
+  background-color: rgba(96, 165, 250, 0.18) !important;
+  border-left: 4px solid rgba(147, 197, 253, 0.7) !important;
+  color: #ffffff !important;
+}
+
+.tools-redux .action-item strong { color: #ffffff !important; }
+
+/* Hardened overrides — Prayer Journal & guide blocks readability on dark glass */
+.tools-redux .prayer-template,
+.tools-redux .prayer-prompts,
+.tools-redux .quick-prayers,
+.tools-redux .question-category,
+.tools-redux .guide-section,
+.tools-redux .template-section {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-left: 3px solid rgba(147, 197, 253, 0.7) !important;
+  border-radius: 12px !important;
+  padding: 14px 16px !important;
+  margin: 12px 0 !important;
+  color: #ffffff !important;
+}
+
+.tools-redux .prayer-template p,
+.tools-redux .prayer-template em,
+.tools-redux .prayer-prompts p,
+.tools-redux .prayer-prompts li,
+.tools-redux .quick-prayers p,
+.tools-redux .question-category p,
+.tools-redux .question-category li,
+.tools-redux .guide-section p,
+.tools-redux .guide-section li,
+.tools-redux .template-section p,
+.tools-redux .template-section .template-text {
+  color: rgba(255, 255, 255, 0.92) !important;
+  background: transparent !important;
+}
+
+.tools-redux .prayer-prompts strong,
+.tools-redux .quick-prayers strong,
+.tools-redux .prayer-template strong {
+  color: #ffffff !important;
+}
+
+.tools-redux .prayer-template em {
+  color: #cfe0ff !important;
+  font-style: italic;
+}
+
+.tools-redux .prayer-input,
+.tools-redux .victory-textarea {
+  background: rgba(0, 0, 0, 0.30) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px 14px !important;
+  border-radius: 12px !important;
+  font-family: var(--font-primary);
+  font-size: 0.95rem !important;
+}
+
+.tools-redux .prayer-input::placeholder,
+.tools-redux .victory-textarea::placeholder {
+  color: rgba(207, 224, 255, 0.55) !important;
+}
+
+.tools-redux .quick-prayer-item {
+  background: rgba(255, 255, 255, 0.10) !important;
+  border: 1px solid rgba(255, 255, 255, 0.20) !important;
+  color: #ffffff !important;
+  font-style: italic;
+  padding: 10px 14px !important;
+  margin: 6px 0 !important;
+  border-radius: 10px !important;
+}
+
+/* Fix older .prayer-content opening transition inside redux */
+.tools-redux .prayer-content {
+  display: none;
+  background: transparent !important;
+  padding: 0 !important;
+  color: #ffffff !important;
+}
+
+.tools-redux .prayer-content.active {
+  display: block;
+}
+
+.tools-redux .prayer-content h3,
+.tools-redux .prayer-content h4 {
+  color: #ffffff !important;
+}
+
+.tools-redux .prayer-content .prayer-intro {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* ============================================================ */
+/* INTERACTIVE TOOLS — PREMIUM LIQUID GLASS                    */
+/* Inspired by ikrprojects/KwgGBRp                              */
+/* ============================================================ */
+
+/* Deeper, richer base — glass needs darkness to glow */
+.tools-redux {
+  padding: 72px 32px !important;
+  border-radius: 32px !important;
+  background:
+    radial-gradient(ellipse 60% 50% at 18% 10%, oklab(70% -0.05 -0.18 / 0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 45% at 92% 95%, oklab(60% 0.10 -0.20 / 0.24) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 60% at 50% 50%, #0f1a3d 0%, #0a1230 60%, #060c22 100%) !important;
+  color: #ffffff;
+}
+
+/* Iridescent eyebrow */
+.tools-redux-eyebrow {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  color: #cfe0ff;
+  text-shadow: 0 0 12px rgba(147, 197, 253, 0.4);
+}
+
+/* Section title — iridescent gradient text */
+.tools-redux .section-title {
+  background: linear-gradient(
+    -45deg,
+    #b169db 15%,
+    #f7d152 35%,
+    #46cf71 55%,
+    #0fbffa 80%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
+  text-shadow: none !important;
+  filter: brightness(1.15);
+}
+
+.tools-redux-lede {
+  color: rgba(207, 224, 255, 0.78);
+}
+
+/* === INDEX CARDS — premium liquid glass === */
+.tool-index-card {
+  position: relative;
+  padding: 18px 20px;
+  background: oklab(20% 0 -0.02 / 0.55);
+  backdrop-filter: blur(14px) saturate(170%);
+  -webkit-backdrop-filter: blur(14px) saturate(170%);
+  border: 1px solid transparent;
+  border-radius: 18px;
+  /* Iridescent border via gradient mask trick */
+  background-clip: padding-box;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.18) inset,
+    0 8px 28px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+  transition:
+    transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.4s ease,
+    background 0.4s ease;
+}
+
+/* Iridescent rim glow as ::after */
+.tool-index-card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 18px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(177, 105, 219, 0.55),
+    rgba(247, 209, 82, 0.45),
+    rgba(70, 207, 113, 0.45),
+    rgba(15, 191, 250, 0.55)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0.55;
+  pointer-events: none;
+  filter: blur(0.5px) saturate(1.3);
+  transition: opacity 0.4s ease, filter 0.4s ease;
+}
+
+@media (hover: hover) {
+  .tool-index-card:hover {
+    transform: translateY(-4px);
+    background: oklab(25% 0 -0.02 / 0.65);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.28) inset,
+      0 16px 40px rgba(0, 0, 0, 0.55),
+      0 0 0 1px rgba(255, 255, 255, 0.14);
+  }
+
+  .tool-index-card:hover::after {
+    opacity: 0.95;
+    filter: blur(0.5px) saturate(1.5) brightness(1.2);
+  }
+}
+
+.tool-index-card.is-active::after {
+  opacity: 1;
+  filter: blur(0.5px) saturate(1.6) brightness(1.3);
+}
+
+.tool-index-icon {
+  background: oklab(15% 0 -0.02 / 0.85) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.2) inset,
+    0 4px 14px rgba(0, 0, 0, 0.5);
+}
+
+.tool-index-title {
+  color: #ffffff;
+  text-shadow: 0 1px 8px rgba(15, 191, 250, 0.25);
+}
+
+.tool-index-sub {
+  color: rgba(207, 224, 255, 0.72);
+}
+
+/* === TOOL CARDS — premium glass === */
+.tools-redux .tool-card {
+  position: relative;
+  background: oklab(22% 0 -0.02 / 0.55) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid transparent !important;
+  border-radius: 24px !important;
+  background-clip: padding-box !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.20) inset,
+    0 12px 32px rgba(0, 0, 0, 0.50),
+    0 28px 64px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Iridescent rim — only this ::before, replace older sheen */
+.tools-redux .tool-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 24px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(177, 105, 219, 0.5),
+    rgba(247, 209, 82, 0.4) 35%,
+    rgba(70, 207, 113, 0.4) 60%,
+    rgba(15, 191, 250, 0.5)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0.45;
+  pointer-events: none;
+  filter: blur(0.6px) saturate(1.3);
+  transition: opacity 0.4s ease, filter 0.4s ease;
+  z-index: 3;
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
+  /* override the older top-only sheen */
+  top: -1px; left: -1px; right: -1px; bottom: -1px;
+  width: auto; height: auto;
+}
+
+.tools-redux .tool-card.active::before {
+  opacity: 0.85;
+  filter: blur(0.6px) saturate(1.5) brightness(1.2);
+}
+
+.tools-redux .tool-card.active {
+  background: oklab(26% 0 -0.02 / 0.65) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.28) inset,
+    0 18px 44px rgba(0, 0, 0, 0.55),
+    0 36px 80px rgba(0, 0, 0, 0.40) !important;
+  border-color: transparent !important;
+}
+
+/* Tool header */
+.tools-redux .tool-header {
+  padding: 24px 28px !important;
+}
+
+.tools-redux .download-icon {
+  background: oklab(15% 0 -0.02 / 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.3) inset,
+    0 6px 18px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Iridescent gradient on tool titles */
+.tools-redux .download-title {
+  background: linear-gradient(
+    -45deg,
+    #b169db 20%,
+    #f7d152 40%,
+    #46cf71 60%,
+    #0fbffa 80%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
+  text-shadow: none !important;
+  filter: brightness(1.2);
+  font-weight: 700 !important;
+}
+
+.tools-redux .download-description {
+  color: rgba(207, 224, 255, 0.72) !important;
+}
+
+.tools-redux .tool-toggle {
+  background: oklab(15% 0 -0.02 / 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.2) inset,
+    0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Tool body — readable on dark */
+.tools-redux .tool-body {
+  background: oklab(12% 0 -0.02 / 0.45) !important;
+  border-top: 1px solid transparent;
+}
+
+.tools-redux .tool-card.active .tool-body {
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+/* Inner h3/h4 — iridescent */
+.tools-redux .tool-body h3,
+.tools-redux .tool-body h4,
+.tools-redux .phase-header h3,
+.tools-redux .prayer-content h3,
+.tools-redux .guide-content h3,
+.tools-redux .tracker-section h3 {
+  background: linear-gradient(
+    -45deg,
+    #cfe0ff 15%,
+    #ffffff 50%,
+    #b8e6ff 85%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
+  text-shadow: none !important;
+  filter: brightness(1.1);
+}
+
+/* Phase blocks — premium */
+.tools-redux .roadmap-phase {
+  background: oklab(15% 0 -0.02 / 0.55) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 16px !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.tools-redux .phase-icon {
+  background: oklab(10% 0 -0.02 / 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.3) inset,
+    0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Action item — premium iridescent stripe */
+.tools-redux .action-item {
+  background:
+    linear-gradient(135deg, oklab(45% 0.08 -0.18 / 0.25), oklab(35% 0.05 -0.20 / 0.18)) !important;
+  border-left: 3px solid !important;
+  border-image: linear-gradient(180deg, #b169db, #0fbffa) 1 !important;
+  color: #ffffff !important;
+  border-radius: 10px !important;
+  padding: 12px 16px !important;
+  margin-top: 12px !important;
+}
+
+/* Tabs — premium pill */
+.tools-redux .prayer-tabs,
+.tools-redux .guide-tabs,
+.tools-redux .scripture-filters {
+  background: oklab(8% 0 -0.02 / 0.55) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  box-shadow:
+    inset 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.tools-redux .prayer-tab.active,
+.tools-redux .guide-tab.active,
+.tools-redux .scripture-filter.active {
+  background: linear-gradient(
+    135deg,
+    #b169db 0%,
+    #0fbffa 100%
+  ) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.35) inset,
+    0 4px 14px rgba(15, 191, 250, 0.35),
+    0 4px 14px rgba(177, 105, 219, 0.35);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Inputs */
+.tools-redux .prayer-input,
+.tools-redux .victory-textarea,
+.tools-redux .streak-input {
+  background: oklab(8% 0 -0.02 / 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.tools-redux .prayer-input:focus,
+.tools-redux .victory-textarea:focus,
+.tools-redux .streak-input:focus {
+  border-color: rgba(15, 191, 250, 0.55) !important;
+  box-shadow:
+    inset 0 2px 6px rgba(0, 0, 0, 0.35),
+    0 0 0 3px rgba(15, 191, 250, 0.18);
+}
+
+/* Prayer/quick prayer / guide blocks */
+.tools-redux .prayer-template,
+.tools-redux .prayer-prompts,
+.tools-redux .quick-prayers,
+.tools-redux .question-category,
+.tools-redux .guide-section,
+.tools-redux .template-section {
+  background: oklab(15% 0 -0.02 / 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  border-left: 3px solid !important;
+  border-image: linear-gradient(180deg, rgba(177, 105, 219, 0.7), rgba(15, 191, 250, 0.7)) 1 !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.tools-redux .quick-prayer-item {
+  background: oklab(20% 0 -0.02 / 0.55) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Stat cards — premium */
+.tools-redux .stat-card {
+  background: oklab(15% 0 -0.02 / 0.55) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.tools-redux .stat-number {
+  background: linear-gradient(
+    -45deg,
+    #b169db 20%,
+    #f7d152 50%,
+    #0fbffa 80%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
+  filter: brightness(1.2);
+}
+
+.tools-redux .tracker-section {
+  background: oklab(13% 0 -0.02 / 0.45) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+}
+
+.tools-redux .trigger-item {
+  background: oklab(15% 0 -0.02 / 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.tools-redux .trigger-item:hover {
+  background: oklab(20% 0 -0.02 / 0.6) !important;
+  border-color: rgba(15, 191, 250, 0.4) !important;
+}
+
+.tools-redux .badge.earned {
+  background: linear-gradient(135deg, #b169db, #0fbffa) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 4px 14px rgba(15, 191, 250, 0.4);
+}
+
+/* Scripture cards — premium */
+.tools-redux .scripture-card {
+  background: oklab(18% 0 -0.02 / 0.55) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.tools-redux .scripture-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(177, 105, 219, 0.4),
+    rgba(15, 191, 250, 0.4)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Action buttons — premium iridescent */
+.tools-redux .copy-button,
+.tools-redux .save-button,
+.tools-redux .random-verse-btn {
+  background: linear-gradient(135deg, #ffffff 0%, #e8f4ff 100%) !important;
+  color: #1e3a8a !important;
+  -webkit-text-fill-color: #1e3a8a !important;
+  border: 1px solid rgba(255, 255, 255, 0.9) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 6px 18px rgba(15, 191, 250, 0.25),
+    0 6px 18px rgba(177, 105, 219, 0.18);
+}
+
+.tools-redux .copy-button:hover,
+.tools-redux .save-button:hover,
+.tools-redux .random-verse-btn:hover {
+  background: linear-gradient(135deg, #ffffff, #cfe0ff) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 10px 26px rgba(15, 191, 250, 0.35),
+    0 10px 26px rgba(177, 105, 219, 0.25);
+}
+
+/* Body text legibility */
+.tools-redux .tool-body p,
+.tools-redux .tool-body li,
+.tools-redux .tool-body label,
+.tools-redux .tool-body strong,
+.tools-redux .phase-content p,
+.tools-redux .phase-content li,
+.tools-redux .prayer-content p,
+.tools-redux .prayer-content li,
+.tools-redux .guide-content p,
+.tools-redux .guide-content li,
+.tools-redux .prayer-prompts li,
+.tools-redux .quick-prayers p {
+  color: rgba(255, 255, 255, 0.92) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.92) !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+}
+
+.tools-redux .tool-body strong,
+.tools-redux .phase-content strong {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-weight: 700;
+}
+
+.tools-redux .tool-body em,
+.tools-redux .prayer-template em {
+  color: #cfe0ff !important;
+  -webkit-text-fill-color: #cfe0ff !important;
+  font-style: italic;
+}
+
+/* Scripture cards — premium liquid glass + readable, auto-height */
+.tools-redux .scripture-card {
+  height: auto !important;
+  min-height: 220px;
+  perspective: none;
+  cursor: pointer;
+  background: oklab(18% 0 -0.02 / 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 16px !important;
+  padding: 0 !important;
+  overflow: visible;
+}
+
+.tools-redux .scripture-card-inner {
+  position: relative;
+  transform: none !important;
+  transform-style: flat;
+  height: auto;
+  width: 100%;
+  display: block;
+}
+
+.tools-redux .scripture-card.flipped .scripture-card-inner {
+  transform: none !important;
+}
+
+.tools-redux .scripture-card-front,
+.tools-redux .scripture-card-back {
+  position: relative !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 220px;
+  backface-visibility: visible !important;
+  border-radius: 16px !important;
+  padding: 22px 20px !important;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: transparent !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  transform: none !important;
+}
+
+/* Hide back face by default; show on flip without 3D rotate */
+.tools-redux .scripture-card-back {
+  display: none !important;
+}
+
+.tools-redux .scripture-card.flipped .scripture-card-front {
+  display: none !important;
+}
+
+.tools-redux .scripture-card.flipped .scripture-card-back {
+  display: flex !important;
+}
+
+/* Category pill — frosted */
+.tools-redux .scripture-category {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  margin-bottom: 14px;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: oklab(15% 0 -0.02 / 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  border-radius: 100px !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Verse text — readable */
+.tools-redux .scripture-card .verse-text,
+.tools-redux .scripture-card-front p,
+.tools-redux .scripture-card-back p {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0 0 14px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tools-redux .scripture-card .verse-ref,
+.tools-redux .scripture-card-front .verse-ref,
+.tools-redux .scripture-card-back .verse-ref,
+.tools-redux .scripture-card h4 {
+  color: #cfe0ff !important;
+  -webkit-text-fill-color: #cfe0ff !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  margin: 4px 0 0 !important;
+  font-style: normal;
+  letter-spacing: 0.02em;
+}
+
+/* Iridescent rim glow already on .scripture-card via earlier ::before;
+   bump opacity for readability */
+.tools-redux .scripture-card::before {
+  opacity: 0.7 !important;
+  filter: blur(0.5px) saturate(1.4) !important;
+}
+
+@media (hover: hover) {
+  .tools-redux .scripture-card:hover::before {
+    opacity: 1 !important;
+    filter: blur(0.5px) saturate(1.6) brightness(1.2) !important;
+  }
 }
