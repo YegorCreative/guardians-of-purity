@@ -1,5 +1,74 @@
 /* ===== Masturbation Resource Page — Premium Editorial Redesign ===== */
 
+/* ---------- Parallax Hero ---------- */
+.mast-parallax {
+  background:
+    linear-gradient(180deg, #0b1020 0%, #090d18 48%, #121a2f 100%);
+}
+
+.mast-parallax-layer-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 2;
+  padding: 16vh 1.5rem 0;
+}
+
+.mast-parallax-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  max-width: none;
+  color: var(--color-white);
+  text-align: center;
+  text-shadow:
+    0 2px 20px rgba(0, 0, 0, 0.55),
+    0 8px 36px rgba(0, 0, 0, 0.32);
+  z-index: 3;
+}
+
+.mast-parallax-title {
+  font-size: clamp(3.6rem, 8.2vw, 7.4rem);
+  font-weight: 800;
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+  margin: 0 auto;
+  max-width: 13ch;
+  text-transform: none;
+  color: rgba(255, 255, 255, 0.97);
+  -webkit-text-stroke: 1.2px rgba(255, 255, 255, 0.35);
+  paint-order: stroke fill;
+}
+
+.mast-parallax-title .bigger {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.08;
+  margin-top: 0.22em;
+}
+
+.mast-parallax-midground {
+  z-index: 1;
+}
+
+.mast-parallax-foreground {
+  z-index: 3;
+  width: 160%;
+  height: auto;
+  top: auto;
+  bottom: -28%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 1024px) {
+  .mast-parallax-foreground {
+    width: 185%;
+    bottom: -40%;
+  }
+}
+
 /* ---------- Hero ---------- */
 .mast-hero {
   position: relative;
@@ -64,7 +133,7 @@
   z-index: 1;
 }
 
-.mast-hero-title {
+.mast-hero-title:not(.mast-parallax-title) {
   font-family: var(--font-heading);
   font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
   font-weight: 700;
@@ -81,6 +150,14 @@
   max-width: 520px;
   margin: 0 auto;
   letter-spacing: 0.01em;
+}
+
+.mast-hero-panel {
+  padding: var(--space-xl) var(--space-md);
+}
+
+.mast-hero-panel-subtitle {
+  opacity: 0.9;
 }
 
 /* ---------- Section Base ---------- */
@@ -131,43 +208,77 @@
 }
 
 .info-panel-wrapper {
+  position: relative;
   width: 100%;
-  height: 300px;
   background: linear-gradient(
-    90deg,
+    135deg,
     var(--color-gradient-blue-start),
     var(--color-gradient-blue-end)
   );
   box-shadow: 0 0.25em 0.375em hsla(0, 0%, 0%, 0.1);
+  padding: 18px;
 }
 
 .info-panel-glass {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 36px;
   background: linear-gradient(
     135deg,
-    rgba(59, 130, 246, 0.2),
-    rgba(96, 165, 250, 0.1)
+    rgba(255, 255, 255, 0.22),
+    rgba(255, 255, 255, 0.08) 45%,
+    rgba(255, 255, 255, 0.14)
   );
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-  width: 100%;
-  height: 300px;
-  position: relative;
-  top: 15px;
-  left: 15px;
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: inherit;
+  box-shadow:
+    0 8px 32px rgba(15, 23, 42, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+}
+
+/* Liquid glass highlight sheen */
+.info-panel-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    120% 80% at 20% 0%,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0) 55%
+  );
+  pointer-events: none;
+}
+
+.info-panel-glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    100% 70% at 100% 100%,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  pointer-events: none;
 }
 
 .info-panel-centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  z-index: 1;
+  top: auto;
+  left: auto;
+  transform: none;
   text-align: center;
   color: var(--color-white);
-  width: 85%;
-  max-width: 680px;
-  padding: 40px 36px;
+  width: 100%;
+  max-width: 760px;
+  padding: 0;
 }
 
 .info-panel-centered h2 {
@@ -177,20 +288,38 @@
   margin-bottom: 20px;
   letter-spacing: -0.03em;
   line-height: var(--leading-tight);
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .info-panel-centered p {
   font-family: var(--font-main);
-  font-size: var(--text-sm);
-  line-height: 1.82;
-  opacity: 0.88;
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+  line-height: 1.78;
+  opacity: 1;
+  color: rgba(255, 255, 255, 0.96);
   margin: 0 0 14px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.28);
 }
 
 .info-panel-centered p:last-child {
   margin-bottom: 0;
-  opacity: 0.75;
-  font-size: 0.82rem;
+  opacity: 0.88;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 639px) {
+  .info-panel-block {
+    padding: 5px 12px 16px;
+  }
+
+  .info-panel-wrapper {
+    padding: 10px;
+  }
+
+  .info-panel-glass {
+    padding: 36px 20px;
+  }
 }
 
 /* ---------- Card Grid ---------- */
@@ -945,6 +1074,87 @@
 
 /* ---------- Responsive ---------- */
 @media (max-width: 639px) {
+  .mast-parallax .parallax__header {
+    min-height: 70svh;
+    padding: 24px 18px;
+  }
+
+  .mast-parallax-layer-title {
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4.4rem 1rem 0;
+  }
+
+  .mast-parallax-copy {
+    width: auto;
+    text-align: center;
+  }
+
+  .mast-parallax-title {
+    font-size: clamp(2.4rem, 9vw, 4rem);
+    max-width: 12ch;
+    -webkit-text-stroke: 0.8px rgba(255, 255, 255, 0.3);
+  }
+
+  .mast-parallax-title .bigger {
+    font-size: 0.68em;
+  }
+
+  .mast-parallax-foreground {
+    width: 200%;
+    top: auto;
+    bottom: -32%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+}
+
+@media (max-width: 430px) {
+  .mast-parallax .parallax__header {
+    min-height: 64svh;
+  }
+
+  .mast-parallax-layer-title {
+    padding: 3.6rem 0.75rem 0;
+  }
+
+  .mast-parallax-title {
+    font-size: clamp(2rem, 9vw, 3.2rem);
+    max-width: 13ch;
+  }
+
+  .mast-parallax-title .bigger {
+    font-size: 0.66em;
+  }
+
+  .mast-parallax-foreground {
+    width: 215%;
+    bottom: -26%;
+  }
+}
+
+@media (max-width: 360px) {
+  .mast-parallax-layer-title {
+    padding: 3rem 0.5rem 0;
+  }
+
+  .mast-parallax-title {
+    font-size: clamp(1.85rem, 9vw, 2.8rem);
+  }
+
+  .mast-parallax-foreground {
+    width: 240%;
+    bottom: -22%;
+  }
+}
+
+@media (max-width: 639px) {
+
+  .mast-hero-panel {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
   .mast-hero {
     padding: var(--space-2xl) var(--space-sm) var(--space-xl);
   }
