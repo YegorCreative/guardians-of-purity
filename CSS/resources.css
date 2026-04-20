@@ -2890,36 +2890,61 @@
   }
 }
 
-/* Icon — frosted circle tile */
+/* Icon — solid deep navy tile so white glyph is high-contrast */
 .emergency-icon {
   display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  margin: 0 auto 16px !important;
-  font-size: 22px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 68px !important;
+  height: 68px !important;
+  margin: 0 auto 18px !important;
+  font-size: 30px !important;
+  line-height: 1 !important;
   color: #ffffff !important;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.28),
-    rgba(255, 255, 255, 0.12)
-  );
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 50%;
+  -webkit-text-fill-color: #ffffff !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  opacity: 1 !important;
+  background:
+    linear-gradient(135deg, #0b1f4d 0%, #14306e 100%) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.85) !important;
+  border-radius: 50% !important;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.45) inset,
-    0 6px 18px rgba(8, 20, 60, 0.18);
+    0 1px 0 rgba(255, 255, 255, 0.55) inset,
+    0 -2px 6px rgba(0, 0, 0, 0.25) inset,
+    0 8px 22px rgba(8, 20, 60, 0.45),
+    0 0 0 4px rgba(255, 255, 255, 0.08) !important;
 }
 
 .emergency-icon i,
 .emergency-card .emergency-icon i,
 .emergency-card .emergency-icon .fas,
 .emergency-card .emergency-icon .fa,
+.emergency-card .emergency-icon .fa-solid,
 .emergency-card .emergency-icon svg {
   color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
   fill: #ffffff !important;
-  text-shadow: 0 1px 2px rgba(8, 20, 60, 0.25);
+  opacity: 1 !important;
+  font-size: 30px !important;
+  line-height: 1 !important;
+  text-shadow: none !important;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45)) !important;
+}
+
+.emergency-icon i::before,
+.emergency-card .emergency-icon i::before,
+.emergency-card .emergency-icon .fas::before,
+.emergency-card .emergency-icon .fa-solid::before {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  opacity: 1 !important;
 }
 
 .emergency-card h3 {
