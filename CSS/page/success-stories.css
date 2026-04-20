@@ -1,5 +1,67 @@
 /* ===== Success Stories Page — Premium Cinematic Redesign ===== */
 
+/* ---------- Parallax Hero ---------- */
+.stories-parallax {
+  background:
+    radial-gradient(circle at 24% 22%, rgba(255, 255, 255, 0.2), transparent 32%),
+    linear-gradient(180deg, #d8ebff 0%, #aac8e6 36%, #4c6f99 72%, #132643 100%);
+}
+
+.stories-parallax-layer-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 2;
+  padding: 18vh 1.5rem 0;
+}
+
+.stories-parallax-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  max-width: none;
+  color: var(--color-white);
+  text-align: center;
+  text-shadow:
+    0 2px 20px rgba(8, 20, 44, 0.42),
+    0 8px 34px rgba(8, 20, 44, 0.22);
+  z-index: 3;
+}
+
+.stories-parallax-title {
+  font-size: clamp(3.6rem, 7vw, 6.2rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  margin: 0 auto;
+  max-width: 12ch;
+  text-transform: none;
+  color: rgba(255, 255, 255, 0.96);
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.6);
+  paint-order: stroke fill;
+}
+
+.stories-parallax-title .bigger {
+  display: inline-block;
+  font-size: 1.22em;
+  line-height: 1.02;
+  margin-top: 0.05em;
+  white-space: nowrap;
+}
+
+.stories-parallax-midground {
+  z-index: 1;
+}
+
+.stories-parallax-foreground {
+  z-index: 3;
+  width: 41%;
+  height: auto;
+  top: 22%;
+  left: 29.5%;
+}
+
 /* ---------- Hero ---------- */
 .stories-hero {
   position: relative;
@@ -76,7 +138,7 @@
   z-index: 1;
 }
 
-.stories-hero-title {
+.stories-hero-title:not(.stories-parallax-title) {
   font-family: var(--font-heading);
   font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
   font-weight: 700;
@@ -93,6 +155,14 @@
   max-width: 440px;
   margin: 0 auto;
   letter-spacing: 0.01em;
+}
+
+.stories-hero-panel {
+  padding: var(--space-xl) var(--space-md);
+}
+
+.stories-hero-panel-subtitle {
+  opacity: 0.9;
 }
 
 /* ---------- Section ---------- */
@@ -488,6 +558,41 @@
 
 /* ---------- Responsive ---------- */
 @media (max-width: 639px) {
+  .stories-parallax .parallax__header {
+    min-height: 70svh;
+    padding: 24px 18px;
+  }
+
+  .stories-parallax-layer-title {
+    justify-content: center;
+    align-items: flex-start;
+    padding: 6.8rem 1rem 0;
+  }
+
+  .stories-parallax-copy {
+    width: auto;
+    text-align: center;
+  }
+
+  .stories-parallax-title {
+    font-size: clamp(2.7rem, 8.8vw, 4.2rem);
+    max-width: 11ch;
+  }
+
+  .stories-parallax-title .bigger {
+    font-size: 1.16em;
+  }
+
+  .stories-parallax-foreground {
+    width: 66%;
+    top: 35%;
+    left: 17%;
+  }
+
+  .stories-hero-panel {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
   .stories-hero {
     padding: var(--space-2xl) var(--space-sm) var(--space-xl);
   }
