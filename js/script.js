@@ -236,9 +236,9 @@ document.addEventListener("DOMContentLoaded", () => {
 // Save and load journaling text
 document.addEventListener("DOMContentLoaded", () => {
   if (window.AppStorage && typeof window.AppStorage.bindTextareas === "function") {
-    window.AppStorage.bindTextareas('textarea[id^="journal"]');
+    window.AppStorage.bindTextareas('textarea[id]');
   } else {
-    document.querySelectorAll('textarea[id^="journal"]').forEach((ta) => {
+    document.querySelectorAll('textarea[id]').forEach((ta) => {
       const key = ta.id;
       const saved = localStorage.getItem(key);
       if (saved) ta.value = saved;
@@ -247,35 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-function exportReflection() {
-  const titleEl = document.querySelector(".chapterOne-title");
-  const chapterTitle = titleEl?.textContent?.trim() || "Chapter Reflections";
-
-  const textareas = Array.from(
-    document.querySelectorAll('textarea[id^="journal"]')
-  );
-
-  const entries = textareas.map((ta) => {
-    const key = ta.id;
-    const value = localStorage.getItem(key) || ta.value || "";
-    return { key, value };
-  });
-
-  let content = `${chapterTitle} — Reflections\n\n`;
-  if (entries.length === 0) {
-    content += "[No journaling entries found on this page.]\n";
-  } else {
-    entries.forEach((e, idx) => {
-      content += `${idx + 1}. ${e.key}:\n${e.value}\n\n`;
-    });
-  }
-
-  const blob = new Blob([content], { type: "text/plain" });
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = `${chapterTitle.replace(/[^a-z0-9]+/gi, "_").replace(/^_+|_+$/g, "") || "chapter"}_Reflections.txt`;
-  link.click();
-}
+// exportReflection is defined in storage.js (handles all textarea patterns)
 
 // Global Chapter Progress Indicator
 document.addEventListener("DOMContentLoaded", () => {

@@ -236,11 +236,23 @@ function loadVictories() {
   victories.forEach(victory => {
     const entry = document.createElement('div');
     entry.className = 'victory-entry';
-    entry.innerHTML = `
-      <div class="victory-entry-date">${victory.date}</div>
-      <div class="victory-entry-text">${victory.text}</div>
-      <button class="victory-entry-delete" onclick="deleteVictory(${victory.id})">&times;</button>
-    `;
+
+    const dateDiv = document.createElement('div');
+    dateDiv.className = 'victory-entry-date';
+    dateDiv.textContent = victory.date;
+
+    const textDiv = document.createElement('div');
+    textDiv.className = 'victory-entry-text';
+    textDiv.textContent = victory.text;
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.className = 'victory-entry-delete';
+    deleteBtn.textContent = '\u00D7';
+    deleteBtn.addEventListener('click', () => deleteVictory(victory.id));
+
+    entry.appendChild(dateDiv);
+    entry.appendChild(textDiv);
+    entry.appendChild(deleteBtn);
     container.appendChild(entry);
   });
 }
