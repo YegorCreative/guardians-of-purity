@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // exportReflection is defined in storage.js (handles all textarea patterns)
 
 // Global Chapter Progress Indicator
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   try {
     // 1. Detect if we are on a chapter page
     const path = window.location.pathname;
@@ -352,60 +352,26 @@ document.addEventListener("DOMContentLoaded", () => {
         // Append under meta row
         metaWrapper.insertAdjacentElement('afterend', jumpBtn);
 
-        // 2. Chapter Data (1-42)
-        // Hardcoded for reliability as requested
-        const chapters = [
-          { n: 1, title: "God's Design for Your Body", file: "chapter1.html" },
-          { n: 2, title: "What Is Masturbation? Understanding the Act and Its Impact", file: "chapter2.html" },
-          { n: 3, title: "Biblical Principles on Purity and Self-Control", file: "chapter3.html" },
-          { n: 4, title: "Is Masturbation a Sin?", file: "chapter4.html" },
-          { n: 5, title: "How to Handle Temptation", file: "chapter5.html" },
-          { n: 6, title: "Developing Healthy Habits", file: "chapter6.html" },
-          { n: 7, title: "Overcoming Guilt and Shame", file: "chapter7.html" },
-          { n: 8, title: "Honoring God with Your Body", file: "chapter8.html" },
-          { n: 9, title: "Practical Steps Toward Purity", file: "chapter9.html" },
-          { n: 10, title: "God's Design for Your Body", file: "chapter10.html" },
-          { n: 11, title: "The Myth About Losing Hair If You Don't Masturbate", file: "chapter11.html" },
-          { n: 12, title: "What to Do When Your Body Is Naturally Erected", file: "chapter12.html" },
-          { n: 13, title: "What to Do When You're Touching Your Body Out of Boredom", file: "chapter13.html" },
-          { n: 14, title: "How Our Body Naturally Takes Care of Itself", file: "chapter14.html" },
-          { n: 15, title: "What Happens with Unused Sperm and How the Body Recycles It", file: "chapter15.html" },
-          { n: 16, title: "The Impact of Pornography on Your Brain and Mental Health", file: "chapter16.html" },
-          { n: 17, title: "The Month-by-Month Impact of Porn and Masturbation", file: "chapter17.html" },
-          { n: 18, title: "A Hypothetical Wish for Control and Purity", file: "chapter18.html" },
-          { n: 19, title: "15 Simple Things Parents Can Talk About with Their Children Struggling with Masturbation and Pornography", file: "chapter19.html" },
-          { n: 20, title: "4-Week Prayer for Your Freedom", file: "chapter20.html" },
-          { n: 21, title: "Is Sleeping Naked Safe?", file: "chapter21.html" },
-          { n: 22, title: "Understanding Triggers: Why the Morning Can Be a Battle", file: "chapter22.html" },
-          { n: 23, title: "Practical Ways to Stay Strong", file: "chapter23.html" },
-          { n: 24, title: "Regrouping After a Fall", file: "chapter24.html" },
-          { n: 25, title: "Growing in Holiness", file: "chapter25.html" },
-          { n: 26, title: "When You Feel Numb: Overcoming the Absence of Remorse", file: "chapter26.html" },
-          { n: 27, title: "Restoring Your Conscience", file: "chapter27.html" },
-          { n: 28, title: "Reigniting Your Passion for Holiness", file: "chapter28.html" },
-          { n: 29, title: "Understanding Triggers and Developing Guardrails", file: "chapter29.html" },
-          { n: 30, title: "The Science of Rewiring Your Brain After Porn", file: "chapter30.html" },
-          { n: 31, title: "How to Build a Support System That Lasts", file: "chapter31.html" },
-          { n: 32, title: "Overcoming Shame and Guilt Through Grace", file: "chapter32.html" },
-          { n: 33, title: "Creating a Life of Discipline", file: "chapter33.html" },
-          { n: 34, title: "How Pornography Changes Relationships", file: "chapter34.html" },
-          { n: 35, title: "The Role of Fasting in Breaking Addictions", file: "chapter35.html" },
-          { n: 36, title: "Holiness in the Digital Age", file: "chapter36.html" },
-          { n: 37, title: "Finding Your Identity in Christ", file: "chapter37.html" },
-          { n: 38, title: "Healing the Inner Child", file: "chapter38.html" },
-          { n: 39, title: "The Role of Gratitude in Overcoming Temptation", file: "chapter39.html" },
-          { n: 40, title: "Building a Vision for the Future", file: "chapter40.html" },
-          { n: 41, title: "How Alcohol Fuels Pornography Addiction", file: "chapter41.html" },
-          { n: 42, title: "The Long-Term Effects of Alcohol and Pornography on the Mind and Spirit", file: "chapter42.html" }
-        ];
+        // 2. Chapter Data — loaded from journey-data.json
+        let chapters = [];
+        try {
+          const res = await fetch('journey-data.json');
+          if (res.ok) {
+            const data = await res.json();
+            chapters = (data.chapters || []).map(c => ({
+              n: c.chapter_number,
+              title: c.title,
+              file: c.filename
+            }));
+          }
+        } catch (_) { /* fetch failed, chapters stays empty */ }
 
-        // chapters.sort is not strictly needed if the array is already sorted, but good for safety if we ever edit it.
-        // However, the previous code had logic to fill in missing chapters which we are removing.
-        // We will keep the sort just in case, or remove it if I want to be cleaner.
-        // The instruction says "Replace the menu list... Exactly 42 items".
-        // The replacement chunk covers lines 311-327.
-        // Line 327 is `chapters.sort((a, b) => a.n - b.n);` in the original file. 
-        // I'll leave the sort out since the array is already sorted and complete.
+        // Fallback: generate minimal list from chapter count if fetch failed
+        if (chapters.length === 0) {
+          for (let i = 1; i <= totalChapters; i++) {
+            chapters.push({ n: i, title: 'Chapter ' + i, file: 'chapter' + i + '.html' });
+          }
+        }
 
 
         // 3. Inject Modal HTML
