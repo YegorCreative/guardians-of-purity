@@ -115,9 +115,13 @@ try {
         });
       });
 
+      let refreshTimeout;
       const observer = new MutationObserver(() => {
         if (typeof ScrollTrigger !== "undefined") {
-          ScrollTrigger.refresh();
+          clearTimeout(refreshTimeout);
+          refreshTimeout = setTimeout(() => {
+            ScrollTrigger.refresh();
+          }, 200);
         }
       });
       observer.observe(document.body, {
