@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subscription Confirmed | Guardians of Purity</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&family=Raleway:wght@400;600&family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./CSS/styles.css" />
+    <link rel="stylesheet" href="./CSS/header.css" />
+    <link rel="stylesheet" href="./CSS/footer.css" />
+    <link rel="stylesheet" href="./CSS/styles-responsive.css" />
+    <link rel="stylesheet" href="./CSS/page/subscribe-success.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+  <body>
+    <a id="scrollToTopButton" role="button" tabindex="0" aria-label="Scroll to top" title="Scroll to top">&#x2191;</a>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <div class="separated_block first">
+      <header class="header" role="banner">
+        <nav class="navbar" id="main-nav" role="navigation">
+          <a href="index.html" class="logo">
+            <img
+              src="./img/logo.png"
+              alt="Guardians of Purity Logo"
+              class="logo-img"
+              loading="eager"
+            />
+          </a>
+
+          <div class="tvnav" id="primary-nav-menu" aria-label="Primary">
+            <a href="index.html" class="tvnav__item" data-nav="home"><span class="tvnav__label">Home</span></a>
+            <a href="journey.html" class="tvnav__item" data-nav="journey"><span class="tvnav__label">Journey</span></a>
+            <a href="resources.html" class="tvnav__item" data-nav="resources"><span class="tvnav__label">Resources</span></a>
+            <a href="prayer.html" class="tvnav__item" data-nav="prayer"><span class="tvnav__label">Prayer</span></a>
+            <a href="contacts.html" class="tvnav__item" data-nav="contact"><span class="tvnav__label">Contact</span></a>
+            <a href="about.html" class="tvnav__item" data-nav="about"><span class="tvnav__label">About</span></a>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <main id="main" class="success-main" role="main">
+      <section class="success-card" aria-labelledby="success-title">
+        <p class="success-kicker">Subscription Confirmed</p>
+        <h1 id="success-title">You’re in.</h1>
+        <p class="success-copy">
+          Your email has been received. You’ll get updates, encouragement, and
+          new Guardians of Purity resources in your inbox.
+        </p>
+        <p class="success-email" id="success-email" hidden>
+          Updates will be sent to <strong id="success-email-value"></strong>.
+        </p>
+        <p class="success-copy success-copy--soft">
+          Keep walking in truth. Keep walking in purity.
+        </p>
+        <div class="success-actions">
+          <a href="journey.html" class="success-button success-button--primary">Start the journey</a>
+          <a href="resources.html" class="success-button success-button--ghost">Browse resources</a>
+        </div>
+      </section>
+    </main>
+
+    <div class="separated_block last">
+      <footer class="footer separated_block_corner" id="footer" role="contentinfo">
+        <div class="footer-links">
+          <a href="about.html" class="footer-link">About</a>
+          <a href="resources.html" class="footer-link">Resources</a>
+          <a href="resources.html" class="footer-link">Blog (Coming Soon)</a>
+          <a href="contacts.html" class="footer-link">Contact</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://facebook.com" class="social-link">Facebook</a>
+          <a href="https://instagram.com" class="social-link">Instagram</a>
+          <a href="https://youtube.com" class="social-link">YouTube</a>
+        </div>
+        <p class="footer-contact">Email: support@guardiansofpurity.com</p>
+        <p class="footer-copyright">© 2025 Guardians of Purity</p>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.1/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CustomEase.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+      (function () {
+        var emailWrap = document.getElementById("success-email");
+        var emailValue = document.getElementById("success-email-value");
+        if (!emailWrap || !emailValue) return;
+
+        try {
+          var submittedEmail = sessionStorage.getItem("gopSubscribedEmail");
+          if (!submittedEmail) return;
+
+          emailValue.textContent = submittedEmail;
+          emailWrap.hidden = false;
+          sessionStorage.removeItem("gopSubscribedEmail");
+        } catch (error) {
+          console.error("Unable to read subscribed email:", error);
+        }
+      })();
+    </script>
+  </body>
+</html>

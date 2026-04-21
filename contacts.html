@@ -102,8 +102,13 @@
             Get prayer support, accountability, and encouragement straight to
             your inbox. Join thousands walking the path to purity together.
           </p>
-          <form action="" novalidate>
-            <input type="email" required placeholder="your.email@example.com" aria-label="Email address" />
+          <form id="subscribe-form" action="https://formsubmit.co/yegor@yegorcreative.com" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="New Guardians of Purity mailing list signup" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="https://guardiansofpurity.com/subscribe-success.html" />
+            <input type="hidden" name="source" value="Guardians of Purity contact page" />
+            <input id="subscribe-email" type="email" name="email" required placeholder="your.email@example.com" aria-label="Email address" autocomplete="email" />
             <button type="submit">join us</button>
           </form>
         </div>
@@ -198,5 +203,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CustomEase.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+      (function () {
+        var form = document.getElementById("subscribe-form");
+        var emailInput = document.getElementById("subscribe-email");
+
+        if (!form || !emailInput) return;
+
+        form.addEventListener("submit", function () {
+          try {
+            sessionStorage.setItem("gopSubscribedEmail", emailInput.value.trim());
+          } catch (error) {
+            console.error("Unable to persist subscribed email:", error);
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
