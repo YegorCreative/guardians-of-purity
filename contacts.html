@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./CSS/footer.css" />
     <link rel="stylesheet" href="./CSS/styles-responsive.css" />
     <link rel="stylesheet" href="./CSS/page/contacts.css" />
+    <link rel="stylesheet" href="./CSS/page/contacts-crt.css" />
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
@@ -96,14 +97,14 @@
     <main id="main" role="main" class="flex-center">
       <section>
         <div>
-          <h1>Jus' make things.<br />Put them on the internet.</h1>
+          <h1>You're not alone.<br />Reach out today.</h1>
           <p>
-            Sign up for a newsletter all about building in public, sharing your
-            work, and ignoring the haters.
+            Get prayer support, accountability, and encouragement straight to
+            your inbox. Join thousands walking the path to purity together.
           </p>
-          <form action="">
-            <input type="email" required placeholder="creator@hotmail.com" />
-            <button type="submit">sign up</button>
+          <form action="" novalidate>
+            <input type="email" required placeholder="your.email@example.com" aria-label="Email address" />
+            <button type="submit">join us</button>
           </form>
         </div>
       </section>
@@ -115,10 +116,10 @@
             loading="lazy"
           />
         </div>
-        <button id="one" class="key keypad__single keypad__single--left">
+        <button id="one" class="key keypad__single keypad__single--left" type="button">
           <span class="key__mask">
             <span class="key__content">
-              <span class="key__text">ok</span>
+              <span class="key__text">pray</span>
               <img
                 src="img/keypad-single.webp"
                 alt="Single keypad module"
@@ -127,10 +128,10 @@
             </span>
           </span>
         </button>
-        <button id="two" class="key keypad__single">
+        <button id="two" class="key keypad__single" type="button">
           <span class="key__mask">
             <span class="key__content">
-              <span class="key__text">go</span>
+              <span class="key__text">grow</span>
               <img
                 src="img/keypad-single.webp"
                 alt="Single keypad module"
@@ -139,10 +140,10 @@
             </span>
           </span>
         </button>
-        <button id="three" class="key keypad__double">
+        <button id="three" class="key keypad__double" type="button">
           <span class="key__mask">
             <span class="key__content">
-              <span class="key__text">create.</span>
+              <span class="key__text">connect.</span>
               <img
                 src="img/keypad-double.webp"
                 alt="Dual keypad module"
@@ -153,6 +154,20 @@
         </button>
       </div>
     </main>
+
+    <!-- ===== Vintage CRT TV — boots to "Guardians of Purity" ===== -->
+    <section class="crt-stage" aria-label="Guardians of Purity broadcast">
+      <div class="crt-stage__frame">
+        <iframe
+          src="crt.html"
+          title="Guardians of Purity broadcast"
+          class="crt-stage__iframe"
+          scrolling="no"
+          aria-label="Vintage CRT TV broadcasting Guardians of Purity"
+        ></iframe>
+      </div>
+      <p class="crt-hint">Press the <strong>POWER</strong> knob to tune in.</p>
+    </section>
 
     <!-- Footer -->
     <div class="separated_block last">

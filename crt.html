@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Guardians of Purity — CRT Broadcast</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+<style>
+/* ===========================================================
+   Vintage CRT — adapted from Ben Evans (codepen ivorjetski/qEaRjBw)
+   Pure CSS, no images, no JS.
+   Modified: cube + scan-test hidden, broadcasts "Guardians of Purity"
+   =========================================================== */
+:root{
+  --body:#2d313b;
+  --body-hsl:30,7%,12%;
+  --none:hsla(0 0% 100% / 0);
+  --wht:#f2fdff;
+  --wht-hsl:30,20%,95%;
+  --cube:30rem;
+  --dark:hsla(var(--body-hsl),0.5);
+  --grey:#7fe160;
+  --time:10s;
+  --stime:0.5s;
+  --pixel-hsl:0,100,18;
+  --pixel:#0e1e2c;
+  --metal:#847e75;
+  --r:hsla(180,100%,50%,0.2);
+  --g:hsla(300,100%,50%,0.2);
+}
+*,*:before,*:after{box-sizing:border-box;}
+html,body{min-height:100%;margin:0;font-family:sans-serif;overflow:hidden;}
+body{min-height:100%;height:100vh;}
+input{visibility:hidden;}
+html{font-size:1.05svh;}
+@media (max-width:1100px){html{font-size:0.55svw;}}
+@media (orientation:portrait){html{font-size:0.76svw;}}
+
+content *,*:before,*:after,content:before,content:after{position:absolute;}
+crt div,screen>u,light,effects,test{width:100%;height:100%;}
+
+content{
+  box-shadow:0 0 0 2rem var(--body),0 0 5rem 2rem #000;
+  width:inherit;border-radius:4rem;
+  background:radial-gradient(circle at 100% 0,#d8d19d,#77533d,var(--body)) hsla(var(--wht-hsl),0.9);
+  display:block;
+}
+@media (orientation:landscape){
+  content{aspect-ratio:1.8/1;max-height:100svh;display:flex;margin:auto;}
+}
+body{
+  margin:auto;
+  background:radial-gradient(at 40% 40%,transparent,transparent,#a64c2f33),
+             linear-gradient(transparent,#780d7c33),var(--body);
+  display:flex;align-items:center;justify-content:center;
+}
+label{inset:0;margin:auto;cursor:pointer;}
+.squircle{border-radius:calc(100% - 19rem) / 43rem;inset:-50%;margin:auto;overflow:hidden;}
+
+content set,content crt,content panel,content knobs,content grill,
+content knobs div,content .badge,content span,content flex{position:relative;}
+.d-flex{display:flex;}
+.d-block{display:block;}
+flex{flex:1 1 auto;}
+.text-center{text-align:center;}
+.my-md{margin-block:1rem;}
+.mx-auto{margin-inline:auto;}
+.text-white{color:var(--wht);text-transform:uppercase;text-shadow:-0.1rem 0.1rem 0 var(--body),0.05rem -0.05rem 0 #fff;}
+
+set{
+  display:flex;padding:1rem;gap:2rem;margin:auto;width:100%;
+  filter:drop-shadow(0.2rem 0 0 #00ff0033) drop-shadow(-0.2rem 0 0 #ff00ff33);
+}
+set panel{flex:1 1 auto;}
+@media (orientation:portrait){set{flex-direction:column;}}
+set:after{
+  width:100%;height:100%;
+  background:radial-gradient(at 40% 40%,transparent,transparent,#a64c2f),
+             linear-gradient(transparent,#780d7c);
+  content:"";z-index:10;inset:0;mix-blend-mode:color;opacity:0.3;
+  filter:blur(2rem);border-radius:4rem;pointer-events:none;
+}
+
+panel{
+  display:flex;flex-direction:column;gap:1rem;border-radius:3rem;
+  padding:1rem;margin:-1rem;background:var(--body);
+  box-shadow:-0.1rem 0.1rem 0.1rem #00000033,inset 0 0 0.5rem #423d3a,-0.5rem 0.5rem 0.5rem #36323a;
+}
+@media (orientation:portrait){panel{flex-direction:row;}}
+
+grill,knobs{
+  display:flex;flex:1 1 auto;justify-content:center;height:100%;
+  flex-direction:column;gap:1rem;background:#3a353e;padding:1rem;
+  border-radius:2rem;border:solid 1rem #44424e;
+  box-shadow:inset -0.5rem 0.5rem 0.5rem var(--dark),-0.5rem 0.5rem 0.5rem #36323a;
+}
+grill:after,knobs:after{
+  width:100%;height:100%;
+  background:radial-gradient(at 60% 40%,var(--wht),transparent);
+  content:"";transform:translate3d(-1rem,0,0);border-radius:1rem;z-index:2;opacity:0.1;
+}
+grill speaker{
+  max-width:80%;max-height:80%;background:var(--body);
+  background:conic-gradient(from 180deg,var(--body),#1e2128,var(--body));
+  margin:auto;border-radius:50%;inset:0;
+  box-shadow:-0.5rem 0.5rem 0.5rem hsla(var(--wht-hsl),0.1),0.5rem -0.5rem 0.5rem hsla(var(--body-hsl),0.5);
+}
+grill > u{
+  display:block;height:1rem;background:#44424e;border-radius:0.5rem;
+  box-shadow:-0.5rem 0.5rem 0.5rem var(--dark),inset -0.2rem 0.2rem 0.2rem hsla(var(--wht-hsl),0.1);
+  position:relative;z-index:1;
+}
+@media (orientation:portrait){grill > u{height:0.98rem;}}
+
+knobs div{
+  border-radius:0.5rem;
+  background:repeating-linear-gradient(90deg,transparent,transparent 0.5rem,hsla(var(--body-hsl),0.01) 0.5rem,hsla(var(--wht-hsl),0.025) 1rem),
+             radial-gradient(at 30% 70%,hsla(var(--body-hsl),0.5),transparent),#454149;
+  box-shadow:-0.5rem 0.5rem 0.5rem var(--dark),
+             inset -0.2rem 0.2rem 0.2rem hsla(var(--wht-hsl),0.1),
+             inset 0 0 0 1rem #44424e,
+             inset -1.25rem 1.25rem 0.5rem var(--dark);
+  padding:2rem;
+}
+knobs div:nth-of-type(1),knobs div:nth-of-type(2){flex:1 1 auto;}
+
+.badge{
+  width:8em;height:6em;display:block;border-radius:0.5em;
+  background:linear-gradient(45deg,#908e95,#928b90,#a3a3a8,#575356);
+  box-shadow:-0.25em 0.25em 0.25em var(--dark),
+             inset -0.2em 0.2em 0.2em hsla(var(--wht-hsl),0.1),
+             inset 0 0 0 0.5em #44424e,
+             inset -0.75em 0.75em 0.5em var(--dark);
+  margin:auto;z-index:3;transition:all 0.2s ease-in-out;
+}
+.badge:hover{filter:brightness(1.2) contrast(1.2);}
+
+[for="on-off"],.power u,.tuning u{position:relative;display:block;}
+[for="on-off"],[for="on-off"]:before,[for="on-off"]:after,
+.power u,.power u:before,.power u:after,
+.tuning u,.tuning u:before,.tuning u:after{aspect-ratio:1/1;border-radius:50%;}
+
+[for="on-off"]{
+  width:6em;background:var(--body);
+  box-shadow:-0.2em 0.2em 0.2em hsla(var(--wht-hsl),0.1),0.2em -0.2em 0.2em hsla(var(--body-hsl),0.5);
+  cursor:pointer;z-index:5;
+}
+[for="on-off"]:after,[for="on-off"]:before{content:"";width:4em;inset:0;margin:auto;}
+[for="on-off"]:after{background:radial-gradient(transparent,#ff0199,transparent);mix-blend-mode:lighten;opacity:0;}
+[for="on-off"]:before{
+  background:#792e5b;
+  box-shadow:-1em 1em 1em hsla(var(--body-hsl),0.5),
+             inset -1em 1em 1em hsla(var(--body-hsl),0.5),
+             inset -0.25em 0.25em 0.1em hsla(var(--wht-hsl),0.5),
+             inset 0.25em -0.25em 0.1em hsla(var(--body-hsl),0.5),
+             inset 0 0 0 0.5em var(--metal),
+             inset 0 0 0 0.6em var(--body),
+             inset -0.6em 0.6em 0 hsla(var(--wht-hsl),0.5),
+             inset 0.6em -0.6em 0 hsla(var(--body-hsl),0.5),
+             inset 0 0 0 0.8em hsla(var(--body-hsl),0.2);
+  transition:all 0.2s ease-in-out;
+}
+[for="on-off"]:hover:before,[for="on-off"]:focus:before{filter:brightness(1.2) contrast(1.2);}
+
+body:has(#on-off:checked) [for="on-off"]:before{
+  filter:brightness(1.5) contrast(1.2);
+  box-shadow:inset 0 0 0.2em 0.1em var(--body),
+             inset -1em 1em 1em hsla(var(--body-hsl),0.5),
+             inset -0.25em 0.25em 0.1em hsla(var(--wht-hsl),0.5),
+             inset 0.25em -0.25em 0.1em hsla(var(--body-hsl),0.5),
+             inset 0 0 0 0.5em var(--metal),
+             inset 0 0 0 0.6em var(--body),
+             inset -0.6em 0.6em 0 hsla(var(--wht-hsl),0.5),
+             inset 0.6em -0.6em 0 hsla(var(--body-hsl),0.5),
+             inset 0 0 0 0.8em hsla(var(--body-hsl),0.2);
+}
+body:has(#on-off:checked) [for="on-off"]:after{opacity:0.5;}
+
+.power > u,.vol > u,.tuning > u{
+  width:6em;background:var(--body);
+  box-shadow:-0.2em 0.2em 0.2em hsla(var(--wht-hsl),0.1),0.2em -0.2em 0.2em hsla(var(--body-hsl),0.5);
+  z-index:5;inset:0;margin:auto;
+}
+.power > u > u:before,.vol > u > u:before,.tuning > u > u:before,
+.power > u > u > u:before,.vol > u > u > u:before,.tuning > u > u > u:before{
+  content:"";width:5em;inset:0;margin:auto;
+}
+.power > u > u > u:before,.vol > u > u > u:before,.tuning > u > u > u:before{
+  border:dashed 0.1em var(--body);
+}
+.power > u > u:before,.vol > u > u:before,.tuning > u > u:before{
+  background:linear-gradient(45deg,#908e95,#575356,#a3a3a8);
+  box-shadow:-1em 1em 1em hsla(var(--body-hsl),0.5),
+             inset -1em 1em 1em hsla(var(--body-hsl),0.5),
+             inset -0.25em 0.25em 0.1em hsla(var(--wht-hsl),0.5),
+             inset 0.25em -0.25em 0.1em hsla(var(--body-hsl),0.5),
+             inset 0 0 0 0.5em var(--metal),
+             inset 0 0 0 0.6em var(--body),
+             inset -0.6em 0.6em 0 hsla(var(--wht-hsl),0.5),
+             inset 0.6em -0.6em 0 hsla(var(--body-hsl),0.5),
+             inset 0 0 0 0.8em hsla(var(--body-hsl),0.2);
+}
+.power > u > u:after,.vol > u > u:after,.tuning > u > u:after{
+  background:var(--wht);height:0.5em;border-radius:0.25em;
+  box-shadow:inset -0.15em 0.15em 0.15em hsla(var(--body-hsl),0.5);
+  content:"";width:0.5em;inset:0;margin:auto;transform:translate3d(0,-1em,0);
+}
+.tuning > u{width:10em;margin:auto;}
+.tuning > u > u{width:10em;position:absolute;}
+.tuning > u > u:before,.tuning > u > u > u:before{content:"";width:9em;inset:0;margin:auto;}
+.tuning > u > u:after{height:2em;border-radius:0.25em;width:0.5em;transform:translate3d(0,-2em,0);}
+
+dial,dialvol{width:10em;aspect-ratio:1/1;display:flex;flex-wrap:wrap;z-index:6;}
+dial label,dialvol label{width:50%;height:50%;position:relative;}
+dialvol{width:6em;top:0;}
+
+.vol u u,.tuning u u{transform:rotate(1deg);}
+.vol u u,.vol u u:before,.tuning u u,.tuning u u:before{transition:all 0.5s ease-in-out;}
+
+/* ============== CRT BODY ============== */
+crt{
+  aspect-ratio:4/3;margin:0.5rem;border:1rem solid #dad9b3;border-radius:6rem;
+  box-shadow:0 0 0 1rem #41423a,inset 0 0 0.5rem 3rem #423d3a,-0.5rem 0.5rem 0.5rem 2rem #36323a;
+  height:88rem;z-index:3;flex:0 0 auto;
+}
+crt > div,crt screen,crt light,crt effects{transform-style:preserve-3d;perspective:500rem;}
+crt > div *,crt > div *:before,crt > div *:after,
+crt screen *,crt screen *:before,crt screen *:after,
+crt light *,crt light *:before,crt light *:after,
+crt effects *,crt effects *:before,crt effects *:after,
+crt > div:before,crt > div:after,crt screen:before,crt screen:after,
+crt light:before,crt light:after,crt effects:before,crt effects:after{
+  content:"";left:0;top:0;transform-style:preserve-3d;
+}
+crt:before{
+  width:calc(100% + 4rem);height:calc(100% + 4rem);border-radius:3rem;content:"";
+  right:0;top:0;margin:-2rem;z-index:-2;
+  background:repeating-linear-gradient(90deg,transparent,transparent 0.5rem,hsla(var(--body-hsl),0.01) 0.5rem,hsla(var(--wht-hsl),0.025) 1rem),
+             radial-gradient(at 30% 70%,hsla(var(--body-hsl),0.5),transparent),#454149;
+  box-shadow:-1.5rem 1.5rem 1.5rem var(--dark),
+             inset -0.2rem 0.2rem 0.2rem hsla(var(--wht-hsl),0.1),
+             inset 0 0 0 1rem #44424e,
+             inset -1.25rem 1.25rem 0.5rem var(--dark),
+             0 0 0 1rem var(--body);
+}
+crt > div{width:80%;height:75%;overflow:hidden;margin:auto;inset:0;}
+
+/* boot animation */
+crt > div,crt effects{transform:scaleY(0) scaleX(0);}
+body:has(#on-off:checked) crt > div,
+body:has(#on-off:checked) crt effects{animation:on 2s ease-in-out forwards;}
+@keyframes on{
+  30%{transform:scaleY(0.01) scaleX(0.02);}
+  40%{transform:scaleY(0.01) scaleX(1);}
+  49%{transform:scaleY(0.7) scaleX(0.7);}
+  48%,50%,69%,71%,79%,81%,100%{transform:scaleY(1) scaleX(1);}
+  70%,80%{transform:scaleY(-1) scaleX(1);}
+}
+
+screen{
+  width:calc(100% - 2rem);height:calc(100% - 2rem);overflow:hidden;
+  border-radius:4.5rem;border:1rem solid #76767a;margin:1rem;
+}
+screen > u > u{margin:auto;filter:blur(1rem);}
+screen > u > u:nth-of-type(3),screen > u u:nth-of-type(4){
+  width:100rem;height:100rem;
+  background:linear-gradient(45deg,#484140,#6f6b6c,#343342);
+  transform:translate3d(0,-50rem,0) rotate(45deg);inset:auto 0 0 0;
+}
+screen > u u:nth-of-type(4){
+  background:linear-gradient(45deg,#969da4,#808797,#d2d0b7,#4d4749);
+  transform:translate3d(0,62rem,0) rotate(45deg);
+}
+screen > u u:nth-of-type(2),screen > u u:nth-of-type(1){
+  width:50rem;height:100%;background:linear-gradient(#4f484b,#eef1f4,#36323a);
+}
+screen > u u:nth-of-type(1){inset:0 0 0 auto;background:linear-gradient(#36323a,#423a45,#4f484b);}
+screen > u:nth-of-type(2){filter:drop-shadow(0 0 1rem #39343c);}
+screen > u:nth-of-type(2):before,screen > u:nth-of-type(2):after{
+  inset:0;margin:auto;background:linear-gradient(90deg,#545561,#5b585d,#7d7d79,#3d3a3f);filter:blur(0.5rem);
+}
+screen > u:nth-of-type(2):before{
+  width:calc(100% - 18rem);height:calc(100% - 10rem);
+  border-radius:calc(100% - 39rem) / 7rem;z-index:1;background-size:105%;
+}
+screen > u:nth-of-type(2):after{
+  width:calc(100% - 12rem);height:calc(100% - 20rem);
+  border-radius:5rem / calc(100% - 33rem);
+}
+screen > u:nth-of-type(3){
+  filter:drop-shadow(-0.5rem 0.5rem 0.5rem #eef1f4) drop-shadow(0.5rem -0.5rem 0.5rem var(--body));
+}
+screen > u:nth-of-type(3):before{
+  width:calc(100% - 24rem);height:calc(100% - 14rem);
+  border-radius:calc(100% - 32rem) / 8rem;inset:0;margin:auto;z-index:1;background:var(--body);
+}
+screen > u:nth-of-type(3):after{
+  width:calc(100% - 18rem);height:calc(100% - 24rem);
+  border-radius:24rem / calc(100% - -134rem);inset:0;margin:auto;background:var(--body);
+}
+
+crt effects{
+  width:calc(100% - 26rem);height:calc(100% - 21rem);filter:contrast(1);
+}
+crt effects:before,crt effects:after{
+  width:200%;height:200%;left:-50%;top:-50%;opacity:0.5;
+}
+crt effects:before{
+  background:repeating-linear-gradient(transparent,transparent 0.5rem,var(--pixel) 0.5rem,var(--pixel) 1rem);
+  background-size:100% 1rem;animation:pixels2 1s infinite linear;
+}
+crt effects:after{
+  background:repeating-linear-gradient(90deg,var(--r),var(--g) 5px),
+             repeating-linear-gradient(transparent,var(--pixel) 5px);
+  animation:pixels3 1s infinite linear;
+}
+@keyframes pixels3{100%{transform:translate3d(10px,-20px,0);}}
+@keyframes pixels2{100%{transform:translate3d(0,-5rem,0);}}
+
+light{filter:blur(0.2rem);}
+light:before{
+  width:calc(100% - 24rem);height:calc(100% - 19rem);
+  border-radius:calc(100% - 19rem) / 43rem;inset:0;margin:auto;
+  background:radial-gradient(circle at 100% 50%,transparent,var(--body)),
+             radial-gradient(circle at 0 50%,transparent,var(--wht) 77%,transparent);
+  opacity:0.5;filter:blur(1rem);
+}
+
+/* ============== BROADCAST: Guardians of Purity ============== */
+gop{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;gap:0.6rem;
+  padding:6rem 4rem;
+  font-family:'Playfair Display',Georgia,serif;color:var(--grey);
+  text-shadow:
+    0 0 0.6rem rgba(127,225,96,0.7),
+    0 0 1.6rem rgba(127,225,96,0.5),
+    0 0 3.2rem rgba(127,225,96,0.35),
+    -0.15rem 0 0 rgba(255,0,255,0.45),
+    0.15rem 0 0 rgba(0,255,255,0.45);
+  letter-spacing:0.06em;line-height:1;opacity:0;z-index:5;
+}
+body:has(#on-off:checked) gop{animation:gop-fade 0.6s ease-out 1.4s forwards;}
+@keyframes gop-fade{
+  0%{opacity:0;filter:blur(2rem) brightness(2);transform:scale(0.94);}
+  100%{opacity:1;filter:blur(0) brightness(1);transform:scale(1);}
+}
+gop big{display:block;font-size:6rem;font-weight:700;line-height:1;animation:gop-flicker 4s infinite;position:relative !important;}
+gop mid{display:block;font-size:2.6rem;font-style:italic;font-weight:400;opacity:0.85;line-height:1;position:relative !important;margin:0.6rem 0;}
+gop small{
+  display:block;margin-top:1.4rem;font-family:'Roboto Mono','Courier New',monospace;
+  font-size:1.6rem;letter-spacing:0.45em;color:rgba(127,225,96,0.75);
+  text-shadow:0 0 0.4rem rgba(127,225,96,0.5);
+  animation:gop-blink 1.6s ease-in-out infinite;position:relative !important;
+}
+@keyframes gop-flicker{
+  0%,92%,100%{filter:brightness(1);}
+  93%{filter:brightness(1.4);}
+  94%{filter:brightness(0.85);}
+  95%{filter:brightness(1.2);}
+}
+@keyframes gop-blink{0%,100%{opacity:0.85;}50%{opacity:0.35;}}
+
+.sig{
+  height:9.25em;overflow:hidden;border-radius:0.5em;font-size:0.8em;color:var(--wht);
+  width:6.5em;transform:skewX(10deg) scaleY(0.45) rotate(2deg);inset:0;margin:auto;
+  mix-blend-mode:overlay;filter:drop-shadow(-0.5rem 0.5rem 0.5rem var(--dark));
+}
+.sig:before{
+  content:"";top:0;left:0;width:5em;height:5em;background:currentColor;
+  transform:translate3d(-2.5em,0,0) rotate(-45deg);
+  box-shadow:-3em 3em 0 0 currentColor;border-radius:0.5em 2em 0.5em 2em;
+}
+
+@media (orientation:portrait){
+  panel{font-size:2rem;}
+  grill{flex-grow:3;}
+}
+@media (orientation:landscape){
+  grill > u:nth-of-type(n+23){display:none;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  body:has(#on-off:checked) crt > div,
+  body:has(#on-off:checked) crt effects{
+    animation:none !important;transform:scaleY(1) scaleX(1) !important;
+  }
+  gop,gop big,gop small,crt effects:before,crt effects:after{animation:none !important;opacity:1 !important;}
+}
+</style>
+</head>
+<body>
+
+<content>
+  <set>
+    <crt>
+      <screen>
+        <u><u></u> <u></u> <u></u> <u></u></u>
+        <u></u>
+        <u></u>
+      </screen>
+      <div>
+        <div>
+          <gop>
+            <big>GUARDIANS</big>
+            <mid>of</mid>
+            <big>PURITY</big>
+            <small>— ON AIR —</small>
+          </gop>
+        </div>
+      </div>
+      <effects class="squircle"><u></u></effects>
+      <light>
+        <u></u><u></u><u></u><u></u>
+        <u>
+          <u><u></u><u></u></u>
+          <u><u></u><u></u></u>
+          <u></u><u></u><u></u><u></u>
+        </u>
+      </light>
+    </crt>
+    <panel>
+      <grill>
+        <speaker></speaker>
+        <u></u> <u></u> <u></u> <u></u> <u></u> <u></u> <u></u> <u></u> <u></u> <u></u>
+        <u></u> <u></u> <u></u> <u></u> <u></u> <u></u> <u></u> <u></u> <u></u> <u></u>
+        <u></u> <u></u> <u></u> <u></u>
+      </grill>
+      <knobs>
+        <div class="power d-flex">
+          <flex>
+            <span class="my-md d-block text-center text-white">Power</span>
+            <label for="on-off" title="Power"></label>
+          </flex>
+          <flex class="vol">
+            <span class="my-md d-block text-center text-white">Volume</span>
+            <u><u><u></u></u></u>
+          </flex>
+        </div>
+        <div class="tuning">
+          <span class="my-md d-block text-center text-white">Tuning</span>
+          <u><u><u></u></u></u>
+        </div>
+        <div>
+          <a class="badge" href="index.html" target="_top" rel="noopener" title="Guardians of Purity — Home">
+            <u class="sig"><u></u></u>
+          </a>
+        </div>
+      </knobs>
+    </panel>
+  </set>
+</content>
+
+<input type="checkbox" name="tv" id="on-off" />
+
+</body>
+</html>

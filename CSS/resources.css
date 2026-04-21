@@ -5124,3 +5124,1279 @@
     inset 0 -1px 2px rgba(120, 200, 255, 0.15),
     0 4px 10px rgba(0, 0, 0, 0.3) !important;
 }
+
+/* ===========================================================
+   MOBILE QA — small-screen tightening for new components
+   =========================================================== */
+@media (max-width: 520px) {
+  /* Scripture grid: 240px min-card is too wide on small phones — 
+     causes one-column with ugly empty gutters. Drop to 200px. */
+  .tools-redux .scripture-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+  }
+
+  /* Scripture card: tighter padding + smaller min-height */
+  .tools-redux .scripture-card-front,
+  .tools-redux .scripture-card-back {
+    padding: 18px 16px !important;
+    min-height: 180px;
+  }
+
+  .tools-redux .scripture-card .verse-text { font-size: 0.88rem; }
+  .tools-redux .scripture-category { font-size: 0.62rem; padding: 5px 11px; }
+
+  /* Tracker pulse: reduce huge numbers on tiny screens */
+  .tools-redux .tracker-pulse {
+    padding: 16px 18px;
+  }
+  .tools-redux .tracker-pulse-num { font-size: 1.7rem; }
+  .tools-redux .tracker-pulse-cap { font-size: 0.62rem; letter-spacing: 0.08em; }
+  .tools-redux .tracker-pulse-eyebrow { font-size: 0.7rem; }
+  .tools-redux .tracker-pulse-hint { font-size: 0.74rem; }
+
+  /* Encouraging stats: ensure stat-number fits 3-digit values like "365" */
+  .tools-redux .tracker-section .stat-card .stat-number {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .tools-redux .scripture-grid {
+    grid-template-columns: 1fr;
+  }
+  .tools-redux .tool-index-title { font-size: 0.9rem; }
+  .tools-redux .tool-index-sub { font-size: 0.72rem; }
+}
+
+/* ===========================================================
+   RED FLAGS — readability fix inside dark tools-redux
+   Old rules use light-pink bg (#fef2f2) with dark red text.
+   In dark theme that flipped to white bg + nearly invisible text.
+   Override with translucent red-tinted dark cards.
+   =========================================================== */
+.tools-redux .redflag-item {
+  background: linear-gradient(135deg,
+    rgba(127, 29, 29, 0.35) 0%,
+    rgba(60, 12, 18, 0.55) 100%) !important;
+  border-left: 4px solid #f87171 !important;
+  border: 1px solid rgba(248, 113, 113, 0.28);
+  border-left: 4px solid #f87171 !important;
+  border-radius: 12px !important;
+  padding: 16px 18px !important;
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.tools-redux .redflag-item h4 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-size: 1rem !important;
+  margin: 0 0 6px !important;
+}
+
+.tools-redux .redflag-item p {
+  color: rgba(255, 255, 255, 0.88) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.55 !important;
+}
+
+.tools-redux .redflag-item .flag-icon,
+.tools-redux .flag-icon {
+  color: #fca5a5 !important;
+  -webkit-text-fill-color: #fca5a5 !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 22px !important;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+  flex: 0 0 auto;
+}
+
+.tools-redux .redflag-item .flag-icon i,
+.tools-redux .redflag-item .flag-icon .fas,
+.tools-redux .redflag-item .flag-icon .fa-solid {
+  color: #fca5a5 !important;
+  -webkit-text-fill-color: #fca5a5 !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+}
+
+/* ===========================================================
+   RED FLAGS — Apple Liquid Glass upgrade
+   =========================================================== */
+.tools-redux .redflag-item {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  /* Translucent red-tinted glass body */
+  background:
+    linear-gradient(135deg,
+      rgba(248, 113, 113, 0.14) 0%,
+      rgba(127, 29, 29, 0.22) 55%,
+      rgba(40, 10, 14, 0.45) 100%) !important;
+
+  /* Apple-grade backdrop */
+  backdrop-filter: blur(34px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(34px) saturate(200%) !important;
+
+  /* Ditch the old hard left bar — replace with full glass border + iridescent rim */
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 18px !important;
+  padding: 18px 20px 18px 22px !important;
+
+  /* Multi-layer 3D shadow + warm caustic */
+  box-shadow:
+    0 22px 44px -18px rgba(0, 0, 0, 0.65),
+    0 8px 22px -10px rgba(0, 0, 0, 0.4),
+    inset 0 2px 3px -1px rgba(255, 255, 255, 0.32),    /* hard top edge */
+    inset 0 -2px 6px -2px rgba(252, 165, 165, 0.30),   /* warm red caustic on bottom */
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+
+  transition:
+    transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* Iridescent rim — gradient leans warm/red for context */
+.tools-redux .redflag-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg,
+    #f87171 0%,
+    #f7d152 35%,
+    #b169db 70%,
+    #0fbffa 100%);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.35s ease;
+}
+
+/* Droplet sheen on top — the wet Apple curve */
+.tools-redux .redflag-item::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  height: 46%;
+  border-radius: 18px 18px 40px 40px / 18px 18px 22px 22px;
+  background: linear-gradient(180deg,
+    rgba(255, 255, 255, 0.22) 0%,
+    rgba(255, 255, 255, 0.05) 55%,
+    transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Content above sheen */
+.tools-redux .redflag-item > * {
+  position: relative;
+  z-index: 3;
+}
+
+/* Hover: light catches surface, bottom caustic glows */
+@media (hover: hover) {
+  .tools-redux .redflag-item:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.22) !important;
+    box-shadow:
+      0 30px 56px -16px rgba(0, 0, 0, 0.75),
+      0 12px 28px -10px rgba(0, 0, 0, 0.5),
+      inset 0 2px 4px -1px rgba(255, 255, 255, 0.5),
+      inset 0 -3px 8px -2px rgba(252, 165, 165, 0.42),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.14),
+      0 0 32px -8px rgba(248, 113, 113, 0.4) !important;
+  }
+  .tools-redux .redflag-item:hover::before { opacity: 1; }
+}
+
+/* Flag icon — frosted red glass tile instead of plain glyph */
+.tools-redux .redflag-item .flag-icon,
+.tools-redux .flag-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 12px !important;
+  background:
+    linear-gradient(135deg,
+      rgba(248, 113, 113, 0.4) 0%,
+      rgba(127, 29, 29, 0.55) 100%) !important;
+  border: 1px solid rgba(252, 165, 165, 0.4) !important;
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.35),
+    inset 0 -1px 2px rgba(252, 165, 165, 0.25),
+    0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  font-size: 18px !important;
+  color: #fecaca !important;
+  -webkit-text-fill-color: #fecaca !important;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+  flex: 0 0 auto !important;
+}
+
+.tools-redux .redflag-item .flag-icon i,
+.tools-redux .redflag-item .flag-icon .fas,
+.tools-redux .redflag-item .flag-icon .fa-solid {
+  color: #fecaca !important;
+  -webkit-text-fill-color: #fecaca !important;
+  font-size: 18px !important;
+}
+
+/* ===========================================================
+   RED FLAGS — make the red read as RED (not brown)
+   The dark navy backdrop was bleeding through and desaturating
+   the red into brown. Fix: brighter, more saturated red layers,
+   stronger caustic, isolate from backdrop tint.
+   =========================================================== */
+.tools-redux .redflag-item {
+  /* Brighter, more saturated red — less dark navy bleed */
+  background:
+    linear-gradient(135deg,
+      rgba(239, 68, 68, 0.35) 0%,
+      rgba(220, 38, 38, 0.42) 50%,
+      rgba(153, 27, 27, 0.55) 100%) !important;
+
+  /* Slightly less blur so the red doesn't get muddied by behind */
+  backdrop-filter: blur(24px) saturate(220%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(220%) !important;
+
+  border: 1px solid rgba(252, 165, 165, 0.35) !important;
+
+  /* Stronger red caustic + warm red glow halo, less black */
+  box-shadow:
+    0 22px 44px -18px rgba(80, 0, 8, 0.55),
+    0 8px 22px -10px rgba(80, 0, 8, 0.4),
+    inset 0 2px 3px -1px rgba(255, 220, 220, 0.35),
+    inset 0 -2px 8px -2px rgba(252, 100, 100, 0.5),
+    inset 0 0 0 1px rgba(255, 200, 200, 0.08),
+    0 0 24px -10px rgba(248, 113, 113, 0.35) !important;
+}
+
+/* Iridescent rim — drop the cool colors, go full warm */
+.tools-redux .redflag-item::before {
+  background: linear-gradient(135deg,
+    #fca5a5 0%,
+    #ef4444 30%,
+    #f7d152 60%,
+    #fb923c 100%) !important;
+  opacity: 0.75 !important;
+}
+
+@media (hover: hover) {
+  .tools-redux .redflag-item:hover {
+    box-shadow:
+      0 30px 56px -16px rgba(80, 0, 8, 0.65),
+      0 12px 28px -10px rgba(80, 0, 8, 0.5),
+      inset 0 2px 4px -1px rgba(255, 220, 220, 0.5),
+      inset 0 -3px 10px -2px rgba(252, 100, 100, 0.65),
+      inset 0 0 0 1px rgba(255, 200, 200, 0.16),
+      0 0 36px -8px rgba(239, 68, 68, 0.55) !important;
+  }
+}
+
+/* Flag icon — punchier red */
+.tools-redux .redflag-item .flag-icon,
+.tools-redux .flag-icon {
+  background:
+    linear-gradient(135deg,
+      rgba(239, 68, 68, 0.65) 0%,
+      rgba(185, 28, 28, 0.8) 100%) !important;
+  border: 1px solid rgba(254, 202, 202, 0.55) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.tools-redux .redflag-item .flag-icon i,
+.tools-redux .redflag-item .flag-icon .fas,
+.tools-redux .redflag-item .flag-icon .fa-solid {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* ===========================================================
+   WEEKLY CHECK-IN TEMPLATE — liquid glass on dark
+   The old .template-box uses light slate bg (#f8fafc) with
+   nearly invisible cyan title. Override entire box + steps.
+   =========================================================== */
+.tools-redux .template-box {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg,
+      rgba(30, 35, 60, 0.55) 0%,
+      rgba(15, 20, 40, 0.65) 100%) !important;
+  backdrop-filter: blur(34px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(34px) saturate(200%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 20px !important;
+  padding: 24px !important;
+  box-shadow:
+    0 22px 44px -18px rgba(0, 0, 0, 0.65),
+    0 8px 22px -10px rgba(0, 0, 0, 0.4),
+    inset 0 2px 3px -1px rgba(255, 255, 255, 0.32),
+    inset 0 -2px 6px -2px rgba(120, 200, 255, 0.22),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Iridescent rim */
+.tools-redux .template-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #b169db, #f7d152, #46cf71, #0fbffa);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Top droplet sheen */
+.tools-redux .template-box::after {
+  content: '';
+  position: absolute;
+  top: 1px; left: 1px; right: 1px;
+  height: 38%;
+  border-radius: 20px 20px 50px 50px / 20px 20px 26px 26px;
+  background: linear-gradient(180deg,
+    rgba(255, 255, 255, 0.20) 0%,
+    rgba(255, 255, 255, 0.04) 60%,
+    transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tools-redux .template-box > * {
+  position: relative;
+  z-index: 3;
+}
+
+/* Title — readable bright cyan instead of washed gradient */
+.tools-redux .template-box h4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  margin: 0 0 18px !important;
+  text-shadow: 0 1px 2px rgba(8, 20, 60, 0.4);
+}
+
+.tools-redux .template-box h4 i,
+.tools-redux .template-box h4 .fas,
+.tools-redux .template-box h4 .fa-solid {
+  color: #93c5fd !important;
+  -webkit-text-fill-color: #93c5fd !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 1rem !important;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+/* Each step — translucent inner card with soft cyan accent */
+.tools-redux .template-box .template-section {
+  position: relative;
+  padding: 14px 16px !important;
+  margin-bottom: 10px !important;
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(255, 255, 255, 0.02) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  border-left: 3px solid rgba(147, 197, 253, 0.5) !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.10),
+    0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.tools-redux .template-box .template-section:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 14px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10) !important;
+  border-left: 3px solid rgba(147, 197, 253, 0.5) !important;
+}
+
+/* Step heading (e.g., "1. Opening Prayer") */
+.tools-redux .template-box .template-section strong {
+  display: block;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 6px !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Step body text */
+.tools-redux .template-box .template-section p,
+.tools-redux .template-box .template-section .template-text {
+  color: rgba(255, 255, 255, 0.86) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.86) !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 0.88rem !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+  font-style: normal !important;
+}
+
+/* ===========================================================
+   EMERGENCY ACTION PLAN — liquid glass + readable on dark
+   =========================================================== */
+.tools-redux .emergency-subtitle {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  text-align: center;
+  padding: 12px 16px;
+  margin: 0 0 22px !important;
+  background: linear-gradient(135deg,
+    rgba(239, 68, 68, 0.28) 0%,
+    rgba(220, 38, 38, 0.22) 100%);
+  border: 1px solid rgba(252, 165, 165, 0.4);
+  border-radius: 12px;
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.01em;
+}
+
+/* Each numbered step — liquid glass row */
+.tools-redux .emergency-step {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex !important;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px !important;
+  margin-bottom: 14px !important;
+  background:
+    linear-gradient(135deg,
+      rgba(30, 35, 60, 0.55) 0%,
+      rgba(15, 20, 40, 0.65) 100%) !important;
+  backdrop-filter: blur(28px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 18px !important;
+  box-shadow:
+    0 18px 36px -16px rgba(0, 0, 0, 0.6),
+    0 6px 18px -8px rgba(0, 0, 0, 0.35),
+    inset 0 2px 3px -1px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 6px -2px rgba(120, 200, 255, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Iridescent rim per step */
+.tools-redux .emergency-step::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #b169db, #f7d152, #46cf71, #0fbffa);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.tools-redux .emergency-step > * {
+  position: relative;
+  z-index: 3;
+}
+
+/* Step number — bold gradient circle */
+.tools-redux .emergency-step .step-number {
+  flex: 0 0 auto;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 1.1rem !important;
+  font-weight: 800 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    0 6px 14px rgba(185, 28, 28, 0.4);
+}
+
+/* Step content area */
+.tools-redux .emergency-step .step-content {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.tools-redux .emergency-step .step-content h3 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  margin: 0 0 12px !important;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Emergency prayers — italic chips */
+.tools-redux .emergency-prayers {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tools-redux .emergency-prayer {
+  padding: 12px 14px;
+  background:
+    linear-gradient(135deg,
+      rgba(147, 197, 253, 0.14) 0%,
+      rgba(59, 130, 246, 0.10) 100%);
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  border-left: 3px solid #93c5fd;
+  border-radius: 10px;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.5;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Emergency lists */
+.tools-redux .emergency-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.tools-redux .emergency-list li {
+  position: relative;
+  padding: 10px 14px 10px 32px !important;
+  margin: 0 0 8px !important;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 10px;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.tools-redux .emergency-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #46cf71;
+  font-weight: 900;
+  font-size: 0.95rem;
+}
+
+/* Emergency verses */
+.tools-redux .emergency-verses {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tools-redux .emergency-verse {
+  padding: 14px 16px;
+  background:
+    linear-gradient(135deg,
+      rgba(167, 139, 250, 0.14) 0%,
+      rgba(124, 58, 237, 0.10) 100%);
+  border: 1px solid rgba(196, 181, 253, 0.3);
+  border-left: 3px solid #c4b5fd;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.tools-redux .emergency-verse strong {
+  display: block;
+  color: #ddd6fe !important;
+  -webkit-text-fill-color: #ddd6fe !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.tools-redux .emergency-verse p {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-style: italic;
+  font-size: 0.92rem !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Activity grid (DISTRACT section) */
+.tools-redux .activity-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.tools-redux .activity-item {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px !important;
+  background:
+    linear-gradient(135deg,
+      rgba(70, 207, 113, 0.14) 0%,
+      rgba(34, 197, 94, 0.10) 100%);
+  border: 1px solid rgba(134, 239, 172, 0.28);
+  border-radius: 10px;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.tools-redux .activity-item i,
+.tools-redux .activity-item .fas,
+.tools-redux .activity-item .fa-solid {
+  color: #86efac !important;
+  -webkit-text-fill-color: #86efac !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 1rem !important;
+  flex: 0 0 auto;
+}
+
+@media (hover: hover) {
+  .tools-redux .activity-item:hover {
+    transform: translateY(-2px);
+    background:
+      linear-gradient(135deg,
+        rgba(70, 207, 113, 0.22) 0%,
+        rgba(34, 197, 94, 0.18) 100%);
+  }
+}
+
+/* Remember section */
+.tools-redux .remember-section p {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-size: 0.95rem !important;
+  margin: 0 0 10px !important;
+}
+
+.tools-redux .remember-section p strong {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.tools-redux .reminder-text {
+  margin-top: 14px !important;
+  padding: 14px 16px;
+  background:
+    linear-gradient(135deg,
+      rgba(247, 209, 82, 0.16) 0%,
+      rgba(234, 179, 8, 0.12) 100%);
+  border: 1px solid rgba(253, 224, 71, 0.35);
+  border-radius: 12px;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-size: 0.95rem !important;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+}
+
+/* Emergency contacts block */
+.tools-redux .emergency-contacts {
+  margin-top: 22px;
+  padding: 22px;
+  background:
+    linear-gradient(135deg,
+      rgba(30, 35, 60, 0.55) 0%,
+      rgba(15, 20, 40, 0.65) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  box-shadow:
+    inset 0 2px 3px -1px rgba(255, 255, 255, 0.28),
+    inset 0 -2px 6px -2px rgba(120, 200, 255, 0.18),
+    0 18px 36px -18px rgba(0, 0, 0, 0.6);
+}
+
+.tools-redux .emergency-contacts h3 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  margin: 0 0 16px !important;
+  text-align: center;
+}
+
+.tools-redux .contact-buttons {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.tools-redux .emergency-contact-btn {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 18px 14px !important;
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.82) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.85) !important;
+  border-radius: 14px !important;
+  color: #1e3a8a !important;
+  -webkit-text-fill-color: #1e3a8a !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-family: var(--font-accent);
+  font-weight: 700 !important;
+  font-size: 0.86rem !important;
+  text-decoration: none !important;
+  text-align: center;
+  line-height: 1.35;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 6px 16px rgba(8, 20, 60, 0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tools-redux .emergency-contact-btn i,
+.tools-redux .emergency-contact-btn .fas,
+.tools-redux .emergency-contact-btn .fa-solid {
+  display: block !important;
+  font-size: 22px !important;
+  margin-bottom: 4px !important;
+  color: #1e3a8a !important;
+  -webkit-text-fill-color: #1e3a8a !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+}
+
+.tools-redux .emergency-contact-btn br {
+  display: block;
+}
+
+@media (hover: hover) {
+  .tools-redux .emergency-contact-btn:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 1) inset,
+      0 12px 24px rgba(8, 20, 60, 0.36);
+  }
+}
+
+@media (max-width: 540px) {
+  .tools-redux .activity-grid { grid-template-columns: 1fr; }
+  .tools-redux .contact-buttons { grid-template-columns: 1fr; }
+  .tools-redux .emergency-step { padding: 16px !important; gap: 12px; }
+  .tools-redux .emergency-step .step-number { width: 38px !important; height: 38px !important; font-size: 1rem !important; }
+}
+
+/* ===========================================================
+   REMEMBER section — kill old yellow bg, use liquid glass
+   =========================================================== */
+.tools-redux .remember-section {
+  background: linear-gradient(135deg,
+    rgba(247, 209, 82, 0.08) 0%,
+    rgba(255, 255, 255, 0.04) 100%) !important;
+  border: 1px solid rgba(253, 224, 71, 0.22) !important;
+  border-left: 3px solid rgba(253, 224, 71, 0.55) !important;
+  border-radius: 14px !important;
+  padding: 18px 20px !important;
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.10),
+    0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.tools-redux .remember-section ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 12px 0 0 !important;
+}
+
+.tools-redux .remember-section li {
+  position: relative;
+  padding: 10px 14px 10px 32px !important;
+  margin: 0 0 8px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  border-radius: 10px !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-size: 0.92rem !important;
+  line-height: 1.5 !important;
+  list-style: none !important;
+}
+
+.tools-redux .remember-section li::before {
+  content: '✓';
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fde047;
+  font-weight: 900;
+  font-size: 0.95rem;
+}
+
+.tools-redux .remember-section li::marker { content: ''; }
+
+/* ===========================================================
+   RECOMMENDED READING — dark liquid glass redesign
+   =========================================================== */
+/* Force the wrapping separated_block to dark glass for this section */
+.separated_block:has(> .recommended-reading) {
+  background: transparent !important;
+}
+
+.recommended-reading {
+  position: relative;
+  padding: 56px 32px !important;
+  background:
+    radial-gradient(1200px 600px at 10% 0%, rgba(124, 58, 237, 0.18), transparent 60%),
+    radial-gradient(900px 500px at 90% 100%, rgba(14, 165, 233, 0.16), transparent 60%),
+    linear-gradient(180deg, #0b1228 0%, #0a0f24 100%) !important;
+  border-radius: 28px !important;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow:
+    0 30px 80px -30px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.recommended-reading::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, 0.12) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 80% 60%, rgba(255, 255, 255, 0.10) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 50% 80%, rgba(255, 255, 255, 0.10) 50%, transparent 51%),
+    radial-gradient(2px 2px at 70% 20%, rgba(255, 255, 255, 0.10) 50%, transparent 51%);
+  pointer-events: none;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.recommended-reading > * { position: relative; z-index: 2; }
+
+.recommended-reading .section-title {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: linear-gradient(135deg, #c4b5fd 0%, #93c5fd 50%, #67e8f9 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.01em;
+  text-align: center;
+  margin: 0 0 36px !important;
+  font-size: clamp(1.6rem, 3.4vw, 2.2rem) !important;
+}
+
+.reading-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 18px !important;
+  margin: 0 !important;
+}
+
+.reading-item {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex !important;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 22px 26px !important;
+  background:
+    linear-gradient(135deg,
+      rgba(30, 35, 60, 0.55) 0%,
+      rgba(15, 20, 40, 0.65) 100%) !important;
+  backdrop-filter: blur(28px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-left: none !important;
+  border-radius: 20px 20px 28px 28px / 20px 20px 22px 22px !important;
+  box-shadow:
+    0 18px 40px -18px rgba(0, 0, 0, 0.7),
+    0 6px 18px -8px rgba(0, 0, 0, 0.4),
+    inset 0 2px 3px -1px rgba(255, 255, 255, 0.28),
+    inset 0 -2px 6px -2px rgba(120, 200, 255, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04) !important;
+  transform: translateZ(0);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease;
+}
+
+/* Iridescent rim */
+.reading-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #b169db, #f7d152, #46cf71, #0fbffa);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.35s ease;
+}
+
+/* Glossy droplet sheen */
+.reading-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(180deg,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(255, 255, 255, 0.04) 14%,
+      transparent 28%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.reading-item > * { position: relative; z-index: 2; }
+
+.reading-category {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  padding: 5px 12px !important;
+  background: linear-gradient(135deg,
+    rgba(124, 58, 237, 0.32) 0%,
+    rgba(59, 130, 246, 0.32) 100%) !important;
+  border: 1px solid rgba(196, 181, 253, 0.45) !important;
+  border-radius: 999px !important;
+  color: #e9d5ff !important;
+  -webkit-text-fill-color: #e9d5ff !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Different accent for Article */
+.reading-item:has(.reading-category:is(:contains("Article"))) .reading-category,
+.reading-category:not([class*="Book"]) {
+  /* fallback handled below per nth-child */
+}
+
+/* Use nth-child accent variation for visual rhythm */
+.reading-grid > .reading-item:nth-child(3n+2) .reading-category {
+  background: linear-gradient(135deg,
+    rgba(14, 165, 233, 0.32) 0%,
+    rgba(34, 197, 94, 0.32) 100%) !important;
+  border-color: rgba(125, 211, 252, 0.45) !important;
+  color: #bae6fd !important;
+  -webkit-text-fill-color: #bae6fd !important;
+}
+
+.reading-grid > .reading-item:nth-child(3n+3) .reading-category {
+  background: linear-gradient(135deg,
+    rgba(247, 209, 82, 0.28) 0%,
+    rgba(251, 146, 60, 0.28) 100%) !important;
+  border-color: rgba(253, 224, 71, 0.45) !important;
+  color: #fde68a !important;
+  -webkit-text-fill-color: #fde68a !important;
+}
+
+.reading-title {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-family: var(--font-accent);
+  font-size: 1.08rem !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  margin: 0 !important;
+  letter-spacing: 0.005em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.reading-excerpt {
+  color: rgba(226, 232, 255, 0.78) !important;
+  -webkit-text-fill-color: rgba(226, 232, 255, 0.78) !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 0.92rem !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+}
+
+@media (hover: hover) {
+  .reading-item:hover {
+    transform: translateY(-6px) !important;
+    border-color: rgba(255, 255, 255, 0.22) !important;
+    box-shadow:
+      0 30px 60px -20px rgba(0, 0, 0, 0.75),
+      0 12px 28px -10px rgba(99, 102, 241, 0.35),
+      inset 0 2px 3px -1px rgba(255, 255, 255, 0.4),
+      inset 0 -2px 8px -2px rgba(120, 200, 255, 0.28),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+  }
+  .reading-item:hover::before { opacity: 0.85; }
+}
+
+@media (max-width: 640px) {
+  .recommended-reading { padding: 36px 18px !important; border-radius: 22px !important; }
+  .reading-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+  .reading-item { padding: 20px 18px !important; }
+}
+
+/* Reading items as anchors — preserve glass styling, add CTA */
+a.reading-item {
+  text-decoration: none !important;
+  color: inherit !important;
+  cursor: pointer;
+}
+
+.reading-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 6px;
+  color: #93c5fd !important;
+  -webkit-text-fill-color: #93c5fd !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.reading-cta i {
+  font-size: 0.78rem;
+  transition: transform 0.25s ease;
+}
+
+@media (hover: hover) {
+  a.reading-item:hover .reading-cta {
+    color: #c4b5fd !important;
+    -webkit-text-fill-color: #c4b5fd !important;
+  }
+  a.reading-item:hover .reading-cta i {
+    transform: translate(2px, -2px);
+  }
+}
+
+a.reading-item:focus-visible {
+  outline: 2px solid #c4b5fd;
+  outline-offset: 3px;
+}
+
+/* Featured Bible card — premium gold/scripture treatment */
+.reading-item--featured {
+  background:
+    linear-gradient(135deg,
+      rgba(247, 209, 82, 0.18) 0%,
+      rgba(124, 58, 237, 0.22) 50%,
+      rgba(14, 165, 233, 0.18) 100%) !important;
+  border-color: rgba(253, 224, 71, 0.35) !important;
+}
+
+.reading-item--featured::before {
+  background: linear-gradient(135deg, #fde047, #c4b5fd, #67e8f9, #fde047) !important;
+  opacity: 0.85 !important;
+}
+
+.reading-category--scripture {
+  background: linear-gradient(135deg,
+    rgba(253, 224, 71, 0.42) 0%,
+    rgba(251, 146, 60, 0.38) 100%) !important;
+  border-color: rgba(253, 224, 71, 0.7) !important;
+  color: #fef3c7 !important;
+  -webkit-text-fill-color: #fef3c7 !important;
+}
+
+/* Override nth-child accent so featured card keeps gold */
+.reading-grid > .reading-item--featured:nth-child(n) .reading-category--scripture {
+  background: linear-gradient(135deg,
+    rgba(253, 224, 71, 0.42) 0%,
+    rgba(251, 146, 60, 0.38) 100%) !important;
+  border-color: rgba(253, 224, 71, 0.7) !important;
+  color: #fef3c7 !important;
+  -webkit-text-fill-color: #fef3c7 !important;
+}
+
+.reading-item--featured .reading-title {
+  background: linear-gradient(135deg, #fde68a 0%, #fbbf24 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-size: 1.18rem !important;
+  text-shadow: none !important;
+}
+
+.reading-item--featured .reading-cta {
+  color: #fde68a !important;
+  -webkit-text-fill-color: #fde68a !important;
+}
+
+@media (hover: hover) {
+  .reading-item--featured:hover {
+    box-shadow:
+      0 30px 60px -20px rgba(0, 0, 0, 0.75),
+      0 12px 28px -10px rgba(251, 191, 36, 0.45),
+      inset 0 2px 3px -1px rgba(255, 255, 255, 0.4),
+      inset 0 -2px 8px -2px rgba(253, 224, 71, 0.3),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+  }
+  .reading-item--featured:hover .reading-cta {
+    color: #fef3c7 !important;
+    -webkit-text-fill-color: #fef3c7 !important;
+  }
+}
+
+/* ===========================================================
+   MOBILE QA — sweep for redesigned sections
+   =========================================================== */
+@media (max-width: 480px) {
+  /* Recommended Reading on small phones */
+  .recommended-reading { padding: 28px 14px !important; border-radius: 18px !important; }
+  .recommended-reading .section-title { font-size: 1.4rem !important; margin-bottom: 22px !important; }
+  .reading-item { padding: 18px 16px !important; border-radius: 16px 16px 22px 22px / 16px 16px 18px 18px !important; }
+  .reading-title { font-size: 1rem !important; }
+  .reading-item--featured .reading-title { font-size: 1.08rem !important; }
+  .reading-excerpt { font-size: 0.88rem !important; }
+  .reading-cta { font-size: 0.76rem !important; }
+  .reading-category { font-size: 0.68rem !important; padding: 4px 10px !important; }
+
+  /* Emergency Action Plan tightening */
+  .tools-redux .emergency-step { padding: 14px !important; gap: 10px !important; border-radius: 14px !important; }
+  .tools-redux .emergency-step .step-number { width: 34px !important; height: 34px !important; font-size: 0.92rem !important; }
+  .tools-redux .emergency-step .step-content h3 { font-size: 0.96rem !important; margin-bottom: 10px !important; }
+  .tools-redux .emergency-prayer,
+  .tools-redux .emergency-list li { font-size: 0.86rem !important; padding: 9px 12px 9px 28px !important; }
+  .tools-redux .emergency-list li::before { left: 10px; }
+  .tools-redux .emergency-verse { padding: 12px !important; }
+  .tools-redux .emergency-verse p { font-size: 0.86rem !important; }
+  .tools-redux .activity-item { font-size: 0.84rem !important; padding: 10px 12px !important; }
+  .tools-redux .emergency-contacts { padding: 16px !important; border-radius: 14px !important; }
+  .tools-redux .emergency-contact-btn { padding: 14px 10px !important; font-size: 0.8rem !important; }
+  .tools-redux .emergency-contact-btn i { font-size: 18px !important; }
+  .tools-redux .emergency-subtitle { font-size: 0.92rem !important; padding: 10px 14px; }
+  .tools-redux .reminder-text { font-size: 0.88rem !important; padding: 12px 14px; }
+}
+
+@media (max-width: 360px) {
+  .recommended-reading { padding: 22px 10px !important; }
+  .reading-item { padding: 16px 14px !important; }
+  .tools-redux .emergency-step { flex-direction: column !important; align-items: stretch !important; }
+  .tools-redux .emergency-step .step-number { align-self: flex-start; }
+}
