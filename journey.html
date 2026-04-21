@@ -22,13 +22,72 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <style>
     .journey-hero {
-      text-align: center;
-      padding: 3rem 2rem;
+      padding: 2rem 1.25rem 4rem;
+      margin-top: -5px;
+    }
+
+    .journey-hero__panel {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      border-radius: 34px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.9fr);
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      background:
+        radial-gradient(circle at top left, rgba(111, 163, 164, 0.16), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(205, 170, 109, 0.16), transparent 34%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(236, 246, 248, 0.92));
+      border: 1px solid rgba(75, 110, 114, 0.12);
+      box-shadow:
+        0 28px 70px -38px rgba(47, 72, 74, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.76);
+      backdrop-filter: blur(16px);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .journey-hero__panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.22) 46%, transparent 72%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .journey-hero__content,
+    .journey-hero__sidebar {
+      position: relative;
+      z-index: 1;
+    }
+
+    .journey-hero__content {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-top: -5px; /* seamless from parallax */
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .journey-kicker {
+      margin: 0 0 0.85rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #4b6e72;
+    }
+
+    .journey-heading {
+      margin: 0;
+      max-width: 11ch;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.9rem);
+      line-height: 0.94;
+      color: #2f484a;
+      letter-spacing: -0.045em;
     }
 
     .parallax__title {
@@ -57,63 +116,185 @@
       padding-top: 18vh;
     }
 
-    @media (max-width: 768px) {
-      .parallax__layer-title {
-        padding-top: 22vh;
-      }
-      .parallax__title {
-        font-size: clamp(2.5rem, 10vw, 4.5rem);
-      }
-    }
-
     .journey-description {
       font-family: 'Open Sans', sans-serif;
-      font-size: 1.25rem;
-      color: var(--text-secondary);
-      max-width: 800px;
-      margin-bottom: 3rem;
-      line-height: 1.6;
+      font-size: clamp(1.02rem, 1.6vw, 1.22rem);
+      color: rgba(47, 72, 74, 0.88);
+      max-width: 52rem;
+      margin: 1.25rem 0 0;
+      line-height: 1.75;
     }
 
     .journey-actions {
       display: flex;
-      gap: 1.5rem;
+      gap: 1rem;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: flex-start;
+      margin-top: 2rem;
     }
 
     .journey-btn {
-      display: inline-block;
-      padding: 1rem 2rem;
-      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
+      padding: 1rem 1.45rem;
+      border-radius: 999px;
       text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
+      font-weight: 700;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.08em;
+      font-size: 0.92rem;
     }
 
     .btn-primary {
-      background-color: var(--accent-color, #cdaa6d);
-      /* Fallback */
+      background: linear-gradient(135deg, #d4b06d 0%, #bf9450 100%);
       color: white;
-      border: 2px solid var(--accent-color, #cdaa6d);
+      border: 2px solid transparent;
+      box-shadow: 0 18px 34px -18px rgba(191, 148, 80, 0.62);
     }
 
     .btn-primary:hover {
-      background-color: transparent;
-      color: var(--accent-color, #cdaa6d);
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #ddb978 0%, #c79c57 100%);
+      color: white;
     }
 
     .btn-secondary {
-      background-color: transparent;
-      color: var(--text-primary);
-      border: 2px solid var(--text-primary);
+      background-color: rgba(255, 255, 255, 0.54);
+      color: #2f484a;
+      border: 2px solid rgba(75, 110, 114, 0.15);
     }
 
     .btn-secondary:hover {
-      background-color: var(--text-primary);
-      color: var(--bg-primary);
+      transform: translateY(-2px);
+      background-color: #2f484a;
+      border-color: #2f484a;
+      color: #f4fbfc;
+    }
+
+    .journey-hero__sidebar {
+      display: grid;
+      gap: 1rem;
+      align-content: center;
+    }
+
+    .journey-focus-card {
+      padding: 1.25rem 1.25rem 1.15rem;
+      border-radius: 24px;
+      background: linear-gradient(160deg, rgba(47, 72, 74, 0.92), rgba(75, 110, 114, 0.88));
+      color: #f1f8f9;
+      box-shadow: 0 24px 44px -28px rgba(47, 72, 74, 0.72);
+    }
+
+    .journey-focus-card__label {
+      display: inline-block;
+      margin-bottom: 0.7rem;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(230, 243, 245, 0.72);
+    }
+
+    .journey-focus-card__title {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 2.4vw, 2.25rem);
+      line-height: 1;
+    }
+
+    .journey-focus-card__copy {
+      margin: 0.85rem 0 0;
+      font-size: 0.96rem;
+      line-height: 1.65;
+      color: rgba(241, 248, 249, 0.86);
+    }
+
+    .journey-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .journey-metric {
+      padding: 1rem 1rem 0.9rem;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.58);
+      border: 1px solid rgba(75, 110, 114, 0.12);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    }
+
+    .journey-metric__value {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      line-height: 1;
+      color: #2f484a;
+    }
+
+    .journey-metric__label {
+      display: block;
+      margin-top: 0.45rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(75, 110, 114, 0.85);
+    }
+
+    .journey-metric__text {
+      display: block;
+      margin-top: 0.45rem;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: rgba(47, 72, 74, 0.78);
+    }
+
+    @media (max-width: 960px) {
+      .journey-hero__panel {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-hero__content {
+        text-align: center;
+        align-items: center;
+      }
+
+      .journey-actions {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .parallax__layer-title {
+        padding-top: 22vh;
+      }
+
+      .parallax__title {
+        font-size: clamp(2.5rem, 10vw, 4.5rem);
+      }
+
+      .journey-hero {
+        padding: 1.25rem 0.75rem 3rem;
+      }
+
+      .journey-heading {
+        max-width: 12.5ch;
+      }
+
+      .journey-actions {
+        width: 100%;
+      }
+
+      .journey-btn {
+        width: 100%;
+      }
+
+      .journey-metrics {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -218,16 +399,45 @@
 
     <div class="separated_block gradient-section">
       <section class="journey-hero separated_block_corner">
-        <p class="journey-description">
-          Welcome to the starting point of your transformation. This 42-chapter journey is designed to equip you
-          with biblical truth, psychological insights, and practical tools to overcome addiction and walk in
-          lasting freedom. Whether you are just beginning or looking to deepen your recovery, everything you
-          need is right here.
-        </p>
-        <div class="journey-actions">
-          <a href="chapter1.html" class="journey-btn btn-primary">Start with Chapter 1</a>
-          <a href="chapter42.html" class="journey-btn btn-secondary">Latest Chapter</a>
-          <a href="resources.html" class="journey-btn btn-secondary">View All Resources</a>
+        <div class="journey-hero__panel">
+          <div class="journey-hero__content">
+            <p class="journey-kicker">Recovery Roadmap</p>
+            <h2 class="journey-heading">Take the next faithful step.</h2>
+            <p class="journey-description">
+              Welcome to the starting point of your transformation. This 42-chapter journey is designed to equip you
+              with biblical truth, psychological insights, and practical tools to overcome addiction and walk in
+              lasting freedom. Whether you are just beginning or looking to deepen your recovery, everything you
+              need is right here.
+            </p>
+            <div class="journey-actions">
+              <a href="chapter1.html" class="journey-btn btn-primary">Start with Chapter 1</a>
+              <a href="chapter42.html" class="journey-btn btn-secondary">Latest Chapter</a>
+              <a href="resources.html" class="journey-btn btn-secondary">View All Resources</a>
+            </div>
+          </div>
+
+          <aside class="journey-hero__sidebar" aria-label="Journey highlights">
+            <div class="journey-focus-card">
+              <span class="journey-focus-card__label">What you’ll build</span>
+              <h3 class="journey-focus-card__title">Clarity, conviction, and daily momentum.</h3>
+              <p class="journey-focus-card__copy">
+                Move from confusion and relapse cycles toward practical rhythms, renewed thinking, and Spirit-led discipline.
+              </p>
+            </div>
+
+            <div class="journey-metrics">
+              <div class="journey-metric">
+                <span class="journey-metric__value">42</span>
+                <span class="journey-metric__label">Chapters</span>
+                <span class="journey-metric__text">A complete path from struggle to sustained freedom.</span>
+              </div>
+              <div class="journey-metric">
+                <span class="journey-metric__value">3</span>
+                <span class="journey-metric__label">Lenses</span>
+                <span class="journey-metric__text">Biblical truth, mind renewal, and practical action.</span>
+              </div>
+            </div>
+          </aside>
         </div>
       </section>
     </div>
@@ -551,6 +761,7 @@
   <script src="https://unpkg.com/lenis@1.3.1/dist/lenis.min.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/journey.js"></script>
 </body>
 
 </html>

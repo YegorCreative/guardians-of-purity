@@ -23,25 +23,30 @@ try {
   const effectiveReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const isAboutPage = /(?:^|\/)about\.html(?:$|\?)/.test(location.pathname);
+  const isJourneyPage = /(?:^|\/)journey\.html(?:$|\?)/.test(location.pathname);
   const hasParallax = document.querySelector("[data-parallax-layers]") !== null;
 
-  if (!isResponsive && !effectiveReducedMotion && !isAboutPage && hasParallax) {
+  if (!effectiveReducedMotion && !isAboutPage && !isJourneyPage && hasParallax) {
     let lenis;
     let lenisTicker;
     window.addEventListener("load", () => {
       if (
-        typeof Lenis !== "function" ||
         typeof gsap === "undefined" ||
         typeof ScrollTrigger === "undefined"
       ) {
         return;
       }
 
-      // Force scroll to top on page load
-      if ("scrollRestoration" in history) {
-        history.scrollRestoration = "manual";
+      const useLenis = !isResponsive && typeof Lenis === "function";
+
+      if (useLenis) {
+        // Force scroll to top on page load only for the enhanced desktop path.
+        if ("scrollRestoration" in history) {
+          history.scrollRestoration = "manual";
+        }
+        window.scrollTo(0, 0);
       }
-      window.scrollTo(0, 0);
+
       // Wait for layout to settle
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
@@ -49,34 +54,44 @@ try {
             // Register GSAP plugin
             gsap.registerPlugin(ScrollTrigger);
 
-            // Initialize Lenis
-            lenis = new Lenis();
-            lenis.on("scroll", ScrollTrigger.update);
+            if (useLenis) {
+              // Initialize Lenis only on larger screens.
+              lenis = new Lenis();
+              lenis.on("scroll", ScrollTrigger.update);
 
-            lenisTicker = (time) => {
-              if (lenis) lenis.raf(time * 1000);
-            };
-            gsap.ticker.add(lenisTicker);
-            gsap.ticker.lagSmoothing(0);
+              lenisTicker = (time) => {
+                if (lenis) lenis.raf(time * 1000);
+              };
+              gsap.ticker.add(lenisTicker);
+              gsap.ticker.lagSmoothing(0);
+            }
 
             // Setup parallax
             document
               .querySelectorAll("[data-parallax-layers]")
               .forEach((triggerElement) => {
+                const layers = isResponsive
+                  ? [
+                      { layer: "1", yPercent: 26 },
+                      { layer: "2", yPercent: 20 },
+                      { layer: "3", yPercent: 14 },
+                      { layer: "4", yPercent: 6 },
+                    ]
+                  : [
+                      { layer: "1", yPercent: 70 },
+                      { layer: "2", yPercent: 55 },
+                      { layer: "3", yPercent: 40 },
+                      { layer: "4", yPercent: 10 },
+                    ];
+
                 let tl = gsap.timeline({
                   scrollTrigger: {
                     trigger: triggerElement,
                     start: "0% 0%",
                     end: "100% 0%",
-                    scrub: true, // smoother
+                    scrub: isResponsive ? 0.9 : 0.55,
                   },
                 });
-                const layers = [
-                  { layer: "1", yPercent: 70 },
-                  { layer: "2", yPercent: 55 },
-                  { layer: "3", yPercent: 40 },
-                  { layer: "4", yPercent: 10 },
-                ];
                 layers.forEach((layerObj, idx) => {
                   tl.to(
                     triggerElement.querySelectorAll(
@@ -99,9 +114,10 @@ try {
           }
         });
       });
+
       const observer = new MutationObserver(() => {
-        if (lenis) {
-          gsap.ticker.add(lenisTicker);
+        if (typeof ScrollTrigger !== "undefined") {
+          ScrollTrigger.refresh();
         }
       });
       observer.observe(document.body, {
