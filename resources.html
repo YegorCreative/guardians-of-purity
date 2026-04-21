@@ -355,6 +355,32 @@
             <p class="tools-redux-lede">Six guided tools designed to support your journey — from understanding the science, to daily prayer, scripture memory, accountability, and an emergency action plan.</p>
           </div>
 
+          <!-- Progress pulse — always visible at-a-glance tracker -->
+          <button type="button" class="tracker-pulse" onclick="openTool('tool-tracker')" aria-label="Jump to full progress tracker">
+            <span class="tracker-pulse-label">
+              <span class="tracker-pulse-eyebrow"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Your Progress</span>
+              <span class="tracker-pulse-hint">Updates as you log victories &amp; triggers below</span>
+            </span>
+            <span class="tracker-pulse-stats">
+              <span class="tracker-pulse-stat">
+                <span class="tracker-pulse-num" id="pulseDays">0</span>
+                <span class="tracker-pulse-cap">Days Free</span>
+              </span>
+              <span class="tracker-pulse-stat">
+                <span class="tracker-pulse-num" id="pulseVictories">0</span>
+                <span class="tracker-pulse-cap">Victories</span>
+              </span>
+              <span class="tracker-pulse-stat">
+                <span class="tracker-pulse-num" id="pulseTriggers">0</span>
+                <span class="tracker-pulse-cap">Triggers Known</span>
+              </span>
+            </span>
+            <span class="tracker-pulse-cta" aria-hidden="true">
+              Open tracker
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+            </span>
+          </button>
+
           <!-- Tool index — quick navigation -->
           <nav class="tool-index" aria-label="Interactive tools">
             <button type="button" class="tool-index-card" data-tool="tool-roadmap" onclick="openTool('tool-roadmap')">
@@ -609,7 +635,7 @@
           </div>
 
           <!-- Progress Tracker -->
-          <div class="tool-card separated_block_corner" id="tool-tracker">
+          <div class="tool-card separated_block_corner active" id="tool-tracker">
             <div class="tool-header" onclick="toggleToolCard(this)">
               <div class="tool-header-content">
                 <div class="download-icon"><i class="fas fa-chart-line"></i></div>

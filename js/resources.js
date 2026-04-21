@@ -178,6 +178,14 @@ function loadTrackerData() {
 
 // Update days input
 document.addEventListener('DOMContentLoaded', function() {
+  // Populate tracker (and the always-visible Progress Pulse) on page load
+  if (document.getElementById('daysClean')) {
+    loadTrackerData();
+  } else {
+    // Tracker card is collapsed; still hydrate the pulse strip from storage
+    updateStats();
+  }
+
   const daysInput = document.getElementById('daysClean');
   if (daysInput) {
     daysInput.addEventListener('input', function() {
@@ -299,6 +307,14 @@ function updateStats() {
   if (statDays) statDays.textContent = days;
   if (statVictories) statVictories.textContent = victories.length;
   if (statTriggers) statTriggers.textContent = triggers.length;
+
+  // Mirror to the always-visible Progress Pulse strip
+  const pulseDays = document.getElementById('pulseDays');
+  const pulseVictories = document.getElementById('pulseVictories');
+  const pulseTriggers = document.getElementById('pulseTriggers');
+  if (pulseDays) pulseDays.textContent = days;
+  if (pulseVictories) pulseVictories.textContent = victories.length;
+  if (pulseTriggers) pulseTriggers.textContent = triggers.length;
 }
 
 function resetTracker() {
