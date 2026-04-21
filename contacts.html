@@ -111,7 +111,7 @@
             <input id="subscribe-email" type="email" name="email" required placeholder="your.email@example.com" aria-label="Email address" autocomplete="email" />
             <button type="submit">join us</button>
           </form>
-          <div class="subscribe-success" id="subscribe-success" hidden aria-live="polite">
+          <div class="subscribe-success" id="subscribe-success" hidden aria-live="polite" tabindex="-1">
             <p class="subscribe-success__kicker">Subscription Confirmed</p>
             <h2 class="subscribe-success__title">You’re in.</h2>
             <p class="subscribe-success__copy">
@@ -119,6 +119,9 @@
             </p>
             <p class="subscribe-success__copy subscribe-success__copy--email" id="subscribe-success-email" hidden>
               Updates will be sent to <strong id="subscribe-success-email-value"></strong>.
+            </p>
+            <p class="subscribe-success__note">
+              Check your inbox for future updates and new resources.
             </p>
           </div>
         </div>
@@ -224,6 +227,9 @@
 
         if (params.get("subscribed") === "1" && successPanel) {
           successPanel.hidden = false;
+          if (form) {
+            form.hidden = true;
+          }
           try {
             var submittedEmail = sessionStorage.getItem("gopSubscribedEmail");
             if (submittedEmail && successEmail && successEmailValue) {
@@ -238,6 +244,11 @@
           if (window.history && typeof window.history.replaceState === "function") {
             window.history.replaceState({}, document.title, window.location.pathname);
           }
+
+          requestAnimationFrame(function () {
+            successPanel.scrollIntoView({ behavior: "smooth", block: "center" });
+            successPanel.focus();
+          });
         }
 
         if (!form || !emailInput) return;
