@@ -106,11 +106,21 @@
             <input type="hidden" name="_subject" value="New Guardians of Purity mailing list signup" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_next" value="https://guardiansofpurity.com/subscribe-success.html" />
+            <input type="hidden" name="_next" value="https://guardiansofpurity.com/contacts.html?subscribed=1" />
             <input type="hidden" name="source" value="Guardians of Purity contact page" />
             <input id="subscribe-email" type="email" name="email" required placeholder="your.email@example.com" aria-label="Email address" autocomplete="email" />
             <button type="submit">join us</button>
           </form>
+          <div class="subscribe-success" id="subscribe-success" hidden aria-live="polite">
+            <p class="subscribe-success__kicker">Subscription Confirmed</p>
+            <h2 class="subscribe-success__title">You’re in.</h2>
+            <p class="subscribe-success__copy">
+              Your email has been received. You’ll get encouragement and new Guardians of Purity resources in your inbox.
+            </p>
+            <p class="subscribe-success__copy subscribe-success__copy--email" id="subscribe-success-email" hidden>
+              Updates will be sent to <strong id="subscribe-success-email-value"></strong>.
+            </p>
+          </div>
         </div>
       </section>
       <div class="keypad">
@@ -207,6 +217,28 @@
       (function () {
         var form = document.getElementById("subscribe-form");
         var emailInput = document.getElementById("subscribe-email");
+        var successPanel = document.getElementById("subscribe-success");
+        var successEmail = document.getElementById("subscribe-success-email");
+        var successEmailValue = document.getElementById("subscribe-success-email-value");
+        var params = new URLSearchParams(window.location.search);
+
+        if (params.get("subscribed") === "1" && successPanel) {
+          successPanel.hidden = false;
+          try {
+            var submittedEmail = sessionStorage.getItem("gopSubscribedEmail");
+            if (submittedEmail && successEmail && successEmailValue) {
+              successEmailValue.textContent = submittedEmail;
+              successEmail.hidden = false;
+              sessionStorage.removeItem("gopSubscribedEmail");
+            }
+          } catch (error) {
+            console.error("Unable to read subscribed email:", error);
+          }
+
+          if (window.history && typeof window.history.replaceState === "function") {
+            window.history.replaceState({}, document.title, window.location.pathname);
+          }
+        }
 
         if (!form || !emailInput) return;
 

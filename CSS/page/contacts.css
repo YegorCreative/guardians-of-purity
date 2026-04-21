@@ -70,6 +70,47 @@ main form button {
   font-size: 0.875rem;
 }
 
+.subscribe-success {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(230, 243, 245, 0.96), rgba(224, 239, 242, 0.92));
+  border: 1px solid rgba(75, 110, 114, 0.14);
+  box-shadow: 0 20px 40px -28px rgba(47, 72, 74, 0.45);
+}
+
+.subscribe-success__kicker {
+  margin: 0 0 0.35rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #4b6e72;
+  opacity: 1;
+}
+
+.subscribe-success__title {
+  margin: 0 0 0.45rem;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  line-height: 1;
+  color: #2f484a;
+}
+
+.subscribe-success__copy {
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: rgba(47, 72, 74, 0.9);
+  opacity: 1;
+}
+
+.subscribe-success__copy--email {
+  margin-top: 0.45rem;
+  color: rgba(75, 110, 114, 0.92);
+}
+
 main section {
   transition-property: opacity, filter;
   transition-duration: 0.26s;
