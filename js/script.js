@@ -197,17 +197,15 @@ try {
     "resources.html": "resources",
     "prayer.html": "prayer",
     "contacts.html": "contact",
-    "about.html": "about"
+    "about.html": "about",
+    "masturbation.html": "masturbation",
+    "success-stories.html": "success-stories"
   };
 
   // Chapter pages map to "journey" since they're part of the reading journey
   var navKey = navMap[filename];
   if (!navKey && /^chapter\d+\.html$/i.test(filename)) {
     navKey = "journey";
-  }
-  // Masturbation and success-stories are resource-adjacent
-  if (filename === "masturbation.html" || filename === "success-stories.html") {
-    navKey = "resources";
   }
 
   if (navKey) {
