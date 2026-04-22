@@ -57,7 +57,7 @@ main form input {
   background: canvas;
   border: 1px solid color-mix(in oklch, canvasText, #0000 75%);
   border-radius: 25px;
-  outline-color: red;
+  outline-color: #a78bfa;
 }
 
 main form button {
