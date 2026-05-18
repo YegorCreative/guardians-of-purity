@@ -39,12 +39,12 @@
 }
 
 .footer-nav__heading {
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  opacity: 0.55;
-  margin: 0 0 12px;
+  color: rgba(255, 255, 255, 0.62);
+  margin: 0 0 14px;
   padding: 0 14px;
 }
 
@@ -62,20 +62,22 @@
 
 .footer-link,
 .social-link {
-  color: var(--color-white);
+  color: rgba(255, 255, 255, 0.90);
   text-decoration: none;
   padding: 6px 14px;
   font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.03em;
-  transition: opacity var(--transition-base);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.40);
+  transition: color 0.2s ease, opacity 0.2s ease;
   border-radius: var(--radius-sm);
   display: inline-block;
 }
 
 .footer-link:hover,
 .social-link:hover {
-  opacity: 0.85;
+  color: #ffffff;
+  opacity: 1;
   text-decoration: none;
 }
 
@@ -85,13 +87,9 @@
   outline-offset: 2px;
 }
 
-/* Dim modifier — placeholder/coming-soon links */
+/* Dim modifier — hide placeholder links until page exists */
 .footer-link--dim {
-  opacity: 0.45;
-}
-
-.footer-link--dim:hover {
-  opacity: 0.6;
+  display: none;
 }
 
 /* Legacy flat list — kept for backwards compatibility */
@@ -124,18 +122,19 @@
   gap: var(--space-xs);
   margin-bottom: var(--space-md);
   padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 1px solid rgba(255, 255, 255, 0.20);
 }
 
 .footer-contact {
   font-size: 0.82rem;
-  opacity: 0.85;
+  color: rgba(255, 255, 255, 0.78);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
   margin-bottom: 12px;
 }
 
 .footer-copyright {
   font-size: 0.72rem;
-  opacity: 0.6;
+  color: rgba(255, 255, 255, 0.50);
   letter-spacing: 0.04em;
 }
 
