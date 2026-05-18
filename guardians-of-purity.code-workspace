@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../guardians-of-purity-mobile"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "guardians-of-purity"
+	}
+}
