@@ -1,0 +1,481 @@
+/* ============================================================
+   FAQ Page — Scoped Styles (fq- namespace)
+   Guardians of Purity
+   ============================================================ */
+
+/* ── Page Layout ── */
+#main {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* ── Keyframes ── */
+@keyframes fqGradientFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fqFadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.fq-hero {
+  background: linear-gradient(120deg, #0d9488, #14b8a6, #3b82f6, #0d9488);
+  background-size: 250% 250%;
+  animation: fqGradientFlow 18s ease infinite, fqFadeInUp 0.8s ease-out forwards;
+  color: var(--color-white);
+  padding: 88px 20px 80px;
+  max-width: 1440px;
+  margin: 20px auto;
+  border-radius: 25px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(13, 148, 136, 0.28);
+  position: relative;
+}
+
+.fq-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 68%);
+  pointer-events: none;
+}
+
+.fq-hero__glow {
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75%;
+  height: 75%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.fq-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.fq-hero__badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 999px;
+  padding: 6px 22px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.fq-hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800;
+  margin: 0 0 22px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  line-height: 1.1;
+}
+
+.fq-hero__subtitle {
+  font-size: clamp(0.98rem, 2vw, 1.14rem);
+  line-height: 1.74;
+  opacity: 0.95;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fq-hero {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   SECTIONS — Base
+   ============================================================ */
+.fq-section {
+  background: var(--color-white);
+  color: var(--color-text-dark);
+  max-width: 1440px;
+  margin: 20px auto;
+  border-radius: 25px;
+  padding: 68px 0;
+}
+
+.fq-section--alt {
+  background: var(--color-bg-light);
+}
+
+/* ── Inner containers ── */
+.fq-section__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.fq-section__inner--wide {
+  max-width: 1200px;
+}
+
+.fq-section__inner--narrow {
+  max-width: 740px;
+}
+
+/* ── Section heading ── */
+.fq-section h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.65rem, 3vw, 2.2rem);
+  color: var(--color-text-dark-neutral);
+  margin: 0 0 14px;
+  letter-spacing: -0.02em;
+  line-height: var(--leading-tight);
+}
+
+/* ── Lead paragraph ── */
+.fq-section__lead {
+  font-size: 1.02rem;
+  color: var(--color-text-dark);
+  max-width: 680px;
+  margin: 0 auto 32px;
+  line-height: 1.78;
+}
+
+/* ── Badge kicker ── */
+.fq-badge {
+  display: inline-block;
+  background: rgba(13, 148, 136, 0.08);
+  color: #0d9488;
+  border: 1px solid rgba(13, 148, 136, 0.22);
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+/* ── Note box ── */
+.fq-note {
+  background: rgba(200, 141, 86, 0.06);
+  border-left: 3px solid var(--color-scripture-border);
+  border-radius: 0 12px 12px 0;
+  padding: 16px 22px;
+  margin-top: 24px;
+  font-size: 0.92rem;
+  color: var(--color-text-dark);
+  line-height: 1.68;
+  text-align: left;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================
+   FAQ ACCORDION
+   ============================================================ */
+.fq-accordion {
+  margin-top: 36px;
+  text-align: left;
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fq-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.fq-section--alt .fq-item {
+  border-bottom-color: rgba(0, 0, 0, 0.09);
+}
+
+.fq-item:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.fq-section--alt .fq-item:first-child {
+  border-top-color: rgba(0, 0, 0, 0.09);
+}
+
+/* ── Trigger ── */
+.fq-item__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--color-text-dark);
+  transition: color var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fq-item__trigger:hover {
+  color: var(--color-text-dark-neutral);
+}
+
+.fq-item__trigger:focus-visible {
+  outline: 2px solid rgba(13, 148, 136, 0.55);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.fq-item__question {
+  font-family: var(--font-heading);
+  font-size: clamp(0.94rem, 1.8vw, 1.04rem);
+  font-weight: 600;
+  line-height: 1.38;
+  letter-spacing: -0.01em;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Chevron icon ── */
+.fq-item__chevron {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: rgba(75, 110, 114, 0.65);
+  transition: transform 0.28s var(--ease-premium), color var(--transition-fast);
+}
+
+.fq-item__trigger[aria-expanded="true"] .fq-item__chevron {
+  transform: rotate(180deg);
+  color: #0d9488;
+}
+
+.fq-item__trigger[aria-expanded="true"] .fq-item__question {
+  color: var(--color-text-dark-neutral);
+}
+
+/* ── Animated body — grid-template-rows technique ── */
+.fq-item__body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.30s var(--ease-premium);
+  overflow: hidden;
+}
+
+.fq-item__trigger[aria-expanded="true"] + .fq-item__body {
+  grid-template-rows: 1fr;
+}
+
+.fq-item__answer {
+  overflow: hidden;
+  padding: 0 4px 24px;
+}
+
+.fq-item__answer p {
+  font-size: 0.97rem;
+  color: var(--color-text-dark);
+  line-height: 1.78;
+  margin: 0 0 10px;
+}
+
+.fq-item__answer p:last-child {
+  margin-bottom: 0;
+}
+
+.fq-item__answer a {
+  color: #0d9488;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(13, 148, 136, 0.3);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.fq-item__answer a:hover {
+  color: var(--color-gradient-blue-start);
+  border-bottom-color: var(--color-gradient-blue-start);
+}
+
+/* ── Scripture reference in answers ── */
+.fq-item__scripture {
+  display: inline-block;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--color-text-dark-neutral);
+  opacity: 0.82;
+  margin-top: 6px;
+}
+
+/* ============================================================
+   CTA  (glassGlow pattern — DO NOT MODIFY DIMENSIONS)
+   ============================================================ */
+
+.fq-cta-block {
+  padding: 5px 25px 20px 10px;
+}
+
+.fq-cta-wrapper {
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(
+    90deg,
+    var(--color-gradient-blue-start),
+    var(--color-gradient-blue-end)
+  );
+  box-shadow: 0 0.25em 0.375em hsla(0, 0%, 0%, 0.1);
+}
+
+.fq-cta-glass {
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.2),
+    rgba(96, 165, 250, 0.1)
+  );
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  width: 100%;
+  height: 300px;
+  position: relative;
+  top: 15px;
+  left: 15px;
+}
+
+.fq-cta-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--color-white);
+  width: 85%;
+  max-width: 700px;
+}
+
+.fq-cta-centered h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(var(--text-xl), 2.5vw, var(--text-2xl));
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+}
+
+.fq-cta-centered p {
+  font-family: var(--font-main);
+  font-size: var(--text-base);
+  line-height: 1.72;
+  opacity: 0.92;
+  margin: 0 0 8px;
+  color: var(--color-white);
+}
+
+.fq-cta-centered .main_button {
+  background: rgba(255, 255, 255, 0.18);
+  border: 2px solid rgba(255, 255, 255, 0.42);
+  color: var(--color-white);
+  margin: 16px auto 0;
+  display: inline-block;
+  max-width: 200px;
+}
+
+.fq-cta-centered .main_button:hover {
+  background: rgba(255, 255, 255, 0.32);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.fq-cta-secondary {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.fq-cta-secondary:hover {
+  color: var(--color-white);
+  border-bottom-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .fq-section {
+    padding: 54px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .fq-section {
+    padding: 44px 0;
+    margin: 12px auto;
+  }
+
+  .fq-section__inner {
+    padding: 0 18px;
+  }
+
+  .fq-item__trigger {
+    padding: 18px 2px;
+  }
+
+  .fq-item__question {
+    font-size: 0.96rem;
+  }
+
+  .fq-cta-block {
+    padding: 5px 15px 15px 5px;
+  }
+
+  .fq-cta-centered {
+    width: 82%;
+  }
+
+  .fq-cta-centered h2 {
+    font-size: var(--text-xl);
+  }
+
+  .fq-cta-centered p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fq-hero {
+    padding: 64px 16px 56px;
+  }
+
+  .fq-hero__title {
+    font-size: clamp(2rem, 8vw, 2.6rem);
+  }
+
+  .fq-item__trigger {
+    padding: 16px 2px;
+  }
+
+  .fq-accordion {
+    margin-top: 24px;
+  }
+}
