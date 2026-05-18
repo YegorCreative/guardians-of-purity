@@ -206,6 +206,53 @@
 }
 
 /* ============================================================
+   PROMISE BLOCK  (Privacy Philosophy — key commitments)
+   ============================================================ */
+.pp-promise {
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.06), rgba(59, 130, 246, 0.06));
+  border: 1px solid rgba(20, 184, 166, 0.22);
+  border-radius: 20px;
+  padding: 28px 28px 22px;
+  margin: 28px auto 0;
+  max-width: 680px;
+}
+
+.pp-promise__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.pp-promise__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.94rem;
+  color: var(--color-text-dark);
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+.pp-promise__dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #14b8a6, #0d9488);
+  margin-top: 7px;
+}
+
+@media (max-width: 767px) {
+  .pp-promise {
+    padding: 22px 18px 18px;
+  }
+
+  .pp-promise__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
    INFORMATION CARDS  (Information We Collect)
    ============================================================ */
 .pp-card-grid {
